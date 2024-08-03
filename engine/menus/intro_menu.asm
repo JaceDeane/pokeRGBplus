@@ -80,7 +80,7 @@ NewGame:
 PlayerProfileSetup:
 	farcall CheckMobileAdapterStatus
 	jr c, .ok
-	farcall InitGender
+	;farcall InitGender ;unreferenced
 	ret
 .ok
 	ld c, 0
