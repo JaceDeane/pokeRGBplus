@@ -1,28 +1,41 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "First, what is"
+	line "your name?"
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+	text "Right! So your"
+	line "name is <PLAYER>!"
+	prompt
+
+_OakText8::
+	text "This is my grand-"
+	line "son. He's been"
+	cont "your rival since"
+	cont "you were a baby."
+	
+	para "…Erm, what is"
+	line "his name again?"
+	prompt
+
+_OakText9::
+	text "That's right! I"
+	line "remember now! His"
+	cont "name is <RIVAL>!"
+	prompt
+
+_OakText10:: ;previously _OakText7
+	text "<PLAYER>!"
 
 	para "Your very own"
-	line "#MON story is"
-	cont "about to unfold."
-
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	line "#MON legend is"
+	cont "about to unfold!"
 
 	para "A world of dreams"
 	line "and adventures"
 
 	para "with #MON"
 	line "awaits! Let's go!"
-
-	para "I'll be seeing you"
-	line "later!"
 	done
 
 _ClockTimeMayBeWrongText::
