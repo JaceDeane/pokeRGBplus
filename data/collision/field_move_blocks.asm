@@ -41,6 +41,7 @@ CutTreeBlockPointers:
 .forest:
 ; facing block, replacement block, animation
 	db $0f, $17, 0
+	db $28, $01, 1 ;allows grass to be cut
 	db -1 ; end
 
 
