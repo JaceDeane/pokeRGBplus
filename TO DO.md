@@ -23,6 +23,4 @@
 
 ## Tutorials (Temporary):
 
-- Removing the intro (https://github.com/pret/pokecrystal/wiki/Removing-the-intro)
-
 - Remove Pokémon sprite animations (https://github.com/pret/pokecrystal/wiki/Remove-Pokémon-sprite-animations)
