@@ -2,7 +2,6 @@
 	const OAKSLAB_OAK
 	const OAKSLAB_SCIENTIST1
 	const OAKSLAB_SCIENTIST2
-	const OAKSLAB_SCIENTIST3
 
 OaksLab_MapScripts:
 	def_scene_scripts
@@ -59,8 +58,6 @@ OaksAssistant1Script:
 OaksAssistant2Script:
 	jumptextfaceplayer OaksAssistant2Text
 
-OaksAssistant3Script:
-	jumptextfaceplayer OaksAssistant3Text
 
 OaksLabBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -202,14 +199,6 @@ OaksAssistant2Text:
 	line "along great."
 	done
 
-OaksAssistant3Text:
-	text "Don't tell anyone,"
-	line "but PROF.OAK'S"
-
-	para "#MON TALK isn't"
-	line "a live broadcast."
-	done
-
 OaksLabPoster1Text:
 	text "Press START to"
 	line "open the MENU."
@@ -285,4 +274,3 @@ OaksLab_MapEvents:
 	object_event  4,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Oak, -1
 	object_event  1,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
-	object_event  1,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant3Script, -1
