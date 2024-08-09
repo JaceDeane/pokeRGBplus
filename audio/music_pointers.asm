@@ -32,7 +32,7 @@ Music:
 	dba Music_MtMoonSquare
 	dba Music_Gym
 	dba Music_RBYPalletTown ; RBY Pallet Town
-	dba Music_ProfOaksPokemonTalk
+	dba Music_OaksLab ; RBY Oaks Lab ;ProfOaksPokemonTalk
 	dba Music_ProfOak
 	dba Music_LookRival
 	dba Music_AfterTheRivalFight

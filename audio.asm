@@ -86,7 +86,7 @@ INCLUDE "audio/music/gymleadervictory.asm"
 INCLUDE "audio/music/mtmoonsquare.asm"
 INCLUDE "audio/music/gym.asm"
 INCLUDE "audio/music/rby/pallettown.asm" ; RBY Pallet Town
-INCLUDE "audio/music/profoakspokemontalk.asm"
+INCLUDE "audio/music/rby/oakslab.asm" ; RBY Oaks Lab ;profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"
 
 INCLUDE "audio/music/lookrival.asm"
