@@ -114,6 +114,9 @@ INCLUDE "gfx/tilesets/house_kanto_palette_map.asm"
 TilesetRedsHousePalMap:
 INCLUDE "gfx/tilesets/reds_house_palette_map.asm"
 
+TilesetGymPalMap:
+INCLUDE "gfx/tilesets/gym_palette_map.asm"
+
 MapGroupPalettes: ; unreferenced
 ; entries correspond to MAPGROUP_* constants
 rept NUM_MAP_GROUPS

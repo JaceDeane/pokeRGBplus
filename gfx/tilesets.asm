@@ -353,3 +353,12 @@ INCBIN "data/tilesets/reds_house_metatiles.bin"
 
 TilesetRedsHouseColl::
 INCLUDE "data/tilesets/reds_house_collision.asm"
+
+TilesetGymGFX::
+INCBIN "gfx/tilesets/gym.2bpp.lz"
+
+TilesetGymMeta::
+INCBIN "data/tilesets/gym_metatiles.bin"
+
+TilesetGymColl::
+INCLUDE "data/tilesets/gym_collision.asm"

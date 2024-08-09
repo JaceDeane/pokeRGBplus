@@ -52,4 +52,5 @@ Tilesets::
 	tileset TilesetAerodactylWordRoom
 	tileset TilesetHouseKanto
 	tileset TilesetRedsHouse
+	tileset TilesetGym
 	assert_table_length NUM_TILESETS + 1
