@@ -13,15 +13,29 @@ RedHouse1FNoopScene:
 RedsMom:
 	faceplayer
 	opentext
-	checkevent EVENT_MET_REDS_MOM
-	iftrue .MetAlready
-	writetext RedsMomText1
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .GotAPokemon
+	writetext MomWakeUpText
+	givepoke PIKACHU, 5, BERRY ; debug
 	waitbutton
 	closetext
-	setevent EVENT_MET_REDS_MOM
+	setevent EVENT_GOT_A_POKEMON_FROM_ELM ; debug
 	end
-.MetAlready:
-	writetext RedsMomText2
+	
+.GotAPokemon:
+	writetext MomHealText1
+	waitbutton
+	closetext
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInFromBlack
+	special RestartMapMusic
+	opentext
+	writetext MomHealText2
 	waitbutton
 	closetext
 	end
@@ -32,44 +46,48 @@ RedsHouse1FTV:
 RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
 
-RedsMomText1:
-	text "Hi!"
+MomWakeUpText:
+	text "MOM: Right."
+	
+	para "All boys leave"
+	line "home someday."
+	cont "It said so on TV."
 
-	para "RED's been away"
-	line "for a long time."
-
-	para "He hasn't called"
-	line "either, so I have"
-
-	para "no idea where he"
-	line "is or what he's"
-	cont "been doing."
-
-	para "They say that no"
-	line "word is proof that"
-
-	para "he's doing fine,"
-	line "but I do worry"
-	cont "about him."
+	para "PROF.OAK, next"
+	line "door, is looking"
+	cont "for you."
 	done
 
-RedsMomText2:
-	text "I worry about RED"
-	line "getting hurt or"
+MomHealText1::
+	text "MOM: <PLAYER>, if"
+	line "you drive your"
+	
+	para "#MON too hard,"
+	line "they'll dislike"
+	cont "you."
 
-	para "sick, but he's a"
-	line "boy. I'm proud"
+	para "You should take a"
+	line "rest."
+	done
 
-	para "that he is doing"
-	line "what he wants to"
-
-	para "do."
+MomHealText2::
+	text "MOM: Oh good!"
+	
+	para "You and your"
+	line "#MON are"
+	cont "looking great!"
+	
+	para "Take care now!"
 	done
 
 RedsHouse1FTVText:
-	text "They have programs"
-	line "that aren't shown"
-	cont "in JOHTO…"
+	text "There's a movie on"
+	line "TV: Four boys are"
+	
+	para "walking on rail-"
+	line "road tracks."
+
+	para "I'd better go, too."
 	done
 
 RedsHouse1F_MapEvents:

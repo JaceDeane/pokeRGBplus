@@ -1,5 +1,7 @@
 # TO DO:
 
+- Give the 'dude' (old man) his own .pal file, instead of calling the player's
+
 ## Tutorials:
 
 - Custom order for the Old Pokédex mode (https://github.com/pret/pokecrystal/wiki/Custom-order-for-the-Old-Pokédex-mode)
@@ -24,3 +26,7 @@
 ## Tutorials (Temporary):
 
 - Remove Pokémon sprite animations (https://github.com/pret/pokecrystal/wiki/Remove-Pokémon-sprite-animations)
+
+## Commits:
+
+- Scroll the SS.Anne when Departing (https://github.com/mauvesea/pokegold-sw97/commit/a62c7e142677764b3027649a91fdc2b284c457cb) & (https://github.com/mauvesea/pokegold-sw97/commit/25f5339d8d784e2e0410b05280a70042e550c449)
