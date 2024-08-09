@@ -85,7 +85,7 @@ assert BANK(Music_WildPokemonVictory) == BANK(Music_SuccessfulCapture)
 INCLUDE "audio/music/gymleadervictory.asm"
 INCLUDE "audio/music/mtmoonsquare.asm"
 INCLUDE "audio/music/gym.asm"
-INCLUDE "audio/music/pallettown.asm"
+INCLUDE "audio/music/rby/pallettown.asm" ; RBY Pallet Town
 INCLUDE "audio/music/profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"
 

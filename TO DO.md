@@ -1,6 +1,6 @@
 # TO DO:
 
-- Give the 'dude' (old man) his own .pal file, instead of calling the player's
+- Update the tilemap for the Trainer Card
 
 ## Tutorials:
 
