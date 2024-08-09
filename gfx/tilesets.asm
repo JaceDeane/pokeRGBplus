@@ -335,3 +335,21 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetHouseKantoGFX::
+INCBIN "gfx/tilesets/house_kanto.2bpp.lz"
+
+TilesetHouseKantoMeta::
+INCBIN "data/tilesets/house_kanto_metatiles.bin"
+
+TilesetHouseKantoColl::
+INCLUDE "data/tilesets/house_kanto_collision.asm"
+
+TilesetRedsHouseGFX::
+INCBIN "gfx/tilesets/reds_house.2bpp.lz"
+
+TilesetRedsHouseMeta::
+INCBIN "data/tilesets/reds_house_metatiles.bin"
+
+TilesetRedsHouseColl::
+INCLUDE "data/tilesets/reds_house_collision.asm"
