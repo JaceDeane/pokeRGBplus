@@ -106,7 +106,7 @@ GetCardPic:
 	call FarCopyBytes
 	ld hl, TrainerCardGFX
 	ld de, vTiles2 tile $23
-	ld bc, 6 tiles
+	ld bc, 12 tiles
 	ld a, BANK(TrainerCardGFX)
 	call FarCopyBytes
 	ret
