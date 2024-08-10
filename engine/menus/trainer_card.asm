@@ -54,7 +54,7 @@ TrainerCard:
 
 	call TrainerCard_PrintTopHalfOfCard
 
-	hlcoord 2, 9;2, 8 ; Coords for Card_Status
+	hlcoord 0, 9;2, 8 ; Coords for Card_Status
 	ld d, 8;6 ; Tiles Length
 	call TrainerCard_InitBorder
 
@@ -184,8 +184,8 @@ TrainerCard_Page2_Joypad:
 
 TrainerCard_Page3_LoadGFX:
 	call ClearSprites
-	hlcoord 0, 8
-	ld d, 6
+	hlcoord 0, 9
+	ld d, 8
 	call TrainerCard_InitBorder
 	call WaitBGMap
 	ld de, LeaderGFX2

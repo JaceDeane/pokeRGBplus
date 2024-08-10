@@ -1,6 +1,6 @@
 # TO DO:
 
-- Update the tilemap for the Trainer Card
+- Allow the Trainer Card to load a unique .pal for the border
 
 ## Tutorials:
 
