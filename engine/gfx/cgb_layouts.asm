@@ -620,7 +620,7 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BLUE ; Replace with Card Background
+	ld a, RIVAL1 ;BLUE ; Replace with Card Background
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, MISTY

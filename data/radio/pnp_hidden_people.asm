@@ -15,7 +15,7 @@ PnP_HiddenPeople_BeatE4:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+	db RIVAL3 ; To be replaced with GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

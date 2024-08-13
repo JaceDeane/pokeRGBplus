@@ -28,5 +28,5 @@ KantoGymLeaders:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+	db RIVAL3 ; To be replaced by GIOVANNI
 	db -1

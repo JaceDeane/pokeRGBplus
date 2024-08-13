@@ -1,6 +1,7 @@
 # TO DO:
 
 - Allow the Trainer Card to load a unique .pal for the border
+- Make all the Rival trainer classes use the same .pal instead of loading it 3x for 'seperate' classes
 
 ## Tutorials:
 

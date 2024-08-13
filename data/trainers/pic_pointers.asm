@@ -66,7 +66,7 @@ TrainerPicPointers::
 	dba_pic TwinsPic
 	dba_pic PokefanfPic
 	dba_pic RedPic
-	dba_pic Rival1Pic ;Blue Leader Class use Blue trainer sprite for now
+	dba_pic Rival3Pic
 	dba_pic OfficerPic
 	dba_pic GruntfPic
 	dba_pic MysticalmanPic

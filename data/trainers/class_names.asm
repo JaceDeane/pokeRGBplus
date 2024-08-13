@@ -64,7 +64,7 @@ TrainerClassNames::
 	li "TWINS"
 	li "#FAN"
 	li "<PKMN> TRAINER"
-	li "LEADER"
+	li "CHAMPION"
 	li "OFFICER"
 	li "ROCKET"
 	li "MYSTICALMAN"

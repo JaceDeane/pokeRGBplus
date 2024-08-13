@@ -66,7 +66,7 @@ TrainerGroups:
 	dw TwinsGroup
 	dw PokefanFGroup
 	dw RedGroup
-	dw BlueGroup
+	dw Rival3Group
 	dw OfficerGroup
 	dw GruntFGroup
 	dw MysticalmanGroup
