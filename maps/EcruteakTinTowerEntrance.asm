@@ -31,7 +31,7 @@ EcruteakTinTowerEntranceInitializeSagesCallback:
 	clearevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
 	setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE
-	checkitem CLEAR_BELL
+	checkitem OAKS_PARCEL
 	iftrue .NoClearBell
 	setscene SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS
 .NoClearBell:
@@ -87,7 +87,7 @@ EcruteakTinTowerEntranceSageScript:
 	iftrue .AllowedThrough
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .RangClearBell
-	checkitem CLEAR_BELL
+	checkitem OAKS_PARCEL
 	iftrue .GotClearBell
 	writetext EcruteakTinTowerEntranceSageText_NoClearBell
 	waitbutton

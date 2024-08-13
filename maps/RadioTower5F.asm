@@ -120,7 +120,7 @@ RadioTower5FRocketBossScript:
 	opentext
 	writetext RadioTower5FDirectorThankYouText
 	promptbutton
-	verbosegiveitem CLEAR_BELL
+	verbosegiveitem OAKS_PARCEL
 	writetext RadioTower5FDirectorDescribeClearBellText
 	waitbutton
 	closetext
