@@ -620,9 +620,9 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, RIVAL1 ;BLUE ; Replace with Card Background
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	ld a, PREDEFPAL_TRAINER_CARD
+	call GetPredefPal
+	call LoadHLPaletteIntoDE
 	ld a, MISTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
