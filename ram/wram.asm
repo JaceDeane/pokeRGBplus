@@ -3060,8 +3060,10 @@ wKarensRoomSceneID::                              db
 wLancesRoomSceneID::                              db
 wHallOfFameSceneID::                              db
 wRoute27SceneID::                                 db
-wNewBarkTownSceneID::                             db
-wElmsLabSceneID::                                 db
+wNewBarkTownSceneID::                             db ; Unused RGB+
+wPalletTownSceneID::                             db 
+wElmsLabSceneID::                                 db ; Unused RGB+
+wOaksLabSceneID::                                 db
 wPlayersHouse1FSceneID::                          db
 wRoute29SceneID::                                 db
 wCherrygroveCitySceneID::                         db
@@ -3120,7 +3122,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

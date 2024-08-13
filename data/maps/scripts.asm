@@ -392,7 +392,6 @@ INCLUDE "maps/Route43Gate.asm"
 INCLUDE "maps/RedsHouse1F.asm"
 INCLUDE "maps/RedsHouse2F.asm"
 INCLUDE "maps/BluesHouse.asm"
-INCLUDE "maps/OaksLab.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -484,5 +483,6 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/OaksLab.asm"
 
 ENDSECTION
