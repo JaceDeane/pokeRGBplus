@@ -1,5 +1,5 @@
 	object_const_def
-	const PALLETTOWN_TEACHER
+	const PALLETTOWN_GIRL
 	const PALLETTOWN_FISHER
 	const PALLETTOWN_OAK
 
@@ -24,8 +24,8 @@ PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
 	endcallback
 
-PalletTownTeacherScript:
-	jumptextfaceplayer PalletTownTeacherText
+PalletTownGirlScript:
+	jumptextfaceplayer PalletTownGirlText
 
 PalletTownFisherScript:
 	jumptextfaceplayer PalletTownFisherText
@@ -33,14 +33,14 @@ PalletTownFisherScript:
 PalletTownSign:
 	jumptext PalletTownSignText
 
-RedsHouseSign:
-	jumptext RedsHouseSignText
+PlayersHouseSign:
+	jumptext PlayersHouseSignText
 
 OaksLabSign:
 	jumptext OaksLabSignText
 
-BluesHouseSign:
-	jumptext BluesHouseSignText
+RivalsHouseSign:
+	jumptext RivalsHouseSignText
 	
 OakStopsYouLeft:
 	playmusic MUSIC_PROF_OAK
@@ -167,32 +167,35 @@ PalletTownOakItsUnsafeText:
 	line "me!"
 	done
 
-PalletTownTeacherText:
+PalletTownGirlText:
 	text "I'm raising #-"
-	line "MON too."
+	line "MON too!"
 
-	para "They serve as my"
-	line "private guards."
+	para "When they get"
+	line "strong, they can"
+	cont "protect me!"
 	done
 
 PalletTownFisherText:
 	text "Technology is"
 	line "incredible!"
 
-	para "You can now trade"
-	line "#MON across"
-	cont "time like e-mail."
+	para "You can now store"
+	line "and recall items"
+	
+	para "and #MON as"
+	line "data via PC!"
 	done
 
 PalletTownSignText:
 	text "PALLET TOWN"
 
-	para "A Tranquil Setting"
-	line "of Peace & Purity"
+	para "Shades of your"
+	line "journey await!"
 	done
 
-RedsHouseSignText:
-	text "RED'S HOUSE"
+PlayersHouseSignText:
+	text "<PLAYER>'s HOUSE"
 	done
 
 OaksLabSignText:
@@ -200,8 +203,8 @@ OaksLabSignText:
 	line "RESEARCH LAB"
 	done
 
-BluesHouseSignText:
-	text "BLUE'S HOUSE"
+RivalsHouseSignText:
+	text "<RIVAL>'s HOUSE"
 	done
 
 PalletTown_MapEvents:
@@ -218,11 +221,11 @@ PalletTown_MapEvents:
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign
-	bg_event  3,  5, BGEVENT_READ, RedsHouseSign
+	bg_event  3,  5, BGEVENT_READ, PlayersHouseSign
 	bg_event 13, 13, BGEVENT_READ, OaksLabSign
-	bg_event 11,  5, BGEVENT_READ, BluesHouseSign
+	bg_event 11,  5, BGEVENT_READ, RivalsHouseSign
 
 	def_object_events
-	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
+	object_event  3,  8, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownGirlScript, -1
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
 	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_OAK_APPEARED_IN_PALLET
