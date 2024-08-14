@@ -287,6 +287,6 @@ FastShipGroupSprites:
 	db 0 ; end
 
 CableClubGroupSprites:
- (no outdoor maps)
+; (no outdoor maps)
 	; 0 of max 9 walking sprites
 	db 0 ; end
