@@ -32,7 +32,7 @@ MountMoonRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_TOTODILE
+	;loadtrainer RIVAL2, RIVAL2_1_TOTODILE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -41,7 +41,7 @@ MountMoonRivalBattleScript:
 .Totodile:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_CHIKORITA
+	;loadtrainer RIVAL2, RIVAL2_1_CHIKORITA
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -50,7 +50,7 @@ MountMoonRivalBattleScript:
 .Chikorita:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_CYNDAQUIL
+	;loadtrainer RIVAL2, RIVAL2_1_CYNDAQUIL
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
