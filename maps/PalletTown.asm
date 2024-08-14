@@ -48,8 +48,8 @@ OakStopsYouLeft:
 	writetext PalletTownOakHeyWaitDontGoOutText
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
-	closetext
 	appear PALLETTOWN_OAK
+	closetext
 	setevent EVENT_OAK_APPEARED_IN_PALLET
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
 	opentext
@@ -66,8 +66,8 @@ OakStopsYouRight:
 	writetext PalletTownOakHeyWaitDontGoOutText
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
-	closetext
 	appear PALLETTOWN_OAK
+	closetext
 	setevent EVENT_OAK_APPEARED_IN_PALLET
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementRight
 	opentext
