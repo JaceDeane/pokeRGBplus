@@ -1,6 +1,8 @@
 # TO DO:
 
 - Make all the Rival trainer classes use the same .pal instead of loading it 3x for 'seperate' classes
+- Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
+- Remove the now-redundant variable sprites (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#5-remove-the-now-redundant-variable-sprites)
 
 ## Tutorials:
 
