@@ -425,9 +425,10 @@ StatsScreen_InitUpperHalf:
 	inc hl
 	ld [hl], "."
 	inc hl
-	hlcoord 10, 0
+	farcall Pokedex_GetDexNumber
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	ld de, wTextDecimalByte
+	ld de, wUnusedBCDNumber
+	hlcoord 10, 0
 	call PrintNum
 	hlcoord 14, 0
 	call PrintLevel
