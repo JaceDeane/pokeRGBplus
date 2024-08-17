@@ -14,8 +14,6 @@
 
 ## Tutorials:
 
-- Custom order for the Old Pokédex mode (https://github.com/pret/pokecrystal/wiki/Custom-order-for-the-Old-Pokédex-mode)
-
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
 
 - (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
