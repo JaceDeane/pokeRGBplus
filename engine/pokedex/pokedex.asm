@@ -93,6 +93,7 @@ InitPokedex:
 	ld [wPrevDexEntryBackup], a
 	ld [wUnusedPokedexByte], a
 
+	;call Pokedex_CheckUnlockedNewMode ; Unnecessary to call this until unique flags/variables set
 	call Pokedex_CheckUnlockedUnownMode
 
 	ld a, [wLastDexMode]
@@ -103,6 +104,20 @@ InitPokedex:
 	call Pokedex_GetLandmark
 	farcall DrawDexEntryScreenRightEdge
 	call Pokedex_ResetBGMapMode
+	ret
+
+Pokedex_CheckUnlockedNewMode:
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_UNOWN_DEX_F, a ; Replace with a unique flag to enable NewMode
+	jr nz, .unlocked
+
+	xor a
+	ld [wUnlockedUnownMode], a ; Replace with a unique wVariable to enable NewMode
+	ret
+
+.unlocked
+	ld a, TRUE
+	ld [wUnlockedUnownMode], a ; Replace with a unique wVariable to enable NewMode
 	ret
 
 Pokedex_CheckUnlockedUnownMode:
@@ -526,13 +541,19 @@ Pokedex_InitOptionScreen:
 	ret
 
 Pokedex_UpdateOptionScreen:
+	ld a, [wUnlockedUnownMode] ; If Post-Game
+	and a
+	jr nz, .okay3 ; NewMode unlocked
+	ld de, .BasicModeArrowCursorData ; No NewMode, therefore no UnownMode
+	jr .okay2
+.okay3
 	ld a, [wUnlockedUnownMode]
 	and a
-	jr nz, .okay
-	ld de, .NoUnownModeArrowCursorData
+	jr nz, .okay ; NewMode and Unown Mode unlocked
+	ld de, .NoUnownModeArrowCursorData ; Only NewMode unlocked
 	jr .okay2
 .okay
-	ld de, .ArrowCursorData
+	ld de, .ArrowCursorData 
 .okay2
 	call Pokedex_MoveArrowCursor
 	call c, Pokedex_DisplayModeDescription
@@ -557,28 +578,29 @@ Pokedex_UpdateOptionScreen:
 	ld [wJumptableIndex], a
 	ret
 
+.BasicModeArrowCursorData:
+	db D_UP | D_DOWN, 2
+	dwcoord 2,  4 ; OLD
+	dwcoord 2,  6 ; ABC
+
 .NoUnownModeArrowCursorData:
 	db D_UP | D_DOWN, 3
-	dwcoord 2,  4 ; NEW
-	dwcoord 2,  6 ; OLD
-	dwcoord 2,  8 ; ABC
+	dwcoord 2,  4 ; OLD
+	dwcoord 2,  6 ; ABC
+	dwcoord 2,  8 ; NEW
 
 .ArrowCursorData:
 	db D_UP | D_DOWN, 4
-	dwcoord 2,  4 ; NEW
-	dwcoord 2,  6 ; OLD
-	dwcoord 2,  8 ; ABC
+	dwcoord 2,  4 ; OLD
+	dwcoord 2,  6 ; ABC
+	dwcoord 2,  8 ; NEW
 	dwcoord 2, 10 ; UNOWN
 
 .MenuActionJumptable:
-	dw .MenuAction_NewMode
 	dw .MenuAction_OldMode
 	dw .MenuAction_ABCMode
+	dw .MenuAction_NewMode
 	dw .MenuAction_UnownMode
-
-.MenuAction_NewMode:
-	ld b, DEXMODE_NEW
-	jr .ChangeMode
 
 .MenuAction_OldMode:
 	ld b, DEXMODE_OLD
@@ -586,6 +608,10 @@ Pokedex_UpdateOptionScreen:
 
 .MenuAction_ABCMode:
 	ld b, DEXMODE_ABC
+	
+.MenuAction_NewMode:
+	ld b, DEXMODE_NEW
+	jr .ChangeMode
 
 .ChangeMode:
 	ld a, [wCurDexMode]
@@ -1192,6 +1218,12 @@ Pokedex_DrawOptionScreenBG:
 	hlcoord 3, 4
 	ld de, .Modes
 	call PlaceString
+	ld a, [wUnlockedUnownMode] ; Checks if NewMode unlocked
+	and a
+	ret z
+	hlcoord 3, 8
+	ld de, .FamilyOrder
+	call PlaceString
 	ld a, [wUnlockedUnownMode]
 	and a
 	ret z
@@ -1204,10 +1236,12 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "NEW #DEX MODE"
-	next "OLD #DEX MODE"
+	db   "#DEX ORDER"
 	next "A to Z MODE"
 	db   "@"
+
+.FamilyOrder:
+	db "FAMILY ORDER@"
 
 .UnownMode:
 	db "UNOWN MODE@"
@@ -1624,13 +1658,18 @@ Pokedex_OrderMonsByMode:
 	jp hl
 
 .Jumptable:
-	dw .NewMode
 	dw .OldMode
 	dw Pokedex_ABCMode
+	dw .NewMode
+
+.OldMode:
+	ld de, OldPokedexOrder
+	ld hl, wPokedexOrder
+	ld c, NUM_POKEMON - 100 ; Only 151 Pokémon
+	jr .loopnew
 
 .NewMode:
-	ld de, NewPokedexOrder
-.do_dex
+	ld de, FamilyPokedexOrder ; Replaces NewPokedexOrder
 	ld hl, wPokedexOrder
 	ld c, NUM_POKEMON
 .loopnew
@@ -1641,10 +1680,6 @@ Pokedex_OrderMonsByMode:
 	jr nz, .loopnew
 	call .FindLastSeen
 	ret
-
-.OldMode:
-	ld de, OldPokedexOrder
-	jr .do_dex
 
 .FindLastSeen:
 	ld hl, wPokedexOrder + NUM_POKEMON - 1
@@ -1701,18 +1736,16 @@ Pokedex_ABCMode:
 
 INCLUDE "data/pokemon/dex_order_alpha.asm"
 
-INCLUDE "data/pokemon/dex_order_new.asm"
+;INCLUDE "data/pokemon/dex_order_new.asm"
 
 Pokedex_GetDexNumber:
 ; Get the intended number of the selected Pokémon.
 	push bc
 	push hl
-	
 	ld a, [wTempSpecies] ;a = current mon (internal number)
 	ld b, a ;b = Needed mon (a and b must be matched)
 	ld c, 0 ;c = index
-	ld hl,OldPokedexOrder
-	
+	ld hl, OldPokedexOrder
 .loop
 	inc c
 	ld a, [hli]
@@ -1746,22 +1779,22 @@ Pokedex_DisplayModeDescription:
 	ret
 
 .Modes:
-	dw .NewMode
 	dw .OldMode
 	dw .ABCMode
+	dw .NewMode
 	dw .UnownMode
-
-.NewMode:
-	db   "<PK><MN> are listed by"
-	next "evolution type.@"
 
 .OldMode:
 	db   "<PK><MN> are listed by"
-	next "official type.@"
+	next "official number.@"
 
 .ABCMode:
 	db   "<PK><MN> are listed"
 	next "alphabetically.@"
+
+.NewMode:
+	db   "<PK><MN> are listed by"
+	next "evolution type.@"
 
 .UnownMode:
 	db   "UNOWN are listed"

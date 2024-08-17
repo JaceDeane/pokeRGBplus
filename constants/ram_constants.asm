@@ -8,9 +8,9 @@ DEF AUTO_INPUT EQU $ff
 
 ; wCurDexMode::
 	const_def
-	const DEXMODE_NEW
 	const DEXMODE_OLD
 	const DEXMODE_ABC
+	const DEXMODE_NEW
 	const DEXMODE_UNOWN
 
 ; wMonType::

@@ -13,11 +13,13 @@ RedHouse1FNoopScene:
 RedsMom:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue .GotAPokemon
 	writetext MomWakeUpText
 	givepoke PIKACHU, 5, BERRY ; debug
 	waitbutton
+	waitsfx ; debug
+	playsound SFX_ITEM ; debug
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM ; debug
 	end

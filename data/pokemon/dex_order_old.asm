@@ -153,7 +153,7 @@ OldPokedexOrder:
 	db DRAGONITE
 	db MEWTWO
 	db MEW
-	db CHIKORITA
+	db CHIKORITA ; In OldMode, nothing past here is loaded
 	db BAYLEEF
 	db MEGANIUM
 	db CYNDAQUIL

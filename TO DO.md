@@ -1,9 +1,16 @@
 # TO DO:
 
 - Fix Rival sprite in "New Name" intro naming scene
+
 - Make all the Rival trainer classes use the same .pal instead of loading it 3x for 'seperate' classes
+
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
+
 - Remove the now-redundant variable sprites (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#5-remove-the-now-redundant-variable-sprites)
+
+## ! Bugs: !
+
+- Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
 
 ## Tutorials:
 
