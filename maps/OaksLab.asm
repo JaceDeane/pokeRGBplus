@@ -8,6 +8,8 @@
 	const OAKSLAB_POKE_BALL1
 	const OAKSLAB_POKE_BALL2
 	const OAKSLAB_POKE_BALL3
+	const OAKSLAB_POKEDEX1
+	const OAKSLAB_POKEDEX2
 
 OaksLab_MapScripts:
 	def_scene_scripts
@@ -20,7 +22,6 @@ OaksLab_MapScripts:
 	scene_script OaksLabParcelScene,       SCENE_OAKSLAB_PARCEL
 
 	def_callbacks
-	callback MAPCALLBACK_TILES,   OaksLabPokeDexCallback
 	callback MAPCALLBACK_OBJECTS, OaksLabOakCallback
 
 OaksLabOakNotAroundScene:
@@ -52,13 +53,6 @@ OaksLabNoop3Scene:
 	
 OaksLabParcelScene:
 	end
-	
-OaksLabPokeDexCallback:
-	checkevent EVENT_GOT_POKEDEX
-	iffalse .DontHidePokeDex
-	changeblock 2, 1, $2E ; replace pokedex tile
-.DontHidePokeDex:
-	endcallback
 	
 OaksLabOakCallback:
 	checkscene
@@ -240,7 +234,8 @@ OaksLabParcelScript:
 	playsound SFX_KEY_ITEM
 	waitsfx
 	closetext
-	changeblock 2, 1, $2E ; replace Pokedex tile
+	disappear OAKSLAB_POKEDEX1
+	disappear OAKSLAB_POKEDEX2
 	setevent EVENT_GOT_POKEDEX
 	setflag ENGINE_POKEDEX
 	opentext
@@ -1267,8 +1262,6 @@ OaksLab_MapEvents:
 	bg_event  5,  0, BGEVENT_READ, OaksLabPoster2
 	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
 	bg_event  0,  1, BGEVENT_READ, OaksLabPC
-	bg_event  2,  1, BGEVENT_READ, OaksLabPokeDexScript
-	bg_event  3,  1, BGEVENT_READ, OaksLabPokeDexScript
 
 	def_object_events
 	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfOakScript, -1
@@ -1280,3 +1273,5 @@ OaksLab_MapEvents:
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_CHARMANDER_POKEBALL_IN_OAKS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_SQUIRTLE_POKEBALL_IN_OAKS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_BULBASAUR_POKEBALL_IN_OAKS_LAB
+	object_event  2,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDexScript, EVENT_GOT_POKEDEX
+	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDexScript, EVENT_GOT_POKEDEX
