@@ -263,6 +263,21 @@ TilesetGymAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
+	
+TilesetCavernAnim:
+	dw vTiles2 tile $14, ReadTileToAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw vTiles2 tile $14, WriteTileFromAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  DoneTileAnimation
 
 TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
