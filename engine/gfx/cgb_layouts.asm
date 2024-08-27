@@ -405,11 +405,11 @@ _CGB_SlotMachine:
 	call FillBoxCGB
 	hlcoord 3, 2, wAttrmap
 	lb bc, 10, 1
-	ld a, $1 ; lights palette
+	ld a, $6 ; lights palette
 	call FillBoxCGB
 	hlcoord 16, 2, wAttrmap
 	lb bc, 10, 1
-	ld a, $1 ; lights palette
+	ld a, $6 ; lights palette
 	call FillBoxCGB
 	hlcoord 0, 12, wAttrmap
 	ld bc, 6 * SCREEN_WIDTH
