@@ -3061,12 +3061,13 @@ wLancesRoomSceneID::                              db
 wHallOfFameSceneID::                              db
 wRoute27SceneID::                                 db
 wNewBarkTownSceneID::                             db ; Unused RGB+
-wPalletTownSceneID::                             db 
+wPalletTownSceneID::                              db 
 wElmsLabSceneID::                                 db ; Unused RGB+
 wOaksLabSceneID::                                 db
 wPlayersHouse1FSceneID::                          db
 wRoute29SceneID::                                 db
-wCherrygroveCitySceneID::                         db
+wCherrygroveCitySceneID::                         db ; Unused RGB+
+wViridianCitySceneID::                            db
 wMrPokemonsHouseSceneID::                         db
 wRoute32SceneID::                                 db
 wRoute35NationalParkGateSceneID::                 db
@@ -3122,7 +3123,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 47
+	ds 46
 
 ; fight counts
 wJackFightCount::    db

@@ -90,8 +90,8 @@ ProfOakScript:
 	iftrue OaksLabParcelScript
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iffalse WhichMonYouWantScript
-	;checkevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
-	;iftrue .Give5Pokeballs
+	checkevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
+	iftrue .Give5Pokeballs
 	checkscene
 	ifequal SCENE_OAKSLAB_TAKE_YOU_ON, OaksLabYourPokemonCanFightScript
 	checkscene
@@ -259,7 +259,7 @@ OaksLabParcelScript:
 	setevent EVENT_GAMBLER_ASLEEP
 	clearevent EVENT_GAMBLER_AWAKE
 	;setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
-	;setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
+	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
 	;setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
 	end
 	
@@ -277,7 +277,7 @@ OaksLabParcelScript:
 	setevent EVENT_GAMBLER_ASLEEP
 	clearevent EVENT_GAMBLER_AWAKE
 	;setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
-	;setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
+	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
 	;setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
 	end
 	
@@ -651,7 +651,7 @@ AfterBattleScript:
 	special HealParty
 	special RestartMapMusic
 	setscene SCENE_OAKSLAB_NOOP
-	;setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
+	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
 .RivalSmellYouLaterRight
@@ -665,7 +665,7 @@ AfterBattleScript:
 	special HealParty
 	special RestartMapMusic
 	setscene SCENE_OAKSLAB_NOOP
-	;setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
+	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
 RivalSmellYouLaterMovementLeft1:
