@@ -3068,6 +3068,7 @@ wPlayersHouse1FSceneID::                          db
 wRoute29SceneID::                                 db
 wCherrygroveCitySceneID::                         db ; Unused RGB+
 wViridianCitySceneID::                            db
+wViridianMartSceneID::                            db
 wMrPokemonsHouseSceneID::                         db
 wRoute32SceneID::                                 db
 wRoute35NationalParkGateSceneID::                 db

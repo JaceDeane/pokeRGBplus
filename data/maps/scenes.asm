@@ -33,6 +33,7 @@ MapScenes::
 	scene_var ROUTE_29,                                    wRoute29SceneID
 	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+
 	scene_var VIRIDIAN_CITY,                               wViridianCitySceneID
+	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
 	scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID
 	scene_var ROUTE_32,                                    wRoute32SceneID
 	scene_var ROUTE_35_NATIONAL_PARK_GATE,                 wRoute35NationalParkGateSceneID
