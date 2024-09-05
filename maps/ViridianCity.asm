@@ -151,7 +151,7 @@ ViridianGymLockedDoorScript:
 	writetext ViridianCityGymLockedText
 	waitbutton
 	closetext
-	applymovement PLAYER, ViridianCity_TurnStepDownMovement
+	applymovement PLAYER, ViridianCity_TurnDownMovement
 	;playsound SFX_LEDGE_1
 	;applymovement PLAYER, ViridianCity_TurnDownMovement3
 	;waitsfx
