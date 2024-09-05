@@ -205,7 +205,18 @@ OaksLabPokeDexScript:
 	jumptext OaksLabPokedexText
 	
 OaksLabParcelScript:
+	readvar VAR_FACING
+	ifequal DOWN, .FacingDown
+	ifequal RIGHT, .FacingRight
 	moveobject OAKSLAB_BLUE, 4, 8
+	sjump .Fallthrough
+.FacingDown
+	moveobject OAKSLAB_BLUE, 4, 6
+	sjump .Fallthrough
+.FacingRight
+	moveobject OAKSLAB_BLUE, 4, 7
+	sjump .Fallthrough
+.Fallthrough
 	setscene SCENE_OAKSLAB_PARCEL
 	writetext OaksLabOak1DeliverParcelText
 	playsound SFX_KEY_ITEM
@@ -218,7 +229,19 @@ OaksLabParcelScript:
 	closetext
 	appear OAKSLAB_BLUE
 	playmusic MUSIC_RIVAL_ENCOUNTER
+	;applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement
+	readvar VAR_FACING
+	ifequal DOWN, .FacingDown2
+	ifequal RIGHT, .FacingRight2
 	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement
+	sjump .Fallthrough2
+.FacingDown2
+	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement1
+	sjump .Fallthrough2
+.FacingRight2
+	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement2
+	sjump .Fallthrough2
+.Fallthrough2
 	special RestartMapMusic
 	opentext
 	writetext OaksLabRivalGrampsText
@@ -283,6 +306,19 @@ OaksLabParcelScript:
 	
 BlueParcelWalkUpMovement:
 	slow_step UP
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	step_end
+
+BlueParcelWalkUpMovement1:
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	step_end
+	
+BlueParcelWalkUpMovement2:
 	slow_step UP
 	slow_step UP
 	slow_step UP
