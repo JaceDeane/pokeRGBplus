@@ -143,9 +143,6 @@ INCBIN "data/tilesets/train_station_metatiles.bin"
 TilesetTrainStationColl::
 INCLUDE "data/tilesets/train_station_collision.asm"
 
-TilesetForestMeta::
-INCBIN "data/tilesets/forest_metatiles.bin"
-
 
 SECTION "Tileset Data 4", ROMX
 
@@ -193,6 +190,9 @@ INCBIN "data/tilesets/unused_johto_metatiles.bin"
 
 UnusedTilesetJohtoColl:: ; unreferenced
 INCLUDE "data/tilesets/unused_johto_collision.asm"
+
+TilesetForestMeta::
+INCBIN "data/tilesets/forest_metatiles.bin"
 
 
 SECTION "Tileset Data 5", ROMX

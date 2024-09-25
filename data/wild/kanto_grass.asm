@@ -197,6 +197,34 @@ KantoGrassWildMons:
 	db 40, GRAVELER
 	db 40, GRAVELER
 	end_grass_wildmons
+	
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 3, PIDGEY
+	db 3, RATTATA
+	db 5, PIDGEY
+	db 7, RATTATA
+	db 7, CATERPIE
+	db 4, WEEDLE
+	db 4, WEEDLE
+	; day
+	db 3, PIDGEY
+	db 3, RATTATA
+	db 5, PIDGEY
+	db 7, RATTATA
+	db 7, CATERPIE
+	db 4, WEEDLE
+	db 4, WEEDLE
+	; nite
+	db 3, PIDGEY
+	db 3, RATTATA
+	db 5, PIDGEY
+	db 7, RATTATA
+	db 7, CATERPIE
+	db 4, WEEDLE
+	db 4, WEEDLE
+	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

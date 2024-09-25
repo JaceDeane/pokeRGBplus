@@ -1,7 +1,7 @@
 SECTION "Map Blocks 1", ROMX
 
 Route32_Blocks:
-	INCBIN "maps/Route32.blk"
+	;INCBIN "maps/Route32.blk"
 
 Route40_Blocks:
 	INCBIN "maps/Route40.blk"
@@ -1051,5 +1051,8 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+ViridianForest_Blocks:
+	INCBIN "maps/ViridianForest.blk"
 
 ENDSECTION

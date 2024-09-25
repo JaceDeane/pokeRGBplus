@@ -2,6 +2,12 @@
 
 - Fix Rival sprite in "New Name" intro naming scene
 
+- (!) Create and Update the Kanto Landmarks
+
+  - Viridian Forest needs its landmark data updated
+
+- (!) Set proper wild encounter data (!)
+
 - Make all the Rival trainer classes use the same .pal instead of loading it 3x for 'seperate' classes
 
 - Simplify the sleeping Old Man event to just use one event_flag instead of two
