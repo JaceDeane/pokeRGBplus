@@ -2,15 +2,13 @@
 
 - Fix Rival sprite in "New Name" intro naming scene
 
-- (!) Create and Update the Kanto Landmarks
-
-  - Viridian Forest needs its landmark data updated
+- (!) Create and Update the Kanto Landmark co-ords
   
 - Add blocks for the gate buildings to the FOREST tileset
 
 - (!) Set proper wild encounter data (!)
 
-- Make all the Rival trainer classes use the same .pal instead of loading it 3x for 'seperate' classes
+- Make all the Rival trainer classes use the same .pal for the battle sprite instead of loading it 3x for 'separate' classes
 
 - Simplify the sleeping Old Man event to just use one event_flag instead of two
 
@@ -19,6 +17,8 @@
 - Remove the now-redundant variable sprites (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#5-remove-the-now-redundant-variable-sprites)
 
 ## ! Bugs: !
+
+- (!) Force the Pokedex to load in Area data for Kanto only
 
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
 
