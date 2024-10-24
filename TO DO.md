@@ -5,6 +5,8 @@
 - (!) Create and Update the Kanto Landmarks
 
   - Viridian Forest needs its landmark data updated
+  
+- Add blocks for the gate buildings to the FOREST tileset
 
 - (!) Set proper wild encounter data (!)
 
