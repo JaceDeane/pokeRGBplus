@@ -74,7 +74,7 @@ InitMapNameSign::
 	ret z
 	cp LANDMARK_RADIO_TOWER
 	ret z
-	cp LANDMARK_LAV_RADIO_TOWER
+	cp LANDMARK_BILLS_HOUSE
 	ret z
 	cp LANDMARK_UNDERGROUND_PATH
 	ret z
