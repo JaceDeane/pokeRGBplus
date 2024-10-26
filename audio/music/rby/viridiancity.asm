@@ -1,23 +1,23 @@
-Music_Cities1::
+Music_RBYViridianCity::
 	channel_count 4
-	channel 1, Music_Cities1_Ch1
-	channel 2, Music_Cities1_Ch2
-	channel 3, Music_Cities1_Ch3
-	channel 4, Music_Cities1_Ch4
+	channel 1, Music_RBYViridianCity_Ch1
+	channel 2, Music_RBYViridianCity_Ch2
+	channel 3, Music_RBYViridianCity_Ch3
+	channel 4, Music_RBYViridianCity_Ch4
 
-Music_Cities1_Ch1_AlternateTempo::
+Music_RBYViridianCity_Ch1_AlternateTempo::
 	tempo 232
-	sound_loop 0, Music_Cities1_branch_aa79
+	sound_loop 0, Music_RBYViridianCity_branch_aa79
 
-Music_Cities1_Ch1::
+Music_RBYViridianCity_Ch1::
 	tempo 144
 
-Music_Cities1_branch_aa79::
+Music_RBYViridianCity_branch_aa79::
 	volume 7, 7
 	vibrato 8, 2, 4
 	duty_cycle 3
 
-Music_Cities1_branch_aa80::
+Music_RBYViridianCity_branch_aa80::
 	note_type 12, 12, 5
 	octave 3
 	note G#, 4
@@ -46,7 +46,7 @@ Music_Cities1_branch_aa80::
 	octave 2
 	note B_, 4
 	note_type 12, 12, 5
-	sound_call Music_Cities1_branch_ab7d
+	sound_call Music_RBYViridianCity_branch_ab7d
 	octave 3
 	note D#, 6
 	note E_, 2
@@ -97,7 +97,7 @@ Music_Cities1_branch_aa80::
 	note B_, 2
 	note B_, 4
 	note_type 12, 12, 5
-	sound_call Music_Cities1_branch_ab7d
+	sound_call Music_RBYViridianCity_branch_ab7d
 	octave 3
 	note D#, 4
 	note D#, 2
@@ -121,7 +121,7 @@ Music_Cities1_branch_aa80::
 	note C#, 2
 	note E_, 4
 	note_type 12, 11, 3
-	sound_call Music_Cities1_branch_ab8a
+	sound_call Music_RBYViridianCity_branch_ab8a
 	note A_, 2
 	note B_, 2
 	note A_, 2
@@ -150,7 +150,7 @@ Music_Cities1_branch_aa80::
 	note B_, 2
 	octave 3
 
-Music_Cities1_branch_ab12::
+Music_RBYViridianCity_branch_ab12::
 	note C#, 2
 	note D#, 2
 	note C#, 2
@@ -160,7 +160,7 @@ Music_Cities1_branch_ab12::
 	octave 3
 	note C#, 2
 	note D#, 2
-	sound_loop 2, Music_Cities1_branch_ab12
+	sound_loop 2, Music_RBYViridianCity_branch_ab12
 	note E_, 2
 	octave 2
 	note B_, 4
@@ -187,7 +187,7 @@ Music_Cities1_branch_ab12::
 	octave 2
 	note B_, 2
 	octave 3
-	sound_call Music_Cities1_branch_ab8a
+	sound_call Music_RBYViridianCity_branch_ab8a
 	note A_, 2
 	note E_, 2
 	note A_, 2
@@ -247,9 +247,9 @@ Music_Cities1_branch_ab12::
 	octave 3
 	note E_, 2
 	note F#, 2
-	sound_loop 0, Music_Cities1_branch_aa80
+	sound_loop 0, Music_RBYViridianCity_branch_aa80
 
-Music_Cities1_branch_ab7d::
+Music_RBYViridianCity_branch_ab7d::
 	octave 3
 	note F#, 2
 	note D#, 4
@@ -264,7 +264,7 @@ Music_Cities1_branch_ab7d::
 	note C#, 2
 	sound_ret
 
-Music_Cities1_branch_ab8a::
+Music_RBYViridianCity_branch_ab8a::
 	note A_, 2
 	note E_, 2
 	note C#, 2
@@ -275,9 +275,9 @@ Music_Cities1_branch_ab8a::
 	sound_ret
 
 
-Music_Cities1_Ch2::
+Music_RBYViridianCity_Ch2::
 	vibrato 5, 1, 5
-	sound_call Music_Cities1_branch_ac00
+	sound_call Music_RBYViridianCity_branch_ac00
 	octave 4
 	note G#, 2
 	note_type 12, 12, 4
@@ -290,7 +290,7 @@ Music_Cities1_Ch2::
 	note E_, 6
 	note F#, 6
 	note G#, 4
-	sound_call Music_Cities1_branch_ac00
+	sound_call Music_RBYViridianCity_branch_ac00
 	octave 4
 	note G#, 2
 	note_type 12, 12, 4
@@ -364,9 +364,9 @@ Music_Cities1_Ch2::
 	note G#, 1
 	note_type 12, 10, 4
 	note A_, 1
-	sound_loop 0, Music_Cities1_Ch2
+	sound_loop 0, Music_RBYViridianCity_Ch2
 
-Music_Cities1_branch_ac00::
+Music_RBYViridianCity_branch_ac00::
 	duty_cycle 2
 	note_type 12, 12, 3
 	octave 4
@@ -408,16 +408,16 @@ Music_Cities1_branch_ac00::
 	sound_ret
 
 
-Music_Cities1_Ch3::
+Music_RBYViridianCity_Ch3::
 	note_type 12, 1, 1
-	toggle_perfect_pitch
+	pitch_offset 1 ;toggle_perfect_pitch
 
-Music_Cities1_branch_ac35::
+Music_RBYViridianCity_branch_ac35::
 	vibrato 0, 0, 0
 	octave 4
-	sound_call Music_Cities1_branch_acc5
-	sound_call Music_Cities1_branch_acc5
-	sound_call Music_Cities1_branch_acce
+	sound_call Music_RBYViridianCity_branch_acc5
+	sound_call Music_RBYViridianCity_branch_acc5
+	sound_call Music_RBYViridianCity_branch_acce
 	note G#, 2
 	note E_, 2
 	note F#, 2
@@ -426,7 +426,7 @@ Music_Cities1_branch_ac35::
 	note E_, 2
 	note F#, 2
 	note G#, 2
-	sound_call Music_Cities1_branch_acc5
+	sound_call Music_RBYViridianCity_branch_acc5
 	note B_, 2
 	note E_, 2
 	note F#, 2
@@ -435,8 +435,8 @@ Music_Cities1_branch_ac35::
 	note E_, 2
 	note F#, 2
 	note G#, 2
-	sound_call Music_Cities1_branch_acc5
-	sound_call Music_Cities1_branch_acce
+	sound_call Music_RBYViridianCity_branch_acc5
+	sound_call Music_RBYViridianCity_branch_acce
 	note G#, 2
 	note E_, 2
 	note F#, 2
@@ -537,9 +537,9 @@ Music_Cities1_branch_ac35::
 	note A_, 2
 	note G#, 2
 	note F#, 2
-	sound_loop 0, Music_Cities1_branch_ac35
+	sound_loop 0, Music_RBYViridianCity_branch_ac35
 
-Music_Cities1_branch_acc5::
+Music_RBYViridianCity_branch_acc5::
 	rest 2
 	note E_, 2
 	note F#, 2
@@ -550,7 +550,7 @@ Music_Cities1_branch_acc5::
 	note G#, 2
 	sound_ret
 
-Music_Cities1_branch_acce::
+Music_RBYViridianCity_branch_acce::
 	note A_, 2
 	note F#, 2
 	note G#, 2
@@ -586,28 +586,28 @@ Music_Cities1_branch_acce::
 	sound_ret
 
 
-Music_Cities1_Ch4::
+Music_RBYViridianCity_Ch4::
 	toggle_noise 0
-Music_Cities1_Ch4_MainLoop::
+Music_RBYViridianCity_Ch4_MainLoop::
 	drum_speed 12
-	sound_call Music_Cities1_branch_ad36
+	sound_call Music_RBYViridianCity_branch_ad36
 
-Music_Cities1_branch_acf3::
-	sound_call Music_Cities1_branch_ad36
-	sound_call Music_Cities1_branch_ad45
-	sound_call Music_Cities1_branch_ad45
-	sound_loop 2, Music_Cities1_branch_acf3
-	sound_call Music_Cities1_branch_ad36
-	sound_call Music_Cities1_branch_ad5f
-	sound_call Music_Cities1_branch_ad52
+Music_RBYViridianCity_branch_acf3::
+	sound_call Music_RBYViridianCity_branch_ad36
+	sound_call Music_RBYViridianCity_branch_ad45
+	sound_call Music_RBYViridianCity_branch_ad45
+	sound_loop 2, Music_RBYViridianCity_branch_acf3
+	sound_call Music_RBYViridianCity_branch_ad36
+	sound_call Music_RBYViridianCity_branch_ad5f
+	sound_call Music_RBYViridianCity_branch_ad52
 	drum_note 6, 6
 	drum_note 6, 6
 	drum_note 7, 4
-	sound_call Music_Cities1_branch_ad6e
-	sound_call Music_Cities1_branch_ad5f
-	sound_call Music_Cities1_branch_ad52
-	sound_call Music_Cities1_branch_ad6e
-	sound_call Music_Cities1_branch_ad52
+	sound_call Music_RBYViridianCity_branch_ad6e
+	sound_call Music_RBYViridianCity_branch_ad5f
+	sound_call Music_RBYViridianCity_branch_ad52
+	sound_call Music_RBYViridianCity_branch_ad6e
+	sound_call Music_RBYViridianCity_branch_ad52
 	drum_note 6, 6
 	drum_note 6, 6
 	drum_note 7, 2
@@ -618,9 +618,9 @@ Music_Cities1_branch_acf3::
 	drum_note 6, 6
 	drum_note 8, 6
 	drum_note 8, 4
-	sound_loop 0, Music_Cities1_Ch4_MainLoop
+	sound_loop 0, Music_RBYViridianCity_Ch4_MainLoop
 
-Music_Cities1_branch_ad36::
+Music_RBYViridianCity_branch_ad36::
 	drum_note 8, 6
 	drum_note 8, 6
 	drum_note 8, 4
@@ -630,7 +630,7 @@ Music_Cities1_branch_ad36::
 	drum_note 8, 2
 	sound_ret
 
-Music_Cities1_branch_ad45::
+Music_RBYViridianCity_branch_ad45::
 	drum_note 8, 6
 	drum_note 8, 6
 	drum_note 8, 4
@@ -639,7 +639,7 @@ Music_Cities1_branch_ad45::
 	drum_note 8, 4
 	sound_ret
 
-Music_Cities1_branch_ad52::
+Music_RBYViridianCity_branch_ad52::
 	drum_note 6, 6
 	drum_note 6, 6
 	drum_note 7, 4
@@ -648,7 +648,7 @@ Music_Cities1_branch_ad52::
 	drum_note 7, 4
 	sound_ret
 
-Music_Cities1_branch_ad5f::
+Music_RBYViridianCity_branch_ad5f::
 	drum_note 6, 6
 	drum_note 6, 6
 	drum_note 7, 4
@@ -658,7 +658,7 @@ Music_Cities1_branch_ad5f::
 	drum_note 6, 2
 	sound_ret
 
-Music_Cities1_branch_ad6e::
+Music_RBYViridianCity_branch_ad6e::
 	drum_note 6, 6
 	drum_note 6, 6
 	drum_note 7, 2

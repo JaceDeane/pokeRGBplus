@@ -24,7 +24,7 @@ Music:
 	dba Music_GameCorner
 	dba Music_Bicycle
 	dba Music_HallOfFame
-	dba Music_ViridianCity
+	dba Music_RBYViridianCity
 	dba Music_CeladonCity
 	dba Music_TrainerVictory
 	dba Music_WildPokemonVictory

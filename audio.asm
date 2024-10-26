@@ -75,7 +75,7 @@ INCLUDE "audio/music/printer.asm"
 
 SECTION "Songs 4", ROMX
 
-INCLUDE "audio/music/viridiancity.asm"
+INCLUDE "audio/music/rby/viridiancity.asm" ; RBY Version
 INCLUDE "audio/music/celadoncity.asm"
 
 INCLUDE "audio/music/wildpokemonvictory.asm"
@@ -85,8 +85,8 @@ assert BANK(Music_WildPokemonVictory) == BANK(Music_SuccessfulCapture)
 INCLUDE "audio/music/gymleadervictory.asm"
 INCLUDE "audio/music/mtmoonsquare.asm"
 INCLUDE "audio/music/gym.asm"
-INCLUDE "audio/music/rby/pallettown.asm" ; RBY Pallet Town
-INCLUDE "audio/music/rby/oakslab.asm" ; RBY Oaks Lab ;profoakspokemontalk.asm"
+INCLUDE "audio/music/rby/pallettown.asm" ; RBY Version
+INCLUDE "audio/music/rby/oakslab.asm" ; RBY Version ;profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"
 
 INCLUDE "audio/music/lookrival.asm"
