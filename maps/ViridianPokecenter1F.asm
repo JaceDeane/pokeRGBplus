@@ -1,5 +1,6 @@
 	object_const_def
 	const VIRIDIANPOKECENTER1F_NURSE
+	const VIRIDIANPOKECENTER1F_LINK_RECEPTIONIST
 	const VIRIDIANPOKECENTER1F_COOLTRAINER_M
 	const VIRIDIANPOKECENTER1F_COOLTRAINER_F
 	const VIRIDIANPOKECENTER1F_BUG_CATCHER
@@ -10,6 +11,10 @@ ViridianPokecenter1F_MapScripts:
 	def_callbacks
 
 ViridianPokecenter1FNurseScript:
+	jumpstd PokecenterNurseScript
+	
+ViridianPokecenter1FLinkReceptionistScript:
+	; Create new "jumpstd" for LinkReceptionistScript
 	jumpstd PokecenterNurseScript
 
 ViridianPokecenter1FCooltrainerMScript:
@@ -75,7 +80,6 @@ ViridianPokecenter1F_MapEvents:
 	def_warp_events
 	warp_event  3,  7, VIRIDIAN_CITY, 5
 	warp_event  4,  7, VIRIDIAN_CITY, 5
-	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
 
@@ -83,6 +87,7 @@ ViridianPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FNurseScript, -1
+	object_event 11,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FLinkReceptionistScript, -1
 	object_event  8,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
-	object_event  5,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, -1
-	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
+	object_event  4,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, -1
+	object_event  0,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1

@@ -1,6 +1,6 @@
 LoadSpecialMapPalette:
 	ld a, [wMapTileset]
-	cp TILESET_POKECOM_CENTER
+	cp TILESET_POKECENTER
 	jr z, .pokecom_2f
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside

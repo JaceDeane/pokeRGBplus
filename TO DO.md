@@ -10,6 +10,8 @@
 
 - Simplify the sleeping Old Man event to just use one event_flag instead of two
 
+- Add the Link Receptionist into `jumpstd` events section
+
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
 
 - Remove the now-redundant variable sprites (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#5-remove-the-now-redundant-variable-sprites)
@@ -17,6 +19,8 @@
 ## ! Bugs: !
 
 - (!) Force the Pokedex to load in Area data for Kanto only
+
+- Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)
 
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
 

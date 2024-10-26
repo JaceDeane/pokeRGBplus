@@ -69,9 +69,6 @@ INCLUDE "data/tilesets/port_collision.asm"
 TilesetPlayersHouseGFX::
 INCBIN "gfx/tilesets/players_house.2bpp.lz"
 
-TilesetPlayersHouseMeta::
-INCBIN "data/tilesets/players_house_metatiles.bin"
-
 TilesetPlayersHouseColl::
 INCLUDE "data/tilesets/players_house_collision.asm"
 
@@ -325,16 +322,16 @@ INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 SECTION "Tileset Data 8", ROMX
 
 TilesetHoOhWordRoomMeta::
-INCBIN "data/tilesets/ho_oh_word_room_metatiles.bin"
-
 TilesetKabutoWordRoomMeta::
-INCBIN "data/tilesets/kabuto_word_room_metatiles.bin"
-
 TilesetOmanyteWordRoomMeta::
-INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
-
 TilesetAerodactylWordRoomMeta::
-INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+INCBIN "data/tilesets/ho_oh_word_room_metatiles.bin"
+;INCBIN "data/tilesets/kabuto_word_room_metatiles.bin"
+;INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
+;INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetPlayersHouseMeta::
+INCBIN "data/tilesets/players_house_metatiles.bin"
 
 TilesetHouseKantoGFX::
 INCBIN "gfx/tilesets/house_kanto.2bpp.lz"
