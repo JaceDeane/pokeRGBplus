@@ -53,7 +53,8 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_1           ; 30
 	const LANDMARK_VIRIDIAN_CITY	 ; 31
 	const LANDMARK_VIRIDIAN_FOREST	 ; 32
-	const LANDMARK_ROUTE_2           ; 33; 34
+	const LANDMARK_DIGLETTS_CAVE_RT2 ; 33
+	const LANDMARK_ROUTE_2           ; 34
 	const LANDMARK_PEWTER_CITY       ; 35
 	const LANDMARK_ROUTE_3           ; 36
 	const LANDMARK_MT_MOON           ; 37
@@ -63,19 +64,18 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_25          ; 3b
 	const LANDMARK_BILLS_HOUSE       ; 3c - "SEA_COTTAGE"
 	const LANDMARK_ROUTE_5           ; 3d
-	const LANDMARK_UNDERGROUND_PATH
-	const LANDMARK_ROUTE_6           ; 3e
-	const LANDMARK_VERMILION_CITY    ; 3f
-	    ; 40 - "VERMILION_PORT" remove
+	const LANDMARK_UNDERGROUND_PATH  ; 3e
+	const LANDMARK_ROUTE_6           ; 3f
+	const LANDMARK_VERMILION_CITY    ; 40
 	const LANDMARK_DIGLETTS_CAVE     ; 41
 	const LANDMARK_ROUTE_9           ; 42
-	const LANDMARK_ROCK_TUNNEL       ; 43
-	const LANDMARK_ROUTE_10          ; 44
+	const LANDMARK_ROUTE_10          ; 43
+	const LANDMARK_ROCK_TUNNEL       ; 44
 	const LANDMARK_POWER_PLANT       ; 45
 	const LANDMARK_LAVENDER_TOWN     ; 46
 	const LANDMARK_POKEMON_TOWER     ; 47
 	const LANDMARK_ROUTE_8           ; 48
-	;const LANDMARK_UNDERGROUND_PATH2
+	const LANDMARK_UNDERGROUND_PATH2
 	const LANDMARK_ROUTE_7           ; 49
 	const LANDMARK_CELADON_CITY      ; 4a
 	const LANDMARK_SAFFRON_CITY      ; 4b
@@ -93,7 +93,7 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_20          ; 57
 	const LANDMARK_SEAFOAM_ISLANDS   ; 58
 	const LANDMARK_CINNABAR_ISLAND   ; 59
-	; MANSION - TBA
+	const LANDMARK_POKEMON_MANSION
 	const LANDMARK_ROUTE_21          ; 5a
 	const LANDMARK_ROUTE_22          ; 5b
 	const LANDMARK_ROUTE_23          ; 5c

@@ -1,8 +1,6 @@
 # TO DO:
 
 - Fix Rival sprite in "New Name" intro naming scene
-
-- (!) Create and Update the Kanto Landmark co-ords
   
 - Add blocks for the gate buildings to the FOREST tileset
 
