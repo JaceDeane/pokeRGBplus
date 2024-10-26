@@ -1,7 +1,5 @@
 # TO DO:
 
-- Fix Rival sprite in "New Name" intro naming scene
-  
 - Add blocks for the gate buildings to the FOREST tileset
 
 - (!) Set proper wild encounter data (!)
