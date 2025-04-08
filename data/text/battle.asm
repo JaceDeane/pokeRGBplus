@@ -35,6 +35,21 @@ WildCelebiAppearedText:
 	line "appeared!"
 	prompt
 
+GhostAppearedText:
+	text "A GHOST appeared!"
+	prompt
+
+GhostCantBeIDdText:
+	text "Darn! The GHOST"
+	line "can't be ID'd!"
+	prompt
+
+UnveiledGhostText:
+	text "The SILPH SCOPE"
+	line "unveiled the"
+	cont "GHOST's identity!"
+	prompt
+
 WantsToBattleText::
 	text "<ENEMY>"
 	line "wants to battle!"
@@ -363,6 +378,17 @@ BattleText_WildMonIsAngry:
 	text_ram wEnemyMonNickname
 	text_start
 	line "is angry!"
+	prompt
+
+BattleText_GhostGetOut:
+	text "GHOST: Get out…"
+	line "Get out…"
+	prompt
+
+BattleText_TooScared:
+	text_ram wBattleMonNickname
+	text " is too"
+	line "scared to move!"
 	prompt
 
 FastAsleepText:
