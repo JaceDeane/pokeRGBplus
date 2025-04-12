@@ -1195,15 +1195,14 @@ GrimerEvosAttacks:
 
 MukEvosAttacks:
 	db 0 ; no more evolutions
-	; moves are not sorted by level
 	db 1, POISON_GAS
 	db 1, POUND
 	db 1, HARDEN
+	db 23, MINIMIZE
+	db 31, SCREECH
 	db 33, HARDEN
 	db 37, DISABLE
 	db 45, SLUDGE
-	db 23, MINIMIZE
-	db 31, SCREECH
 	db 45, ACID_ARMOR
 	db 60, SLUDGE_BOMB
 	db 0 ; no more level-up moves
