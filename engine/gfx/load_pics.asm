@@ -76,20 +76,23 @@ GetAnimatedFrontpic:
 	ret
 	
 GetMonFrontpic2:
-	call GetFrontpic2
+	;call GetFrontpic2
 	;jp _GetFrontpic.ok
 	
-GetFrontpic2:
+;GetFrontpic2:
 	ld a, [wBattleType]
 	cp BATTLETYPE_GHOST
-	jr nz, _GetFrontpic
-	push de
-	ld b, $6
-	push bc
-	ld a, BANK(wDecompressEnemyFrontpic) ;or wDecompressScratch
-	call OpenSRAM
+	jr nz, GetAnimatedFrontpic
+	;push de
+	;ld b, $6
+	;push bc
+	lb bc, BANK(GhostPic), 7 * 7 ;or wDecompressScratch
+	;call OpenSRAM
+	;ld hl, GhostPic
+	;ld a, BANK(GhostPic)
 	ld hl, GhostPic
-	ld a, BANK(GhostPic)
+	ld de, vTiles2
+	call DecompressGet2bpp
 	ret
 
 _GetFrontpic:

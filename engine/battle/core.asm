@@ -8060,14 +8060,8 @@ DropEnemySub:
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2
-	
-	ld a, [wBattleType]
-	cp BATTLETYPE_GHOST
-	jr nz, .skip_get_ghost_pic
-	predef GetMonFrontpic2
-	
-.skip_get_ghost_pic ;*Should allow animated sprites to still work around ghost (Accounting for CRYSTAL VERSION)
-	predef GetAnimatedFrontpic
+	predef GetMonFrontpic2 ;Sprites won't animate...?
+	;predef GetAnimatedFrontpic
 	pop af
 	ld [wCurPartySpecies], a
 	ret
@@ -8125,6 +8119,41 @@ BattleIntro:
 	res rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap0/vBGMap2
 	call InitBattleDisplay
 	call BattleStartMessage
+; check for ghost reveal
+	ld a, [wBattleType]
+	cp BATTLETYPE_GHOST
+	jr nz, .skip_ghost_reveal
+	ld a, SILPH_SCOPE
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .ghost_reveal
+	ld hl, GhostCantBeIDdText
+	call StdBattleTextbox
+	jr .skip_ghost_reveal
+.ghost_reveal
+	ld hl, UnveiledGhostText
+	call StdBattleTextbox
+	ld de, vTiles2
+	predef GetAnimatedFrontpic ; Animate when Silph Scope isn't held
+	ld a, [wTempEnemyMonSpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	ld hl, wStringBuffer1
+	ld de, wEnemyMonNickname
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+	ld hl, WildPokemonAppearedText
+	call StdBattleTextbox
+	ld a, BATTLETYPE_NORMAL
+	ld [wBattleType], a
+	ld a, [wTempEnemyMonSpecies]
+	dec a
+	ld c, a
+	ld b, SET_FLAG
+	ld hl, wPokedexSeen
+	predef SmallFarFlagAction
+.skip_ghost_reveal
 	ld hl, rLCDC
 	set rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap1/vBGMap3
 	xor a
@@ -8264,7 +8293,8 @@ InitEnemyWildmon:
 	ld [wFirstUnownSeen], a
 .skip_unown
 	ld de, vTiles2
-	predef GetAnimatedFrontpic
+	predef GetMonFrontpic2 ;Sprites won't animate...?
+	;predef GetAnimatedFrontpic
 	xor a
 	ld [wTrainerClass], a
 	ldh [hGraphicStartTile], a
