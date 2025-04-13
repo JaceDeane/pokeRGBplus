@@ -4796,7 +4796,7 @@ DrawEnemyHUD:
 	ld a, [hl]
 	ld [de], a
 
-ld a, [wBattleType]
+	ld a, [wBattleType]
 	cp BATTLETYPE_GHOST
 	jr nz, .notGhost
 	ld a, " "
@@ -4824,6 +4824,14 @@ ld a, [wBattleType]
 	pop hl
 	pop bc
 	jr nz, .skip_level
+	
+	ld a, [wBattleType]
+	cp BATTLETYPE_GHOST
+	jr nz, .notGhostPrintLevel
+	ld a, " "
+	jr .skip_level
+
+.notGhostPrintLevel
 	ld a, b
 	cp " "
 	jr nz, .print_level
@@ -9192,7 +9200,16 @@ BattleStartMessage:
 .not_shiny
 	farcall CheckSleepingTreeMon
 	jr c, .skip_cry
+	
+	ld a, [wBattleType] 
+	cp BATTLETYPE_GHOST
+	;jr z, .skip_cry ;Doesn't play Enemy cry if in a Ghost Battle
+	jr nz, .normal_cry
+	ld a, GASTLY ;Always plays Gastly's cry when in a Ghost Battle
+	call PlayStereoCry
+	jp .skip_cry
 
+.normal_cry
 	farcall CheckBattleScene
 	jr c, .cry_no_anim
 

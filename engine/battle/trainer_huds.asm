@@ -146,6 +146,9 @@ DrawEnemyHUDBorder:
 	dec a
 	call CheckCaughtMon
 	ret z
+	ld a, [wBattleType] ;Doesn't display Enemy Mon as Caught if in a Ghost Battle
+	cp BATTLETYPE_GHOST
+	ret z
 	hlcoord 1, 1
 	ld [hl], $5d
 	ret
