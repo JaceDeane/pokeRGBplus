@@ -361,7 +361,7 @@ ChooseWildEncounter:
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
-	jr c, .not_ghost
+	;jr c, .not_ghost ;Comment out if Silph Scope should reveal every time
 	ld a, BATTLETYPE_GHOST
 	ld [wBattleType], a
 .not_ghost
