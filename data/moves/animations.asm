@@ -651,11 +651,18 @@ BattleAnim_Shake:
 	anim_ret
 	
 BattleAnim_Scared:
-	anim_1gfx BATTLE_ANIM_GFX_ANGELS
-	anim_sound 0, 0, SFX_BUBBLEBEAM
-	anim_obj BATTLE_ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
-	anim_wait 40
-	anim_ret
+	anim_1gfx BATTLE_ANIM_GFX_SCARED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgp $1b
+	anim_bgeffect BATTLE_BG_EFFECT_TELEPORT, $0, BG_EFFECT_USER, $0
+	anim_sound 0, 1, SFX_SPITE
+	anim_obj BATTLE_ANIM_OBJ_SCARED, 48, 88, $0
+	anim_wait 128
+	anim_clearobjs
+	anim_incbgeffect BATTLE_BG_EFFECT_TELEPORT
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 1
+	anim_jump BattleAnim_EnemyStatDown
 
 BattleAnim_Pound:
 	anim_1gfx BATTLE_ANIM_GFX_HIT

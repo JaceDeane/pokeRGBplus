@@ -9195,7 +9195,7 @@ BattleStartMessage:
 	farcall Battle_GetTrainerName
 
 	ld hl, WantsToBattleText
-	jr .PrintBattleStartText
+	jp .PrintBattleStartText
 
 .wild
 	call BattleCheckEnemyShininess
@@ -9218,8 +9218,12 @@ BattleStartMessage:
 	cp BATTLETYPE_GHOST
 	;jr z, .skip_cry ;Doesn't play Enemy cry if in a Ghost Battle
 	jr nz, .normal_cry
-	ld a, GASTLY ;Always plays Gastly's cry when in a Ghost Battle
-	call PlayStereoCry
+	ld de, SFX_SPITE ;Always plays Gastly's cry when in a Ghost Battle
+	call WaitPlaySFX
+
+	ld c, 80
+	call DelayFrames
+
 	jp .skip_cry
 
 .normal_cry
