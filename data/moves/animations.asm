@@ -282,6 +282,7 @@ BattleAnimations::
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
+	dw BattleAnim_Scared
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_Dummy:
@@ -646,6 +647,13 @@ BattleAnim_Wobble:
 
 BattleAnim_Shake:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $40
+	anim_wait 40
+	anim_ret
+	
+BattleAnim_Scared:
+	anim_1gfx BATTLE_ANIM_GFX_ANGELS
+	anim_sound 0, 0, SFX_BUBBLEBEAM
+	anim_obj BATTLE_ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
 	anim_wait 40
 	anim_ret
 

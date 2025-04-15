@@ -280,6 +280,10 @@ HandleGhostBehavior:
 	ret nz
 
 	; If you tried to attack, your Pokemon is "too scared to move"
+	xor a
+	ld [wNumHits], a
+	ld de, ANIM_SCARED ; TODO - Custom scared animation ... BUG - Currently only plays over the enemy's sprite
+	call Call_PlayBattleAnim
 	ld hl, BattleText_TooScared
 	jp StdBattleTextbox
 
