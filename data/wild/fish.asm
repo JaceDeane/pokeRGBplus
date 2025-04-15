@@ -24,7 +24,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
 	assert_table_length NUM_FISHGROUPS
 
-.Shore_Old:
+.Shore_Old:							;GROUP A
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     KRABBY,     10
@@ -39,22 +39,22 @@ FishGroups:
 	db  90 percent + 1, KRABBY,     40
 	db 100 percent,     KINGLER,    40
 
-.Ocean_Old:
+.Ocean_Old:							;GROUP B
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     TENTACOOL,  10
 .Ocean_Good:
 	db  35 percent,     MAGIKARP,   20
 	db  70 percent,     TENTACOOL,  20
-	db  90 percent + 1, CHINCHOU,   20
+	db  90 percent + 1, SLOWPOKE,   20 ;***TEMP
 	db 100 percent,     time_group 2
 .Ocean_Super:
-	db  40 percent,     CHINCHOU,   40
+	db  40 percent,     SLOWPOKE,   40 ;***TEMP
 	db  70 percent,     time_group 3
 	db  90 percent + 1, TENTACRUEL, 40
-	db 100 percent,     LANTURN,    40
+	db 100 percent,     SLOWBRO,    40 ;***TEMP
 
-.Lake_Old:
+.Lake_Old:							;GROUP C
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     GOLDEEN,    10
@@ -69,7 +69,7 @@ FishGroups:
 	db  90 percent + 1, MAGIKARP,   40
 	db 100 percent,     SEAKING,    40
 
-.Pond_Old:
+.Pond_Old:							;GROUP D
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     POLIWAG,    10
@@ -209,8 +209,8 @@ FishGroups:
 
 TimeFishGroups:
 	;  day              nite
-	db CORSOLA,    20,  STARYU,     20 ; 0
-	db CORSOLA,    40,  STARYU,     40 ; 1
+	db STARYU,     20,  STARYU,     20 ; 0
+	db STARYU,     40,  STARYU,     40 ; 1
 	db SHELLDER,   20,  SHELLDER,   20 ; 2
 	db SHELLDER,   40,  SHELLDER,   40 ; 3
 	db GOLDEEN,    20,  GOLDEEN,    20 ; 4
