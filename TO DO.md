@@ -14,6 +14,10 @@
 
 - Remove the now-redundant variable sprites (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#5-remove-the-now-redundant-variable-sprites)
 
+- Create unique Gen II-styled arrangements of the original Gen I music tracks
+
+- Implement a unique animation for the Ghost upon battle start, like other Pokémon
+
 ## ! Bugs: !
 
 - (!) Force the Pokedex to load in Area data for Kanto only
@@ -21,6 +25,8 @@
 - Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)
 
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
+
+- Unveiling a Ghost does not animate the revealed Pokémon, nor play their cry
 
 ## Tutorials:
 
