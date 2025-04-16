@@ -18,6 +18,20 @@
 
 - Implement a unique animation for the Ghost upon battle start, like other Pokémon
 
+- Finish the Viridian City house interiors
+
+	- Remove the Trainer House and replace with the Trainer School
+
+- Update the standard `house` layout
+
+- Add and connect Viridian Forest to Route 2
+
+- Update Diglett's Cave
+
+- All of Pewter City onwards
+
+- Update Route 4 to RB equivalent*
+
 ## ! Bugs: !
 
 - (!) Force the Pokedex to load in Area data for Kanto only

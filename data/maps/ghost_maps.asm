@@ -3,7 +3,7 @@
 ; - Unidentified Ghost (if the player DOES NOT have a SILPH_SCOPE in their pack)
 ; - Normal Wild Pokémon (if the player has a SILPH_SCOPE in their pack)
 GhostMaps:
-	map_id ROUTE_1 ;Debug purposes
+	;map_id ROUTE_1 ;Debug purposes
 	;map_id POKEMON_TOWER_1F
 	;map_id POKEMON_TOWER_2F
 	;map_id POKEMON_TOWER_3F

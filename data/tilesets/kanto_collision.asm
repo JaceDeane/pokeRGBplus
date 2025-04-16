@@ -129,8 +129,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
 	tilecoll WALL, WALL, WALL, WALL ; 81
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 82
-	tilecoll , , ,  ; 83
+	tilecoll CUT_TREE, CUT_TREE, CUT_TREE, CUT_TREE ; 83
 	tilecoll WALL, WALL, WALL, WALL ; 84
 	tilecoll WALL, WALL, WALL, WALL ; 85
 	tilecoll WALL, WALL, WALL, WALL ; 86
-	tilecoll , , ,  ; 87
+	tilecoll CUT_TREE, CUT_TREE, CUT_TREE, CUT_TREE ; 87
