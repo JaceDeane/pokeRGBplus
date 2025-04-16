@@ -182,6 +182,7 @@ BattleAnimFrameData:
 	dw .Frameset_SpiralUnused        ; BATTLE_ANIM_FRAMESET_SPIRAL_UNUSED
 	dw .Frameset_Aeroblast           ; BATTLE_ANIM_FRAMESET_AEROBLAST
 	dw .Frameset_Sandstorm           ; BATTLE_ANIM_FRAMESET_SANDSTORM
+	dw .Frameset_Scared              ; BATTLE_ANIM_FRAMESET_SCARED
 	dw .Frameset_EnemyFeet1Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_1ROW
 	dw .Frameset_PlayerHead1Row      ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_1ROW
 	dw .Frameset_EnemyFeet2Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW
@@ -1252,6 +1253,11 @@ BattleAnimFrameData:
 .Frameset_Sandstorm:
 	oamframe BATTLE_ANIM_OAMSET_D3, 32
 	oamend
+
+.Frameset_Scared
+	oamframe BATTLE_ANIM_OAMSET_D8, 4
+	oamframe BATTLE_ANIM_OAMSET_D9, 4
+	oamrestart
 
 .Frameset_EnemyFeet1Row:
 	oamframe BATTLE_ANIM_OAMSET_D4,  8

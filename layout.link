@@ -302,6 +302,7 @@ ROMX $77
 	"Tileset Data 7"
 	"bank77"
 	"Pokégear GFX"
+	"Ghost GFX"
 	"European Mail"
 ROMX $78
 	"Debug Room"

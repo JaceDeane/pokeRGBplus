@@ -1,4 +1,7 @@
 BattleStart_TrainerHuds:
+	ld a, [wBattleType]
+	cp BATTLETYPE_GHOST
+	ret z
 	ld a, $e4
 	ldh [rOBP0], a
 	call LoadBallIconGFX
@@ -145,6 +148,9 @@ DrawEnemyHUDBorder:
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
+	ret z
+	ld a, [wBattleType] ;Doesn't display Enemy Mon as Caught if in a Ghost Battle
+	cp BATTLETYPE_GHOST
 	ret z
 	hlcoord 1, 1
 	ld [hl], $5d

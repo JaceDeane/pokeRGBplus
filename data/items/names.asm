@@ -89,7 +89,7 @@ ItemNames::
 	li "BIG MUSHROOM"
 	li "SILVERPOWDER"
 	li "BLU APRICORN"
-	li "TERU-SAMA"
+	li "SILPH SCOPE"
 	li "AMULET COIN"
 	li "YLW APRICORN"
 	li "GRN APRICORN"

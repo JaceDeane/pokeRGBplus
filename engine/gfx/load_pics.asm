@@ -74,6 +74,26 @@ GetAnimatedFrontpic:
 	pop af
 	ldh [rSVBK], a
 	ret
+	
+GetMonFrontpic2:
+	;call GetFrontpic2
+	;jp _GetFrontpic.ok
+	
+;GetFrontpic2:
+	ld a, [wBattleType]
+	cp BATTLETYPE_GHOST
+	jr nz, GetAnimatedFrontpic
+	;push de
+	;ld b, $6
+	;push bc
+	lb bc, BANK(GhostPic), 7 * 7 ;or wDecompressScratch
+	;call OpenSRAM
+	;ld hl, GhostPic
+	;ld a, BANK(GhostPic)
+	ld hl, GhostPic
+	ld de, vTiles2
+	call DecompressGet2bpp
+	ret
 
 _GetFrontpic:
 	push de

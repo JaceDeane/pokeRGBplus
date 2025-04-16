@@ -282,6 +282,7 @@ BattleAnimations::
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
+	dw BattleAnim_Scared
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_Dummy:
@@ -418,11 +419,10 @@ BattleAnim_SendOutMon:
 	anim_1gfx BATTLE_ANIM_GFX_SMOKE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_BETA_SEND_OUT_MON2, $0, BG_EFFECT_USER, $0
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
+	anim_sound 0, 0, SFX_POWDER
+	;anim_obj BATTLE_ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
 	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 128
-	anim_wait 4
+	anim_wait 96
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
@@ -649,6 +649,20 @@ BattleAnim_Shake:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $40
 	anim_wait 40
 	anim_ret
+	
+BattleAnim_Scared:
+	anim_1gfx BATTLE_ANIM_GFX_SCARED
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgp $1b
+	anim_bgeffect BATTLE_BG_EFFECT_TELEPORT, $0, BG_EFFECT_USER, $0
+	anim_sound 0, 1, SFX_SPITE
+	anim_obj BATTLE_ANIM_OBJ_SCARED, 48, 88, $0
+	anim_wait 128
+	anim_clearobjs
+	anim_incbgeffect BATTLE_BG_EFFECT_TELEPORT
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 1
+	anim_jump BattleAnim_EnemyStatDown
 
 BattleAnim_Pound:
 	anim_1gfx BATTLE_ANIM_GFX_HIT

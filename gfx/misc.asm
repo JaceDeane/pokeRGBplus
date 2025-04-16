@@ -55,3 +55,9 @@ SECTION "Pokégear GFX", ROMX
 
 PokegearGFX::
 INCBIN "gfx/pokegear/pokegear.2bpp.lz"
+
+
+SECTION "Ghost GFX", ROMX
+
+GhostPic::
+INCBIN "gfx/battle/ghost.2bpp.lz"
