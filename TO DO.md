@@ -1,6 +1,20 @@
 # TO DO:
 
-- Add blocks for the gate buildings to the FOREST tileset
+- Update NPCs in Viridian Pokémon Center
+
+- Add and connect Viridian Forest to Route 2
+
+	- Update `gate` tileset & blockset with new design
+	
+	- Create a unique gate map just for Viridian Forest entrances, like in Gen I
+	
+	- Add tiles and blocks for the gate buildings to the FOREST tileset
+
+- Update Diglett's Cave
+
+- All of Pewter City onwards
+
+- Update Route 4 to RB equivalent*
 
 - (!) Set proper wild encounter data (!)
 
@@ -18,25 +32,11 @@
 
 - Implement a unique animation for the Ghost upon battle start, like other Pokémon
 
-- Finish the Viridian City house interiors
-
-	- Remove the Trainer House and replace with the Trainer School
-
-- Update the standard `house` layout
-
-- Add and connect Viridian Forest to Route 2
-
-- Update Diglett's Cave
-
-- All of Pewter City onwards
-
-- Update Route 4 to RB equivalent*
-
 ## ! Bugs: !
 
 - (!) Force the Pokedex to load in Area data for Kanto only
 
-- Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)
+- (!) Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)
 
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
 

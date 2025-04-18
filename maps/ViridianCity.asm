@@ -198,45 +198,6 @@ ViridianCityMartSign:
 ViridianCityHiddenPotion:
 	hiddenitem POTION, EVENT_VIRIDIAN_CITY_HIDDEN_POTION
 
-; ViridianCityCoffeeGrampsQuestionText:
-	; text "Hey, kid! I just"
-	; line "had a double shot"
-
-	; para "of espresso, and"
-	; line "I am wired!"
-
-	; para "I need to talk to"
-	; line "someone, so you'll"
-	; cont "have to do!"
-
-	; para "I might not look"
-	; line "like much now, but"
-
-	; para "I was an expert at"
-	; line "catching #MON."
-
-	; para "Do you believe me?"
-	; done
-
-; ViridianCityCoffeeGrampsBelievedText:
-	; text "Good, good. Yes, I"
-	; line "was something out"
-
-	; para "of the ordinary,"
-	; line "let me tell you!"
-	; done
-
-; ViridianCityCoffeeGrampsDoubtedText:
-	; text "What? You little"
-	; line "whelp!"
-
-	; para "If I were just a"
-	; line "bit younger, I'd"
-
-	; para "show you a thing"
-	; line "or two. Humph!"
-	; done
-
 ViridianCityGrampsGymAlwaysClosedText:
 	text "This #MON GYM"
 	line "is always closed."
