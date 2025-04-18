@@ -442,7 +442,7 @@ ViridianCity_MapEvents:
 	def_warp_events
 	warp_event 32,  7, VIRIDIAN_GYM, 1
 	warp_event 21,  9, VIRIDIAN_NICKNAME_SPEECH_HOUSE, 1
-	warp_event 21, 15, TRAINER_HOUSE_1F, 1
+	warp_event 21, 15, VIRIDIAN_TRAINER_SCHOOL, 1
 	warp_event 29, 19, VIRIDIAN_MART, 2
 	warp_event 23, 25, VIRIDIAN_POKECENTER_1F, 1
 

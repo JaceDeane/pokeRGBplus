@@ -889,11 +889,14 @@ SilphCo1F_Blocks:
 ViridianGym_Blocks:
 	INCBIN "maps/ViridianGym.blk"
 
-TrainerHouse1F_Blocks:
+TrainerHouse1F_Blocks:  ; TODO - Remove
 	INCBIN "maps/TrainerHouse1F.blk"
 
-TrainerHouseB1F_Blocks:
+TrainerHouseB1F_Blocks:  ; TODO - Remove
 	INCBIN "maps/TrainerHouseB1F.blk"
+	
+ViridianTrainerSchool_Blocks:
+	INCBIN "maps/SchoolHouse.blk"
 
 RedsHouse1F_Blocks:
 	INCBIN "maps/RedsHouse1F.blk"
