@@ -168,17 +168,32 @@ MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
-CeruleanGymBadgeSpeechHouse_Blocks:
-CeruleanPoliceStation_Blocks:
-CeruleanTradeSpeechHouse_Blocks:
-BillsHouse_Blocks:
 CharcoalKiln_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
-BillsFamilysHouse_Blocks:
 GoldenrodPPSpeechHouse_Blocks:
 GoldenrodNameRater_Blocks:
+ManiasHouse_Blocks:
+CianwoodPharmacy_Blocks:
+CianwoodPhotoStudio_Blocks:
+CianwoodLugiaSpeechHouse_Blocks:
+PokeSeersHouse_Blocks:
+PlayersNeighborsHouse_Blocks:
+Route26HealHouse_Blocks:
+DayOfWeekSiblingsHouse_Blocks:
+Route27SandstormHouse_Blocks:
+CherrygroveGymSpeechHouse_Blocks:
+GuideGentsHouse_Blocks:
+CherrygroveEvolutionSpeechHouse_Blocks:
+Route30BerryHouse_Blocks:
+	INCBIN "maps/House1.blk"
+	
+CeruleanGymBadgeSpeechHouse_Blocks:
+CeruleanPoliceStation_Blocks:
+CeruleanTradeSpeechHouse_Blocks:
+BillsHouse_Blocks:
+BillsFamilysHouse_Blocks:
 VermilionFishingSpeechHouse_Blocks:
 VermilionMagnetTrainSpeechHouse_Blocks:
 VermilionDiglettsCaveSpeechHouse_Blocks:
@@ -192,24 +207,11 @@ Route12SuperRodHouse_Blocks:
 Route28SteelWingHouse_Blocks:
 CeladonMansionRoofHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
-ManiasHouse_Blocks:
-CianwoodPharmacy_Blocks:
-CianwoodPhotoStudio_Blocks:
-CianwoodLugiaSpeechHouse_Blocks:
-PokeSeersHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:
-PlayersNeighborsHouse_Blocks:
-Route26HealHouse_Blocks:
-DayOfWeekSiblingsHouse_Blocks:
-Route27SandstormHouse_Blocks:
 MrPsychicsHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
-CherrygroveGymSpeechHouse_Blocks:
-GuideGentsHouse_Blocks:
-CherrygroveEvolutionSpeechHouse_Blocks:
-Route30BerryHouse_Blocks:
-	INCBIN "maps/House1.blk"
+	INCBIN "maps/House.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:

@@ -12,6 +12,8 @@ LoadSpecialMapPalette:
 	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
+	cp TILESET_HOUSE_KANTO
+	jr z, .redshouse
 	cp TILESET_REDS_HOUSE
 	jr z, .redshouse
 	jr .do_nothing
