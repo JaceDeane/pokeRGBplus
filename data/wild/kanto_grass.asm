@@ -8,24 +8,24 @@ KantoGrassWildMons:
 	db 3, DIGLETT
 	db 6, DIGLETT
 	db 12, DIGLETT
-	db 24, DIGLETT
 	db 24, DUGTRIO
+	db 24, DIGLETT
 	db 24, DUGTRIO
 	db 24, DUGTRIO
 	; day
 	db 2, DIGLETT
 	db 4, DIGLETT
 	db 8, DIGLETT
-	db 16, DIGLETT
 	db 16, DUGTRIO
+	db 16, DIGLETT
 	db 16, DUGTRIO
 	db 16, DUGTRIO
 	; nite
 	db 4, DIGLETT
 	db 8, DIGLETT
 	db 16, DIGLETT
-	db 32, DIGLETT
 	db 32, DUGTRIO
+	db 32, DIGLETT
 	db 32, DUGTRIO
 	db 32, DUGTRIO
 	end_grass_wildmons
@@ -341,29 +341,53 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
 	db 5, RATTATA
+	db 5, SPEAROW
+IF DEF(_RED)
 	db 8, EKANS
-	db 10, RATICATE
-	db 10, ARBOK
+ELIF DEF(_BLUE)
+	db 8, SANDSHREW
+ENDC
+	db 10, RATTATA
+IF DEF(_RED)
+	db 10, EKANS
+ELIF DEF(_BLUE)
 	db 10, SANDSHREW
-	db 10, SANDSHREW
+ENDC
+	db 10, SPEAROW
+	db 10, SPEAROW
 	; day
-	db 5, SPEAROW
 	db 5, RATTATA
+	db 5, SPEAROW
+IF DEF(_RED)
 	db 8, EKANS
-	db 10, RATICATE
-	db 10, ARBOK
+ELIF DEF(_BLUE)
+	db 8, SANDSHREW
+ENDC
+	db 10, RATTATA
+IF DEF(_RED)
+	db 10, EKANS
+ELIF DEF(_BLUE)
 	db 10, SANDSHREW
-	db 10, SANDSHREW
+ENDC
+	db 10, SPEAROW
+	db 10, SPEAROW
 	; nite
 	db 5, RATTATA
+	db 5, SPEAROW
+IF DEF(_RED)
+	db 8, EKANS
+ELIF DEF(_BLUE)
+	db 8, SANDSHREW
+ENDC
 	db 10, RATTATA
-	db 10, RATICATE
-	db 6, ZUBAT
-	db 5, RATTATA
-	db 6, CLEFAIRY
-	db 6, CLEFAIRY
+IF DEF(_RED)
+	db 10, EKANS
+ELIF DEF(_BLUE)
+	db 10, SANDSHREW
+ENDC
+	db 10, SPEAROW
+	db 10, SPEAROW
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_5
