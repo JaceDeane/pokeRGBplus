@@ -9,7 +9,7 @@ OlivineTimsHouse_MapScripts:
 Tim:
 	faceplayer
 	opentext
-	trade NPC_TRADE_TIM
+	trade NPC_TRADE_PIPIN ; Dummy Trade - GSC Unused
 	waitbutton
 	closetext
 	end

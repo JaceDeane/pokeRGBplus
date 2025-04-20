@@ -1,11 +1,5 @@
 # TO DO:
 
-- Update Poké Mart blocks
-
-- Add Clipboard sprite constant / GFX
-
-	- Change Sprite_Paper in the Nickname House to a Clipboard
-
 - Add and connect Viridian Forest to Route 2
 
 	- Update `gate` tileset & blockset with new design
@@ -35,6 +29,16 @@
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
 - Implement a unique animation for the Ghost upon battle start, like other Pokémon
+
+TRADES:
+
+- Update the DVs/IVs for the Trade Pokémon
+
+- Have the traded Jynx, LOLA, hold a LOVELY_MAIL if possible
+
+- Re-add trade dialogue more similar to RBY's
+
+	- 5th DialogueSet: "Evolution"
 
 ## ! Bugs: !
 

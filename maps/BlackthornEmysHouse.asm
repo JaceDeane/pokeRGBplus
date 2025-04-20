@@ -9,7 +9,7 @@ BlackthornEmysHouse_MapScripts:
 Emy:
 	faceplayer
 	opentext
-	trade NPC_TRADE_EMY
+	trade NPC_TRADE_PIPIN ; Dummy Trade - GSC Unused
 	waitbutton
 	closetext
 	end

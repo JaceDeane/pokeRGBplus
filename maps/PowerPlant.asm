@@ -189,7 +189,7 @@ PowerPlantManager:
 Forest:
 	faceplayer
 	opentext
-	trade NPC_TRADE_FOREST
+	trade NPC_TRADE_PIPIN ; Dummy Trade - GSC Unused
 	waitbutton
 	closetext
 	end
