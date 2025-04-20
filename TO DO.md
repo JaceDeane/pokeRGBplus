@@ -1,6 +1,10 @@
 # TO DO:
 
-- Update NPCs in Viridian Pokémon Center
+- Update Poké Mart blocks
+
+- Add Clipboard sprite constant / GFX
+
+	- Change Sprite_Paper in the Nickname House to a Clipboard
 
 - Add and connect Viridian Forest to Route 2
 

@@ -2,7 +2,7 @@
 	const VIRIDIANNICKNAMESPEECHHOUSE_POKEFAN_M
 	const VIRIDIANNICKNAMESPEECHHOUSE_LASS
 	const VIRIDIANNICKNAMESPEECHHOUSE_SPEARY
-	const VIRIDIANNICKNAMESPEECHHOUSE_RATTEY
+	const VIRIDIANNICKNAMESPEECHHOUSE_SPEARY_SIGN
 
 ViridianNicknameSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -23,40 +23,35 @@ Speary:
 	closetext
 	end
 
-Rattey:
+SpearySign:
 	opentext
-	writetext RatteyText
-	cry RATTATA
+	writetext SpearySignText
 	waitbutton
 	closetext
 	end
 
 ViridianNicknameSpeechHousePokefanMText:
-	text "Do you put a lot"
-	line "of thought into"
+	text "Coming up with"
+	line "nicknames is fun,"
+	cont "but hard."
 
-	para "naming your"
-	line "#MON?"
-
-	para "Giving them good"
-	line "nicknames adds to"
-
-	para "the fun of trading"
-	line "with others."
+	para "Simple names are"
+	line "the easiest to"
+	cont "remember."
 	done
 
 ViridianNicknameSpeechHouseLassText:
-	text "They're SPEARY--"
-	line "a SPEAROW--and"
-	cont "RATTEY--a RATTATA."
+	text "My Daddy loves"
+	line "#MON too."
 	done
 
 SpearyText:
-	text "SPEARY: Ch-chun!"
+	text "SPEARY: Tetweet!"
 	done
 
-RatteyText:
-	text "RATTEY: Kikiii!"
+SpearySignText:
+	text "SPEAROW"
+	line "Name: SPEARY"
 	done
 
 ViridianNicknameSpeechHouse_MapEvents:
@@ -71,7 +66,7 @@ ViridianNicknameSpeechHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHousePokefanMScript, -1
-	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
-	object_event  5,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
-	object_event  6,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
+	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHousePokefanMScript, -1
+	object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
+	object_event  5,  5, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
+	object_event  4,  0, SPRITE_PAPER, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SpearySign, -1 ; TODO - Replace with CLIPBOARD
