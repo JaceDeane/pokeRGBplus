@@ -12,7 +12,7 @@ MountMoonGiftShop_MapScripts:
 MountMoonGiftShopClerkScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_MT_MOON
+	pokemart MARTTYPE_STANDARD, MART_CINNABAR ; Dummy placeholder - GSC only
 	closetext
 	end
 

@@ -22,8 +22,8 @@ Marts:
 	dw MartViridian
 	dw MartPewter
 	dw MartCerulean
-	dw MartLavender
 	dw MartVermilion
+	dw MartLavender
 	dw MartCeladon2F1
 	dw MartCeladon2F2
 	dw MartCeladon3F
@@ -32,7 +32,7 @@ Marts:
 	dw MartCeladon5F2
 	dw MartFuchsia
 	dw MartSaffron
-	dw MartMtMoon
+	dw MartCinnabar
 	dw MartIndigoPlateau
 	dw MartUnderground
 	assert_table_length NUM_MARTS
@@ -227,64 +227,56 @@ MartBlackthorn:
 	db -1 ; end
 
 MartViridian:
-	db 9 ; # items
-	db ULTRA_BALL
-	db HYPER_POTION
-	db FULL_HEAL
-	db REVIVE
+	db 4 ; # items
+	db POKE_BALL
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db AWAKENING
 	db BURN_HEAL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartPewter:
 	db 7 ; # items
-	db GREAT_BALL
-	db SUPER_POTION
-	db SUPER_REPEL
+	db POKE_BALL
+	db POTION
+	db ESCAPE_ROPE
 	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
 	db BURN_HEAL
+	db AWAKENING
+	db PARLYZ_HEAL
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
-	db SUPER_POTION
-	db SUPER_REPEL
-	db FULL_HEAL
-	db X_DEFEND
-	db X_ATTACK
-	db DIRE_HIT
-	db SURF_MAIL
-	db -1 ; end
-
-MartLavender:
-	db 8 ; # items
-	db GREAT_BALL
+	db 7 ; # items
+	db POKE_BALL
 	db POTION
-	db SUPER_POTION
-	db MAX_REPEL
+	db REPEL
 	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
 	db BURN_HEAL
+	db AWAKENING
+	db PARLYZ_HEAL
 	db -1 ; end
 
 MartVermilion:
-	db 8 ; # items
-	db ULTRA_BALL
+	db 6 ; # items
+	db POKE_BALL
 	db SUPER_POTION
-	db HYPER_POTION
-	db REVIVE
-	db PARLYZ_HEAL
+	db ICE_HEAL
 	db AWAKENING
+	db PARLYZ_HEAL
+	db REPEL
+	db -1 ; end
+	
+MartLavender:
+	db 9 ; # items
+	db GREAT_BALL
+	db SUPER_POTION
+	db REVIVE
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db ANTIDOTE
 	db BURN_HEAL
-	db LITEBLUEMAIL
+	db ICE_HEAL
+	db PARLYZ_HEAL
 	db -1 ; end
 
 MartCeladon2F1:
@@ -349,47 +341,45 @@ MartCeladon5F2:
 	db -1 ; end
 
 MartFuchsia:
-	db 7 ; # items
+	db 6 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
-	db HYPER_POTION
+	db REVIVE
 	db FULL_HEAL
-	db MAX_REPEL
-	db FLOWER_MAIL
+	db SUPER_REPEL
 	db -1 ; end
 
 MartSaffron:
-	db 8 ; # items
+	db 6 ; # items
+	db GREAT_BALL
+	db HYPER_POTION
+	db MAX_REPEL
+	db ESCAPE_ROPE
+	db FULL_HEAL
+	db REVIVE
+	db -1 ; end
+
+MartCinnabar:
+	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
-	db MAX_POTION
 	db FULL_HEAL
-	db X_ATTACK
-	db X_DEFEND
-	db FLOWER_MAIL
-	db -1 ; end
-
-MartMtMoon:
-	db 6 ; # items
-	db POKE_DOLL
-	db FRESH_WATER
-	db SODA_POP
-	db LEMONADE
-	db REPEL
-	db PORTRAITMAIL
+	db REVIVE
+	db MAX_REPEL
+	db ESCAPE_ROPE
 	db -1 ; end
 
 MartIndigoPlateau:
 	db 7 ; # items
+	db GREAT_BALL
 	db ULTRA_BALL
-	db MAX_REPEL
-	db HYPER_POTION
 	db MAX_POTION
 	db FULL_RESTORE
-	db REVIVE
 	db FULL_HEAL
+	db REVIVE
+	db MAX_REPEL
 	db -1 ; end
 
 MartUnderground:

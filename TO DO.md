@@ -1,5 +1,7 @@
 # TO DO:
 
+- Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
+
 - Add and connect Viridian Forest to Route 2
 
 	- Update `gate` tileset & blockset with new design
