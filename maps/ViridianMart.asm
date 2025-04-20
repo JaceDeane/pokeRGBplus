@@ -98,7 +98,7 @@ ViridianMart_MapEvents:
 	warp_event  4,  7, VIRIDIAN_CITY, 4
 
 	def_coord_events
-	coord_event  4,  7, SCENE_VIRIDIANMART_OAKS_PARCEL, ViridianMartParcelScript
+	coord_event  3,  7, SCENE_VIRIDIANMART_OAKS_PARCEL, ViridianMartParcelScript
 
 	def_bg_events
 
