@@ -106,6 +106,7 @@
 	const SPRITE_STANDING_YOUNGSTER ; 66
 	const SPRITE_GRAMPS_ASLEEP ; 67
 	const SPRITE_GIRL ; 68
+	const SPRITE_CLIPBOARD ; 69
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
