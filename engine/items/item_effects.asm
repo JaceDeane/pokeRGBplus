@@ -675,7 +675,17 @@ PokeBallEffect:
 
 	call CloseSRAM
 
+	ld de, EVENT_MET_BILL
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .metBill
+	ld hl, BallSentToSomeonesPCText
+	jr .ok
+.metBill
 	ld hl, BallSentToPCText
+.ok
 	call PrintText
 
 	call RotateThreePalettesRight
@@ -1105,6 +1115,10 @@ WaitButtonText:
 
 BallSentToPCText:
 	text_far _BallSentToPCText
+	text_end
+	
+BallSentToSomeonesPCText:
+	text_far _BallSentToSomeonesPCText
 	text_end
 
 NewDexDataText:

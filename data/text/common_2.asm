@@ -1156,6 +1156,14 @@ _PokecenterPCWhoseText::
 	text "Access whose PC?"
 	done
 
+_PokecenterSomeonesPCText::
+	text "Someone's PC"
+	line "accessed."
+
+	para "#MON Storage"
+	line "System opened."
+	prompt
+	
 _PokecenterBillsPCText::
 	text "BILL's PC"
 	line "accessed."
@@ -1348,6 +1356,14 @@ _OakPCText4::
 	text "The link to PROF."
 	line "OAK's PC closed."
 	done
+
+_PokecenterHoFPCText::
+	text "#MON LEAGUE's"
+	line "site accessed."
+
+	para "HALL OF FAME"
+	line "list opened."
+	prompt
 
 _TrainerRankingExplanationText:: ; unreferenced
 	text "Triple-theme"

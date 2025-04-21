@@ -1,16 +1,18 @@
 	; PokemonCenterPC.WhichPC indexes
 	const_def
 	const PCPC_BEFORE_POKEDEX ; 0
-	const PCPC_BEFORE_HOF     ; 1
-	const PCPC_POSTGAME       ; 2
+	const PCPC_BEFORE_BILL    ; 1
+	const PCPC_BEFORE_HOF     ; 2
+	const PCPC_POSTGAME       ; 3
 
 	; PokemonCenterPC.Jumptable indexes
 	const_def
 	const PCPCITEM_PLAYERS_PC   ; 0
-	const PCPCITEM_BILLS_PC     ; 1
-	const PCPCITEM_OAKS_PC      ; 2
-	const PCPCITEM_HALL_OF_FAME ; 3
-	const PCPCITEM_TURN_OFF     ; 4
+	const PCPCITEM_SOMEONES_PC  ; 1
+	const PCPCITEM_BILLS_PC     ; 2
+	const PCPCITEM_OAKS_PC      ; 3
+	const PCPCITEM_HALL_OF_FAME ; 4
+	const PCPCITEM_TURN_OFF     ; 5
 
 PokemonCenterPC:
 	call PC_CheckPartyForPokemon
@@ -56,12 +58,14 @@ PokemonCenterPC:
 .Jumptable:
 ; entries correspond to PCPCITEM_* constants
 	dw PlayersPC,    .String_PlayersPC
+	dw SomeonesPC,   .String_SomeonesPC
 	dw BillsPC,      .String_BillsPC
 	dw OaksPC,       .String_OaksPC
 	dw HallOfFamePC, .String_HallOfFame
 	dw TurnOffPC,    .String_TurnOff
 
 .String_PlayersPC:  db "<PLAYER>'s PC@"
+.String_SomeonesPC: db "SOMEONE's PC@"
 .String_BillsPC:    db "BILL's PC@"
 .String_OaksPC:     db "PROF.OAK's PC@"
 .String_HallOfFame: db "HALL OF FAME@"
@@ -72,12 +76,20 @@ PokemonCenterPC:
 
 	; PCPC_BEFORE_POKEDEX
 	db 3
-	db PCPCITEM_BILLS_PC
+	db PCPCITEM_SOMEONES_PC
 	db PCPCITEM_PLAYERS_PC
 	db PCPCITEM_TURN_OFF
 	db -1 ; end
+	
+	; PCPC_BEFORE_BILL
+	db 4
+	db PCPCITEM_SOMEONES_PC
+	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_OAKS_PC
+	db PCPCITEM_TURN_OFF
+	db -1 ; end
 
-	; PCPC_BEFORE_HOF
+	; PCPC_BEFORE_HOF - After BILL
 	db 4
 	db PCPCITEM_BILLS_PC
 	db PCPCITEM_PLAYERS_PC
@@ -101,6 +113,17 @@ PokemonCenterPC:
 	ret
 
 .got_dex
+	call GetMapAttributesPointer
+	ld de, EVENT_MET_BILL
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .after_bill
+	ld a, PCPC_BEFORE_BILL
+	ret
+
+.after_bill
 	ld a, [wHallOfFameCount]
 	and a
 	ld a, PCPC_BEFORE_HOF
@@ -139,6 +162,14 @@ PC_CheckPartyForPokemon:
 	const PLAYERSPCITEM_LOG_OFF       ; 5
 	const PLAYERSPCITEM_TURN_OFF      ; 6
 
+SomeonesPC:
+	call PC_PlayChoosePCSound
+	ld hl, PokecenterSomeonesPCText
+	call PC_DisplayText
+	farcall _BillsPC
+	and a
+	ret
+	
 BillsPC:
 	call PC_PlayChoosePCSound
 	ld hl, PokecenterBillsPCText
@@ -166,6 +197,8 @@ OaksPC:
 
 HallOfFamePC:
 	call PC_PlayChoosePCSound
+	ld hl, PokecenterHoFPCText
+	call PC_DisplayText
 	call FadeToMenu
 	farcall _HallOfFamePC
 	call CloseSubmenu
@@ -662,6 +695,10 @@ PokecenterPCWhoseText:
 	text_far _PokecenterPCWhoseText
 	text_end
 
+PokecenterSomeonesPCText:
+	text_far _PokecenterSomeonesPCText
+	text_end
+
 PokecenterBillsPCText:
 	text_far _PokecenterBillsPCText
 	text_end
@@ -676,4 +713,8 @@ PokecenterOaksPCText:
 
 PokecenterPCOaksClosedText:
 	text_far _PokecenterPCOaksClosedText
+	text_end
+	
+PokecenterHoFPCText:
+	text_far _PokecenterHoFPCText
 	text_end
