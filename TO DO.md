@@ -52,6 +52,9 @@ TRADES:
 
 - Unveiling a Ghost does not animate the revealed Pokémon, nor play their cry
 
+- Victory Road considered to be Johto
+	`pokeRGBplus\engine\overworld\landmarks.asm`
+
 ## Tutorials:
 
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
