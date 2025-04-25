@@ -1,28 +1,40 @@
 # TO DO:
 
+- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
+
 - Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
 
 - Add and connect Viridian Forest to Route 2
-
-	- Update `gate` tileset & blockset with new design
 	
-	- Create a unique gate map just for Viridian Forest entrances, like in Gen I
+	- Add NPCs to the gates connecting
 	
-	- Add tiles and blocks for the gate buildings to the FOREST tileset
-
-- Update Diglett's Cave
+	- Add NPCs, hidden items and signposts to Viridian Forest
+	
+	- Update the encounters
 
 - All of Pewter City onwards
+
+	- Update Pewter Gym trainers' dialogue & VS teams
+	
+	- Add the museum back (Display fossils picture)
+	
+	- Update Pewter's PokeCenter & NPC homes
 
 - Update Route 4 to RB equivalent*
 
 - (!) Set proper wild encounter data (!)
+
+- Update Diglett's Cave (all)
+
+ENGINE / DATA:
 
 - Make all the Rival trainer classes use the same .pal for the battle sprite instead of loading it 3x for 'separate' classes
 
 - Simplify the sleeping Old Man event to just use one event_flag instead of two
 
 - Add the Link Receptionist into `jumpstd` events section
+
+GRAPHICS:
 
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
 
@@ -37,10 +49,6 @@ TRADES:
 - Update the DVs/IVs for the Trade Pokémon
 
 - Have the traded Jynx, LOLA, hold a LOVELY_MAIL if possible
-
-- Re-add trade dialogue more similar to RBY's
-
-	- 5th DialogueSet: "Evolution"
 
 ## ! Bugs: !
 

@@ -39,8 +39,6 @@ PalletGroupSprites:
 ; Route1, PalletTown
 ViridianGroupSprites:
 ; Route2, Route22, ViridianCity
-PewterGroupSprites:
-; Route3, PewterCity
 CinnabarGroupSprites:
 ; Route19, Route20, Route21, CinnabarIsland
 	db SPRITE_GIRL
@@ -61,6 +59,8 @@ CinnabarGroupSprites:
 ; CeruleanCity and Route5 are connected
 CeruleanGroupSprites:
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
+PewterGroupSprites:
+; Route3, PewterCity
 SaffronGroupSprites:
 ; Route5, SaffronCity
 	db SPRITE_COOLTRAINER_M
