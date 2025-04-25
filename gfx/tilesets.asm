@@ -368,3 +368,12 @@ INCBIN "data/tilesets/cavern_metatiles.bin"
 
 TilesetCavernColl::
 INCLUDE "data/tilesets/cavern_collision.asm"
+
+TilesetGateKantoGFX::
+INCBIN "gfx/tilesets/gate_kanto.2bpp.lz"
+
+TilesetGateKantoMeta::
+INCBIN "data/tilesets/gate_kanto_metatiles.bin"
+
+TilesetGateKantoColl::
+INCLUDE "data/tilesets/gate_kanto_collision.asm"

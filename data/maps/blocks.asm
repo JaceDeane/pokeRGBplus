@@ -1069,5 +1069,9 @@ GoldenrodDeptStoreRoof_Blocks:
 
 ViridianForest_Blocks:
 	INCBIN "maps/ViridianForest.blk"
+	
+ViridianForestSouthGate_Blocks:
+ViridianForestNorthGate_Blocks:
+	INCBIN "maps/ViridianForestGate.blk"
 
 ENDSECTION

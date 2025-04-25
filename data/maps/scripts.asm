@@ -251,6 +251,8 @@ INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
 INCLUDE "maps/TrainerHouse1F.asm" ; TODO - Remove
 INCLUDE "maps/TrainerHouseB1F.asm" ; TODO - Remove
+INCLUDE "maps/ViridianForestSouthGate.asm"
+INCLUDE "maps/ViridianForestNorthGate.asm"
 
 
 SECTION "Map Scripts 14", ROMX

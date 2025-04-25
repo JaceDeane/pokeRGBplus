@@ -40,6 +40,7 @@
 	const TILESET_REDS_HOUSE           ;
 	const TILESET_GYM                  ;
 	const TILESET_CAVERN               ;
+	const TILESET_GATE_KANTO           ;
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

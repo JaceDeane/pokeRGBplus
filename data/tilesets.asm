@@ -54,4 +54,5 @@ Tilesets::
 	tileset TilesetRedsHouse
 	tileset TilesetGym
 	tileset TilesetCavern
+	tileset TilesetGateKanto
 	assert_table_length NUM_TILESETS + 1

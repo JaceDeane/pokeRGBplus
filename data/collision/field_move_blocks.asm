@@ -19,7 +19,7 @@ CutTreeBlockPointers:
 
 .johto_modern:
 ; facing block, replacement block, animation
-	db $03, $02, $01 ; grass
+	db $03, $02, 1 ; grass
 	db -1 ; end
 
 .kanto:
@@ -30,6 +30,7 @@ CutTreeBlockPointers:
 	db $34, $6f, 0 ; tree
 	db $35, $4c, 0 ; tree
 	db $60, $6e, 0 ; tree
+	db $83, $8a, 0 ; tree
 	db -1 ; end
 
 .park:
@@ -40,8 +41,10 @@ CutTreeBlockPointers:
 
 .forest:
 ; facing block, replacement block, animation
-	db $0f, $17, 0
-	db $28, $01, 1 ;allows grass to be cut
+	;db $0f, $17, 0
+	db $01, $28, 1 ; allows grass to be cut
+	db $06, $37, 1 ; grass
+	db $07, $3b, 1 ; grass
 	db -1 ; end
 
 

@@ -201,29 +201,29 @@ KantoGrassWildMons:
 	def_grass_wildmons VIRIDIAN_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, PIDGEY
-	db 3, RATTATA
-	db 5, PIDGEY
-	db 7, RATTATA
-	db 7, CATERPIE
-	db 4, WEEDLE
-	db 4, WEEDLE
+	db 3, CATERPIE
+	db 3, WEEDLE
+	db 5, METAPOD
+	db 7, KAKUNA
+	db 7, PIDGEY
+	db 4, PIKACHU
+	db 4, PIKACHU
 	; day
-	db 3, PIDGEY
-	db 3, RATTATA
-	db 5, PIDGEY
-	db 7, RATTATA
-	db 7, CATERPIE
-	db 4, WEEDLE
-	db 4, WEEDLE
+	db 3, CATERPIE
+	db 3, WEEDLE
+	db 5, METAPOD
+	db 7, KAKUNA
+	db 7, PIDGEY
+	db 4, PIKACHU
+	db 4, PIKACHU
 	; nite
-	db 3, PIDGEY
-	db 3, RATTATA
-	db 5, PIDGEY
-	db 7, RATTATA
-	db 7, CATERPIE
-	db 4, WEEDLE
-	db 4, WEEDLE
+	db 3, CATERPIE
+	db 3, WEEDLE
+	db 5, METAPOD
+	db 7, KAKUNA
+	db 7, PIDGEY
+	db 4, PIKACHU
+	db 4, PIKACHU
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
