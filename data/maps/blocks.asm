@@ -122,17 +122,17 @@ BetaSproutTower6_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSproutTower6.blk"
 
 BetaPokecenter_Blocks:
-; CinnabarPokecenter1F_Blocks:
-; CeruleanPokecenter1F_Blocks:
-; Route10Pokecenter1F_Blocks:
-; VermilionPokecenter1F_Blocks:
-; PewterPokecenter1F_Blocks:
-; FuchsiaPokecenter1F_Blocks:
-; LavenderPokecenter1F_Blocks:
-; SilverCavePokecenter1F_Blocks:
-; CeladonPokecenter1F_Blocks:
+CinnabarPokecenter1F_Blocks:
+CeruleanPokecenter1F_Blocks:
+Route10Pokecenter1F_Blocks:
+VermilionPokecenter1F_Blocks:
+PewterPokecenter1F_Blocks:
+FuchsiaPokecenter1F_Blocks:
+LavenderPokecenter1F_Blocks:
+SilverCavePokecenter1F_Blocks:
+CeladonPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
-; SaffronPokecenter1F_Blocks:
+SaffronPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter.blk"
 
 Route30_Blocks:
@@ -363,16 +363,6 @@ Route32Pokecenter1F_Blocks:
 GoldenrodPokecenter1F_Blocks:
 CianwoodPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
-CinnabarPokecenter1F_Blocks:
-CeruleanPokecenter1F_Blocks:
-Route10Pokecenter1F_Blocks:
-VermilionPokecenter1F_Blocks:
-PewterPokecenter1F_Blocks:
-FuchsiaPokecenter1F_Blocks:
-LavenderPokecenter1F_Blocks:
-SilverCavePokecenter1F_Blocks:
-CeladonPokecenter1F_Blocks:
-SaffronPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.blk"
 
 BetaPewterMuseumOfScience1F_Blocks: ; unreferenced
