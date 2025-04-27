@@ -14,7 +14,7 @@ DaisyScript:
 	writetext DaisyHelloText
 	waitbutton
 	closetext
-	giveitem TOWN_MAP
+	giveitem TOWN_MAP ; debug ** TODO
 	end
 
 .ThreePM:

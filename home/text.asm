@@ -345,7 +345,7 @@ PlaceBattlersName:
 	ld de, wEnemyMonNickname
 	jr PlaceCommandCharacter
 
-PlaceEnemysName::
+PlaceEnemysName:: ; Classes defined here do not print their trainer class in battle
 	push de
 
 	ld a, [wLinkMode]
