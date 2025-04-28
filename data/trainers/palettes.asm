@@ -35,7 +35,7 @@ INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
 INCBIN "gfx/trainers/schoolboy.gbcpal", middle_colors
 INCBIN "gfx/trainers/bird_keeper.gbcpal", middle_colors
 INCBIN "gfx/trainers/lass.gbcpal", middle_colors
-INCBIN "gfx/trainers/janine.gbcpal", middle_colors
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/beauty.gbcpal", middle_colors

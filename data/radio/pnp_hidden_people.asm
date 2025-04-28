@@ -4,7 +4,7 @@ PnP_HiddenPeople:
 	db WILL
 	db BRUNO
 	db KAREN
-	db KOGA
+	db RIVAL3; WAS JANINE - TODO
 	db CHAMPION
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
@@ -12,10 +12,10 @@ PnP_HiddenPeople_BeatE4:
 	db MISTY
 	db LT_SURGE
 	db ERIKA
-	db JANINE
+	db KOGA
 	db SABRINA
 	db BLAINE
-	db RIVAL3 ; To be replaced with GIOVANNI
+	db GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

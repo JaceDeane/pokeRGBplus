@@ -36,6 +36,8 @@ ENGINE / DATA:
 
 - Add the Link Receptionist into `jumpstd` events section
 
+- Update DVs, attributes and parties for Giovanni
+
 GRAPHICS:
 
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)

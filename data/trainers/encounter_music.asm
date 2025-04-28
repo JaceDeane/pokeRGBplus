@@ -29,7 +29,7 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
 	db MUSIC_LASS_ENCOUNTER        ; lass
-	db MUSIC_LASS_ENCOUNTER        ; janine
+	db MUSIC_ROCKET_ENCOUNTER      ; giovanni
 	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
 	db MUSIC_BEAUTY_ENCOUNTER      ; cooltrainerf
 	db MUSIC_BEAUTY_ENCOUNTER      ; beauty

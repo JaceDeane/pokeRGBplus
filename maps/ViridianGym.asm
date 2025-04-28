@@ -16,7 +16,7 @@ ViridianGymBlueScript:
 	waitbutton
 	closetext
 	winlosstext LeaderBlueWinText, 0
-	;loadtrainer RIVAL3, RIVAL3_1
+	loadtrainer GIOVANNI, GIOVANNI1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
@@ -58,7 +58,7 @@ ViridianGymStatue:
 	jumpstd GymStatue1Script
 
 .Beaten:
-	;gettrainername STRING_BUFFER_4, RIVAL3, RIVAL3_1
+	gettrainername STRING_BUFFER_4, GIOVANNI, GIOVANNI1
 	jumpstd GymStatue2Script
 
 LeaderBlueBeforeText:

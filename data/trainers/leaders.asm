@@ -16,7 +16,7 @@ GymLeaders:
 	db WILL ; LORELEI
 	db BRUNO
 	db KAREN ; AGATHA
-	db JANINE ; LANCE
+	db RIVAL3 ; LANCE
 	db CHAMPION
 	db RED
 ; fallthrough
@@ -28,5 +28,5 @@ KantoGymLeaders:
 	db KOGA
 	db SABRINA
 	db BLAINE
-	db RIVAL3 ; To be replaced by GIOVANNI
+	db GIOVANNI
 	db -1

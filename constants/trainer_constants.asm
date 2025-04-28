@@ -186,8 +186,8 @@ DEF KRIS EQU __trainer_class__
 	const DANA4
 	const DANA5
 
-	trainerclass JANINE ; 1a
-	const JANINE1
+	trainerclass GIOVANNI ; 1a
+	const GIOVANNI1
 
 	trainerclass COOLTRAINERM ; 1b
 	const NICK

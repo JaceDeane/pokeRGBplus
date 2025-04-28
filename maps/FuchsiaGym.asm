@@ -21,7 +21,7 @@ FuchsiaGymJanineScript:
 	waitbutton
 	closetext
 	winlosstext JanineText_ToughOne, 0
-	loadtrainer JANINE, JANINE1
+	loadtrainer GIOVANNI, GIOVANNI1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
@@ -214,7 +214,7 @@ FuchsiaGymStatue:
 	iftrue .Beaten
 	jumpstd GymStatue1Script
 .Beaten:
-	gettrainername STRING_BUFFER_4, JANINE, JANINE1
+	gettrainername STRING_BUFFER_4, GIOVANNI, GIOVANNI1
 	jumpstd GymStatue2Script
 
 Movement_NinjaSpin:

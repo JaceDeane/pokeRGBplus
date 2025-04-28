@@ -28,7 +28,7 @@ TrainerPicPointers::
 	dba_pic SchoolboyPic
 	dba_pic BirdKeeperPic
 	dba_pic LassPic
-	dba_pic JaninePic
+	dba_pic GiovanniPic
 	dba_pic CooltrainermPic
 	dba_pic CooltrainerfPic
 	dba_pic BeautyPic

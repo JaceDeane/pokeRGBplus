@@ -28,7 +28,7 @@ TrainerGroups:
 	dw SchoolboyGroup
 	dw BirdKeeperGroup
 	dw LassGroup
-	dw JanineGroup
+	dw GiovanniGroup
 	dw CooltrainerMGroup
 	dw CooltrainerFGroup
 	dw BeautyGroup

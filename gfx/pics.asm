@@ -519,7 +519,7 @@ WillPic:             INCBIN "gfx/trainers/will.2bpp.lz"
 SchoolboyPic:        INCBIN "gfx/trainers/schoolboy.2bpp.lz"
 MagnemiteFrontpic:   INCBIN "gfx/pokemon/magnemite/front.animated.2bpp.lz"
 ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
-JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
+GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
 MagnemiteBackpic:    INCBIN "gfx/pokemon/magnemite/back.2bpp.lz"
 
 
