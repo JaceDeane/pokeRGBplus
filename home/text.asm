@@ -352,13 +352,13 @@ PlaceEnemysName:: ; Classes defined here do not print their trainer class in bat
 	and a
 	jr nz, .linkbattle
 
-	ld a, [wTrainerClass]
-	cp RIVAL1
-	jr z, .rival
-	cp RIVAL2
-	jr z, .rival
-	cp RIVAL3
-	jr z, .rival
+	; ld a, [wTrainerClass]
+	; cp RIVAL1
+	; jr z, .rival
+	; cp RIVAL2
+	; jr z, .rival
+	; cp RIVAL3
+	; jr z, .rival
 
 	ld de, wOTClassName
 	call PlaceString
@@ -372,9 +372,9 @@ PlaceEnemysName:: ; Classes defined here do not print their trainer class in bat
 	ld de, wStringBuffer1
 	jr PlaceCommandCharacter
 
-.rival
-	ld de, wRivalName
-	jr PlaceCommandCharacter
+; .rival
+	; ld de, wRivalName
+	; jr PlaceCommandCharacter
 
 .linkbattle
 	ld de, wOTClassName

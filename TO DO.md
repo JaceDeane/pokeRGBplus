@@ -2,8 +2,6 @@
 
 - Update Blue's House so Daisy's event works properly
 
-- (!) Make Rival's trainer class `RIVAL` display during battle (!)
-
 - Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
 
 - Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
