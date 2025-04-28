@@ -32,6 +32,7 @@
 	const MUSIC_PALLET_TOWN                  ; 1c
 	const MUSIC_POKEMON_TALK                 ; 1d ; Oaks Lab RBY
 	const MUSIC_PROF_OAK                     ; 1e
+	const MUSIC_RIVAL_ENCOUNTER_GS           ; TODO - Remove
 	const MUSIC_RIVAL_ENCOUNTER              ; 1f
 	const MUSIC_RIVAL_AFTER                  ; 20
 	const MUSIC_SURF                         ; 21

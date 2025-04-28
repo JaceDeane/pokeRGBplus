@@ -9,7 +9,7 @@ Route22_MapScripts:
 	def_callbacks
 
 Route22Noop1Scene:
-	;setscene SCENE_ROUTE22_RIVAL_BATTLE
+	;setscene SCENE_ROUTE22_RIVAL_BATTLE ; DEBUG testing
 	end
 
 Route22Noop2Scene:
@@ -17,22 +17,14 @@ Route22Noop2Scene:
 	
 Route22RivalBattleScene1:
 	moveobject ROUTE22_RIVAL, 25, 4
-	; turnobject PLAYER, RIGHT
-	; showemote EMOTE_SHOCK, PLAYER, 15
-	; special FadeOutMusic
-	; pause 15
-	; ;appear ROUTE22_RIVAL
-	; applymovement ROUTE22_RIVAL, Route22RivalApproachMovement
-	; turnobject PLAYER, DOWN
-
+	;fallthrough
 Route22RivalBattleScene2:
-	;turnobject PLAYER, RIGHT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
 	appear ROUTE22_RIVAL
+	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement ROUTE22_RIVAL, Route22RivalApproachMovement
-	;turnobject PLAYER, UP
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK ;Check whether to load Rival1 or Rival2 version of the Route 22 fight
 	iftrue .Fight1
 	;checkevent EVENT_GOT_A_POKEMON_FROM_OAK ; Event that triggers the 2nd Rival Fight -- probably beating GIOVANNI
@@ -44,12 +36,10 @@ Route22RivalBattleScene2:
 	sjump Route22RivalBattle2Script
 
 Route22RivalBattle1Script:
-	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext Route22Rival1BeforeText
 	waitbutton
 	closetext
-	;setevent EVENT_RIVAL_AZALEA_TOWN ;*** ???
 	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	iftrue .Squirtle
 	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
@@ -87,8 +77,8 @@ Route22RivalBattle1Script:
 	waitbutton
 	closetext
 	;turnobject PLAYER, LEFT
-	applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement1
-	;applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement2
+	;applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement1 ; Top tile 29, 4
+	applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement2 ; Bottom tile 29, 5
 	;playsound SFX_EXIT_BUILDING
 	disappear ROUTE22_RIVAL
 	setscene SCENE_ROUTE22_NOOP
@@ -138,7 +128,7 @@ Route22Rival1BeforeText:
 	text "<RIVAL>: Hey!"
 	line "<PLAYER>!"
 
-	para "You're going to"
+	para "You're going to the"
 	line "#MON LEAGUE?"
 
 	para "Forget it! You"
@@ -159,9 +149,10 @@ Route22Rival1WinText:
 	done
 
 Route22Rival1AfterText:
-	text "I heard #MON"
-	line "LEAGUE has many"
-	cont "tough trainers!"
+	text "I heard that the"
+	line "#MON LEAGUE"
+	cont "has many tough"
+	cont "trainers!"
 
 	para "I have to figure"
 	line "out how to get"
@@ -174,13 +165,56 @@ Route22Rival1AfterText:
 
 Route22Rival1LossText:
 	text "<RIVAL>: What?"
-	line "Why do I have 2"
+	line "Why do I have two"
 	cont "#MON?"
 
 	para "You should catch"
 	cont "some more too!"
 	done
 
+Route22Rival2BeforeText:
+	text "<RIVAL>: What?"
+	line "<PLAYER>! What a"
+	cont "surprise to see"
+	cont "you here!"
+
+	para "So you're going"
+	line "to the #MON"
+	cont "LEAGUE?"
+
+	para "You collected all"
+	line "the BADGES too?"
+	cont "That's cool!"
+
+	para "Then I'll whip you"
+	line "<PLAYER> as a warm"
+	cont "up for the"
+	cont "#MON LEAGUE!"
+
+	para "Come on!"
+	done
+
+Route22Rival2WinText:
+	text "What!?"
+
+	para "I was just"
+	line "careless!"
+	done
+
+Route22Rival2AfterText:
+	text "That loosened me"
+	line "up!"
+	
+	para "I'm ready for the"
+	line "#MON LEAGUE!"
+
+	para "<PLAYER>, you need"
+	line "more practice!"
+
+	para "But hey, you know"
+	line "that! I'm out of"
+	cont "here. Smell ya!"
+	done
 
 PokemonLeagueEntranceSignText:
 	text "#MON LEAGUE"

@@ -34,8 +34,9 @@ Music:
 	dba Music_RBYPalletTown ; RBY Pallet Town
 	dba Music_OaksLab ; RBY Oaks Lab ;ProfOaksPokemonTalk
 	dba Music_ProfOak
-	dba Music_LookRival
-	dba Music_AfterTheRivalFight
+	dba Music_LookRival ; Unused in RGB+
+	dba Music_LookRival_Blue ; RGB+ Look! Rival
+	dba Music_AfterTheRivalFight ; TODO - Remove
 	dba Music_Surf
 	dba Music_Evolution
 	dba Music_NationalPark
