@@ -27,7 +27,8 @@ MapScenes::
 	scene_var ROUTE_27,                                    wRoute27SceneID
 	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID ; Unused RGB+
 	scene_var PALLET_TOWN,                                 wPalletTownSceneID
-	scene_var ELMS_LAB,                                    wElmsLabSceneID ; Unused RGB+
+	;scene_var ELMS_LAB,                                    wElmsLabSceneID ; Unused RGB+
+	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID
 	scene_var OAKS_LAB,                                    wOaksLabSceneID
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
 	scene_var ROUTE_29,                                    wRoute29SceneID

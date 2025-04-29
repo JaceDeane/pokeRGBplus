@@ -3062,7 +3062,8 @@ wHallOfFameSceneID::                              db
 wRoute27SceneID::                                 db
 wNewBarkTownSceneID::                             db ; Unused RGB+
 wPalletTownSceneID::                              db 
-wElmsLabSceneID::                                 db ; Unused RGB+
+; wElmsLabSceneID::                                 db ; Unused RGB+
+wBluesHouseSceneID::                              db
 wOaksLabSceneID::                                 db
 wPlayersHouse1FSceneID::                          db
 wRoute29SceneID::                                 db

@@ -1,7 +1,5 @@
 # TO DO:
 
-- Update Blue's House so Daisy's event works properly
-
 - Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
 
 - Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
@@ -69,6 +67,8 @@ TRADES:
 
 ## Tutorials:
 
+- (!) Animate tiles even when textboxes are open (https://github.com/pret/pokecrystal/wiki/Tips-and-tricks#animate-tiles-even-when-textboxes-are-open)
+
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
 
 - (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
@@ -84,7 +84,6 @@ TRADES:
 - Make new battle text to distinguish status move misses and fails (https://github.com/pret/pokecrystal/wiki/Make-new-battle-text-to-distinguish-status-move-misses-and-fails)
 
 - Make wild Pokémon encounter levels vary (https://github.com/pret/pokecrystal/wiki/Make-wild-Pokémon-encounter-levels-vary)
-
 
 ## Tutorials (Temporary):
 
