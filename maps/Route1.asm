@@ -113,7 +113,7 @@ Route1ClerkMartSampleText::
 
 Route1ClerkItemGivenText::
 	text "We also carry"
-	line "# BALLs for"
+	line "# BALLS for"
 	cont "catching #MON!"
 	done
 

@@ -204,7 +204,84 @@ OaksLabPokeDexScript:
 .PokeDexText
 	jumptext OaksLabPokedexText
 	
-OaksLabParcelScript:
+; OaksLabParcelScript:
+	; setscene SCENE_OAKSLAB_PARCEL
+	; writetext OaksLabOak1DeliverParcelText
+	; playsound SFX_KEY_ITEM
+	; waitsfx
+	; waitbutton
+	; takeitem OAKS_PARCEL
+	; setevent EVENT_OAK_GOT_PARCEL
+	; writetext OaksLabOak1ParcelThanksText
+	; waitbutton
+	; closetext
+	; readvar VAR_FACING
+	; ifequal DOWN, OaksLabParcelScriptSouth
+	; ifequal UP, OaksLabParcelScriptNorth
+	; ifequal RIGHT, OaksLabParcelScriptEast
+	; end
+	
+; OaksLabParcelScriptNorth:
+	; moveobject OAKSLAB_BLUE, 4, 8
+	; ;turnobject OAKSLAB_OAK, DOWN
+	; appear OAKSLAB_BLUE
+	; playmusic MUSIC_RIVAL_ENCOUNTER
+	; opentext
+	; writetext OaksLabRivalGrampsText
+	; waitbutton
+	; closetext
+	; applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovementSouth
+	; special RestartMapMusic
+	; opentext
+	; writetext OaksLabRivalWhatDidYouCallMeForText
+	; waitbutton
+	; ;turnobject PLAYER, UP
+	; writetext OaksLabOakIHaveARequestText
+	; waitbutton
+	; closetext
+	; ;applymovement OAKSLAB_OAK, OakWalkToDeskMovementRight ; Up, Left, Turn Down
+	; opentext
+	; writetext OaksLabOakMyInventionPokedexText
+	; waitbutton
+	; closetext
+	; ;turnobject OAKSLAB_OAK, UP
+	; disappear OAKSLAB_POKEDEX1
+	; disappear OAKSLAB_POKEDEX2
+	; ;applymovement OAKSLAB_OAK, OakWalkToPlayerSouth ; Right, Down
+	; opentext
+	; waitsfx
+	; writetext OaksLabOakGotPokedexText
+	; playsound SFX_KEY_ITEM
+	; waitsfx
+	; closetext
+	; disappear OAKSLAB_POKEDEX1
+	; disappear OAKSLAB_POKEDEX2
+	; setevent EVENT_GOT_POKEDEX
+	; setflag ENGINE_POKEDEX
+	; opentext
+	; writetext OaksLabOakThatWasMyDreamText
+	; waitbutton
+	; writetext OaksLabRivalLeaveItAllToMeText
+	; ;turnobject OAKSLAB_BLUE, RIGHT
+	; ;turnobject PLAYER, LEFT
+	; ;writetext OaksLabRivalHateToSayItText
+	; waitbutton
+	; closetext
+	; playmusic MUSIC_RIVAL_ENCOUNTER
+	; applymovement OAKSLAB_BLUE, RivalLeaveMovement
+	; ;turnobject PLAYER, DOWN
+	; playsound SFX_EXIT_BUILDING
+	; disappear OAKSLAB_BLUE
+	; special RestartMapMusic
+	; setscene SCENE_OAKSLAB_NOOP_2
+	; setevent EVENT_GAMBLER_ASLEEP
+	; clearevent EVENT_GAMBLER_AWAKE
+	; setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
+	; setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
+	; setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
+	; end
+	
+OaksLabParcelScript:	
 	readvar VAR_FACING
 	ifequal DOWN, .FacingDown
 	ifequal RIGHT, .FacingRight
@@ -227,25 +304,21 @@ OaksLabParcelScript:
 	writetext OaksLabOak1ParcelThanksText
 	waitbutton
 	closetext
+	readvar VAR_FACING
+	ifequal DOWN, .OakWontTurn
+	turnobject OAKSLAB_OAK, DOWN
+.OakWontTurn
 	appear OAKSLAB_BLUE
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	;applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement
-	readvar VAR_FACING
-	ifequal DOWN, .FacingDown2
-	ifequal RIGHT, .FacingRight2
-	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement
-	sjump .Fallthrough2
-.FacingDown2
-	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement1
-	sjump .Fallthrough2
-.FacingRight2
-	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement2
-	sjump .Fallthrough2
-.Fallthrough2
-	special RestartMapMusic
 	opentext
 	writetext OaksLabRivalGrampsText
 	waitbutton
+	closetext
+	scall BlueParcelWalkUpScript
+	special RestartMapMusic
+	opentext
+	;writetext OaksLabRivalGrampsText
+	;waitbutton
 	writetext OaksLabRivalWhatDidYouCallMeForText
 	waitbutton
 	writetext OaksLabOakIHaveARequestText
@@ -267,9 +340,11 @@ OaksLabParcelScript:
 	readvar VAR_FACING
 	ifequal RIGHT, .KeepBlueUp
 	ifequal UP, .TurnBlueRight
+	ifequal DOWN, .KeepBlueUp
 	
 .TurnBlueRight
 	turnobject OAKSLAB_BLUE, RIGHT
+	turnobject PLAYER, LEFT
 	writetext OaksLabRivalLeaveItAllToMeText
 	waitbutton
 	closetext
@@ -283,7 +358,7 @@ OaksLabParcelScript:
 	clearevent EVENT_GAMBLER_AWAKE
 	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
 	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
-	;setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
+	setmapscene ROUTE_22, SCENE_ROUTE22_RIVAL_BATTLE
 	end
 	
 .KeepBlueUp
@@ -301,10 +376,33 @@ OaksLabParcelScript:
 	clearevent EVENT_GAMBLER_AWAKE
 	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
 	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
-	;setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
+	setmapscene ROUTE_22, SCENE_ROUTE22_RIVAL_BATTLE
 	end
 	
-BlueParcelWalkUpMovement:
+BlueParcelWalkUpScript:
+	;closetext
+	readvar VAR_FACING
+	ifequal DOWN, BlueParcelWalkUpScriptSouth
+	ifequal UP, BlueParcelWalkUpScriptNorth
+	ifequal RIGHT, BlueParcelWalkUpScriptEast
+	end
+
+BlueParcelWalkUpScriptNorth:
+	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovementNorth
+	;opentext
+	end
+	
+BlueParcelWalkUpScriptEast:
+	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovementEast
+	;opentext
+	end
+	
+BlueParcelWalkUpScriptSouth:
+	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovementSouth
+	;opentext
+	end
+	
+BlueParcelWalkUpMovementNorth:
 	slow_step UP
 	slow_step UP
 	slow_step UP
@@ -312,14 +410,14 @@ BlueParcelWalkUpMovement:
 	slow_step UP
 	step_end
 
-BlueParcelWalkUpMovement1:
+BlueParcelWalkUpMovementEast:
+	slow_step UP
 	slow_step UP
 	slow_step UP
 	slow_step UP
 	step_end
 	
-BlueParcelWalkUpMovement2:
-	slow_step UP
+BlueParcelWalkUpMovementSouth:
 	slow_step UP
 	slow_step UP
 	slow_step UP
@@ -766,7 +864,7 @@ OaksLabRivalMyPokemonLooksStrongerText:
 
 OaksLabThoseArePokeBallsText:
 	text "Those are #"
-	line "BALLs. They"
+	line "BALLS. They"
 	cont "contain #MON!"
 	done
 
@@ -872,7 +970,7 @@ OaksLabOak1ReceivedPokeballsText:
 
 OaksLabPlayerReceivedPokeBallsText:
 	text "<PLAYER> got 5"
-	line "POKé BALLs!"
+	line "POKé BALLS!"
 	done
 
 OaksLabGivePokeballsExplanationText:
@@ -945,7 +1043,7 @@ OaksLabOakChooseMonText:
 	para "Haha!"
 
 	para "They are inside"
-	line "the # BALLs."
+	line "the # BALLS."
 
 	para "When I was young,"
 	line "I was a serious"
@@ -1083,7 +1181,7 @@ OaksLabRivalLeaveItAllToMeText:
 	text "<RIVAL>: Alright"
 	line "Gramps! Leave it"
 	cont "all to me!"
-
+; split this text here ;OaksLabRivalHateToSayItText:
 	para "<PLAYER>, I hate to"
 	line "say it, but I"
 	cont "don't need you!"
@@ -1309,5 +1407,5 @@ OaksLab_MapEvents:
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_CHARMANDER_POKEBALL_IN_OAKS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_SQUIRTLE_POKEBALL_IN_OAKS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_BULBASAUR_POKEBALL_IN_OAKS_LAB
-	object_event  2,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDexScript, EVENT_GOT_POKEDEX
-	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDexScript, EVENT_GOT_POKEDEX
+	object_event  2,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDexScript, EVENT_GOT_POKEDEX
+	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDexScript, EVENT_GOT_POKEDEX
