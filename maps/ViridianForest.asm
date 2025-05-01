@@ -3,9 +3,9 @@
 	; const VIRIDIANFOREST_YOUNGSTER2
 	; const VIRIDIANFOREST_YOUNGSTER3
 	; const VIRIDIANFOREST_YOUNGSTER4
-	; const VIRIDIANFOREST_ANTIDOTE
-	; const VIRIDIANFOREST_POTION
-	; const VIRIDIANFOREST_POKE_BALL
+	; const VIRIDIANFOREST_POKE_BALL1
+	; const VIRIDIANFOREST_POKE_BALL2
+	; const VIRIDIANFOREST_POKE_BALL3
 	; const VIRIDIANFOREST_YOUNGSTER5
 
 ViridianForest_MapScripts:
@@ -13,7 +13,14 @@ ViridianForest_MapScripts:
 
 	def_callbacks
 
-
+; ViridianForest***:
+	; itemball ***
+	
+; ViridianForest***:
+	; itemball ***
+	
+; ViridianForest***:
+	; itemball ***
 
 ViridianForestYoungster1Text:
 	text "I came here with"
@@ -159,8 +166,9 @@ ViridianForest_MapEvents:
 	; bg_event  2,  1, TEXT_VIRIDIANFOREST_LEAVING_SIGN
 
 	def_object_events
-	;object_event  8, 4, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianForestSouthGateGirlScript, -1 ; NON-TRAINER
-	;object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherRob, -1 ; TRAINER
+	;object_event  8, 4, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianForest***Script, -1 ; NON-TRAINER
+	;object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcher***, -1 ; TRAINER
+	;object_event 13, 45, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForest***, EVENT_VIRIDIAN_FOREST_*** ; ITEM BALL
 	;
 	; object_event 16, 43, SPRITE_YOUNGSTER, STAY, NONE, TEXT_VIRIDIANFOREST_YOUNGSTER1
 	; object_event 30, 33, SPRITE_YOUNGSTER, STAY, LEFT, TEXT_VIRIDIANFOREST_YOUNGSTER2, OPP_BUG_CATCHER, 1

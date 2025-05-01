@@ -2,6 +2,8 @@
 
 - Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
 
+- `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
+
 - Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
 
 - Add and connect Viridian Forest to Route 2
