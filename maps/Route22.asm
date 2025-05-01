@@ -9,8 +9,8 @@ Route22_MapScripts:
 	def_callbacks
 
 Route22Noop1Scene:
-	setscene SCENE_ROUTE22_RIVAL_BATTLE ; DEBUG testing
-	setflag ENGINE_EARTHBADGE
+	; setscene SCENE_ROUTE22_RIVAL_BATTLE ; DEBUG testing
+	; setflag ENGINE_EARTHBADGE
 	end
 
 Route22Noop2Scene:

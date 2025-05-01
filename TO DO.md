@@ -19,6 +19,8 @@
 	- Add the museum back (Display fossils picture)
 	
 	- Update Pewter's PokeCenter & NPC homes
+	
+- Include and check all hidden items from R/B exist and are in the right place
 
 - Update Route 4 to RB equivalent*
 
