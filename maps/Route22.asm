@@ -9,7 +9,8 @@ Route22_MapScripts:
 	def_callbacks
 
 Route22Noop1Scene:
-	;setscene SCENE_ROUTE22_RIVAL_BATTLE ; DEBUG testing
+	setscene SCENE_ROUTE22_RIVAL_BATTLE ; DEBUG testing
+	setflag ENGINE_EARTHBADGE
 	end
 
 Route22Noop2Scene:
@@ -25,10 +26,10 @@ Route22RivalBattleScene2:
 	appear ROUTE22_RIVAL
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	applymovement ROUTE22_RIVAL, Route22RivalApproachMovement
-	checkevent EVENT_GOT_A_POKEMON_FROM_OAK ;Check whether to load Rival1 or Rival2 version of the Route 22 fight
-	iftrue .Fight1
-	;checkevent EVENT_GOT_A_POKEMON_FROM_OAK ; Event that triggers the 2nd Rival Fight -- probably beating GIOVANNI
-	;iftrue .Fight2
+	checkflag ENGINE_EARTHBADGE ; Triggers the 2nd Rival Fight
+		iftrue .Fight2
+	checkevent EVENT_GOT_A_POKEMON_FROM_OAK ; Likely redundant
+		iftrue .Fight1
 .Fight1
 	sjump Route22RivalBattle1Script
 	;end
@@ -41,53 +42,110 @@ Route22RivalBattle1Script:
 	waitbutton
 	closetext
 	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
-	iftrue .Squirtle
+		iftrue .Squirtle1
 	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
-	iftrue .Bulbasaur
+		iftrue .Bulbasaur1
 	winlosstext Route22Rival1WinText, Route22Rival1LossText
 	setlasttalked ROUTE22_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_SQUIRTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump AfterBattle1
 
-.Squirtle:
+.Squirtle1:
 	winlosstext Route22Rival1WinText, Route22Rival1LossText
 	setlasttalked ROUTE22_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_BULBASAUR
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump AfterBattle1
 
-.Bulbasaur:
+.Bulbasaur1:
 	winlosstext Route22Rival1WinText, Route22Rival1LossText
 	setlasttalked ROUTE22_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_CHARMANDER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterBattle
-
-.AfterBattle:
+	sjump AfterBattle1
+	
+AfterBattle1:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext Route22Rival1AfterText
 	waitbutton
 	closetext
-	;turnobject PLAYER, LEFT
-	;applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement1 ; Top tile 29, 4
+	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
+	sjump RivalLeaves
+
+Route22RivalBattle2Script:
+	opentext
+	writetext Route22Rival2BeforeText
+	waitbutton
+	closetext
+	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
+		iftrue .Squirtle2
+	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
+		iftrue .Bulbasaur2
+	winlosstext Route22Rival2WinText, Route22Rival2LossText
+	setlasttalked ROUTE22_RIVAL
+	loadtrainer RIVAL2, RIVAL2_4_SQUIRTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE ; Can you lose this?
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterBattle2
+
+.Squirtle2:
+	winlosstext Route22Rival2WinText, Route22Rival2LossText
+	setlasttalked ROUTE22_RIVAL
+	loadtrainer RIVAL2, RIVAL2_4_BULBASAUR
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE ; Can you lose this?
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterBattle2
+
+.Bulbasaur2:
+	winlosstext Route22Rival2WinText, Route22Rival2LossText
+	setlasttalked ROUTE22_RIVAL
+	loadtrainer RIVAL2, RIVAL2_4_CHARMANDER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE ; Can you lose this?
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterBattle2
+
+AfterBattle2:
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext Route22Rival2AfterText
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
+	sjump RivalLeaves
+
+RivalLeaves:		; Shared by both rival battles
+	readvar VAR_YCOORD
+        getnum STRING_BUFFER_3
+        ifequal 4, .HigherTile
+        ifequal 5, .LowerTile
+.HigherTile
+	applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement1 ; Top tile 29, 4
+	sjump .ok
+.LowerTile
 	applymovement ROUTE22_RIVAL, Route22RivalLeaveMovement2 ; Bottom tile 29, 5
-	;playsound SFX_EXIT_BUILDING
+.ok
 	disappear ROUTE22_RIVAL
 	setscene SCENE_ROUTE22_NOOP
+	setevent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	waitsfx
 	playmapmusic
-	end
-	
-Route22RivalBattle2Script:
-	; TODO
 	end
 
 PokemonLeagueEntranceSign:
@@ -215,6 +273,19 @@ Route22Rival2AfterText:
 	line "that! I'm out of"
 	cont "here. Smell ya!"
 	done
+	
+Route22Rival2LossText:
+	text "<RIVAL>: Hahaha!"
+	line "<PLAYER>! That's"
+	cont "your best?"
+	
+	para "You're nowhere"
+	line "near as good as"
+	cont "me, pal!"
+
+	para "Go train some"
+	line "more! You loser!"
+	done
 
 PokemonLeagueEntranceSignText:
 	text "#MON LEAGUE"
@@ -236,10 +307,3 @@ Route22_MapEvents:
 
 	def_object_events
 	object_event  25,  5, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
-	;object_event  25,  5, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22Rival2Script, -1
-	
-	; const EVENT_1ST_ROUTE22_RIVAL_BATTLE
-	; const EVENT_2ND_ROUTE22_RIVAL_BATTLE
-	; const EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
-	; const EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
-	; const EVENT_ROUTE22_RIVAL_WANTS_BATTLE

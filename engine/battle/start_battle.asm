@@ -119,10 +119,12 @@ PlayBattleMusic:
 	cp RIVAL1
 	jr z, .done
 	cp RIVAL2
+	jr z, .done
+	cp RIVAL3
 	jr nz, .othertrainer
 
 	ld a, [wOtherTrainerID]
-	cp RIVAL2_4_BULBASAUR ; Rival in Indigo Plateau ; TODO - Replace with RIVAL3_1_BULBASAUR
+	cp RIVAL3_1_BULBASAUR ; Rival in Indigo Plateau
 	jr c, .done
 	ld de, MUSIC_CHAMPION_BATTLE
 	jr .done

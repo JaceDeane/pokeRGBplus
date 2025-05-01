@@ -29,6 +29,7 @@
 ENGINE / DATA:
 
 - Make all the Rival trainer classes use the same .pal for the battle sprite instead of loading it 3x for 'separate' classes
+	`pokeRGBplus\data\trainers\palettes.asm`
 
 - Simplify the sleeping Old Man event to just use one event_flag instead of two
 
