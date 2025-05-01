@@ -33,6 +33,7 @@ Facings:
 	dw FacingBoulderDust2
 	dw FacingGrass1
 	dw FacingGrass2
+	dw FacingSitting
 	assert_table_length NUM_FACINGS
 	dw 0 ; end
 
@@ -236,3 +237,10 @@ FacingGrass2:
 	db 2 ; #
 	db  9, -1, ABSOLUTE_TILE_ID, $fe
 	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fe
+
+FacingSitting:
+	db 4 ; #
+	db  0,  4, 0, $00
+	db  0, 12, 0, $01
+	db  8,  4, RELATIVE_ATTRIBUTES, $02
+	db  8, 12, RELATIVE_ATTRIBUTES, $03

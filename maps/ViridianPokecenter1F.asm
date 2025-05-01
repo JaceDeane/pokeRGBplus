@@ -23,8 +23,8 @@ ViridianPokecenter1FGentlemanScript:
 ViridianPokecenter1FCooltrainerMScript:
 	jumptextfaceplayer ViridianPokecenter1FCooltrainerMText
 
-ViridianPokecenter1FBugCatcherScript:
-	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
+ViridianPokecenter1FSittingGuyScript:
+	jumptextfaceplayer ViridianPokecenter1FSittingGuyText
 
 ViridianPokecenter1FGentlemanText:
 	text "You can use that"
@@ -43,7 +43,7 @@ ViridianPokecenter1FCooltrainerMText:
 	line "any money either!"
 	done
 
-ViridianPokecenter1FBugCatcherText:
+ViridianPokecenter1FSittingGuyText:
 	text "#MON CENTERs"
 	line "heal your tired,"
 	
@@ -71,4 +71,4 @@ IF DEF(_RED)
 ELIF DEF(_BLUE)
 	object_event  4,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
 ENDC
-	object_event  0,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
+	object_event  0,  4, SPRITE_SITTING_GUY, SPRITEMOVEDATA_SITTING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FSittingGuyScript, -1

@@ -297,6 +297,14 @@ SpriteMovementData::
 	db 0 ; flags1
 	db 0 ; flags2
 	db SWIMMING ; palette flags
+	
+; SPRITEMOVEDATA_SITTING
+	db SPRITEMOVEFN_SITTING ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_SITTING ; action
+	db FIXED_FACING | SLIDING
+	db 0 ; flags2
+	db 0 ; palette flags
 
 	assert_table_length NUM_SPRITEMOVEDATA
 
