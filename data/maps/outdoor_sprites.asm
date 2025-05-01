@@ -41,40 +41,44 @@ ViridianGroupSprites:
 ; Route2, Route22, ViridianCity
 CinnabarGroupSprites:
 ; Route19, Route20, Route21, CinnabarIsland
+; SPRITESET_PALLET_VIRIDIAN
+	db SPRITE_BLUE
+	db SPRITE_YOUNGSTER
 	db SPRITE_GIRL
 	db SPRITE_FISHER
-	db SPRITE_YOUNGSTER
-	db SPRITE_BLUE
+	db SPRITE_COOLTRAINER_M
 	db SPRITE_GRAMPS
-	db SPRITE_BUG_CATCHER
+	;db SPRITE_SEEL ; ???
 	db SPRITE_OAK
-	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SWIMMER_GUY
-	; max 9 of 9 walking sprites
+	; max 8 (9) of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
+	db SPRITE_FRUIT_TREE ; TBD
 	db SPRITE_GRAMPS_ASLEEP
 	db 0 ; end
 
+; Route3 and Route4 are connected
 ; CeruleanCity and Route5 are connected
-CeruleanGroupSprites:
-; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
 PewterGroupSprites:
 ; Route3, PewterCity
+CeruleanGroupSprites:
+; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
 SaffronGroupSprites:
 ; Route5, SaffronCity
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
+	; SPRITESET_PEWTER_CERULEAN
 	db SPRITE_YOUNGSTER
-	db SPRITE_LASS
-	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKET
-	db SPRITE_MISTY
+	db SPRITE_SUPER_NERD
+	db SPRITE_FISHER ; HIKER
+	db SPRITE_LASS ; MONSTER - same as SLOWPOKE...?
+	db SPRITE_BLUE
+	db SPRITE_OFFICER ; GUARD
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_SLOWPOKE
+	;db SPRITE_UNUSED_GAMBLER_ASLEEP_2
+	db SPRITE_SLOWPOKE ; TBD
 	db 0 ; end
 
 CeladonGroupSprites:

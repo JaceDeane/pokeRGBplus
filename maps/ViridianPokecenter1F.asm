@@ -1,9 +1,9 @@
 	object_const_def
 	const VIRIDIANPOKECENTER1F_NURSE
 	const VIRIDIANPOKECENTER1F_LINK_RECEPTIONIST
+	const VIRIDIANPOKECENTER1F_SITTING_GUY
 	const VIRIDIANPOKECENTER1F_GENTLEMAN
 	const VIRIDIANPOKECENTER1F_COOLTRAINER_M
-	const VIRIDIANPOKECENTER1F_BUG_CATCHER
 
 ViridianPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -44,7 +44,7 @@ ViridianPokecenter1FCooltrainerMText:
 	done
 
 ViridianPokecenter1FSittingGuyText:
-	text "#MON CENTERs"
+	text "#MON CENTERS"
 	line "heal your tired,"
 	
 	para "hurt or fainted"
@@ -65,10 +65,10 @@ ViridianPokecenter1F_MapEvents:
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FNurseScript, -1
 	object_event 11,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FLinkReceptionistScript, -1
+	object_event  0,  4, SPRITE_SITTING_GUY, SPRITEMOVEDATA_SITTING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FSittingGuyScript, -1
 	object_event 10,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FGentlemanScript, -1
 IF DEF(_RED)
 	object_event  4,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
 ELIF DEF(_BLUE)
 	object_event  4,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
 ENDC
-	object_event  0,  4, SPRITE_SITTING_GUY, SPRITEMOVEDATA_SITTING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FSittingGuyScript, -1

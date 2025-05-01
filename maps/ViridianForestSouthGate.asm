@@ -44,4 +44,4 @@ ViridianForestSouthGate_MapEvents:
 
 	def_object_events
 	object_event  8, 4, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianForestSouthGateGirlScript, -1
-	object_event  2, 4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestSouthGateTwinScript, -1
+	object_event  2, 4, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestSouthGateTwinScript, -1
