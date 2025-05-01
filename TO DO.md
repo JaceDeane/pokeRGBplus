@@ -1,18 +1,17 @@
 # TO DO:
 
-- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
+MAPS:
+
+- (!) Set proper wild encounter data (!)
+	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
 
 - `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
 
-- Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
-
 - Add and connect Viridian Forest to Route 2
-	
-	- Add NPCs to the gates connecting
 	
 	- Add NPCs, hidden items and signposts to Viridian Forest
 	
-	- Update the encounters
+	- Update the encounters*
 
 - All of Pewter City onwards
 
@@ -26,11 +25,14 @@
 
 - Update Route 4 to RB equivalent*
 
-- (!) Set proper wild encounter data (!)
-
 - Update Diglett's Cave (all)
 
 ENGINE / DATA:
+
+- (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...?
+	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
+	
+- Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
 
 - Make all the Rival trainer classes use the same .pal for the battle sprite instead of loading it 3x for 'separate' classes
 	`pokeRGBplus\data\trainers\palettes.asm`
@@ -47,9 +49,15 @@ GRAPHICS:
 
 - Remove the now-redundant variable sprites (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#5-remove-the-now-redundant-variable-sprites)
 
+- Implement a unique animation for the Ghost upon battle start, like other Pokémon
+
+MUSIC: 
+
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
-- Implement a unique animation for the Ghost upon battle start, like other Pokémon
+- Custom `Battle! Rival` track for Blue (?)
+
+- Night version of Kanto Wild Battle theme (?)
 
 TRADES:
 
