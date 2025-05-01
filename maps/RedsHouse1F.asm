@@ -16,7 +16,7 @@ RedsMom:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue .GotAPokemon
 	writetext MomWakeUpText
-	givepoke PIDGEY, 5, BERRY ; debug
+	givepoke PIDGEY, 50, BERRY ; debug
 	waitbutton
 	waitsfx ; debug
 	playsound SFX_ITEM ; debug
