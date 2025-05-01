@@ -94,7 +94,7 @@ ENDM
 	ld hl, wShadowOAMSprite32
 	ld de, .PC_ElmsLab_OAM
 	call .PlaceHealingMachineTile
-	call .PlaceHealingMachineTile
+	;call .PlaceHealingMachineTile ; Removed as only one healing screen needed in R/B
 	jr .LoadBallsOntoMachine
 
 .HOF_LoadBallsOntoMachine:
@@ -134,14 +134,15 @@ ENDM
 	ret
 
 .PC_ElmsLab_OAM:
-	dbsprite   4,   4, 2, 0, $7c, PAL_OW_TREE | OBP_NUM
-	dbsprite   4,   4, 6, 0, $7c, PAL_OW_TREE | OBP_NUM
-	dbsprite   4,   4, 0, 6, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   5,   4, 0, 6, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
-	dbsprite   4,   5, 0, 3, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   5,   5, 0, 3, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
-	dbsprite   4,   6, 0, 0, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   5,   6, 0, 0, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+; heal machine monitor
+	dbsprite   6,   4, 4, 4, $7c, PAL_OW_TREE | OBP_NUM
+; poke balls 1-6
+	dbsprite   6,   5, 0, 3, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite   7,   5, 0, 3, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	dbsprite   6,   6, 0, 0, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite   7,   6, 0, 0, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	dbsprite   6,   6, 0, 5, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite   7,   6, 0, 5, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
 
 .HealMachineGFX:
 INCBIN "gfx/overworld/heal_machine.2bpp"
