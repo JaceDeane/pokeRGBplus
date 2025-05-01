@@ -67,6 +67,8 @@ TRADES:
 
 ## ! Bugs: !
 
+- (!) Losing to your Rival on Route 22 causes a secondary 'ghost' NPC object to appear when returning and re-challenging the fight
+
 - (!) Force the Pokedex to load in Area data for Kanto only
 
 - (!) Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)

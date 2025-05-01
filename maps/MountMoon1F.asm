@@ -237,7 +237,7 @@ MountMoon1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 15, 33, ROUTE_4, 1
+	warp_event 15, 33, ROUTE_4, 2
 	warp_event  5,  5, MOUNT_MOON_B1F, 1
 	warp_event 17, 11, MOUNT_MOON_B1F, 3
 	warp_event 25, 15, MOUNT_MOON_B1F, 4

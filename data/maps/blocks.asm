@@ -133,6 +133,7 @@ SilverCavePokecenter1F_Blocks:
 CeladonPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
+MountMoonPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter.blk"
 
 Route30_Blocks:
