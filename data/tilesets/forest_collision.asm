@@ -106,16 +106,16 @@
 	tilecoll WALL, WALL, WALL, WALL ; 69
 	tilecoll WALL, WALL, WALL, WALL ; 6a
 	tilecoll WALL, WALL, WALL, WALL ; 6b
-	tilecoll WALL, WALL, WALL, WALL ; 6c
-	tilecoll WALL, WALL, WALL, WALL ; 6d
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 6c
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 6d
 	tilecoll WALL, WALL, WALL, WALL ; 6e
 	tilecoll WALL, WALL, WALL, WALL ; 6f
-	tilecoll WALL, WALL, WALL, WALL ; 70
-	tilecoll WALL, WALL, WALL, WALL ; 71
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 70
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 71
 	tilecoll WALL, WALL, WALL, WALL ; 72
 	tilecoll WALL, WALL, WALL, WALL ; 73
-	tilecoll WALL, WALL, WALL, WALL ; 74
-	tilecoll WALL, WATER, WALL, WATER ; 75
+	tilecoll FLOOR, WATER, FLOOR, FLOOR ; 74
+	tilecoll WATER, FLOOR, FLOOR, FLOOR ; 75
 	tilecoll WATER, WALL, WATER, WALL ; 76
 	tilecoll WALL, WALL, WALL, WALL ; 77
 	tilecoll WALL, WALL, WALL, WALL ; 78

@@ -42,9 +42,30 @@ CutTreeBlockPointers:
 .forest:
 ; facing block, replacement block, animation
 	;db $0f, $17, 0
-	db $01, $28, 1 ; allows grass to be cut
-	db $06, $37, 1 ; grass
-	db $07, $3b, 1 ; grass
+	db $01, $1b, 1 ; allows grass to be cut
+	db $04, $35, 1 ; grass/stump
+	db $05, $39, 1 ; grass/stump
+	db $06, $37, 1 ; grass/stump
+	db $07, $3b, 1 ; grass/stump
+	db $08, $48, 1 ; grass/stump
+	db $09, $49, 1 ; grass/stump
+	db $0a, $4c, 1 ; grass/stump
+	db $0b, $4d, 1 ; grass/stump
+	db $0c, $36, 1 ; grass/stump
+	db $0d, $34, 1 ; grass/stump
+	db $0e, $3a, 1 ; grass/stump
+	db $0f, $38, 1 ; grass/stump
+	db $10, $6c, 1 ; grass/stump
+	db $11, $6d, 1 ; grass/stump
+	db $12, $70, 1 ; grass/stump
+	db $13, $71, 1 ; grass/stump
+	db $16, $21, 1 ; grass/sign
+	db $22, $1b, 1 ; grass/stump
+	db $23, $1b, 1 ; grass/stump
+	db $24, $1b, 1 ; grass/stump
+	db $25, $1b, 1 ; grass/stump
+	db $30, $74, 1 ; grass/stump
+	db $32, $75, 1 ; grass/stump
 	db -1 ; end
 
 
