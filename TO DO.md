@@ -1,5 +1,8 @@
 # TO DO:
 
+- Add a debug menu of some sort
+	- Add Pokémon, add item, warp to map, change badges, set event/flag, etc.
+
 MAPS:
 
 - (!) Set proper wild encounter data (!)
@@ -21,6 +24,8 @@ MAPS:
 	
 	- Update Pewter's PokeCenter & NPC homes
 	
+	- Pewter Gym
+	
 - Include and check all hidden items from R/B exist and are in the right place
 
 - Magikarp Salesman event
@@ -30,6 +35,8 @@ MAPS:
 - Update Diglett's Cave (all)
 
 ENGINE / DATA:
+
+- (!) Remove old G/S trainer EVENT flags
 
 - (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...?
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
@@ -43,7 +50,7 @@ ENGINE / DATA:
 
 - Add the Link Receptionist into `jumpstd` events section
 
-- Update DVs, attributes and parties for Giovanni
+- Update DVs, attributes and parties for Giovanni (& other re-implemented R/B trainers)
 
 GRAPHICS:
 

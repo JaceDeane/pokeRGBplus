@@ -1,6 +1,6 @@
 	object_const_def
 	const PEWTERGYM_BROCK
-	const PEWTERGYM_YOUNGSTER
+	const PEWTERGYM_CAMPER
 	const PEWTERGYM_GYM_GUIDE
 
 PewterGym_MapScripts:
@@ -21,7 +21,7 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
-	setevent EVENT_BEAT_CAMPER_JERRY
+	setevent EVENT_BEAT_CAMPER_LIAM
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_BADGE
@@ -38,13 +38,13 @@ PewterGymBrockScript:
 	closetext
 	end
 
-TrainerCamperJerry:
-	;trainer CAMPER, JERRY, EVENT_BEAT_CAMPER_JERRY, CamperJerrySeenText, CamperJerryBeatenText, 0, .Script
+TrainerCamperLiam:
+	trainer CAMPER, LIAM, EVENT_BEAT_CAMPER_LIAM, CamperLiamSeenText, CamperLiamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperJerryAfterBattleText
+	writetext CamperLiamAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -144,7 +144,7 @@ BrockFightDoneText:
 	cont "er too."
 	done
 
-CamperJerrySeenText:
+CamperLiamSeenText:
 	text "The trainers of"
 	line "this GYM use rock-"
 	cont "type #MON."
@@ -159,12 +159,12 @@ CamperJerrySeenText:
 	line "ready for this?"
 	done
 
-CamperJerryBeatenText:
+CamperLiamBeatenText:
 	text "I have to win"
 	line "these battles…"
 	done
 
-CamperJerryAfterBattleText:
+CamperLiamAfterBattleText:
 	text "Hey, you! Trainer"
 	line "from JOHTO! BROCK"
 
@@ -221,5 +221,5 @@ PewterGym_MapEvents:
 
 	def_object_events
 	object_event  4,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
-	object_event  3,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
+	object_event  3,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperLiam, -1
 	object_event  6, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1
