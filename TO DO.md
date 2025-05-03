@@ -5,30 +5,26 @@
 
 MAPS:
 
+	Viridian Forest:
+	- Add Hidden items to Viridian Forest
+	- Update the encounters*
+
+	Pewter City:
+	- Update Pewter Gym trainers' dialogue & VS teams
+	- Add the museum back (Display fossils picture)
+		- Map and events
+	- Update Pewter's PokeCenter & NPC homes
+	- Pewter Gym: Update text
+	- Add the guy who stops you before beating Brock
+	
 - (!) Set proper wild encounter data (!)
 	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
 
 - `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
+	
+- (!) Include and check all hidden items from R/B exist and are in the right place
 
-- Add and connect Viridian Forest to Route 2
-	
-	- Add NPCs, hidden items and signposts to Viridian Forest
-	
-	- Update the encounters*
-
-- All of Pewter City onwards
-
-	- Update Pewter Gym trainers' dialogue & VS teams
-	
-	- Add the museum back (Display fossils picture)
-	
-	- Update Pewter's PokeCenter & NPC homes
-	
-	- Pewter Gym
-	
-- Include and check all hidden items from R/B exist and are in the right place
-
-- Magikarp Salesman event
+- Magikarp Salesman event in the Mount Moon Pokemon Center
 
 - Route 3 & Route 4 events/Trainers, etc.
 
@@ -36,10 +32,12 @@ MAPS:
 
 ENGINE / DATA:
 
-- (!) Remove old G/S trainer EVENT flags
-
 - (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...?
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
+
+- Update TM/HM list
+
+- Remove old G/S trainer EVENT flags (as needed)
 	
 - Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
 
@@ -93,6 +91,8 @@ TRADES:
 
 - (!) Animate tiles even when textboxes are open (https://github.com/pret/pokecrystal/wiki/Tips-and-tricks#animate-tiles-even-when-textboxes-are-open)
 
+- Picking up game corner coins ()
+
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
 
 - (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
@@ -108,6 +108,8 @@ TRADES:
 - Make new battle text to distinguish status move misses and fails (https://github.com/pret/pokecrystal/wiki/Make-new-battle-text-to-distinguish-status-move-misses-and-fails)
 
 - Make wild Pokémon encounter levels vary (https://github.com/pret/pokecrystal/wiki/Make-wild-Pokémon-encounter-levels-vary)
+
+- Look into a password system for switching versions internally (? - Could be unlocked for the main menu post-game) (https://github.com/pret/pokecrystal/wiki/Password-system)
 
 ## Tutorials (Temporary):
 

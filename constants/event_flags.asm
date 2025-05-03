@@ -838,6 +838,8 @@
 
 ; Kanto hidden items - R/B
 	const EVENT_VIRIDIAN_CITY_HIDDEN_POTION
+	const EVENT_VIRIDIAN_FOREST_HIDDEN_POTION
+	const EVENT_VIRIDIAN_FOREST_HIDDEN_ANTIDOTE
 	
 	
 ; Kanto hidden items  ------- TO BE REMOVED

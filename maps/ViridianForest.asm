@@ -54,13 +54,19 @@ ViridianForestBugCatcher5Script:
 
 ViridianForestAntidote:
 	itemball ANTIDOTE
-	
+
 ViridianForestPotion:
 	itemball POTION
-	
+
 ViridianForestPokeBall:
 	itemball POKE_BALL
+
+ViridianForestHiddenPotion:
+	hiddenitem POTION, EVENT_VIRIDIAN_FOREST_HIDDEN_POTION
 	
+ViridianForestHiddenAntidote:
+	hiddenitem POTION, EVENT_VIRIDIAN_FOREST_HIDDEN_ANTIDOTE
+
 ViridianForestTrainerTips1:
 	jumptext ViridianForestTrainerTips1Text
 	
@@ -222,8 +228,8 @@ ViridianForest_MapEvents:
 	bg_event  4, 28, BGEVENT_READ, ViridianForestTrainerTips3
 	bg_event 18, 49, BGEVENT_READ, ViridianForestTrainerTips4
 	bg_event  2,  5, BGEVENT_READ, ViridianForestLeavingSign
-	; hidden_object  1, 18+4, POTION, HiddenItems
-	; hidden_object 16, 42+4, ANTIDOTE, HiddenItems
+	bg_event  1, 22, BGEVENT_ITEM, ViridianForestHiddenPotion
+	bg_event 16, 46, BGEVENT_ITEM, ViridianForestHiddenAntidote
 
 	def_object_events
 	object_event 16, 47, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianForestBugCatcher1Script, -1
