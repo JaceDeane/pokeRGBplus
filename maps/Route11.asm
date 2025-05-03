@@ -11,7 +11,7 @@ Route11_MapScripts:
 	def_callbacks
 
 TrainerYoungsterOwen:
-	trainer YOUNGSTER, OWEN, EVENT_BEAT_YOUNGSTER_OWEN, YoungsterOwenSeenText, YoungsterOwenBeatenText, 0, .Script
+	;trainer YOUNGSTER, OWEN, EVENT_BEAT_YOUNGSTER_OWEN, YoungsterOwenSeenText, YoungsterOwenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -22,7 +22,7 @@ TrainerYoungsterOwen:
 	end
 
 TrainerYoungsterJason:
-	trainer YOUNGSTER, JASON, EVENT_BEAT_YOUNGSTER_JASON, YoungsterJasonSeenText, YoungsterJasonBeatenText, 0, .Script
+	;trainer YOUNGSTER, JASON, EVENT_BEAT_YOUNGSTER_JASON, YoungsterJasonSeenText, YoungsterJasonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -33,7 +33,7 @@ TrainerYoungsterJason:
 	end
 
 TrainerPsychicHerman:
-	trainer PSYCHIC_T, HERMAN, EVENT_BEAT_PSYCHIC_HERMAN, PsychicHermanSeenText, PsychicHermanBeatenText, 0, .Script
+	;trainer PSYCHIC_T, HERMAN, EVENT_BEAT_PSYCHIC_HERMAN, PsychicHermanSeenText, PsychicHermanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -44,7 +44,7 @@ TrainerPsychicHerman:
 	end
 
 TrainerPsychicFidel:
-	trainer PSYCHIC_T, FIDEL, EVENT_BEAT_PSYCHIC_FIDEL, PsychicFidelSeenText, PsychicFidelBeatenText, 0, .Script
+	;trainer PSYCHIC_T, FIDEL, EVENT_BEAT_PSYCHIC_FIDEL, PsychicFidelSeenText, PsychicFidelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

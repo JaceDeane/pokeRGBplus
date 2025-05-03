@@ -142,7 +142,7 @@ _OfferToSellSlowpokeTail:
 	end
 
 TrainerCamperRoland:
-	trainer CAMPER, ROLAND, EVENT_BEAT_CAMPER_ROLAND, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
+	;trainer CAMPER, ROLAND, EVENT_BEAT_CAMPER_ROLAND, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -153,7 +153,7 @@ TrainerCamperRoland:
 	end
 
 TrainerFisherJustin:
-	trainer FISHER, JUSTIN, EVENT_BEAT_FISHER_JUSTIN, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
+	;trainer FISHER, JUSTIN, EVENT_BEAT_FISHER_JUSTIN, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -164,7 +164,7 @@ TrainerFisherJustin:
 	end
 
 TrainerFisherRalph1:
-	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
+	;trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_FISHER_RALPH
@@ -190,7 +190,7 @@ TrainerFisherRalph1:
 	askforphonenumber PHONE_FISHER_RALPH
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, FISHER, RALPH1
+	;gettrainername STRING_BUFFER_3, FISHER, RALPH1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -216,7 +216,7 @@ TrainerFisherRalph1:
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer FISHER, RALPH1
+	;loadtrainer FISHER, RALPH1
 	startbattle
 	reloadmapafterbattle
 	loadmem wRalphFightCount, 1
@@ -224,7 +224,7 @@ TrainerFisherRalph1:
 	end
 
 .LoadFight1:
-	loadtrainer FISHER, RALPH2
+	;loadtrainer FISHER, RALPH2
 	startbattle
 	reloadmapafterbattle
 	loadmem wRalphFightCount, 2
@@ -232,7 +232,7 @@ TrainerFisherRalph1:
 	end
 
 .LoadFight2:
-	loadtrainer FISHER, RALPH3
+	;loadtrainer FISHER, RALPH3
 	startbattle
 	reloadmapafterbattle
 	loadmem wRalphFightCount, 3
@@ -240,7 +240,7 @@ TrainerFisherRalph1:
 	end
 
 .LoadFight3:
-	loadtrainer FISHER, RALPH4
+	;loadtrainer FISHER, RALPH4
 	startbattle
 	reloadmapafterbattle
 	loadmem wRalphFightCount, 4
@@ -248,7 +248,7 @@ TrainerFisherRalph1:
 	end
 
 .LoadFight4:
-	loadtrainer FISHER, RALPH5
+	;loadtrainer FISHER, RALPH5
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
@@ -289,7 +289,7 @@ TrainerFisherRalph1:
 	end
 
 TrainerFisherHenry:
-	trainer FISHER, HENRY, EVENT_BEAT_FISHER_HENRY, FisherHenrySeenText, FisherHenryBeatenText, 0, .Script
+	;trainer FISHER, HENRY, EVENT_BEAT_FISHER_HENRY, FisherHenrySeenText, FisherHenryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -300,7 +300,7 @@ TrainerFisherHenry:
 	end
 
 TrainerPicnickerLiz1:
-	trainer PICNICKER, LIZ1, EVENT_BEAT_PICNICKER_LIZ, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
+	;trainer PICNICKER, LIZ1, EVENT_BEAT_PICNICKER_LIZ, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
@@ -324,7 +324,7 @@ TrainerPicnickerLiz1:
 	askforphonenumber PHONE_PICNICKER_LIZ
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
+	;gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -350,7 +350,7 @@ TrainerPicnickerLiz1:
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer PICNICKER, LIZ1
+	;loadtrainer PICNICKER, LIZ1
 	startbattle
 	reloadmapafterbattle
 	loadmem wLizFightCount, 1
@@ -358,7 +358,7 @@ TrainerPicnickerLiz1:
 	end
 
 .LoadFight1:
-	loadtrainer PICNICKER, LIZ2
+	;loadtrainer PICNICKER, LIZ2
 	startbattle
 	reloadmapafterbattle
 	loadmem wLizFightCount, 2
@@ -366,7 +366,7 @@ TrainerPicnickerLiz1:
 	end
 
 .LoadFight2:
-	loadtrainer PICNICKER, LIZ3
+	;loadtrainer PICNICKER, LIZ3
 	startbattle
 	reloadmapafterbattle
 	loadmem wLizFightCount, 3
@@ -374,7 +374,7 @@ TrainerPicnickerLiz1:
 	end
 
 .LoadFight3:
-	loadtrainer PICNICKER, LIZ4
+	;loadtrainer PICNICKER, LIZ4
 	startbattle
 	reloadmapafterbattle
 	loadmem wLizFightCount, 4
@@ -382,7 +382,7 @@ TrainerPicnickerLiz1:
 	end
 
 .LoadFight4:
-	loadtrainer PICNICKER, LIZ5
+	;loadtrainer PICNICKER, LIZ5
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
@@ -417,7 +417,7 @@ TrainerPicnickerLiz1:
 	end
 
 TrainerYoungsterAlbert:
-	trainer YOUNGSTER, ALBERT, EVENT_BEAT_YOUNGSTER_ALBERT, YoungsterAlbertSeenText, YoungsterAlbertBeatenText, 0, .Script
+	;trainer YOUNGSTER, ALBERT, EVENT_BEAT_YOUNGSTER_ALBERT, YoungsterAlbertSeenText, YoungsterAlbertBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -428,7 +428,7 @@ TrainerYoungsterAlbert:
 	end
 
 TrainerYoungsterGordon:
-	trainer YOUNGSTER, GORDON, EVENT_BEAT_YOUNGSTER_GORDON, YoungsterGordonSeenText, YoungsterGordonBeatenText, 0, .Script
+	;trainer YOUNGSTER, GORDON, EVENT_BEAT_YOUNGSTER_GORDON, YoungsterGordonSeenText, YoungsterGordonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -439,7 +439,7 @@ TrainerYoungsterGordon:
 	end
 
 TrainerBirdKeeperPeter:
-	trainer BIRD_KEEPER, PETER, EVENT_BEAT_BIRD_KEEPER_PETER, BirdKeeperPeterSeenText, BirdKeeperPeterBeatenText, 0, .Script
+	;trainer BIRD_KEEPER, PETER, EVENT_BEAT_BIRD_KEEPER_PETER, BirdKeeperPeterSeenText, BirdKeeperPeterBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

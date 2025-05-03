@@ -86,7 +86,7 @@ DayCareMon2Script:
 	end
 
 TrainerCamperTodd1:
-	trainer CAMPER, TODD1, EVENT_BEAT_CAMPER_TODD, CamperTodd1SeenText, CamperTodd1BeatenText, 0, .Script
+	;trainer CAMPER, TODD1, EVENT_BEAT_CAMPER_TODD, CamperTodd1SeenText, CamperTodd1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_CAMPER_TODD
@@ -112,7 +112,7 @@ TrainerCamperTodd1:
 	askforphonenumber PHONE_CAMPER_TODD
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, CAMPER, TODD1
+	;gettrainername STRING_BUFFER_3, CAMPER, TODD1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -138,7 +138,7 @@ TrainerCamperTodd1:
 	checkflag ENGINE_FLYPOINT_CIANWOOD
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer CAMPER, TODD1
+	;loadtrainer CAMPER, TODD1
 	startbattle
 	reloadmapafterbattle
 	loadmem wToddFightCount, 1
@@ -146,7 +146,7 @@ TrainerCamperTodd1:
 	end
 
 .LoadFight1:
-	loadtrainer CAMPER, TODD2
+	;loadtrainer CAMPER, TODD2
 	startbattle
 	reloadmapafterbattle
 	loadmem wToddFightCount, 2
@@ -154,7 +154,7 @@ TrainerCamperTodd1:
 	end
 
 .LoadFight2:
-	loadtrainer CAMPER, TODD3
+	;loadtrainer CAMPER, TODD3
 	startbattle
 	reloadmapafterbattle
 	loadmem wToddFightCount, 3
@@ -162,7 +162,7 @@ TrainerCamperTodd1:
 	end
 
 .LoadFight3:
-	loadtrainer CAMPER, TODD4
+	;loadtrainer CAMPER, TODD4
 	startbattle
 	reloadmapafterbattle
 	loadmem wToddFightCount, 4
@@ -170,7 +170,7 @@ TrainerCamperTodd1:
 	end
 
 .LoadFight4:
-	loadtrainer CAMPER, TODD5
+	;loadtrainer CAMPER, TODD5
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
@@ -211,7 +211,7 @@ TrainerCamperTodd1:
 	end
 
 TrainerPicnickerGina1:
-	trainer PICNICKER, GINA1, EVENT_BEAT_PICNICKER_GINA, PicnickerGina1SeenText, PicnickerGina1BeatenText, 0, .Script
+	;trainer PICNICKER, GINA1, EVENT_BEAT_PICNICKER_GINA, PicnickerGina1SeenText, PicnickerGina1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_GINA
@@ -237,7 +237,7 @@ TrainerPicnickerGina1:
 	askforphonenumber PHONE_PICNICKER_GINA
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, PICNICKER, GINA1
+	;gettrainername STRING_BUFFER_3, PICNICKER, GINA1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -263,7 +263,7 @@ TrainerPicnickerGina1:
 	checkflag ENGINE_FLYPOINT_MAHOGANY
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer PICNICKER, GINA1
+	;loadtrainer PICNICKER, GINA1
 	startbattle
 	reloadmapafterbattle
 	loadmem wGinaFightCount, 1
@@ -271,7 +271,7 @@ TrainerPicnickerGina1:
 	end
 
 .LoadFight1:
-	loadtrainer PICNICKER, GINA2
+	;loadtrainer PICNICKER, GINA2
 	startbattle
 	reloadmapafterbattle
 	loadmem wGinaFightCount, 2
@@ -279,7 +279,7 @@ TrainerPicnickerGina1:
 	end
 
 .LoadFight2:
-	loadtrainer PICNICKER, GINA3
+	;loadtrainer PICNICKER, GINA3
 	startbattle
 	reloadmapafterbattle
 	loadmem wGinaFightCount, 3
@@ -287,7 +287,7 @@ TrainerPicnickerGina1:
 	end
 
 .LoadFight3:
-	loadtrainer PICNICKER, GINA4
+	;loadtrainer PICNICKER, GINA4
 	startbattle
 	reloadmapafterbattle
 	loadmem wGinaFightCount, 4
@@ -295,7 +295,7 @@ TrainerPicnickerGina1:
 	end
 
 .LoadFight4:
-	loadtrainer PICNICKER, GINA5
+	;loadtrainer PICNICKER, GINA5
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
@@ -360,7 +360,7 @@ OfficerKeithScript:
 	waitbutton
 	closetext
 	winlosstext OfficerKeithWinText, 0
-	loadtrainer OFFICER, KEITH
+	;loadtrainer OFFICER, KEITH
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_KEITH
@@ -380,7 +380,7 @@ OfficerKeithScript:
 	end
 
 TrainerYoungsterSamuel:
-	trainer YOUNGSTER, SAMUEL, EVENT_BEAT_YOUNGSTER_SAMUEL, YoungsterSamuelSeenText, YoungsterSamuelBeatenText, 0, .Script
+	;trainer YOUNGSTER, SAMUEL, EVENT_BEAT_YOUNGSTER_SAMUEL, YoungsterSamuelSeenText, YoungsterSamuelBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -391,7 +391,7 @@ TrainerYoungsterSamuel:
 	end
 
 TrainerYoungsterIan:
-	trainer YOUNGSTER, IAN, EVENT_BEAT_YOUNGSTER_IAN, YoungsterIanSeenText, YoungsterIanBeatenText, 0, .Script
+	;trainer YOUNGSTER, IAN, EVENT_BEAT_YOUNGSTER_IAN, YoungsterIanSeenText, YoungsterIanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -402,7 +402,7 @@ TrainerYoungsterIan:
 	end
 
 TrainerPokefanmBrandon:
-	trainer POKEFANM, BRANDON, EVENT_BEAT_POKEFANM_BRANDON, PokefanmBrandonSeenText, PokefanmBrandonBeatenText, 0, .Script
+	;trainer POKEFANM, BRANDON, EVENT_BEAT_POKEFANM_BRANDON, PokefanmBrandonSeenText, PokefanmBrandonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -413,7 +413,7 @@ TrainerPokefanmBrandon:
 	end
 
 TrainerCooltrainerfIrene:
-	trainer COOLTRAINERF, IRENE, EVENT_BEAT_COOLTRAINERF_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
+	;trainer COOLTRAINERF, IRENE, EVENT_BEAT_COOLTRAINERF_IRENE, CooltrainerfIreneSeenText, CooltrainerfIreneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -432,7 +432,7 @@ TrainerCooltrainerfIrene:
 	end
 
 TrainerCooltrainerfJenn:
-	trainer COOLTRAINERF, JENN, EVENT_BEAT_COOLTRAINERF_JENN, CooltrainerfJennSeenText, CooltrainerfJennBeatenText, 0, .Script
+	;trainer COOLTRAINERF, JENN, EVENT_BEAT_COOLTRAINERF_JENN, CooltrainerfJennSeenText, CooltrainerfJennBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -451,7 +451,7 @@ TrainerCooltrainerfJenn:
 	end
 
 TrainerCooltrainerfKate:
-	trainer COOLTRAINERF, KATE, EVENT_BEAT_COOLTRAINERF_KATE, CooltrainerfKateSeenText, CooltrainerfKateBeatenText, 0, .Script
+	;trainer COOLTRAINERF, KATE, EVENT_BEAT_COOLTRAINERF_KATE, CooltrainerfKateSeenText, CooltrainerfKateBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

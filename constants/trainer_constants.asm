@@ -104,21 +104,19 @@ DEF KRIS EQU __trainer_class__
 	trainerclass ERIKA ; 15
 	const ERIKA1
 
-	trainerclass YOUNGSTER ; 16
-	const JOEY1
-	const MIKEY
-	const ALBERT
-	const GORDON
-	const SAMUEL
-	const IAN
-	const JOEY2
-	const JOEY3
-	const WARREN
-	const JIMMY
-	const OWEN
-	const JASON
-	const JOEY4
-	const JOEY5
+	trainerclass YOUNGSTER ; 16 -- Updated to R/B, using FR/LG names
+	const BEN
+	const CALVIN
+	const JOSH
+	const TIMMY
+	const JOEY
+	const DAN
+	const CHAD
+	const TYLER
+	const EDDIE
+	const DILLON
+	const YASU
+	const DAVE
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -204,7 +202,7 @@ DEF KRIS EQU __trainer_class__
 	const BRIAN
 	const ERICK ; unused
 	const ANDY ; unused
-	const TYLER ; unused
+	const TYLERZ ; unused
 	const SEAN
 	const KEVIN
 	const STEVE ; unused
@@ -256,9 +254,9 @@ DEF KRIS EQU __trainer_class__
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
 	const ANDREW
-	const CALVIN
+	const CALVINZ
 	const SHANE
-	const BEN
+	const BENZ
 	const BRENT1
 	const RON
 	const ETHAN
@@ -329,7 +327,7 @@ DEF KRIS EQU __trainer_class__
 	const WADE1
 	const BUG_CATCHER_BENNY
 	const AL
-	const JOSH
+	const JOSHZ
 	const ARNIE1
 	const KEN
 	const WADE2
@@ -434,7 +432,7 @@ DEF KRIS EQU __trainer_class__
 	const ERIC
 	const GREGG ; unused
 	const JAY ; unused
-	const DAVE ; unused
+	const DAVEZ ; unused
 	const SAM
 	const TOM
 	const PAT
@@ -503,7 +501,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
-	const EDDIE
+	const EDDIEZ
 	const COREY
 
 	trainerclass FIREBREATHER ; 30
