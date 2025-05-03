@@ -139,7 +139,7 @@ SSAquaGranddaughterAfter:
 	end
 
 TrainerPokefanmColin:
-	trainer POKEFANM, COLIN, EVENT_BEAT_POKEFANM_COLIN, PokefanmColinSeenText, PokefanmColinBeatenText, 0, .Script
+	;trainer POKEFANM, COLIN, EVENT_BEAT_POKEFANM_COLIN, PokefanmColinSeenText, PokefanmColinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -150,7 +150,7 @@ TrainerPokefanmColin:
 	end
 
 TrainerTwinsMegandpeg1:
-	trainer TWINS, MEGANDPEG1, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg1SeenText, TwinsMegandpeg1BeatenText, 0, .Script
+	;trainer TWINS, MEGANDPEG1, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg1SeenText, TwinsMegandpeg1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -161,7 +161,7 @@ TrainerTwinsMegandpeg1:
 	end
 
 TrainerTwinsMegandpeg2:
-	trainer TWINS, MEGANDPEG2, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg2SeenText, TwinsMegandpeg2BeatenText, 0, .Script
+	;trainer TWINS, MEGANDPEG2, EVENT_BEAT_TWINS_MEG_AND_PEG, TwinsMegandpeg2SeenText, TwinsMegandpeg2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -172,7 +172,7 @@ TrainerTwinsMegandpeg2:
 	end
 
 TrainerPsychicRodney:
-	trainer PSYCHIC_T, RODNEY, EVENT_BEAT_PSYCHIC_RODNEY, PsychicRodneySeenText, PsychicRodneyBeatenText, 0, .Script
+	;trainer PSYCHIC_T, RODNEY, EVENT_BEAT_PSYCHIC_RODNEY, PsychicRodneySeenText, PsychicRodneyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -183,7 +183,7 @@ TrainerPsychicRodney:
 	end
 
 TrainerPokefanmJeremy:
-	trainer POKEFANM, JEREMY, EVENT_BEAT_POKEFANM_JEREMY, PokefanmJeremySeenText, PokefanmJeremyBeatenText, 0, .Script
+	;trainer POKEFANM, JEREMY, EVENT_BEAT_POKEFANM_JEREMY, PokefanmJeremySeenText, PokefanmJeremyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -194,7 +194,7 @@ TrainerPokefanmJeremy:
 	end
 
 TrainerPokefanfGeorgia:
-	trainer POKEFANF, GEORGIA, EVENT_BEAT_POKEFANF_GEORGIA, PokefanfGeorgiaSeenText, PokefanfGeorgiaBeatenText, 0, .Script
+	;trainer POKEFANF, GEORGIA, EVENT_BEAT_POKEFANF_GEORGIA, PokefanfGeorgiaSeenText, PokefanfGeorgiaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -205,7 +205,7 @@ TrainerPokefanfGeorgia:
 	end
 
 TrainerSupernerdShawn:
-	trainer SUPER_NERD, SHAWN, EVENT_BEAT_SUPER_NERD_SHAWN, SupernerdShawnSeenText, SupernerdShawnBeatenText, 0, .Script
+	;trainer SUPER_NERD, SHAWN, EVENT_BEAT_SUPER_NERD_SHAWN, SupernerdShawnSeenText, SupernerdShawnBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

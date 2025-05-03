@@ -11,7 +11,7 @@ OlivineLighthouse5F_MapScripts:
 	def_callbacks
 
 TrainerBirdKeeperDenis:
-	trainer BIRD_KEEPER, DENIS, EVENT_BEAT_BIRD_KEEPER_DENIS, BirdKeeperDenisSeenText, BirdKeeperDenisBeatenText, 0, .Script
+	;trainer BIRD_KEEPER, DENIS, EVENT_BEAT_BIRD_KEEPER_DENIS, BirdKeeperDenisSeenText, BirdKeeperDenisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -22,7 +22,7 @@ TrainerBirdKeeperDenis:
 	end
 
 TrainerSailorErnest:
-	trainer SAILOR, ERNEST, EVENT_BEAT_SAILOR_ERNEST, SailorErnestSeenText, SailorErnestBeatenText, 0, .Script
+	;trainer SAILOR, ERNEST, EVENT_BEAT_SAILOR_ERNEST, SailorErnestSeenText, SailorErnestBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

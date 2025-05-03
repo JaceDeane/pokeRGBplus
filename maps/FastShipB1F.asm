@@ -92,7 +92,7 @@ FastShipB1FSailorScript:
 	end
 
 TrainerSailorJeff:
-	trainer SAILOR, JEFF, EVENT_BEAT_SAILOR_JEFF, SailorJeffSeenText, SailorJeffBeatenText, 0, .Script
+	;trainer SAILOR, JEFF, EVENT_BEAT_SAILOR_JEFF, SailorJeffSeenText, SailorJeffBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -103,7 +103,7 @@ TrainerSailorJeff:
 	end
 
 TrainerPicnickerDebra:
-	trainer PICNICKER, DEBRA, EVENT_BEAT_PICNICKER_DEBRA, PicnickerDebraSeenText, PicnickerDebraBeatenText, 0, .Script
+	;trainer PICNICKER, DEBRA, EVENT_BEAT_PICNICKER_DEBRA, PicnickerDebraSeenText, PicnickerDebraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -114,7 +114,7 @@ TrainerPicnickerDebra:
 	end
 
 TrainerJugglerFritz:
-	trainer JUGGLER, FRITZ, EVENT_BEAT_JUGGLER_FRITZ, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
+	;trainer JUGGLER, FRITZ, EVENT_BEAT_JUGGLER_FRITZ, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -125,7 +125,7 @@ TrainerJugglerFritz:
 	end
 
 TrainerSailorGarrett:
-	trainer SAILOR, GARRETT, EVENT_BEAT_SAILOR_GARRETT, SailorGarrettSeenText, SailorGarrettBeatenText, 0, .Script
+	;trainer SAILOR, GARRETT, EVENT_BEAT_SAILOR_GARRETT, SailorGarrettSeenText, SailorGarrettBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -136,7 +136,7 @@ TrainerSailorGarrett:
 	end
 
 TrainerFisherJonah:
-	trainer FISHER, JONAH, EVENT_BEAT_FISHER_JONAH, FisherJonahSeenText, FisherJonahBeatenText, 0, .Script
+	;trainer FISHER, JONAH, EVENT_BEAT_FISHER_JONAH, FisherJonahSeenText, FisherJonahBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -147,7 +147,7 @@ TrainerFisherJonah:
 	end
 
 TrainerBlackbeltWai:
-	trainer BLACKBELT_T, WAI, EVENT_BEAT_BLACKBELT_WAI, BlackbeltWaiSeenText, BlackbeltWaiBeatenText, 0, .Script
+	;trainer BLACKBELT_T, WAI, EVENT_BEAT_BLACKBELT_WAI, BlackbeltWaiSeenText, BlackbeltWaiBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -158,7 +158,7 @@ TrainerBlackbeltWai:
 	end
 
 TrainerSailorKenneth:
-	trainer SAILOR, KENNETH, EVENT_BEAT_SAILOR_KENNETH, SailorKennethSeenText, SailorKennethBeatenText, 0, .Script
+	;trainer SAILOR, KENNETH, EVENT_BEAT_SAILOR_KENNETH, SailorKennethSeenText, SailorKennethBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -169,7 +169,7 @@ TrainerSailorKenneth:
 	end
 
 TrainerTeacherShirley:
-	trainer TEACHER, SHIRLEY, EVENT_BEAT_TEACHER_SHIRLEY, TeacherShirleySeenText, TeacherShirleyBeatenText, 0, .Script
+	;trainer TEACHER, SHIRLEY, EVENT_BEAT_TEACHER_SHIRLEY, TeacherShirleySeenText, TeacherShirleyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -180,7 +180,7 @@ TrainerTeacherShirley:
 	end
 
 TrainerSchoolboyNate:
-	trainer SCHOOLBOY, NATE, EVENT_BEAT_SCHOOLBOY_NATE, SchoolboyNateSeenText, SchoolboyNateBeatenText, 0, .Script
+	;trainer SCHOOLBOY, NATE, EVENT_BEAT_SCHOOLBOY_NATE, SchoolboyNateSeenText, SchoolboyNateBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -191,7 +191,7 @@ TrainerSchoolboyNate:
 	end
 
 TrainerSchoolboyRicky:
-	trainer SCHOOLBOY, RICKY, EVENT_BEAT_SCHOOLBOY_RICKY, SchoolboyRickySeenText, SchoolboyRickyBeatenText, 0, .Script
+	;trainer SCHOOLBOY, RICKY, EVENT_BEAT_SCHOOLBOY_RICKY, SchoolboyRickySeenText, SchoolboyRickyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

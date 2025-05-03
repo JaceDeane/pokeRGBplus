@@ -23,7 +23,7 @@ Route31CheckMomCallCallback:
 	endcallback
 
 TrainerBugCatcherWade1:
-	trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script
+	;trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE
@@ -49,7 +49,7 @@ TrainerBugCatcherWade1:
 	askforphonenumber PHONE_BUG_CATCHER_WADE
 	ifequal PHONE_CONTACTS_FULL, .PhoneFullSTD
 	ifequal PHONE_CONTACT_REFUSED, .DeclinedNumberSTD
-	gettrainername STRING_BUFFER_3, BUG_CATCHER, WADE1
+	;gettrainername STRING_BUFFER_3, BUG_CATCHER, WADE1
 	scall .RegisterNumberSTD
 	sjump .AcceptedNumberSTD
 
@@ -75,7 +75,7 @@ TrainerBugCatcherWade1:
 	checkflag ENGINE_FLYPOINT_GOLDENROD
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer BUG_CATCHER, WADE1
+	;loadtrainer BUG_CATCHER, WADE1
 	startbattle
 	reloadmapafterbattle
 	loadmem wWadeFightCount, 1
@@ -83,7 +83,7 @@ TrainerBugCatcherWade1:
 	end
 
 .LoadFight1:
-	loadtrainer BUG_CATCHER, WADE2
+	;loadtrainer BUG_CATCHER, WADE2
 	startbattle
 	reloadmapafterbattle
 	loadmem wWadeFightCount, 2
@@ -91,7 +91,7 @@ TrainerBugCatcherWade1:
 	end
 
 .LoadFight2:
-	loadtrainer BUG_CATCHER, WADE3
+	;loadtrainer BUG_CATCHER, WADE3
 	startbattle
 	reloadmapafterbattle
 	loadmem wWadeFightCount, 3
@@ -99,7 +99,7 @@ TrainerBugCatcherWade1:
 	end
 
 .LoadFight3:
-	loadtrainer BUG_CATCHER, WADE4
+	;loadtrainer BUG_CATCHER, WADE4
 	startbattle
 	reloadmapafterbattle
 	loadmem wWadeFightCount, 4
@@ -107,7 +107,7 @@ TrainerBugCatcherWade1:
 	end
 
 .LoadFight4:
-	loadtrainer BUG_CATCHER, WADE5
+	;loadtrainer BUG_CATCHER, WADE5
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_WADE_READY_FOR_REMATCH

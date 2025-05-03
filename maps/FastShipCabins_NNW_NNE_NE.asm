@@ -13,7 +13,7 @@ FastShipCabins_NNW_NNE_NE_MapScripts:
 	def_callbacks
 
 TrainerCooltrainermSean:
-	trainer COOLTRAINERM, SEAN, EVENT_BEAT_COOLTRAINERM_SEAN, CooltrainermSeanSeenText, CooltrainermSeanBeatenText, 0, .Script
+	;trainer COOLTRAINERM, SEAN, EVENT_BEAT_COOLTRAINERM_SEAN, CooltrainermSeanSeenText, CooltrainermSeanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -24,7 +24,7 @@ TrainerCooltrainermSean:
 	end
 
 TrainerCooltrainerfCarol:
-	trainer COOLTRAINERF, CAROL, EVENT_BEAT_COOLTRAINERF_CAROL, CooltrainerfCarolSeenText, CooltrainerfCarolBeatenText, 0, .Script
+	;trainer COOLTRAINERF, CAROL, EVENT_BEAT_COOLTRAINERF_CAROL, CooltrainerfCarolSeenText, CooltrainerfCarolBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -35,7 +35,7 @@ TrainerCooltrainerfCarol:
 	end
 
 TrainerPokemaniacEthan:
-	trainer POKEMANIAC, ETHAN, EVENT_BEAT_POKEMANIAC_ETHAN, PokemaniacEthanSeenText, PokemaniacEthanBeatenText, 0, .Script
+	;trainer POKEMANIAC, ETHAN, EVENT_BEAT_POKEMANIAC_ETHAN, PokemaniacEthanSeenText, PokemaniacEthanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -46,7 +46,7 @@ TrainerPokemaniacEthan:
 	end
 
 TrainerHikerNoland:
-	trainer HIKER, NOLAND, EVENT_BEAT_HIKER_NOLAND, HikerNolandSeenText, HikerNolandBeatenText, 0, .Script
+	;trainer HIKER, NOLAND, EVENT_BEAT_HIKER_NOLAND, HikerNolandSeenText, HikerNolandBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -57,7 +57,7 @@ TrainerHikerNoland:
 	end
 
 TrainerGentlemanEdward:
-	trainer GENTLEMAN, EDWARD, EVENT_BEAT_GENTLEMAN_EDWARD, GentlemanEdwardSeenText, GentlemanEdwardBeatenText, 0, .Script
+	;trainer GENTLEMAN, EDWARD, EVENT_BEAT_GENTLEMAN_EDWARD, GentlemanEdwardSeenText, GentlemanEdwardBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -68,7 +68,7 @@ TrainerGentlemanEdward:
 	end
 
 TrainerBurglarCorey:
-	trainer BURGLAR, COREY, EVENT_BEAT_BURGLAR_COREY, BurglarCoreySeenText, BurglarCoreyBeatenText, 0, .Script
+	;trainer BURGLAR, COREY, EVENT_BEAT_BURGLAR_COREY, BurglarCoreySeenText, BurglarCoreyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

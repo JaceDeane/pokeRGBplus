@@ -320,26 +320,21 @@ DEF KRIS EQU __trainer_class__
 	trainerclass SABRINA ; 23
 	const SABRINA1
 
-	trainerclass BUG_CATCHER ; 24
-	const DON
-	const ROB
-	const ED
-	const WADE1
-	const BUG_CATCHER_BENNY
-	const AL
-	const JOSHZ
-	const ARNIE1
-	const KEN
-	const WADE2
-	const WADE3
+	trainerclass BUG_CATCHER ; 24 -- Updated to R/B, using FR/LG names
+	const RICK
 	const DOUG
-	const ARNIE2
-	const ARNIE3
-	const WADE4
-	const WADE5
-	const ARNIE4
-	const ARNIE5
-	const WAYNE
+	const SAMMY
+	const COLTON
+	const GREG
+	const JAMES
+	const KENT
+	const ROBBY
+	const CALE
+	const KEIGO
+	const ELIJAH
+	const BUG_CATCHER_UNUSED ; Unused
+	const BRENT
+	const CONNER
 
 	trainerclass FISHER ; 25
 	const JUSTIN
@@ -384,10 +379,10 @@ DEF KRIS EQU __trainer_class__
 	const TONY ; unused
 	const JEROME
 	const TUCKER
-	const RICK ; unused
+	const RICKZ ; unused
 	const CAMERON
-	const SETH
-	const JAMES ; unused
+	const SETHZ
+	const JAMESZ ; unused
 	const LEWIS ; unused
 	const PARKER
 
@@ -416,9 +411,9 @@ DEF KRIS EQU __trainer_class__
 	const EUGENE
 	const HUEY1
 	const TERRELL
-	const KENT
-	const ERNEST
-	const JEFF
+	const KENTZ
+	const ERNESTZ
+	const JEFFZ
 	const GARRETT
 	const KENNETH
 	const STANLY
@@ -544,7 +539,7 @@ DEF KRIS EQU __trainer_class__
 	const FRANKLIN
 	const HERMAN
 	const FIDEL
-	const GREG
+	const GREGZ
 	const NORMAN
 	const MARK
 	const PHIL

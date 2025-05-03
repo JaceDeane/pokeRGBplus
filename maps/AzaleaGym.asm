@@ -21,7 +21,7 @@ AzaleaGymBugsyScript:
 	waitbutton
 	closetext
 	winlosstext BugsyText_ResearchIncomplete, 0
-	loadtrainer BUGSY, BUGSY1
+	;loadtrainer BUGSY, BUGSY1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BUGSY
@@ -68,7 +68,7 @@ AzaleaGymActivateRockets:
 	jumpstd RadioTowerRocketsScript
 
 TrainerTwinsAmyandmay1:
-	trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript
+	;trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
@@ -79,7 +79,7 @@ TrainerTwinsAmyandmay1:
 	end
 
 TrainerTwinsAmyandmay2:
-	trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript
+	;trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
@@ -90,7 +90,7 @@ TrainerTwinsAmyandmay2:
 	end
 
 TrainerBugCatcherBenny:
-	trainer BUG_CATCHER, BUG_CATCHER_BENNY, EVENT_BEAT_BUG_CATCHER_BENNY, BugCatcherBennySeenText, BugCatcherBennyBeatenText, 0, .AfterScript
+	;trainer BUG_CATCHER, BUG_CATCHER_BENNY, EVENT_BEAT_BUG_CATCHER_BENNY, BugCatcherBennySeenText, BugCatcherBennyBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
@@ -101,7 +101,7 @@ TrainerBugCatcherBenny:
 	end
 
 TrainerBugCatcherAl:
-	trainer BUG_CATCHER, AL, EVENT_BEAT_BUG_CATCHER_AL, BugCatcherAlSeenText, BugCatcherAlBeatenText, 0, .AfterScript
+	;trainer BUG_CATCHER, AL, EVENT_BEAT_BUG_CATCHER_AL, BugCatcherAlSeenText, BugCatcherAlBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
@@ -112,7 +112,7 @@ TrainerBugCatcherAl:
 	end
 
 TrainerBugCatcherJosh:
-	trainer BUG_CATCHER, JOSH, EVENT_BEAT_BUG_CATCHER_JOSH, BugCatcherJoshSeenText, BugCatcherJoshBeatenText, 0, .AfterScript
+	;trainer BUG_CATCHER, JOSH, EVENT_BEAT_BUG_CATCHER_JOSH, BugCatcherJoshSeenText, BugCatcherJoshBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled

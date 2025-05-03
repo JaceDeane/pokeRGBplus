@@ -10,7 +10,7 @@ FastShipCabins_SW_SSW_NW_MapScripts:
 	def_callbacks
 
 TrainerFirebreatherLyle:
-	trainer FIREBREATHER, LYLE, EVENT_BEAT_FIREBREATHER_LYLE, FirebreatherLyleSeenText, FirebreatherLyleBeatenText, 0, .Script
+	;trainer FIREBREATHER, LYLE, EVENT_BEAT_FIREBREATHER_LYLE, FirebreatherLyleSeenText, FirebreatherLyleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -21,7 +21,7 @@ TrainerFirebreatherLyle:
 	end
 
 TrainerBugCatcherKen:
-	trainer BUG_CATCHER, KEN, EVENT_BEAT_BUG_CATCHER_KEN, BugCatcherKenSeenText, BugCatcherKenBeatenText, 0, .Script
+	;trainer BUG_CATCHER, KEN, EVENT_BEAT_BUG_CATCHER_KEN, BugCatcherKenSeenText, BugCatcherKenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -32,7 +32,7 @@ TrainerBugCatcherKen:
 	end
 
 TrainerBeautyCassie:
-	trainer BEAUTY, CASSIE, EVENT_BEAT_BEAUTY_CASSIE, BeautyCassieSeenText, BeautyCassieBeatenText, 0, .Script
+	;trainer BEAUTY, CASSIE, EVENT_BEAT_BEAUTY_CASSIE, BeautyCassieSeenText, BeautyCassieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -43,7 +43,7 @@ TrainerBeautyCassie:
 	end
 
 TrainerGuitaristClyde:
-	trainer GUITARIST, CLYDE, EVENT_BEAT_GUITARIST_CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, .Script
+	;trainer GUITARIST, CLYDE, EVENT_BEAT_GUITARIST_CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
