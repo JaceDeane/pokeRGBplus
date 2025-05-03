@@ -12,7 +12,7 @@ Route46_MapScripts:
 	def_callbacks
 
 TrainerCamperTed:
-	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
+	;trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -23,7 +23,7 @@ TrainerCamperTed:
 	end
 
 TrainerPicnickerErin1:
-	trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
+	;trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
@@ -47,7 +47,7 @@ TrainerPicnickerErin1:
 	askforphonenumber PHONE_PICNICKER_ERIN
 	ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF
 	ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF
-	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
+	;gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
 	scall Route46RegisteredNumberF
 	sjump Route46NumberAcceptedF
 
@@ -65,7 +65,7 @@ TrainerPicnickerErin1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer PICNICKER, ERIN1
+	;loadtrainer PICNICKER, ERIN1
 	startbattle
 	reloadmapafterbattle
 	loadmem wErinFightCount, 1
@@ -73,7 +73,7 @@ TrainerPicnickerErin1:
 	end
 
 .LoadFight1:
-	loadtrainer PICNICKER, ERIN2
+	;loadtrainer PICNICKER, ERIN2
 	startbattle
 	reloadmapafterbattle
 	loadmem wErinFightCount, 2
@@ -81,7 +81,7 @@ TrainerPicnickerErin1:
 	end
 
 .LoadFight2:
-	loadtrainer PICNICKER, ERIN3
+	;loadtrainer PICNICKER, ERIN3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ERIN_READY_FOR_REMATCH
@@ -146,7 +146,7 @@ Route46RematchGiftF:
 	end
 
 TrainerHikerBailey:
-	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
+	;trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

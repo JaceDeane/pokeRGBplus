@@ -18,7 +18,7 @@ ENDM
 ; - BTTrainerClassSprites (see data/trainers/sprites.asm)
 ; - BTTrainerClassGenders (see data/trainers/genders.asm)
 ; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see data/trainers/parties.asm)
-DEF CHRIS EQU __trainer_class__
+DEF RED EQU __trainer_class__
 	trainerclass TRAINER_NONE ; 0
 	const PHONECONTACT_MOM
 	const PHONECONTACT_BIKESHOP
@@ -130,7 +130,7 @@ DEF KRIS EQU __trainer_class__
 	const BILLY
 	const CHAD1
 	const NATE
-	const RICKY
+	const RICKYZ
 	const JACK2
 	const JACK3
 	const ALAN2
@@ -255,11 +255,11 @@ DEF KRIS EQU __trainer_class__
 	const LARRY
 	const ANDREW
 	const CALVINZ
-	const SHANE
+	const SHANEZ
 	const BENZ
 	const BRENT1
 	const RON
-	const ETHAN
+	const ETHANZ
 	const BRENT2
 	const BRENT3
 	const ISSAC
@@ -337,7 +337,7 @@ DEF KRIS EQU __trainer_class__
 	const CONNER
 
 	trainerclass FISHER ; 25
-	const JUSTIN
+	const JUSTINZ
 	const RALPH1
 	const ARNOLD
 	const KYLE
@@ -576,29 +576,16 @@ DEF KRIS EQU __trainer_class__
 	const GINA5
 	const TIFFANY4
 
-	trainerclass CAMPER ; 36
-	const ROLAND
-	const TODD1
-	const IVAN
-	const ELLIOT
-	const BARRY
-	const LLOYD
-	const DEAN
-	const SID
-	const HARVEY ; unused
-	const DALE ; unused
-	const TED
-	const TODD2
-	const TODD3
-	const THOMAS ; unused
-	const LEROY ; unused
-	const DAVID ; unused
-	const JOHN ; unused
-	const JERRY
-	const SPENCER
-	const TODD4
-	const TODD5
-	const QUENTIN
+	trainerclass CAMPER ; 36 -- Updated to R/B, using FR/LG names
+	const LIAM
+	const SHANE
+	const ETHAN
+	const RICKY
+	const JEFF
+	const CAMPER_UNUSED
+	const CHRIS
+	const DREW
+	const JUSTIN
 
 	trainerclass EXECUTIVEF ; 37
 	const EXECUTIVEF_1
@@ -676,7 +663,7 @@ DEF KRIS EQU __trainer_class__
 	const GEORGIA
 	const JAIME
 
-	trainerclass RED ; 3f
+	trainerclass RED_GS ; 3f
 	const RED1
 
 	trainerclass RIVAL3 ; 40

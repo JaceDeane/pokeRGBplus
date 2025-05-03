@@ -21,7 +21,7 @@ FuchsiaGymJanineScript:
 	waitbutton
 	closetext
 	winlosstext JanineText_ToughOne, 0
-	loadtrainer GIOVANNI, GIOVANNI1
+	;loadtrainer GIOVANNI, GIOVANNI1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
@@ -73,7 +73,7 @@ LassAliceScript:
 	waitbutton
 	closetext
 	winlosstext LassAliceBeatenText, 0
-	loadtrainer LASS, ALICE
+	;loadtrainer LASS, ALICE
 	startbattle
 	iftrue .AliceBecomesJanine
 	reloadmapafterbattle
@@ -107,7 +107,7 @@ LassLindaScript:
 	waitbutton
 	closetext
 	winlosstext LassLindaBeatenText, 0
-	loadtrainer LASS, LINDA
+	;loadtrainer LASS, LINDA
 	startbattle
 	iftrue .LindaBecomesJanine
 	reloadmapafterbattle
@@ -141,7 +141,7 @@ PicnickerCindyScript:
 	waitbutton
 	closetext
 	winlosstext PicnickerCindyBeatenText, 0
-	loadtrainer PICNICKER, CINDY
+	;loadtrainer PICNICKER, CINDY
 	startbattle
 	iftrue .CindyBecomesJanine
 	reloadmapafterbattle
@@ -175,7 +175,7 @@ CamperBarryScript:
 	waitbutton
 	closetext
 	winlosstext CamperBarryBeatenText, 0
-	loadtrainer CAMPER, BARRY
+	;loadtrainer CAMPER, BARRY
 	startbattle
 	iftrue .BarryBecomesJanine
 	reloadmapafterbattle
