@@ -136,7 +136,20 @@ INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
-INCLUDE "audio/music/lookrival_blue.asm"
+INCLUDE "audio/music/lookrival_blue.asm" ; RGB+ New
+
+SECTION "Songs 6", ROMX
+
+INCLUDE "audio/music/rby/meetmaletrainer.asm" ; RBY Version
+INCLUDE "audio/music/rby/meetfemaletrainer.asm" ; RBY Version
+INCLUDE "audio/music/rby/meeteviltrainer.asm" ; RBY Version
+INCLUDE "audio/music/rby/jigglypuffsong.asm" ; RBY Version
+INCLUDE "audio/music/rby/gym.asm" ; RBY Version
+INCLUDE "audio/music/rby/wildbattle.asm" ; RBY Version
+INCLUDE "audio/music/rby/trainerbattle.asm" ; RBY Version
+INCLUDE "audio/music/rby/gymleaderbattle.asm" ; RBY Version
+INCLUDE "audio/music/rby/museumguy.asm" ; RBY Version
+INCLUDE "audio/music/rby/dungeon2.asm" ; RBY Version
 
 
 SECTION "Extra Songs 1", ROMX

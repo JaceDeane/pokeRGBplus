@@ -108,4 +108,14 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
+	dba Music_MeetMaleTrainer
+	dba Music_MeetFemaleTrainer
+	dba Music_MeetEvilTrainer
+	dba Music_JigglypuffSong
+	dba Music_RBYGym
+	dba Music_WildBattle
+	dba Music_TrainerBattle
+	dba Music_GymLeaderBattle
+	dba Music_MuseumGuy
+	dba Music_Dungeon2
 	assert_table_length NUM_MUSIC_SONGS

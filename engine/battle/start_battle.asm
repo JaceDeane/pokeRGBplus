@@ -83,7 +83,7 @@ PlayBattleMusic:
 	jr .done
 
 .kantowild
-	ld de, MUSIC_KANTO_WILD_BATTLE
+	ld de, MUSIC_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jr nz, .done
@@ -104,7 +104,7 @@ PlayBattleMusic:
 	cp GRUNTF
 	jr z, .done
 
-	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
 	jr c, .done
 
@@ -144,7 +144,7 @@ PlayBattleMusic:
 	jr .done
 
 .kantotrainer
-	ld de, MUSIC_KANTO_TRAINER_BATTLE
+	ld de, MUSIC_TRAINER_BATTLE
 
 .done
 	call PlayMusic

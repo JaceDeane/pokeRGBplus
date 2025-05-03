@@ -1,18 +1,62 @@
 	object_const_def
-	; const VIRIDIANFOREST_YOUNGSTER1
-	; const VIRIDIANFOREST_YOUNGSTER2
-	; const VIRIDIANFOREST_YOUNGSTER3
-	; const VIRIDIANFOREST_YOUNGSTER4
-	; const VIRIDIANFOREST_POKE_BALL1
-	; const VIRIDIANFOREST_POKE_BALL2
-	; const VIRIDIANFOREST_POKE_BALL3
-	; const VIRIDIANFOREST_YOUNGSTER5
+	const VIRIDIANFOREST_BUG_CATCHER1
+	const VIRIDIANFOREST_BUG_CATCHER2
+	const VIRIDIANFOREST_BUG_CATCHER3
+	const VIRIDIANFOREST_BUG_CATCHER4
+	const VIRIDIANFOREST_POKE_BALL1
+	const VIRIDIANFOREST_POKE_BALL2
+	const VIRIDIANFOREST_POKE_BALL3
+	const VIRIDIANFOREST_BUG_CATCHER5
 
 ViridianForest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
+; TrainerBugCatcherDoug:
+	; trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
+
+; .Script:
+	; endifjustbattled
+	; opentext
+	; writetext BugCatcherDougAfterBattleText
+	; waitbutton
+	; closetext
+	; end
+	
+; TrainerBugCatcherDoug:
+	; trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
+
+; .Script:
+	; endifjustbattled
+	; opentext
+	; writetext BugCatcherDougAfterBattleText
+	; waitbutton
+	; closetext
+	; end
+	
+; TrainerBugCatcherDoug:
+	; trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
+
+; .Script:
+	; endifjustbattled
+	; opentext
+	; writetext BugCatcherDougAfterBattleText
+	; waitbutton
+	; closetext
+	; end
+	
+; TrainerBugCatcherDoug:
+	; trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
+
+; .Script:
+	; endifjustbattled
+	; opentext
+	; writetext BugCatcherDougAfterBattleText
+	; waitbutton
+	; closetext
+	; end
+
 ; ViridianForest***:
 	; itemball ***
 	
@@ -22,7 +66,7 @@ ViridianForest_MapScripts:
 ; ViridianForest***:
 	; itemball ***
 
-ViridianForestYoungster1Text:
+ViridianForestBugCatcher1Text:
 	text "I came here with"
 	line "some friends!"
 
@@ -30,52 +74,52 @@ ViridianForestYoungster1Text:
 	line "#MON fights!"
 	done
 
-ViridianForestYoungster2BattleText:
+ViridianForestBugCatcher2BattleText:
 	text "Hey! You have"
 	line "#MON! Come on!"
 	cont "Let's battle 'em!"
 	done
 
-ViridianForestYoungster2EndBattleText:
+ViridianForestBugCatcher2EndBattleText:
 	text "No!"
 	line "CATERPIE can't"
 	cont "cut it!"
 	done
 
-ViridianForestYoungster2AfterBattleText:
+ViridianForestBugCatcher2AfterBattleText:
 	text "Ssh! You'll scare"
 	line "the bugs away!"
 	done
 
-ViridianForestYoungster3BattleText:
+ViridianForestBugCatcher3BattleText:
 	text "Yo! You can't jam"
 	line "out if you're a"
 	cont "#MON trainer!"
 	done
 
-ViridianForestYoungster3EndBattleText:
+ViridianForestBugCatcher3EndBattleText:
 	text "Huh?"
 	line "I ran out of"
 	cont "#MON!"
 	done
 
-ViridianForestYoungster3AfterBattleText:
+ViridianForestBugCatcher3AfterBattleText:
 	text "Darn! I'm going"
 	line "to catch some"
 	cont "stronger ones!"
 	done
 
-ViridianForestYoungster4BattleText:
+ViridianForestBugCatcher4BattleText:
 	text "Hey, wait up!"
 	line "What's the hurry?"
 	done
 
-ViridianForestYoungster4EndBattleText:
+ViridianForestBugCatcher4EndBattleText:
 	text "I give! You're"
 	line "good at this!"
 	done
 
-ViridianForestYoungster4AfterBattleText:
+ViridianForestBugCatcher4AfterBattleText:
 	text "Sometimes, you"
 	line "can find stuff on"
 	cont "the ground!"
@@ -85,7 +129,7 @@ ViridianForestYoungster4AfterBattleText:
 	cont "dropped!"
 	done
 
-ViridianForestYoungster5Text:
+ViridianForestBugCatcher5Text:
 	text "I ran out of #"
 	line "BALLS to catch"
 	cont "#MON with!"
@@ -169,12 +213,19 @@ ViridianForest_MapEvents:
 	;object_event  8, 4, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianForest***Script, -1 ; NON-TRAINER
 	;object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcher***, -1 ; TRAINER
 	;object_event 13, 45, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForest***, EVENT_VIRIDIAN_FOREST_*** ; ITEM BALL
-	;
-	; object_event 16, 43, SPRITE_YOUNGSTER, STAY, NONE, TEXT_VIRIDIANFOREST_YOUNGSTER1
-	; object_event 30, 33, SPRITE_YOUNGSTER, STAY, LEFT, TEXT_VIRIDIANFOREST_YOUNGSTER2, OPP_BUG_CATCHER, 1
-	; object_event 30, 19, SPRITE_YOUNGSTER, STAY, LEFT, TEXT_VIRIDIANFOREST_YOUNGSTER3, OPP_BUG_CATCHER, 2
-	; object_event  2, 18, SPRITE_YOUNGSTER, STAY, LEFT, TEXT_VIRIDIANFOREST_YOUNGSTER4, OPP_BUG_CATCHER, 3
+	object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestBugCatcher1, -1
+	object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherRick, -1 ; TRAINER
+	object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherDoug, -1 ; TRAINER
+	object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherSammy, -1 ; TRAINER
+	object_event 13, 45, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestAntidote, EVENT_VIRIDIAN_FOREST_ANTIDOTE
+	object_event 13, 45, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestPotion, EVENT_VIRIDIAN_FOREST_POTION
+	object_event 13, 45, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestPokeBall, EVENT_VIRIDIAN_FOREST_POKE_BALL
+	object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestBugCatcher5, -1
+	; object_event 16, 43, SPRITE_BUG_CATCHER, STAY, NONE, TEXT_VIRIDIANFOREST_BUG_CATCHER1
+	; object_event 30, 33, SPRITE_BUG_CATCHER, STAY, LEFT, TEXT_VIRIDIANFOREST_BUG_CATCHER2, OPP_BUG_CATCHER, 1
+	; object_event 30, 19, SPRITE_BUG_CATCHER, STAY, LEFT, TEXT_VIRIDIANFOREST_BUG_CATCHER3, OPP_BUG_CATCHER, 2
+	; object_event  2, 18, SPRITE_BUG_CATCHER, STAY, LEFT, TEXT_VIRIDIANFOREST_BUG_CATCHER4, OPP_BUG_CATCHER, 3
 	; object_event 25, 11, SPRITE_POKE_BALL, STAY, NONE, TEXT_VIRIDIANFOREST_ANTIDOTE, ANTIDOTE
 	; object_event 12, 29, SPRITE_POKE_BALL, STAY, NONE, TEXT_VIRIDIANFOREST_POTION, POTION
 	; object_event  1, 31, SPRITE_POKE_BALL, STAY, NONE, TEXT_VIRIDIANFOREST_POKE_BALL, POKE_BALL
-	; object_event 27, 40, SPRITE_YOUNGSTER, STAY, NONE, TEXT_VIRIDIANFOREST_YOUNGSTER5
+	; object_event 27, 40, SPRITE_BUG_CATCHER, STAY, NONE, TEXT_VIRIDIANFOREST_BUG_CATCHER5

@@ -106,6 +106,16 @@
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
 	const MUSIC_MOBILE_CENTER                ; 66
+	const MUSIC_MALE_TRAINER_ENCOUNTER       ; R/B
+	const MUSIC_FEMALE_TRAINER_ENCOUNTER     ; R/B 
+	const MUSIC_EVIL_TRAINER_ENCOUNTER       ; R/B
+	const MUSIC_JIGGLYPUFFS_SONG             ; R/B
+	const MUSIC_GYM_THEME                    ; R/B
+	const MUSIC_WILD_BATTLE                  ; R/B
+	const MUSIC_TRAINER_BATTLE               ; R/B
+	const MUSIC_GYM_LEADER_BATTLE            ; R/B
+	const MUSIC_FOLLOW_ME                    ; R/B
+	const MUSIC_VIRIDIAN_FOREST              ; R/B
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)
