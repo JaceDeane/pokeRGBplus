@@ -1,6 +1,8 @@
 TrainerClassAttributes:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width NUM_TRAINER_ATTRIBUTES, TrainerClassAttributes
+	
+	; Prize Money == 4 × [Base Reward] × [Last Lv.]
 
 ; Falkner
 	db NO_ITEM, NO_ITEM ; items
@@ -52,19 +54,19 @@ TrainerClassAttributes:
 
 ; Rival1
 	db NO_ITEM, NO_ITEM ; items
-	db 15 ; base reward
+	db 15 ; base reward × 4 = ¥60 (R/B: ¥35)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Pokemon Prof
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100
 	dw AI_BASIC | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Will
 	db MAX_POTION, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -76,61 +78,61 @@ TrainerClassAttributes:
 
 ; Bruno
 	db MAX_POTION, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Karen
 	db FULL_HEAL, MAX_POTION ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Koga
 	db FULL_HEAL, FULL_RESTORE ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Champion
+; Champion (Lance)
 	db FULL_HEAL, FULL_RESTORE ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Brock
 	db HYPER_POTION, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Misty
 	db FULL_HEAL, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Lt Surge
 	db HYPER_POTION, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Scientist
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥50)
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Erika
 	db HYPER_POTION, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Youngster
 	db NO_ITEM, NO_ITEM ; items
-	db 4 ; base reward
+	db 4 ; base reward × 4 = ¥16 (R/B: ¥15)
 	dw AI_BASIC | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -142,55 +144,55 @@ TrainerClassAttributes:
 
 ; Bird Keeper
 	db NO_ITEM, NO_ITEM ; items
-	db 6 ; base reward
+	db 6 ; base reward × 4 = ¥24 (R/B: ¥25)
 	dw AI_BASIC | AI_TYPES | AI_OFFENSIVE | AI_OPPORTUNIST | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Lass
 	db NO_ITEM, NO_ITEM ; items
-	db 6 ; base reward
+	db 6 ; base reward × 4 = ¥24 (R/B: ¥15)
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_OFTEN
 
-; Giovanni
+; Giovanni - Leader
 	db DIRE_HIT, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Cooltrainerm
 	db NO_ITEM, NO_ITEM ; items
-	db 12 ; base reward
+	db 12 ; base reward × 4 = ¥48 (R/B: ¥35)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Cooltrainerf
 	db NO_ITEM, NO_ITEM ; items
-	db 12 ; base reward
+	db 12 ; base reward × 4 = ¥48 (R/B: ¥35)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Beauty
 	db NO_ITEM, NO_ITEM ; items
-	db 22 ; base reward
+	db 22 ; base reward × 4 = ¥88 (R/B: ¥70)
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Pokemaniac
 	db NO_ITEM, NO_ITEM ; items
-	db 15 ; base reward
+	db 15 ; base reward × 4 = ¥60 (R/B: ¥50)
 	dw AI_BASIC | AI_SETUP | AI_OFFENSIVE | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Gruntm
 	db NO_ITEM, NO_ITEM ; items
-	db 10 ; base reward
+	db 10 ; base reward × 4 = ¥40 (R/B: ¥30)
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Gentleman
 	db NO_ITEM, NO_ITEM ; items
-	db 18 ; base reward
+	db 18 ; base reward × 4 = ¥72 (R/B: ¥70)
 	dw AI_BASIC | AI_SETUP | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -208,49 +210,49 @@ TrainerClassAttributes:
 
 ; Sabrina
 	db HYPER_POTION, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Bug Catcher
 	db NO_ITEM, NO_ITEM ; items
-	db 4 ; base reward
+	db 4 ; base reward × 4 = ¥16 (R/B: ¥10)
 	dw AI_BASIC | AI_SETUP | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Fisher
 	db NO_ITEM, NO_ITEM ; items
-	db 10 ; base reward
+	db 10 ; base reward × 4 = ¥40 (R/B: ¥35)
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Swimmerm
 	db NO_ITEM, NO_ITEM ; items
-	db 2 ; base reward
+	db 2 ; base reward × 4 = ¥8 (R/B: ¥5)
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Swimmerf
 	db NO_ITEM, NO_ITEM ; items
-	db 5 ; base reward
+	db 5 ; base reward × 4 = ¥20
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Sailor
 	db NO_ITEM, NO_ITEM ; items
-	db 10 ; base reward
+	db 10 ; base reward × 4 = ¥40 (R/B: ¥30)
 	dw AI_BASIC | AI_OFFENSIVE | AI_OPPORTUNIST | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Super Nerd
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥25)
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Rival2
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥65)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -262,25 +264,25 @@ TrainerClassAttributes:
 
 ; Hiker
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥35)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Biker
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥20)
 	dw AI_BASIC | AI_TYPES | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Blaine
 	db MAX_POTION, FULL_HEAL ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Burglar
 	db NO_ITEM, NO_ITEM ; items
-	db 22 ; base reward
+	db 22 ; base reward × 4 = ¥88 (R/B: ¥90)
 	dw AI_BASIC | AI_OFFENSIVE | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -292,13 +294,13 @@ TrainerClassAttributes:
 
 ; Juggler
 	db NO_ITEM, NO_ITEM ; items
-	db 10 ; base reward
+	db 10 ; base reward × 4 = ¥40 (R/B: ¥35)
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Blackbelt T
 	db NO_ITEM, NO_ITEM ; items
-	db 6 ; base reward
+	db 6 ; base reward × 4 = ¥24 (R/B: ¥25)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -310,19 +312,19 @@ TrainerClassAttributes:
 
 ; Psychic T
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥10)
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Picnicker
 	db NO_ITEM, NO_ITEM ; items
-	db 5 ; base reward
+	db 5 ; base reward × 4 = ¥20 (R/B)
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Camper
 	db NO_ITEM, NO_ITEM ; items
-	db 5 ; base reward
+	db 5 ; base reward × 4 = ¥20 (R/B)
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -382,7 +384,7 @@ TrainerClassAttributes:
 
 ; Rival3
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
