@@ -23,7 +23,9 @@ MAPS:
 	
 - Include and check all hidden items from R/B exist and are in the right place
 
-- Update Route 4 to RB equivalent*
+- Magikarp Salesman event
+
+- Route 3 & Route 4 events/Trainers, etc.
 
 - Update Diglett's Cave (all)
 

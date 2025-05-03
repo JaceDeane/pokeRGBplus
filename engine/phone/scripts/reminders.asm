@@ -1,95 +1,95 @@
-JackWantsBattleScript:
-	farwritetext JackReminderText
-	end
+; JackWantsBattleScript:
+	; farwritetext JackReminderText
+	; end
 
-HueyWantsBattleScript:
-	farwritetext HueyReminderText
-	end
+; HueyWantsBattleScript:
+	; farwritetext HueyReminderText
+	; end
 
-GavenReminderScript:
-	farwritetext GavenReminderText
-	end
+; GavenReminderScript:
+	; farwritetext GavenReminderText
+	; end
 
-BethBattleReminderScript:
-	farwritetext BethReminderText
-	end
+; BethBattleReminderScript:
+	; farwritetext BethReminderText
+	; end
 
-JoseReminderScript:
-	farwritetext JoseReminderText
-	end
+; JoseReminderScript:
+	; farwritetext JoseReminderText
+	; end
 
-ReenaHurryScript:
-	farwritetext ReenaHurryText
-	end
+; ReenaHurryScript:
+	; farwritetext ReenaHurryText
+	; end
 
-JoeyReminderScript:
-	farwritetext JoeyReminderText
-	end
+; JoeyReminderScript:
+	; farwritetext JoeyReminderText
+	; end
 
-WadeQuickBattleScript:
-	farwritetext WadeQuickBattleText
-	end
+; WadeQuickBattleScript:
+	; farwritetext WadeQuickBattleText
+	; end
 
-RalphReminderScript:
-	farwritetext RalphReminderText
-	end
+; RalphReminderScript:
+	; farwritetext RalphReminderText
+	; end
 
-LizReminderScript:
-	farwritetext LizReminderText
-	end
+; LizReminderScript:
+	; farwritetext LizReminderText
+	; end
 
-AnthonyReminderScript:
-	farwritetext AnthonyReminderText
-	end
+; AnthonyReminderScript:
+	; farwritetext AnthonyReminderText
+	; end
 
-ToddForwardScript:
-	farwritetext ToddLookingForwardToBattleText
-	end
+; ToddForwardScript:
+	; farwritetext ToddLookingForwardToBattleText
+	; end
 
-GinaReminderScript:
-	farwritetext GinaReminderText
-	end
+; GinaReminderScript:
+	; farwritetext GinaReminderText
+	; end
 
-ArnieReminderScript:
-	farwritetext ArnieReminderText
-	end
+; ArnieReminderScript:
+	; farwritetext ArnieReminderText
+	; end
 
-AlanReminderScript:
-	farwritetext AlanReminderText
-	end
+; AlanReminderScript:
+	; farwritetext AlanReminderText
+	; end
 
-DanaReminderScript:
-	farwritetext DanaReminderText
-	end
+; DanaReminderScript:
+	; farwritetext DanaReminderText
+	; end
 
-ChadReminderScript:
-	farwritetext ChadReminderText
-	end
+; ChadReminderScript:
+	; farwritetext ChadReminderText
+	; end
 
-TullyForwardScript:
-	farwritetext TullyForwardText
-	end
+; TullyForwardScript:
+	; farwritetext TullyForwardText
+	; end
 
-BrentReminderScript:
-	farwritetext BrentReminderText
-	end
+; BrentReminderScript:
+	; farwritetext BrentReminderText
+	; end
 
-TiffanyAsleepScript:
-	farwritetext TiffanyAsleepText
-	end
+; TiffanyAsleepScript:
+	; farwritetext TiffanyAsleepText
+	; end
 
-VanceHurryHurryScript:
-	farwritetext VanceHurryHurryText
-	end
+; VanceHurryHurryScript:
+	; farwritetext VanceHurryHurryText
+	; end
 
-WiltonNotBitingScript:
-	farwritetext WiltonNotBitingText
-	end
+; WiltonNotBitingScript:
+	; farwritetext WiltonNotBitingText
+	; end
 
-ParryHaventYouGottenToScript:
-	farwritetext ParryHaventYouGottenToText
-	end
+; ParryHaventYouGottenToScript:
+	; farwritetext ParryHaventYouGottenToText
+	; end
 
-ErinComeBattleScript:
-	farwritetext ErinComeBattleText
-	end
+; ErinComeBattleScript:
+	; farwritetext ErinComeBattleText
+	; end
