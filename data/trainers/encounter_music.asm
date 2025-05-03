@@ -25,10 +25,10 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
 	db MUSIC_ROCKET_ENCOUNTER      ; scientist
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; youngster
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; youngster -- R/B
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
-	db MUSIC_LASS_ENCOUNTER        ; lass
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; lass -- R/B
 	db MUSIC_ROCKET_ENCOUNTER      ; giovanni
 	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
 	db MUSIC_BEAUTY_ENCOUNTER      ; cooltrainerf
@@ -39,7 +39,7 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; skier
 	db MUSIC_BEAUTY_ENCOUNTER      ; teacher
 	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; bug_catcher
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; bug_catcher -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; fisher
 	db MUSIC_HIKER_ENCOUNTER       ; swimmerm
 	db MUSIC_BEAUTY_ENCOUNTER      ; swimmerf
@@ -57,7 +57,7 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; executivem
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
 	db MUSIC_LASS_ENCOUNTER        ; picnicker
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; camper
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; camper -- R/B
 	db MUSIC_ROCKET_ENCOUNTER      ; executivef
 	db MUSIC_SAGE_ENCOUNTER        ; sage
 	db MUSIC_SAGE_ENCOUNTER        ; medium

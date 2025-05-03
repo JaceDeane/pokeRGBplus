@@ -35,10 +35,10 @@ AzaleaGymBugsyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
-	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
-	setevent EVENT_BEAT_BUG_CATCHER_BENNY
-	setevent EVENT_BEAT_BUG_CATCHER_AL
-	setevent EVENT_BEAT_BUG_CATCHER_JOSH
+	; setevent EVENT_BEAT_TWINS_AMY_AND_MAY
+	; setevent EVENT_BEAT_BUG_CATCHER_BENNY
+	; setevent EVENT_BEAT_BUG_CATCHER_AL
+	; setevent EVENT_BEAT_BUG_CATCHER_JOSH
 	writetext BugsyText_HiveBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_FURY_CUTTER
