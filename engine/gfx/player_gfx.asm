@@ -112,7 +112,7 @@ GetCardPic:
 	ret
 
 ChrisCardPic:
-INCBIN "gfx/trainer_card/chris_card.2bpp"
+INCBIN "gfx/trainer_card/red_card.2bpp"
 
 KrisCardPic:
 INCBIN "gfx/trainer_card/kris_card.2bpp"
@@ -141,7 +141,7 @@ HOF_LoadTrainerFrontpic:
 	ldh [hBGMapMode], a
 
 ; Get class
-	ld e, CHRIS
+	ld e, RED
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .got_class
@@ -171,7 +171,7 @@ DrawIntroPlayerPic:
 ; Draw the player pic at (6,4).
 
 ; Get class
-	ld e, CHRIS
+	ld e, RED
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .got_class
@@ -201,7 +201,7 @@ DrawIntroPlayerPic:
 	ret
 
 ChrisPic:
-INCBIN "gfx/player/chris.2bpp"
+INCBIN "gfx/player/red.2bpp"
 
 KrisPic:
 INCBIN "gfx/player/kris.2bpp"

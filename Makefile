@@ -299,12 +299,12 @@ gfx/battle_anims/rocks.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/skyattack.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/status.2bpp: tools/gfx += --remove-whitespace
 
-gfx/player/chris.2bpp: rgbgfx += -Z
-gfx/player/chris_back.2bpp: rgbgfx += -Z
+gfx/player/red.2bpp: rgbgfx += -Z
+gfx/player/red_back.2bpp: rgbgfx += -Z
 gfx/player/kris.2bpp: rgbgfx += -Z
 gfx/player/kris_back.2bpp: rgbgfx += -Z
 
-gfx/trainer_card/chris_card.2bpp: rgbgfx += -Z
+gfx/trainer_card/red_card.2bpp: rgbgfx += -Z
 gfx/trainer_card/kris_card.2bpp: rgbgfx += -Z
 gfx/trainer_card/leaders.2bpp: tools/gfx += --trim-whitespace
 
