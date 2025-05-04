@@ -7,16 +7,101 @@ Route2Gate_MapScripts:
 
 	def_callbacks
 
-Route2GateScientistScript:
-	jumptextfaceplayer Route2GateScientistText
 Route2GateOaksAideScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_HM05_FLASH
+	iftrue .FlashExplainText
+	writetext Route2GateOaksAideHiText
+	;promptbutton
+	yesorno
+	iffalse .No
+	sjump .Yes
+.Yes:
+	readvar VAR_DEXCAUGHT
+	ifgreater 10, .Aide10Caught
+	writetext Route2GateOaksAideUhOhText ; Less than 10 Pokémon caught
+	waitbutton
+	closetext
+	end
+	
+.No
+	writetext Route2GateOaksAideComeBackText
+	waitbutton
+	closetext
+	end
+	
+.Aide10Caught
+	writetext Route2GateOaksAideHereYouGoText
+	promptbutton
+	verbosegiveitem HM_FLASH
+	;iffalse .NoRoom
+	setevent EVENT_GOT_HM05_FLASH
+	waitbutton
+	closetext
 	end
 
+.FlashExplainText:
+	writetext Route2GateOaksAideFlashExplainText
+	waitbutton
+	closetext
+	end
 
-	para "I work as PROF."
-	line "OAK's AIDE."
 Route2GateYoungsterScript:
 	jumptextfaceplayer Route2GateYoungsterText
+
+Route2GateOaksAideHiText:
+	text "Hi! Remember me?"
+	line "I'm PROF.OAK's"
+	cont "AIDE!"
+
+	para "If you caught 10"
+	line "kinds of #MON,"
+	cont "I'm supposed to"
+	cont "give you an HM05!"
+
+	para "So, <PLAYER>! Have"
+	line "you caught at"
+	cont "least 10 kinds of"
+	cont "#MON?"
+	done
+
+Route2GateOaksAideUhOhText:
+	text "Let's see…"
+	line "Uh-oh! You have"
+	cont "caught only ";@"
+	;text_ram wStringBuffer4
+	cont "kinds of #MON!"
+
+	para "You need 10 kinds"
+	line "if you want the"
+	cont "HM05 FLASH."
+	done
+
+Route2GateOaksAideComeBackText:
+	text "Oh. I see."
+
+	para "When you get 10"
+	line "kinds, come back"
+	cont "for HM05 FLASH."
+	done
+
+Route2GateOaksAideHereYouGoText:
+	text "Great! You have"
+	line "caught ";@"
+	;text_ram wStringBuffer4
+	text " kinds"
+	cont "of #MON!"
+	
+	para "Congratulations!"
+
+	para "Here you go!"
+	done
+
+Route2GateOaksAideGotItemText:
+	text "<PLAYER> got the"
+	line "HM05 FLASH!@"
+	done
 
 Route2GateOaksAideFlashExplainText:
 	text "The HM FLASH"
