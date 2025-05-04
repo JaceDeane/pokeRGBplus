@@ -223,7 +223,6 @@ Route36RuinsOfAlphGate_Blocks:
 Route34IlexForestGate_Blocks:
 Route6SaffronGate_Blocks:
 Route40BattleTowerGate_Blocks:
-Route2Gate_Blocks:
 Route29Route46Gate_Blocks:
 Route5SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
@@ -1063,6 +1062,7 @@ ViridianForest_Blocks:
 	
 ViridianForestSouthGate_Blocks:
 ViridianForestNorthGate_Blocks:
+Route2Gate_Blocks:
 	INCBIN "maps/ViridianForestGate.blk"
 
 ENDSECTION
