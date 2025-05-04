@@ -3373,3 +3373,7 @@ MysticalmanGroup:
 	db 23, HAUNTER,    LICK, HYPNOSIS, MEAN_LOOK, CURSE
 	db 25, ELECTRODE,  SCREECH, SONICBOOM, THUNDER, ROLLOUT
 	db -1 ; end
+
+KabutopsFossilGroup:
+
+AerodactylFossilGroup:

@@ -406,4 +406,16 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
+; Kabutops Fossil
+	db NO_ITEM, NO_ITEM ; items
+	db 1 ; base reward
+	dw AI_BASIC
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
+; Aerodactyl Fossil
+	db NO_ITEM, NO_ITEM ; items
+	db 1 ; base reward
+	dw AI_BASIC
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
 	assert_table_length NUM_TRAINER_CLASSES

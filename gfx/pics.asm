@@ -711,6 +711,8 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 SECTION "Pics 19", ROMX
 
 Rival3Pic:           INCBIN "gfx/trainers/rival3.2bpp.lz"
+KabutopsFossilPic:   INCBIN "gfx/trainers/fossil_kabutops.2bpp.lz"
+AerodactylFossilPic: INCBIN "gfx/trainers/fossil_aerodactyl.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,

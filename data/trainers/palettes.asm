@@ -79,5 +79,7 @@ INCBIN "gfx/trainers/rival3.gbcpal", middle_colors ; TODO ***
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+INCBIN "gfx/trainers/fossil_kabutops.gbcpal", middle_colors ; TODO - fossils share a palette
+INCBIN "gfx/trainers/fossil_aerodactyl.gbcpal", middle_colors ; TODO - fossils share a palette
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

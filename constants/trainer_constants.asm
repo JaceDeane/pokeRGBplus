@@ -684,5 +684,9 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
+	
+	trainerclass KABUTOPS_FOSSIL ; 45
+	
+	trainerclass AERODACTYL_FOSSIL ; 46
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
