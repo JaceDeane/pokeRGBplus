@@ -97,9 +97,8 @@ TRADES:
 
 - (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
 
-- Reviving Pokémon from Fossils (Gen I) (https://github.com/pret/pokecrystal/wiki/Reviving-Pokémon-from-Fossils-(Gen-I))
-
 - Splash a Pokédex Entry from an Overworld Event (Generation I) (https://github.com/pret/pokecrystal/wiki/Splash-a-Pokédex-Entry-from-an-Overworld-Event-(Generation-I))
+	- (!) Gen I has a function that temporarily sets the specified Pokémon as SEEN so that the Pokédex entry is displayed
 
 - Trashcan puzzle in Vermilion Gym (https://github.com/pret/pokecrystal/wiki/Trashcan-puzzle-in-Vermilion-Gym)
 
@@ -118,3 +117,5 @@ TRADES:
 ## Commits:
 
 - Scroll the SS.Anne when Departing (https://github.com/mauvesea/pokegold-sw97/commit/a62c7e142677764b3027649a91fdc2b284c457cb) & (https://github.com/mauvesea/pokegold-sw97/commit/25f5339d8d784e2e0410b05280a70042e550c449)
+
+- Display a preset image when calling display Pokémon function -- for fossils (/Polished_Crystal...?/)
