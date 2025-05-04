@@ -55,16 +55,6 @@ Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
-CinnabarPokecenter2FBeta_Blocks:
-CeruleanPokecenter2FBeta_Blocks:
-Route10Pokecenter2FBeta_Blocks:
-VermilionPokecenter2FBeta_Blocks:
-PewterPokecenter2FBeta_Blocks:
-FuchsiaPokecenter2FBeta_Blocks:
-LavenderPokecenter2FBeta_Blocks:
-CeladonPokecenter2FBeta_Blocks:
-;ViridianPokecenter2FBeta_Blocks:
-SaffronPokecenter2FBeta_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
 
 Route41_Blocks:
@@ -1064,5 +1054,11 @@ ViridianForestSouthGate_Blocks:
 ViridianForestNorthGate_Blocks:
 Route2Gate_Blocks:
 	INCBIN "maps/ViridianForestGate.blk"
+	
+PewterMuseumOfScience1F_Blocks:
+	INCBIN "maps/PewterMuseumOfScience1F.blk"
+	
+PewterMuseumOfScience2F_Blocks:
+	INCBIN "maps/PewterMuseumOfScience2F.blk"
 
 ENDSECTION
