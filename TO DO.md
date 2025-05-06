@@ -5,34 +5,40 @@
 
 MAPS:
 
-	Viridian Forest:
-	- Add Hidden items to Viridian Forest
-	- Update the encounters*
+- Update Diglett's Cave
 
-	Pewter City:
-	- Update Pewter Gym trainers' dialogue & VS teams
-	- Add the museum back (Display fossils picture)
-		- Map and events
-	- Update Pewter's PokeCenter & NPC homes
-	- Pewter Gym: Update text
-	- Add the guy who stops you before beating Brock
-	
-- (!) Set proper wild encounter data (!)
-	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
+- Cerulean City onwards
 
-- `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
-	
+EVENTS:
+
+- (!) Pewter Gym: Update text
+
 - (!) Include and check all hidden items from R/B exist and are in the right place
+
+- Pewter PokeCenter Jigglypuff event does not yet have a spinning animation coded in for when it sings
+
+- (!) Pewter Museum needs its Fossil events defined and called
+
+- Add the guy who stops you before beating Brock in PEWTER CITY
 
 - Magikarp Salesman event in the Mount Moon Pokemon Center
 
+- `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
+
 - Route 3 & Route 4 events/Trainers, etc.
 
-- Update Diglett's Cave (all)
+- Update Diglett's Cave
+
+- Mount Moon (entirety)
 
 ENGINE / DATA:
 
-- (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...?
+- (!) Set proper wild encounter data (!)
+	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
+	Viridian Forest:
+	- Update the encounters*
+
+- (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
 
 - Update TM/HM list
@@ -73,6 +79,8 @@ TRADES:
 - Have the traded Jynx, LOLA, hold a LOVELY_MAIL if possible
 
 ## ! Bugs: !
+
+- (!) Building _DEBUG causes an overflow
 
 - (!) Losing to your Rival on Route 22 causes a secondary 'ghost' NPC object to appear when returning and re-challenging the fight
 
