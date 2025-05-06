@@ -37,12 +37,11 @@ ViridianMartParcelScript:
 	turnobject VIRIDIANMART_CLERK, RIGHT
 	opentext
 	writetext ViridianMartClerkParcelQuestText
+	promptbutton
 	verbosegiveitem OAKS_PARCEL
-	;promptbutton
 	;waitsfx
 	;writetext ViridianMartGotParcelText
 	;playsound SFX_KEY_ITEM
-	;waitsfx
 	closetext
 	setevent EVENT_GOT_OAKS_PARCEL
 	setscene SCENE_VIRIDIANMART_NOOP

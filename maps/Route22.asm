@@ -143,7 +143,7 @@ RivalLeaves:		; Shared by both rival battles
 .ok
 	disappear ROUTE22_RIVAL
 	setscene SCENE_ROUTE22_NOOP
-	setevent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	; setevent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	waitsfx
 	playmapmusic
 	end
@@ -306,4 +306,4 @@ Route22_MapEvents:
 	bg_event  7, 11, BGEVENT_READ, PokemonLeagueEntranceSign
 
 	def_object_events
-	object_event  25,  5, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	object_event  25,  5, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, SCENE_ROUTE22_RIVAL_BATTLE
