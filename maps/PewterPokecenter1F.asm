@@ -23,10 +23,6 @@ PewterPokecenter1FGentlemanScript:
 	jumptextfaceplayer PewterPokecenter1FGentlemanText
 
 PewterJigglypuff:
-	; opentext
-	; writetext PewterJigglypuffText
-	; cry JIGGLYPUFF
-	; waitbutton
 	opentext
 	writetext PewterJigglypuffText ; Text stays up during the event
 	cry JIGGLYPUFF
@@ -45,7 +41,7 @@ PewterJigglypuff:
 	pause 24 ; should be called 8 times (including above) in loop? = 204
 	; Allow music to end
 	pause 48 ; Halved the wait time from R/B
-	musicfadeout MUSIC_VIRIDIAN_CITY, 8
+	musicfadeout MUSIC_POKEMON_CENTER, 8
 	closetext
 	end
 
