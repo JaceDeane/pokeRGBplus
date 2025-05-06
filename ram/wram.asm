@@ -3065,6 +3065,8 @@ wPalletTownSceneID::                              db
 ; wElmsLabSceneID::                                 db ; Unused RGB+
 wBluesHouseSceneID::                              db
 wOaksLabSceneID::                                 db
+wPewterCitySceneID::                              db ; New RGB+
+wPewterMuseumOfScienceSceneID::                   db ; New RGB+
 wPlayersHouse1FSceneID::                          db
 wRoute29SceneID::                                 db
 wCherrygroveCitySceneID::                         db ; Unused RGB+

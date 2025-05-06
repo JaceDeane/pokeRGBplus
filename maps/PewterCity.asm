@@ -9,9 +9,14 @@
 
 PewterCity_MapScripts:
 	def_scene_scripts
+	scene_script PewterCityNoopScene, SCENE_PEWTERCITY_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, PewterCityFlypointCallback
+
+PewterCityNoopScene:
+	setmapscene PEWTER_MUSEUM_OF_SCIENCE_1F, SCENE_PEWTERMUSEUMOFSCIENCE1F_NO_TICKET
+	end
 
 PewterCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_PEWTER

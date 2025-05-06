@@ -30,6 +30,8 @@ MapScenes::
 	;scene_var ELMS_LAB,                                    wElmsLabSceneID ; Unused RGB+
 	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID
 	scene_var OAKS_LAB,                                    wOaksLabSceneID
+	scene_var PEWTER_CITY,                                 wPewterCitySceneID ; New RGB+
+	scene_var PEWTER_MUSEUM_OF_SCIENCE_1F,                 wPewterMuseumOfScienceSceneID ; New RGB+
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
 	scene_var ROUTE_29,                                    wRoute29SceneID
 	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+
