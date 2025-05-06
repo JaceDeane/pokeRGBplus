@@ -282,14 +282,21 @@ GymStatue_CityGymText:
 	text_ram wStringBuffer3
 	text_start
 	line "#MON GYM"
+	
+	cont "LEADER: @"
+	text_ram wStringBuffer4
+	text_start
 	done
 
 GymStatue_WinningTrainersText:
-	text "LEADER: @"
-	text_ram wStringBuffer4
-	text_start
-	para "WINNING TRAINERS:"
-	line "<PLAYER>"
+	text "WINNING TRAINERS:"
+	line "<RIVAL>"
+	done
+	
+GymStatue_WinningTrainers2Text:
+	text "WINNING TRAINERS:"
+	line "<RIVAL>"
+	cont "<PLAYER>"
 	done
 
 CoinVendor_WelcomeText:

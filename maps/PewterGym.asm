@@ -66,11 +66,11 @@ PewterGymGuideScript:
 	end
 
 PewterGymStatue:
+	gettrainername STRING_BUFFER_4, BROCK, BROCK1
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .Beaten
 	jumpstd GymStatue1Script
 .Beaten:
-	gettrainername STRING_BUFFER_4, BROCK, BROCK1
 	jumpstd GymStatue2Script
 
 BrockIntroText:
