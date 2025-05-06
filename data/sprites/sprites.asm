@@ -114,4 +114,5 @@ OverworldSprites:
 	overworld_sprite ClipboardSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SittingGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite JigglypuffSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite OldAmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES

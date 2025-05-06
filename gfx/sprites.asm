@@ -114,3 +114,4 @@ SittingGuySpriteGFX::          INCBIN "gfx/sprites/sitting_guy.2bpp"
 SECTION "Sprites 3", ROMX
 
 JigglypuffSpriteGFX::          INCBIN "gfx/sprites/jigglypuff.2bpp"
+OldAmberSpriteGFX::            INCBIN "gfx/sprites/old_amber.2bpp"

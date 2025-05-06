@@ -11,15 +11,13 @@ MAPS:
 
 EVENTS:
 
-- (!) Pewter Gym: Update text
+- (!) Pewter Gym: Update event with TM gift, and check for if bag is full, etc.
 
-- (!) Include and check all hidden items from R/B exist and are in the right place
+- (!) Pewter Museum needs its receptionist and fossil scientist events filled in
 
-- Pewter PokeCenter Jigglypuff event does not yet have a spinning animation coded in for when it sings
+- (!) Add the guy who stops you before beating Brock in PEWTER CITY
 
-- (!) Pewter Museum needs its Fossil events defined and called
-
-- Add the guy who stops you before beating Brock in PEWTER CITY
+- Include and check all hidden items from R/B exist and are in the right place
 
 - Magikarp Salesman event in the Mount Moon Pokemon Center
 
@@ -87,6 +85,8 @@ TRADES:
 - (!) Force the Pokedex to load in Area data for Kanto only
 
 - (!) Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)
+
+- Pewter PokeCenter's Jigglypuff doesn't go back to animating once the event is over
 
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
 
