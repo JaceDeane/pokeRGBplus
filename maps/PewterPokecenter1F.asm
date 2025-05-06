@@ -26,24 +26,37 @@ PewterJigglypuff:
 	opentext
 	writetext PewterJigglypuffText ; Text stays up during the event
 	cry JIGGLYPUFF
-	musicfadeout MUSIC_NONE, 8 ; Fade out instantly?
-	pause 32
-	; Load facing directions
+	musicfadeout MUSIC_NONE, 8
+	pause 24
 	playmusic MUSIC_JIGGLYPUFFS_SONG
-	; Start spinning Jigglypuff
-	pause 24 ; pause per loop
-	pause 24
-	pause 24
-	pause 24
-	pause 24
-	pause 24
-	pause 24
-	pause 24 ; should be called 8 times (including above) in loop? = 204
-	; Allow music to end
-	pause 48 ; Halved the wait time from R/B
+	setval SPRITEMOVEDATA_STANDING_DOWN
+    writemem wMap5ObjectMovement
+	variablesprite SPRITE_JIGGLYPUFF_PEWTER, SPRITE_JIGGLYPUFF_OW
+	special LoadUsedSpritesGFX
+	applymovement PEWTERPOKECENTER1F_JIGGLYPUFF, PewterJigglypuffSpinMovement ; Jigglypuff spins 4x times
+	applymovement PEWTERPOKECENTER1F_JIGGLYPUFF, PewterJigglypuffSpinMovement
+	applymovement PEWTERPOKECENTER1F_JIGGLYPUFF, PewterJigglypuffSpinMovement
+	applymovement PEWTERPOKECENTER1F_JIGGLYPUFF, PewterJigglypuffSpinMovement
+	pause 24 ; Allow music to end
 	musicfadeout MUSIC_POKEMON_CENTER, 8
 	closetext
+	turnobject PEWTERPOKECENTER1F_JIGGLYPUFF, DOWN
+	variablesprite SPRITE_JIGGLYPUFF_PEWTER, SPRITE_JIGGLYPUFF
+	special LoadUsedSpritesGFX
+	setval SPRITEMOVEDATA_POKEMON
+    writemem wMap5ObjectMovement
 	end
+	
+PewterJigglypuffSpinMovement:
+	turn_head DOWN
+	step_sleep 12
+	turn_head LEFT
+	step_sleep 12
+	turn_head UP
+	step_sleep 12
+	turn_head RIGHT
+	step_sleep 12
+	step_end
 
 PewterPokecenter1FSittingGuyScript:
 	jumptextfaceplayer PewterPokecenter1FSittingGuyText
@@ -91,4 +104,4 @@ PewterPokecenter1F_MapEvents:
 	object_event 11,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FLinkReceptionistScript, -1
 	object_event  0,  4, SPRITE_SITTING_GUY, SPRITEMOVEDATA_SITTING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FSittingGuyScript, -1
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FGentlemanScript, -1
-	object_event  1,  3, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterJigglypuff, -1
+	object_event  1,  3, SPRITE_JIGGLYPUFF_PEWTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterJigglypuff, -1

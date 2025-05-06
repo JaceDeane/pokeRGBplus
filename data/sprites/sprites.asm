@@ -113,4 +113,5 @@ OverworldSprites:
 	overworld_sprite GirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ClipboardSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SittingGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite JigglypuffSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	assert_table_length NUM_OVERWORLD_SPRITES

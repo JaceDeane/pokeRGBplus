@@ -110,3 +110,7 @@ GrampsAsleepSpriteGFX::        INCBIN "gfx/sprites/gramps_asleep.2bpp"
 GirlSpriteGFX::                INCBIN "gfx/sprites/girl.2bpp"
 ClipboardSpriteGFX::           INCBIN "gfx/sprites/clipboard.2bpp"
 SittingGuySpriteGFX::          INCBIN "gfx/sprites/sitting_guy.2bpp"
+
+SECTION "Sprites 3", ROMX
+
+JigglypuffSpriteGFX::          INCBIN "gfx/sprites/jigglypuff.2bpp"

@@ -108,6 +108,7 @@
 	const SPRITE_GIRL ; 68
 	const SPRITE_CLIPBOARD ; 69
 	const SPRITE_SITTING_GUY ; 70
+	const SPRITE_JIGGLYPUFF_OW ; 71
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -171,3 +172,4 @@ DEF SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
+	const SPRITE_JIGGLYPUFF_PEWTER ; fd
