@@ -124,19 +124,19 @@ PewterMuseumOfScience1FOldAmberScript:
 	closetext
 	end
 
-KabutopsFossilSignpostScript:
+KabutopsFossilSignScript:
 	reanchormap
 	trainerpic KABUTOPS_FOSSIL
 	waitbutton
 	closepokepic
-	jumptext KabutopsFossilSignpostText
+	jumptext KabutopsFossilSignText
 
-AerodactylFossilSignpostScript:
+AerodactylFossilSignScript:
 	reanchormap
 	trainerpic AERODACTYL_FOSSIL
 	waitbutton
 	closepokepic
-	jumptext AerodactylFossilSignpostText
+	jumptext AerodactylFossilSignText
 
 PewterMuseumOfScience1FBookshelf:
 	jumpstd PictureBookshelfScript
@@ -227,11 +227,6 @@ PewterMuseumOfScience1FFossilScientistTakeThisText:
 	cont "get it examined!"
 	done
 
-; PewterMuseumOfScience1FFossilScientistReceivedOldAmberText:
-	; text "<PLAYER> received"
-	; line "OLD AMBER!@"
-	; text_end
-
 PewterMuseumOfScience1FFossilScientistGetOldAmberCheckedText:
 	text "Ssh! Get the OLD"
 	line "AMBER checked!"
@@ -254,13 +249,13 @@ PewterMuseumOfScience1FOldAmberText:
 	line "clear and gold!"
 	done
 
-KabutopsFossilSignpostText:
+KabutopsFossilSignText:
 	text "KABUTOPS Fossil"
 	line "A primitive and"
 	cont "rare #MON."
 	done
 	
-AerodactylFossilSignpostText:
+AerodactylFossilSignText:
 	text "AERODACTYL Fossil"
 	line "A primitive and"
 	cont "rare #MON."
@@ -281,8 +276,8 @@ PewterMuseumOfScience1F_MapEvents:
 	coord_event 10,  4, SCENE_PEWTERMUSEUMOFSCIENCE1F_NO_TICKET, PewterMuseumOfScience1FTicketScript
 
 	def_bg_events
-	bg_event  2,  6, BGEVENT_READ, KabutopsFossilSignpostScript
-	bg_event  2,  3, BGEVENT_READ, AerodactylFossilSignpostScript
+	bg_event  2,  6, BGEVENT_READ, KabutopsFossilSignScript
+	bg_event  2,  3, BGEVENT_READ, AerodactylFossilSignScript
 	bg_event 12,  1, BGEVENT_READ, PewterMuseumOfScience1FBookshelf
 	bg_event 13,  1, BGEVENT_READ, PewterMuseumOfScience1FBookshelf
 	bg_event 19,  1, BGEVENT_READ, PewterMuseumOfScience1FBookshelf
