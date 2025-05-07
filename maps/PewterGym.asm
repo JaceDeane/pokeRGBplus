@@ -29,6 +29,7 @@ PewterGymBrockScript:
 	setflag ENGINE_BOULDERBADGE
 	; clearevent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	setmapscene ROUTE_22, SCENE_ROUTE22_NOOP ; No longer able to fight Rival on Route 22
+	setmapscene PEWTER_CITY, SCENE_PEWTERCITY_NOOP2
 	writetext BrockBoulderBadgeText
 	waitbutton
 .FightDone:

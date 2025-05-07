@@ -11,12 +11,6 @@ MAPS:
 
 EVENTS:
 
-- (!) Pewter Gym: Update event with TM gift, and check for if bag is full, etc.
-
-- (!) Pewter Museum needs its receptionist and fossil scientist events filled in
-
-- (!) Add the guy who stops you before beating Brock in PEWTER CITY
-
 - Include and check all hidden items from R/B exist and are in the right place
 
 - Magikarp Salesman event in the Mount Moon Pokemon Center
@@ -30,6 +24,8 @@ EVENTS:
 - Mount Moon (entirety)
 
 ENGINE / DATA:
+
+- Confirm if the Route 3 PokeCenter uses a FlyData flag
 
 - (!) Set proper wild encounter data (!)
 	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
