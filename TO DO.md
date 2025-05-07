@@ -11,17 +11,15 @@ MAPS:
 
 EVENTS:
 
-- Include and check all hidden items from R/B exist and are in the right place
-
-- Magikarp Salesman event in the Mount Moon Pokemon Center
-
-- `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
-
 - Route 3 & Route 4 events/Trainers, etc.
+
+- Mount Moon (entirety)
 
 - Update Diglett's Cave
 
-- Mount Moon (entirety)
+- Include and check all hidden items from R/B exist and are in the right place
+
+- `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
 
 ENGINE / DATA:
 
@@ -73,6 +71,8 @@ TRADES:
 - Have the traded Jynx, LOLA, hold a LOVELY_MAIL if possible
 
 ## ! Bugs: !
+
+- Youngster doesn't disappear in Pewter City after beating BROCK
 
 - (!) Building _DEBUG causes an overflow
 

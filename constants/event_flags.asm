@@ -410,7 +410,7 @@
 	
 ; Route 4 events
 	; const EVENT_BEAT_ROUTE_4_JR_TRAINER_F_SHARON
-	; const EVENT_BOUGHT_MAGIKARP
+	const EVENT_BOUGHT_MAGIKARP
 	
 ; Route 6 events
 	; const EVENT_BEAT_ROUTE_6_TRAINER_0

@@ -29,7 +29,55 @@ MountMoonPokecenter1FSittingGuyScript:
 	jumptextfaceplayer MountMoonPokecenter1FSittingGuyText
 	
 MountMoonPokecenter1FMagikarpSalesmanScript:
-	;
+	faceplayer
+	opentext
+	checkevent EVENT_BOUGHT_MAGIKARP
+	iftrue .NoRefunds
+	writetext MountMoonPokecenterMagikarpSalesmanGotADealText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .No
+	checkmoney YOUR_MONEY, 500
+	ifequal HAVE_LESS, .NotEnoughMoney
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	waitsfx
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 500
+	special PlaceMoneyTopRight
+	pause 16
+	closetext
+	opentext
+	waitsfx
+	playsound SFX_CAUGHT_MON
+	writetext BoughtMagikarpText
+	promptbutton
+	givepoke MAGIKARP, 5
+	setevent EVENT_BOUGHT_MAGIKARP
+	sjump .NoRefunds
+
+.NotEnoughMoney
+	writetext MountMoonPokecenterMagikarpSalesmanNoMoneyText
+	waitbutton
+	closetext
+	end
+
+.No
+	writetext MountMoonPokecenterMagikarpSalesmanNoText
+	waitbutton
+	closetext
+	end
+
+.NoRoom
+	writetext MountMoonPokecenterMagikarpSalesmanNoRoomText
+	waitbutton
+	closetext
+	end
+
+.NoRefunds
+	writetext MountMoonPokecenterMagikarpSalesmanNoRefundsText
+	waitbutton
+	closetext
 	end
 
 MountMoonPokecenter1FYoungsterText:
@@ -86,6 +134,16 @@ MountMoonPokecenterMagikarpSalesmanNoText:
 MountMoonPokecenterMagikarpSalesmanNoMoneyText:
 	text "You'll need more"
 	line "money than that!"
+	done
+	
+MountMoonPokecenterMagikarpSalesmanNoRoomText:
+	text "Your party's full,"
+	line "kid!"
+	done
+	
+BoughtMagikarpText:
+	text "<PLAYER> bought"
+	line "a MAGIKARP!"
 	done
 
 MountMoonPokecenterMagikarpSalesmanNoRefundsText:
