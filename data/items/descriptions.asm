@@ -70,7 +70,7 @@ ItemDescriptions:
 	dw SecretPotionDesc
 	dw SSTicketDesc
 	dw MysteryEggDesc
-	dw ClearBellDesc
+	dw OaksParcelDesc
 	dw SilverWingDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
@@ -531,9 +531,9 @@ MysteryEggDesc:
 	db   "An EGG obtained"
 	next "from MR.#MON.@"
 
-ClearBellDesc:
-	db   "Makes a gentle"
-	next "ringing.@"
+OaksParcelDesc:
+	db   "A delivery parcel"
+	next "for PROF.OAK.@"
 
 SilverWingDesc:
 	db   "A strange, silver-"

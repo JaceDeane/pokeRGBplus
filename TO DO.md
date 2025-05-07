@@ -80,8 +80,6 @@ TRADES:
 
 - (!) Force the Pokedex to load in Area data for Kanto only
 
-- (!) Edit the item desc. for `OAK'S_PARCEL` (The parcel should *not* make a gentle ringing)
-
 - Pewter PokeCenter's Jigglypuff doesn't go back to animating once the event is over
 
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
