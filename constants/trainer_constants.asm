@@ -458,6 +458,8 @@ DEF KRIS EQU __trainer_class__
 	const VINCENTZ
 
 	trainerclass HIKER ; 2c
+	; -- Updated to R/B, using FR/LG names
+	; TODO
 	const ANTHONY1
 	const RUSSELL
 	const PHILLIP

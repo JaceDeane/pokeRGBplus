@@ -110,6 +110,8 @@
 	const SPRITE_SITTING_GUY ; 70
 	const SPRITE_JIGGLYPUFF_OW ; 71
 	const SPRITE_OLD_AMBER ; 72
+	const SPRITE_FOSSIL ; 73
+	const SPRITE_HIKER ; 74
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

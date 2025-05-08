@@ -115,3 +115,5 @@ SECTION "Sprites 3", ROMX
 
 JigglypuffSpriteGFX::          INCBIN "gfx/sprites/jigglypuff.2bpp"
 OldAmberSpriteGFX::            INCBIN "gfx/sprites/old_amber.2bpp"
+FossilSpriteGFX::              INCBIN "gfx/sprites/fossil.2bpp"
+HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
