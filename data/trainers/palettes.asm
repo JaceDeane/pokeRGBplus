@@ -17,8 +17,7 @@ INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
 INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
 INCBIN "gfx/trainers/chuck.gbcpal", middle_colors
 INCBIN "gfx/trainers/clair.gbcpal", middle_colors
-;Rival3Palette:
-;Rival2Palette:
+RivalPalette:
 INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/will.gbcpal", middle_colors
@@ -37,7 +36,8 @@ INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
 INCBIN "gfx/trainers/schoolboy.gbcpal", middle_colors
 INCBIN "gfx/trainers/bird_keeper.gbcpal", middle_colors
 INCBIN "gfx/trainers/lass.gbcpal", middle_colors
-INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
+GiovanniPalette:
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors ; Giovanni classes share a palette & sprite
 INCBIN "gfx/trainers/cooltrainer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/beauty.gbcpal", middle_colors
@@ -53,7 +53,7 @@ INCBIN "gfx/trainers/swimmer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/swimmer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/sailor.gbcpal", middle_colors
 INCBIN "gfx/trainers/super_nerd.gbcpal", middle_colors
-INCBIN "gfx/trainers/rival2.gbcpal", middle_colors ; TODO ***
+; INCBIN "gfx/trainers/rival2.gbcpal", middle_colors ; Rival classes share a palette
 INCBIN "gfx/trainers/guitarist.gbcpal", middle_colors
 INCBIN "gfx/trainers/hiker.gbcpal", middle_colors
 INCBIN "gfx/trainers/biker.gbcpal", middle_colors
@@ -75,12 +75,12 @@ INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors
 INCBIN "gfx/trainers/twins.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/red.gbcpal", middle_colors
-INCBIN "gfx/trainers/rival3.gbcpal", middle_colors ; TODO ***
+; INCBIN "gfx/trainers/rival3.gbcpal", middle_colors ; Rival classes share a palette
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
-INCBIN "gfx/trainers/fossil_kabutops.gbcpal", middle_colors ; TODO - fossils share a palette
-INCBIN "gfx/trainers/fossil_aerodactyl.gbcpal", middle_colors ; TODO - fossils share a palette
+INCBIN "gfx/trainers/fossil_kabutops.gbcpal", middle_colors
+INCBIN "gfx/trainers/fossil_aerodactyl.gbcpal", middle_colors
 INCBIN "gfx/trainers/channeler.gbcpal", middle_colors
 INCBIN "gfx/trainers/cue_ball.gbcpal", middle_colors
 INCBIN "gfx/trainers/engineer.gbcpal", middle_colors
@@ -89,4 +89,5 @@ INCBIN "gfx/trainers/rocker.gbcpal", middle_colors
 INCBIN "gfx/trainers/tamer.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
 INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
-	assert_table_length NUM_TRAINER_CLASSES + 1
+; INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors ; Giovanni classes share a palette & sprite
+	assert_table_length NUM_TRAINER_CLASSES + 1 - 3

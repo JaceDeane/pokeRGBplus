@@ -26,7 +26,7 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
-	db CUEBALL
+	db CUE_BALL
 	db ENGINEER
 	db GAMBLER
 	db ROCKER
@@ -45,6 +45,4 @@ FemaleTrainers:
 	db POKEFANF
 	db COOLTRAINERF
 	db CHANNELER
-	db LORELEI
-	db AGATHA
 .End

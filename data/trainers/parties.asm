@@ -165,14 +165,14 @@ PKMNTrainerGroup:
 	db 50, FERALIGATR
 	db -1 ; end
 
-BrunoGroup:
+BrunoGroup: ; Updated to R/B
 	; BRUNO (1)
-	db "BRUNO@", TRAINERTYPE_MOVES
-	db 42, HITMONTOP,  PURSUIT, QUICK_ATTACK, DIG, DETECT
-	db 42, HITMONLEE,  SWAGGER, DOUBLE_KICK, HI_JUMP_KICK, FORESIGHT
-	db 42, HITMONCHAN, THUNDERPUNCH, ICE_PUNCH, FIRE_PUNCH, MACH_PUNCH
-	db 43, ONIX,       BIND, EARTHQUAKE, SANDSTORM, ROCK_SLIDE
-	db 46, MACHAMP,    ROCK_SLIDE, FORESIGHT, VITAL_THROW, CROSS_CHOP
+	db "BRUNO@", TRAINERTYPE_NORMAL
+	db 53, ONIX
+	db 55, HITMONCHAN
+	db 55, HITMONLEE
+	db 56, ONIX
+	db 58, MACHAMP
 	db -1 ; end
 
 KarenGroup:
@@ -195,15 +195,14 @@ KogaGroup:
 	db 44, CROBAT,     DOUBLE_TEAM, QUICK_ATTACK, WING_ATTACK, TOXIC
 	db -1 ; end
 
-LanceGroup:
+LanceGroup: ; Updated to R/B
 	; LANCE (1)
-	db "LANCE@", TRAINERTYPE_MOVES
-	db 44, GYARADOS,   FLAIL, RAIN_DANCE, SURF, HYPER_BEAM
-	db 47, DRAGONITE,  THUNDER_WAVE, TWISTER, THUNDER, HYPER_BEAM
-	db 47, DRAGONITE,  THUNDER_WAVE, TWISTER, BLIZZARD, HYPER_BEAM
-	db 46, AERODACTYL, WING_ATTACK, ANCIENTPOWER, ROCK_SLIDE, HYPER_BEAM
-	db 46, CHARIZARD,  FLAMETHROWER, WING_ATTACK, SLASH, HYPER_BEAM
-	db 50, DRAGONITE,  FIRE_BLAST, SAFEGUARD, OUTRAGE, HYPER_BEAM
+	db "LANCE@", TRAINERTYPE_NORMAL
+	db 58, GYARADOS
+	db 56, DRAGONAIR
+	db 56, DRAGONAIR
+	db 60, AERODACTYL
+	db 62, DRAGONITE
 	db -1 ; end
 
 BrockGroup:
@@ -717,14 +716,14 @@ LassGroup:
 	db 36, GOLDUCK,    DISABLE, SURF, PSYCHIC_M, SCREECH
 	db -1 ; end
 
-GiovanniGroup:
-	; GIOVANNI (1)
-	db "GIOVANNI@", TRAINERTYPE_NORMAL;_MOVES
-	db 36, CROBAT;,     SCREECH, SUPERSONIC, CONFUSE_RAY, WING_ATTACK
-	db 36, WEEZING;,    SMOG, SLUDGE_BOMB, TOXIC, EXPLOSION
-	db 36, WEEZING;,    SMOG, SLUDGE_BOMB, TOXIC, EXPLOSION
-	db 33, ARIADOS;,    SCARY_FACE, GIGA_DRAIN, STRING_SHOT, NIGHT_SHADE
-	db 39, VENOMOTH;,   FORESIGHT, DOUBLE_TEAM, GUST, PSYCHIC_M
+LeaderGiovanniGroup: ; Updated to R/B
+	; LEADER_GIOVANNI (1) 
+	db "GIOVANNI@", TRAINERTYPE_NORMAL
+	db 45, RHYHORN
+	db 42, DUGTRIO
+	db 44, NIDOQUEEN
+	db 45, NIDOKING
+	db 50, RHYDON
 	db -1 ; end
 
 CooltrainerMGroup:
@@ -3378,18 +3377,299 @@ KabutopsFossilGroup:
 
 AerodactylFossilGroup:
 
-ChannelerGroup:
+ChannelerGroup: ; Updated to R/B (Unused trainers not added), using FR/LG names
+	; CHANNELER (1)
+	db "PATRICIA@", TRAINERTYPE_NORMAL
+	db 23, GASTLY
+	db -1 ; end
 
-CueBallGroup:
+	; CHANNELER (2)
+	db "CARLY@", TRAINERTYPE_NORMAL
+	db 24, GASTLY
+	db -1 ; end
 
-EngineerGroup:
+	; CHANNELER (3)
+	db "HOPE@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db -1 ; end
 
-GamblerGroup:
+	; CHANNELER (4)
+	db "PAULA@", TRAINERTYPE_NORMAL
+	db 24, GASTLY
+	db -1 ; end
 
-RockerGroup:
+	; CHANNELER (5)
+	db "LAUREL@", TRAINERTYPE_NORMAL
+	db 23, GASTLY
+	db 23, GASTLY
+	db -1 ; end
 
-TamerGroup:
+	; CHANNELER (6)
+	db "JODY@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db -1 ; end
 
-LoreleiGroup:
+	; CHANNELER (7)
+	db "TAMMY@", TRAINERTYPE_NORMAL
+	db 23, HAUNTER
+	db -1 ; end
 
-AgathaGroup:
+	; CHANNELER (8)
+	db "RUTH@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db -1 ; end
+
+	; CHANNELER (9)
+	db "KARINA@", TRAINERTYPE_NORMAL
+	db 24, GASTLY
+	db -1 ; end
+
+	; CHANNELER (10)
+	db "JANAE@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db -1 ; end
+
+	; CHANNELER (11)
+	db "ANGELICA@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db 22, GASTLY
+	db 22, GASTLY
+	db -1 ; end
+
+	; CHANNELER (12)
+	db "EMILIA@", TRAINERTYPE_NORMAL
+	db 24, GASTLY
+	db -1 ; end
+
+	; CHANNELER (13)
+	db "JENNIFER@", TRAINERTYPE_NORMAL
+	db 24, GASTLY
+	db -1 ; end
+
+	; CHANNELER (14)
+	db "AMANDA@", TRAINERTYPE_NORMAL
+	db 34, GASTLY
+	db 34, HAUNTER
+	db -1 ; end
+
+	; CHANNELER (15)
+	db "STACY@", TRAINERTYPE_NORMAL
+	db 38, HAUNTER
+	db -1 ; end
+
+	; CHANNELER (16)
+	db "TASHA@", TRAINERTYPE_NORMAL
+	db 33, GASTLY
+	db 33, GASTLY
+	db 33, HAUNTER
+	db -1 ; end
+
+CueBallGroup: ; Updated to R/B, using FR/LG names
+	; CUE_BALL (1)
+	db "KOJI@", TRAINERTYPE_NORMAL
+	db 28, MACHOP
+	db 28, MANKEY
+	db 28, MACHOP
+	db -1 ; end
+
+	; CUE_BALL (2)
+	db "LUKE@", TRAINERTYPE_NORMAL
+	db 29, MANKEY
+	db 29, MACHOP
+	db -1 ; end
+
+	; CUE_BALL (3)
+	db "CAMRON@", TRAINERTYPE_NORMAL
+	db 33, MACHOP
+	db -1 ; end
+
+	; CUE_BALL (4)
+	db "RAUL@", TRAINERTYPE_NORMAL
+	db 29, MANKEY
+	db 29, PRIMEAPE
+	db -1 ; end
+
+	; CUE_BALL (5)
+	db "ISAIAH@", TRAINERTYPE_NORMAL
+	db 29, MACHOP
+	db 29, MACHOKE
+	db -1 ; end
+
+	; CUE_BALL (6)
+	db "ZEEK@", TRAINERTYPE_NORMAL
+	db 33, MACHOKE
+	db -1 ; end
+
+	; CUE_BALL (7)
+	db "JAMAL@", TRAINERTYPE_NORMAL
+	db 26, MANKEY
+	db 26, MANKEY
+	db 26, MACHOKE
+	db 26, MACHOP
+	db -1 ; end
+
+	; CUE_BALL (8)
+	db "COREY@", TRAINERTYPE_NORMAL
+	db 29, PRIMEAPE
+	db 29, MACHOKE
+	db -1 ; end
+
+	; CUE_BALL (9)
+	db "CHASE@", TRAINERTYPE_NORMAL
+	db 31, TENTACOOL
+	db 31, TENTACOOL
+	db 31, TENTACRUEL
+	db -1 ; end
+
+EngineerGroup: ; Updated to R/B, using FR/LG names
+	; ENGINEER (1) ; Unused R/B
+	db "BAILY@", TRAINERTYPE_NORMAL
+	db 21, VOLTORB
+	db 21, MAGNEMITE
+	db -1 ; end
+
+	; ENGINEER (2)
+	db "BRAXTON@", TRAINERTYPE_NORMAL
+	db 21, MAGNEMITE
+	db -1 ; end
+
+	; ENGINEER (3)
+	db "BERNIE@", TRAINERTYPE_NORMAL
+	db 18, MAGNEMITE
+	db 18, MAGNEMITE
+	db 18, MAGNETON
+	db -1 ; end
+
+GamblerGroup: ; Updated to R/B, using FR/LG names
+	; GAMBLER (1)
+	db "HUGO@", TRAINERTYPE_NORMAL
+	db 18, POLIWAG
+	db 18, HORSEA
+	db -1 ; end
+
+	; GAMBLER (2)
+	db "JASPER@", TRAINERTYPE_NORMAL
+	db 18, BELLSPROUT
+	db 18, ODDISH
+	db -1 ; end
+
+	; GAMBLER (3)
+	db "DIRK@", TRAINERTYPE_NORMAL
+	db 18, VOLTORB
+	db 18, MAGNEMITE
+	db -1 ; end
+
+	; GAMBLER (4)
+	db "DARIAN@", TRAINERTYPE_NORMAL
+	db 18, GROWLITHE
+	db 18, VULPIX
+	db -1 ; end
+
+	; GAMBLER (5)
+	db "STAN@", TRAINERTYPE_NORMAL
+	db 22, POLIWAG
+	db 22, POLIWAG
+	db 22, POLIWHIRL
+	db -1 ; end
+
+	; GAMBLER (6) ; Unused R/B
+	db "UNUSED@", TRAINERTYPE_NORMAL
+	db 22, ONIX
+	db 22, GEODUDE
+	db 22, GRAVELER
+	db -1 ; end
+
+	; GAMBLER (7)
+	db "RICH@", TRAINERTYPE_NORMAL
+	db 24, GROWLITHE
+	db 24, VULPIX
+	db -1 ; end
+
+RockerGroup: ; Updated to R/B, using FR/LG names
+	; ROCKER (1)
+	db "RANDALL@", TRAINERTYPE_NORMAL
+	db 20, VOLTORB
+	db 20, MAGNEMITE
+	db 20, VOLTORB
+	db -1 ; end
+
+	; ROCKER (2)
+	db "LUCA@", TRAINERTYPE_NORMAL
+	db 29, VOLTORB
+	db 29, ELECTRODE
+	db -1 ; end
+
+TamerGroup: ; Updated to R/B, using FR/LG names
+	; TAMER (1)
+	db "PHIL@", TRAINERTYPE_NORMAL
+	db 34, SANDSLASH
+	db 34, ARBOK
+	db -1 ; end
+
+	; TAMER (2)
+	db "EDGAR@", TRAINERTYPE_NORMAL
+	db 33, ARBOK
+	db 33, SANDSLASH
+	db 33, ARBOK
+	db -1 ; end
+
+	; TAMER (3)
+	db "JASON@", TRAINERTYPE_NORMAL
+	db 43, RHYHORN
+	db -1 ; end
+
+	; TAMER (4)
+	db "COLE@", TRAINERTYPE_NORMAL
+	db 39, ARBOK
+	db 39, TAUROS
+	db -1 ; end
+
+	; TAMER (5)
+	db "VINCENT@", TRAINERTYPE_NORMAL
+	db 44, PERSIAN
+	db 44, GOLDUCK
+	db -1 ; end
+
+	; TAMER (6) ; Unused R/B
+	db "JOHN@", TRAINERTYPE_NORMAL
+	db 42, RHYHORN
+	db 42, PRIMEAPE
+	db 42, ARBOK
+	db 42, TAUROS
+	db -1 ; end
+
+LoreleiGroup: ; Updated to R/B
+	; LORELEI (1)
+	db "LORELEI@", TRAINERTYPE_NORMAL
+	db 54, DEWGONG
+	db 53, CLOYSTER
+	db 54, SLOWBRO
+	db 56, JYNX
+	db 56, LAPRAS
+	db -1 ; end
+
+AgathaGroup: ; Updated to R/B
+	; AGATHA (1)
+	db "AGATHA@", TRAINERTYPE_NORMAL
+	db 56, GENGAR
+	db 56, GOLBAT
+	db 55, HAUNTER
+	db 58, ARBOK
+	db 60, GENGAR
+	db -1 ; end
+
+BossGiovanniGroup: ; Updated to R/B
+	; BOSS_GIOVANNI (1) 
+	db "GIOVANNI@", TRAINERTYPE_NORMAL
+	db 25, ONIX
+	db 24, RHYHORN
+	db 29, KANGASKHAN
+	db -1 ; end
+
+	; BOSS_GIOVANNI (2) 
+	db "GIOVANNI@", TRAINERTYPE_NORMAL
+	db 37, NIDORINO
+	db 35, KANGASKHAN
+	db 37, RHYHORN
+	db 41, NIDOQUEEN
+	db -1 ; end

@@ -39,14 +39,13 @@ ENGINE / DATA:
 	
 - Sort order of Mart items listed (Balls, Escape Rope, Potions, Status, Revive, Field, etc.)
 
-- Make all the Rival trainer classes use the same .pal for the battle sprite instead of loading it 3x for 'separate' classes
-	`pokeRGBplus\data\trainers\palettes.asm`
-
 - Simplify the sleeping Old Man event to just use one event_flag instead of two
 
 - Add the Link Receptionist into `jumpstd` events section
 
-- Update DVs, attributes and parties for Giovanni (& other re-implemented R/B trainers)
+- Update DVs, attributes, encounter music, etc. for Giovanni & other re-implemented R/B trainers
+
+- Determine proper parties for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
 
 GRAPHICS:
 
@@ -119,5 +118,3 @@ TRADES:
 ## Commits:
 
 - Scroll the SS.Anne when Departing (https://github.com/mauvesea/pokegold-sw97/commit/a62c7e142677764b3027649a91fdc2b284c457cb) & (https://github.com/mauvesea/pokegold-sw97/commit/25f5339d8d784e2e0410b05280a70042e550c449)
-
-- Display a preset image when calling display Pokémon function -- for fossils (/Polished_Crystal...?/)

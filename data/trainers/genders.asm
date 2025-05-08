@@ -28,7 +28,7 @@ BTTrainerClassGenders:
 	db MALE   ; SCHOOLBOY
 	db MALE   ; BIRD_KEEPER
 	db FEMALE ; LASS
-	db MALE   ; GIOVANNI
+	db MALE   ; LEADER_GIOVANNI
 	db MALE   ; COOLTRAINERM
 	db FEMALE ; COOLTRAINERF
 	db FEMALE ; BEAUTY
@@ -70,11 +70,12 @@ BTTrainerClassGenders:
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 	db FEMALE ; CHANNELER
-	db MALE   ; CUEBALL
+	db MALE   ; CUE_BALL
 	db MALE   ; ENGINEER
 	db MALE   ; GAMBLER
 	db MALE   ; ROCKER
 	db MALE   ; TAMER
 	db FEMALE ; LORELEI
 	db FEMALE ; AGATHA
+	db MALE   ; BOSS_GIOVANNI
 	assert_table_length NUM_TRAINER_CLASSES - 3 ; exclude MYSTICALMAN and the FOSSILS

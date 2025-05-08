@@ -71,11 +71,12 @@ TrainerClassNames::
 	li "FOSSIL"
 	li "FOSSIL"
 	li "CHANNELER"
-	li "CUEBALL"
+	li "CUE BALL"
 	li "ENGINEER"
 	li "GAMBLER"
 	li "ROCKER"
 	li "TAMER"
 	li "ELITE FOUR"
 	li "ELITE FOUR"
+	li "BOSS" ; TODO -- Should this be special-cased so that it can display "ROCKET BOSS"?
 	assert_list_length NUM_TRAINER_CLASSES

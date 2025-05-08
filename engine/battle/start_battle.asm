@@ -91,11 +91,11 @@ PlayBattleMusic:
 	jr .done
 
 .trainermusic
-	ld de, MUSIC_CHAMPION_BATTLE
+	; ld de, MUSIC_CHAMPION_BATTLE
 	; cp LANCE
 	; jr z, .done
-	cp RED1
-	jr z, .done
+	; cp RED_GS
+	; jr z, .done
 
 ; BUG: Team Rocket battle music is not used for Executives or Scientists (see docs/bugs_and_glitches.md)
 	ld de, MUSIC_ROCKET_BATTLE
@@ -103,12 +103,14 @@ PlayBattleMusic:
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
+	cp BOSS_GIOVANNI
+	jr z, .done
 
 	ld de, MUSIC_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
 	jr c, .done
 
-	; IsGymLeader also counts LANCE, RED1, and the Kanto gym leaders
+	; IsGymLeader also counts LANCE, RED_GS, and the Kanto gym leaders
 	; but they have been taken care of before this
 	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	farcall IsGymLeader

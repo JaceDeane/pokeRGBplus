@@ -28,7 +28,7 @@ TrainerGroups:
 	dw SchoolboyGroup
 	dw BirdKeeperGroup
 	dw LassGroup
-	dw GiovanniGroup
+	dw LeaderGiovanniGroup
 	dw CooltrainerMGroup
 	dw CooltrainerFGroup
 	dw BeautyGroup
@@ -80,4 +80,5 @@ TrainerGroups:
 	dw TamerGroup
 	dw LoreleiGroup
 	dw AgathaGroup
+	dw BossGiovanniGroup
 	assert_table_length NUM_TRAINER_CLASSES

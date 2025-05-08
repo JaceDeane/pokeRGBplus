@@ -112,7 +112,7 @@ GoldenrodUndergroundCheckDayOfWeekCallback:
 	endcallback
 
 TrainerSupernerdEric:
-	trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script
+	;trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -123,7 +123,7 @@ TrainerSupernerdEric:
 	end
 
 TrainerSupernerdTeru:
-	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
+	;trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -134,7 +134,7 @@ TrainerSupernerdTeru:
 	end
 
 TrainerPokemaniacIssac:
-	trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
+	;trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -145,7 +145,7 @@ TrainerPokemaniacIssac:
 	end
 
 TrainerPokemaniacDonald:
-	trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script
+	;trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

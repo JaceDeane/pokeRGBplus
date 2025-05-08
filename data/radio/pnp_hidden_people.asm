@@ -6,6 +6,7 @@ PnP_HiddenPeople:
 	;db KAREN
 	db RIVAL3; WAS JANINE - TODO
 	;db CHAMPION
+	db BOSS_GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
 	db BROCK
@@ -15,7 +16,7 @@ PnP_HiddenPeople_BeatE4:
 	db KOGA
 	db SABRINA
 	db BLAINE
-	db GIOVANNI
+	db LEADER_GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

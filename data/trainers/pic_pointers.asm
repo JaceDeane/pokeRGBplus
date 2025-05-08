@@ -28,7 +28,7 @@ TrainerPicPointers::
 	dba_pic SchoolboyPic
 	dba_pic BirdKeeperPic
 	dba_pic LassPic
-	dba_pic GiovanniPic
+	dba_pic GiovanniPic ; Giovanni classes share a sprite
 	dba_pic CooltrainermPic
 	dba_pic CooltrainerfPic
 	dba_pic BeautyPic
@@ -80,4 +80,5 @@ TrainerPicPointers::
 	dba_pic TamerPic
 	dba_pic LoreleiPic
 	dba_pic AgathaPic
+	dba_pic GiovanniPic ; Giovanni classes share a sprite
 	assert_table_length NUM_TRAINER_CLASSES

@@ -1,7 +1,7 @@
 ; These lists determine the battle music and victory music, and whether to
 ; award HAPPINESS_GYMBATTLE for winning.
 
-; Note: RIVAL3 <and RED1> are unused for battle music checks, since they are
+; Note: RIVAL3 is unused for battle music checks, since they are
 ; accounted for prior to the list check.
 
 GymLeaders: ; (Pokémon League)
@@ -10,7 +10,6 @@ GymLeaders: ; (Pokémon League)
 	db AGATHA
 	db LANCE
 	db RIVAL3
-	db RED1 ; TEMP
 ; fallthrough
 KantoGymLeaders:
 	db BROCK
@@ -20,5 +19,5 @@ KantoGymLeaders:
 	db KOGA
 	db SABRINA
 	db BLAINE
-	db GIOVANNI
+	db LEADER_GIOVANNI
 	db -1

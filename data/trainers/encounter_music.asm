@@ -29,7 +29,7 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
 	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; lass -- R/B
-	db MUSIC_ROCKET_ENCOUNTER      ; giovanni
+	db MUSIC_HIKER_ENCOUNTER       ; leader_giovanni
 	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
 	db MUSIC_BEAUTY_ENCOUNTER      ; cooltrainerf
 	db MUSIC_BEAUTY_ENCOUNTER      ; beauty
@@ -81,6 +81,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; tamer -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; lorelei -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; agatha -- TODO
+	db MUSIC_ROCKET_ENCOUNTER      ; boss_giovanni
 	assert_table_length NUM_TRAINER_CLASSES + 1
 	db MUSIC_HIKER_ENCOUNTER       ; unused
 	db MUSIC_HIKER_ENCOUNTER       ; unused

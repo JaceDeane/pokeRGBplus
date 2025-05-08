@@ -154,7 +154,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_OFTEN
 
-; Giovanni - Leader
+; Leader Giovanni
 	db DIRE_HIT, NO_ITEM ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -462,6 +462,12 @@ TrainerClassAttributes:
 	
 ; Agatha
 	db MAX_POTION, NO_ITEM ; items
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
+	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Boss Giovanni
+	db DIRE_HIT, NO_ITEM ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES

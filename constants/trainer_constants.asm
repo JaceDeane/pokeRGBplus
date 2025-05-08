@@ -99,7 +99,7 @@ DEF KRIS EQU __trainer_class__
 	const MITCH
 	const JED
 	const MARC
-	const RICH
+	const RICHZ
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
@@ -184,8 +184,8 @@ DEF KRIS EQU __trainer_class__
 	const DANA4
 	const DANA5
 
-	trainerclass GIOVANNI ; 1a
-	const GIOVANNI1
+	trainerclass LEADER_GIOVANNI ; 1a
+	const LEADER_GIOVANNI1
 
 	trainerclass COOLTRAINERM ; 1b
 	const NICK
@@ -243,7 +243,7 @@ DEF KRIS EQU __trainer_class__
 	const CARLENE ; unused
 	const JESSICA ; unused
 	const RACHAEL ; unused
-	const ANGELICA ; unused
+	const ANGELICAZ ; unused
 	const KENDRA ; unused
 	const VERONICA ; unused
 	const JULIA
@@ -347,7 +347,7 @@ DEF KRIS EQU __trainer_class__
 	const ANDRE
 	const RAYMOND
 	const WILTON1
-	const EDGAR
+	const EDGARZ
 	const JONAH
 	const MARTIN
 	const STEPHEN
@@ -366,7 +366,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass SWIMMERM ; 26
 	const HAROLD
 	const SIMON
-	const RANDALL
+	const RANDALLZ
 	const CHARLIE
 	const GEORGE
 	const BERKE
@@ -388,7 +388,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass SWIMMERF ; 27
 	const ELAINE
-	const PAULA
+	const PAULAZ
 	const KAYLEE
 	const SUSIE
 	const DENISE
@@ -402,7 +402,7 @@ DEF KRIS EQU __trainer_class__
 	const TARA ; unused
 	const NICOLE
 	const LORI
-	const JODY ; unused
+	const JODYZ ; unused
 	const NIKKI
 	const DIANA
 	const BRIANA
@@ -423,8 +423,8 @@ DEF KRIS EQU __trainer_class__
 	const HUEY4
 
 	trainerclass SUPER_NERD ; 29
-	const STAN
-	const ERIC
+	const STANZ
+	const ERICZ
 	const GREGG ; unused
 	const JAY ; unused
 	const DAVEZ ; unused
@@ -454,7 +454,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass GUITARIST ; 2b
 	const CLYDE
-	const VINCENT
+	const VINCENTZ
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -497,7 +497,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
 	const EDDIEZ
-	const COREY
+	const COREYZ
 
 	trainerclass FIREBREATHER ; 30
 	const OTIS
@@ -542,7 +542,7 @@ DEF KRIS EQU __trainer_class__
 	const GREGZ
 	const NORMAN
 	const MARK
-	const PHIL
+	const PHILZ
 	const RICHARD
 	const GILBERT
 	const JARED
@@ -554,7 +554,7 @@ DEF KRIS EQU __trainer_class__
 	const BROOKE
 	const KIM
 	const CINDY
-	const HOPE
+	const HOPEZ
 	const SHARON
 	const DEBRA
 	const GINA2
@@ -603,7 +603,7 @@ DEF KRIS EQU __trainer_class__
 	const LI
 	const GAKU
 	const MASA
-	const KOJI
+	const KOJIZ
 
 	trainerclass MEDIUM ; 39
 	const MARTHA
@@ -657,7 +657,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass POKEFANF ; 3e
 	const BEVERLY1
-	const RUTH
+	const RUTHZ
 	const BEVERLY2 ; unused
 	const BEVERLY3 ; unused
 	const GEORGIA
@@ -673,7 +673,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass OFFICER ; 41
 	const KEITH
-	const DIRK
+	const DIRKZ
 
 	trainerclass GRUNTF ; 42
 	const GRUNTF_1
@@ -689,20 +689,69 @@ DEF KRIS EQU __trainer_class__
 	
 	trainerclass AERODACTYL_FOSSIL ; 46
 	
-	trainerclass CHANNELER ; 47
+	trainerclass CHANNELER ; 47 -- Updated to R/B (Unused trainers not added), using FR/LG names
+	const PATRICIA
+	const CARLY
+	const HOPE
+	const PAULA
+	const LAUREL
+	const JODY
+	const TAMMY
+	const RUTH
+	const KARINA
+	const JANAE
+	const ANGELICA
+	const EMILIA
+	const JENNIFER
+	const AMANDA
+	const STACY
+	const TASHA
 	
-	trainerclass CUEBALL ; 48
+	trainerclass CUE_BALL ; 48 -- Updated to R/B, using FR/LG names
+	const KOJI
+	const LUKE
+	const CAMRON
+	const RAUL
+	const ISAIAH
+	const ZEEK
+	const JAMAL
+	const COREY
+	const CHASE
 	
-	trainerclass ENGINEER ; 49
+	trainerclass ENGINEER ; 49 -- Updated to R/B, using FR/LG names
+	const BAILY ; Unused R/B
+	const BRAXTON
+	const BERNIE
 	
-	trainerclass GAMBLER ; 50
+	trainerclass GAMBLER ; 50 -- Updated to R/B, using FR/LG names
+	const HUGO
+	const JASPER
+	const DIRK
+	const DARIAN
+	const STAN
+	const GAMBLER_UNUSED
+	const RICH
 	
-	trainerclass ROCKER ; 51
+	trainerclass ROCKER ; 51 -- Updated to R/B, using FR/LG names
+	const RANDALL
+	const LUCA
 	
-	trainerclass TAMER ; 52
+	trainerclass TAMER ; 52 -- Updated to R/B, using FR/LG names
+	const PHIL
+	const EDGAR
+	const JASON
+	const COLE
+	const VINCENT
+	const JOHN ; Unused R/B
 	
 	trainerclass LORELEI ; 53
+	const LORELEI1
 	
 	trainerclass AGATHA ; 54
+	const AGATHA1
+	
+	trainerclass BOSS_GIOVANNI ; 55 -- Updated to R/B
+	const GIOVANNI1
+	const GIOVANNI2
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

@@ -214,7 +214,7 @@ FuchsiaGymStatue:
 	iftrue .Beaten
 	jumpstd GymStatue1Script
 .Beaten:
-	gettrainername STRING_BUFFER_4, GIOVANNI, GIOVANNI1
+	;gettrainername STRING_BUFFER_4, GIOVANNI, GIOVANNI1
 	jumpstd GymStatue2Script
 
 Movement_NinjaSpin:
