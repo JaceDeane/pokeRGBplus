@@ -47,6 +47,8 @@ ENGINE / DATA:
 
 - Determine proper parties for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
 
+- Hide Cerulean Cave from wild Area location showings in the Pokédex
+
 GRAPHICS:
 
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)

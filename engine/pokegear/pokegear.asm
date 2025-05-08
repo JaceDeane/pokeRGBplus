@@ -88,10 +88,12 @@ PokeGear:
 	ld a, LCDC_DEFAULT
 	ldh [rLCDC], a
 	call TownMap_InitCursorAndPlayerIconPositions
+	ld a, KANTO_REGION
+	ld [wPokegearMapRegion], a ; Lock to the Kanto Region
 	xor a
 	ld [wJumptableIndex], a ; POKEGEARSTATE_CLOCKINIT
 	ld [wPokegearCard], a ; POKEGEARCARD_CLOCK
-	ld [wPokegearMapRegion], a ; JOHTO_REGION
+	; ld [wPokegearMapRegion], a ; JOHTO_REGION
 	ld [wUnusedPokegearByte], a
 	ld [wPokegearPhoneScrollPosition], a
 	ld [wPokegearPhoneCursorPosition], a
@@ -731,7 +733,7 @@ TownMap_GetKantoLandmarkLimits:
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
 	jr z, .not_hof
-	ld d, LANDMARK_ROUTE_28
+	ld d, LANDMARK_INDIGO_PLATEAU ; LANDMARK_ROUTE_28 -- TODO
 	ld e, LANDMARK_PALLET_TOWN
 	ret
 
@@ -1894,7 +1896,7 @@ _TownMap:
 	ld a, [wTownMapPlayerIconLandmark]
 	cp KANTO_LANDMARK
 	jr nc, .kanto2
-	ld e, JOHTO_REGION
+	ld e, KANTO_REGION ; Lock to the Kanto Region
 	jr .okay_tilemap
 
 .kanto2
@@ -2293,11 +2295,11 @@ FlyMap:
 ; To prevent both of these things from happening when the player
 ; enters Kanto, fly access is restricted until Indigo Plateau is
 ; visited and its flypoint enabled.
-	push af
-	ld c, SPAWN_INDIGO
-	call HasVisitedSpawn
-	and a
-	jr z, .NoKanto
+	; push af
+	; ld c, SPAWN_INDIGO
+	; call HasVisitedSpawn
+	; and a
+	; jr z, .NoKanto
 ; Kanto's map is only loaded if we've visited Indigo Plateau
 	ld a, KANTO_FLYPOINT ; first Kanto flypoint
 	ld [wStartFlypoint], a
@@ -2357,11 +2359,11 @@ Pokedex_GetArea:
 	call FillKantoMap
 	call .PlaceString_MonsNest
 	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
-	call .PlaceString_MonsNest
-	call TownMapPals
+	; hlbgcoord 0, 0, vBGMap1 ; Do not load Johto's map at all
+	; call TownMapBGUpdate
+	; call FillJohtoMap
+	; call .PlaceString_MonsNest
+	; call TownMapPals
 	hlbgcoord 0, 0
 	call TownMapBGUpdate
 	ld b, SCGB_POKEGEAR_PALS
@@ -2369,7 +2371,8 @@ Pokedex_GetArea:
 	call SetDefaultBGPAndOBP
 	xor a
 	ldh [hBGMapMode], a
-	xor a ; JOHTO_REGION
+	;xor a ; JOHTO_REGION
+	ld a, KANTO_REGION ; Lock to Kanto Region
 	call .GetAndPlaceNest
 .loop
 	call JoyTextDelay
@@ -2380,7 +2383,7 @@ Pokedex_GetArea:
 	ldh a, [hJoypadDown]
 	and SELECT
 	jr nz, .select
-	call .LeftRightInput
+	; call .LeftRightInput ; Do not allow the region to be switched
 	call .BlinkNestIcons
 	jr .next
 
@@ -2414,14 +2417,14 @@ Pokedex_GetArea:
 	call ClearSprites
 	ld a, SCREEN_HEIGHT_PX
 	ldh [hWY], a
-	xor a ; JOHTO_REGION
+	ld a, KANTO_REGION ; xor a ; JOHTO_REGION
 	call .GetAndPlaceNest
 	ret
 
 .right
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	ret z
+	; ld a, [wStatusFlags]
+	; bit STATUSFLAGS_HALL_OF_FAME_F, a ; Do not check if entered the Hall of Fame
+	; ret z
 	ldh a, [hWY]
 	and a
 	ret z
