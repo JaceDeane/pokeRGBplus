@@ -1,11 +1,11 @@
 ; Places and People will not describe these trainers.
 
 PnP_HiddenPeople:
-	db WILL
+	;db WILL
 	db BRUNO
-	db KAREN
+	;db KAREN
 	db RIVAL3; WAS JANINE - TODO
-	db CHAMPION
+	;db CHAMPION
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
 	db BROCK
@@ -20,7 +20,7 @@ PnP_HiddenPeople_BeatE4:
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1
 	db POKEMON_PROF
-	db CAL
+	;db CAL
 	db RIVAL2
-	db RED
+	;db RED1
 	db -1

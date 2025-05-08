@@ -19,7 +19,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; bruno
 	db MUSIC_HIKER_ENCOUNTER       ; karen
 	db MUSIC_HIKER_ENCOUNTER       ; koga
-	db MUSIC_OFFICER_ENCOUNTER     ; champion
+	db MUSIC_OFFICER_ENCOUNTER     ; lance
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
@@ -73,6 +73,14 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_ROCKET_ENCOUNTER      ; kabutops_fossil
 	db MUSIC_ROCKET_ENCOUNTER      ; aerodactyl_fossil
+	db MUSIC_HIKER_ENCOUNTER       ; channeler -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; cueball -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; engineer -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; gambler -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; rocker -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; tamer -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; lorelei -- TODO
+	db MUSIC_HIKER_ENCOUNTER       ; agatha -- TODO
 	assert_table_length NUM_TRAINER_CLASSES + 1
 	db MUSIC_HIKER_ENCOUNTER       ; unused
 	db MUSIC_HIKER_ENCOUNTER       ; unused

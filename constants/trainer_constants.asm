@@ -82,8 +82,8 @@ DEF KRIS EQU __trainer_class__
 	trainerclass KOGA ; f
 	const KOGA1
 
-	trainerclass CHAMPION ; 10
-	const LANCE
+	trainerclass LANCE ; 10
+	const LANCE1
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -688,5 +688,21 @@ DEF KRIS EQU __trainer_class__
 	trainerclass KABUTOPS_FOSSIL ; 45
 	
 	trainerclass AERODACTYL_FOSSIL ; 46
+	
+	trainerclass CHANNELER ; 47
+	
+	trainerclass CUEBALL ; 48
+	
+	trainerclass ENGINEER ; 49
+	
+	trainerclass GAMBLER ; 50
+	
+	trainerclass ROCKER ; 51
+	
+	trainerclass TAMER ; 52
+	
+	trainerclass LORELEI ; 53
+	
+	trainerclass AGATHA ; 54
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

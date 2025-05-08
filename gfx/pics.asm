@@ -714,6 +714,14 @@ KabutopsFossilPic:   INCBIN "gfx/trainers/fossil_kabutops.2bpp.lz"
 AerodactylFossilPic: INCBIN "gfx/trainers/fossil_aerodactyl.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 SailorPic:           INCBIN "gfx/trainers/sailor.2bpp.lz"
+ChannelerPic:        INCBIN "gfx/trainers/channeler.2bpp.lz"
+CueBallPic:          INCBIN "gfx/trainers/cue_ball.2bpp.lz"
+EngineerPic:         INCBIN "gfx/trainers/engineer.2bpp.lz"
+GamblerPic:          INCBIN "gfx/trainers/gambler.2bpp.lz"
+RockerPic:           INCBIN "gfx/trainers/rocker.2bpp.lz"
+TamerPic:            INCBIN "gfx/trainers/tamer.2bpp.lz"
+LoreleiPic:          INCBIN "gfx/trainers/lorelei.2bpp.lz"
+AgathaPic:           INCBIN "gfx/trainers/agatha.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,

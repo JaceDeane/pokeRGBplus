@@ -27,7 +27,7 @@ INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
-INCBIN "gfx/trainers/champion.gbcpal", middle_colors
+INCBIN "gfx/trainers/lance.gbcpal", middle_colors
 INCBIN "gfx/trainers/brock.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
 INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
@@ -81,5 +81,12 @@ INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCBIN "gfx/trainers/fossil_kabutops.gbcpal", middle_colors ; TODO - fossils share a palette
 INCBIN "gfx/trainers/fossil_aerodactyl.gbcpal", middle_colors ; TODO - fossils share a palette
-
+INCBIN "gfx/trainers/channeler.gbcpal", middle_colors
+INCBIN "gfx/trainers/cue_ball.gbcpal", middle_colors
+INCBIN "gfx/trainers/engineer.gbcpal", middle_colors
+INCBIN "gfx/trainers/gambler.gbcpal", middle_colors
+INCBIN "gfx/trainers/rocker.gbcpal", middle_colors
+INCBIN "gfx/trainers/tamer.gbcpal", middle_colors
+INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
+INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -94,7 +94,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Champion (Lance)
+; Lance
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -416,6 +416,54 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 1 ; base reward
 	dw AI_BASIC
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Channeler -- TODO
+	db NO_ITEM, NO_ITEM ; items
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Cueball -- TODO
+	db NO_ITEM, NO_ITEM ; items
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Engineer -- TODO
+	db NO_ITEM, NO_ITEM ; items
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Gambler -- TODO
+	db NO_ITEM, NO_ITEM ; items
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Rocker -- TODO
+	db NO_ITEM, NO_ITEM ; items
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Tamer -- TODO
+	db NO_ITEM, NO_ITEM ; items
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
+; Lorelei
+	db MAX_POTION, NO_ITEM ; items
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
+	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Agatha
+	db MAX_POTION, NO_ITEM ; items
+	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
+	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 	assert_table_length NUM_TRAINER_CLASSES

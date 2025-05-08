@@ -18,7 +18,7 @@ TrainerGroups:
 	dw BrunoGroup
 	dw KarenGroup
 	dw KogaGroup
-	dw ChampionGroup
+	dw LanceGroup
 	dw BrockGroup
 	dw MistyGroup
 	dw LtSurgeGroup
@@ -72,4 +72,12 @@ TrainerGroups:
 	dw MysticalmanGroup
 	dw KabutopsFossilGroup
 	dw AerodactylFossilGroup
+	dw ChannelerGroup
+	dw CueBallGroup
+	dw EngineerGroup
+	dw GamblerGroup
+	dw RockerGroup
+	dw TamerGroup
+	dw LoreleiGroup
+	dw AgathaGroup
 	assert_table_length NUM_TRAINER_CLASSES

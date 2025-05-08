@@ -195,8 +195,8 @@ KogaGroup:
 	db 44, CROBAT,     DOUBLE_TEAM, QUICK_ATTACK, WING_ATTACK, TOXIC
 	db -1 ; end
 
-ChampionGroup:
-	; CHAMPION (1)
+LanceGroup:
+	; LANCE (1)
 	db "LANCE@", TRAINERTYPE_MOVES
 	db 44, GYARADOS,   FLAIL, RAIN_DANCE, SURF, HYPER_BEAM
 	db 47, DRAGONITE,  THUNDER_WAVE, TWISTER, THUNDER, HYPER_BEAM
@@ -3377,3 +3377,19 @@ MysticalmanGroup:
 KabutopsFossilGroup:
 
 AerodactylFossilGroup:
+
+ChannelerGroup:
+
+CueBallGroup:
+
+EngineerGroup:
+
+GamblerGroup:
+
+RockerGroup:
+
+TamerGroup:
+
+LoreleiGroup:
+
+AgathaGroup:

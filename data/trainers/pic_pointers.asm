@@ -72,4 +72,12 @@ TrainerPicPointers::
 	dba_pic MysticalmanPic
 	dba_pic KabutopsFossilPic
 	dba_pic AerodactylFossilPic
+	dba_pic ChannelerPic
+	dba_pic CueBallPic
+	dba_pic EngineerPic
+	dba_pic GamblerPic
+	dba_pic RockerPic
+	dba_pic TamerPic
+	dba_pic LoreleiPic
+	dba_pic AgathaPic
 	assert_table_length NUM_TRAINER_CLASSES

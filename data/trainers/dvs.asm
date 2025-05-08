@@ -17,7 +17,7 @@ TrainerClassDVs:
 	dn 13, 12, 13, 13 ; BRUNO
 	dn  7, 15, 13, 15 ; KAREN
 	dn 13, 12, 13, 13 ; KOGA
-	dn 13, 12, 13, 13 ; CHAMPION
+	dn 13, 12, 13, 13 ; LANCE
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
@@ -27,7 +27,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; SCHOOLBOY
 	dn  9,  8,  8,  8 ; BIRD_KEEPER
 	dn  5,  8,  8,  8 ; LASS
-	dn 13, 13, 13, 13 ; GIOVANNI ; TODO - DVs
+	dn 13, 13, 13, 13 ; GIOVANNI -- TODO
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  7, 12, 12,  8 ; COOLTRAINERF
 	dn  6,  9, 12,  8 ; BEAUTY
@@ -71,4 +71,12 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn  1,  1,  1,  1 ; KABUTOPS_FOSSIL
 	dn  1,  1,  1,  1 ; AERODACTYL_FOSSIL
+	dn  9,  8,  8,  8 ; CHANNELER -- TODO
+	dn  9,  8,  8,  8 ; CUEBALL -- TODO
+	dn  9,  8,  8,  8 ; ENGINEER -- TODO
+	dn  9,  8,  8,  8 ; GAMBLER -- TODO
+	dn  9,  8,  8,  8 ; ROCKER -- TODO
+	dn  9,  8,  8,  8 ; TAMER -- TODO
+	dn 13, 13, 13, 13 ; LORELEI -- TODO
+	dn 13, 13, 13, 13 ; AGATHA -- TODO
 	assert_table_length NUM_TRAINER_CLASSES
