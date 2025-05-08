@@ -355,7 +355,6 @@ HypnoBackpic:        INCBIN "gfx/pokemon/hypno/back.2bpp.lz"
 QuilavaBackpic:      INCBIN "gfx/pokemon/quilava/back.2bpp.lz"
 CroconawBackpic:     INCBIN "gfx/pokemon/croconaw/back.2bpp.lz"
 SandshrewBackpic:    INCBIN "gfx/pokemon/sandshrew/back.2bpp.lz"
-SailorPic:           INCBIN "gfx/trainers/sailor.2bpp.lz"
 BeautyPic:           INCBIN "gfx/trainers/beauty.2bpp.lz"
 ShellderBackpic:     INCBIN "gfx/pokemon/shellder/back.2bpp.lz"
 ZubatBackpic:        INCBIN "gfx/pokemon/zubat/back.2bpp.lz"
@@ -714,6 +713,7 @@ Rival3Pic:           INCBIN "gfx/trainers/rival3.2bpp.lz"
 KabutopsFossilPic:   INCBIN "gfx/trainers/fossil_kabutops.2bpp.lz"
 AerodactylFossilPic: INCBIN "gfx/trainers/fossil_aerodactyl.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
+SailorPic:           INCBIN "gfx/trainers/sailor.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
