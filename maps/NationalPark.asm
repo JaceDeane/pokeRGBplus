@@ -28,13 +28,13 @@ NationalParkPokefanFScript:
 NationalParkTeacher1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_QUICK_CLAW
+	;checkevent EVENT_GOT_QUICK_CLAW
 	iftrue .GotQuickClaw
 	writetext NationalParkTeacher1Text
 	promptbutton
 	verbosegiveitem QUICK_CLAW
 	iffalse .NoRoom
-	setevent EVENT_GOT_QUICK_CLAW
+	;setevent EVENT_GOT_QUICK_CLAW
 .GotQuickClaw:
 	writetext NationalParkTeacher1Text_GotQuickClaw
 	waitbutton
@@ -70,21 +70,21 @@ NationalParkGameboyKidScript:
 	end
 
 TrainerSchoolboyJack1:
-	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
+	;trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
 	endifjustbattled
 	opentext
-	checkflag ENGINE_JACK_READY_FOR_REMATCH
+	;checkflag ENGINE_JACK_READY_FOR_REMATCH
 	iftrue .Rematch
 	checkcellnum PHONE_SCHOOLBOY_JACK
 	iftrue .NumberAccepted
-	checkevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
+	;checkevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskAgain
 	writetext SchoolboyJackTradeMonText
 	promptbutton
-	setevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
+	;setevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
 	sjump .RequestNumber
 
@@ -94,7 +94,7 @@ TrainerSchoolboyJack1:
 	askforphonenumber PHONE_SCHOOLBOY_JACK
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
+	;gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -108,54 +108,54 @@ TrainerSchoolboyJack1:
 	ifequal 1, .Fight1
 	ifequal 0, .LoadFight0
 .Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	;checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight4
 .Fight3:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
 .Fight2:
-	checkevent EVENT_CLEARED_RADIO_TOWER
+	;checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight2
 .Fight1:
-	checkflag ENGINE_FLYPOINT_OLIVINE
+	;checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer SCHOOLBOY, JACK1
+	;loadtrainer SCHOOLBOY, JACK1
 	startbattle
 	reloadmapafterbattle
 	loadmem wJackFightCount, 1
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
+	;clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
 .LoadFight1:
-	loadtrainer SCHOOLBOY, JACK2
+	;loadtrainer SCHOOLBOY, JACK2
 	startbattle
 	reloadmapafterbattle
 	loadmem wJackFightCount, 2
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
+	;clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
 .LoadFight2:
-	loadtrainer SCHOOLBOY, JACK3
+	;loadtrainer SCHOOLBOY, JACK3
 	startbattle
 	reloadmapafterbattle
 	loadmem wJackFightCount, 3
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
+	;clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
 .LoadFight3:
-	loadtrainer SCHOOLBOY, JACK4
+	;loadtrainer SCHOOLBOY, JACK4
 	startbattle
 	reloadmapafterbattle
 	loadmem wJackFightCount, 4
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
+	;clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
 .LoadFight4:
-	loadtrainer SCHOOLBOY, JACK5
+	;loadtrainer SCHOOLBOY, JACK5
 	startbattle
 	reloadmapafterbattle
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
+	;clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
 .AskNumber1:
@@ -187,7 +187,7 @@ TrainerSchoolboyJack1:
 	end
 
 TrainerPokefanmWilliam:
-	trainer POKEFANM, WILLIAM, EVENT_BEAT_POKEFANM_WILLIAM, PokefanmWilliamSeenText, PokefanmWilliamBeatenText, 0, .Script
+	;trainer POKEFANM, WILLIAM, EVENT_BEAT_POKEFANM_WILLIAM, PokefanmWilliamSeenText, PokefanmWilliamBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -198,30 +198,30 @@ TrainerPokefanmWilliam:
 	end
 
 TrainerPokefanfBeverly1:
-	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
+	;trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
+	;loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
 	endifjustbattled
 	opentext
-	checkflag ENGINE_BEVERLY_HAS_NUGGET
+	;checkflag ENGINE_BEVERLY_HAS_NUGGET
 	iftrue .GiveNugget
-	checkcellnum PHONE_POKEFAN_BEVERLY
+	;checkcellnum PHONE_POKEFAN_BEVERLY
 	iftrue .NumberAccepted
 	checkpoke MARILL
 	iffalse .NoMarill
-	checkevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
+	;checkevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskAgain
 	writetext PokefanBeverlyCuteMonText
 	promptbutton
-	setevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
+	;setevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
 	sjump .RequestNumber
 
 .AskAgain:
 	scall .AskNumber2
 .RequestNumber:
-	askforphonenumber PHONE_POKEFAN_BEVERLY
+	;askforphonenumber PHONE_POKEFAN_BEVERLY
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY1
@@ -232,7 +232,7 @@ TrainerPokefanfBeverly1:
 	scall .Gift
 	verbosegiveitem NUGGET
 	iffalse .NoRoom
-	clearflag ENGINE_BEVERLY_HAS_NUGGET
+	;clearflag ENGINE_BEVERLY_HAS_NUGGET
 	sjump .NumberAccepted
 
 .NoRoom:
@@ -277,7 +277,7 @@ TrainerPokefanfBeverly1:
 	end
 
 TrainerLassKrise:
-	trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script
+	;trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

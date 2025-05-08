@@ -21,26 +21,26 @@ GoldenrodGymNoop2Scene:
 
 GoldenrodGymWhitneyScript:
 	faceplayer
-	checkevent EVENT_BEAT_WHITNEY
+	;checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
 	opentext
 	writetext WhitneyBeforeText
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer WHITNEY, WHITNEY1
+	;loadtrainer WHITNEY, WHITNEY1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_WHITNEY
-	setevent EVENT_MADE_WHITNEY_CRY
-	setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
-	setevent EVENT_BEAT_BEAUTY_VICTORIA
-	setevent EVENT_BEAT_BEAUTY_SAMANTHA
-	setevent EVENT_BEAT_LASS_CARRIE
-	setevent EVENT_BEAT_LASS_BRIDGET
+	;setevent EVENT_BEAT_WHITNEY
+	;setevent EVENT_MADE_WHITNEY_CRY
+	;setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
+	;setevent EVENT_BEAT_BEAUTY_VICTORIA
+	;setevent EVENT_BEAT_BEAUTY_SAMANTHA
+	;setevent EVENT_BEAT_LASS_CARRIE
+	;setevent EVENT_BEAT_LASS_BRIDGET
 .FightDone:
 	opentext
-	checkevent EVENT_MADE_WHITNEY_CRY
+	;checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
 	writetext WhitneyYouMeanieText
 	waitbutton
@@ -48,9 +48,9 @@ GoldenrodGymWhitneyScript:
 	end
 
 .StoppedCrying:
-	checkevent EVENT_GOT_TM45_ATTRACT
+	;checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
-	checkflag ENGINE_PLAINBADGE
+	;checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
 	writetext WhitneyWhatDoYouWantText
 	promptbutton
@@ -58,15 +58,15 @@ GoldenrodGymWhitneyScript:
 	writetext PlayerReceivedPlainBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_PLAINBADGE
+	;setflag ENGINE_PLAINBADGE
 	readvar VAR_BADGES
 	scall GoldenrodGymActivateRockets
 .GotPlainBadge:
 	writetext WhitneyPlainBadgeText
 	promptbutton
-	verbosegiveitem TM_ATTRACT
+	;verbosegiveitem TM_ATTRACT
 	iffalse .NoRoomForAttract
-	setevent EVENT_GOT_TM45_ATTRACT
+	;setevent EVENT_GOT_TM45_ATTRACT
 	writetext WhitneyAttractText
 	waitbutton
 	closetext
@@ -91,7 +91,7 @@ GoldenrodGymActivateRockets:
 	jumpstd RadioTowerRocketsScript
 
 TrainerLassCarrie:
-	trainer LASS, CARRIE, EVENT_BEAT_LASS_CARRIE, LassCarrieSeenText, LassCarrieBeatenText, 0, .Script
+	;trainer LASS, CARRIE, EVENT_BEAT_LASS_CARRIE, LassCarrieSeenText, LassCarrieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -111,11 +111,11 @@ WhitneyCriesScript:
 	closetext
 	applymovement GOLDENRODGYM_LASS2, BridgetWalksAwayMovement
 	setscene SCENE_GOLDENRODGYM_NOOP
-	clearevent EVENT_MADE_WHITNEY_CRY
+	;clearevent EVENT_MADE_WHITNEY_CRY
 	end
 
 TrainerLassBridget:
-	trainer LASS, BRIDGET, EVENT_BEAT_LASS_BRIDGET, LassBridgetSeenText, LassBridgetBeatenText, 0, .Script
+	;trainer LASS, BRIDGET, EVENT_BEAT_LASS_BRIDGET, LassBridgetSeenText, LassBridgetBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -126,7 +126,7 @@ TrainerLassBridget:
 	end
 
 TrainerBeautyVictoria:
-	trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script
+	;trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -137,7 +137,7 @@ TrainerBeautyVictoria:
 	end
 
 TrainerBeautySamantha:
-	trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script
+	;trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -149,7 +149,7 @@ TrainerBeautySamantha:
 
 GoldenrodGymGuideScript:
 	faceplayer
-	checkevent EVENT_BEAT_WHITNEY
+	;checkevent EVENT_BEAT_WHITNEY
 	iftrue .GoldenrodGymGuideWinScript
 	opentext
 	writetext GoldenrodGymGuideText
@@ -165,11 +165,11 @@ GoldenrodGymGuideScript:
 	end
 
 GoldenrodGymStatue:
-	checkflag ENGINE_PLAINBADGE
+	;checkflag ENGINE_PLAINBADGE
 	iftrue .Beaten
 	jumpstd GymStatue1Script
 .Beaten:
-	gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1
+	;gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1
 	jumpstd GymStatue2Script
 
 BridgetWalksUpMovement:

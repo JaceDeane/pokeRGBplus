@@ -24,11 +24,11 @@ FuchsiaGymJanineScript:
 	;loadtrainer GIOVANNI, GIOVANNI1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_JANINE
-	setevent EVENT_BEAT_LASS_ALICE
-	setevent EVENT_BEAT_LASS_LINDA
-	setevent EVENT_BEAT_PICNICKER_CINDY
-	setevent EVENT_BEAT_CAMPER_BARRY
+	;setevent EVENT_BEAT_JANINE
+	;setevent EVENT_BEAT_LASS_ALICE
+	;setevent EVENT_BEAT_LASS_LINDA
+	;setevent EVENT_BEAT_PICNICKER_CINDY
+	;setevent EVENT_BEAT_CAMPER_BARRY
 	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_LASS
 	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
 	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_LASS
@@ -58,7 +58,7 @@ FuchsiaGymJanineScript:
 	end
 
 LassAliceScript:
-	checkevent EVENT_BEAT_LASS_ALICE
+	;checkevent EVENT_BEAT_LASS_ALICE
 	iftrue .AliceUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_1, Movement_NinjaSpin
 	faceplayer
@@ -67,7 +67,7 @@ LassAliceScript:
 .AliceUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_LASS_ALICE
+	;checkevent EVENT_BEAT_LASS_ALICE
 	iftrue .AliceAfterScript
 	writetext LassAliceBeforeText
 	waitbutton
@@ -77,7 +77,7 @@ LassAliceScript:
 	startbattle
 	iftrue .AliceBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_LASS_ALICE
+	;setevent EVENT_BEAT_LASS_ALICE
 	end
 
 .AliceBecomesJanine:
@@ -92,7 +92,7 @@ LassAliceScript:
 	end
 
 LassLindaScript:
-	checkevent EVENT_BEAT_LASS_LINDA
+	;checkevent EVENT_BEAT_LASS_LINDA
 	iftrue .LindaUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_2, Movement_NinjaSpin
 	faceplayer
@@ -101,7 +101,7 @@ LassLindaScript:
 .LindaUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_LASS_LINDA
+	;checkevent EVENT_BEAT_LASS_LINDA
 	iftrue .LindaAfterScript
 	writetext LassLindaBeforeText
 	waitbutton
@@ -111,7 +111,7 @@ LassLindaScript:
 	startbattle
 	iftrue .LindaBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_LASS_LINDA
+	;setevent EVENT_BEAT_LASS_LINDA
 	end
 
 .LindaBecomesJanine:
@@ -126,7 +126,7 @@ LassLindaScript:
 	end
 
 PicnickerCindyScript:
-	checkevent EVENT_BEAT_PICNICKER_CINDY
+	;checkevent EVENT_BEAT_PICNICKER_CINDY
 	iftrue .CindyUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_3, Movement_NinjaSpin
 	faceplayer
@@ -135,7 +135,7 @@ PicnickerCindyScript:
 .CindyUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_PICNICKER_CINDY
+	;checkevent EVENT_BEAT_PICNICKER_CINDY
 	iftrue .CindyAfterScript
 	writetext PicnickerCindyBeforeText
 	waitbutton
@@ -145,7 +145,7 @@ PicnickerCindyScript:
 	startbattle
 	iftrue .CindyBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_PICNICKER_CINDY
+	;setevent EVENT_BEAT_PICNICKER_CINDY
 	end
 
 .CindyBecomesJanine:
@@ -160,7 +160,7 @@ PicnickerCindyScript:
 	end
 
 CamperBarryScript:
-	checkevent EVENT_BEAT_CAMPER_BARRY
+	;checkevent EVENT_BEAT_CAMPER_BARRY
 	iftrue .BarryUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_4, Movement_NinjaSpin
 	faceplayer
@@ -169,7 +169,7 @@ CamperBarryScript:
 .BarryUnmasked:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CAMPER_BARRY
+	;checkevent EVENT_BEAT_CAMPER_BARRY
 	iftrue .BarryAfterScript
 	writetext CamperBarryBeforeText
 	waitbutton
@@ -179,7 +179,7 @@ CamperBarryScript:
 	startbattle
 	iftrue .BarryBecomesJanine
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CAMPER_BARRY
+	;setevent EVENT_BEAT_CAMPER_BARRY
 	end
 
 .BarryBecomesJanine:
@@ -196,7 +196,7 @@ CamperBarryScript:
 FuchsiaGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_JANINE
+	;checkevent EVENT_BEAT_JANINE
 	iftrue .FuchsiaGymGuideWinScript
 	writetext FuchsiaGymGuideText
 	waitbutton

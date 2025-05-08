@@ -165,26 +165,27 @@ DEF KRIS EQU __trainer_class__
 	const VANCE2
 	const VANCE3
 
-	trainerclass LASS ; 19
-	const CARRIE
-	const BRIDGET
-	const ALICE
-	const KRISE
-	const CONNIE1
-	const LINDA
-	const LAURA
-	const SHANNON
-	const MICHELLE
-	const DANA1
-	const ELLEN
-	const CONNIE2 ; unused
-	const CONNIE3 ; unused
-	const DANA2
-	const DANA3
-	const DANA4
-	const DANA5
+	trainerclass LASS ; 19 -- Updated to R/B, using FR/LG names
+	const JANICE
+	const SALLY
+	const ROBIN
+	const CRISSY
+	const MIRIAM
+	const IRIS
+	const RELI
+	const ALI
+	const LASS_UNUSED
+	const HALEY
+	const ANN
+	const DAWN
+	const PAIGE
+	const ANDREA
+	const MEGAN
+	const JULIA
+	const KAY
+	const LISA
 
-	trainerclass LEADER_GIOVANNI ; 1a
+	trainerclass LEADER_GIOVANNI ; 1a  -- Updated to R/B
 	const LEADER_GIOVANNI1
 
 	trainerclass COOLTRAINERM ; 1b
@@ -220,7 +221,7 @@ DEF KRIS EQU __trainer_class__
 	const JOYCE
 	const BETH1
 	const REENA1
-	const MEGAN
+	const MEGANZ
 	const BETH2
 	const CAROL
 	const QUINN
@@ -246,7 +247,7 @@ DEF KRIS EQU __trainer_class__
 	const ANGELICAZ ; unused
 	const KENDRA ; unused
 	const VERONICA ; unused
-	const JULIA
+	const JULIAZ
 	const THERESA ; unused
 	const VALERIE
 	const OLIVIA
@@ -394,11 +395,11 @@ DEF KRIS EQU __trainer_class__
 	const DENISE
 	const KARA
 	const WENDY
-	const LISA ; unused
+	const LISAZ ; unused
 	const JILL ; unused
 	const MARY ; unused
 	const KATIE ; unused
-	const DAWN
+	const DAWNZ
 	const TARA ; unused
 	const NICOLE
 	const LORI

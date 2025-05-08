@@ -1,15 +1,15 @@
 # TO DO:
-
+```
 - Add a debug menu of some sort
 	- Add Pokémon, add item, warp to map, change badges, set event/flag, etc.
-
-MAPS:
+```
+### MAPS:
 
 - Update Diglett's Cave
 
 - Cerulean City onwards
 
-EVENTS:
+### EVENTS:
 
 - Route 3 & Route 4 events/Trainers, etc.
 
@@ -21,16 +21,16 @@ EVENTS:
 
 - `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
 
-ENGINE / DATA:
+### ENGINE / DATA:
 
 - Confirm if the Route 3 PokeCenter uses a FlyData flag
 
 - (!) Set proper wild encounter data (!)
-	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)
-	Viridian Forest:
+	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)\
+	Viridian Forest:\
 	- Update the encounters*
 
-- (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)
+- (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
 
 - Update TM/HM list
@@ -49,7 +49,7 @@ ENGINE / DATA:
 
 - Hide Cerulean Cave from wild Area location showings in the Pokédex
 
-GRAPHICS:
+### GRAPHICS:
 
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
 
@@ -57,7 +57,7 @@ GRAPHICS:
 
 - Implement a unique animation for the Ghost upon battle start, like other Pokémon
 
-MUSIC: 
+### MUSIC: 
 
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
@@ -65,7 +65,7 @@ MUSIC:
 
 - Night version of Kanto Wild Battle theme (?)
 
-TRADES:
+### TRADES:
 
 - Update the DVs/IVs for the Trade Pokémon
 
@@ -87,8 +87,10 @@ TRADES:
 
 - Unveiling a Ghost does not animate the revealed Pokémon, nor play their cry
 
-- Victory Road considered to be Johto
+- Victory Road considered to be Johto\
 	`pokeRGBplus\engine\overworld\landmarks.asm`
+	
+- Gen I has a function that temporarily sets the specified Pokémon as SEEN so that the Pokédex entry is displayed (Something to note, may not bother with)
 
 ## Tutorials:
 
@@ -99,9 +101,6 @@ TRADES:
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
 
 - (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
-
-> ~~Splash a Pokédex Entry from an Overworld Event~ (Generation I) (https://github.com/pret/pokecrystal/wiki/Splash-a-Pokédex-Entry-from-an-Overworld-Event-(Generation-I)) ~~
-	- (!) Gen I has a function that temporarily sets the specified Pokémon as SEEN so that the Pokédex entry is displayed
 
 - Trashcan puzzle in Vermilion Gym (https://github.com/pret/pokecrystal/wiki/Trashcan-puzzle-in-Vermilion-Gym)
 

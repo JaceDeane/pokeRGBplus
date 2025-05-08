@@ -24,10 +24,10 @@ CeladonGymErikaScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ERIKA
-	setevent EVENT_BEAT_LASS_MICHELLE
-	setevent EVENT_BEAT_PICNICKER_TANYA
-	setevent EVENT_BEAT_BEAUTY_JULIA
-	setevent EVENT_BEAT_TWINS_JO_AND_ZOE
+	;setevent EVENT_BEAT_LASS_MICHELLE
+	;setevent EVENT_BEAT_PICNICKER_TANYA
+	;setevent EVENT_BEAT_BEAUTY_JULIA
+	;setevent EVENT_BEAT_TWINS_JO_AND_ZOE
 	opentext
 	writetext PlayerReceivedRainbowBadgeText
 	playsound SFX_GET_BADGE
@@ -48,7 +48,7 @@ CeladonGymErikaScript:
 	end
 
 TrainerLassMichelle:
-	trainer LASS, MICHELLE, EVENT_BEAT_LASS_MICHELLE, LassMichelleSeenText, LassMichelleBeatenText, 0, .Script
+	;trainer LASS, MICHELLE, EVENT_BEAT_LASS_MICHELLE, LassMichelleSeenText, LassMichelleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -59,7 +59,7 @@ TrainerLassMichelle:
 	end
 
 TrainerPicnickerTanya:
-	trainer PICNICKER, TANYA, EVENT_BEAT_PICNICKER_TANYA, PicnickerTanyaSeenText, PicnickerTanyaBeatenText, 0, .Script
+	;trainer PICNICKER, TANYA, EVENT_BEAT_PICNICKER_TANYA, PicnickerTanyaSeenText, PicnickerTanyaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -70,7 +70,7 @@ TrainerPicnickerTanya:
 	end
 
 TrainerBeautyJulia:
-	trainer BEAUTY, JULIA, EVENT_BEAT_BEAUTY_JULIA, BeautyJuliaSeenText, BeautyJuliaBeatenText, 0, .Script
+	;trainer BEAUTY, JULIA, EVENT_BEAT_BEAUTY_JULIA, BeautyJuliaSeenText, BeautyJuliaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -81,7 +81,7 @@ TrainerBeautyJulia:
 	end
 
 TrainerTwinsJoAndZoe1:
-	trainer TWINS, JOANDZOE1, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe1SeenText, TwinsJoAndZoe1BeatenText, 0, .Script
+	;trainer TWINS, JOANDZOE1, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe1SeenText, TwinsJoAndZoe1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -92,7 +92,7 @@ TrainerTwinsJoAndZoe1:
 	end
 
 TrainerTwinsJoAndZoe2:
-	trainer TWINS, JOANDZOE2, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe2SeenText, TwinsJoAndZoe2BeatenText, 0, .Script
+	;trainer TWINS, JOANDZOE2, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe2SeenText, TwinsJoAndZoe2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

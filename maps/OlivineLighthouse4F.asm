@@ -8,7 +8,7 @@ OlivineLighthouse4F_MapScripts:
 	def_callbacks
 
 TrainerLassConnie:
-	trainer LASS, CONNIE1, EVENT_BEAT_LASS_CONNIE, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script
+	;trainer LASS, CONNIE1, EVENT_BEAT_LASS_CONNIE, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -19,7 +19,7 @@ TrainerLassConnie:
 	end
 
 TrainerSailorKent:
-	trainer SAILOR, KENT, EVENT_BEAT_SAILOR_KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script
+	;trainer SAILOR, KENT, EVENT_BEAT_SAILOR_KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
