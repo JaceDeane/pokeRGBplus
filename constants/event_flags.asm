@@ -259,6 +259,7 @@
 	const EVENT_GAMBLER_AWAKE
 	
 ; Pewter City
+	const EVENT_PEWTER_GYM_GUIDE
 	const EVENT_GOT_OLD_AMBER
 	; const EVENT_GOT_TM34_BIDE
 	

@@ -4,8 +4,8 @@
 	const PEWTERCITY_SUPER_NERD1
 	const PEWTERCITY_SUPER_NERD2
 	const PEWTERCITY_YOUNGSTER
-	const PEWTERCITY_FRUIT_TREE1
-	const PEWTERCITY_FRUIT_TREE2
+	; const PEWTERCITY_FRUIT_TREE1
+	; const PEWTERCITY_FRUIT_TREE2
 
 PewterCity_MapScripts:
 	def_scene_scripts
@@ -198,11 +198,11 @@ PewterCityPokecenterSign:
 PewterCityMartSign:
 	jumpstd MartSignScript
 
-PewterCityFruitTree1:
-	fruittree FRUITTREE_PEWTER_CITY_1
+; PewterCityFruitTree1:
+	; fruittree FRUITTREE_PEWTER_CITY_1
 
-PewterCityFruitTree2:
-	fruittree FRUITTREE_PEWTER_CITY_2
+; PewterCityFruitTree2:
+	; fruittree FRUITTREE_PEWTER_CITY_2
 
 PewterMuseumGuidePlayerMovement:
 	step LEFT
@@ -312,7 +312,7 @@ PewterCityCooltrainerFText:
 	cont "from the moon!"
 
 	para "They appeared "
-	line "after MOON STONE"
+	line "after a MOON STONE"
 	cont "fell on MT.MOON."
 	done
 
@@ -458,10 +458,10 @@ PewterCity_MapEvents:
 	bg_event 24, 17, BGEVENT_READ, PewterCityMartSign
 
 	def_object_events
-	object_event  8, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1
+	object_event  8, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerFScript, -1
 	object_event 17, 25, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityCooltrainerMScript, -1
 	object_event 27, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterCitySuperNerd1Script, -1
 	object_event 26, 25, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCitySuperNerd2Script, -1
-	object_event 35, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityYoungsterScript, SCENE_PEWTERCITY_NOOP
-	object_event 32,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
-	object_event 30,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
+	object_event 35, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityYoungsterScript, EVENT_PEWTER_GYM_GUIDE
+	; object_event 32,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
+	; object_event 30,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1

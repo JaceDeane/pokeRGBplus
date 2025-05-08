@@ -11,7 +11,7 @@
 
 ### EVENTS:
 
-- Route 3 & Route 4 events/Trainers, etc.
+- Route 4 events/Trainers, etc.
 
 - Mount Moon (entirety)
 
@@ -27,8 +27,8 @@
 
 - (!) Set proper wild encounter data (!)
 	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)\
-	Viridian Forest:\
-	- Update the encounters*
+	- Viridian Forest, Mt.Moon (All floors)\
+	- Routes 3 &  4
 
 - (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
@@ -45,7 +45,7 @@
 
 - Update DVs, attributes, encounter music, etc. for Giovanni & other re-implemented R/B trainers
 
-- Determine proper parties for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
+- Determine proper party lineups for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
 
 - Hide Cerulean Cave from wild Area location showings in the Pokédex
 
@@ -72,8 +72,6 @@
 - Have the traded Jynx, LOLA, hold a LOVELY_MAIL if possible
 
 ## ! Bugs: !
-
-- Youngster doesn't disappear in Pewter City after beating BROCK
 
 - (!) Building _DEBUG causes an overflow
 
