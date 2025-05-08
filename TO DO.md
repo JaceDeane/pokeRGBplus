@@ -100,7 +100,7 @@ TRADES:
 
 - (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
 
-- Splash a Pokédex Entry from an Overworld Event (Generation I) (https://github.com/pret/pokecrystal/wiki/Splash-a-Pokédex-Entry-from-an-Overworld-Event-(Generation-I))
+> ~~Splash a Pokédex Entry from an Overworld Event~ (Generation I) (https://github.com/pret/pokecrystal/wiki/Splash-a-Pokédex-Entry-from-an-Overworld-Event-(Generation-I)) ~~
 	- (!) Gen I has a function that temporarily sets the specified Pokémon as SEEN so that the Pokédex entry is displayed
 
 - Trashcan puzzle in Vermilion Gym (https://github.com/pret/pokecrystal/wiki/Trashcan-puzzle-in-Vermilion-Gym)
