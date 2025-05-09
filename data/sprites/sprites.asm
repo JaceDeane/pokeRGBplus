@@ -116,5 +116,15 @@ OverworldSprites:
 	overworld_sprite JigglypuffSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite OldAmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite FossilSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
-	overworld_sprite HikerSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite HikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite CookSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GiovanniSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite ChannelerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SafariZoneWorkerSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite SilphPresidentSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SilphWorkerMSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite WardenSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite BaldingGuySpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite AgathaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LoreleiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	assert_table_length NUM_OVERWORLD_SPRITES

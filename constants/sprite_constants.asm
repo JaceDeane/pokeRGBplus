@@ -112,6 +112,16 @@
 	const SPRITE_OLD_AMBER ; 72
 	const SPRITE_FOSSIL ; 73
 	const SPRITE_HIKER ; 74
+	const SPRITE_COOK ; 75
+	const SPRITE_GIOVANNI ; 76
+	const SPRITE_CHANNELER ; 77
+	const SPRITE_SAFARI_ZONE_WORKER ; 78
+	const SPRITE_SILPH_PRESIDENT ; 79
+	const SPRITE_SILPH_WORKER_M ; 7a
+	const SPRITE_WARDEN ; 7b
+	const SPRITE_BALDING_GUY ; 7c
+	const SPRITE_AGATHA ; 7d
+	const SPRITE_LORELEI ; 7e
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
