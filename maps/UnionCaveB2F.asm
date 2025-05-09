@@ -13,7 +13,7 @@ UnionCaveB2F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback
 
 UnionCaveB2FLaprasCallback:
-	checkflag ENGINE_UNION_CAVE_LAPRAS
+	;checkflag ENGINE_UNION_CAVE_LAPRAS
 	iftrue .NoAppear
 	readvar VAR_WEEKDAY
 	ifequal FRIDAY, .Appear
@@ -31,12 +31,12 @@ UnionCaveLapras:
 	loadwildmon LAPRAS, 20
 	startbattle
 	disappear UNIONCAVEB2F_LAPRAS
-	setflag ENGINE_UNION_CAVE_LAPRAS
+	;setflag ENGINE_UNION_CAVE_LAPRAS
 	reloadmapafterbattle
 	end
 
 TrainerCooltrainermNick:
-	trainer COOLTRAINERM, NICK, EVENT_BEAT_COOLTRAINERM_NICK, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script
+	;trainer COOLTRAINERM, NICK, EVENT_BEAT_COOLTRAINERM_NICK, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -47,7 +47,7 @@ TrainerCooltrainermNick:
 	end
 
 TrainerCooltrainerfGwen:
-	trainer COOLTRAINERF, GWEN, EVENT_BEAT_COOLTRAINERF_GWEN, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script
+	;trainer COOLTRAINERF, GWEN, EVENT_BEAT_COOLTRAINERF_GWEN, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -58,7 +58,7 @@ TrainerCooltrainerfGwen:
 	end
 
 TrainerCooltrainerfEmma:
-	trainer COOLTRAINERF, EMMA, EVENT_BEAT_COOLTRAINERF_EMMA, CooltrainerfEmmaSeenText, CooltrainerfEmmaBeatenText, 0, .Script
+	;trainer COOLTRAINERF, EMMA, EVENT_BEAT_COOLTRAINERF_EMMA, CooltrainerfEmmaSeenText, CooltrainerfEmmaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -1174,192 +1174,274 @@ PokemaniacGroup:
 GruntMGroup:
 	; GRUNTM (1)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 14, KOFFING
+	db 13, RATTATA
+	db 13, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (2)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db  7, RATTATA
-	db  9, ZUBAT
-	db  9, ZUBAT
+	db 11, SANDSHREW
+	db 11, RATTATA
+	db 11, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (3)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
-	db 24, RATICATE
+	db 12, ZUBAT
+	db 12, EKANS
 	db -1 ; end
 
 	; GRUNTM (4)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23, GRIMER
-	db 23, GRIMER
-	db 25, MUK
+	db 16, RATICATE
 	db -1 ; end
 
 	; GRUNTM (5)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 21, RATTATA
-	db 21, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
+	db 17, MACHOP
+	db 17, DROWZEE
 	db -1 ; end
 
 	; GRUNTM (6)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, ZUBAT
-	db 26, ZUBAT
+	db 15, EKANS
+	db 15, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (7)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23, KOFFING
-	db 23, GRIMER
-	db 23, ZUBAT
-	db 23, RATTATA
+	db 20, RATICATE
+	db 20, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (8)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, WEEZING
+	db 21, DROWZEE
+	db 21, MACHOP
 	db -1 ; end
 
 	; GRUNTM (9)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
-	db 26, KOFFING
+	db 21, RATICATE
+	db 21, RATICATE
 	db -1 ; end
 
 	; GRUNTM (10)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 22, ZUBAT
-	db 24, GOLBAT
-	db 22, GRIMER
+	db 20, GRIMER
+	db 20, KOFFING
+	db 20, KOFFING
 	db -1 ; end
 
 	; GRUNTM (11)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23, MUK
-	db 23, KOFFING
-	db 25, RATTATA
+	db 19, RATTATA
+	db 19, RATICATE
+	db 19, RATICATE
+	db 19, RATTATA
 	db -1 ; end
 
 	; GRUNTM (12)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 33, HOUNDOUR
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 22, GRIMER
+	db 22, KOFFING
 	db -1 ; end
 
 	; GRUNTM (13)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 27, RATTATA
+	db 17, ZUBAT
+	db 17, KOFFING
+	db 17, GRIMER
+	db 17, ZUBAT
+	db 17, RATICATE
 	db -1 ; end
 
 	; GRUNTM (14)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
-	db 24, GOLBAT
+	db 20, RATTATA
+	db 20, RATICATE
+	db 20, DROWZEE
 	db -1 ; end
 
 	; GRUNTM (15)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, GRIMER
-	db 23, WEEZING
+	db 21, MACHOP
+	db 21, MACHOP
 	db -1 ; end
 
 	; GRUNTM (16)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
+	db 23, SANDSHREW
+	db 23, EKANS
+	db 23, SANDSLASH
 	db -1 ; end
 
 	; GRUNTM (17)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 18, GOLBAT
+	db 23, EKANS
+	db 23, SANDSHREW
+	db 23, ARBOK
 	db -1 ; end
 
 	; GRUNTM (18)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 17, RATTATA
-	db 17, ZUBAT
-	db 17, RATTATA
+	db 21, KOFFING
+	db 21, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (19)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 18, VENONAT
-	db 18, VENONAT
+	db 25, ZUBAT
+	db 25, ZUBAT
+	db 25, GOLBAT
 	db -1 ; end
 
 	; GRUNTM (20)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 17, DROWZEE
-	db 19, ZUBAT
+	db 26, KOFFING
+	db 26, DROWZEE
 	db -1 ; end
 
 	; GRUNTM (21)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16, ZUBAT
-	db 17, GRIMER
-	db 18, RATTATA
+	db 23, ZUBAT
+	db 23, RATTATA
+	db 23, RATICATE
+	db 23, ZUBAT
 	db -1 ; end
 
-	; GRUNTM (22)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 36, GOLBAT
+	; GRUNTM (22) -- Unused R/B
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 26, DROWZEE
+	db 26, KOFFING
 	db -1 ; end
 
 	; GRUNTM (23)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 30, KOFFING
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 29, CUBONE
+	db 29, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (24)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25, KOFFING
-	db 25, KOFFING
+	db 25, GOLBAT
+	db 25, ZUBAT
+	db 25, ZUBAT
+	db 25, RATICATE
+	db 25, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (25)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, KOFFING
-	db 24, MUK
+	db 28, RATICATE
+	db 28, HYPNO
+	db 28, RATICATE
 	db -1 ; end
 
 	; GRUNTM (26)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 15, RATTATA
-	db 15, RATTATA
+	db 29, MACHOP
+	db 29, DROWZEE
 	db -1 ; end
 
 	; GRUNTM (27)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 22, ZUBAT
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 28, EKANS
+	db 28, ZUBAT
+	db 28, CUBONE
 	db -1 ; end
 
 	; GRUNTM (28)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 19, RATICATE
+	db 33, ARBOK
 	db -1 ; end
 
 	; GRUNTM (29)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db  9, RATTATA
-	db  9, RATTATA
+	db 33, HYPNO
 	db -1 ; end
 
 	; GRUNTM (30)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25, GOLBAT
-	db 25, GOLBAT
-	db 30, ARBOK
+	db 29, MACHOP
+	db 29, MACHOKE
 	db -1 ; end
 
 	; GRUNTM (31)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 30, GOLBAT
+	db 28, ZUBAT
+	db 28, ZUBAT
+	db 18, GOLBAT
+	db -1 ; end
+
+	; GRUNTM (32)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 26, RATICATE
+	db 26, ARBOK
+	db 26, KOFFING
+	db 26, GOLBAT
+	db -1 ; end
+
+	; GRUNTM (33)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 29, CUBONE
+	db 29, CUBONE
+	db -1 ; end
+
+	; GRUNTM (34)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 29, SANDSHREW
+	db 29, SANDSLASH
+	db -1 ; end
+
+	; GRUNTM (35)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 26, RATICATE
+	db 26, ZUBAT
+	db 26, GOLBAT
+	db 26, RATTATA
+	db -1 ; end
+
+	; GRUNTM (36)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 28, WEEZING
+	db 28, GOLBAT
+	db 28, KOFFING
+	db -1 ; end
+
+	; GRUNTM (37)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 28, DROWZEE
+	db 28, GRIMER
+	db 28, MACHOP
+	db -1 ; end
+
+	; GRUNTM (38)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 28, GOLBAT
+	db 28, DROWZEE
+	db 28, HYPNO
+	db -1 ; end
+
+	; GRUNTM (39)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 33, MACHOKE
+	db -1 ; end
+
+	; GRUNTM (40)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 25, RATTATA
+	db 25, RATTATA
+	db 25, ZUBAT
+	db 25, RATTATA
+	db 25, EKANS
+	db -1 ; end
+
+	; GRUNTM (41)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 32, CUBONE
+	db 32, DROWZEE
+	db 32, MAROWAK
 	db -1 ; end
 
 GentlemanGroup:
@@ -2218,92 +2300,92 @@ GuitaristGroup:
 HikerGroup: ; Updated to R/B, using FR/LG names
 	; HIKER (1)
 	db "MARCOS@", TRAINERTYPE_NORMAL
-	db 16, GEODUDE
-	db 16, GEODUDE
-	db 18, ONIX
+	db 10, GEODUDE
+	db 10, GEODUDE
+	db 10, ONIX
 	db -1 ; end
 
 	; HIKER (2)
 	db "FRANKLIN@", TRAINERTYPE_NORMAL
-	db  4, MACHOP
-	db  6, GEODUDE
+	db 15, MACHOP
+	db 15, GEODUDE
 	db -1 ; end
 
 	; HIKER (3)
 	db "NOB@", TRAINERTYPE_NORMAL
-	db 23, GEODUDE
-	db 23, GEODUDE
-	db 23, MACHOP
-	db 16, GEODUDE
+	db 13, GEODUDE
+	db 13, GEODUDE
+	db 13, MACHOP
+	db 13, GEODUDE
 	db -1 ; end
 
 	; HIKER (4)
 	db "WAYNE@", TRAINERTYPE_NORMAL
-	db 23, ONIX
+	db 17, ONIX
 	db -1 ; end
 
 	; HIKER (5)
 	db "ALAN@", TRAINERTYPE_NORMAL
-	db 11, GEODUDE
-	db 11, ONIX
+	db 21, GEODUDE
+	db 21, ONIX
 	db -1 ; end
 
 	; HIKER (6)
 	db "BRICE@", TRAINERTYPE_NORMAL
-	db 14, GEODUDE
-	db 14, MACHOP
-	db 16, GEODUDE
+	db 20, GEODUDE
+	db 20, MACHOP
+	db 20, GEODUDE
 	db -1 ; end
 
 	; HIKER (7)
 	db "CLARK@", TRAINERTYPE_NORMAL
-	db 24, GEODUDE
-	db 27, ONIX
+	db 21, GEODUDE
+	db 21, ONIX
 	db -1 ; end
 
 	; HIKER (8)
 	db "TRENT@", TRAINERTYPE_NORMAL
-	db 25, ONIX
-	db 25, GRAVELER
+	db 19, ONIX
+	db 19, GRAVELER
 	db -1 ; end
 
 	; HIKER (9)
 	db "DUDLEY@", TRAINERTYPE_NORMAL
-	db 13, GEODUDE
-	db 13, GEODUDE
-	db 13, GRAVELER
+	db 21, GEODUDE
+	db 21, GEODUDE
+	db 21, GRAVELER
 	db -1 ; end
 
 	; HIKER (10)
 	db "ALLEN@", TRAINERTYPE_NORMAL
-	db 13, GEODUDE
+	db 25, GEODUDE
 	db -1 ; end
 
 	; HIKER (11)
 	db "ERIC@", TRAINERTYPE_NORMAL
-	db 13, MACHOP
-	db 13, ONIX
+	db 20, MACHOP
+	db 20, ONIX
 	db -1 ; end
 
 	; HIKER (12)
 	db "LENNY@", TRAINERTYPE_NORMAL
-	db 25, GEODUDE
-	db 27, MACHOP
-	db 29, GEODUDE
-	db 16, GEODUDE
+	db 19, GEODUDE
+	db 19, MACHOP
+	db 19, GEODUDE
+	db 19, GEODUDE
 	db -1 ; end
 
 	; HIKER (13)
 	db "OLIVER@", TRAINERTYPE_NORMAL
-	db 31, ONIX
-	db 31, ONIX
-	db 31, GEODUDE
+	db 20, ONIX
+	db 20, ONIX
+	db 20, GEODUDE
 	db -1 ; end
 
 	; HIKER (14)
 	db "LUCAS@", TRAINERTYPE_NORMAL
-	db 31, GEODUDE
-	db 33, GRAVELER
+	db 21, GEODUDE
+	db 21, GRAVELER
 	db -1 ; end
 
 BikerGroup:

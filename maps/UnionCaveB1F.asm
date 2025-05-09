@@ -13,7 +13,7 @@ UnionCaveB1F_MapScripts:
 	def_callbacks
 
 TrainerPokemaniacAndrew:
-	trainer POKEMANIAC, ANDREW, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
+	;trainer POKEMANIAC, ANDREW, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -24,7 +24,7 @@ TrainerPokemaniacAndrew:
 	end
 
 TrainerPokemaniacCalvin:
-	trainer POKEMANIAC, CALVIN, EVENT_BEAT_POKEMANIAC_CALVIN, PokemaniacCalvinSeenText, PokemaniacCalvinBeatenText, 0, .Script
+	;trainer POKEMANIAC, CALVIN, EVENT_BEAT_POKEMANIAC_CALVIN, PokemaniacCalvinSeenText, PokemaniacCalvinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -35,7 +35,7 @@ TrainerPokemaniacCalvin:
 	end
 
 TrainerHikerPhillip:
-	trainer HIKER, PHILLIP, EVENT_BEAT_HIKER_PHILLIP, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
+	;trainer HIKER, PHILLIP, EVENT_BEAT_HIKER_PHILLIP, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -46,7 +46,7 @@ TrainerHikerPhillip:
 	end
 
 TrainerHikerLeonard:
-	trainer HIKER, LEONARD, EVENT_BEAT_HIKER_LEONARD, HikerLeonardSeenText, HikerLeonardBeatenText, 0, .Script
+	;trainer HIKER, LEONARD, EVENT_BEAT_HIKER_LEONARD, HikerLeonardSeenText, HikerLeonardBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

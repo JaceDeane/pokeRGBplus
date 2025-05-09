@@ -8,7 +8,7 @@ Route10South_MapScripts:
 	def_callbacks
 
 TrainerHikerJim:
-	trainer HIKER, JIM, EVENT_BEAT_HIKER_JIM, HikerJimSeenText, HikerJimBeatenText, 0, .Script
+	;trainer HIKER, JIM, EVENT_BEAT_HIKER_JIM, HikerJimSeenText, HikerJimBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -19,7 +19,7 @@ TrainerHikerJim:
 	end
 
 TrainerPokefanmRobert:
-	trainer POKEFANM, ROBERT, EVENT_BEAT_POKEFANM_ROBERT, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
+	;trainer POKEFANM, ROBERT, EVENT_BEAT_POKEFANM_ROBERT, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

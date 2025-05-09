@@ -125,7 +125,7 @@ DEF KRIS EQU __trainer_class__
 	const JOHNNY
 	const DANNY
 	const TOMMY
-	const DUDLEY
+	const DUDLEYZ
 	const JOE
 	const BILLY
 	const CHAD1
@@ -207,7 +207,7 @@ DEF KRIS EQU __trainer_class__
 	const SEAN
 	const KEVIN
 	const STEVE ; unused
-	const ALLEN
+	const ALLENZ
 	const DARIN
 
 	trainerclass COOLTRAINERF ; 1c
@@ -281,7 +281,7 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTM_9
 	const GRUNTM_10
 	const GRUNTM_11
-	const GRUNTM_12 ; unused
+	const GRUNTM_12
 	const GRUNTM_13
 	const GRUNTM_14
 	const GRUNTM_15
@@ -291,16 +291,26 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTM_19
 	const GRUNTM_20
 	const GRUNTM_21
-	const GRUNTM_22 ; unused
-	const GRUNTM_23 ; unused
+	const GRUNTM_22 ; Unused R/B
+	const GRUNTM_23
 	const GRUNTM_24
 	const GRUNTM_25
-	const GRUNTM_26 ; unused
-	const GRUNTM_27 ; unused
+	const GRUNTM_26
+	const GRUNTM_27
 	const GRUNTM_28
 	const GRUNTM_29
-	const GRUNTM_30 ; unused
+	const GRUNTM_30
 	const GRUNTM_31
+	const GRUNTM_32
+	const GRUNTM_33
+	const GRUNTM_34
+	const GRUNTM_35
+	const GRUNTM_36
+	const GRUNTM_37
+	const GRUNTM_38
+	const GRUNTM_39
+	const GRUNTM_40
+	const GRUNTM_41
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON
@@ -513,7 +523,7 @@ DEF KRIS EQU __trainer_class__
 	const YOSHI
 	const KENJI2 ; unused
 	const LAO
-	const NOB
+	const NOBZ
 	const KIYO
 	const LUNG
 	const KENJI3
@@ -527,7 +537,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
-	const FRANKLIN
+	const FRANKLINZ
 	const HERMAN
 	const FIDEL
 	const GREGZ

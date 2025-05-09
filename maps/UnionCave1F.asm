@@ -15,7 +15,7 @@ UnionCave1F_MapScripts:
 	def_callbacks
 
 TrainerPokemaniacLarry:
-	trainer POKEMANIAC, LARRY, EVENT_BEAT_POKEMANIAC_LARRY, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
+	;trainer POKEMANIAC, LARRY, EVENT_BEAT_POKEMANIAC_LARRY, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -26,7 +26,7 @@ TrainerPokemaniacLarry:
 	end
 
 TrainerHikerRussell:
-	trainer HIKER, RUSSELL, EVENT_BEAT_HIKER_RUSSELL, HikerRussellSeenText, HikerRussellBeatenText, 0, .Script
+	;trainer HIKER, RUSSELL, EVENT_BEAT_HIKER_RUSSELL, HikerRussellSeenText, HikerRussellBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -37,7 +37,7 @@ TrainerHikerRussell:
 	end
 
 TrainerHikerDaniel:
-	trainer HIKER, DANIEL, EVENT_BEAT_HIKER_DANIEL, HikerDanielSeenText, HikerDanielBeatenText, 0, .Script
+	;trainer HIKER, DANIEL, EVENT_BEAT_HIKER_DANIEL, HikerDanielSeenText, HikerDanielBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -48,7 +48,7 @@ TrainerHikerDaniel:
 	end
 
 TrainerFirebreatherBill:
-	trainer FIREBREATHER, BILL, EVENT_BEAT_FIREBREATHER_BILL, FirebreatherBillSeenText, FirebreatherBillBeatenText, 0, .Script
+	;trainer FIREBREATHER, BILL, EVENT_BEAT_FIREBREATHER_BILL, FirebreatherBillSeenText, FirebreatherBillBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -59,7 +59,7 @@ TrainerFirebreatherBill:
 	end
 
 TrainerFirebreatherRay:
-	trainer FIREBREATHER, RAY, EVENT_BEAT_FIREBREATHER_RAY, FirebreatherRaySeenText, FirebreatherRayBeatenText, 0, .Script
+	;trainer FIREBREATHER, RAY, EVENT_BEAT_FIREBREATHER_RAY, FirebreatherRaySeenText, FirebreatherRayBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
