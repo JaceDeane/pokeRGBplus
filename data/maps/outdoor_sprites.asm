@@ -38,23 +38,23 @@ OutdoorSprites:
 PalletGroupSprites:
 ; Route1, PalletTown
 ViridianGroupSprites:
-; Route2, Route22, ViridianCity
+; Route2, Route22, ViridianCity -- Route2_SPLITSET
 CinnabarGroupSprites:
-; Route19, Route20, Route21, CinnabarIsland
-; SPRITESET_PALLET_VIRIDIAN
+; Route19, Route20, Route21, CinnabarIsland -- R/B: Not Route19 -- Route20_SPLITSET, west FUSCHIA
+	; SPRITESET_PALLET_VIRIDIAN
 	db SPRITE_BLUE
 	db SPRITE_YOUNGSTER
 	db SPRITE_GIRL
 	db SPRITE_FISHER
 	db SPRITE_COOLTRAINER_M
-	db SPRITE_GRAMPS
-	db SPRITE_COOLTRAINER_F ; SPRITE_SEEL ; ???
+	db SPRITE_GRAMPS ; SPRITE_GAMBLER
+	db SPRITE_COOLTRAINER_F ; SPRITE_SEEL ; What is this used for?
 	db SPRITE_OAK
 	db SPRITE_SWIMMER_GUY
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE ; TBD
 	db SPRITE_GRAMPS_ASLEEP
+	;db SPRITE_FRUIT_TREE ; Unused
 	db 0 ; end
 
 ; Route3 and Route4 are connected
@@ -62,18 +62,16 @@ CinnabarGroupSprites:
 PewterGroupSprites:
 ; Route3, PewterCity
 CeruleanGroupSprites:
-; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
-SaffronGroupSprites:
-; Route5, SaffronCity
+; Route4, Route9, Route10North, Route24, Route25, CeruleanCity -- Route10_SPLITSET, south Lavender
 	; SPRITESET_PEWTER_CERULEAN
 	db SPRITE_YOUNGSTER
 	db SPRITE_ROCKET
 	db SPRITE_SUPER_NERD
 	db SPRITE_HIKER
-	db SPRITE_LASS ; MONSTER - same as SLOWPOKE...?
+	db SPRITE_LASS ; MONSTER - used for SLOWBRO, but do any of these walk around?
 	db SPRITE_BLUE
 	db SPRITE_OFFICER ; GUARD
-	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_F ; Could be replaced by LASS
 	db SPRITE_COOLTRAINER_M
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
@@ -81,44 +79,145 @@ SaffronGroupSprites:
 	db SPRITE_SLOWPOKE ; TBD
 	db 0 ; end
 
-CeladonGroupSprites:
-; Route7, Route16, Route17, CeladonCity
-	db SPRITE_FISHER
-	db SPRITE_TEACHER
-	db SPRITE_GRAMPS
-	db SPRITE_YOUNGSTER
-	db SPRITE_LASS
-	db SPRITE_BIKER
-	; 6 of max 9 walking sprites
-	db SPRITE_POLIWAG
+LavenderGroupSprites:
+; Route8, Route12, Route10South, LavenderTown -- Route8_SPLITSET, east SAFFRON || Route10_SPLITSET, north PEWTER/CERULEAN || Route 12_SPLITSET, south SILENCE_BRIDGE
+	; SPRITESET_LAVENDER
+	db SPRITE_TWIN ; "LITTLE_GIRL"
+	db SPRITE_GIRL
+	db SPRITE_SUPER_NERD
+	db SPRITE_HIKER
+	db SPRITE_SAGE ; GAMBLER
+	db SPRITE_MONSTER ; Used for...?
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_OFFICER ; GUARD ; Used for...?
+	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
+	;db SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	db 0 ; end
 
-; Route11, Route12 and Route13 are connected
-VermilionGroupSprites:
-; Route6, Route11, VermilionCity
-LavenderGroupSprites:
-; Route8, Route12, Route10South, LavenderTown
-FuchsiaGroupSprites:
-; Route13, Route14, Route15, Route18, FuchsiaCity
-	db SPRITE_POKEFAN_M
-	db SPRITE_GRAMPS
-	db SPRITE_YOUNGSTER
+CeladonGroupSprites:
+; Route7, Route16, Route17, CeladonCity -- R/B: Not Route17 (CYCLING_ROAD) -- Route16_SPLITSET, east CYCLING_ROAD || Route7_SPLITSET, west SAFFRON
+	; SPRITESET_CELADON
+	db SPRITE_TWIN ; LITTLE_GIRL
+	db SPRITE_BUG_CATCHER ; LITTLE_BOY
+	db SPRITE_GIRL
 	db SPRITE_FISHER
-	db SPRITE_TEACHER
-	db SPRITE_SUPER_NERD
-	db SPRITE_BIKER
-	; 7 of max 9 walking sprites
-	db SPRITE_BIG_SNORLAX
-	db SPRITE_MACHOP
+	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	db SPRITE_GRAMPS
+	db SPRITE_MONSTER
+	db SPRITE_OFFICER ; GUARD
+	db SPRITE_ROCKET
+	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
+	db SPRITE_SNORLAX
+	db SPRITE_POLIWAG
+	db 0 ; end
+
+VermilionGroupSprites:
+; Route6, Route11, VermilionCity -- Route6_SPLITSET, north SAFFRON
+	; SPRITESET_VERMILION
+	db SPRITE_BEAUTY
+	db SPRITE_SUPER_NERD
+	db SPRITE_YOUNGSTER
+	db SPRITE_SAGE ; GAMBLER
+	db SPRITE_MONSTER
+	db SPRITE_OFFICER ; GUARD
+	db SPRITE_SAILOR
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	; max 9 of 9 walking sprites
+	db SPRITE_POKE_BALL
+	db SPRITE_MACHOP
+	;db SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	db 0 ; end
 
 IndigoGroupSprites:
 ; Route23
-	; 0 of max 9 walking sprites
+	; SPRITESET_INDIGO
+	db SPRITE_YOUNGSTER
+	db SPRITE_GYM_GUIDE
+	db SPRITE_MONSTER
+	db SPRITE_BLUE
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_SWIMMER_GUY
+	db SPRITE_OFFICER ; GUARD
+	db SPRITE_SAGE ; GAMBLER
+	; 9 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	; db SPRITE_UNUSED_GAMBLER_ASLEEP_2
+	db 0 ; end
+
+SaffronGroupSprites:
+; Route5, SaffronCity -- Route5_SPLITSET, north PEWTER/CERULEAN
+	; SPRITESET_SAFFRON
+	db SPRITE_ROCKET
+	db SPRITE_SCIENTIST
+	; db SPRITE_NONE
+	db SPRITE_RECEPTIONIST ; SILPH_WORKER_F
+	db SPRITE_GENTLEMAN
+	db SPRITE_BIRD
+	db SPRITE_ROCKER
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_MONSTER
+	; 8 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	; db SPRITE_UNUSED_GAMBLER_ASLEEP_2
+	db SPRITE_SILPH_WORKER_M
+	db 0 ; end
+
+; Route13 & Route14 -- south Route12, west Route11 & Route15
+; SPRITESET_SILENCE_BRIDGE
+	db SPRITE_BIKER
+	db SPRITE_SUPER_NERD
+	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_BEAUTY
+	db SPRITE_FISHER
+	db SPRITE_ROCKER
+	db SPRITE_MONSTER
+	; 9 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db SPRITE_SNORLAX
+	db 0 ; end
+
+; Route17 -- east Route16 & Route18
+; SPRITESET_CYCLING_ROAD
+	db SPRITE_BIKER
+	db SPRITE_COOLTRAINER_M
+	; db SPRITE_NONE
+	db SPRITE_FISHER
+	db SPRITE_ROCKER
+	db SPRITE_HIKER
+	db SPRITE_SAGE ; GAMBLER
+	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	db SPRITE_SUPER_NERD
+	; 8 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db SPRITE_SNORLAX
+	db SPRITE_SILPH_WORKER_M
+	db 0 ; end
+
+FuchsiaGroupSprites:
+; Route13, Route14, Route15, Route18, FuchsiaCity
+
+;R/B: Route19 added, and Route20_SPLITSET east PALLET/VIRIDIAN & west FUSCHIA -- Route15_SPLITSET, west SILENCE_BRIDGE || Route18_SPLITSET, east CYCLING_ROAD
+
+; SPRITESET_FUCHSIA
+	db SPRITE_BIRD
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_FAIRY
+	db SPRITE_FISHER
+	db SPRITE_SAGE ; GAMBLER
+	db SPRITE_MONSTER
+	db SPRITE_SURF ; SEEL
+	db SPRITE_SWIMMER_GUY
+	db SPRITE_YOUNGSTER
+	; 9 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db SPRITE_FOSSIL
 	db 0 ; end
 
 ; Route29 and CherrygroveCity are connected
