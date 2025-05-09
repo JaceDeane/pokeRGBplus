@@ -13,7 +13,7 @@ MountMortar2FInside_MapScripts:
 	def_callbacks
 
 TrainerSupernerdHugh:
-	trainer SUPER_NERD, HUGH, EVENT_BEAT_SUPER_NERD_HUGH, SupernerdHughSeenText, SupernerdHughBeatenText, 0, .Script
+	;trainer SUPER_NERD, HUGH, EVENT_BEAT_SUPER_NERD_HUGH, SupernerdHughSeenText, SupernerdHughBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

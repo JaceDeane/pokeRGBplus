@@ -15,18 +15,18 @@ MountMortarB1F_MapScripts:
 MountMortarB1FKiyoScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TYROGUE_FROM_KIYO
+	;checkevent EVENT_GOT_TYROGUE_FROM_KIYO
 	iftrue .GotTyrogue
-	checkevent EVENT_BEAT_BLACKBELT_KIYO
+	;checkevent EVENT_BEAT_BLACKBELT_KIYO
 	iftrue .BeatKiyo
 	writetext MountMortarB1FKiyoIntroText
 	waitbutton
 	closetext
 	winlosstext MountMortarB1FKiyoWinText, 0
-	loadtrainer BLACKBELT_T, KIYO
+	;loadtrainer BLACKBELT_T, KIYO
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_BLACKBELT_KIYO
+	;setevent EVENT_BEAT_BLACKBELT_KIYO
 	opentext
 .BeatKiyo:
 	writetext MountMortarB1FTyrogueRewardText
@@ -38,7 +38,7 @@ MountMortarB1FKiyoScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke TYROGUE, 10
-	setevent EVENT_GOT_TYROGUE_FROM_KIYO
+	;setevent EVENT_GOT_TYROGUE_FROM_KIYO
 .GotTyrogue:
 	writetext MountMortarB1FKiyoGotTyrogueText
 	waitbutton

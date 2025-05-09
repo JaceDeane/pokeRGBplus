@@ -423,21 +423,19 @@ DEF KRIS EQU __trainer_class__
 	const HUEY3
 	const HUEY4
 
-	trainerclass SUPER_NERD ; 29
-	const STANZ
-	const ERICZ
-	const GREGG ; unused
-	const JAY ; unused
-	const DAVEZ ; unused
-	const SAM
-	const TOM
-	const PAT
-	const SHAWN
-	const TERU
-	const RUSS ; unused
-	const NORTON ; unused
-	const HUGH
-	const MARKUS
+	trainerclass SUPER_NERD ; 29 -- Updated to R/B, using FR/LG names
+	const JOVAN
+	const MIGUEL
+	const AIDAN
+	const GLENN
+	const LESLIE
+	const SUPER_NERD_UNUSED1 ; Unused R/B
+	const SUPER_NERD_UNUSED2 ; Unused R/B
+	const SUPER_NERD_UNUSED3 ; Unused R/B
+	const ERIK
+	const AVERY
+	const DEREK
+	const ZAC
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_BULBASAUR
@@ -457,31 +455,21 @@ DEF KRIS EQU __trainer_class__
 	const CLYDE
 	const VINCENTZ
 
-	trainerclass HIKER ; 2c
-	; -- Updated to R/B, using FR/LG names
-	; TODO
-	const ANTHONY1
-	const RUSSELL
-	const PHILLIP
-	const LEONARD
-	const ANTHONY2
-	const BENJAMIN
-	const ERIK
-	const MICHAEL
-	const PARRY1
-	const TIMOTHY
-	const BAILEY
-	const ANTHONY3
-	const TIM
-	const NOLAND
-	const SIDNEY
-	const KENNY
-	const JIM
-	const DANIEL
-	const PARRY2
-	const PARRY3
-	const ANTHONY4
-	const ANTHONY5
+	trainerclass HIKER ; 2c -- Updated to R/B, using FR/LG names
+	const MARCOS
+	const FRANKLIN
+	const NOB
+	const WAYNE
+	const ALAN
+	const BRICE
+	const CLARK
+	const TRENT
+	const DUDLEY
+	const ALLEN
+	const ERIC
+	const LENNY
+	const OLIVER
+	const LUCAS
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; unused
@@ -492,7 +480,7 @@ DEF KRIS EQU __trainer_class__
 	const CHARLES
 	const RILEY
 	const JOEL
-	const GLENN
+	const GLENNZ
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -732,7 +720,7 @@ DEF KRIS EQU __trainer_class__
 	const DIRK
 	const DARIAN
 	const STAN
-	const GAMBLER_UNUSED
+	const GAMBLER_UNUSED; Unused R/B
 	const RICH
 	
 	trainerclass ROCKER ; 51 -- Updated to R/B, using FR/LG names

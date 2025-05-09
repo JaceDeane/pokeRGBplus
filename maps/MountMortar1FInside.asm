@@ -16,7 +16,7 @@ MountMortar1FInside_MapScripts:
 	def_callbacks
 
 TrainerPokemaniacMiller:
-	trainer POKEMANIAC, MILLER, EVENT_BEAT_POKEMANIAC_MILLER, PokemaniacMillerSeenText, PokemaniacMillerBeatenText, 0, .Script
+	;trainer POKEMANIAC, MILLER, EVENT_BEAT_POKEMANIAC_MILLER, PokemaniacMillerSeenText, PokemaniacMillerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -27,7 +27,7 @@ TrainerPokemaniacMiller:
 	end
 
 TrainerSupernerdMarkus:
-	trainer SUPER_NERD, MARKUS, EVENT_BEAT_SUPER_NERD_MARKUS, SupernerdMarkusSeenText, SupernerdMarkusBeatenText, 0, .Script
+	;trainer SUPER_NERD, MARKUS, EVENT_BEAT_SUPER_NERD_MARKUS, SupernerdMarkusSeenText, SupernerdMarkusBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

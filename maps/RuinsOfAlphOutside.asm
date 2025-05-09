@@ -71,9 +71,9 @@ RuinsOfAlphOutsideScientistSceneContinue:
 RuinsOfAlphOutsideFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_TALKED_TO_RUINS_COWARD
+	;checkevent EVENT_TALKED_TO_RUINS_COWARD
 	iftrue .Next
-	setevent EVENT_TALKED_TO_RUINS_COWARD
+	;setevent EVENT_TALKED_TO_RUINS_COWARD
 	writetext RuinsOfAlphOutsideFisherText1
 	promptbutton
 .Next:
@@ -100,7 +100,7 @@ RuinsOfAlphOutsideYoungster2Script:
 	end
 
 TrainerPsychicNathan:
-	trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
+	;trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -111,7 +111,7 @@ TrainerPsychicNathan:
 	end
 
 TrainerSuperNerdStan: ; unreferenced
-	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
+	;trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
