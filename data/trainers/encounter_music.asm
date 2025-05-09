@@ -23,16 +23,16 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
-	db MUSIC_ROCKET_ENCOUNTER      ; scientist
+	db MUSIC_EVIL_TRAINER_ENCOUNTER      ; scientist -- R/B
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
 	db MUSIC_MALE_TRAINER_ENCOUNTER   ; youngster -- R/B
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
 	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; lass -- R/B
-	db MUSIC_HIKER_ENCOUNTER       ; leader_giovanni
+	db MUSIC_EVIL_TRAINER_ENCOUNTER       ; leader_giovanni -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
-	db MUSIC_BEAUTY_ENCOUNTER      ; cooltrainerf
-	db MUSIC_BEAUTY_ENCOUNTER      ; beauty
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER      ; cooltrainerf -- R/B
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER      ; beauty -- R/B
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; pokemaniac
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntm
 	db MUSIC_HIKER_ENCOUNTER       ; gentleman
@@ -52,11 +52,11 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; burglar
 	db MUSIC_HIKER_ENCOUNTER       ; firebreather
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; juggler
+	db MUSIC_EVIL_TRAINER_ENCOUNTER  ; juggler -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
 	db MUSIC_ROCKET_ENCOUNTER      ; executivem
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
-	db MUSIC_LASS_ENCOUNTER        ; picnicker
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER        ; picnicker -- R/B
 	db MUSIC_MALE_TRAINER_ENCOUNTER   ; camper -- R/B
 	db MUSIC_ROCKET_ENCOUNTER      ; executivef
 	db MUSIC_SAGE_ENCOUNTER        ; sage
@@ -73,11 +73,11 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_ROCKET_ENCOUNTER      ; kabutops_fossil
 	db MUSIC_ROCKET_ENCOUNTER      ; aerodactyl_fossil
-	db MUSIC_HIKER_ENCOUNTER       ; channeler -- TODO
+	db MUSIC_SAGE_ENCOUNTER        ; channeler
 	db MUSIC_HIKER_ENCOUNTER       ; cueball -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; engineer -- TODO
-	db MUSIC_HIKER_ENCOUNTER       ; gambler -- TODO
-	db MUSIC_HIKER_ENCOUNTER       ; rocker -- TODO
+	db MUSIC_EVIL_TRAINER_ENCOUNTER       ; gambler -- R/B
+	db MUSIC_EVIL_TRAINER_ENCOUNTER       ; rocker -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; tamer -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; lorelei -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; agatha -- TODO

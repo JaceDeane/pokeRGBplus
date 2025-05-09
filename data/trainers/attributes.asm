@@ -420,37 +420,37 @@ TrainerClassAttributes:
 	
 ; Channeler -- TODO
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	db 8 ; base reward × 4 = ¥32 (R/B: ¥30)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 	
 ; Cueball -- TODO
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	db 6 ; base reward × 4 = ¥24 (R/B: ¥25)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 	
 ; Engineer -- TODO
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	db 13 ; base reward × 4 = ¥52 (R/B: ¥50)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 	
 ; Gambler -- TODO
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	db 18 ; base reward × 4 = ¥72 (R/B: ¥70)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 	
 ; Rocker -- TODO
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	db 6 ; base reward × 4 = ¥24 (R/B: ¥25)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 	
 ; Tamer -- TODO
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward × 4 = ¥32 (R/B: ¥???)
+	db 10 ; base reward × 4 = ¥40 (R/B: ¥40)
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
