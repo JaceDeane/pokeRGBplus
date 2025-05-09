@@ -364,10 +364,17 @@ TilesetCavernGFX::
 INCBIN "gfx/tilesets/cavern.2bpp.lz"
 
 TilesetCavernMeta::
+TilesetDarkCavernMeta::
 INCBIN "data/tilesets/cavern_metatiles.bin"
 
 TilesetCavernColl::
+TilesetDarkCavernColl::
 INCLUDE "data/tilesets/cavern_collision.asm"
+
+TilesetDarkCavernGFX::
+INCBIN "gfx/tilesets/dark_cavern.2bpp.lz"
+
+SECTION "Tileset Data 9", ROMX
 
 TilesetGateKantoGFX::
 INCBIN "gfx/tilesets/gate_kanto.2bpp.lz"

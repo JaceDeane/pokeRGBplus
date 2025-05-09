@@ -265,6 +265,7 @@ TilesetGymAnim:
 	dw NULL,  DoneTileAnimation
 	
 TilesetCavernAnim:
+TilesetDarkCavernAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft

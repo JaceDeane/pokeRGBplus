@@ -118,6 +118,7 @@ TilesetGymPalMap:
 INCLUDE "gfx/tilesets/gym_palette_map.asm"
 
 TilesetCavernPalMap:
+TilesetDarkCavernPalMap:
 INCLUDE "gfx/tilesets/cavern_palette_map.asm"
 
 TilesetGateKantoPalMap:

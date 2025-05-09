@@ -5,21 +5,17 @@
 ```
 ### MAPS:
 
-- Update Diglett's Cave
-
 - Cerulean City onwards
 
 ### EVENTS:
 
 - Route 4 events/Trainers, etc.
 
-- Mount Moon (entirety)
-
-- Update Diglett's Cave
-
 - Include and check all hidden items from R/B exist and are in the right place
 
 - `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
+
+- Mount Moon B2F - confirm appearance of events is satisfactory
 
 ### ENGINE / DATA:
 
