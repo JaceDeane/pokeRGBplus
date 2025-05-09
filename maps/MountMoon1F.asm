@@ -1,11 +1,11 @@
 	object_const_def
 	const MT_MOON_1F_TRAINER_HIKER
-	const MT_MOON_1F_TRAINER_BUG_CATCHER1
+	const MT_MOON_1F_TRAINER_YOUNGSTER1
 	const MT_MOON_1F_TRAINER_LASS1
 	const MT_MOON_1F_TRAINER_SUPER_NERD
 	const MT_MOON_1F_TRAINER_LASS2
-	const MT_MOON_1F_TRAINER_YOUNGSTER1
-	const MT_MOON_1F_TRAINER_BUG_CATCHER3
+	const MT_MOON_1F_TRAINER_BUG_CATCHER1
+	const MT_MOON_1F_TRAINER_BUG_CATCHER2
 	const MT_MOON_1F_ITEM_BALL_POTION1
 	const MT_MOON_1F_ITEM_BALL_MOON_STONE
 	const MT_MOON_1F_ITEM_BALL_RARE_CANDY
@@ -18,57 +18,13 @@ MountMoon1F_MapScripts:
 
 	def_callbacks
 	
-TrainerBugCatcherKent:
-	trainer BUG_CATCHER, KENT, EVENT_BEAT_BUG_CATCHER_KENT, TrainerBugCatcherKentBattleText, TrainerBugCatcherKentEndBattleText, 0, .Script
+TrainerHikerMarcos:
+	trainer HIKER, MARCOS, EVENT_BEAT_HIKER_MARCOS, TrainerHikerMarcosBattleText, TrainerHikerMarcosEndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext TrainerBugCatcherKentAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-TrainerLassIris:
-	trainer LASS, IRIS, EVENT_BEAT_LASS_IRIS, TrainerLassIrisBattleText, TrainerLassIrisEndBattleText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TrainerLassIrisAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-TrainerSuperNerdJovan:
-	trainer SUPER_NERD, JOVAN, EVENT_BEAT_SUPER_NERD_JOVAN, TrainerSuperNerdJovanBattleText, TrainerSuperNerdJovanEndBattleText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TrainerSuperNerdJovanAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-TrainerBugCatcherRobby:
-	trainer BUG_CATCHER, ROBBY, EVENT_BEAT_BUG_CATCHER_ROBBY, TrainerBugCatcherRobbyBattleText, TrainerBugCatcherRobbyEndBattleText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TrainerBugCatcherRobbyAfterBattleText
-	waitbutton
-	closetext
-	end
-	
-TrainerLassMiriam:
-	trainer LASS, MIRIAM, EVENT_BEAT_LASS_MIRIAM, TrainerLassMiriamBattleText, TrainerLassMiriamEndBattleText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TrainerLassMiriamAfterBattleText
+	writetext TrainerHikerMarcosAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -83,18 +39,62 @@ TrainerYoungsterJosh:
 	waitbutton
 	closetext
 	end
-	
-TrainerHikerMarcos:
-	trainer HIKER, MARCOS, EVENT_BEAT_HIKER_MARCOS, TrainerHikerMarcosBattleText, TrainerHikerMarcosEndBattleText, 0, .Script
+
+TrainerLassMiriam:
+	trainer LASS, MIRIAM, EVENT_BEAT_LASS_MIRIAM, TrainerLassMiriamBattleText, TrainerLassMiriamEndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext TrainerHikerMarcosAfterBattleText
+	writetext TrainerLassMiriamAfterBattleText
 	waitbutton
 	closetext
 	end
-	
+
+TrainerSuperNerdJovan:
+	trainer SUPER_NERD, JOVAN, EVENT_BEAT_SUPER_NERD_JOVAN, TrainerSuperNerdJovanBattleText, TrainerSuperNerdJovanEndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TrainerSuperNerdJovanAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerLassIris:
+	trainer LASS, IRIS, EVENT_BEAT_LASS_IRIS, TrainerLassIrisBattleText, TrainerLassIrisEndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TrainerLassIrisAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugCatcherKent:
+	trainer BUG_CATCHER, KENT, EVENT_BEAT_BUG_CATCHER_KENT, TrainerBugCatcherKentBattleText, TrainerBugCatcherKentEndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TrainerBugCatcherKentAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBugCatcherRobby:
+	trainer BUG_CATCHER, ROBBY, EVENT_BEAT_BUG_CATCHER_ROBBY, TrainerBugCatcherRobbyBattleText, TrainerBugCatcherRobbyEndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TrainerBugCatcherRobbyAfterBattleText
+	waitbutton
+	closetext
+	end
+
 MtMoon1FZubatSign:
 	jumptext MtMoon1FBewareZubatSign
 
@@ -135,16 +135,16 @@ TrainerHikerMarcosAfterBattleText:
 	cont "here!"
 	done
 
-TrainerBugCatcherKentBattleText:
+TrainerYoungsterJoshBattleText:
 	text "Did you come to"
 	line "explore too?"
 	done
 
-TrainerBugCatcherKentEndBattleText:
+TrainerYoungsterJoshEndBattleText:
 	text "Losing stinks!"
 	done
 
-TrainerBugCatcherKentAfterBattleText:
+TrainerYoungsterJoshAfterBattleText:
 	text "I came down here"
 	line "to show off to"
 	cont "girls."
@@ -197,18 +197,18 @@ TrainerLassIrisAfterBattleText:
 	cont "fossils here."
 	done
 
-TrainerYoungsterJoshBattleText:
+TrainerBugCatcherKentBattleText:
 	text "Suspicious men"
 	line "are in the cave."
 	
 	para "What about you?"
 	done
 
-TrainerYoungsterJoshEndBattleText:
+TrainerBugCatcherKentEndBattleText:
 	text "You got me!"
 	done
 
-TrainerYoungsterJoshAfterBattleText:
+TrainerBugCatcherKentAfterBattleText:
 	text "I saw them! I'm"
 	line "sure they're from"
 	cont "TEAM ROCKET!"
@@ -252,16 +252,16 @@ MountMoon1F_MapEvents:
 	bg_event   15,  23, BGEVENT_READ, MtMoon1FZubatSign
 
 	def_object_events
-	object_event  5,  6, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerHikerMarcos, -1
-	object_event 7,  22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherKent, -1
+	object_event  5,  6, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerHikerMarcos, -1
+	object_event 12, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJosh, -1
 	object_event 30,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassMiriam, -1
 	object_event 24, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdJovan, -1
 	object_event 16, 23, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerLassIris, -1
-	object_event 12, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJosh, -1
-	object_event 30, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherRobby, -1
-	object_event 2,  20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FPotion1, EVENT_MT_MOON_1F_POTION1
+	object_event  7, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherKent, -1
+	object_event 30, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherRobby, -1
+	object_event  2, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FPotion1, EVENT_MT_MOON_1F_POTION1
 	object_event  2,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FMoonStone, EVENT_MT_MOON_1F_MOON_STONE
 	object_event 35, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FRareCandy, EVENT_MT_MOON_1F_RARE_CANDY
 	object_event 36, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FEscapeRope, EVENT_MT_MOON_1F_ESCAPE_ROPE
 	object_event 20, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FPotion2, EVENT_MT_MOON_1F_POTION2
-	object_event 5,  32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FWaterGun, EVENT_MT_MOON_1F_TM_WATER_GUN
+	object_event  5, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FWaterGun, EVENT_MT_MOON_1F_TM_WATER_GUN
