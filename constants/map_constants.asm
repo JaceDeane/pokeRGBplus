@@ -148,15 +148,16 @@ ENDM
 	map_const TOHJO_FALLS,                                 15,  9 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
 	map_const MOUNT_MOON_1F,                               20, 18 ; 85
-	map_const MOUNT_MOON_B1F,                              14, 14 ; 85
-	map_const MOUNT_MOON_B2F,                              20, 18 ; 85
-	map_const UNDERGROUND_PATH,                             3, 14 ; 87
-	map_const ROCK_TUNNEL_1F,                              15, 18 ; 88
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 89
-	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 90
-	map_const SAFARI_ZONE_BETA,                            10, 18 ; 91
-	map_const VICTORY_ROAD,                                10, 36 ; 92
-	map_const VIRIDIAN_FOREST,                             17, 28 ; 93
+	map_const MOUNT_MOON_1F_EXIT,                           4,  4 ; 86
+	map_const MOUNT_MOON_B1F,                              14, 14 ; 87
+	map_const MOUNT_MOON_B2F,                              20, 18 ; 88
+	map_const UNDERGROUND_PATH,                             3, 14 ; 89
+	map_const ROCK_TUNNEL_1F,                              15, 18 ; 90
+	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 91
+	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 92
+	map_const SAFARI_ZONE_BETA,                            10, 18 ; 93
+	map_const VICTORY_ROAD,                                10, 36 ; 94
+	map_const VIRIDIAN_FOREST,                             17, 28 ; 95
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -448,16 +449,14 @@ ENDM
 	map_const VIRIDIAN_CITY,                               20, 18 ;  3
 	map_const VIRIDIAN_GYM,                                 5,  9 ;  4
 	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  5
-	map_const TRAINER_HOUSE_1F,                             5,  7 ;  6 ; TODO - Remove
-	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  7 ; TODO - Remove
-	map_const VIRIDIAN_MART,                                4,  4 ;  8
-	map_const VIRIDIAN_POKECENTER_1F,                       7,  4 ;  9
-	map_const VIRIDIAN_TRAINER_SCHOOL,                      4,  4 ; 10
-	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 11
-	map_const ROUTE_2_GATE,                                 5,  4 ; 12
-	map_const VICTORY_ROAD_GATE,                           10,  9 ; 13
-	map_const VIRIDIAN_FOREST_SOUTH_GATE,                   5,  4 ; 14
-	map_const VIRIDIAN_FOREST_NORTH_GATE,                   5,  4 ; 15
+	map_const VIRIDIAN_MART,                                4,  4 ;  6
+	map_const VIRIDIAN_POKECENTER_1F,                       7,  4 ;  7
+	map_const VIRIDIAN_TRAINER_SCHOOL,                      4,  4 ;  8
+	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ;  9
+	map_const ROUTE_2_GATE,                                 5,  4 ; 10
+	map_const VICTORY_ROAD_GATE,                           10,  9 ; 11
+	map_const VIRIDIAN_FOREST_SOUTH_GATE,                   5,  4 ; 12
+	map_const VIRIDIAN_FOREST_NORTH_GATE,                   5,  4 ; 13
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24

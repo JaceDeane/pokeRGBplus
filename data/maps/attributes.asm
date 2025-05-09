@@ -476,6 +476,7 @@ ENDM
 	map_attributes Route42EcruteakGate, ROUTE_42_ECRUTEAK_GATE, $00, 0
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes MountMoon1F, MOUNT_MOON_1F, $19, 0
+	map_attributes MountMoon1FExit, MOUNT_MOON_1F_EXIT, $19, 0
 	map_attributes MountMoonB1F, MOUNT_MOON_B1F, $03, 0
 	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $01, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
@@ -656,8 +657,6 @@ ENDM
 	map_attributes ViridianGym, VIRIDIAN_GYM, $00, 0
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $00, 0
 	map_attributes ViridianTrainerSchool, VIRIDIAN_TRAINER_SCHOOL, $00, 0
-	map_attributes TrainerHouse1F, TRAINER_HOUSE_1F, $00, 0 ; TODO - Remove
-	map_attributes TrainerHouseB1F, TRAINER_HOUSE_B1F, $00, 0 ; TODO - Remove
 	map_attributes ViridianMart, VIRIDIAN_MART, $00, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
 	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0

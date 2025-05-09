@@ -318,9 +318,6 @@ INCBIN "data/tilesets/ruins_of_alph_metatiles.bin"
 TilesetRuinsOfAlphColl::
 INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 
-
-SECTION "Tileset Data 8", ROMX
-
 TilesetHoOhWordRoomMeta::
 TilesetKabutoWordRoomMeta::
 TilesetOmanyteWordRoomMeta::
@@ -329,6 +326,9 @@ INCBIN "data/tilesets/ho_oh_word_room_metatiles.bin"
 ;INCBIN "data/tilesets/kabuto_word_room_metatiles.bin"
 ;INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 ;INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+
+SECTION "Tileset Data 8", ROMX
 
 TilesetPlayersHouseMeta::
 INCBIN "data/tilesets/players_house_metatiles.bin"

@@ -127,7 +127,7 @@ Route4_MapEvents:
 	def_warp_events
 	warp_event 11,  5, MOUNT_MOON_POKECENTER_1F, 1
 	warp_event 18,  5, MOUNT_MOON_1F, 1
-	warp_event 24,  5, MOUNT_MOON_B1F, 8
+	warp_event 24,  5, MOUNT_MOON_1F_EXIT, 2
 
 	def_coord_events
 

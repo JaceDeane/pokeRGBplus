@@ -868,12 +868,6 @@ SilphCo1F_Blocks:
 
 ViridianGym_Blocks:
 	INCBIN "maps/ViridianGym.blk"
-
-TrainerHouse1F_Blocks:  ; TODO - Remove
-	INCBIN "maps/TrainerHouse1F.blk"
-
-TrainerHouseB1F_Blocks:  ; TODO - Remove
-	INCBIN "maps/TrainerHouseB1F.blk"
 	
 ViridianTrainerSchool_Blocks:
 	INCBIN "maps/SchoolHouse.blk"
@@ -928,6 +922,9 @@ DiglettsCave_Blocks:
 
 MountMoon1F_Blocks:
 	INCBIN "maps/MountMoon1F.blk"
+	
+MountMoon1FExit_Blocks:
+	INCBIN "maps/MountMoon1FExit.blk"
 	
 MountMoonB1F_Blocks:
 	INCBIN "maps/MountMoonB1F.blk"

@@ -16,7 +16,7 @@ MountMoonB1F_MapEvents:
 	warp_event 21, 17, MOUNT_MOON_B2F, 2
 	warp_event 13, 27, MOUNT_MOON_B2F, 3
 	warp_event 23,  3, MOUNT_MOON_B2F, 4
-	warp_event 27,  3, ROUTE_4, 1 ; TODO - Update to 2nd warp once Route 4 updated
+	warp_event 27,  3, MOUNT_MOON_1F_EXIT, 1
 
 	def_coord_events
 

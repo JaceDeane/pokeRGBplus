@@ -126,6 +126,7 @@ SECTION "Map Scripts 8", ROMX
 
 INCLUDE "maps/DiglettsCave.asm"
 INCLUDE "maps/MountMoon1F.asm"
+INCLUDE "maps/MountMoon1FExit.asm"
 INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/MountMoonB2F.asm"
 INCLUDE "maps/UndergroundPath.asm"
@@ -144,8 +145,8 @@ INCLUDE "maps/FastShipCabins_SE_SSE_CaptainsCabin.asm"
 INCLUDE "maps/FastShipB1F.asm"
 INCLUDE "maps/OlivinePortPassage.asm"
 INCLUDE "maps/VermilionPortPassage.asm"
-INCLUDE "maps/MountMoonSquare.asm"
-INCLUDE "maps/MountMoonGiftShop.asm"
+INCLUDE "maps/MountMoonSquare.asm" ; TODO -- Remove
+INCLUDE "maps/MountMoonGiftShop.asm" ; TODO -- Remove
 INCLUDE "maps/TinTowerRoof.asm"
 
 
@@ -248,8 +249,6 @@ INCLUDE "maps/BrunosRoom.asm"
 INCLUDE "maps/KarensRoom.asm"
 INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
-INCLUDE "maps/TrainerHouse1F.asm" ; TODO - Remove
-INCLUDE "maps/TrainerHouseB1F.asm" ; TODO - Remove
 INCLUDE "maps/ViridianForestSouthGate.asm"
 INCLUDE "maps/ViridianForestNorthGate.asm"
 
