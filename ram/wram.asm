@@ -3098,7 +3098,7 @@ wBattleTowerElevatorSceneID::                     db
 wBattleTowerHallwaySceneID::                      db
 wBattleTowerOutsideSceneID::                      db
 wRoute43GateSceneID::                             db
-wMountMoonSceneID::                               db
+wMountMoonB2FSceneID::                            db
 wSproutTower3FSceneID::                           db
 wTinTower1FSceneID::                              db
 wBurnedTower1FSceneID::                           db

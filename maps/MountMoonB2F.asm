@@ -12,7 +12,7 @@
 MountMoonB2F_MapScripts:
 	def_scene_scripts
 	scene_script MtMoonB2FFossilScene, SCENE_MT_MOON_B2F_FOSSIL
-	scene_script MtMoonB2FTeamRocketScene, SCENE_MT_MOON_B2F_TEAM_ROCKET
+	;scene_script MtMoonB2FTeamRocketScene, SCENE_MT_MOON_B2F_TEAM_ROCKET
 	scene_script MtMoonB2FNoopScene, SCENE_MT_MOON_B2F_NOOP
 
 	def_callbacks
@@ -84,78 +84,9 @@ MtMoonB2FNoopScene:
 	; step LEFT
 	; step LEFT
 	; step_end
-	
-MtMoonB2FDomeFossilScript:
-	opentext
-	writetext MtMoonB2FDomeFossilYouWantText
-	yesorno
-	iffalse .DidNotChooseFossil
-	verbosegiveitem DOME_FOSSIL
-	;getitemname STRING_BUFFER_3, DOME_FOSSIL
-	;writetext MtMoonB2FReceivedFossilText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	disappear MT_MOON_B2F_DOME_FOSSIL
-	itemnotify
-	closetext
-	setevent EVENT_GOT_DOME_FOSSIL
-	applymovement MT_MOON_B2F_SUPER_NERD, MtMoonB2F_Super_Nerd_Takes_Helix_Fossil_Movement
-	opentext
-	writetext MtMoonB2FSuperNerdThenThisIsMineText
-	disappear MT_MOON_B2F_HELIX_FOSSIL
-	playsound SFX_KEY_ITEM
-	waitsfx
-	closetext
-	end
-	
-.DidNotChooseFossil
-	closetext
-	end
-	
-MtMoonB2FHelixFossilScript:
-	opentext
-	writetext MtMoonB2FHelixFossilYouWantText
-	yesorno
-	iffalse .DidNotChooseFossil
-	verbosegiveitem HELIX_FOSSIL
-	;getitemname STRING_BUFFER_3, HELIX_FOSSIL
-	;writetext MtMoonB2FReceivedFossilText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	disappear MT_MOON_B2F_HELIX_FOSSIL
-	itemnotify
-	closetext
-	setevent EVENT_GOT_HELIX_FOSSIL
-	applymovement MT_MOON_B2F_SUPER_NERD, MtMoonB2F_Super_Nerd_Takes_Dome_Fossil_Movement
-	opentext
-	writetext MtMoonB2FSuperNerdThenThisIsMineText
-	disappear MT_MOON_B2F_DOME_FOSSIL
-	playsound SFX_KEY_ITEM
-	waitsfx
-	closetext
-	end
-	
-.DidNotChooseFossil
-	closetext
-	end
-	
-MtMoonB2F_Super_Nerd_Takes_Helix_Fossil_Movement:
-	slow_step RIGHT
-	slow_step UP
-	step_end
-	
-MtMoonB2F_Super_Nerd_Takes_Dome_Fossil_Movement:
-	slow_step UP
-	step_end
-	
-MtMoonB2FHPUP:
-	itemball HP_UP
-	
-MtMoonB2FTMMegaPunch:
-	itemball TM_DYNAMICPUNCH ; TODO
-	
+
 MtMoonB2FSuperNerdScript:
-	;checkevent EVENT_BEAT_MT_MOON_B2F_SUPER_NERD_MIGUEL
+	checkevent EVENT_BEAT_SUPER_NERD_MIGUEL
 	iffalse MtMoonB2FSuperNerdScript2
 	faceplayer
 	opentext
@@ -175,15 +106,78 @@ MtMoonB2FSuperNerdScript2:
 	loadtrainer SUPER_NERD, MIGUEL
 	startbattle
 	reloadmapafterbattle
-	;setevent EVENT_BEAT_MT_MOON_B2F_SUPER_NERD_MIGUEL
+	setevent EVENT_BEAT_SUPER_NERD_MIGUEL
 	pause 10
 	opentext
 	writetext MtMoonB2fSuperNerdEachTakeOneText
 	waitbutton
 	closetext
-	setscene SCENE_MT_MOON_B2F_TEAM_ROCKET
+	setscene SCENE_MT_MOON_B2F_NOOP ;SCENE_MT_MOON_B2F_TEAM_ROCKET ; No Team Rocket
 	end
-	
+
+MtMoonB2FDomeFossilScript:
+	opentext
+	writetext MtMoonB2FDomeFossilYouWantText
+	yesorno
+	iffalse .DidNotChooseFossil
+	verbosegiveitem DOME_FOSSIL
+	; getitemname STRING_BUFFER_3, DOME_FOSSIL
+	; writetext MtMoonB2FReceivedFossilText
+	; playsound SFX_KEY_ITEM
+	; waitsfx
+	disappear MT_MOON_B2F_DOME_FOSSIL
+	; itemnotify
+	closetext
+	setevent EVENT_GOT_DOME_FOSSIL
+	applymovement MT_MOON_B2F_SUPER_NERD, MtMoonB2F_Super_Nerd_Takes_Helix_Fossil_Movement
+	opentext
+	writetext MtMoonB2FSuperNerdThenThisIsMineText
+	disappear MT_MOON_B2F_HELIX_FOSSIL
+	playsound SFX_KEY_ITEM
+	waitsfx
+	closetext
+	end
+
+.DidNotChooseFossil
+	closetext
+	end
+
+MtMoonB2FHelixFossilScript:
+	opentext
+	writetext MtMoonB2FHelixFossilYouWantText
+	yesorno
+	iffalse .DidNotChooseFossil
+	verbosegiveitem HELIX_FOSSIL
+	; getitemname STRING_BUFFER_3, HELIX_FOSSIL
+	; writetext MtMoonB2FReceivedFossilText
+	; playsound SFX_KEY_ITEM
+	; waitsfx
+	disappear MT_MOON_B2F_HELIX_FOSSIL
+	; itemnotify
+	closetext
+	setevent EVENT_GOT_HELIX_FOSSIL
+	applymovement MT_MOON_B2F_SUPER_NERD, MtMoonB2F_Super_Nerd_Takes_Dome_Fossil_Movement
+	opentext
+	writetext MtMoonB2FSuperNerdThenThisIsMineText
+	disappear MT_MOON_B2F_DOME_FOSSIL
+	playsound SFX_KEY_ITEM
+	waitsfx
+	closetext
+	end
+
+.DidNotChooseFossil
+	closetext
+	end
+
+MtMoonB2F_Super_Nerd_Takes_Helix_Fossil_Movement:
+	slow_step RIGHT
+	slow_step UP
+	step_end
+
+MtMoonB2F_Super_Nerd_Takes_Dome_Fossil_Movement:
+	slow_step UP
+	step_end
+
 TrainerRocketGrunt1:
 	trainer GRUNTM, GRUNTM_1, EVENT_BEAT_ROCKET_GRUNTM_1, TrainerRocketGrunt1BattleText, TrainerRocketGrunt1EndBattleText, 0, .Script
 
@@ -194,7 +188,7 @@ TrainerRocketGrunt1:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerRocketGrunt2:
 	trainer GRUNTM, GRUNTM_2, EVENT_BEAT_ROCKET_GRUNTM_2, TrainerRocketGrunt2BattleText, TrainerRocketGrunt2EndBattleText, 0, .Script
 
@@ -205,7 +199,7 @@ TrainerRocketGrunt2:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerRocketGrunt3:
 	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, TrainerRocketGrunt3BattleText, TrainerRocketGrunt3EndBattleText, 0, .Script
 
@@ -216,7 +210,7 @@ TrainerRocketGrunt3:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerRocketGrunt4:
 	trainer GRUNTM, GRUNTM_4, EVENT_BEAT_ROCKET_GRUNTM_4, TrainerRocketGrunt4BattleText, TrainerRocketGrunt4EndBattleText, 0, .Script
 
@@ -227,12 +221,18 @@ TrainerRocketGrunt4:
 	waitbutton
 	closetext
 	end
-	
-; MtMoonB2FHiddenEther:
-	; hiddenitem ETHER, EVENT_HIDDEN_ETHER_MT_MOON_B2F
-	
-; MtMoonB2FHiddenMoonStone:
-	; hiddenitem MOON_STONE, EVENT_HIDDEN_MOONSTONE_MT_MOON_B2F
+
+MtMoonB2FHPUP:
+	itemball HP_UP
+
+MtMoonB2FTMMegaPunch:
+	itemball TM_DYNAMICPUNCH ; TODO
+
+MtMoonB2FHiddenEther:
+	hiddenitem ETHER, EVENT_MT_MOON_B2F_HIDDEN_ETHER
+
+MtMoonB2FHiddenMoonStone:
+	hiddenitem MOON_STONE, EVENT_MT_MOON_B2F_HIDDEN_MOONSTONE
 
 MtMoonB2FDomeFossilYouWantText:
 	text "You want the"
@@ -271,14 +271,16 @@ MtMoonB2FSuperNerdOkIllShareText:
 MtMoonB2fSuperNerdEachTakeOneText:
 	text "We'll each take"
 	line "one!"
-	cont "No being greedy!"
+	
+	para "No being greedy!"
 	done
 
 MtMoonB2FSuperNerdTheresAPokemonLabText:
 	text "Far away, on"
 	line "CINNABAR ISLAND,"
-	cont "there's a #MON"
-	cont "LAB."
+	
+	para "there's a #MON"
+	line "LAB."
 
 	para "They do research"
 	line "on regenerating"
@@ -291,69 +293,69 @@ MtMoonB2FSuperNerdThenThisIsMineText:
 	done
 
 TrainerRocketGrunt1BattleText:
-	text "We, TEAM ROCKET,"
-	line "are #MON"
-	cont "gangsters!"
-	done
-
-TrainerRocketGrunt1EndBattleText:
-	text "I blew it!"
-	done
-
-TrainerRocketGrunt1AfterBattleText:
-	text "Darn it all! My"
-	line "associates won't"
-	cont "stand for this!"
-	done
-
-TrainerRocketGrunt2BattleText:
-	text "We're pulling a"
-	line "big job here!"
-	cont "Get lost, kid!"
-	done
-
-TrainerRocketGrunt2EndBattleText:
-	text "So, you are good."
-	done
-
-TrainerRocketGrunt2AfterBattleText:
-	text "If you find a"
-	line "fossil, give it"
-	cont "to me and scram!"
-	done
-
-TrainerRocketGrunt3BattleText:
-	text "Little kids"
-	line "should leave"
-	cont "grown-ups alone!"
-	done
-
-TrainerRocketGrunt3EndBattleText:
-	text "I'm steamed!"
-	prompt
-
-TrainerRocketGrunt3AfterBattleText:
-	text "#MON lived"
-	line "here long before"
-	cont "people came."
-	done
-	
-TrainerRocketGrunt4BattleText:
 	text "TEAM ROCKET will"
 	line "find the fossils,"
 	cont "revive and sell"
 	cont "them for cash!"
 	done
 
-TrainerRocketGrunt4EndBattleText:
+TrainerRocketGrunt1EndBattleText:
 	text "Urgh!"
 	line "Now I'm mad!"
 	prompt
 
-TrainerRocketGrunt4AfterBattleText:
+TrainerRocketGrunt1AfterBattleText:
 	text "You made me mad!"
 	line "TEAM ROCKET will"
 	cont "blacklist you!"
+	done
+
+TrainerRocketGrunt2BattleText:
+	text "We, TEAM ROCKET,"
+	line "are #MON"
+	cont "gangsters!"
+	done
+
+TrainerRocketGrunt2EndBattleText:
+	text "I blew it!"
+	done
+
+TrainerRocketGrunt2AfterBattleText:
+	text "Darn it all! My"
+	line "associates won't"
+	cont "stand for this!"
+	done
+
+TrainerRocketGrunt3BattleText:
+	text "We're pulling a"
+	line "big job here!"
+	cont "Get lost, kid!"
+	done
+
+TrainerRocketGrunt3EndBattleText:
+	text "So, you are good."
+	done
+
+TrainerRocketGrunt3AfterBattleText:
+	text "If you find a"
+	line "fossil, give it"
+	cont "to me and scram!"
+	done
+
+TrainerRocketGrunt4BattleText:
+	text "Little kids"
+	line "should leave"
+	cont "grown-ups alone!"
+	done
+
+TrainerRocketGrunt4EndBattleText:
+	text "I'm steamed!"
+	prompt
+
+TrainerRocketGrunt4AfterBattleText:
+	text "#MON lived"
+	line "here long before"
+	cont "people came."
 	done
 
 MountMoonB2F_MapEvents:
@@ -370,16 +372,16 @@ MountMoonB2F_MapEvents:
 	;coord_event  5,  7, SCENE_MT_MOON_B2F_TEAM_ROCKET, MtMoonB2FTeamRocketScript
 
 	def_bg_events
-	; bg_event 35, 11, BGEVENT_ITEM, MtMoonB2FHiddenEther
-	; bg_event 20, 14, BGEVENT_ITEM, MtMoonB2FHiddenMoonStone
+	bg_event 35, 11, BGEVENT_ITEM, MtMoonB2FHiddenEther
+	bg_event 20, 14, BGEVENT_ITEM, MtMoonB2FHiddenMoonStone
 
 	def_object_events
+	object_event 14, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MtMoonB2FSuperNerdScript, -1
+	object_event 13, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt1, -1
+	object_event 17, 24, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt2, -1
+	object_event 31, 13, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt3, -1
+	object_event 31, 19, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt4, -1
 	object_event 14,  8, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonB2FDomeFossilScript, EVENT_GOT_DOME_FOSSIL
 	object_event 15,  8, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonB2FHelixFossilScript, EVENT_GOT_HELIX_FOSSIL
 	object_event 27, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoonB2FHPUP, EVENT_MT_MOON_B2F_HP_UP
 	object_event 31,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoonB2FTMMegaPunch, EVENT_MT_MOON_B2F_TM_MEGA_PUNCH
-	object_event 14, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MtMoonB2FSuperNerdScript, -1
-	object_event 17, 24, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt1, -1
-	object_event 31, 13, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt2, -1
-	object_event 31, 19, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt3, -1
-	object_event 13, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt4, -1
