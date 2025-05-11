@@ -73,7 +73,7 @@ _TitleScreen:
 	; call ByteFill
 
 ; Version Text Palette
-	hlbgcoord 5, 8
+	hlbgcoord 5, 9
 	ld bc, 11 ; length of version text
 IF DEF(_RED)
 	ld a, 1
@@ -120,6 +120,22 @@ ENDC
 	lb bc, 1, 16
 	ld d, $c
 	ld e, 16
+	call DrawTitleGraphic
+
+; Decompress version logo
+IF DEF(_RED)
+	ld hl, TitleRedVersionGFX
+ELIF DEF(_BLUE)
+	ld hl, TitleBlueVersionGFX
+ENDC
+	ld de, vTiles1 tile $9c ; vTiles location start address
+	call Decompress
+
+; Draw version logo
+	hlcoord 6, 9
+	lb bc, 1, 9
+	ld d, $1c ; Tile number to start loading
+	ld e, 9
 	call DrawTitleGraphic
 
 ; Initialize running Suicune?
@@ -371,8 +387,17 @@ INCBIN "gfx/title/suicune.2bpp.lz"
 TitleLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"
 
-TitleCrystalGFX:
-INCBIN "gfx/title/crystal.2bpp.lz"
+TitleRedVersionGFX:
+INCBIN "gfx/title/red_version.2bpp.lz"
+
+TitleBlueVersionGFX:
+INCBIN "gfx/title/blue_version.2bpp.lz"
+
+TitleRedGFX:
+INCBIN "gfx/title/red_title.2bpp.lz"
+
+; TitleCrystalGFX:
+; INCBIN "gfx/title/crystal.2bpp.lz"
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
