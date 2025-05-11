@@ -44,6 +44,12 @@ RedsMom:
 	end
 
 RedsHouse1FTV:
+	;jumptext RedsHouse1FTVText
+	readvar VAR_FACING
+	ifequal UP, .TVText
+	jumptext RedsHouse1FTVWrongSideText
+
+.TVText
 	jumptext RedsHouse1FTVText
 
 RedsHouse1FBookshelf:
@@ -51,7 +57,7 @@ RedsHouse1FBookshelf:
 
 MomWakeUpText:
 	text "MOM: Right."
-	
+
 	para "All boys leave"
 	line "home someday."
 	cont "It said so on TV."
@@ -61,10 +67,10 @@ MomWakeUpText:
 	cont "for you."
 	done
 
-MomHealText1::
+MomHealText1:
 	text "MOM: <PLAYER>, if"
 	line "you drive your"
-	
+
 	para "#MON too hard,"
 	line "they'll dislike"
 	cont "you."
@@ -73,7 +79,13 @@ MomHealText1::
 	line "rest."
 	done
 
-MomHealText2::
+; MomHealText1: ; Original line from R/B
+	; text "MOM: <PLAYER>!"
+	; line "You should take a"
+	; cont "quick rest."
+	; done
+
+MomHealText2:
 	text "MOM: Oh good!"
 	
 	para "You and your"
@@ -86,11 +98,15 @@ MomHealText2::
 RedsHouse1FTVText:
 	text "There's a movie on"
 	line "TV: Four boys are"
-	
+
 	para "walking on rail-"
 	line "road tracks."
 
 	para "I'd better go, too."
+	done
+
+RedsHouse1FTVWrongSideText:
+	text "Oops, wrong side."
 	done
 
 RedsHouse1F_MapEvents:

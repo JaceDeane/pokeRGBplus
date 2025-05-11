@@ -554,21 +554,21 @@ LookAtOakPokeBallScript:
 	waitbutton
 	closetext
 	end
-	
+
 OakNotAroundPokeBallsScript:
 	opentext
 	writetext OaksLabThoseArePokeBallsText
 	waitbutton
 	closetext
 	end
-	
+
 RivalTakesCharmanderMovement:
 	slow_step DOWN
 	slow_step RIGHT
 	slow_step RIGHT
 	turn_head UP
 	step_end
-	
+
 RivalTakesSquirtleMovement:
 	slow_step DOWN
 	slow_step DOWN
@@ -587,13 +587,13 @@ RivalTakesBulbasaurMovement:
 	slow_step RIGHT
 	slow_step UP
 	step_end
-	
+
 OaksDirections:
 	setevent EVENT_RIVAL_CHOSE_STARTER
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
 	setscene SCENE_OAKSLAB_TAKE_YOU_ON
 	end
-	
+
 RivalBattleScript:
 	checkevent EVENT_GOT_A_CHARMANDER_FROM_OAK
 	iftrue RivalWalkFromSquirtleScript
@@ -604,10 +604,10 @@ RivalBattleScript:
 
 RivalWalkFromCharmanderScript:
 	readvar VAR_XCOORD
-        getnum STRING_BUFFER_3
-        ifequal 4, .RivalWalksFromCharmanderLeft
-        ifequal 5, .RivalWalksFromCharmanderRight
-        
+	getnum STRING_BUFFER_3
+	ifequal 4, .RivalWalksFromCharmanderLeft
+	ifequal 5, .RivalWalksFromCharmanderRight
+
 .RivalWalksFromCharmanderLeft
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	turnobject PLAYER, UP
@@ -656,10 +656,10 @@ RivalWalksFromCharmanderRightMovement:
 	
 RivalWalkFromSquirtleScript:
 	readvar VAR_XCOORD
-        getnum STRING_BUFFER_3
-        ifequal 4, .RivalWalksFromSquirtleLeft
-        ifequal 5, .RivalWalksFromSquirtleRight
-        
+	getnum STRING_BUFFER_3
+	ifequal 4, .RivalWalksFromSquirtleLeft
+	ifequal 5, .RivalWalksFromSquirtleRight
+
 .RivalWalksFromSquirtleLeft
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	turnobject PLAYER, UP
@@ -709,11 +709,11 @@ RivalWalksFromSquirtleRightMovement:
 	step_end
 
 RivalWalkFromBulbasaurScript: 
-        readvar VAR_XCOORD
-        getnum STRING_BUFFER_3
-        ifequal 4, .RivalWalksFromBulbasaurLeft
-        ifequal 5, .RivalWalksFromBulbasaurRight
-        
+    readvar VAR_XCOORD
+	getnum STRING_BUFFER_3
+	ifequal 4, .RivalWalksFromBulbasaurLeft
+	ifequal 5, .RivalWalksFromBulbasaurRight
+
 .RivalWalksFromBulbasaurLeft
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	turnobject PLAYER, UP
@@ -1007,9 +1007,9 @@ OaksLabOak1HowIsYourPokedexComingText:
 	cont "a look!"
 	prompt
 
-OaksLabOak2Text:
-	text "?"
-	done
+; OaksLabOak2Text:
+	; text "?"
+	; done
 
 OaksLabGirlText:
 	text "PROF.OAK is the"
@@ -1134,7 +1134,7 @@ OaksLabOakIHaveARequestText:
 OaksLabOakMyInventionPokedexText:
 	text "On the desk there"
 	line "is my invention,"
-	cont "#DEX!"
+	cont "the #DEX!"
 
 	para "It automatically"
 	line "records data on"
@@ -1150,7 +1150,7 @@ OaksLabOakGotPokedexText:
 	line "<RIVAL>! Take"
 	cont "these with you!"
 
-	para "<PLAYER> got"
+	para "<PLAYER> got a"
 	line "#DEX from OAK!@"
 	text_end
 

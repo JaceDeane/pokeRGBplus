@@ -23,6 +23,7 @@ Route1ClerkGivePotionScript:
 	
 .AlsoGotPokeballsText
 	writetext Route1ClerkItemGivenText
+	waitbutton
 	closetext
 	end
 
@@ -53,11 +54,7 @@ Route1ClerkNoRoomText::
 	done
 	
 Route1YoungsterLedgeScript:
-	faceplayer
-	opentext
-	writetext Route1YoungsterLedgeText
-	closetext
-	end
+	jumptextfaceplayer Route1YoungsterLedgeText
 
 Route1YoungsterLedgeText::
 	text "See those ledges"

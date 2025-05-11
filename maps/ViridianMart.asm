@@ -42,6 +42,8 @@ ViridianMartParcelScript:
 	;waitsfx
 	;writetext ViridianMartGotParcelText
 	;playsound SFX_KEY_ITEM
+	writetext ViridianMartClerkSayHiToOakText
+	waitbutton
 	closetext
 	setevent EVENT_GOT_OAKS_PARCEL
 	setscene SCENE_VIRIDIANMART_NOOP
@@ -81,11 +83,11 @@ ViridianMartClerkSayHiToOakText:
 
 ViridianMartYoungsterText:
 	text "This shop sells"
-	line "many ANTIDOTEs."
+	line "many ANTIDOTES."
 	done
 
 ViridianMartCooltrainerMText:
-	text "No! POTIONs are"
+	text "No! POTIONS are"
 	line "all sold out."
 	done
 

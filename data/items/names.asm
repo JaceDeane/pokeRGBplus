@@ -69,7 +69,7 @@ ItemNames::
 	li "SECRETPOTION"
 	li "S.S.TICKET"
 	li "MYSTERY EGG"
-	li "OAK'S PARCEL"
+	li "OAK's PARCEL"
 	li "SILVER WING"
 	li "MOOMOO MILK"
 	li "QUICK CLAW"
