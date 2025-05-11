@@ -1,42 +1,43 @@
 ; BG
-	RGB 00, 00, 00
-	RGB 19, 00, 00
-	RGB 15, 08, 31
-	RGB 15, 08, 31
-
-	RGB 00, 00, 00
+; Background
 	RGB 31, 31, 31
-	RGB 15, 16, 31
-	RGB 31, 01, 13
-
+	RGB 26, 26, 26
+	RGB 13, 16, 25
 	RGB 00, 00, 00
-	RGB 07, 07, 07
+; Version
 	RGB 31, 31, 31
-	RGB 02, 03, 30
-
+	RGB 31, 31, 31
+	RGB 31, 00, 02
+	RGB 15, 00, 01
+; Logo
+	RGB 31, 31, 31
+	RGB 31, 29, 00
+	RGB 13, 16, 25
+	RGB 01, 02, 22
+; Red
+	RGB 31, 31, 31
+	RGB 29, 18, 17
+	RGB 22, 07, 08
 	RGB 00, 00, 00
-	RGB 13, 13, 13
-	RGB 31, 31, 18
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 19, 19, 19
-	RGB 29, 28, 12
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
+; Version -- Blue
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 02, 16, 31
+	RGB 02, 08, 25
+; Unused RGB+
+	RGB 31, 31, 31
 	RGB 25, 25, 25
 	RGB 28, 25, 06
 	RGB 02, 03, 30
-
-	RGB 00, 00, 00
+; Unused RGB+
+	RGB 31, 31, 31
 	RGB 31, 31, 31
 	RGB 26, 21, 00
 	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 11, 11, 19
+; Unused RGB+
 	RGB 31, 31, 31
+	RGB 26, 26, 26
+	RGB 15, 15, 15
 	RGB 00, 00, 00
 
 ; OBJ

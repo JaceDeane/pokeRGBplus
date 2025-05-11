@@ -37,45 +37,49 @@ _TitleScreen:
 ; BG Map 1:
 
 ; line 0 (copyright)
-	hlbgcoord 0, 0, vBGMap1
-	ld bc, BG_MAP_WIDTH
-	ld a, 7 ; palette
-	call ByteFill
+	; hlbgcoord 0, 0, vBGMap1
+	; ld bc, BG_MAP_WIDTH
+	; ld a, 7 ; palette
+	; call ByteFill
 
 ; BG Map 0:
 
-; Apply logo gradient:
+; Apply logo palette:
 
-; lines 3-4
-	hlbgcoord 0, 3
-	ld bc, 2 * BG_MAP_WIDTH
+; lines 2-8
+	hlbgcoord 0, 2
+	ld bc, 7 * BG_MAP_WIDTH
 	ld a, 2
 	call ByteFill
-; line 5
-	hlbgcoord 0, 5
-	ld bc, BG_MAP_WIDTH
-	ld a, 3
-	call ByteFill
-; line 6
-	hlbgcoord 0, 6
-	ld bc, BG_MAP_WIDTH
-	ld a, 4
-	call ByteFill
-; line 7
-	hlbgcoord 0, 7
-	ld bc, BG_MAP_WIDTH
-	ld a, 5
-	call ByteFill
-; lines 8-9
-	hlbgcoord 0, 8
-	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 6
-	call ByteFill
+; ; line 5
+	; hlbgcoord 0, 5
+	; ld bc, BG_MAP_WIDTH
+	; ld a, 3
+	; call ByteFill
+; ; line 6
+	; hlbgcoord 0, 6
+	; ld bc, BG_MAP_WIDTH
+	; ld a, 4
+	; call ByteFill
+; ; line 7
+	; hlbgcoord 0, 7
+	; ld bc, BG_MAP_WIDTH
+	; ld a, 5
+	; call ByteFill
+; ; lines 8-9
+	; hlbgcoord 0, 8
+	; ld bc, 2 * BG_MAP_WIDTH ; for 2x lines
+	; ld a, 6
+	; call ByteFill
 
-; 'CRYSTAL VERSION'
-	hlbgcoord 5, 9
+; Version Text Palette
+	hlbgcoord 5, 8
 	ld bc, 11 ; length of version text
+IF DEF(_RED)
 	ld a, 1
+ELIF DEF(_BLUE)
+	ld a, 4
+ENDC
 	call ByteFill
 
 ; Suicune gfx
@@ -94,9 +98,9 @@ _TitleScreen:
 	call Decompress
 
 ; Decompress background crystal
-	ld hl, TitleCrystalGFX
-	ld de, vTiles0
-	call Decompress
+	; ld hl, TitleCrystalGFX
+	; ld de, vTiles0
+	; call Decompress
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
@@ -105,15 +109,15 @@ _TitleScreen:
 	call ByteFill
 
 ; Draw Pokemon logo
-	hlcoord 0, 3
+	hlcoord 0, 2
 	lb bc, 7, 20
 	ld d, $80
 	ld e, 20
 	call DrawTitleGraphic
 
 ; Draw copyright text
-	hlbgcoord 3, 0, vBGMap1
-	lb bc, 1, 13
+	hlbgcoord 2, 0, vBGMap1
+	lb bc, 1, 16
 	ld d, $c
 	ld e, 16
 	call DrawTitleGraphic
@@ -123,7 +127,7 @@ _TitleScreen:
 	call LoadSuicuneFrame
 
 ; Initialize background crystal
-	call InitializeBackground
+	; call InitializeBackground ; For now, do not initialise any background sprites
 
 ; Update palette colors
 	ldh a, [rSVBK]
