@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE4_YOUNGSTER
 	const ROUTE4_LASS1
 	const ROUTE4_LASS2
 	const ROUTE4_POKE_BALL
@@ -9,116 +8,69 @@ Route4_MapScripts:
 
 	def_callbacks
 
-TrainerBirdKeeperHank:
-	;trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
+Route4LassScript:
+	jumptext Route4LassText
+
+TrainerLassCrissy:
+	trainer LASS, CRISSY, EVENT_BEAT_LASS_CRISSY, LassCrissySeenText, LassCrissyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperHankAfterBattleText
+	writetext LassCrissyAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerHope:
-	;trainer PICNICKER, HOPE, EVENT_BEAT_PICNICKER_HOPE, PicnickerHopeSeenText, PicnickerHopeBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PicnickerHopeAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerPicnickerSharon:
-	;trainer PICNICKER, SHARON, EVENT_BEAT_PICNICKER_SHARON, PicnickerSharonSeenText, PicnickerSharonBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PicnickerSharonAfterBattleText
-	waitbutton
-	closetext
-	end
-
-MtMoonSign:
-	jumptext MtMoonSignText
-	
 MtMoonPokecenterSign:
 	jumpstd PokecenterSignScript
 
-Route4HPUp:
-	itemball HP_UP
+MtMoonSign:
+	jumptext MtMoonSignText
+
+Route4Sign:
+	jumptext Route4SignText
+
+Route4TMWhirlwind:
+	itemball TM_MUD_SLAP ; TM_WHIRLWIND ; TODO
 
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 
-BirdKeeperHankSeenText:
-	text "I'm raising my"
-	line "#MON. Want to"
-	cont "battle with me?"
+Route4LassText:
+	text "Ouch! I tripped"
+	line "over a rocky"
+	cont "#MON, GEODUDE!"
 	done
 
-BirdKeeperHankBeatenText:
-	text "Ack! I lost that"
-	line "one…"
+LassCrissySeenText:
+	text "I came to get my"
+	line "mushroom #MON!"
 	done
 
-BirdKeeperHankAfterBattleText:
-	text "If you have a"
-	line "specific #MON"
+LassCrissyBeatenText:
+	text "Oh! My cute"
+	line "mushroom #MON!"
+	prompt
 
-	para "that you want to"
-	line "raise, put it out"
+LassCrissyAfterBattleText:
+	text "There might not"
+	line "be any more"
+	cont "mushrooms here."
 
-	para "first, then switch"
-	line "it right away."
-
-	para "That's how to do"
-	line "it."
-	done
-
-PicnickerHopeSeenText:
-	text "I have a feeling"
-	line "that I can win."
-
-	para "Let's see if I'm"
-	line "right!"
-	done
-
-PicnickerHopeBeatenText:
-	text "Aww, you are too"
-	line "strong."
-	done
-
-PicnickerHopeAfterBattleText:
-	text "I heard CLEFAIRY"
-	line "appear at MT.MOON."
-
-	para "But where could"
-	line "they be?"
-	done
-
-PicnickerSharonSeenText:
-	text "Um…"
-	line "I…"
-	done
-
-PicnickerSharonBeatenText:
-	text "…"
-	done
-
-PicnickerSharonAfterBattleText:
-	text "……I'll go train"
-	line "some more…"
+	para "I think I got"
+	line "them all."
 	done
 
 MtMoonSignText:
 	text "MT.MOON"
+	line "Tunnel Entrance"
+	done
 
-	para "Just go up the"
-	line "stairs."
+Route4SignText:
+	text "ROUTE 4"
+	line "MT.MOON -"
+	cont "CERULEAN CITY"
 	done
 
 Route4_MapEvents:
@@ -134,11 +86,10 @@ Route4_MapEvents:
 	def_bg_events
 	bg_event 12,  5, BGEVENT_READ, MtMoonPokecenterSign
 	bg_event 17,  7, BGEVENT_READ, MtMoonSign
-	bg_event 27,  7, BGEVENT_READ, MtMoonSign
-	bg_event 32,  3, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 27,  7, BGEVENT_READ, Route4Sign
+	;bg_event 32,  3, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	def_object_events
-	; object_event 39,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
-	; object_event 31,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	; object_event 43,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
-	object_event 48,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route4LassScript, -1
+	object_event 63,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerLassCrissy, -1
+	object_event 57,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4TMWhirlwind, EVENT_GOT_TM_WHIRLWIND

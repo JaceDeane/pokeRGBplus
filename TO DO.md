@@ -5,17 +5,33 @@
 ```
 ### MAPS:
 
-- Cerulean City onwards
+- Cerulean City:
+	- NPC homes, Pokémon Center, Mart, Gym, Bike Shop, etc.
+
+- Route 24
+
+- Route 25 & Bill's House
+
+- Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
 
 ### EVENTS:
 
-- Route 4 events/Trainers, etc.
+- (!) Mount Moon B2F should remove all the Rocket Grunts after beating the Super Nerd (? or the head Grunt)
+
+- Cerulean City:
+	- NPC homes: trade house, badge house, burgled house, Pokémon Center, Mart, Gym, Bike Shop
+
+- Route 24 (Nugget bridge)
+
+- Route 25 & Bill's House
+
+- Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
 
 - Include and check all hidden items from R/B exist and are in the right place
 
 - `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
 
-- Mount Moon B2F - confirm appearance of events is satisfactory
+- Mount Moon B2F: confirm appearance of events is satisfactory
 
 ### ENGINE / DATA:
 
@@ -24,7 +40,7 @@
 - (!) Set proper wild encounter data (!)
 	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)\
 	- Viridian Forest, Mt.Moon (All floors)\
-	- Routes 3 &  4
+	- Routes 3, 4, 24 & 25
 
 - (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
@@ -55,6 +71,8 @@
 
 ### MUSIC: 
 
+- Add RBY music for Cerulean City, Route 3 & Route 25, Pokémon Center
+
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
 - Custom `Battle! Rival` track for Blue (?)
@@ -71,9 +89,11 @@
 
 - (!) Building _DEBUG causes an overflow
 
-- (!) Losing to your Rival on Route 22 causes a secondary 'ghost' NPC object to appear when returning and re-challenging the fight
+- Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F
 
-- (!) Force the Pokedex to load in Area data for Kanto only
+- Events that should change movedata but don't:
+	-Rival in Oak's Lab > `STANDING_UP`
+	-Super Nerd in Mount Moon B2F > `SPINRANDOM_SLOW`
 
 - Pewter PokeCenter's Jigglypuff doesn't go back to animating once the event is over
 

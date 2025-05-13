@@ -109,10 +109,11 @@ MtMoonB2FSuperNerdScript:
 	setevent EVENT_BEAT_SUPER_NERD_MIGUEL
 	pause 10
 	opentext
-	writetext MtMoonB2fSuperNerdEachTakeOneText
+	writetext MtMoonB2FSuperNerdEachTakeOneText
 	waitbutton
 	closetext
-	setscene SCENE_MT_MOON_B2F_NOOP ;SCENE_MT_MOON_B2F_TEAM_ROCKET ; No Team Rocket
+	;
+	setscene SCENE_MT_MOON_B2F_NOOP
 	end
 
 MtMoonB2FSuperNerdEvent:
@@ -131,9 +132,19 @@ MtMoonB2FSuperNerdEvent:
 	setevent EVENT_BEAT_SUPER_NERD_MIGUEL
 	pause 10
 	opentext
-	writetext MtMoonB2fSuperNerdEachTakeOneText
+	writetext MtMoonB2FSuperNerdEachTakeOneText
 	waitbutton
 	closetext
+	; special FadeOutToBlack
+	; pause 25
+	; special ReloadSpritesNoPalettes
+	; disappear MT_MOON_B2F_ROCKET_1 ; Should they be hidden one-by-one?
+	; disappear MT_MOON_B2F_ROCKET_2 ; Should they be hidden one-by-one?
+	; disappear MT_MOON_B2F_ROCKET_3 ; Should they be hidden one-by-one?
+	; disappear MT_MOON_B2F_ROCKET_4 ; Should they be hidden one-by-one?
+	; special FadeInFromBlack
+	; special RestartMapMusic
+	; setevent EVENT_TEAM_ROCKET_APPEARED_MT_MOON ; Flag that makes Team Rocket disappear
 	setscene SCENE_MT_MOON_B2F_NOOP ;SCENE_MT_MOON_B2F_TEAM_ROCKET ; No Team Rocket
 	end
 
@@ -290,7 +301,7 @@ MtMoonB2FSuperNerdOkIllShareText:
 	text "OK! I'll share!"
 	done
 
-MtMoonB2fSuperNerdEachTakeOneText:
+MtMoonB2FSuperNerdEachTakeOneText:
 	text "We'll each take"
 	line "one!"
 	
