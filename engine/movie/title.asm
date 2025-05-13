@@ -401,3 +401,5 @@ INCBIN "gfx/title/red_title.2bpp.lz"
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
+
+INCLUDE "data/pokemon/title_mons.asm"

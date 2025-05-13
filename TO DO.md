@@ -37,6 +37,8 @@
 
 - Confirm if the Route 3 PokeCenter uses a FlyData flag
 
+- (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
+
 - (!) Set proper wild encounter data (!)
 	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)\
 	- Viridian Forest, Mt.Moon (All floors)\
