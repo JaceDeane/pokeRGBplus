@@ -48,11 +48,11 @@ DrawGBCOnlyScreen:
 	call DrawGBCOnlyGraphic
 
 	; Crystal
-	hlcoord 5, 6
-	ld b, 10
-	ld c, 2
-	ld a, $40
-	call DrawGBCOnlyGraphic
+	; hlcoord 5, 6
+	; ld b, 10
+	; ld c, 2
+	; ld a, $40
+	; call DrawGBCOnlyGraphic
 
 	ld de, GBCOnlyString
 	hlcoord 1, 10

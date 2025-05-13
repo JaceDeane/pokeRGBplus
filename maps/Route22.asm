@@ -15,6 +15,7 @@ Route22Noop1Scene:
 	end
 
 Route22Noop2Scene:
+	disappear ROUTE22_RIVAL ; Ensures the Rival remains unseen if Player blacks out
 	end
 	
 Route22RivalBattleScene1:

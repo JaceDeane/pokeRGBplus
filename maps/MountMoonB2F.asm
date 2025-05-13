@@ -87,16 +87,38 @@ MtMoonB2FNoopScene:
 
 MtMoonB2FSuperNerdScript:
 	checkevent EVENT_BEAT_SUPER_NERD_MIGUEL
-	iffalse MtMoonB2FSuperNerdScript2
+	iffalse .NotBeaten
 	faceplayer
 	opentext
 	writetext MtMoonB2FSuperNerdTheresAPokemonLabText
 	waitbutton
 	closetext
 	end
-	
-MtMoonB2FSuperNerdScript2:
+.NotBeaten
+	showemote EMOTE_SHOCK, MT_MOON_B2F_SUPER_NERD, 15
 	faceplayer
+	opentext
+	writetext MtMoonB2FSuperNerdTheyreBothMineText
+	playmusic MUSIC_MALE_TRAINER_ENCOUNTER
+	waitbutton
+	closetext
+	winlosstext MtMoonB2FSuperNerdOkIllShareText, 0
+	loadtrainer SUPER_NERD, MIGUEL
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SUPER_NERD_MIGUEL
+	pause 10
+	opentext
+	writetext MtMoonB2fSuperNerdEachTakeOneText
+	waitbutton
+	closetext
+	setscene SCENE_MT_MOON_B2F_NOOP ;SCENE_MT_MOON_B2F_TEAM_ROCKET ; No Team Rocket
+	end
+
+MtMoonB2FSuperNerdEvent:
+	showemote EMOTE_SHOCK, MT_MOON_B2F_SUPER_NERD, 15
+	faceplayer
+	turnobject PLAYER, LEFT
 	opentext
 	writetext MtMoonB2FSuperNerdTheyreBothMineText
 	playmusic MUSIC_MALE_TRAINER_ENCOUNTER
@@ -302,7 +324,7 @@ TrainerRocketGrunt1BattleText:
 TrainerRocketGrunt1EndBattleText:
 	text "Urgh!"
 	line "Now I'm mad!"
-	prompt
+	done
 
 TrainerRocketGrunt1AfterBattleText:
 	text "You made me mad!"
@@ -350,7 +372,7 @@ TrainerRocketGrunt4BattleText:
 
 TrainerRocketGrunt4EndBattleText:
 	text "I'm steamed!"
-	prompt
+	done
 
 TrainerRocketGrunt4AfterBattleText:
 	text "#MON lived"
@@ -368,7 +390,7 @@ MountMoonB2F_MapEvents:
 	warp_event  7,  9, MOUNT_MOON_B1F, 7
 
 	def_coord_events
-	coord_event 15, 10, SCENE_MT_MOON_B2F_FOSSIL, MtMoonB2FSuperNerdScript2
+	coord_event 15, 10, SCENE_MT_MOON_B2F_FOSSIL, MtMoonB2FSuperNerdEvent
 	;coord_event  5,  7, SCENE_MT_MOON_B2F_TEAM_ROCKET, MtMoonB2FTeamRocketScript
 
 	def_bg_events

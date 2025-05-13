@@ -150,7 +150,7 @@ ENDM
 	map_const MOUNT_MOON_1F,                               20, 18 ; 85
 	map_const MOUNT_MOON_1F_EXIT,                           4,  4 ; 86
 	map_const MOUNT_MOON_B1F,                              14, 14 ; 87
-	map_const MOUNT_MOON_B2F,                              21, 19 ; 88
+	map_const MOUNT_MOON_B2F,                              22, 19 ; 88
 	map_const UNDERGROUND_PATH,                             3, 14 ; 89
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 90
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 91
@@ -200,7 +200,7 @@ ENDM
 	map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE,              4,  4 ;  1
 	map_const CERULEAN_POLICE_STATION,                      4,  4 ;  2
 	map_const CERULEAN_TRADE_SPEECH_HOUSE,                  4,  4 ;  3
-	map_const CERULEAN_POKECENTER_1F,                       5,  4 ;  4
+	map_const CERULEAN_POKECENTER_1F,                       7,  4 ;  4
 	; map_const CERULEAN_POKECENTER_2F_BETA,                  8,  4 ;  5
 	map_const CERULEAN_GYM,                                 5,  8 ;  6
 	map_const CERULEAN_MART,                                4,  4 ;  7
