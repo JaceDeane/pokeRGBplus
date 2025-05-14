@@ -150,7 +150,7 @@ ENDM
 	map_const MOUNT_MOON_1F,                               20, 18 ; 85
 	map_const MOUNT_MOON_1F_EXIT,                           4,  4 ; 86
 	map_const MOUNT_MOON_B1F,                              14, 14 ; 87
-	map_const MOUNT_MOON_B2F,                              22, 19 ; 88
+	map_const MOUNT_MOON_B2F,                              23, 19 ; 88
 	map_const UNDERGROUND_PATH,                             3, 14 ; 89
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 90
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 91

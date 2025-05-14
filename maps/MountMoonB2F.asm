@@ -12,92 +12,38 @@
 MountMoonB2F_MapScripts:
 	def_scene_scripts
 	scene_script MtMoonB2FFossilScene, SCENE_MT_MOON_B2F_FOSSIL
-	;scene_script MtMoonB2FTeamRocketScene, SCENE_MT_MOON_B2F_TEAM_ROCKET
 	scene_script MtMoonB2FNoopScene, SCENE_MT_MOON_B2F_NOOP
 
 	def_callbacks
 	
 MtMoonB2FFossilScene:
 	end
-	
-MtMoonB2FTeamRocketScene:
-	end
-	
+
 MtMoonB2FNoopScene:
 	end
-	
-; MtMoonB2FTeamRocketScript:
-	; playmusic MUSIC_MEET_JESSIE_JAMES
-	; opentext
-	; writetext MtMoonJessieJamesText1
-	; showemote EMOTE_SHOCK, PLAYER, 20
-	; pause 15
-	; closetext
-	; turnobject PLAYER, UP
-	; applymovement PLAYER, MtMoonB2F_Player_Steps_Up_Movement
-	; appear MT_MOON_B2F_JESSIE
-	; applymovement MT_MOON_B2F_JESSIE, MtMoonB2F_Jessie_Movement
-	; turnobject MT_MOON_B2F_JESSIE, DOWN
-	; appear MT_MOON_B2F_JAMES
-	; applymovement MT_MOON_B2F_JAMES, MtMoonB2F_James_Movement
-	; opentext
-	; writetext MtMoonJessieJamesText2
-	; waitbutton
-	; closetext
-	; winlosstext MtMoonJessieJamesText3, 0
-	; loadtrainer TEAM_ROCKET, TEAM_ROCKET1
-	; startbattle
-	; reloadmap
-	; opentext
-	; writetext MtMoonJessieJamesText4
-	; waitbutton
-	; closetext
-	; playmusic MUSIC_MEET_JESSIE_JAMES
-	; special FadeOutToBlack
-	; pause 25
-	; special ReloadSpritesNoPalettes
-	; disappear MT_MOON_B2F_JAMES
-	; disappear MT_MOON_B2F_JESSIE
-	; special FadeInFromBlack
-	; special RestartMapMusic
-	; setevent EVENT_TEAM_ROCKET_APPEARED_MT_MOON
-	; setscene SCENE_MT_MOON_B2F_NOOP
-	; end
-	
-; MtMoonB2F_Player_Steps_Up_Movement:
-	; step UP
-	; step_end
-	
-; MtMoonB2F_Jessie_Movement:
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step_end
-	
-; MtMoonB2F_James_Movement:
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step LEFT
-	; step_end
 
 MtMoonB2FSuperNerdScript:
-	checkevent EVENT_BEAT_SUPER_NERD_MIGUEL
-	iffalse .NotBeaten
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_SUPER_NERD_MIGUEL
+	iffalse .NotBeaten
+	checkevent EVENT_GOT_DOME_FOSSIL
+	iftrue .FossilTaken
+	checkevent EVENT_GOT_HELIX_FOSSIL
+	iftrue .FossilTaken
+	writetext MtMoonB2FSuperNerdEachTakeOneText
+	waitbutton
+	closetext
+	end
+
+.FossilTaken
 	writetext MtMoonB2FSuperNerdTheresAPokemonLabText
 	waitbutton
 	closetext
 	end
+
 .NotBeaten
 	showemote EMOTE_SHOCK, MT_MOON_B2F_SUPER_NERD, 15
-	faceplayer
-	opentext
 	writetext MtMoonB2FSuperNerdTheyreBothMineText
 	playmusic MUSIC_MALE_TRAINER_ENCOUNTER
 	waitbutton
@@ -107,18 +53,11 @@ MtMoonB2FSuperNerdScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SUPER_NERD_MIGUEL
-	pause 10
-	opentext
-	writetext MtMoonB2FSuperNerdEachTakeOneText
-	waitbutton
-	closetext
-	;
 	setscene SCENE_MT_MOON_B2F_NOOP
 	end
 
 MtMoonB2FSuperNerdEvent:
 	showemote EMOTE_SHOCK, MT_MOON_B2F_SUPER_NERD, 15
-	faceplayer
 	turnobject PLAYER, LEFT
 	opentext
 	writetext MtMoonB2FSuperNerdTheyreBothMineText
@@ -130,22 +69,13 @@ MtMoonB2FSuperNerdEvent:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SUPER_NERD_MIGUEL
-	pause 10
-	opentext
-	writetext MtMoonB2FSuperNerdEachTakeOneText
-	waitbutton
-	closetext
 	; special FadeOutToBlack
 	; pause 25
 	; special ReloadSpritesNoPalettes
-	; disappear MT_MOON_B2F_ROCKET_1 ; Should they be hidden one-by-one?
-	; disappear MT_MOON_B2F_ROCKET_2 ; Should they be hidden one-by-one?
-	; disappear MT_MOON_B2F_ROCKET_3 ; Should they be hidden one-by-one?
-	; disappear MT_MOON_B2F_ROCKET_4 ; Should they be hidden one-by-one?
+	; setevent EVENT_TEAM_ROCKET_DISAPPEAR_MT_MOON ; Rocket Grunts don't ever disappear in Gen-I
 	; special FadeInFromBlack
 	; special RestartMapMusic
-	; setevent EVENT_TEAM_ROCKET_APPEARED_MT_MOON ; Flag that makes Team Rocket disappear
-	setscene SCENE_MT_MOON_B2F_NOOP ;SCENE_MT_MOON_B2F_TEAM_ROCKET ; No Team Rocket
+	setscene SCENE_MT_MOON_B2F_NOOP
 	end
 
 MtMoonB2FDomeFossilScript:
@@ -402,7 +332,6 @@ MountMoonB2F_MapEvents:
 
 	def_coord_events
 	coord_event 15, 10, SCENE_MT_MOON_B2F_FOSSIL, MtMoonB2FSuperNerdEvent
-	;coord_event  5,  7, SCENE_MT_MOON_B2F_TEAM_ROCKET, MtMoonB2FTeamRocketScript
 
 	def_bg_events
 	bg_event 35, 11, BGEVENT_ITEM, MtMoonB2FHiddenEther
@@ -410,10 +339,10 @@ MountMoonB2F_MapEvents:
 
 	def_object_events
 	object_event 14, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MtMoonB2FSuperNerdScript, -1
-	object_event 13, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt1, -1
-	object_event 17, 24, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt2, -1
-	object_event 31, 13, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt3, -1
-	object_event 31, 19, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt4, -1
+	object_event 13, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt1, -1 ; EVENT_TEAM_ROCKET_DISAPPEAR_MT_MOON
+	object_event 17, 24, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt2, -1 ; EVENT_TEAM_ROCKET_DISAPPEAR_MT_MOON
+	object_event 31, 13, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt3, -1 ; EVENT_TEAM_ROCKET_DISAPPEAR_MT_MOON
+	object_event 31, 19, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt4, -1 ; EVENT_TEAM_ROCKET_DISAPPEAR_MT_MOON
 	object_event 14,  8, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonB2FDomeFossilScript, EVENT_GOT_DOME_FOSSIL
 	object_event 15,  8, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonB2FHelixFossilScript, EVENT_GOT_HELIX_FOSSIL
 	object_event 27, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoonB2FHPUP, EVENT_MT_MOON_B2F_HP_UP

@@ -498,7 +498,7 @@
 	; Events
 	const EVENT_GOT_DOME_FOSSIL
 	const EVENT_GOT_HELIX_FOSSIL
-	const EVENT_TEAM_ROCKET_APPEAR_MT_MOON
+	; const EVENT_TEAM_ROCKET_DISAPPEAR_MT_MOON ; Team Rocket never leave in Gen-I
 
 ; S.S. Anne events
 	; const EVENT_GOT_HM01

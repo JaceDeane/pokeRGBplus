@@ -9,7 +9,7 @@ Route4_MapScripts:
 	def_callbacks
 
 Route4LassScript:
-	jumptext Route4LassText
+	jumptextfaceplayer Route4LassText
 
 TrainerLassCrissy:
 	trainer LASS, CRISSY, EVENT_BEAT_LASS_CRISSY, LassCrissySeenText, LassCrissyBeatenText, 0, .Script
