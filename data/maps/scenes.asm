@@ -10,8 +10,8 @@ MapScenes::
 	scene_var COLOSSEUM,                                   wColosseumSceneID
 	scene_var TIME_CAPSULE,                                wTimeCapsuleSceneID
 	scene_var POWER_PLANT,                                 wPowerPlantSceneID
-	scene_var CERULEAN_GYM,                                wCeruleanGymSceneID
-	scene_var ROUTE_25,                                    wRoute25SceneID
+	scene_var CERULEAN_CITY,                               wCeruleanCitySceneID ; Updated R/B
+	scene_var ROUTE_24,                                    wRoute24SceneID ; Updated R/B
 	scene_var VICTORY_ROAD_GATE,                           wVictoryRoadGateSceneID
 	scene_var SAFFRON_MAGNET_TRAIN_STATION,                wSaffronMagnetTrainStationSceneID
 	scene_var ROUTE_16_GATE,                               wRoute16GateSceneID
@@ -23,17 +23,17 @@ MapScenes::
 	scene_var KARENS_ROOM,                                 wKarensRoomSceneID
 	scene_var LANCES_ROOM,                                 wLancesRoomSceneID
 	scene_var HALL_OF_FAME,                                wHallOfFameSceneID
-	scene_var ROUTE_27,                                    wRoute27SceneID
-	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID ; Unused RGB+
-	scene_var PALLET_TOWN,                                 wPalletTownSceneID
-	;scene_var ELMS_LAB,                                    wElmsLabSceneID ; Unused RGB+
-	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID
-	scene_var OAKS_LAB,                                    wOaksLabSceneID
-	scene_var PEWTER_CITY,                                 wPewterCitySceneID ; New RGB+
-	scene_var PEWTER_MUSEUM_OF_SCIENCE_1F,                 wPewterMuseumOfScienceSceneID ; New RGB+
+	scene_var ROUTE_27,                                    wRoute27SceneID ; Unused RGB+ -- TODO: Remove
+	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID ; Unused RGB+ -- TODO: Remove
+	scene_var PALLET_TOWN,                                 wPalletTownSceneID ; Updated R/B
+	;scene_var ELMS_LAB,                                    wElmsLabSceneID ; Unused RGB+ -- TODO: Remove
+	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID ; Updated R/B
+	scene_var OAKS_LAB,                                    wOaksLabSceneID ; Updated R/B
+	scene_var PEWTER_CITY,                                 wPewterCitySceneID ; Updated R/B
+	scene_var PEWTER_MUSEUM_OF_SCIENCE_1F,                 wPewterMuseumOfScienceSceneID ; Updated R/B
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
-	scene_var ROUTE_29,                                    wRoute29SceneID
-	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+
+	scene_var ROUTE_29,                                    wRoute29SceneID ; Unused RGB+ -- TODO: Remove
+	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+ -- TODO: Remove
 	scene_var VIRIDIAN_CITY,                               wViridianCitySceneID
 	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
 	scene_var ROUTE_22,                                    wRoute22SceneID

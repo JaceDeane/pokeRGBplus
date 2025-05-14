@@ -3045,9 +3045,9 @@ wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
 wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
-wCeruleanGymSceneID::                             db
-wRoute25SceneID::                                 db
-wTrainerHouseB1FSceneID::                         db
+wCeruleanCitySceneID::                            db ; Updated R/B
+wRoute24SceneID::                                 db ; Updated R/B
+wTrainerHouseB1FSceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
 wVictoryRoadGateSceneID::                         db
 wSaffronMagnetTrainStationSceneID::               db
 wRoute16GateSceneID::                             db
@@ -3059,17 +3059,17 @@ wBrunosRoomSceneID::                              db
 wKarensRoomSceneID::                              db
 wLancesRoomSceneID::                              db
 wHallOfFameSceneID::                              db
-wRoute27SceneID::                                 db
-wNewBarkTownSceneID::                             db ; Unused RGB+
+wRoute27SceneID::                                 db ; Unused RGB+ -- TODO: Remove
+wNewBarkTownSceneID::                             db ; Unused RGB+ -- TODO: Remove
 wPalletTownSceneID::                              db 
-; wElmsLabSceneID::                                 db ; Unused RGB+
-wBluesHouseSceneID::                              db
+; wElmsLabSceneID::                                 db ; Unused RGB+ -- TODO: Remove
+wBluesHouseSceneID::                              db ; Updated R/B
 wOaksLabSceneID::                                 db
-wPewterCitySceneID::                              db ; New RGB+
-wPewterMuseumOfScienceSceneID::                   db ; New RGB+
+wPewterCitySceneID::                              db ; Updated R/B
+wPewterMuseumOfScienceSceneID::                   db ; Updated R/B
 wPlayersHouse1FSceneID::                          db
-wRoute29SceneID::                                 db
-wCherrygroveCitySceneID::                         db ; Unused RGB+
+wRoute29SceneID::                                 db ; Unused RGB+ -- TODO: Remove
+wCherrygroveCitySceneID::                         db ; Unused RGB+ -- TODO: Remove
 wViridianCitySceneID::                            db
 wViridianMartSceneID::                            db
 wRoute22SceneID::                                 db
@@ -3098,7 +3098,7 @@ wBattleTowerElevatorSceneID::                     db
 wBattleTowerHallwaySceneID::                      db
 wBattleTowerOutsideSceneID::                      db
 wRoute43GateSceneID::                             db
-wMountMoonB2FSceneID::                            db
+wMountMoonB2FSceneID::                            db ; Updated R/B
 wSproutTower3FSceneID::                           db
 wTinTower1FSceneID::                              db
 wBurnedTower1FSceneID::                           db

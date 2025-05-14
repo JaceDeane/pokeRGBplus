@@ -1,75 +1,57 @@
 	object_const_def
-	const CERULEANPOKECENTER1F_NURSE
-	const CERULEANPOKECENTER1F_LINK_RECEPTIONIST
-	const CERULEANPOKECENTER1F_SITTING_GUY
-	const CERULEANPOKECENTER1F_SUPER_NERD
-	const CERULEANPOKECENTER1F_GYM_GUIDE
+	const CERULEANPOKECENTER_NURSE
+	const CERULEANPOKECENTER_LINK_RECEPTIONIST
+	const CERULEANPOKECENTER_SITTING_GUY
+	const CERULEANPOKECENTER_SUPER_NERD
+	const CERULEANPOKECENTER_GENTLEMAN
 
 CeruleanPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CeruleanPokecenter1FNurseScript:
+CeruleanPokecenterNurseScript:
 	jumpstd PokecenterNurseScript
 
-CeruleanPokecenter1FLinkReceptionistScript:
+CeruleanPokecenterLinkReceptionistScript:
 	; Create new "jumpstd" for LinkReceptionistScript
 	jumpstd PokecenterNurseScript
 
-CeruleanPokecenter1FSuperNerdScript:
-	special CheckMobileAdapterStatusSpecial
-	iftrue .mobile
-	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText
+CeruleanPokecenterSuperNerdScript:
+	jumptextfaceplayer CeruleanPokecenterSuperNerdText
 
-.mobile
-	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText_Mobile
+CeruleanPokecenterGentlemanScript:
+	jumptextfaceplayer CeruleanPokecenterGentlemanText
 
-CeruleanPokecenter1FGymGuideScript:
-	jumptextfaceplayer CeruleanPokecenter1FGymGuideText
+CeruleanPokecenterSittingGuyScript:
+	jumptextfaceplayer CeruleanPokecenterSittingGuyText
 
-CeruleanPokecenter1FSittingGuyScript:
-	jumptextfaceplayer CeruleanPokecenter1FSittingGuyText
+CeruleanPokecenterSuperNerdText:
+	text "That BILL!"
 
-CeruleanPokecenter1FSuperNerdText:
-	text "For battles, I'd"
-	line "much rather use"
-
-	para "#MON I've been"
-	line "raising, even if"
-
-	para "they're weaker"
-	line "than some newly"
-	cont "caught #MON."
+	para "I heard that"
+	line "he'll do whatever"
+	cont "it takes to get"
+	cont "rare #MON!"
 	done
 
-CeruleanPokecenter1FSuperNerdText_Mobile:
-	text "Do you battle by"
-	line "mobile phone?"
+CeruleanPokecenterGentlemanText:
+	text "Have you heard"
+	line "about BILL?"
 
-	para "If time runs out"
-	line "during a battle,"
+	para "Everyone calls"
+	line "him a #MANIAC!"
 
-	para "waiting to see who"
-	line "won is really"
-	cont "nerve wracking."
+	para "I think people"
+	line "are just jealous"
+	cont "of BILL, though."
+
+	para "Who wouldn't want"
+	line "to boast about"
+	cont "their #MON?"
 	done
 
-CeruleanPokecenter1FGymGuideText:
-	text "The MAGNET TRAIN"
-	line "travels at over"
-
-	para "340 mph. It goes"
-	line "between KANTO and"
-
-	para "JOHTO in almost no"
-	line "time at all."
-
-	para "It really makes"
-	line "JOHTO accessible."
-	done
-
-CeruleanPokecenter1FSittingGuyText:
+CeruleanPokecenterSittingGuyText:
 	text "BILL has lots of"
 	line "#MON!"
 
@@ -89,8 +71,8 @@ CeruleanPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FNurseScript, -1
-	object_event 11,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FLinkReceptionistScript, -1
-	object_event  0,  4, SPRITE_SITTING_GUY, SPRITEMOVEDATA_SITTING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FSittingGuyScript, -1
-	object_event  8,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FSuperNerdScript, -1
-	object_event  1,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FGymGuideScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenterNurseScript, -1
+	object_event 11,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenterLinkReceptionistScript, -1
+	object_event  0,  4, SPRITE_SITTING_GUY, SPRITEMOVEDATA_SITTING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenterSittingGuyScript, -1
+	object_event 10,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenterSuperNerdScript, -1
+	object_event  4,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenterGentlemanScript, -1

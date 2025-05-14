@@ -90,6 +90,6 @@ Route4_MapEvents:
 	;bg_event 32,  3, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	def_object_events
-	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route4LassScript, -1
+	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route4LassScript, -1
 	object_event 63,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerLassCrissy, -1
 	object_event 57,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4TMWhirlwind, EVENT_GOT_TM_WHIRLWIND

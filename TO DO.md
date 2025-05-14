@@ -6,13 +6,15 @@
 ### MAPS:
 
 - Cerulean City:
-	- NPC homes, Pokémon Center, Mart, Gym, Bike Shop, etc.
+	- NPC homes, Bike Shop, etc.
 
 - Route 24
 
 - Route 25 & Bill's House
 
 - Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
+
+- Colour the dock planks brown in the `GYM` tileset
 
 ### EVENTS:
 
