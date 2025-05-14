@@ -182,7 +182,7 @@ Route30BerryHouse_Blocks:
 	
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
-CeruleanTradeSpeechHouse_Blocks:
+CeruleanTradeHouse_Blocks:
 BillsHouse_Blocks:
 BillsFamilysHouse_Blocks:
 VermilionFishingSpeechHouse_Blocks:

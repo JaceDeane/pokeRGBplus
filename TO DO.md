@@ -6,7 +6,7 @@
 ### MAPS:
 
 - Cerulean City:
-	- NPC homes, Bike Shop, etc.
+	- Badge house, burgled house, Gym, Bike Shop
 
 - Route 24
 
@@ -21,7 +21,7 @@
 - (!) Mount Moon B2F should remove all the Rocket Grunts after beating the Super Nerd (? or the head Grunt)
 
 - Cerulean City:
-	- NPC homes: trade house, badge house, burgled house, Pokémon Center, Mart, Gym, Bike Shop
+	- NPC homes: badge house, burgled house, Gym, Bike Shop
 
 - Route 24 (Nugget bridge)
 
@@ -33,7 +33,7 @@
 
 - `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
 
-- Mount Moon B2F: confirm appearance of events is satisfactory
+- Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE``
 
 ### ENGINE / DATA:
 
