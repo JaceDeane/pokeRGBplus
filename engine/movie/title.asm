@@ -22,9 +22,19 @@ _TitleScreen:
 	ldh [rVBK], a
 
 ; Decompress running Suicune gfx
-	ld hl, TitleSuicuneGFX
-	ld de, vTiles1
-	call Decompress
+	; ld hl, TitleSuicuneGFX
+	; ld de, vTiles1
+	; call Decompress
+
+; Load title Pokémon
+IF DEF(_RED)
+	ld a, CHARMANDER ; which Pokemon to show first on the title screen
+ENDC
+IF DEF(_BLUE)
+	ld a, SQUIRTLE ; which Pokemon to show first on the title screen
+ENDC
+	ld [wTitleMonSpecies], a
+	call LoadTitleMonSprite
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
@@ -48,45 +58,29 @@ _TitleScreen:
 
 ; lines 2-8
 	hlbgcoord 0, 2
-	ld bc, 7 * BG_MAP_WIDTH
+	ld bc, 7 * BG_MAP_WIDTH ; 7 rows
 	ld a, 2
 	call ByteFill
-; ; line 5
-	; hlbgcoord 0, 5
-	; ld bc, BG_MAP_WIDTH
-	; ld a, 3
-	; call ByteFill
-; ; line 6
-	; hlbgcoord 0, 6
-	; ld bc, BG_MAP_WIDTH
-	; ld a, 4
-	; call ByteFill
-; ; line 7
-	; hlbgcoord 0, 7
-	; ld bc, BG_MAP_WIDTH
-	; ld a, 5
-	; call ByteFill
-; ; lines 8-9
-	; hlbgcoord 0, 8
-	; ld bc, 2 * BG_MAP_WIDTH ; for 2x lines
-	; ld a, 6
-	; call ByteFill
-
-; Version Text Palette
+; line 9 (Version text palette)
 	hlbgcoord 5, 9
-	ld bc, 11 ; length of version text
+	ld bc, 11 ; length in tiles
 IF DEF(_RED)
 	ld a, 1
 ELIF DEF(_BLUE)
-	ld a, 4
+	ld a, 3
 ENDC
+	call ByteFill
+; lines 10-18
+	hlbgcoord 0, 10
+	ld bc, 8 * BG_MAP_WIDTH ; 8 rows
+	ld a, 7
 	call ByteFill
 
 ; Suicune gfx
-	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 0 | VRAM_BANK_1
-	call ByteFill
+	; hlbgcoord 0, 12
+	; ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+	; ld a, 0 | VRAM_BANK_1
+	; call ByteFill
 
 ; Back to VRAM bank 0
 	ld a, 0
@@ -98,8 +92,12 @@ ENDC
 	call Decompress
 
 ; Decompress background crystal
-	; ld hl, TitleCrystalGFX
-	; ld de, vTiles0
+	ld hl, TitleRedGFX
+	ld de, vTiles0
+	call Decompress
+
+	; ld hl, TitleRedGFX
+	; ld de, $24
 	; call Decompress
 
 ; Clear screen tiles
@@ -139,11 +137,16 @@ ENDC
 	call DrawTitleGraphic
 
 ; Initialize running Suicune?
-	ld d, $0
-	call LoadSuicuneFrame
+	; ld d, $0
+	; call LoadSuicuneFrame
 
-; Initialize background crystal
-	; call InitializeBackground ; For now, do not initialise any background sprites
+; Initialize player character (instead of background crystal)
+	call DrawPlayerCharacter ; was "InitializeBackground"
+
+; initialise the pokeball in the player's hand
+	ld hl, wShadowOAMSprite10
+	ld a, $0A ;$74 -- Correct vTiles location
+	ld [hl], a
 
 ; Update palette colors
 	ldh a, [rSVBK]
@@ -205,8 +208,8 @@ ENDC
 	call EnableLCD
 
 ; Set sprite size to 8x16
-	ldh a, [rLCDC]
-	set rLCDC_SPRITE_SIZE, a
+	;ldh a, [rLCDC]
+	;set rLCDC_SPRITE_SIZE, a
 	ldh [rLCDC], a
 
 	ld a, +112
@@ -224,8 +227,8 @@ ENDC
 ; Update BG Map 0 (bank 0)
 	ldh [hBGMapMode], a
 
-	xor a
-	ld [wSuicuneFrame], a
+	; xor a
+	; ld [wSuicuneFrame], a
 
 ; Play starting sound effect
 	call SFXChannelsOff
@@ -321,16 +324,16 @@ DrawTitleGraphic:
 	jr nz, .bgrows
 	ret
 
-InitializeBackground:
+DrawPlayerCharacter: ; InitializeBackground:
 	ld hl, wShadowOAMSprite00
-	ld d, -$22
-	ld e, $0
-	ld c, 5
+	ld d, $52 ; initial Y coord
+	ld e, $0 ; number of tiles to advance for each bgrows...?
+	ld c, 7 ; number of times to repeat loading the 'tilemap width' integer
 .loop
 	push bc
 	call .InitColumn
 	pop bc
-	ld a, $10
+	ld a, $8 ;10
 	add d
 	ld d, a
 	dec c
@@ -338,37 +341,46 @@ InitializeBackground:
 	ret
 
 .InitColumn:
-	ld c, $6
-	ld b, $40
-.loop2
+	ld c, $5 ; Tilemap width
+	ld b, $54 ; X-location(from left+16)
+.loop2 ; .innerLoop
 	ld a, d
 	ld [hli], a ; y
 	ld a, b
 	ld [hli], a ; x
 	add $8
 	ld b, a
-	ld a, e
+	ld a, e 
 	ld [hli], a ; tile id
 	inc e
-	inc e
-	ld a, 0 | PRIORITY
+	;inc e ; skip loading a tile
+	ld a, 0 ; Palette ID/FX (adding "| PRIORITY" means OAM is affected by tile priority)
 	ld [hli], a ; attributes
 	dec c
 	jr nz, .loop2
 	ret
+	
+LoadTitleMonSprite:
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	; hlcoord 5, 10 ; X,Y Coords
+	call GetBaseData ; call GetMonHeader
+	ld de, vTiles1
+	predef GetMonFrontpic ; jp LoadFrontSpriteByMonIndex
+	ret
 
-AnimateTitleCrystal:
+AnimateTitleRed:
 ; Move the title screen crystal downward until it's fully visible
 
-; Stop at y=6
+; Stop at y=80 (6)
 ; y is really from the bottom of the sprite, which is two tiles high
 	ld hl, wShadowOAMSprite00YCoord
 	ld a, [hl]
-	cp 6 + 2 * TILE_WIDTH
+	cp 80 + 2 * TILE_WIDTH ; Stop position
 	ret z
 
 ; Move all 30 parts of the crystal down by 2
-	ld c, 30
+	ld c, 35 ; OAM object total
 .loop
 	ld a, [hl]
 	add 2
@@ -380,9 +392,6 @@ endr
 	jr nz, .loop
 
 	ret
-
-TitleSuicuneGFX:
-INCBIN "gfx/title/suicune.2bpp.lz"
 
 TitleLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"
@@ -396,10 +405,10 @@ INCBIN "gfx/title/blue_version.2bpp.lz"
 TitleRedGFX:
 INCBIN "gfx/title/red_title.2bpp.lz"
 
-; TitleCrystalGFX:
-; INCBIN "gfx/title/crystal.2bpp.lz"
+TitleRedMaskGFX:
+INCBIN "gfx/title/red_title_mask.2bpp.lz"
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
 
-INCLUDE "data/pokemon/title_mons.asm"
+; INCLUDE "data/pokemon/title_mons.asm"

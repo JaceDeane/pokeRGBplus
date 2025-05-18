@@ -1157,7 +1157,7 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
+	; farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
 	ret
@@ -1229,7 +1229,7 @@ TitleScreenEntrance:
 	dec b
 	jr nz, .loop
 
-	farcall AnimateTitleCrystal
+	farcall AnimateTitleRed ; Brings OAM into view -- should slide player in from right
 	ret
 
 .done

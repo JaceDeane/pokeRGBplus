@@ -1523,6 +1523,7 @@ NEXTU
 ; title data
 wTitleScreenSelectedOption:: db
 wTitleScreenTimer:: dw
+wTitleMonSpecies:: ; New R/B
 
 NEXTU
 ; credits data
