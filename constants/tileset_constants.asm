@@ -42,6 +42,8 @@
 	const TILESET_CAVERN               ;
 	const TILESET_DARK_CAVERN          ;
 	const TILESET_GATE_KANTO           ;
+	const TILESET_CEMETERY             ;
+	const TILESET_INTERIOR             ;
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

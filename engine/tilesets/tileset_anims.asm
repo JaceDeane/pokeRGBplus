@@ -308,6 +308,8 @@ TilesetAerodactylWordRoomAnim:
 TilesetHouseKantoAnim:
 TilesetRedsHouseAnim:
 TilesetGateKantoAnim:
+TilesetCemeteryAnim:
+TilesetInteriorAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

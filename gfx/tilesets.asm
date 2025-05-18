@@ -384,3 +384,21 @@ INCBIN "data/tilesets/gate_kanto_metatiles.bin"
 
 TilesetGateKantoColl::
 INCLUDE "data/tilesets/gate_kanto_collision.asm"
+
+TilesetCemeteryGFX::
+INCBIN "gfx/tilesets/cemetery.2bpp.lz"
+
+TilesetCemeteryMeta::
+INCBIN "data/tilesets/cemetery_metatiles.bin"
+
+TilesetCemeteryColl::
+INCLUDE "data/tilesets/cemetery_collision.asm"
+
+TilesetInteriorGFX::
+INCBIN "gfx/tilesets/interior.2bpp.lz"
+
+TilesetInteriorMeta::
+INCBIN "data/tilesets/interior_metatiles.bin"
+
+TilesetInteriorColl::
+INCLUDE "data/tilesets/interior_collision.asm"

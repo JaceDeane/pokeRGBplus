@@ -124,6 +124,12 @@ INCLUDE "gfx/tilesets/cavern_palette_map.asm"
 TilesetGateKantoPalMap:
 INCLUDE "gfx/tilesets/gate_kanto_palette_map.asm"
 
+TilesetCemeteryPalMap:
+INCLUDE "gfx/tilesets/cemetery_palette_map.asm"
+
+TilesetInteriorPalMap:
+INCLUDE "gfx/tilesets/interior_palette_map.asm"
+
 MapGroupPalettes: ; unreferenced
 ; entries correspond to MAPGROUP_* constants
 rept NUM_MAP_GROUPS

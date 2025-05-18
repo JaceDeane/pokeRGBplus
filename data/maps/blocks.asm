@@ -179,9 +179,8 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
-	
-CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
+
 CeruleanTradeHouse_Blocks:
 BillsHouse_Blocks:
 BillsFamilysHouse_Blocks:
@@ -1057,5 +1056,8 @@ PewterMuseumOfScience1F_Blocks:
 	
 PewterMuseumOfScience2F_Blocks:
 	INCBIN "maps/PewterMuseumOfScience2F.blk"
+
+CeruleanGymBadgeSpeechHouse_Blocks:
+	INCBIN "maps/CeruleanGymBadgeSpeechHouse.blk"
 
 ENDSECTION

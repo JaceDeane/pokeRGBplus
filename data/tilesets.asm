@@ -56,4 +56,6 @@ Tilesets::
 	tileset TilesetCavern
 	tileset TilesetDarkCavern
 	tileset TilesetGateKanto
+	tileset TilesetCemetery
+	tileset TilesetInterior
 	assert_table_length NUM_TILESETS + 1
