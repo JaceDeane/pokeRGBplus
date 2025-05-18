@@ -76,7 +76,7 @@ CeruleanGroupSprites:
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
 	;db SPRITE_UNUSED_GAMBLER_ASLEEP_2
-	db SPRITE_SLOWPOKE ; TBD
+	db SPRITE_SLOWPOKE
 	db 0 ; end
 
 LavenderGroupSprites:
@@ -154,7 +154,7 @@ SaffronGroupSprites:
 	; SPRITESET_SAFFRON
 	db SPRITE_ROCKET
 	db SPRITE_SCIENTIST
-	; db SPRITE_NONE
+	db SPRITE_COOLTRAINER_F ; SPRITE_NONE
 	db SPRITE_RECEPTIONIST ; SILPH_WORKER_F
 	db SPRITE_GENTLEMAN
 	db SPRITE_BIRD
@@ -163,6 +163,7 @@ SaffronGroupSprites:
 	db SPRITE_MONSTER
 	; 8 of max 9 walking sprites
 	db SPRITE_POKE_BALL
+	db SPRITE_SLOWPOKE
 	; db SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	db SPRITE_SILPH_WORKER_M
 	db 0 ; end

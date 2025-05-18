@@ -275,7 +275,7 @@ INCLUDE "maps/BurnedTowerB1F.asm"
 SECTION "Map Scripts 15", ROMX
 
 INCLUDE "maps/CeruleanGymBadgeSpeechHouse.asm"
-INCLUDE "maps/CeruleanPoliceStation.asm"
+INCLUDE "maps/CeruleanTrashedHouse.asm"
 INCLUDE "maps/CeruleanTradeHouse.asm"
 INCLUDE "maps/CeruleanPokecenter1F.asm"
 INCLUDE "maps/CeruleanGym.asm"
@@ -482,5 +482,6 @@ INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/OaksLab.asm"
 INCLUDE "maps/PewterMuseumOfScience1F.asm"
 INCLUDE "maps/PewterMuseumOfScience2F.asm"
+INCLUDE "maps/CeruleanBikeShop.asm"
 
 ENDSECTION

@@ -342,11 +342,11 @@ ENDM
 	connection north, Route24, ROUTE_24, 6
 	connection south, Route5, ROUTE_5, 5
 	connection west, Route4, ROUTE_4, 4
-	connection east, Route9, ROUTE_9, 9
+	connection east, Route9, ROUTE_9, 7
 
 	map_attributes Route9, ROUTE_9, $2c, SOUTH | WEST
 	connection south, Route10North, ROUTE_10_NORTH, 20
-	connection west, CeruleanCity, CERULEAN_CITY, -9
+	connection west, CeruleanCity, CERULEAN_CITY, -7
 
 	map_attributes Route24, ROUTE_24, $2c, NORTH | SOUTH
 	connection north, Route25, ROUTE_25, 0
@@ -505,7 +505,8 @@ ENDM
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $09, 0
 	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $00, 0
-	map_attributes CeruleanPoliceStation, CERULEAN_POLICE_STATION, $00, 0
+	map_attributes CeruleanTrashedHouse, CERULEAN_TRASHED_HOUSE, $00, 0
+	map_attributes CeruleanBikeShop, CERULEAN_BIKE_SHOP, $00, 0
 	map_attributes CeruleanTradeHouse, CERULEAN_TRADE_HOUSE, $00, 0
 	map_attributes CeruleanPokecenter1F, CERULEAN_POKECENTER_1F, $00, 0
 	map_attributes CeruleanGym, CERULEAN_GYM, $00, 0
