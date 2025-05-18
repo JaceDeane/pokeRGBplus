@@ -4,7 +4,7 @@
 	const MUSIC_NONE                         ; 00
 	const MUSIC_TITLE                        ; 01
 	const MUSIC_ROUTE_1                      ; 02
-	const MUSIC_ROUTE_3                      ; 03
+	const MUSIC_ROUTE_3                      ; 03 ; RBY
 	const MUSIC_ROUTE_12                     ; 04
 	const MUSIC_MAGNET_TRAIN                 ; 05
 	const MUSIC_KANTO_GYM_LEADER_BATTLE      ; 06
@@ -116,6 +116,8 @@
 	const MUSIC_GYM_LEADER_BATTLE            ; R/B
 	const MUSIC_FOLLOW_ME                    ; R/B
 	const MUSIC_VIRIDIAN_FOREST              ; R/B
+	const MUSIC_CERULEAN_CITY                ; R/B
+	const MUSIC_ROUTE_24                     ; R/B
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

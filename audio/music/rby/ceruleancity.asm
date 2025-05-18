@@ -1,10 +1,10 @@
-Music_Cities2::
+Music_RBYCeruleanCity::
 	channel_count 3
-	channel 1, Music_Cities2_Ch1
-	channel 2, Music_Cities2_Ch2
-	channel 3, Music_Cities2_Ch3
+	channel 1, Music_RBYCeruleanCity_Ch1
+	channel 2, Music_RBYCeruleanCity_Ch2
+	channel 3, Music_RBYCeruleanCity_Ch3
 
-Music_Cities2_Ch1::
+Music_RBYCeruleanCity_Ch1::
 	tempo 148
 	volume 7, 7
 	duty_cycle 3
@@ -21,7 +21,7 @@ Music_Cities2_Ch1::
 	note B_, 2
 	rest 14
 
-Music_Cities2_branch_b51a::
+Music_RBYCeruleanCity_branch_b51a::
 	octave 3
 	note B_, 4
 	octave 4
@@ -97,10 +97,10 @@ Music_Cities2_branch_b51a::
 	note F#, 4
 	note E_, 2
 	rest 14
-	sound_loop 0, Music_Cities2_branch_b51a
+	sound_loop 0, Music_RBYCeruleanCity_branch_b51a
 
 
-Music_Cities2_Ch2::
+Music_RBYCeruleanCity_Ch2::
 	duty_cycle 3
 	vibrato 8, 2, 3
 	note_type 12, 12, 2
@@ -130,7 +130,7 @@ Music_Cities2_Ch2::
 	note G#, 1
 	note A_, 1
 
-Music_Cities2_branch_b58b::
+Music_RBYCeruleanCity_branch_b58b::
 	note_type 12, 10, 6
 	note G#, 6
 	note_type 12, 12, 2
@@ -283,10 +283,10 @@ Music_Cities2_branch_b58b::
 	note F#, 1
 	note G#, 1
 	note A_, 1
-	sound_loop 0, Music_Cities2_branch_b58b
+	sound_loop 0, Music_RBYCeruleanCity_branch_b58b
 
 
-Music_Cities2_Ch3::
+Music_RBYCeruleanCity_Ch3::
 	note_type 12, 1, 1
 	rest 16
 	octave 4
@@ -299,7 +299,7 @@ Music_Cities2_Ch3::
 	note E_, 2
 	note G#, 2
 
-Music_Cities2_branch_b64c::
+Music_RBYCeruleanCity_branch_b64c::
 	note F#, 2
 	note A_, 2
 	note F#, 2
@@ -419,4 +419,4 @@ Music_Cities2_branch_b64c::
 	note G#, 2
 	note E_, 2
 	note G#, 2
-	sound_loop 0, Music_Cities2_branch_b64c
+	sound_loop 0, Music_RBYCeruleanCity_branch_b64c

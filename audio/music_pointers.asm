@@ -4,9 +4,9 @@ Music:
 ; entries correspond to MUSIC_* constants
 	table_width 3, Music
 	dba Music_Nothing
-	dba Music_TitleScreen
+	dba Music_RBYTitleScreen
 	dba Music_Route1
-	dba Music_Route3
+	dba Music_RBYRoute3 ; RBY
 	dba Music_Route12
 	dba Music_MagnetTrain
 	dba Music_KantoGymBattle
@@ -118,4 +118,6 @@ Music:
 	dba Music_GymLeaderBattle
 	dba Music_MuseumGuy
 	dba Music_Dungeon2
+	dba Music_RBYCeruleanCity
+	dba Music_RBYRoute24
 	assert_table_length NUM_MUSIC_SONGS

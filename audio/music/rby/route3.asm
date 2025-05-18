@@ -1,11 +1,11 @@
-Music_Routes3::
+Music_RBYRoute3::
 	channel_count 4
-	channel 1, Music_Routes3_Ch1
-	channel 2, Music_Routes3_Ch2
-	channel 3, Music_Routes3_Ch3
-	channel 4, Music_Routes3_Ch4
+	channel 1, Music_RBYRoute3_Ch1
+	channel 2, Music_RBYRoute3_Ch2
+	channel 3, Music_RBYRoute3_Ch3
+	channel 4, Music_RBYRoute3_Ch4
 
-Music_Routes3_Ch1::
+Music_RBYRoute3_Ch1::
 	tempo 148
 	volume 7, 7
 	duty_cycle 3
@@ -22,7 +22,7 @@ Music_Routes3_Ch1::
 	rest 16
 	rest 15
 
-Music_Routes3_branch_9fc3::
+Music_RBYRoute3_branch_9fc3::
 	note_type 12, 11, 5
 	note E_, 6
 	note D_, 1
@@ -81,10 +81,10 @@ Music_Routes3_branch_9fc3::
 	note_type 8, 9, 0
 	note F_, 12
 	note G_, 12
-	sound_loop 0, Music_Routes3_branch_9fc3
+	sound_loop 0, Music_RBYRoute3_branch_9fc3
 
 
-Music_Routes3_Ch2::
+Music_RBYRoute3_Ch2::
 	vibrato 8, 2, 3
 	duty_cycle 2
 	note_type 12, 12, 7
@@ -99,7 +99,7 @@ Music_Routes3_Ch2::
 	rest 15
 	rest 16
 
-Music_Routes3_branch_a01a::
+Music_RBYRoute3_branch_a01a::
 	note_type 12, 12, 7
 	duty_cycle 2
 	octave 4
@@ -182,10 +182,10 @@ Music_Routes3_branch_a01a::
 	octave 3
 	note A_, 8
 	note B_, 8
-	sound_loop 0, Music_Routes3_branch_a01a
+	sound_loop 0, Music_RBYRoute3_branch_a01a
 
 
-Music_Routes3_Ch3::
+Music_RBYRoute3_Ch3::
 	vibrato 4, 1, 0
 	note_type 6, 1, 2
 	octave 4
@@ -220,7 +220,7 @@ Music_Routes3_Ch3::
 	rest 2
 	note G_, 8
 
-Music_Routes3_branch_a0a3::
+Music_RBYRoute3_branch_a0a3::
 	note_type 12, 1, 2
 	note E_, 1
 	rest 1
@@ -358,10 +358,10 @@ Music_Routes3_branch_a0a3::
 	note F_, 1
 	rest 1
 	note A_, 4
-	sound_loop 0, Music_Routes3_branch_a0a3
+	sound_loop 0, Music_RBYRoute3_branch_a0a3
 
 
-Music_Routes3_Ch4::
+Music_RBYRoute3_Ch4::
 	toggle_noise 1
 	drum_speed 6
 	drum_note 12, 1
@@ -401,7 +401,7 @@ Music_Routes3_Ch4::
 	drum_note 11, 1
 	drum_note 11, 1
 
-Music_Routes3_branch_a17a::
+Music_RBYRoute3_branch_a17a::
 	drum_note 10, 12
 	drum_note 10, 2
 	drum_note 11, 2
@@ -520,4 +520,4 @@ Music_Routes3_branch_a17a::
 	drum_note 11, 1
 	drum_note 11, 1
 	drum_note 11, 1
-	sound_loop 0, Music_Routes3_branch_a17a
+	sound_loop 0, Music_RBYRoute3_branch_a17a

@@ -1,17 +1,17 @@
-Music_Routes2::
+Music_RBYRoute24::
 	channel_count 4
-	channel 1, Music_Routes2_Ch1
-	channel 2, Music_Routes2_Ch2
-	channel 3, Music_Routes2_Ch3
-	channel 4, Music_Routes2_Ch4
+	channel 1, Music_RBYRoute24_Ch1
+	channel 2, Music_RBYRoute24_Ch2
+	channel 3, Music_RBYRoute24_Ch3
+	channel 4, Music_RBYRoute24_Ch4
 
-Music_Routes2_Ch1::
+Music_RBYRoute24_Ch1::
 	tempo 152
 	volume 7, 7
 	vibrato 9, 2, 5
 	duty_cycle 1
 
-Music_Routes2_branch_9dc3::
+Music_RBYRoute24_branch_9dc3::
 	note_type 12, 11, 2
 	octave 2
 	note B_, 4
@@ -145,15 +145,15 @@ Music_Routes2_branch_9dc3::
 	note B_, 2
 	octave 4
 	note E_, 2
-	sound_loop 0, Music_Routes2_branch_9dc3
+	sound_loop 0, Music_RBYRoute24_branch_9dc3
 	sound_ret
 
 
-Music_Routes2_Ch2::
+Music_RBYRoute24_Ch2::
 	vibrato 8, 2, 6
 	duty_cycle 3
 
-Music_Routes2_branch_9e54::
+Music_RBYRoute24_branch_9e54::
 	note_type 12, 13, 4
 	octave 4
 	note E_, 6
@@ -219,14 +219,14 @@ Music_Routes2_branch_9e54::
 	note A_, 1
 	note G#, 8
 	rest 4
-	sound_loop 0, Music_Routes2_branch_9e54
+	sound_loop 0, Music_RBYRoute24_branch_9e54
 	sound_ret
 
 
-Music_Routes2_Ch3::
+Music_RBYRoute24_Ch3::
 	vibrato 9, 2, 8
 
-Music_Routes2_branch_9e9e::
+Music_RBYRoute24_branch_9e9e::
 	note_type 12, 1, 1
 	octave 3
 	note E_, 2
@@ -327,13 +327,13 @@ Music_Routes2_branch_9e9e::
 	rest 2
 	note E_, 2
 	rest 2
-	sound_loop 0, Music_Routes2_branch_9e9e
+	sound_loop 0, Music_RBYRoute24_branch_9e9e
 	sound_ret
 
 
-Music_Routes2_Ch4::
+Music_RBYRoute24_Ch4::
 	toggle_noise 0
-Music_Routes2_Ch4_MainLoop::
+Music_RBYRoute24_Ch4_MainLoop::
 	drum_speed 12
 	drum_note 3, 2
 	rest 2
@@ -430,5 +430,5 @@ Music_Routes2_Ch4_MainLoop::
 	rest 3
 	drum_note 3, 3
 	rest 3
-	sound_loop 0, Music_Routes2_Ch4_MainLoop
+	sound_loop 0, Music_RBYRoute24_Ch4_MainLoop
 	sound_ret

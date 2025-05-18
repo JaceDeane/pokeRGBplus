@@ -150,7 +150,10 @@ INCLUDE "audio/music/rby/trainerbattle.asm" ; RBY Version
 INCLUDE "audio/music/rby/gymleaderbattle.asm" ; RBY Version
 INCLUDE "audio/music/rby/museumguy.asm" ; RBY Version
 INCLUDE "audio/music/rby/dungeon2.asm" ; RBY Version
-
+INCLUDE "audio/music/rby/ceruleancity.asm" ; RBY Version
+INCLUDE "audio/music/rby/route3.asm" ; RBY Version
+INCLUDE "audio/music/rby/route24.asm" ; RBY Version
+INCLUDE "audio/music/rby/titlescreen.asm" ; RBY Version
 
 SECTION "Extra Songs 1", ROMX
 
