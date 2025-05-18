@@ -16,6 +16,8 @@ LoadSpecialMapPalette:
 	jr z, .redshouse
 	cp TILESET_REDS_HOUSE
 	jr z, .redshouse
+	cp TILESET_GYM
+	jr z, .gym
 	jr .do_nothing
 
 .pokecom_2f
@@ -54,6 +56,11 @@ LoadSpecialMapPalette:
 	
 .redshouse
 	call LoadRedsHousePalette
+	scf
+	ret
+
+.gym
+	call LoadGymPalette
 	scf
 	ret
 
@@ -155,3 +162,14 @@ LoadRedsHousePalette:
 
 RedsHousePalette:
 INCLUDE "gfx/tilesets/reds_house.pal"
+
+LoadGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, GymPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+GymPalette:
+INCLUDE "gfx/tilesets/gym.pal"

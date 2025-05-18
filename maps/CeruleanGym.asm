@@ -92,11 +92,11 @@ CeruleanGymGuideScript:
 	; end
 
 CeruleanGymStatue:
+	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .Beaten
 	jumpstd GymStatue1Script
 .Beaten:
-	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	jumpstd GymStatue2Script
 
 CeruleanGymNote1Text:

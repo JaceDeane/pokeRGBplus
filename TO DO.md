@@ -37,6 +37,8 @@
 
 ### ENGINE / DATA:
 
+- Swimmer's trainer class
+
 - Confirm if the Route 3 PokeCenter uses a FlyData flag
 
 - (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
