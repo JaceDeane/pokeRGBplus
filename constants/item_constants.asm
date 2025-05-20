@@ -30,7 +30,7 @@
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
 	const WATER_STONE  ; 18
-	const ITEM_19      ; 19
+	const ITEM_19      ; 19 -- UNUSED
 	const HP_UP        ; 1a
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
@@ -50,12 +50,12 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
-	const ITEM_2D      ; 2d
+	const BIKE_VOUCHER ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const ITEM_32      ; 32
+	const ITEM_32      ; 32 -- UNUSED
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SPECIAL    ; 35
@@ -71,11 +71,11 @@
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
-	const RED_SCALE    ; 42
-	const SECRETPOTION ; 43
+	const RED_SCALE    ; 42 ***
+	const GOLD_TEETH   ; 43 (SECRETPOTION)
 	const S_S_TICKET   ; 44
 	const MYSTERY_EGG  ; 45
-	const OAKS_PARCEL  ; $46 ; const CLEAR_BELL
+	const OAKS_PARCEL  ; $46 (CLEAR_BELL)
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48
 	const QUICK_CLAW   ; 49
@@ -105,7 +105,7 @@
 	const WHT_APRICORN ; 61
 	const BLACKBELT_I  ; 62
 	const BLK_APRICORN ; 63
-	const ITEM_64      ; 64
+	const ITEM_64      ; 64 -- UNUSED
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
@@ -120,37 +120,37 @@
 	const EVERSTONE    ; 70
 	const SPELL_TAG    ; 71
 	const RAGECANDYBAR ; 72
-	const GS_BALL      ; 73
+	const GS_BALL      ; 73 ***
 	const BLUE_CARD    ; 74
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
-	const ITEM_78      ; 78
+	const ITEM_78      ; 78 -- UNUSED
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b
 	const REVIVAL_HERB ; 7c
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
-	const CARD_KEY     ; 7f
-	const MACHINE_PART ; 80
-	const EGG_TICKET   ; 81
-	const LOST_ITEM    ; 82
+	const CARD_KEY     ; 7f (Re-used between Gen I/II)
+	const LIFT_KEY     ; 80 (MACHINE_PART)
+	const EGG_TICKET   ; 81 ***
+	const LOST_ITEM    ; 82 ***
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
-	const BASEMENT_KEY ; 85
-	const PASS         ; 86
-	const ITEM_87      ; 87
-	const ITEM_88      ; 88
-	const ITEM_89      ; 89
+	const SECRET_KEY   ; 85 (BASEMENT_KEY)
+	const PASS         ; 86 ***
+	const ITEM_87      ; 87 -- UNUSED
+	const ITEM_88      ; 88 -- UNUSED
+	const ITEM_89      ; 89 -- UNUSED
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
-	const ITEM_8D      ; 8d
-	const ITEM_8E      ; 8e
+	const ITEM_8D      ; 8d -- UNUSED
+	const ITEM_8E      ; 8e -- UNUSED
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const ITEM_91      ; 91
+	const ITEM_91      ; 91 -- UNUSED
 	const LEFTOVERS    ; 92
 	const HELIX_FOSSIL ; 93
 	const DOME_FOSSIL  ; 94
@@ -158,16 +158,16 @@
 	const MYSTERYBERRY ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
-	const ITEM_99      ; 99
-	const ITEM_9A      ; 9a
-	const ITEM_9B      ; 9b
+	const ITEM_99      ; 99 -- UNUSED
+	const ITEM_9A      ; 9a -- UNUSED
+	const ITEM_9B      ; 9b -- UNUSED
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1
-	const ITEM_A2      ; a2
+	const ITEM_A2      ; a2 -- UNUSED
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5
@@ -176,15 +176,15 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
-	const ITEM_AB      ; ab
+	const ITEM_AB      ; ab -- UNUSED
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
-	const SQUIRTBOTTLE ; af
-	const ITEM_B0      ; b0
-	const PARK_BALL    ; b1
+	const SQUIRTBOTTLE ; af ***
+	const ITEM_B0      ; b0 -- UNUSED
+	const SAFARI_BALL  ; b1 (PARK_BALL)
 	const RAINBOW_WING ; b2
-	const ITEM_B3      ; b3
+	const ITEM_B3      ; b3 -- UNUSED
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
@@ -195,7 +195,7 @@
 	const BLUESKY_MAIL ; bb
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
-	const ITEM_BE      ; be
+	const ITEM_BE      ; be -- UNUSED
 DEF NUM_ITEMS EQU const_value - 1
 
 DEF __tmhm_value__ = 1
@@ -269,6 +269,58 @@ DEF TM01 EQU const_value
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
+	; add_tm MEGA_PUNCH   ; bf
+	; add_tm RAZOR_WIND   ; c0
+	; add_tm SWORDS_DANCE ; c1
+	; add_tm WHIRLWIND    ; c2
+	; const ITEM_C3       ; c3
+	; add_tm MEGA_KICK    ; c4
+	; add_tm TOXIC        ; c5
+	; add_tm HORN_DRILL   ; c6
+	; add_tm BODY_SLAM    ; c7
+	; add_tm DOUBLE_EDGE  ; c8
+	; add_tm TAKE_DOWN    ; c9
+	; add_tm BUBBLEBEAM   ; ca
+	; add_tm WATER_GUN    ; cb
+	; add_tm ICE_BEAM     ; cc
+	; add_tm BLIZZARD     ; cd
+	; add_tm HYPER_BEAM   ; ce
+	; add_tm PAY_DAY      ; cf
+	; add_tm SUBMISSION   ; d0
+	; add_tm COUNTER      ; d1
+	; add_tm SEISMIC_TOSS ; d2
+	; add_tm RAGE         ; d3
+	; add_tm MEGA_DRAIN   ; d4
+	; add_tm SOLARBEAM    ; d5
+	; add_tm DRAGON_RAGE  ; d6
+	; add_tm THUNDERBOLT  ; d7
+	; add_tm THUNDER      ; d8
+	; add_tm EARTHQUAKE   ; d9
+	; add_tm FISSURE      ; da
+	; add_tm DIG          ; db
+	; const ITEM_DC       ; dc
+	; add_tm PSYCHIC_M    ; dd
+	; add_tm TELEPORT     ; de
+	; add_tm MIMIC        ; df
+	; add_tm DOUBLE_TEAM  ; e0
+	; add_tm REFLECT      ; e1
+	; add_tm BIDE         ; e2
+	; add_tm METRONOME    ; e3
+	; add_tm SELFDESTRUCT ; e4
+	; add_tm EGG_BOMB     ; e5
+	; add_tm FIRE_BLAST   ; e6
+	; add_tm SWIFT        ; e7
+	; add_tm SKULL_BASH   ; e8
+	; add_tm SOFTBOILED   ; e9
+	; add_tm DREAM_EATER  ; ea
+	; add_tm SKY_ATTACK   ; eb
+	; add_tm REST         ; ec
+	; add_tm THUNDER_WAVE ; ed
+	; add_tm PSYWAVE      ; ee
+	; add_tm EXPLOSION    ; ef
+	; add_tm ROCK_SLIDE   ; f0
+	; add_tm TRI_ATTACK   ; f1
+	; add_tm SUBSTITUTE   ; f2
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -288,8 +340,8 @@ DEF HM01 EQU const_value
 	add_hm SURF         ; f5
 	add_hm STRENGTH     ; f6
 	add_hm FLASH        ; f7
-	add_hm WHIRLPOOL    ; f8
-	add_hm WATERFALL    ; f9
+	add_hm WHIRLPOOL    ; f8 -- Unused R/B
+	add_hm WATERFALL    ; f9 -- Unused R/B
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 MACRO add_mt
@@ -315,6 +367,6 @@ DEF USE_SCRIPT_VAR EQU $00
 DEF ITEM_FROM_MEM  EQU $ff
 
 ; leftovers from red
-DEF SAFARI_BALL    EQU $08 ; MOON_STONE
+DEF PARK_BALL      EQU $b1 ; SAFARI_BALL
 DEF MOON_STONE_RED EQU $0a ; BURN_HEAL
 DEF FULL_HEAL_RED  EQU $34 ; X_SPEED

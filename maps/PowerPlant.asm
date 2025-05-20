@@ -136,7 +136,7 @@ PowerPlantManager:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	checkitem MACHINE_PART
+	;checkitem MACHINE_PART
 	iftrue .FoundMachinePart
 	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
 	iftrue .MetManager
@@ -159,7 +159,7 @@ PowerPlantManager:
 .FoundMachinePart:
 	writetext PowerPlantManagerThatsThePartText
 	promptbutton
-	takeitem MACHINE_PART
+	;takeitem MACHINE_PART
 	setevent EVENT_RETURNED_MACHINE_PART
 	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH

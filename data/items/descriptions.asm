@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw BikeVoucherDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
@@ -56,7 +56,7 @@ ItemDescriptions:
 	dw XSpecialDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
-	dw TeruSama5Desc
+	dw PokeFluteDesc
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -67,7 +67,7 @@ ItemDescriptions:
 	dw MaxEtherDesc
 	dw ElixerDesc
 	dw RedScaleDesc
-	dw SecretPotionDesc
+	dw GoldTeethDesc
 	dw SSTicketDesc
 	dw MysteryEggDesc
 	dw OaksParcelDesc
@@ -128,12 +128,12 @@ ItemDescriptions:
 	dw HardStoneDesc
 	dw LuckyEggDesc
 	dw CardKeyDesc
-	dw MachinePartDesc
+	dw LiftKeyDesc
 	dw EggTicketDesc
 	dw LostItemDesc
 	dw StardustDesc
 	dw StarPieceDesc
-	dw BasementKeyDesc
+	dw SecretKeyDesc
 	dw PassDesc
 	dw TeruSama9Desc
 	dw TeruSama10Desc
@@ -177,7 +177,7 @@ ItemDescriptions:
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
 	dw TeruSama23Desc
-	dw ParkBallDesc
+	dw SafariBallDesc
 	dw RainbowWingDesc
 	dw TeruSama24Desc
 	dw BrickPieceDesc
@@ -434,8 +434,9 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
-TeruSama3Desc:
-	db   "?@"
+BikeVoucherDesc:
+	db   "Valid at CERULEAN"
+	next "CITY's BIKE SHOP.@"
 
 FreshWaterDesc:
 	db   "Restores #MON"
@@ -476,8 +477,9 @@ ItemfinderDesc:
 	db   "Checks for unseen"
 	next "items in the area.@"
 
-TeruSama5Desc:
-	db   "?@"
+PokeFluteDesc:
+	db   "Use to awaken any"
+	next "sleeping #MON.@"
 
 ExpShareDesc:
 	db   "Shares battle EXP."
@@ -519,9 +521,9 @@ RedScaleDesc:
 	db   "A scale from the"
 	next "red GYARADOS.@"
 
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#MON.@"
+GoldTeethDesc:
+	db   "Lost by the SAFARI"
+	next "ZONE's WARDEN.@"
 
 SSTicketDesc:
 	db   "A ticket for the"
@@ -754,11 +756,11 @@ LuckyEggDesc:
 
 CardKeyDesc:
 	db   "Opens shutters in"
-	next "the RADIO TOWER.@"
+	next "SILPH CO.'s office.@"
 
-MachinePartDesc:
-	db   "A machine part for"
-	next "the POWER PLANT.@"
+LiftKeyDesc:
+	db   "Operates ROCKET"
+	next "HIDEOUT's elevator.@"
 
 EggTicketDesc:
 	db   "May use at Golden-"
@@ -776,8 +778,9 @@ StarPieceDesc:
 	db   "A hunk of red gem."
 	next "Sell very high.@"
 
-BasementKeyDesc:
-	db   "Opens doors.@"
+SecretKeyDesc:
+	db   "Opens the doors to"
+	next "the CINNABAR GYM.@"
 
 PassDesc:
 	db   "A ticket for the"
@@ -939,9 +942,9 @@ SquirtBottleDesc:
 TeruSama23Desc:
 	db   "?@"
 
-ParkBallDesc:
-	db   "The Bug-Catching"
-	next "Contest BALL.@"
+SafariBallDesc:
+	db   "A BALL used in"
+	next "the SAFARI ZONE.@"
 
 RainbowWingDesc:
 	db   "A mystical feather"
