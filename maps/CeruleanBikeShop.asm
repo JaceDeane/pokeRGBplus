@@ -21,13 +21,12 @@ CeruleanBikeShopClerkScript:
 	writetext CeruleanBikeShopClerkOhThatsAVoucherText
 	promptbutton
 	waitsfx
-	giveitem BICYCLE
 	takeitem BIKE_VOUCHER
+	giveitem BICYCLE
 	writetext CeruleanBikeShopExchangedVoucherText
 	playsound SFX_KEY_ITEM
 	waitsfx
 	itemnotify
-	;setflag ENGINE_BIKE_SHOP_CALL_ENABLED
 	setevent EVENT_GOT_BICYCLE
 	closetext
 	end
@@ -100,47 +99,6 @@ CeruleanBikeShopJustReleasedCompactBike: ; unreferenced
 CeruleanBikeShopBicycle:
 	jumptext CeruleanBikeShopBicycleText
 
-CeruleanBikeShopClerkIntroText:
-	text "…sigh… I moved"
-	line "here, but I can't"
-
-	para "sell my BICYCLES."
-	line "Why is that?"
-
-	para "Could you ride a"
-	line "BICYCLE and adver-"
-	cont "tise for me?"
-	done
-
-CeruleanBikeShopClerkAgreedText:
-	text "Really? Great!"
-
-	para "Give me your name"
-	line "and phone number,"
-
-	para "and I'll loan you"
-	line "a BICYCLE."
-	done
-
-BorrowedABicycle1Text:
-	text "<PLAYER> borrowed a"
-	line "BICYCLE."
-	done
-
-CeruleanBikeShopClerkFirstRateBikesText:
-	text "My BICYCLES are"
-	line "first-rate! You"
-
-	para "can ride them"
-	line "anywhere."
-	done
-
-CeruleanBikeShopClerkRefusedText:
-	text "…sigh… Oh, for"
-	line "the kindness of"
-	cont "people…"
-	done
-
 CeruleanBikeShopJustReleasedCompactBikeText:
 	text "Just released!"
 
@@ -168,8 +126,6 @@ CeruleanBikeShopClerkDoYouLikeItText:
 	line "Do you want it?"
 	done
 
-;¥
-
 CeruleanBikeShopCantAffordText:
 	text "Sorry! You can't"
 	line "afford it!"
@@ -186,7 +142,7 @@ CeruleanBikeShopClerkOhThatsAVoucherText:
 CeruleanBikeShopExchangedVoucherText:
 	text "<PLAYER> exchanged"
 	line "the BIKE VOUCHER"
-	cont "for a BICYCLE.@"
+	cont "for a BICYCLE."
 	done
 
 CeruleanBikeShopComeAgainText:

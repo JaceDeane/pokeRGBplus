@@ -5,23 +5,18 @@
 ```
 ### MAPS:
 
-- Cerulean City:
-	- Badge house, burgled house, Gym, Bike Shop
-
-- Route 24
-
-- Route 25 & Bill's House
+- Bill's House
 
 - Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
 
-- Colour the dock planks brown in the `GYM` tileset
+- Underground Path (both directions) +New Tileset
+
+- Cerulean Cave (1F, B1F, B2F)
 
 ### EVENTS:
 
-- (!) Mount Moon B2F should remove all the Rocket Grunts after beating the Super Nerd (? or the head Grunt)
-
-- Cerulean City:
-	- NPC homes: badge house, burgled house, Gym, Bike Shop
+- Cerulean City: Rocket event & coord event
+	- NPC homes: burgled house, Gym
 
 - Route 24 (Nugget bridge)
 
@@ -37,21 +32,14 @@
 
 ### ENGINE / DATA:
 
-- Swimmer's trainer class
-
 - Confirm if the Route 3 PokeCenter uses a FlyData flag
 
 - (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
 
-- (!) Set proper wild encounter data (!)
-	- Update the encounter table's percentages to be able to have encounter rates closer to Gen I's system (Not many slots at the moment)\
-	- Viridian Forest, Mt.Moon (All floors)\
-	- Routes 3, 4, 24 & 25
-
-- (!) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
+- (?) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
 
-- Update TM/HM list
+- Update TM/HM list* (This is an EXTENSIVE job. Will leave until towards the end?)
 
 - Remove old G/S trainer EVENT flags (as needed)
 	
@@ -77,7 +65,7 @@
 
 ### MUSIC: 
 
-- Add RBY music for Cerulean City, Route 3 & Route 25, Pokémon Center
+- Add RBY music for Pokémon Center, Bicycle Music, etc.
 
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
@@ -97,7 +85,7 @@
 
 - (!) Border tiles when returning to Cerulean after using the Route 24 shortcut are seen (Need to find a way to manually load water blocks instead of the default defined one)
 
-- Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F
+- Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F [However, this is how it behaves in Gen I]
 
 - Events that should change movedata but don't:
 	-Rival in Oak's Lab > `STANDING_UP`
