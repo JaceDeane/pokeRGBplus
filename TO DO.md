@@ -104,8 +104,6 @@
 
 ## Tutorials:
 
-- (!) Animate tiles even when textboxes are open (https://github.com/pret/pokecrystal/wiki/Tips-and-tricks#animate-tiles-even-when-textboxes-are-open)
-
 - Picking up game corner coins ()
 
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
