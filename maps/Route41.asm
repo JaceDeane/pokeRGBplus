@@ -16,84 +16,84 @@ Route41_MapScripts:
 	def_callbacks
 
 TrainerSwimmerfKaylee:
-	trainer SWIMMERF, KAYLEE, EVENT_BEAT_SWIMMERF_KAYLEE, SwimmerfKayleeSeenText, SwimmerfKayleeBeatenText, 0, .Script
+	;trainer SWIMMERF, KAYLEE, EVENT_BEAT_SWIMMERF_KAYLEE, SwimmerfKayleeSeenText, SwimmerfKayleeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfKayleeAfterBattleText
+	;writetext SwimmerfKayleeAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmerfSusie:
-	trainer SWIMMERF, SUSIE, EVENT_BEAT_SWIMMERF_SUSIE, SwimmerfSusieSeenText, SwimmerfSusieBeatenText, 0, .Script
+	;trainer SWIMMERF, SUSIE, EVENT_BEAT_SWIMMERF_SUSIE, SwimmerfSusieSeenText, SwimmerfSusieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfSusieAfterBattleText
+	;writetext SwimmerfSusieAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmerfDenise:
-	trainer SWIMMERF, DENISE, EVENT_BEAT_SWIMMERF_DENISE, SwimmerfDeniseSeenText, SwimmerfDeniseBeatenText, 0, .Script
+	;trainer SWIMMERF, DENISE, EVENT_BEAT_SWIMMERF_DENISE, SwimmerfDeniseSeenText, SwimmerfDeniseBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfDeniseAfterBattleText
+	;writetext SwimmerfDeniseAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmerfKara:
-	trainer SWIMMERF, KARA, EVENT_BEAT_SWIMMERF_KARA, SwimmerfKaraSeenText, SwimmerfKaraBeatenText, 0, .Script
+	;trainer SWIMMERF, KARA, EVENT_BEAT_SWIMMERF_KARA, SwimmerfKaraSeenText, SwimmerfKaraBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfKaraAfterBattleText
+	;writetext SwimmerfKaraAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmerfWendy:
-	trainer SWIMMERF, WENDY, EVENT_BEAT_SWIMMERF_WENDY, SwimmerfWendySeenText, SwimmerfWendyBeatenText, 0, .Script
+	;trainer SWIMMERF, WENDY, EVENT_BEAT_SWIMMERF_WENDY, SwimmerfWendySeenText, SwimmerfWendyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfWendyAfterBattleText
+	;writetext SwimmerfWendyAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmermCharlie:
-	trainer SWIMMERM, CHARLIE, EVENT_BEAT_SWIMMERM_CHARLIE, SwimmermCharlieSeenText, SwimmermCharlieBeatenText, 0, .Script
+	;trainer SWIMMERM, CHARLIE, EVENT_BEAT_SWIMMERM_CHARLIE, SwimmermCharlieSeenText, SwimmermCharlieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermCharlieAfterBattleText
+	;writetext SwimmermCharlieAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmermGeorge:
-	trainer SWIMMERM, GEORGE, EVENT_BEAT_SWIMMERM_GEORGE, SwimmermGeorgeSeenText, SwimmermGeorgeBeatenText, 0, .Script
+	;trainer SWIMMERM, GEORGE, EVENT_BEAT_SWIMMERM_GEORGE, SwimmermGeorgeSeenText, SwimmermGeorgeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermGeorgeAfterBattleText
+	;writetext SwimmermGeorgeAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmermBerke:
-	trainer SWIMMERM, BERKE, EVENT_BEAT_SWIMMERM_BERKE, SwimmermBerkeSeenText, SwimmermBerkeBeatenText, 0, .Script
+	;trainer SWIMMERM, BERKE, EVENT_BEAT_SWIMMERM_BERKE, SwimmermBerkeSeenText, SwimmermBerkeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -104,23 +104,23 @@ TrainerSwimmermBerke:
 	end
 
 TrainerSwimmermKirk:
-	trainer SWIMMERM, KIRK, EVENT_BEAT_SWIMMERM_KIRK, SwimmermKirkSeenText, SwimmermKirkBeatenText, 0, .Script
+	;trainer SWIMMERM, KIRK, EVENT_BEAT_SWIMMERM_KIRK, SwimmermKirkSeenText, SwimmermKirkBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermKirkAfterBattleText
+	;writetext SwimmermKirkAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmermMathew:
-	trainer SWIMMERM, MATHEW, EVENT_BEAT_SWIMMERM_MATHEW, SwimmermMathewSeenText, SwimmermMathewBeatenText, 0, .Script
+	;trainer SWIMMERM, MATHEW, EVENT_BEAT_SWIMMERM_MATHEW, SwimmermMathewSeenText, SwimmermMathewBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermMathewAfterBattleText
+	;writetext SwimmermMathewAfterBattleText
 	waitbutton
 	closetext
 	end

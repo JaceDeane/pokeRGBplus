@@ -30,40 +30,40 @@ Route40MonicaCallback:
 	endcallback
 
 TrainerSwimmerfElaine:
-	trainer SWIMMERF, ELAINE, EVENT_BEAT_SWIMMERF_ELAINE, SwimmerfElaineSeenText, SwimmerfElaineBeatenText, 0, .Script
+	;trainer SWIMMERF, ELAINE, EVENT_BEAT_SWIMMERF_ELAINE, SwimmerfElaineSeenText, SwimmerfElaineBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfElaineAfterBattleText
+	;writetext SwimmerfElaineAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmerfPaula:
-	trainer SWIMMERF, PAULA, EVENT_BEAT_SWIMMERF_PAULA, SwimmerfPaulaSeenText, SwimmerfPaulaBeatenText, 0, .Script
+	;trainer SWIMMERF, PAULA, EVENT_BEAT_SWIMMERF_PAULA, SwimmerfPaulaSeenText, SwimmerfPaulaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmerfPaulaAfterBattleText
+	;writetext SwimmerfPaulaAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmermSimon:
-	trainer SWIMMERM, SIMON, EVENT_BEAT_SWIMMERM_SIMON, SwimmermSimonSeenText, SwimmermSimonBeatenText, 0, .Script
+	;trainer SWIMMERM, SIMON, EVENT_BEAT_SWIMMERM_SIMON, SwimmermSimonSeenText, SwimmermSimonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SwimmermSimonAfterBattleText
+	;writetext SwimmermSimonAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSwimmermRandall:
-	trainer SWIMMERM, RANDALL, EVENT_BEAT_SWIMMERM_RANDALL, SwimmermRandallSeenText, SwimmermRandallBeatenText, 0, .Script
+	;trainer SWIMMERM, RANDALL, EVENT_BEAT_SWIMMERM_RANDALL, SwimmermRandallSeenText, SwimmermRandallBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

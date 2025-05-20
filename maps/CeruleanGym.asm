@@ -22,8 +22,8 @@ CeruleanGymMistyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MISTY
-	; setevent EVENT_BEAT_PICNICKER_???
-	; setevent EVENT_BEAT_SWIMMERM_???
+	setevent EVENT_BEAT_PICNICKER_DIANA
+	setevent EVENT_BEAT_SWIMMERM_LUIS
 	opentext
 	writetext ReceivedCascadeBadgeText
 	playsound SFX_GET_BADGE
@@ -32,27 +32,32 @@ CeruleanGymMistyScript:
 .FightDone:
 	writetext MistyFightDoneText
 	waitbutton
-	closetext
-	end
-
-TrainerPicnickerNAME:
-	;trainer PICNICKER, NAME, EVENT_BEAT_PICNICKER_???, SwimmerfDianaSeenText, SwimmerfDianaBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	;writetext SwimmerfDianaAfterBattleText
+	; give TM
+	; writetext MistyTMNoRoomText
+	; waitbutton
+	writetext MistyTMExplanationText
 	waitbutton
 	closetext
 	end
 
-TrainerSwimmermNAME:
-	;trainer SWIMMERM, NAME, EVENT_BEAT_SWIMMERM_???, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
+TrainerPicnickerDiana:
+	trainer PICNICKER, DIANA, EVENT_BEAT_PICNICKER_DIANA, PicnickerDianaSeenText, PicnickerDianaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	;writetext SwimmermParkerAfterBattleText
+	writetext PicnickerDianaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermLuis:
+	trainer SWIMMERM, LUIS, EVENT_BEAT_SWIMMERM_LUIS, SwimmermLuisSeenText, SwimmermLuisBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmermLuisAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -73,24 +78,6 @@ CeruleanGymGuideScript:
 	closetext
 	end
 
-; CeruleanGymStatue1:
-	; checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	; iffalse CeruleanGymStatue
-	; opentext
-	; writetext CeruleanGymNote1Text
-	; waitbutton
-	; closetext
-	; end
-
-; CeruleanGymStatue2:
-	; checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	; iffalse CeruleanGymStatue
-	; opentext
-	; writetext CeruleanGymNote2Text
-	; waitbutton
-	; closetext
-	; end
-
 CeruleanGymStatue:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	checkflag ENGINE_CASCADEBADGE
@@ -99,138 +86,141 @@ CeruleanGymStatue:
 .Beaten:
 	jumpstd GymStatue2Script
 
-CeruleanGymNote1Text:
-	text "Sorry, I'll be out"
-	line "for a while."
-	cont "MISTY, GYM LEADER"
-	done
-
-CeruleanGymNote2Text:
-	text "Since MISTY's out,"
-	line "we'll be away too."
-	cont "GYM TRAINERS"
-	done
-
 MistyIntroText:
-	text "MISTY: I was ex-"
-	line "pecting you, you"
-	cont "pest!"
+	text "MISTY: Hi, you're"
+	line "a new face!"
 
-	para "You may have a"
-	line "lot of JOHTO GYM"
+	para "Trainers who want"
+	line "to turn pro have"
+	
+	para "to have a policy"
+	line "about #MON!"
 
-	para "BADGES, but you'd"
-	line "better not take me"
-	cont "too lightly."
+	para "What is your"
+	line "approach when you"
+	cont "catch #MON?"
 
-	para "My water-type"
-	line "#MON are tough!"
+	para "My policy is an"
+	line "all-out offensive"
+	
+	para "with water-type"
+	line "#MON!"
 	done
 
 MistyWinLossText:
-	text "MISTY: You really"
-	line "are good…"
+	text "MISTY: Wow!"
+	line "You're too much!"
 
-	para "I'll admit that"
-	line "you are skilled…"
+	para "All right!"
 
-	para "Here you go. It's"
-	line "CASCADEBADGE."
+	para "You can have the"
+	line "CASCADEBADGE to"
+	cont "show you beat me!"
 	done
 
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
-	line "CASCADEBADGE."
+	line "the CASCADEBADGE."
 	done
 
 MistyFightDoneText:
-	text "MISTY: Are there"
-	line "many strong train-"
-	cont "ers in JOHTO? Like"
-	cont "you, I mean."
+	text "MISTY: The CAS-"
+	line "CADEBADGE makes"
+	
+	para "all #MON up to"
+	line "Lv30 obey!"
 
-	para "I'm going to"
-	line "travel one day, so"
+	para "That includes"
+	line "even outsiders!"
 
-	para "I can battle some"
-	line "skilled trainers."
+	para "There's more, you"
+	line "can now use CUT"
+	cont "any time!"
+
+	para "You can CUT down"
+	line "small bushes to"
+	cont "open new paths!"
+
+	para "You can also have"
+	line "my favorite TM!"
 	done
 
-SwimmerfDianaSeenText:
-	text "Sorry about being"
-	line "away. Let's get on"
-	cont "with it!"
+MistyTMNoRoomText:
+	text "You better make"
+	line "room for this!"
 	done
 
-SwimmerfDianaBeatenText:
-	text "I give up! You're"
-	line "the winner!"
+MistyTMExplanationText:
+	text "TM11 teaches"
+	line "BUBBLEBEAM!"
+
+	para "Use it on an"
+	line "aquatic #MON!"
 	done
 
-SwimmerfDianaAfterBattleText:
-	text "I'll be swimming"
-	line "quietly."
+PicnickerDianaSeenText:
+	text "I'm more than good"
+	line "enough for you!"
+
+	para "MISTY can wait!"
 	done
 
-SwimmerfBrianaSeenText:
-	text "Don't let my ele-"
-	line "gant swimming un-"
-	cont "nerve you."
+PicnickerDianaBeatenText:
+	text "You overwhelmed"
+	line "me!"
 	done
 
-SwimmerfBrianaBeatenText:
-	text "Ooh, you calmly"
-	line "disposed of me…"
+PicnickerDianaAfterBattleText:
+	text "You have to face"
+	line "other trainers to"
+	cont "find out how good"
+	cont "you really are."
 	done
 
-SwimmerfBrianaAfterBattleText:
-	text "Don't be too smug"
-	line "about beating me."
+SwimmermLuisSeenText:
+	text "Splash!"
 
-	para "MISTY will destroy"
-	line "you if you get"
-	cont "complacent."
+	para "I'm first up!"
+	line "Let's do it!"
 	done
 
-SwimmermParkerSeenText:
-	text "Glub…"
-
-	para "I'm first! Come"
-	line "and get me!"
+SwimmermLuisBeatenText:
+	text "This can't be!"
 	done
 
-SwimmermParkerBeatenText:
-	text "This can't be…"
-	done
+SwimmermLuisAfterBattleText:
+	text "MISTY is going to"
+	line "keep improving!"
 
-SwimmermParkerAfterBattleText:
-	text "MISTY has gotten"
-	line "much better in the"
-	cont "past few years."
-
-	para "Don't let your"
-	line "guard down, or"
-	cont "you'll be crushed!"
+	para "She won't lose to"
+	line "someone like you!"
 	done
 
 CeruleanGymGuideText:
-	text "Yo! CHAMP in"
+	text "Yo! Champ in"
 	line "making!"
 
-	para "Since MISTY was"
-	line "away, I went out"
+	para "Here's my advice!"
 
-	para "for some fun too."
-	line "He-he-he."
+	para "The LEADER, MISTY,"
+	line "is a pro who uses"
+	cont "water #MON!"
+
+	para "You can drain all"
+	line "their water with"
+	cont "plant #MON!"
+
+	para "Or, zap them with"
+	line "electricity!"
 	done
 
 CeruleanGymGuideWinText:
-	text "Hoo, you showed me"
-	line "how tough you are."
+	text "You beat MISTY!"
+	line "What'd I tell ya?"
 
-	para "As always, that"
-	line "was one heck of a"
-	cont "great battle!"
+	para "You and me kid,"
+	line "we make a pretty"
+	cont "darn good team!"
 	done
 
 CeruleanGym_MapEvents:
@@ -248,6 +238,6 @@ CeruleanGym_MapEvents:
 
 	def_object_events
 	object_event  4,  2, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, -1
-	object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerNAME, -1
-	object_event  8,  7, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermNAME, -1
+	object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerDiana, -1
+	object_event  8,  7, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermLuis, -1
 	object_event  7, 10, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, -1

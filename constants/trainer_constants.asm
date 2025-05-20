@@ -211,19 +211,19 @@ DEF KRIS EQU __trainer_class__
 	const DARIN
 
 	trainerclass COOLTRAINERF ; 1c
-	const GWEN
+	const GWENZ
 	const LOIS
 	const FRAN
 	const LOLA
 	const KATE
-	const IRENE
+	const IRENEZ
 	const KELLY
 	const JOYCE
 	const BETH1
 	const REENA1
 	const MEGANZ
 	const BETH2
-	const CAROL
+	const CAROLZ
 	const QUINN
 	const EMMA
 	const CYBIL
@@ -249,7 +249,7 @@ DEF KRIS EQU __trainer_class__
 	const VERONICA ; unused
 	const JULIAZ
 	const THERESA ; unused
-	const VALERIE
+	const VALERIEZ
 	const OLIVIA
 
 	trainerclass POKEMANIAC ; 1e
@@ -374,28 +374,22 @@ DEF KRIS EQU __trainer_class__
 	const RALPH5
 	const TULLY4
 
-	trainerclass SWIMMERM ; 26
-	const HAROLD
-	const SIMON
-	const RANDALLZ
-	const CHARLIE
-	const GEORGE
-	const BERKE
-	const KIRK
-	const MATHEW
-	const HAL ; unused
-	const PATON ; unused
-	const DARYL ; unused
-	const WALTER ; unused
-	const TONY ; unused
+	trainerclass SWIMMERM ; 26 -- Updated to R/B, using FR/LG names
+	const LUIS
+	const RICHARD
+	const REECE
+	const MATTHEW
+	const DOUGLAS
+	const DAVID
+	const TONY
+	const AXLE
+	const BARRY
+	const DEAN
+	const DARRIN
+	const SPENCER
+	const JACK
 	const JEROME
-	const TUCKER
-	const RICKZ ; unused
-	const CAMERON
-	const SETHZ
-	const JAMESZ ; unused
-	const LEWIS ; unused
-	const PARKER
+	const ROLAND
 
 	trainerclass SWIMMERF ; 27
 	const ELAINE
@@ -415,7 +409,7 @@ DEF KRIS EQU __trainer_class__
 	const LORI
 	const JODYZ ; unused
 	const NIKKI
-	const DIANA
+	const DIANAZ
 	const BRIANA
 
 	trainerclass SAILOR ; 28
@@ -544,38 +538,36 @@ DEF KRIS EQU __trainer_class__
 	const NORMAN
 	const MARK
 	const PHILZ
-	const RICHARD
+	const RICHARDZ
 	const GILBERT
 	const JARED
 	const RODNEY
 
-	trainerclass PICNICKER ; 35
-	const LIZ1
-	const GINA1
-	const BROOKE
-	const KIM
-	const CINDY
-	const HOPEZ
-	const SHARON
-	const DEBRA
-	const GINA2
-	const ERIN1
-	const LIZ2
-	const LIZ3
+	trainerclass PICNICKER ; 35 -- Updated to R/B, using FR/LG names
+	const DIANA
+	const NANCY
+	const ISABELLE
+	const KELSEY
+	const ALICIA
+	const CAITLIN
 	const HEIDI
-	const EDNA
-	const GINA3
-	const TIFFANY1
-	const TIFFANY2
-	const ERIN2
-	const TANYA
-	const TIFFANY3
-	const ERIN3
-	const LIZ4
-	const LIZ5
-	const GINA4
-	const GINA5
-	const TIFFANY4
+	const CAROL
+	const SOFIA
+	const MARTHA
+	const TINA
+	const HANNAH
+	const VALERIE
+	const GWEN
+	const ALMA
+	const MISSY
+	const LEAH
+	const DANA
+	const ARIANA
+	const KINDRA
+	const BECKY
+	const CELIA
+	const YAZMIN
+	const IRENE
 
 	trainerclass CAMPER ; 36 -- Updated to R/B, using FR/LG names
 	const LIAM
@@ -607,7 +599,7 @@ DEF KRIS EQU __trainer_class__
 	const KOJIZ
 
 	trainerclass MEDIUM ; 39
-	const MARTHA
+	const MARTHAZ
 	const GRACE
 	const BETHANY ; unused
 	const MARGRET ; unused
@@ -618,7 +610,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BOARDER ; 3a
 	const RONALD
 	const BRAD
-	const DOUGLAS
+	const DOUGLASZ
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM
