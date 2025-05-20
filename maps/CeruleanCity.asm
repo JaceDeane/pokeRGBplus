@@ -13,6 +13,8 @@
 
 CeruleanCity_MapScripts:
 	def_scene_scripts
+	scene_script CeruleanCityNoopScene, SCENE_CERULEANCITY_NOOP
+	scene_script CeruleanCityNoopScene, SCENE_CERULEANCITY_RIVAL_DEFEATED
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
@@ -21,7 +23,83 @@ CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
 
-; Rival event
+CeruleanCityNoopScene:
+	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
+	end
+
+CeruleanCityScene2:
+	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
+	end
+
+CeruleanCityRivalBattleScene1:
+	moveobject CERULEANCITY_RIVAL, 21, 2 ; RIGHT
+	;fallthrough
+CeruleanCityRivalBattleScene2:
+	showemote EMOTE_SHOCK, PLAYER, 15 ; LEFT
+	special FadeOutMusic
+	pause 15
+	appear CERULEANCITY_RIVAL
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	applymovement CERULEANCITY_RIVAL, CeruleanCityRivalApproachMovement
+	opentext
+	writetext CeruleanCityRivalPreBattleText
+	waitbutton
+	closetext
+	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
+		iftrue .Squirtle1
+	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
+		iftrue .Bulbasaur1
+	winlosstext CeruleanCityRivalWinText, CeruleanCityRivalLossText
+	setlasttalked CERULEANCITY_RIVAL
+	loadtrainer RIVAL1, RIVAL1_3_SQUIRTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterBattle
+
+.Squirtle1:
+	winlosstext CeruleanCityRivalWinText, CeruleanCityRivalLossText
+	setlasttalked CERULEANCITY_RIVAL
+	loadtrainer RIVAL1, RIVAL1_3_BULBASAUR
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterBattle
+
+.Bulbasaur1:
+	winlosstext CeruleanCityRivalWinText, CeruleanCityRivalLossText
+	setlasttalked CERULEANCITY_RIVAL
+	loadtrainer RIVAL1, RIVAL1_3_CHARMANDER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump AfterBattle
+	
+AfterBattle:
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	opentext
+	writetext CeruleanCityRivalIWentToBillsText
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_RIVAL_CERULEAN
+	readvar VAR_XCOORD
+		getnum STRING_BUFFER_3
+		ifequal 20, .LeftTile
+		ifequal 21, .RightTile
+.LeftTile
+	applymovement CERULEANCITY_RIVAL, CeruleanCityRivalLeaveMovement1
+	sjump .ok
+.RightTile
+	applymovement CERULEANCITY_RIVAL, CeruleanCityRivalLeaveMovement2
+.ok
+	disappear CERULEANCITY_RIVAL
+	setscene SCENE_CERULEANCITY_RIVAL_DEFEATED
+	waitsfx
+	playmapmusic
+	end
 
 CeruleanCityRocketScript:
 	faceplayer
@@ -155,6 +233,32 @@ CeruleanBikeShopSign:
 CeruleanGymSign:
 	jumptext CeruleanGymSignText
 
+CeruleanCityRivalApproachMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+CeruleanCityRivalLeaveMovement1:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+	
+CeruleanCityRivalLeaveMovement2:
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
 CeruleanCityRivalPreBattleText:
 	text "<RIVAL>: Yo!"
 	line "<PLAYER>!"
@@ -173,17 +277,17 @@ CeruleanCityRivalPreBattleText:
 	cont "<PLAYER>!"
 	done
 
-CeruleanCityRivalDefeatedText:
+CeruleanCityRivalWinText:
 	text "Hey!"
 	line "Take it easy!"
 	cont "You won already!"
-	prompt
+	done
 
-CeruleanCityRivalVictoryText:
+CeruleanCityRivalLossText:
 	text "Heh!"
 	line "You're no match"
 	cont "for my genius!"
-	prompt
+	done
 
 CeruleanCityRivalIWentToBillsText:
 	text "<RIVAL>: Hey,"
@@ -408,6 +512,8 @@ CeruleanCity_MapEvents:
 	warp_event  9,  9, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
 
 	def_coord_events
+	coord_event  20, 6, SCENE_CERULEANCITY_NOOP, CeruleanCityRivalBattleScene2
+	coord_event  21, 6, SCENE_CERULEANCITY_NOOP, CeruleanCityRivalBattleScene1
 
 	def_bg_events
 	bg_event 23, 19, BGEVENT_READ, CeruleanCitySign

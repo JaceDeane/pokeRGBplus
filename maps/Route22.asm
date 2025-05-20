@@ -77,7 +77,7 @@ Route22RivalBattle1Script:
 	sjump AfterBattle1
 	
 AfterBattle1:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext Route22Rival1AfterText
 	waitbutton

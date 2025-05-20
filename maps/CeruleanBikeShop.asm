@@ -16,13 +16,13 @@ CeruleanBikeShopClerkScript:
 	opentext
 	checkevent EVENT_GOT_BICYCLE
 	iftrue .GotBicycle
-	checkitem COIN_CASE ; BIKE_VOUCHER ; TODO -- Replace
+	checkitem BIKE_VOUCHER
 	iffalse .NoVoucher
 	writetext CeruleanBikeShopClerkOhThatsAVoucherText
 	promptbutton
 	waitsfx
 	giveitem BICYCLE
-	takeitem COIN_CASE ; BIKE_VOUCHER ; TODO -- Replace
+	takeitem BIKE_VOUCHER
 	writetext CeruleanBikeShopExchangedVoucherText
 	playsound SFX_KEY_ITEM
 	waitsfx

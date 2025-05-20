@@ -9,7 +9,7 @@ CeruleanTrashedHouse_MapScripts:
 	def_callbacks
 
 CeruleanTrashedHouseFishingGuruScript:
-	jumptextfaceplayer CeruleanTrashedHouseFishingGuruText
+	jumptextfaceplayer CeruleanTrashedHouseFishingGuruTheyStoleATMText
 
 CeruleanTrashedHouseGirlScript:
 	jumptextfaceplayer CeruleanTrashedHouseGirlText
@@ -24,16 +24,6 @@ CeruleanDiglett:
 
 CeruleanTrashedHouseWallHole:
 	jumptext CeruleanTrashedHouseWallHoleText
-
-CeruleanTrashedHouseFishingGuruText:
-	text "I heard that some"
-	line "shady character is"
-	cont "skulking about."
-
-	para "I won't stand for"
-	line "it if he turns out"
-	cont "to be a thief."
-	done
 
 CeruleanDiglettText:
 	text "DIGLETT: Dug dug."
@@ -50,8 +40,9 @@ CeruleanTrashedHouseFishingGuruTheyStoleATMText:
 
 	para "They stole a TM"
 	line "for teaching"
-	cont "#MON how to"
-	cont "DIG holes!"
+	
+	para "#MON how to"
+	line "DIG holes!"
 
 	para "That cost me a"
 	line "bundle, it did!"
@@ -69,8 +60,9 @@ CeruleanTrashedHouseFishingGuruWhatsLostIsLostText:
 CeruleanTrashedHouseGirlText:
 	text "TEAM ROCKET must"
 	line "be trying to DIG"
-	cont "their way into no"
-	cont "good!"
+	
+	para "their way into no"
+	line "good!"
 	done
 
 CeruleanTrashedHouseWallHoleText:

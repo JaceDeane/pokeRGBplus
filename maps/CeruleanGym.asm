@@ -32,7 +32,7 @@ CeruleanGymMistyScript:
 .FightDone:
 	writetext MistyFightDoneText
 	waitbutton
-	; give TM
+	; give TM -- TODO
 	; writetext MistyTMNoRoomText
 	; waitbutton
 	writetext MistyTMExplanationText
