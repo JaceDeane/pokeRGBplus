@@ -127,7 +127,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 7e
 	tilecoll WALL, WALL, WALL, WALL ; 7f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
-	tilecoll WALL, WALL, WALL, WALL ; 81
+	tilecoll WATER, WATER, WALL, WATER ; 81
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 82
 	tilecoll CUT_TREE, WALL, FLOOR, FLOOR ; 83
 	tilecoll WALL, WALL, WALL, WALL ; 84

@@ -1,4 +1,4 @@
-SECTION "Map Blocks 1", ROMX
+SECTION "Johto Map Blocks 1", ROMX
 
 Route32_Blocks:
 	;INCBIN "maps/Route32.blk"
@@ -11,6 +11,39 @@ Route36_Blocks:
 
 Route44_Blocks:
 	INCBIN "maps/Route44.blk"
+
+ElmsHouse_Blocks:
+	INCBIN "maps/ElmsHouse.blk"
+
+BetaSproutTower1_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaSproutTower1.blk"
+
+BetaSproutTower5_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaSproutTower5.blk"
+
+BetaSproutTower9_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaSproutTower9.blk"
+
+BetaBlackthornCity_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaBlackthornCity.blk"
+
+Route41_Blocks:
+	INCBIN "maps/Route41.blk"
+
+Route33_Blocks:
+	INCBIN "maps/Route33.blk"
+
+Route45_Blocks:
+	INCBIN "maps/Route45.blk"
+
+Route29_Blocks:
+	INCBIN "maps/Route29.blk"
+
+Route37_Blocks:
+	INCBIN "maps/Route37.blk"
+
+
+SECTION "Map Blocks 1", ROMX
 
 Route28_Blocks:
 	INCBIN "maps/Route28.blk"
@@ -27,50 +60,20 @@ SaffronCity_Blocks:
 Route2_Blocks:
 	INCBIN "maps/Route2.blk"
 
-ElmsHouse_Blocks:
-	INCBIN "maps/ElmsHouse.blk"
-
-BetaSproutTower1_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaSproutTower1.blk"
-
 Route11_Blocks:
 	INCBIN "maps/Route11.blk"
-
-BetaSproutTower5_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaSproutTower5.blk"
 
 Route15_Blocks:
 	INCBIN "maps/Route15.blk"
 
-BetaSproutTower9_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaSproutTower9.blk"
-
 Route19_Blocks:
 	INCBIN "maps/Route19.blk"
-
-BetaBlackthornCity_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaBlackthornCity.blk"
 
 Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
-
-Route41_Blocks:
-	INCBIN "maps/Route41.blk"
-
-Route33_Blocks:
-	INCBIN "maps/Route33.blk"
-
-Route45_Blocks:
-	INCBIN "maps/Route45.blk"
-
-Route29_Blocks:
-	INCBIN "maps/Route29.blk"
-
-Route37_Blocks:
-	INCBIN "maps/Route37.blk"
 
 LavenderTown_Blocks:
 	INCBIN "maps/LavenderTown.blk"

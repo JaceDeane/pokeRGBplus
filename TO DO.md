@@ -95,6 +95,8 @@
 
 - (!) Building _DEBUG causes an overflow
 
+- (!) Border tiles when returning to Cerulean after using the Route 24 shortcut are seen (Need to find a way to manually load water blocks instead of the default defined one)
+
 - Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F
 
 - Events that should change movedata but don't:
