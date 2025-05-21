@@ -1116,7 +1116,7 @@ ReadNoiseSample:
 	jr z, .quit
 
 	and $f
-	inc a
+	; inc a ; RBY Music Fix -- TODO -- Remove when not using Gen I music anymore
 	ld [wNoiseSampleDelay], a
 	ld a, [de]
 	inc de
