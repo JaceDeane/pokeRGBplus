@@ -2141,43 +2141,44 @@ TownMapBubble:
 ; Draw the bubble containing the location text in the town map HUD
 
 ; Top-left corner
-	hlcoord 1, 0
-	ld a, $30
-	ld [hli], a
+	; hlcoord 1, 0
+	; ld a, $30
+	; ld [hli], a
 ; Top row
-	ld bc, 16
-	ld a, " "
-	call ByteFill
+	; ld bc, 16
+	; ld a, " "
+	; call ByteFill
 ; Top-right corner
-	ld a, $31
-	ld [hl], a
-	hlcoord 1, 1
+	; ld a, $31
+	; ld [hl], a
+	; hlcoord 1, 1
 
 ; Middle row
-	ld bc, SCREEN_WIDTH - 2
+	hlcoord 0, 0
+	ld bc, SCREEN_WIDTH ; - 2
 	ld a, " "
 	call ByteFill
 
 ; Bottom-left corner
-	hlcoord 1, 2
-	ld a, $32
-	ld [hli], a
+	; hlcoord 1, 2
+	; ld a, $32
+	; ld [hli], a
 ; Bottom row
-	ld bc, 16
-	ld a, " "
-	call ByteFill
+	; ld bc, 16
+	; ld a, " "
+	; call ByteFill
 ; Bottom-right corner
-	ld a, $33
-	ld [hl], a
+	; ld a, $33
+	; ld [hl], a
 
 ; Print "Where?"
-	hlcoord 2, 0
-	ld de, .Where
-	call PlaceString
+	; hlcoord 2, 0
+	; ld de, .Where
+	; call PlaceString
 ; Print the name of the default flypoint
 	call .Name
 ; Up/down arrows
-	hlcoord 18, 1
+	hlcoord 18, 0
 	ld [hl], $34
 	ret
 
@@ -2194,7 +2195,7 @@ TownMapBubble:
 	add hl, de
 	ld e, [hl]
 	farcall GetLandmarkName
-	hlcoord 2, 1
+	hlcoord 1, 0
 	ld de, wStringBuffer1
 	call PlaceString
 	ret
@@ -2295,17 +2296,17 @@ FlyMap:
 ; To prevent both of these things from happening when the player
 ; enters Kanto, fly access is restricted until Indigo Plateau is
 ; visited and its flypoint enabled.
-	; push af
+	push af
 	; ld c, SPAWN_INDIGO
 	; call HasVisitedSpawn
 	; and a
 	; jr z, .NoKanto
 ; Kanto's map is only loaded if we've visited Indigo Plateau
 	ld a, KANTO_FLYPOINT ; first Kanto flypoint
+	ld [wTownMapPlayerIconLandmark], a ; first one is default (Pallet Town)
 	ld [wStartFlypoint], a
 	ld a, NUM_FLYPOINTS - 1 ; last Kanto flypoint
 	ld [wEndFlypoint], a
-	ld [wTownMapPlayerIconLandmark], a ; last one is default (Indigo Plateau)
 ; Fill out the map
 	call FillKantoMap
 	call .MapHud

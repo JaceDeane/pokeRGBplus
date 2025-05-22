@@ -15,8 +15,6 @@
 
 - Cerulean Cave (1F, B1F, B2F)
 
-- Overworld maps up to Fuschia / Vermilion / Route 12 have been done
-
 ### EVENTS:
 
 - Cerulean City: Rocket event & coord event
@@ -37,6 +35,8 @@
 ### ENGINE / DATA:
 
 - (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
+
+- Title screen should loop indefinitely
 
 - (?) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
@@ -71,6 +71,8 @@
 
 - Add RBY music for Pokémon Center, Bicycle Music, etc.
 
+- (!) Playback of the R/B `Title Screen` track is bugged
+
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
 - Custom `Battle! Rival` track for Blue (?)
@@ -91,8 +93,6 @@
 
 - (!) Border tiles from Route 16 to Route 17 (Western side)
 
-- (!) Cycling Road doesn't make the player mount their Bicycle automatically
-
 - (!) Cycling Road should force play the bike music when cycling -- is this behaviour exclusive to Gen I? (Gen II reloads map music between connections)
 
 - Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F [However, this is how it behaves in Gen I]
@@ -106,9 +106,6 @@
 - Make the ABC Mode in the Pokedex draw from only the Current Mode, instead of being its own table (Stops Gen II Pokemon from showing up in the Dex, even when caught; Until NewDex is unlocked)
 
 - Unveiling a Ghost does not animate the revealed Pokémon, nor play their cry
-
-- Victory Road considered to be Johto\
-	`pokeRGBplus\engine\overworld\landmarks.asm`
 	
 - Gen I has a function that temporarily sets the specified Pokémon as SEEN so that the Pokédex entry is displayed (Something to note, may not bother with)
 
