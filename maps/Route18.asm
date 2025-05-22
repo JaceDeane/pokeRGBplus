@@ -79,14 +79,16 @@ Route18_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  6, ROUTE_17_ROUTE_18_GATE, 3
-	warp_event  2,  7, ROUTE_17_ROUTE_18_GATE, 4
+	warp_event 33,  8, ROUTE_17_ROUTE_18_GATE, 1
+	warp_event 33,  9, ROUTE_17_ROUTE_18_GATE, 2
+	warp_event 40,  8, ROUTE_17_ROUTE_18_GATE, 3
+	warp_event 40,  9, ROUTE_17_ROUTE_18_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  9,  5, BGEVENT_READ, Route18Sign
+	bg_event 43,  7, BGEVENT_READ, Route18Sign
 
 	def_object_events
-	object_event  9, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBoris, -1
-	object_event 13,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBob, -1
+	object_event 38, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBoris, -1
+	object_event 42, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBob, -1

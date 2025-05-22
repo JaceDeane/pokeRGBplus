@@ -941,7 +941,7 @@ IF DEF(_BLUE)
 ENDC
 	end_grass_wildmons
 
-	def_grass_wildmons ROUTE_10_NORTH ; R/B
+	def_grass_wildmons ROUTE_10 ; R/B
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, VOLTORB

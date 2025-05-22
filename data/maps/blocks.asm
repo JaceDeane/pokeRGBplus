@@ -42,6 +42,44 @@ Route29_Blocks:
 Route37_Blocks:
 	INCBIN "maps/Route37.blk"
 
+;
+
+BetaEcruteakCity_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaEcruteakCity.blk"
+
+BetaCherrygroveCity_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaCherrygroveCity.blk"
+
+BetaMahoganyTown_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaMahoganyTown.blk"
+
+Route31_Blocks:
+	INCBIN "maps/Route31.blk"
+
+Route27_Blocks:
+	INCBIN "maps/Route27.blk"
+
+Route35_Blocks:
+	INCBIN "maps/Route35.blk"
+
+Route43_Blocks:
+	INCBIN "maps/Route43.blk"
+
+Route39_Blocks:
+	INCBIN "maps/Route39.blk"
+
+BetaAzaleaTown_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaAzaleaTown.blk"
+
+BetaOlivineCity_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaOlivineCity.blk"
+
+BetaNewBarkTown_Blocks: ; unreferenced
+	INCBIN "maps/unused/BetaNewBarkTown.blk"
+
+ElmsLab_Blocks:
+	INCBIN "maps/ElmsLab.blk"
+
 
 SECTION "Map Blocks 1", ROMX
 
@@ -68,9 +106,6 @@ Route15_Blocks:
 
 Route19_Blocks:
 	INCBIN "maps/Route19.blk"
-
-Route10South_Blocks:
-	INCBIN "maps/Route10South.blk"
 
 Pokecenter2F_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
@@ -218,12 +253,6 @@ Route29Route46Gate_Blocks:
 Route5SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
-BetaEcruteakCity_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaEcruteakCity.blk"
-
-BetaCherrygroveCity_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaCherrygroveCity.blk"
-
 CinnabarIsland_Blocks:
 	INCBIN "maps/CinnabarIsland.blk"
 
@@ -251,24 +280,6 @@ BetaSproutTower7_Blocks: ; unreferenced
 Route17_Blocks:
 	INCBIN "maps/Route17.blk"
 
-BetaMahoganyTown_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaMahoganyTown.blk"
-
-Route31_Blocks:
-	INCBIN "maps/Route31.blk"
-
-Route27_Blocks:
-	INCBIN "maps/Route27.blk"
-
-Route35_Blocks:
-	INCBIN "maps/Route35.blk"
-
-Route43_Blocks:
-	INCBIN "maps/Route43.blk"
-
-Route39_Blocks:
-	INCBIN "maps/Route39.blk"
-
 PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.blk"
 
@@ -284,20 +295,8 @@ Route17Route18Gate_Blocks:
 Route31VioletGate_Blocks:
 	INCBIN "maps/EastWestGate.blk"
 
-BetaAzaleaTown_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaAzaleaTown.blk"
-
 VermilionCity_Blocks:
 	INCBIN "maps/VermilionCity.blk"
-
-BetaOlivineCity_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaOlivineCity.blk"
-
-BetaNewBarkTown_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaNewBarkTown.blk"
-
-ElmsLab_Blocks:
-	INCBIN "maps/ElmsLab.blk"
 
 CeruleanCity_Blocks:
 	INCBIN "maps/CeruleanCity.blk"
@@ -310,6 +309,9 @@ Route5_Blocks:
 
 Route9_Blocks:
 	INCBIN "maps/Route9.blk"
+
+Route10_Blocks:
+	INCBIN "maps/Route10.blk"
 
 Route22_Blocks:
 	INCBIN "maps/Route22.blk"
@@ -337,9 +339,6 @@ ViridianMart_Blocks:
 SaffronMart_Blocks:
 CherrygroveMart_Blocks:
 	INCBIN "maps/Mart.blk"
-
-Route10North_Blocks:
-	INCBIN "maps/Route10North.blk"
 
 BetaLakeOfRage_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaLakeOfRage.blk"
@@ -563,6 +562,9 @@ Route16_Blocks:
 
 Route18_Blocks:
 	INCBIN "maps/Route18.blk"
+
+
+SECTION "Johto Map Blocks 2", ROMX
 
 GoldenrodUnderground_Blocks:
 	INCBIN "maps/GoldenrodUnderground.blk"

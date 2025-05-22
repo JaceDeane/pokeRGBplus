@@ -53,10 +53,10 @@ Route17Route18Gate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  0,  4, ROUTE_17, 1
-	warp_event  0,  5, ROUTE_17, 2
-	warp_event  9,  4, ROUTE_18, 1
-	warp_event  9,  5, ROUTE_18, 2
+	warp_event  0,  4, ROUTE_18, 1
+	warp_event  0,  5, ROUTE_18, 2
+	warp_event  9,  4, ROUTE_18, 3
+	warp_event  9,  5, ROUTE_18, 4
 
 	def_coord_events
 	coord_event  5,  4, SCENE_ROUTE17ROUTE18GATE_BICYCLE_CHECK, Route17Route18GateBicycleCheck

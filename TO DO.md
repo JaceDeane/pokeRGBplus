@@ -7,11 +7,13 @@
 
 - Bill's House
 
-- Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
+- Route 5 -> (Day-care, Underground Path entrance & Saffron north entrance gate)
 
 - Underground Path (both directions) +New Tileset
 
 - Cerulean Cave (1F, B1F, B2F)
+
+- Overworld maps up to Fuschia / Vermilion / Route 12 have been done
 
 ### EVENTS:
 
@@ -85,6 +87,12 @@
 
 - (!) Border tiles when returning to Cerulean after using the Route 24 shortcut are seen (Need to find a way to manually load water blocks instead of the default defined one)
 
+- (!) Border tiles from Route 16 to Route 17 (Western side)
+
+- (!) Cycling Road doesn't make the player mount their Bicycle automatically
+
+- (!) Cycling Road should force play the bike music when cycling -- is this behaviour exclusive to Gen I? (Gen II reloads map music between connections)
+
 - Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F [However, this is how it behaves in Gen I]
 
 - Events that should change movedata but don't:
@@ -108,15 +116,11 @@
 
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
 
-- (Fix Gen I Music) Fix ReadNoiseSample 'inc a' distorting channel 4 percussion (https://github.com/pret/pokecrystal/wiki/Fix-ReadNoiseSample-'inc-a'-distorting-channel-4-percussion)
-
 - Trashcan puzzle in Vermilion Gym (https://github.com/pret/pokecrystal/wiki/Trashcan-puzzle-in-Vermilion-Gym)
 
 - Add spinner tiles from Generation I Rocket Hideout (https://github.com/pret/pokecrystal/wiki/Add-spinner-tiles-from-Generation-I-Rocket-Hideout)
 
 - Make new battle text to distinguish status move misses and fails (https://github.com/pret/pokecrystal/wiki/Make-new-battle-text-to-distinguish-status-move-misses-and-fails)
-
-- Make wild Pokémon encounter levels vary (https://github.com/pret/pokecrystal/wiki/Make-wild-Pokémon-encounter-levels-vary)
 
 - Look into a password system for switching versions internally (? - Could be unlocked for the main menu post-game) (https://github.com/pret/pokecrystal/wiki/Password-system)
 
