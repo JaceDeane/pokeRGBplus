@@ -40,7 +40,7 @@ DiglettsCave_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3, 33, VERMILION_CITY, 10
+	warp_event  3, 33, ROUTE_11, 1
 	warp_event  5, 31, DIGLETTS_CAVE, 5
 	warp_event 35,  5, ROUTE_2, 5
 	warp_event 37,  3, DIGLETTS_CAVE, 6

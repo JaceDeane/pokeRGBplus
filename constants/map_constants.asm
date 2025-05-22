@@ -190,9 +190,9 @@ ENDM
 	; map_const CINNABAR_POKECENTER_2F_BETA,                  8,  4 ;  2
 	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  3
 	map_const SEAFOAM_GYM,                                  5,  4 ;  4
-	map_const ROUTE_19,                                    10, 18 ;  5
-	map_const ROUTE_20,                                    30,  9 ;  6
-	map_const ROUTE_21,                                    10, 18 ;  7
+	map_const ROUTE_19,                                    10, 27 ;  5
+	map_const ROUTE_20,                                    50,  9 ;  6
+	map_const ROUTE_21,                                    10, 45 ;  7
 	map_const CINNABAR_ISLAND,                             10,  9 ;  8
 	endgroup
 
@@ -282,7 +282,7 @@ ENDM
 	endgroup
 
 	newgroup VERMILION                                            ; 12
-	map_const ROUTE_11,                                    20,  9 ;  1
+	map_const ROUTE_11,                                    30,  9 ;  1
 	map_const VERMILION_CITY,                              20, 18 ;  2
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  3
 	map_const VERMILION_POKECENTER_1F,                      7,  4 ;  4
@@ -332,7 +332,7 @@ ENDM
 	endgroup
 
 	newgroup INDIGO                                               ; 16
-	map_const ROUTE_23,                                    10,  9 ;  1
+	map_const ROUTE_23,                                    10, 72 ;  1
 	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  2
 	map_const WILLS_ROOM,                                   5,  9 ;  3
 	map_const KOGAS_ROOM,                                   5,  9 ;  4
@@ -344,8 +344,8 @@ ENDM
 
 	newgroup FUCHSIA                                              ; 17
 	map_const ROUTE_13,                                    30,  9 ;  1
-	map_const ROUTE_14,                                    10, 18 ;  2
-	map_const ROUTE_15,                                    20,  9 ;  3
+	map_const ROUTE_14,                                    10, 27 ;  2
+	map_const ROUTE_15,                                    30,  9 ;  3
 	map_const ROUTE_18,                                    25,  9 ;  4
 	map_const FUCHSIA_CITY,                                20, 18 ;  5
 	map_const FUCHSIA_MART,                                 4,  4 ;  6
@@ -360,7 +360,7 @@ ENDM
 
 	newgroup LAVENDER                                             ; 18
 	map_const ROUTE_8,                                     30,  9 ;  1
-	map_const ROUTE_12,                                    10, 27 ;  2
+	map_const ROUTE_12,                                    10, 54 ;  2
 	map_const ROUTE_10,                                    10, 36 ;  3
 	map_const LAVENDER_TOWN,                               10,  9 ;  4
 	map_const LAVENDER_POKECENTER_1F,                       7,  4 ;  5

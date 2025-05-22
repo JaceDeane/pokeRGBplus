@@ -54,8 +54,8 @@ TrainerPsychicFidel:
 	closetext
 	end
 
-Route11Sign:
-	jumptext Route11SignText
+DiglettsCaveSign:
+	jumptext DiglettsCaveSignText
 
 Route11FruitTree:
 	fruittree FRUITTREE_ROUTE_11
@@ -139,24 +139,29 @@ PsychicFidelAfterBattleText:
 	cont "in your #MON."
 	done
 
-Route11SignText:
-	text "ROUTE 11"
+DiglettsCaveSignText:
+	text "DIGLETT'S CAVE"
 	done
 
 Route11_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  4,  5, DIGLETTS_CAVE, 1
+	warp_event 51,  8, DIGLETTS_CAVE, 1 ; ROUTE_11_GATE, 1
+	warp_event 51,  9, DIGLETTS_CAVE, 2 ; ROUTE_11_GATE, 2
+	warp_event 58,  8, DIGLETTS_CAVE, 3 ; ROUTE_11_GATE, 3
+	warp_event 58,  9, DIGLETTS_CAVE, 4 ; ROUTE_11_GATE, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  7, BGEVENT_READ, Route11Sign
-	bg_event 32,  5, BGEVENT_ITEM, Route11HiddenRevive
+	bg_event  1,  5, BGEVENT_READ, DiglettsCaveSign
+	bg_event 48,  5, BGEVENT_ITEM, Route11HiddenRevive
 
 	def_object_events
-	object_event 22, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterOwen, -1
-	object_event 20,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJason, -1
-	object_event 28,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicHerman, -1
-	object_event  8,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicFidel, -1
-	object_event 32,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1
+	object_event 22, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterOwen, -1
+	object_event 22,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJason, -1
+	object_event 26,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicHerman, -1
+	object_event 13,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicFidel, -1
+	object_event 33,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1

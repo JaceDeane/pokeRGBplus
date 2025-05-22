@@ -1,5 +1,5 @@
 	object_const_def
-	const ROUTE5_POKEFAN_M
+	; const ROUTE5_POKEFAN_M
 
 Route5_MapScripts:
 	def_scene_scripts
@@ -53,4 +53,4 @@ Route5_MapEvents:
 	bg_event 10, 21, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
-	object_event 17, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	; object_event 17, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH

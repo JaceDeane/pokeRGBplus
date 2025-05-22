@@ -1,5 +1,5 @@
 	object_const_def
-	const CINNABARISLAND_BLUE
+	; const CINNABARISLAND_BLUE
 
 CinnabarIsland_MapScripts:
 	def_scene_scripts
@@ -11,18 +11,6 @@ CinnabarIslandFlypointCallback:
 	setflag ENGINE_FLYPOINT_CINNABAR
 	endcallback
 
-CinnabarIslandBlue:
-	faceplayer
-	opentext
-	writetext CinnabarIslandBlueText
-	waitbutton
-	closetext
-	playsound SFX_WARP_TO
-	applymovement CINNABARISLAND_BLUE, CinnabarIslandBlueTeleport
-	disappear CINNABARISLAND_BLUE
-	clearevent EVENT_VIRIDIAN_GYM_BLUE
-	end
-
 CinnabarIslandGymSign:
 	jumptext CinnabarIslandGymSignText
 
@@ -32,80 +20,8 @@ CinnabarIslandSign:
 CinnabarIslandPokecenterSign:
 	jumpstd PokecenterSignScript
 
-CinnabarIslandHiddenRareCandy:
-	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
-
-CinnabarIslandBlueTeleport:
-	teleport_from
-	step_end
-
-CinnabarIslandBlueText:
-	text "Who are you?"
-
-	para "Well, it's plain"
-	line "to see that you're"
-	cont "a trainer…"
-
-	para "My name's BLUE."
-
-	para "I was once the"
-	line "CHAMPION, although"
-
-	para "it was for only a"
-	line "short time…"
-
-	para "That meddling RED"
-	line "did me in…"
-
-	para "Anyway, what do"
-	line "you want? You want"
-
-	para "to challenge me or"
-	line "something?"
-
-	para "…I hate to say"
-	line "it, but I'm not in"
-
-	para "the mood for a"
-	line "battle now."
-
-	para "Take a good look"
-	line "around you…"
-
-	para "A volcano erupts,"
-	line "and just like"
-
-	para "that, a whole town"
-	line "disappears."
-
-	para "We can go on win-"
-	line "ning and losing in"
-
-	para "#MON. But if"
-	line "nature so much as"
-
-	para "twitches, we can"
-	line "lose in a second."
-
-	para "…"
-
-	para "That's the way it"
-	line "is…"
-
-	para "But, anyway, I'm"
-	line "still a trainer."
-
-	para "If I see a strong"
-	line "opponent, it makes"
-	cont "me want to battle."
-
-	para "If you want to"
-	line "battle me, come to"
-	cont "the VIRIDIAN GYM."
-
-	para "I'll take you on"
-	line "then."
-	done
+; CinnabarIslandHiddenRareCandy:
+	; hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
 
 CinnabarIslandGymSignText:
 	text "There's a notice"
@@ -136,8 +52,8 @@ CinnabarIsland_MapEvents:
 	def_bg_events
 	bg_event 12, 11, BGEVENT_READ, CinnabarIslandPokecenterSign
 	bg_event  9, 11, BGEVENT_READ, CinnabarIslandGymSign
-	bg_event  7,  7, BGEVENT_READ, CinnabarIslandSign
-	bg_event  9,  1, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event  9,  5, BGEVENT_READ, CinnabarIslandSign
+	; bg_event  9,  3, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events
-	object_event  9,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	; object_event 18,  4, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR

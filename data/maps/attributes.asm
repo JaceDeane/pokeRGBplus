@@ -263,20 +263,20 @@ ENDM
 
 	map_attributes Route20, ROUTE_20, $43, WEST | EAST
 	connection west, CinnabarIsland, CINNABAR_ISLAND, 0
-	connection east, Route19, ROUTE_19, -9
+	connection east, Route19, ROUTE_19, -18
 
 	map_attributes Route19, ROUTE_19, $43, NORTH | WEST
-	connection north, FuchsiaCity, FUCHSIA_CITY, 0
-	connection west, Route20, ROUTE_20, 9
+	connection north, FuchsiaCity, FUCHSIA_CITY, -5
+	connection west, Route20, ROUTE_20, 18
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $0f, SOUTH | WEST | EAST
-	connection south, Route19, ROUTE_19, 0
-	connection west, Route18, ROUTE_18, 6
+	connection south, Route19, ROUTE_19, 5
+	connection west, Route18, ROUTE_18, 4
 	connection east, Route15, ROUTE_15, 9
 
 	map_attributes Route18, ROUTE_18, $43, NORTH | EAST
 	connection north, Route17, ROUTE_17, 0
-	connection east, FuchsiaCity, FUCHSIA_CITY, -6
+	connection east, FuchsiaCity, FUCHSIA_CITY, -4
 
 	map_attributes Route17, ROUTE_17, $43, NORTH | SOUTH
 	connection north, Route16, ROUTE_16, 0
@@ -295,16 +295,16 @@ ENDM
 	connection east, SaffronCity, SAFFRON_CITY, -4
 
 	map_attributes Route15, ROUTE_15, $0f, WEST | EAST
-	connection west, FuchsiaCity, FUCHSIA_CITY, -9
-	connection east, Route14, ROUTE_14, -9
+	connection west, FuchsiaCity, FUCHSIA_CITY, -4
+	connection east, Route14, ROUTE_14, -18
 
-	map_attributes Route14, ROUTE_14, $43, NORTH | WEST
-	connection north, Route13, ROUTE_13, 0
-	connection west, Route15, ROUTE_15, 9
+	map_attributes Route14, ROUTE_14, $43, WEST | EAST
+	connection west, Route15, ROUTE_15, 18
+	connection east, Route13, ROUTE_13, 0
 
-	map_attributes Route13, ROUTE_13, $43, NORTH | SOUTH
+	map_attributes Route13, ROUTE_13, $43, NORTH | WEST
 	connection north, Route12, ROUTE_12, 20
-	connection south, Route14, ROUTE_14, 0
+	connection west, Route14, ROUTE_14, 0
 
 	map_attributes Route12, ROUTE_12, $43, NORTH | SOUTH | WEST
 	connection north, LavenderTown, LAVENDER_TOWN, 0
@@ -312,7 +312,7 @@ ENDM
 	connection west, Route11, ROUTE_11, 9
 
 	map_attributes Route11, ROUTE_11, $0f, WEST | EAST
-	connection west, VermilionCity, VERMILION_CITY, 0
+	connection west, VermilionCity, VERMILION_CITY, -4
 	connection east, Route12, ROUTE_12, -9
 
 	map_attributes LavenderTown, LAVENDER_TOWN, $2c, NORTH | SOUTH | WEST
@@ -322,7 +322,7 @@ ENDM
 
 	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
 	connection north, Route6, ROUTE_6, 5
-	connection east, Route11, ROUTE_11, 0
+	connection east, Route11, ROUTE_11, 4
 
 	map_attributes Route6, ROUTE_6, $0f, NORTH | SOUTH
 	connection north, SaffronCity, SAFFRON_CITY, -5
@@ -470,7 +470,7 @@ ENDM
 	map_attributes MahoganyGym, MAHOGANY_GYM, $00, 0
 	map_attributes MahoganyPokecenter1F, MAHOGANY_POKECENTER_1F, $00, 0
 	map_attributes Route42EcruteakGate, ROUTE_42_ECRUTEAK_GATE, $00, 0
-	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
+	map_attributes DiglettsCave, DIGLETTS_CAVE, $19, 0
 	map_attributes MountMoon1F, MOUNT_MOON_1F, $19, 0
 	map_attributes MountMoon1FExit, MOUNT_MOON_1F_EXIT, $19, 0
 	map_attributes MountMoonB1F, MOUNT_MOON_B1F, $03, 0
