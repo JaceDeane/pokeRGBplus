@@ -6,6 +6,17 @@ Route18_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, Route18AlwaysOnBikeCallback
+
+Route18AlwaysOnBikeCallback:
+	readvar VAR_XCOORD
+	ifgreater 34, .CanWalk
+	setflag ENGINE_ALWAYS_ON_BIKE
+	endcallback
+
+.CanWalk:
+	clearflag ENGINE_ALWAYS_ON_BIKE
+	endcallback
 
 TrainerBirdKeeperBoris:
 	trainer BIRD_KEEPER, BORIS, EVENT_BEAT_BIRD_KEEPER_BORIS, BirdKeeperBorisSeenText, BirdKeeperBorisBeatenText, 0, .Script

@@ -24,10 +24,10 @@ Route23_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  5, INDIGO_PLATEAU_POKECENTER_1F, 1
-	warp_event 10,  5, INDIGO_PLATEAU_POKECENTER_1F, 2
-	warp_event  9, 13, VICTORY_ROAD, 10
-	warp_event 10, 13, VICTORY_ROAD, 10
+	warp_event  9,  5, VICTORY_ROAD, 1
+	warp_event 10,  5, VICTORY_ROAD, 10 ; INDIGO_PLATEAU_POKECENTER_1F, 2
+	warp_event  7, 139, VICTORY_ROAD_GATE, 5
+	warp_event  8, 139, VICTORY_ROAD_GATE, 6
 
 	def_coord_events
 

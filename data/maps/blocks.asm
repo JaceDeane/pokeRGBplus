@@ -1070,4 +1070,7 @@ CeruleanTrashedHouse_Blocks:
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"
 
+IndigoPlateau_Blocks:
+	INCBIN "maps/IndigoPlateau.blk"
+
 ENDSECTION

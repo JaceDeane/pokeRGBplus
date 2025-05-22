@@ -6,9 +6,9 @@ Route16_MapScripts:
 
 Route16AlwaysOnBikeCallback:
 	readvar VAR_YCOORD
-	ifless 5, .CanWalk
+	ifless 9, .CanWalk
 	readvar VAR_XCOORD
-	ifgreater 13, .CanWalk
+	ifgreater 23, .CanWalk
 	setflag ENGINE_ALWAYS_ON_BIKE
 	endcallback
 

@@ -242,7 +242,8 @@ ENDM
 	connection south, Route1, ROUTE_1, 5
 	connection west, Route22, ROUTE_22, 4
 
-	map_attributes Route22, ROUTE_22, $2c, EAST
+	map_attributes Route22, ROUTE_22, $2c, NORTH | EAST
+	connection north, Route23, ROUTE_23, 0
 	connection east, ViridianCity, VIRIDIAN_CITY, -4
 
 	map_attributes Route1, ROUTE_1, $0a, NORTH | SOUTH
@@ -371,7 +372,13 @@ ENDM
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 	connection west, Route9, ROUTE_9, 0
 
-	map_attributes Route23, ROUTE_23, $0f, 0
+	map_attributes Route23, ROUTE_23, $0f, NORTH | SOUTH
+	connection north, IndigoPlateau, INDIGO_PLATEAU, 0
+	connection south, Route22, ROUTE_22, 0
+	
+	map_attributes IndigoPlateau, INDIGO_PLATEAU, $0f, SOUTH
+	connection south, Route22, ROUTE_22, 0
+	
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
 	map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0

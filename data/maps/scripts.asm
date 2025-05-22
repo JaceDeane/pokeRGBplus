@@ -482,5 +482,6 @@ INCLUDE "maps/OaksLab.asm"
 INCLUDE "maps/PewterMuseumOfScience1F.asm"
 INCLUDE "maps/PewterMuseumOfScience2F.asm"
 INCLUDE "maps/CeruleanBikeShop.asm"
+INCLUDE "maps/IndigoPlateau.asm"
 
 ENDSECTION
