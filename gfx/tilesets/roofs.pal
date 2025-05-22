@@ -63,8 +63,10 @@
 	RGB 09,13,19, 07,07,16 ; nite
 
 ; group 16 (Indigo)
-	RGB 21,21,21, 13,13,13 ; morn/day
-	RGB 11,11,19, 07,07,12 ; nite
+	; RGB 21,21,21, 13,13,13 ; morn/day
+	; RGB 11,11,19, 07,07,12 ; nite
+	RGB 24,14,31, 13,07,21 ; morn/day
+	RGB 12,03,18, 09,03,15 ; nite
 
 ; group 17 (Fuchsia)
 	RGB 31,18,29, 17,13,20 ; morn/day

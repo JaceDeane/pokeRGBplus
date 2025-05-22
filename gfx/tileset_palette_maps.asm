@@ -130,6 +130,9 @@ INCLUDE "gfx/tilesets/cemetery_palette_map.asm"
 TilesetInteriorPalMap:
 INCLUDE "gfx/tilesets/interior_palette_map.asm"
 
+TilesetPlateauPalMap:
+INCLUDE "gfx/tilesets/plateau_palette_map.asm"
+
 MapGroupPalettes: ; unreferenced
 ; entries correspond to MAPGROUP_* constants
 rept NUM_MAP_GROUPS

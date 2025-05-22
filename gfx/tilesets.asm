@@ -402,3 +402,12 @@ INCBIN "data/tilesets/ice_path_metatiles.bin"
 
 TilesetIcePathColl::
 INCLUDE "data/tilesets/ice_path_collision.asm"
+
+TilesetPlateauGFX::
+INCBIN "gfx/tilesets/plateau.2bpp.lz"
+
+TilesetPlateauMeta::
+INCBIN "data/tilesets/plateau_metatiles.bin"
+
+TilesetPlateauColl::
+INCLUDE "data/tilesets/plateau_collision.asm"

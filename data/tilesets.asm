@@ -58,4 +58,5 @@ Tilesets::
 	tileset TilesetGateKanto
 	tileset TilesetCemetery
 	tileset TilesetInterior
+	tileset TilesetPlateau
 	assert_table_length NUM_TILESETS + 1

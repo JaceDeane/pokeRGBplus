@@ -44,6 +44,7 @@
 	const TILESET_GATE_KANTO           ;
 	const TILESET_CEMETERY             ;
 	const TILESET_INTERIOR             ;
+	const TILESET_PLATEAU              ;
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size
