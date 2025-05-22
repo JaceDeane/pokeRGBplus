@@ -130,7 +130,7 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_CASCADEBADGE
 	call CheckBadge
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
@@ -278,7 +278,7 @@ FlashFunction:
 	ret
 
 .CheckUseFlash:
-	ld de, ENGINE_ZEPHYRBADGE
+	ld de, ENGINE_BOULDERBADGE
 	farcall CheckBadge
 	jr c, .nozephyrbadge
 	push hl
@@ -344,7 +344,7 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_SOULBADGE
 	call CheckBadge
 	jr c, .nofogbadge
 	ld hl, wBikeFlags
@@ -502,7 +502,7 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_SOULBADGE
 	call CheckEngineFlag
 	jr c, .quit
 
@@ -557,7 +557,7 @@ FlyFunction:
 	dw .FailFly
 
 .TryFly:
-	ld de, ENGINE_STORMBADGE
+	ld de, ENGINE_THUNDERBADGE
 	call CheckBadge
 	jr c, .nostormbadge
 	call GetMapEnvironment
@@ -636,7 +636,7 @@ WaterfallFunction:
 	ret
 
 .TryWaterfall:
-	ld de, ENGINE_RISINGBADGE
+	ld de, ENGINE_RISINGBADGE ; Not in R/B
 	farcall CheckBadge
 	ld a, $80
 	ret c
@@ -706,7 +706,7 @@ TryWaterfallOW::
 	ld d, WATERFALL
 	call CheckPartyMove
 	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
+	ld de, ENGINE_RISINGBADGE ; Not in R/B
 	call CheckEngineFlag
 	jr c, .failed
 	call CheckMapCanWaterfall
@@ -963,7 +963,7 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_RAINBOWBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1060,7 +1060,7 @@ TryStrengthOW:
 	call CheckPartyMove
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_RAINBOWBADGE
 	call CheckEngineFlag
 	jr c, .nope
 
@@ -1099,7 +1099,7 @@ WhirlpoolFunction:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_GLACIERBADGE ; Not in R/B
 	call CheckBadge
 	jr c, .noglacierbadge
 	call TryWhirlpoolMenu
@@ -1193,7 +1193,7 @@ TryWhirlpoolOW::
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_GLACIERBADGE ; Not in R/B
 	call CheckEngineFlag
 	jr c, .failed
 	call TryWhirlpoolMenu
@@ -1768,7 +1768,7 @@ TryCutOW::
 	call CheckPartyMove
 	jr c, .cant_cut
 
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_CASCADEBADGE
 	call CheckEngineFlag
 	jr c, .cant_cut
 
