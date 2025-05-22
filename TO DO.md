@@ -11,6 +11,8 @@
 
 - Underground Path (both directions) +New Tileset
 
+- Horizontal gate maps
+
 - Cerulean Cave (1F, B1F, B2F)
 
 - Overworld maps up to Fuschia / Vermilion / Route 12 have been done
@@ -34,8 +36,6 @@
 
 ### ENGINE / DATA:
 
-- Confirm if the Route 3 PokeCenter uses a FlyData flag
-
 - (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
 
 - (?) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
@@ -56,6 +56,8 @@
 - Determine proper party lineups for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
 
 - Hide Cerulean Cave from wild Area location showings in the Pokédex
+
+- The Route 4 and Route 10 PokéCenters do NOT use a FlyData flag -- Confirmed
 
 ### GRAPHICS:
 
