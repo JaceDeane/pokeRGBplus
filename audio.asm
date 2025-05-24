@@ -138,6 +138,7 @@ INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
 INCLUDE "audio/music/lookrival_blue.asm" ; RGB+ New
 
+
 SECTION "Songs 6", ROMX
 
 INCLUDE "audio/music/rby/meetmaletrainer.asm" ; RBY Version
@@ -154,6 +155,11 @@ INCLUDE "audio/music/rby/ceruleancity.asm" ; RBY Version
 INCLUDE "audio/music/rby/route3.asm" ; RBY Version
 INCLUDE "audio/music/rby/route24.asm" ; RBY Version
 INCLUDE "audio/music/rby/titlescreen.asm" ; RBY Version
+INCLUDE "audio/music/rby/surfing.asm" ; RBY Version
+INCLUDE "audio/music/rby/bikeriding.asm" ; RBY Version
+INCLUDE "audio/music/rby/ssanne.asm" ; RBY Version
+
+
 
 SECTION "Extra Songs 1", ROMX
 

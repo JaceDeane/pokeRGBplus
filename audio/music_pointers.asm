@@ -22,7 +22,7 @@ Music:
 	dba Music_MtMoon
 	dba Music_ShowMeAround
 	dba Music_GameCorner
-	dba Music_Bicycle
+	dba Music_BikeRiding ;Bicycle ; RBY Version
 	dba Music_HallOfFame
 	dba Music_RBYViridianCity
 	dba Music_CeladonCity
@@ -37,7 +37,7 @@ Music:
 	dba Music_LookRival ; Unused in RGB+
 	dba Music_LookRival_Blue ; RGB+ Look! Rival
 	dba Music_AfterTheRivalFight ; TODO - Remove
-	dba Music_Surf
+	dba Music_Surfing ;Surf ; RBY Version
 	dba Music_Evolution
 	dba Music_NationalPark
 	dba Music_Credits
@@ -120,4 +120,5 @@ Music:
 	dba Music_Dungeon2
 	dba Music_RBYCeruleanCity
 	dba Music_RBYRoute24
+	dba Music_SSAnne
 	assert_table_length NUM_MUSIC_SONGS

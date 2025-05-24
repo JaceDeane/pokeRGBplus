@@ -112,8 +112,8 @@ PlayBattleMusic:
 
 	; IsGymLeader also counts LANCE, RED_GS, and the Kanto gym leaders
 	; but they have been taken care of before this
-	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
-	farcall IsGymLeader
+	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE ; loads the GSC version of the Kanto Gym Leader Battle theme
+	farcall IsGymLeader ; loads "Elite4League" list of constants
 	jr c, .done
 
 	ld de, MUSIC_RIVAL_BATTLE

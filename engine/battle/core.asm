@@ -2629,7 +2629,7 @@ IsKantoGymLeader:
 	jr IsGymLeaderCommon
 
 IsGymLeader:
-	ld hl, GymLeaders
+	ld hl, Elite4League
 IsGymLeaderCommon:
 	push de
 	ld a, [wOtherTrainerClass]

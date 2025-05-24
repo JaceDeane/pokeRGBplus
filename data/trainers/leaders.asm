@@ -4,7 +4,7 @@
 ; Note: RIVAL3 is unused for battle music checks, since they are
 ; accounted for prior to the list check.
 
-GymLeaders: ; (Pokémon League)
+Elite4League: ; (Pokémon League)
 	db LORELEI
 	db BRUNO
 	db AGATHA
