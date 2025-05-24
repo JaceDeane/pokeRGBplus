@@ -3,7 +3,7 @@
 
 Route22_MapScripts:
 	def_scene_scripts
-	scene_script Route22Noop1Scene, SCENE_ROUTE22_NOOP
+	scene_script Route22Noop2Scene, SCENE_ROUTE22_NOOP
 	scene_script Route22Noop2Scene, SCENE_ROUTE22_RIVAL_BATTLE
 
 	def_callbacks
@@ -12,6 +12,7 @@ Route22Noop1Scene:
 	; setscene SCENE_ROUTE22_RIVAL_BATTLE ; DEBUG testing
 	; setflag ENGINE_EARTHBADGE
 	; clearevent EVENT_ROUTE_22_RIVAL_APPEAR ; Should force show the Rival
+	; clearevent EVENT_HIDDEN_OBJECT ; Do not use
 	end
 
 Route22Noop2Scene:
@@ -145,7 +146,6 @@ RivalLeaves:		; Shared by both rival battles
 .ok
 	disappear ROUTE22_RIVAL
 	setscene SCENE_ROUTE22_NOOP
-	;setevent EVENT_ROUTE_22_RIVAL_APPEAR
 	waitsfx
 	playmapmusic
 	end
@@ -308,4 +308,4 @@ Route22_MapEvents:
 	bg_event  7, 11, BGEVENT_READ, PokemonLeagueEntranceSign
 
 	def_object_events
-	object_event  25,  5, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_RIVAL_APPEAR
+	object_event  25,  5, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDDEN_OBJECT

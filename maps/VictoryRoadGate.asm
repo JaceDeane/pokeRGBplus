@@ -101,19 +101,19 @@ VictoryRoadGate_MapEvents:
 	def_warp_events
 	warp_event 17,  7, ROUTE_22, 1
 	warp_event 18,  7, ROUTE_22, 1
-	warp_event  9, 17, ROUTE_26, 1
-	warp_event 10, 17, ROUTE_26, 1
+	warp_event  0, 17, ROUTE_26, 1
+	warp_event  1, 17, ROUTE_26, 1
 	warp_event  9,  0, ROUTE_23, 3
 	warp_event 10,  0, ROUTE_23, 4
 	warp_event  1,  7, ROUTE_28, 2
 	warp_event  2,  7, ROUTE_28, 2
 
 	def_coord_events
-	coord_event 10, 11, SCENE_VICTORYROADGATE_BADGE_CHECK, VictoryRoadGateBadgeCheckScript
+	coord_event  1, 16, SCENE_VICTORYROADGATE_BADGE_CHECK, VictoryRoadGateBadgeCheckScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  8, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficerScript, -1
+	object_event  0, 16, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficerScript, -1
 	object_event  7,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateLeftBlackBeltScript, EVENT_OPENED_MT_SILVER
-	object_event 12,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltScript, EVENT_FOUGHT_SNORLAX
+	object_event 19,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltScript, EVENT_FOUGHT_SNORLAX
