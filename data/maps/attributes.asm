@@ -254,9 +254,13 @@ ENDM
 	connection north, Route1, ROUTE_1, 0
 	connection south, Route21, ROUTE_21, 0
 
-	map_attributes Route21, ROUTE_21, $43, NORTH | SOUTH
+	map_attributes Route21, ROUTE_21, $43, NORTH | SOUTH | WEST
 	connection north, PalletTown, PALLET_TOWN, 0
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0
+	connection west, Route21WestBorder, ROUTE_21_WEST_BORDER, 0
+	
+	map_attributes Route21WestBorder, ROUTE_21_WEST_BORDER, $43, EAST
+	connection east, Route21, ROUTE_21, 0
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0

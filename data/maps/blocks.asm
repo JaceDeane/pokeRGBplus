@@ -1073,4 +1073,7 @@ CeruleanBikeShop_Blocks:
 IndigoPlateau_Blocks:
 	INCBIN "maps/IndigoPlateau.blk"
 
+Route21WestBorder_Blocks:
+	INCBIN "maps/Route21WestBorder.blk"
+
 ENDSECTION

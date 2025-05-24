@@ -7,7 +7,7 @@
 
 - Bill's House
 
-- Route 5 -> (Day-care, Underground Path entrance & Saffron north entrance gate)
+- Route 5 -> (Day-care, Underground Path entrance(s) & Saffron north entrance gate)
 
 - Underground Path (both directions) +New Tileset
 
@@ -17,10 +17,10 @@
 
 ### EVENTS:
 
-- Cerulean City: Rocket event & coord event
+- Cerulean City: Rocket event & coord event trigger
 	- NPC homes: burgled house, Gym
 
-- Route 24 (Nugget bridge)
+- Route 24 (Nugget bridge -- ensure the NUGGET glitch cannot be performed)
 
 - Route 25 & Bill's House
 
@@ -71,7 +71,7 @@
 
 - Add RBY music for Pokémon Center, Bicycle Music, etc.
 
-- (!) Playback of the R/B `Title Screen` track is bugged
+- (!) Playback sound of the R/B `Title Screen` track is bugged
 
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 

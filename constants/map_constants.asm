@@ -193,7 +193,8 @@ ENDM
 	map_const ROUTE_19,                                    10, 27 ;  5
 	map_const ROUTE_20,                                    50,  9 ;  6
 	map_const ROUTE_21,                                    10, 45 ;  7
-	map_const CINNABAR_ISLAND,                             10,  9 ;  8
+	map_const ROUTE_21_WEST_BORDER,                         2,  9 ;  8
+	map_const CINNABAR_ISLAND,                             10,  9 ;  9
 	endgroup
 
 	newgroup CERULEAN                                             ;  7
