@@ -18,7 +18,7 @@ RedsMom:
 	writetext MomWakeUpText
 	waitbutton
 	givepoke PIDGEY, 50, BERRY ; debug
-	givepoke MEW, 50, BERRY ; debug
+	givepoke MEW, 100, BERRY ; debug
 	waitsfx ; debug
 	playsound SFX_ITEM ; debug
 	waitsfx ; debug
