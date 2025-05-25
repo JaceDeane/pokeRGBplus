@@ -131,7 +131,8 @@ INCLUDE "maps/MountMoon1F.asm"
 INCLUDE "maps/MountMoon1FExit.asm"
 INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/MountMoonB2F.asm"
-INCLUDE "maps/UndergroundPath.asm"
+INCLUDE "maps/UndergroundPathNorthSouth.asm"
+INCLUDE "maps/UndergroundPathWestEast.asm"
 INCLUDE "maps/RockTunnel1F.asm"
 INCLUDE "maps/RockTunnelB1F.asm"
 INCLUDE "maps/SafariZoneFuchsiaGateBeta.asm"
@@ -446,6 +447,8 @@ INCLUDE "maps/Route24.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route23.asm"
+INCLUDE "maps/Route7UndergroundPathEntrance.asm"
+INCLUDE "maps/Route8UndergroundPathEntrance.asm"
 
 
 SECTION "Map Scripts 25", ROMX

@@ -793,6 +793,8 @@ NationalParkBugContest_Blocks:
 
 Route5UndergroundPathEntrance_Blocks:
 Route6UndergroundPathEntrance_Blocks:
+Route7UndergroundPathEntrance_Blocks:
+Route8UndergroundPathEntrance_Blocks:
 	INCBIN "maps/UndergroundPathEntrance.blk"
 
 KurtsHouse_Blocks:
@@ -973,8 +975,11 @@ FuchsiaGym_Blocks:
 SafariZoneBeta_Blocks:
 	INCBIN "maps/SafariZoneBeta.blk"
 
-UndergroundPath_Blocks:
-	INCBIN "maps/UndergroundPath.blk"
+UndergroundPathNorthSouth_Blocks:
+	INCBIN "maps/UndergroundPathNorthSouth.blk" ; Update
+
+UndergroundPathWestEast_Blocks:
+	INCBIN "maps/UndergroundPathWestEast.blk" ; Update
 
 Route23_Blocks:
 	INCBIN "maps/Route23.blk"

@@ -9,7 +9,7 @@ Route6UndergroundPathEntrance_MapEvents:
 	def_warp_events
 	warp_event  3,  7, ROUTE_6, 1
 	warp_event  4,  7, ROUTE_6, 1
-	warp_event  4,  3, UNDERGROUND_PATH, 2
+	warp_event  4,  4, UNDERGROUND_PATH_NORTH_SOUTH, 2
 
 	def_coord_events
 

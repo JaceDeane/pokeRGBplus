@@ -23,11 +23,11 @@ Route5UndergroundPathEntrance_MapEvents:
 	def_warp_events
 	warp_event  3,  7, ROUTE_5, 1
 	warp_event  4,  7, ROUTE_5, 1
-	warp_event  4,  3, UNDERGROUND_PATH, 1
+	warp_event  4,  4, UNDERGROUND_PATH_NORTH_SOUTH, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  2,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route5UndergroundPathEntranceTeacherScript, -1
+	object_event  3,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route5UndergroundPathEntranceTeacherScript, -1

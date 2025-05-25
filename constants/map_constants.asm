@@ -151,13 +151,14 @@ ENDM
 	map_const MOUNT_MOON_1F_EXIT,                           4,  4 ; 86
 	map_const MOUNT_MOON_B1F,                              14, 14 ; 87
 	map_const MOUNT_MOON_B2F,                              23, 19 ; 88
-	map_const UNDERGROUND_PATH,                             3, 14 ; 89 -- 
-	map_const ROCK_TUNNEL_1F,                              15, 18 ; 90
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 91
-	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 92
-	map_const SAFARI_ZONE_BETA,                            10, 18 ; 93
-	map_const VICTORY_ROAD,                                10, 36 ; 94
-	map_const VIRIDIAN_FOREST,                             17, 28 ; 95
+	map_const UNDERGROUND_PATH_NORTH_SOUTH,                 4, 23 ; 89
+	map_const UNDERGROUND_PATH_WEST_EAST,                  25,  4 ; 90
+	map_const ROCK_TUNNEL_1F,                              15, 18 ; 91
+	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 92
+	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 93
+	map_const SAFARI_ZONE_BETA,                            10, 18 ; 94
+	map_const VICTORY_ROAD,                                10, 36 ; 95
+	map_const VIRIDIAN_FOREST,                             17, 28 ; 96
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -376,7 +377,8 @@ ENDM
 	map_const SOUL_HOUSE,                                   5,  4 ; 11
 	map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
-	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 14
+	map_const ROUTE_8_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 14
+	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 15
 	endgroup
 
 	newgroup SILVER                                               ; 19
@@ -423,7 +425,8 @@ ENDM
 	map_const ROUTE_16_GATE_2F,                             4,  4 ; 25
 	map_const ROUTE_16_NORTH_GATE,                          5,  3 ; 26
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 27
-	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 28
+	map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 28
+	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 29
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

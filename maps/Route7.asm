@@ -6,9 +6,6 @@ Route7_MapScripts:
 Route7UndergroundPathSign:
 	jumptext Route7UndergroundPathSignText
 
-Route7LockedDoor:
-	jumptext Route7LockedDoorText
-
 Route7UndergroundPathSignText:
 	text "What's this flyer?"
 
@@ -28,21 +25,17 @@ Route7UndergroundPathSignText:
 	para "CELADON POLICE"
 	done
 
-Route7LockedDoorText:
-	text "It's locked…"
-	done
-
 Route7_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 13, 10, ROUTE_7_SAFFRON_GATE, 1
 	warp_event 13, 11, ROUTE_7_SAFFRON_GATE, 2
+	warp_event  5, 13, ROUTE_7_UNDERGROUND_PATH_ENTRANCE, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event  3, 15, BGEVENT_READ, Route7UndergroundPathSign
-	bg_event  5, 13, BGEVENT_READ, Route7LockedDoor
 
 	def_object_events

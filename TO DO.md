@@ -7,11 +7,7 @@
 
 - Bill's House
 
-- Route 5 -> (Day-care, Underground Path entrance(s) & Saffron north entrance gate)
-
-- Underground Path (both directions) +New Tileset
-
-- Horizontal gate maps
+- Route 5 -> (Day-care & Saffron north entrance gate)
 
 - Cerulean Cave (1F, B1F, B2F)
 
@@ -33,6 +29,8 @@
 - Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE``
 
 ### ENGINE / DATA:
+
+- Adjust Indigo Plateau's roof palette for nighttime
 
 - (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
 

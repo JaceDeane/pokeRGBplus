@@ -314,11 +314,11 @@ ENDM
 	map_attributes Route12, ROUTE_12, $43, NORTH | SOUTH | WEST
 	connection north, LavenderTown, LAVENDER_TOWN, 0
 	connection south, Route13, ROUTE_13, -20
-	connection west, Route11, ROUTE_11, 9
+	connection west, Route11, ROUTE_11, 27
 
 	map_attributes Route11, ROUTE_11, $0f, WEST | EAST
 	connection west, VermilionCity, VERMILION_CITY, -4
-	connection east, Route12, ROUTE_12, -9
+	connection east, Route12, ROUTE_12, -27
 
 	map_attributes LavenderTown, LAVENDER_TOWN, $2c, NORTH | SOUTH | WEST
 	connection north, Route10, ROUTE_10, 0
@@ -486,7 +486,8 @@ ENDM
 	map_attributes MountMoon1FExit, MOUNT_MOON_1F_EXIT, $19, 0
 	map_attributes MountMoonB1F, MOUNT_MOON_B1F, $03, 0
 	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $01, 0
-	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
+	map_attributes UndergroundPathNorthSouth, UNDERGROUND_PATH_NORTH_SOUTH, $00, 0
+	map_attributes UndergroundPathWestEast, UNDERGROUND_PATH_WEST_EAST, $00, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
 	map_attributes SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $00, 0
@@ -621,6 +622,7 @@ ENDM
 	map_attributes SoulHouse, SOUL_HOUSE, $00, 0
 	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
+	map_attributes Route8UndergroundPathEntrance, ROUTE_8_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $00, 0
 	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
 	map_attributes Route28SteelWingHouse, ROUTE_28_STEEL_WING_HOUSE, $00, 0
@@ -652,6 +654,7 @@ ENDM
 	map_attributes Route16Gate2F, ROUTE_16_GATE_2F, $00, 0
 	map_attributes Route16NorthGate, ROUTE_16_NORTH_GATE, $00, 0
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0
+	map_attributes Route7UndergroundPathEntrance, ROUTE_7_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route17Route18Gate, ROUTE_17_ROUTE_18_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
 	map_attributes CianwoodGym, CIANWOOD_GYM, $00, 0
