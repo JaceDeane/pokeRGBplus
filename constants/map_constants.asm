@@ -151,7 +151,7 @@ ENDM
 	map_const MOUNT_MOON_1F_EXIT,                           4,  4 ; 86
 	map_const MOUNT_MOON_B1F,                              14, 14 ; 87
 	map_const MOUNT_MOON_B2F,                              23, 19 ; 88
-	map_const UNDERGROUND_PATH,                             3, 14 ; 89
+	map_const UNDERGROUND_PATH,                             3, 14 ; 89 -- 
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 90
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 91
 	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 92
@@ -294,6 +294,8 @@ ENDM
 	map_const VERMILION_GYM,                                5,  9 ;  9
 	map_const ROUTE_6_SAFFRON_GATE,                         5,  4 ; 10
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 11
+	map_const ROUTE_11_GATE_1F,                             5,  4 ; 12
+	map_const ROUTE_11_GATE_2F,                             4,  4 ; 13
 	endgroup
 
 	newgroup PALLET                                               ; 13
@@ -417,9 +419,11 @@ ENDM
 	map_const CELADON_GYM,                                  5,  9 ; 21
 	map_const CELADON_CAFE,                                 6,  4 ; 22
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
-	map_const ROUTE_16_GATE,                                5,  4 ; 24
-	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 25
-	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 26
+	map_const ROUTE_16_GATE_1F,                             5,  4 ; 24
+	map_const ROUTE_16_GATE_2F,                             4,  4 ; 25
+	map_const ROUTE_16_NORTH_GATE,                          5,  3 ; 26
+	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 27
+	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 28
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22
@@ -452,7 +456,7 @@ ENDM
 	map_const VIRIDIAN_TRAINER_SCHOOL,                      4,  4 ;  8
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ;  9
 	map_const ROUTE_2_GATE,                                 5,  4 ; 10
-	map_const VICTORY_ROAD_GATE,                           10,  9 ; 11
+	map_const ROUTE_22_GATE,                                5,  4 ; 11
 	map_const VIRIDIAN_FOREST_SOUTH_GATE,                   5,  4 ; 12
 	map_const VIRIDIAN_FOREST_NORTH_GATE,                   5,  4 ; 13
 	endgroup
@@ -488,7 +492,7 @@ ENDM
 	map_const COPYCATS_HOUSE_2F,                            5,  3 ; 12
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_SAFFRON_GATE,                         5,  4 ; 14
-	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
+	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15 -- DAYCARE
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26

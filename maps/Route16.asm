@@ -31,11 +31,15 @@ Route16_MapEvents:
 
 	def_warp_events
 	warp_event  7,  5, ROUTE_16_FUCHSIA_SPEECH_HOUSE, 1
-	warp_event 24, 10, ROUTE_16_GATE, 3
-	warp_event 24, 11, ROUTE_16_GATE, 4
-	warp_event 17, 10, ROUTE_16_GATE, 1
-	warp_event 17, 11, ROUTE_16_GATE, 2
-
+	warp_event 17, 10, ROUTE_16_GATE_1F, 1
+	warp_event 17, 11, ROUTE_16_GATE_1F, 2
+	warp_event 24, 10, ROUTE_16_GATE_1F, 3
+	warp_event 24, 11, ROUTE_16_GATE_1F, 4
+	warp_event 17,  4, ROUTE_16_NORTH_GATE, 1
+	warp_event 17,  5, ROUTE_16_NORTH_GATE, 2
+	warp_event 24,  4, ROUTE_16_NORTH_GATE, 3
+	warp_event 24,  5, ROUTE_16_NORTH_GATE, 4
+	
 	def_coord_events
 
 	def_bg_events

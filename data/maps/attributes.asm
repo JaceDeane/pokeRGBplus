@@ -101,14 +101,14 @@ ENDM
 	connection west, Route29, ROUTE_29, 0
 	connection east, Route27, ROUTE_27, 0
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
-	connection north, Route30, ROUTE_30, 5
-	connection east, Route29, ROUTE_29, 0
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, 0
+	; connection north, Route30, ROUTE_30, 5
+	; connection east, Route29, ROUTE_29, 0
 
-	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
+	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST; | EAST
 	connection south, Route32, ROUTE_32, 0
 	connection west, Route36, ROUTE_36, 0
-	connection east, Route31, ROUTE_31, 9
+	; connection east, Route31, ROUTE_31, 9
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, WEST | EAST
 	connection west, Route34, ROUTE_34, -18
@@ -155,18 +155,18 @@ ENDM
 	map_attributes Route28, ROUTE_28, $2c, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
 
-	map_attributes Route29, ROUTE_29, $05, NORTH | WEST | EAST
+	map_attributes Route29, ROUTE_29, $05, NORTH | EAST
 	connection north, Route46, ROUTE_46, 10
-	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
+	; connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0
 
-	map_attributes Route30, ROUTE_30, $05, NORTH | SOUTH
-	connection north, Route31, ROUTE_31, -10
-	connection south, CherrygroveCity, CHERRYGROVE_CITY, -5
+	map_attributes Route30, ROUTE_30, $05, 0
+	; connection north, Route31, ROUTE_31, -10
+	; connection south, CherrygroveCity, CHERRYGROVE_CITY, -5
 
-	map_attributes Route31, ROUTE_31, $05, SOUTH | WEST
-	connection south, Route30, ROUTE_30, 10
-	connection west, VioletCity, VIOLET_CITY, -9
+	map_attributes Route31, ROUTE_31, $05 , 0
+	; connection south, Route30, ROUTE_30, 10
+	; connection west, VioletCity, VIOLET_CITY, -9
 
 	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 0
@@ -573,6 +573,8 @@ ENDM
 	map_attributes VermilionGym, VERMILION_GYM, $00, 0
 	map_attributes Route6SaffronGate, ROUTE_6_SAFFRON_GATE, $00, 0
 	map_attributes Route6UndergroundPathEntrance, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, $00, 0
+	map_attributes Route11Gate1F, ROUTE_11_GATE_1F, $00, 0
+	map_attributes Route11Gate2F, ROUTE_11_GATE_2F, $00, 0
 	map_attributes RedsHouse1F, REDS_HOUSE_1F, $00, 0
 	map_attributes RedsHouse2F, REDS_HOUSE_2F, $00, 0
 	map_attributes BluesHouse, BLUES_HOUSE, $00, 0
@@ -646,7 +648,9 @@ ENDM
 	map_attributes CeladonGym, CELADON_GYM, $00, 0
 	map_attributes CeladonCafe, CELADON_CAFE, $00, 0
 	map_attributes Route16FuchsiaSpeechHouse, ROUTE_16_FUCHSIA_SPEECH_HOUSE, $00, 0
-	map_attributes Route16Gate, ROUTE_16_GATE, $00, 0
+	map_attributes Route16Gate1F, ROUTE_16_GATE_1F, $00, 0
+	map_attributes Route16Gate2F, ROUTE_16_GATE_2F, $00, 0
+	map_attributes Route16NorthGate, ROUTE_16_NORTH_GATE, $00, 0
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0
 	map_attributes Route17Route18Gate, ROUTE_17_ROUTE_18_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
@@ -669,7 +673,7 @@ ENDM
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
 	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0
 	map_attributes Route2Gate, ROUTE_2_GATE, $00, 0
-	map_attributes VictoryRoadGate, VICTORY_ROAD_GATE, $00, 0
+	map_attributes Route22Gate, ROUTE_22_GATE, $00, 0
 	map_attributes ViridianForestSouthGate, VIRIDIAN_FOREST_SOUTH_GATE, $00, 0
 	map_attributes ViridianForestNorthGate, VIRIDIAN_FOREST_NORTH_GATE, $00, 0
 	map_attributes ElmsLab, ELMS_LAB, $00, 0

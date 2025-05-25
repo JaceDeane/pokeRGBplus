@@ -148,10 +148,10 @@ Route11_MapEvents:
 
 	def_warp_events
 	warp_event  4,  5, DIGLETTS_CAVE, 1
-	warp_event 51,  8, DIGLETTS_CAVE, 1 ; ROUTE_11_GATE, 1
-	warp_event 51,  9, DIGLETTS_CAVE, 2 ; ROUTE_11_GATE, 2
-	warp_event 58,  8, DIGLETTS_CAVE, 3 ; ROUTE_11_GATE, 3
-	warp_event 58,  9, DIGLETTS_CAVE, 4 ; ROUTE_11_GATE, 4
+	warp_event 51,  8, ROUTE_11_GATE_1F, 1
+	warp_event 51,  9, ROUTE_11_GATE_1F, 2
+	warp_event 58,  8, ROUTE_11_GATE_1F, 3
+	warp_event 58,  9, ROUTE_11_GATE_1F, 4
 
 	def_coord_events
 

@@ -12,9 +12,9 @@ MapScenes::
 	scene_var POWER_PLANT,                                 wPowerPlantSceneID
 	scene_var CERULEAN_CITY,                               wCeruleanCitySceneID ; Updated R/B
 	scene_var ROUTE_24,                                    wRoute24SceneID ; Updated R/B
-	scene_var VICTORY_ROAD_GATE,                           wVictoryRoadGateSceneID
+	scene_var ROUTE_22_GATE,                               wRoute22GateSceneID ; Updated R/B
 	scene_var SAFFRON_MAGNET_TRAIN_STATION,                wSaffronMagnetTrainStationSceneID
-	scene_var ROUTE_16_GATE,                               wRoute16GateSceneID
+	scene_var ROUTE_16_GATE_1F,                            wRoute16Gate1FSceneID ; Updated R/B
 	scene_var ROUTE_17_ROUTE_18_GATE,                      wRoute17Route18GateSceneID
 	scene_var INDIGO_PLATEAU_POKECENTER_1F,                wIndigoPlateauPokecenter1FSceneID
 	scene_var WILLS_ROOM,                                  wWillsRoomSceneID
@@ -33,11 +33,11 @@ MapScenes::
 	scene_var PEWTER_MUSEUM_OF_SCIENCE_1F,                 wPewterMuseumOfScienceSceneID ; Updated R/B
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
 	scene_var ROUTE_29,                                    wRoute29SceneID ; Unused RGB+ -- TODO: Remove
-	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+ -- TODO: Remove
+	;scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+ -- TODO: Remove
 	scene_var VIRIDIAN_CITY,                               wViridianCitySceneID
 	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
 	scene_var ROUTE_22,                                    wRoute22SceneID
-	scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID
+	;scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID
 	scene_var ROUTE_32,                                    wRoute32SceneID
 	scene_var ROUTE_35_NATIONAL_PARK_GATE,                 wRoute35NationalParkGateSceneID
 	scene_var ROUTE_36,                                    wRoute36SceneID

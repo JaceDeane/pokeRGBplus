@@ -3049,9 +3049,9 @@ wPowerPlantSceneID::                              db
 wCeruleanCitySceneID::                            db ; Updated R/B
 wRoute24SceneID::                                 db ; Updated R/B
 wTrainerHouseB1FSceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
-wVictoryRoadGateSceneID::                         db
+wRoute22GateSceneID::                             db ; Updated R/B
 wSaffronMagnetTrainStationSceneID::               db
-wRoute16GateSceneID::                             db
+wRoute16Gate1FSceneID::                           db ; Updated R/B
 wRoute17Route18GateSceneID::                      db
 wIndigoPlateauPokecenter1FSceneID::               db
 wWillsRoomSceneID::                               db
@@ -3070,11 +3070,11 @@ wPewterCitySceneID::                              db ; Updated R/B
 wPewterMuseumOfScienceSceneID::                   db ; Updated R/B
 wPlayersHouse1FSceneID::                          db
 wRoute29SceneID::                                 db ; Unused RGB+ -- TODO: Remove
-wCherrygroveCitySceneID::                         db ; Unused RGB+ -- TODO: Remove
+wCherrygroveCitySceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
 wViridianCitySceneID::                            db
 wViridianMartSceneID::                            db
 wRoute22SceneID::                                 db
-wMrPokemonsHouseSceneID::                         db
+wMrPokemonsHouseSceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
 wRoute32SceneID::                                 db
 wRoute35NationalParkGateSceneID::                 db
 wRoute36SceneID::                                 db
