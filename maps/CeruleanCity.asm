@@ -27,10 +27,6 @@ CeruleanCityNoopScene:
 	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
 	end
 
-CeruleanCityScene2:
-	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
-	end
-
 CeruleanCityRivalBattleScene1:
 	moveobject CERULEANCITY_RIVAL, 21, 2 ; RIGHT
 	;fallthrough

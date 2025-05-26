@@ -73,16 +73,16 @@ PlayBattleMusic:
 	farcall RegionCheck
 	ld a, e
 	and a
-	jr nz, .kantowild
+	; jr nz, .kantowild ; No need to check if we're in Johto
 
-	ld de, MUSIC_JOHTO_WILD_BATTLE
-	ld a, [wTimeOfDay]
-	cp NITE_F
-	jr nz, .done
-	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jr .done
+	; ld de, MUSIC_JOHTO_WILD_BATTLE
+	; ld a, [wTimeOfDay]
+	; cp NITE_F
+	; jr nz, .done
+	; ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
+	; jr .done
 
-.kantowild
+; .kantowild
 	ld de, MUSIC_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
@@ -134,16 +134,16 @@ PlayBattleMusic:
 .othertrainer
 	ld a, [wLinkMode]
 	and a
-	jr nz, .johtotrainer
+	jr nz, .kantotrainer ; .johtotrainer
 
 	farcall RegionCheck
 	ld a, e
 	and a
-	jr nz, .kantotrainer
+	; jr nz, .kantotrainer
 
-.johtotrainer
-	ld de, MUSIC_JOHTO_TRAINER_BATTLE
-	jr .done
+; .johtotrainer
+	; ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	; jr .done
 
 .kantotrainer
 	ld de, MUSIC_TRAINER_BATTLE

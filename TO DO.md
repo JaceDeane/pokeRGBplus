@@ -69,6 +69,8 @@
 
 - Add RBY music for Pokémon Center, Bicycle Music, etc.
 
+- Add a "no intro" version of the Rival encounter theme for post-battle
+
 - (!) Playback sound of the R/B `Title Screen` track is bugged
 
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
@@ -86,6 +88,8 @@
 ## ! Bugs: !
 
 - (!) Building _DEBUG causes an overflow
+
+- (!) Water palette in the Underground Path(s) seem to be different to the defined water palette?
 
 - (!) Border tiles when returning to Cerulean after using the Route 24 shortcut are seen (Need to find a way to manually load water blocks instead of the default defined one)
 

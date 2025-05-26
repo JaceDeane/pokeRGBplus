@@ -73,7 +73,7 @@ ViridianCityOldManScript2:
 	opentext
 	writetext ViridianCityOldManSleepyPrivatePropertyText
 	waitbutton
-	applymovement PLAYER, ViridianCity_TurnDownMovement
+	;applymovement PLAYER, ViridianCity_TurnDownMovement ; Don't turn the player away if speaking directly to the Old Man
 	closetext
 	end
 
