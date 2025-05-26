@@ -89,6 +89,8 @@
 
 - (!) Building _DEBUG causes an overflow
 
+- Lass Ali on Route 24 acts as if already beaten (?) <Need to test on a clean save>
+
 - (!) Water palette in the Underground Path(s) seem to be different to the defined water palette?
 
 - (!) Border tiles when returning to Cerulean after using the Route 24 shortcut are seen (Need to find a way to manually load water blocks instead of the default defined one)
