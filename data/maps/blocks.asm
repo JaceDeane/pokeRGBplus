@@ -561,7 +561,6 @@ Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
 CeruleanTradeHouse_Blocks:
-BillsHouse_Blocks:
 BillsFamilysHouse_Blocks:
 VermilionFishingSpeechHouse_Blocks:
 VermilionMagnetTrainSpeechHouse_Blocks:
@@ -1024,5 +1023,8 @@ IndigoPlateau_Blocks:
 
 Route21WestBorder_Blocks:
 	INCBIN "maps/Route21WestBorder.blk"
+
+BillsHouse_Blocks:
+INCBIN "maps/BillsHouse.blk"
 
 ENDSECTION
