@@ -16,19 +16,18 @@
 - Cerulean City: Rocket event & coord event trigger
 	- NPC homes: burgled house, Gym
 
-- Route 24 (Nugget bridge -- ensure the NUGGET glitch cannot be performed)
-
 - Route 25 & Bill's House
 
 - Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
 
 - Include and check all hidden items from R/B exist and are in the right place
 
-- `get dirfacing_UP` in front of Viridian Gym's door, so that you can walk left to right without interruption
+- Do a "`get dirfacing_UP`" check in front of Viridian Gym's door, so that you can walk left to right without interruption
 
-- Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE``
 
 ### ENGINE / DATA:
+
+- Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE``
 
 - Adjust Indigo Plateau's roof palette for nighttime
 
@@ -38,8 +37,9 @@
 
 - (?) Remove Swimmers from Pallet Group overworld sprites and include the PewterGroup as well...? (ADD an in-between SPRITEGROUP for routes)\
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
+	- *Look into a dynamic sprite system...
 
-- Update TM/HM list* (This is an EXTENSIVE job. Will leave until towards the end?)
+- Update TM/HM list* (This is an EXTENSIVE job. Pokémon learnsets will have to be updated. Will leave until towards the end -- G/S Pokémon will need to have custom TM/HM learnsets now)
 
 - Remove old G/S trainer EVENT flags (as needed)
 	
@@ -89,7 +89,8 @@
 
 - (!) Building _DEBUG causes an overflow
 
-- Lass Ali on Route 24 acts as if already beaten (?) <Need to test on a clean save>
+- Lass Ali on Route 24 acts as if already beaten when taking PSN damage right in front of her
+	- May be an engine bug for *any* trainer (?)
 
 - (!) Water palette in the Underground Path(s) seem to be different to the defined water palette?
 
@@ -97,7 +98,7 @@
 
 - (!) Border tiles from Route 16 to Route 17 (Western side)
 
-- (!) Cycling Road should force play the bike music when cycling -- is this behaviour exclusive to Gen I? (Gen II reloads map music between connections)
+- (!) Cycling Road should force-play the bike music when cycling -- is this behaviour exclusive to Gen I? (Gen II reloads map music between connections)
 
 - Rockets don't disappear after beating the Super Nerd (? or the head Grunt) in Mount Moon B2F [However, this is how it behaves in Gen I]
 
