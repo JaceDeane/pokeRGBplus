@@ -4,26 +4,34 @@
 	- Add Pokémon, add item, warp to map, change badges, set event/flag, etc.
 ```
 ### MAPS:
-
-- Bill's House
+(Only interiors and dungeons left to do)
 
 - Route 5 -> (Day-care & Saffron north entrance gate)
+
+- Vermilion City: Fan Club, Gym, NPC homes
 
 - Cerulean Cave (1F, B1F, B2F)
 
 ### EVENTS:
 
-- Cerulean City: Rocket event & coord event trigger
-	- NPC homes: burgled house, Gym
-
-- Route 25 & Bill's House
-
+MAIN:
 - Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
 
+- Route 6 (Underground Path entrance & Saffron south entrance gate)
+
+- Vermilion City (Fisher's house, Pokémon Center, Mart, Gym, Fan Club, Farfetch'd house, NPC houses)
+
+- Route 11 (Route 11 gate 1F/2F)
+
+- S.S. Anne (All floors, Cabins, Deck, Captain's cabin)* New tileset(s) required
+
+OTHER:
 - Include and check all hidden items from R/B exist and are in the right place
 
 - Do a "`get dirfacing_UP`" check in front of Viridian Gym's door, so that you can walk left to right without interruption
 
+(After the TM Update:)
+- Cerulean City Gym
 
 ### ENGINE / DATA:
 
@@ -58,6 +66,14 @@
 - The Route 4 and Route 10 PokéCenters do NOT use a FlyData flag -- Confirmed
 
 ### GRAPHICS:
+
+- Update the Battle HUD
+
+- Update the Summary screen
+
+- Update the Pokédex UI
+
+- Add the mask to the player's title sprite (will need to condense OAM by 8x16 sprites)
 
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
 

@@ -113,7 +113,7 @@ DrawPlayerHUDBorder:
 
 .tiles
 	db $73 ; right side
-	db $77 ; bottom right
+	db $5c ; bottom right ; BATTLEHUD
 	db $6f ; bottom left
 	db $76 ; bottom side
 .tiles_end
@@ -129,7 +129,7 @@ DrawPlayerPartyIconHUDBorder:
 
 .tiles
 	db $73 ; right side
-	db $5c ; bottom right
+	db $77 ; bottom right ; BATTLEHUD
 	db $6f ; bottom left
 	db $76 ; bottom side
 .tiles_end
@@ -157,7 +157,7 @@ DrawEnemyHUDBorder:
 	ret
 
 .tiles
-	db $6d ; left side
+	db $73 ; left side ; BATTLEHUD
 	db $74 ; bottom left
 	db $78 ; bottom right
 	db $76 ; bottom side
@@ -216,7 +216,7 @@ LoadTrainerHudOAM:
 	ld [hli], a ; x
 	ld a, [de]
 	ld [hli], a ; tile id
-	ld a, PAL_BATTLE_OB_YELLOW
+	ld a, PAL_BATTLE_OB_YELLOW ; PAL_BATTLE_OB_YELLOW_GREEN ; TODO BATTLEHUD
 	ld [hli], a ; attributes
 	ld a, [wPlaceBallsX]
 	ld b, a

@@ -502,7 +502,7 @@ StatsScreen_PlaceVerticalDivider: ; unreferenced
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
-	ld a, $62 ; horizontal divider (empty HP/exp bar)
+	ld a, $32 ; horizontal divider (empty HP/exp bar) ; BATTLEHUD
 .loop
 	ld [hli], a
 	dec b
@@ -652,7 +652,7 @@ LoadPinkPage:
 	ld a, [wTempMonLevel]
 	ld b, a
 	ld de, wTempMonExp + 2
-	predef FillInExpBar
+	predef FillInExpBar_Stats ; BATTLEHUD
 	hlcoord 10, 16
 	ld [hl], $40 ; left exp bar end cap
 	hlcoord 19, 16

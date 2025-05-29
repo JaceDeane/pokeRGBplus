@@ -31,6 +31,7 @@ PredefPointers::
 	add_predef UpdateEnemyHUD
 	add_predef StartBattle
 	add_predef FillInExpBar
+	add_predef FillInExpBar_Stats ; BATTLEHUD
 	add_predef GetBattleMonBackpic
 	add_predef GetEnemyMonFrontpic
 	add_predef LearnLevelMoves

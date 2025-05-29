@@ -7887,6 +7887,14 @@ FillInExpBar:
 	add hl, de
 	jp PlaceExpBar
 
+FillInExpBar_Stats:
+	push hl
+	call CalcExpBar
+	pop hl
+	ld de, 7
+	add hl, de
+	jp PlaceExpBar_Stats
+
 CalcExpBar:
 ; Calculate the percent exp between this level and the next
 ; Level in b
@@ -7993,7 +8001,7 @@ PlaceExpBar:
 	sub $8
 	jr c, .next
 	ld b, a
-	ld a, $6a ; full bar
+	ld a, $70 ; full bar ; BATTLEHUD
 	ld [hld], a
 	dec c
 	jr z, .finish
@@ -8006,11 +8014,42 @@ PlaceExpBar:
 	jr .skip
 
 .loop2
-	ld a, $62 ; empty bar
+	ld a, $6d ; empty bar ; BATTLEHUD
 
 .skip
 	ld [hld], a
-	ld a, $62 ; empty bar
+	ld a, $6d ; empty bar ; BATTLEHUD
+	dec c
+	jr nz, .loop2
+
+.finish
+	ret
+
+PlaceExpBar_Stats:
+	ld c, $8 ; number of tiles
+.loop1
+	ld a, b
+	sub $8
+	jr c, .next
+	ld b, a
+	ld a, $5c ; full bar ; BATTLEHUD
+	ld [hld], a
+	dec c
+	jr z, .finish
+	jr .loop1
+
+.next
+	add $8
+	jr z, .loop2
+	add $54 ; tile to the left of small exp bar tile
+	jr .skip
+
+.loop2
+	ld a, $62 ; empty bar ; BATTLEHUD
+
+.skip
+	ld [hld], a
+	ld a, $62 ; empty bar ; BATTLEHUD
 	dec c
 	jr nz, .loop2
 

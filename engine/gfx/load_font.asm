@@ -132,9 +132,9 @@ StatsScreen_LoadFont:
 	ld hl, vTiles2 tile $76
 	lb bc, BANK(HPExpBarBorderGFX), 2
 	call Get1bppViaHDMA
-	ld de, ExpBarGFX
+	ld de, StatsScreenExpBarGFX
 	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
+	lb bc, BANK(StatsScreenExpBarGFX), 8
 	call Get2bppViaHDMA
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
