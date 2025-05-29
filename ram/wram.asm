@@ -3048,7 +3048,7 @@ wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
 wCeruleanCitySceneID::                            db ; Updated R/B
 wRoute24SceneID::                                 db ; Updated R/B
-wTrainerHouseB1FSceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
+wBillsHouseSceneID::                              db ; wTrainerHouseB1FSceneID
 wRoute22GateSceneID::                             db ; Updated R/B
 wSaffronMagnetTrainStationSceneID::               db
 wRoute16Gate1FSceneID::                           db ; Updated R/B

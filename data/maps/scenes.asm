@@ -12,6 +12,7 @@ MapScenes::
 	scene_var POWER_PLANT,                                 wPowerPlantSceneID
 	scene_var CERULEAN_CITY,                               wCeruleanCitySceneID ; Updated R/B
 	scene_var ROUTE_24,                                    wRoute24SceneID ; Updated R/B
+	scene_var BILLS_HOUSE,                                 wBillsHouseSceneID ; Updated R/B
 	scene_var ROUTE_22_GATE,                               wRoute22GateSceneID ; Updated R/B
 	scene_var SAFFRON_MAGNET_TRAIN_STATION,                wSaffronMagnetTrainStationSceneID
 	scene_var ROUTE_16_GATE_1F,                            wRoute16Gate1FSceneID ; Updated R/B

@@ -4,12 +4,12 @@
 	const CERULEANCITY_COOLTRAINER_M
 	const CERULEANCITY_SUPER_NERD1
 	const CERULEANCITY_SUPER_NERD2
-	const CERULEANCITY_GUARD1
+	const CERULEANCITY_GUARD
 	const CERULEANCITY_COOLTRAINER_F1
 	const CERULEANCITY_SLOWPOKE
 	const CERULEANCITY_COOLTRAINER_F2
 	const CERULEANCITY_SUPER_NERD3
-	const CERULEANCITY_GUARD2
+	; const CERULEANCITY_GUARD2
 
 CeruleanCity_MapScripts:
 	def_scene_scripts
@@ -18,10 +18,20 @@ CeruleanCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, CeruleanCityCallback
 
 CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
+
+CeruleanCityCallback:
+	checkmapscene BILLS_HOUSE
+	ifequal SCENE_BILLSHOUSE_NOOP, .MoveOfficer
+	endcallback
+	
+.MoveOfficer
+	moveobject CERULEANCITY_GUARD, 28, 12
+    endcallback
 
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
@@ -525,9 +535,9 @@ CeruleanCity_MapEvents:
 	object_event 31, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
 	object_event 15, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd1Script, -1
 	object_event  9, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd2Script, -1
-	object_event 28, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1
+	object_event 27, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1
 	object_event 29, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerF1Script, -1
 	object_event 28, 26, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event  9, 27, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerF2Script, -1
 	object_event  4, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd3Script, -1
-	object_event 27, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1
+	; object_event 28, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1

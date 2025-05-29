@@ -5,31 +5,30 @@
 
 BillsHouse_MapScripts:
 	def_scene_scripts
-	scene_script BillsIsAPokemonScene, SCENE_BILLSHOUSE_BILL_IS_A_POKEMON
-	scene_script BillsInTransporterScene, SCENE_BILLSHOUSE_BILL_IN_TRANSPORTER
-	scene_script BillsHouseBillExitsMachineScene, SCENE_BILLSHOUSE_BILL_EXITS_MACHINE ; (?)
+	scene_script BillsHouseNoopScene, SCENE_BILLSHOUSE_BILL_IS_A_POKEMON
+	scene_script BillsHouseNoopScene, SCENE_BILLSHOUSE_BILL_USED_CELL_SEPARATOR
 	scene_script BillsHouseNoopScene, SCENE_BILLSHOUSE_NOOP
 
 	def_callbacks
-
-BillsIsAPokemonScene:
-	end
-
-BillsInTransporterScene:
-	disappear BILLSHOUSE_BILL_POKEMON
-	disappear BILLSHOUSE_BILL1
-	; clearevent EVENT_BILL_SAID_USE_CELL_SEPARATOR
-	; setscene SCENE_BILLSHOUSE_BILL_IS_A_POKEMON
-	end
-
-BillsHouseBillExitsMachineScene: ; Needed (?) Can this be integrated into the PC script?
-	; SCENE
-	;Bill walks out of machine
-	setevent EVENT_MET_BILL
-	end
+	callback MAPCALLBACK_OBJECTS, BillsHouseBillCallback
 
 BillsHouseNoopScene:
 	end
+
+BillsHouseBillCallback:
+	checkscene
+	ifequal SCENE_BILLSHOUSE_BILL_IS_A_POKEMON, .BillIsAPokemon
+	ifequal SCENE_BILLSHOUSE_NOOP, .BillsCollection
+	endcallback
+	
+.BillIsAPokemon
+	appear BILLSHOUSE_BILL_POKEMON
+	moveobject BILLSHOUSE_BILL1, 1, 2
+    endcallback
+
+.BillsCollection
+	clearevent EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
+	endcallback
 
 BillIsAPokemonScript:
 	faceplayer
@@ -53,13 +52,35 @@ BillIsAPokemonScript:
 .ok
 	playsound SFX_ENTER_DOOR
 	disappear BILLSHOUSE_BILL_POKEMON
-	setscene SCENE_BILLSHOUSE_BILL_IN_TRANSPORTER ; (?)
-	setevent EVENT_BILL_SAID_USE_CELL_SEPARATOR
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	waitsfx
 	end
 
 BillSSTicketScript:
-	;
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_SS_TICKET
+	iftrue .got_ss_ticket
+	writetext BillsHouseBillThankYouText
+	promptbutton
+	verbosegiveitem S_S_TICKET
+	iffalse .bag_full
+	closetext
+	setevent EVENT_GOT_SS_TICKET
+	setevent EVENT_USED_CELL_SEPARATOR_ON_BILL
+	setscene SCENE_BILLSHOUSE_NOOP
+	end
+
+.got_ss_ticket
+	writetext BillsHouseBillWhyDontYouGoInsteadOfMeText
+	waitbutton
+	closetext
+	end
+
+.bag_full
+	writetext SSTicketNoRoomText
+	waitbutton
+	closetext
 	end
 
 BillCheckOutMyPokemonScript:
@@ -67,91 +88,106 @@ BillCheckOutMyPokemonScript:
 	end
 
 BillsHouseBillsPCScript:
-	;jumpstd BillsPCScript
+	; jumpstd BillsPCScript
 	opentext
 	checkevent EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
-	iftrue .displayBillsHousePokemonList
-	;checkevent EVENT_USED_CELL_SEPARATOR_ON_BILL
-	;iftrue .displayBillsHouseMonitorText
-	checkevent EVENT_BILL_SAID_USE_CELL_SEPARATOR
+	iffalse .displayBillsHousePokemonList
+	; checkevent EVENT_USED_CELL_SEPARATOR_ON_BILL
+	; iftrue .displayBillsHouseMonitorText
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .doCellSeparator
-;.displayBillsHouseMonitorText
-	writetext BillsHouseMonitorText
+; .displayBillsHouseMonitorText
+	writetext BillsHouseMonitorText ; Default text
 	waitbutton
 	closetext
 	end
 
 .doCellSeparator
 	writetext BillsHouseInitiatedText
-	promptbutton
+	playmusic MUSIC_NONE
+	pause 8;16 -- pauses halve from R/B
+	playsound SFX_PUSH_BUTTON ; SFX_SWITCH (R/B)
+	waitsfx
 	closetext
-	special FadeOutMusic
-	
-	; playsound SFX_SECOND_PART_OF_ITEMFINDER
-	; SFX_BOOT_PC
-	; SFX_CHOOSE_PC_OPTION
-	
-	pause 16
-	playsound SFX_CHOOSE_PC_OPTION ; ???
-	;playsound SFX_SWITCH
+	pause 30;60
+	pause 16;32
+	playsound SFX_SECOND_PART_OF_ITEMFINDER ; SFX_TINK (R/B)
 	waitsfx
-	pause 60
-	pause 32
-	playsound SFX_SECOND_PART_OF_ITEMFINDER ; ??? SFX_TINGLE ? SFX_TWINKLE ?
-	; playsound SFX_TINK
+	pause 40;80
+	playsound SFX_ESCAPE_ROPE ; SFX_SHRINK (R/B)
 	waitsfx
-	pause 80
-	playsound SFX_ESCAPE_ROPE ; ???
-	; playsound SFX_SHRINK
+	pause 24;48
+	playsound SFX_SECOND_PART_OF_ITEMFINDER ; SFX_TINK (R/B)
 	waitsfx
-	pause 48
-	playsound SFX_SECOND_PART_OF_ITEMFINDER ; Sounds like PokeBalls being placed
-	; playsound SFX_TINK
+	pause 16;32
+	playsound SFX_ITEM ; SFX_GET_ITEM_1 (R/B) ; TODO -- Still the G/S fanfare
 	waitsfx
-	pause 32
-	playsound SFX_ITEM ; Still the G/S fanfare
+	playsound SFX_ENTER_DOOR
 	waitsfx
-	playmapmusic
-	
-	; ld a, SFX_STOP_ALL_MUSIC
-	; ld [wNewSoundID], a
-	; call PlaySound
-	; ld c, 16
-	; call DelayFrames
-	; ld a, SFX_SWITCH
-	; call PlaySound
-	; call WaitForSoundToFinish
-	; ld c, 60
-	; call DelayFrames
-	; jp TextScriptEnd
-	
-	; FALLTHROUGH ; (R/B)
-	
-	; ld c, 32
-	; call DelayFrames
-	; ld a, SFX_TINK ; == ???
-	; call PlaySound
-	; call WaitForSoundToFinish
-	; ld c, 80
-	; call DelayFrames
-	; ld a, SFX_SHRINK ; == ???
-	; call PlaySound
-	; call WaitForSoundToFinish
-	; ld c, 48
-	; call DelayFrames
-	; ld a, SFX_TINK ; == ???
-	; call PlaySound
-	; call WaitForSoundToFinish
-	; ld c, 32
-	; call DelayFrames
-	; ld a, SFX_GET_ITEM_1 ; == SFX_ITEM
-	; call PlaySound
-	; call WaitForSoundToFinish
-	; call PlayDefaultMusic
-	setevent EVENT_USED_CELL_SEPARATOR_ON_BILL
+	special RestartMapMusic
+	setscene SCENE_BILLSHOUSE_BILL_USED_CELL_SEPARATOR
+	clearevent EVENT_USED_CELL_SEPARATOR_ON_BILL
+	appear BILLSHOUSE_BILL1
+	applymovement BILLSHOUSE_BILL1, BillsHouseExitMachineMovement
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_MET_BILL
 	end
+
 .displayBillsHousePokemonList
-	; ld hl, BillsHousePokemonListText1
+	writetext BillsHousePokemonListText1
+	promptbutton
+BillsHousePokemonList_LoopScript:
+	writetext BillsHousePokemonListText2
+.Menu:
+	loadmenu BillsHousePokemonListMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Eevee
+	ifequal 2, .Flareon
+	ifequal 3, .Jolteon
+	ifequal 4, .Vaporeon
+	ifequal 5, BillsHousePokemonList_LoopScript.Menu
+	sjump BillsHousePokemonListCancelScript
+
+.Eevee:
+	setval EEVEE
+	special ShowPokedexEntry
+	sjump BillsHousePokemonList_LoopScript
+
+.Flareon:
+	setval FLAREON
+	special ShowPokedexEntry
+	sjump BillsHousePokemonList_LoopScript
+
+.Jolteon:
+	setval JOLTEON
+	special ShowPokedexEntry
+	sjump BillsHousePokemonList_LoopScript
+
+.Vaporeon:
+	setval VAPOREON
+	special ShowPokedexEntry
+	sjump BillsHousePokemonList_LoopScript
+
+BillsHousePokemonListCancelScript:
+	closetext
+	end
+
+BillsHousePokemonListMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, TEXTBOX_Y-1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 5 ; items
+	db "EEVEE@"
+	db "FLAREON@"
+	db "JOLTEON@"
+	db "VAPOREON@"
+	db "CANCEL@"
+
 	; call PrintText
 	; xor a
 	; ld [wMenuItemOffset], a ; not used
@@ -241,351 +277,6 @@ BillsHouseExitMachineMovement:
 	step DOWN
 	step_end
 
-; BillsGrandpa:
-	; faceplayer
-	; opentext
-	; checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	; iftrue .JustShowedSomething
-	; checkevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
-	; iftrue .GotThunderstone
-	; checkevent EVENT_MET_BILLS_GRANDPA
-	; iftrue .MetGrandpa
-	; writetext BillsGrandpaIntroText
-	; promptbutton
-	; setevent EVENT_MET_BILLS_GRANDPA
-; .MetGrandpa:
-	; checkevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	; iftrue .ShowedPichu
-	; checkevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	; iftrue .ShowedGrowlitheVulpix
-	; checkevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
-	; iftrue .ShowedStaryu
-	; checkevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
-	; iftrue .ShowedOddish
-	; checkevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	; iftrue .ShowedLickitung
-	; writetext BillsGrandpaLickitungText
-	; promptbutton
-	; writetext BillsGrandpaAskToSeeMonText
-	; yesorno
-	; iffalse .SaidNo
-	; scall .ExcitedToSee
-	; special BillsGrandfather
-	; iffalse .SaidNo
-	; ifnotequal LICKITUNG, .WrongPokemon
-	; scall .CorrectPokemon
-	; setevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	; sjump .ShowedLickitung
-
-; .GotEverstone:
-	; writetext BillsGrandpaOddishText
-	; promptbutton
-	; writetext BillsGrandpaAskToSeeMonText
-	; yesorno
-	; iffalse .SaidNo
-	; scall .ExcitedToSee
-	; special BillsGrandfather
-	; iffalse .SaidNo
-	; ifnotequal ODDISH, .WrongPokemon
-	; scall .CorrectPokemon
-	; setevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
-	; sjump .ShowedOddish
-
-; .GotLeafStone:
-	; writetext BillsGrandpaStaryuText
-	; promptbutton
-	; writetext BillsGrandpaAskToSeeMonText
-	; yesorno
-	; iffalse .SaidNo
-	; scall .ExcitedToSee
-	; special BillsGrandfather
-	; iffalse .SaidNo
-	; ifnotequal STARYU, .WrongPokemon
-	; scall .CorrectPokemon
-	; setevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
-	; sjump .ShowedStaryu
-
-; .GotWaterStone:
-	; checkver
-	; iftrue .AskVulpix
-	; writetext BillsGrandpaGrowlitheText
-	; promptbutton
-	; writetext BillsGrandpaAskToSeeMonText
-	; yesorno
-	; iffalse .SaidNo
-	; scall .ExcitedToSee
-	; special BillsGrandfather
-	; iffalse .SaidNo
-	; ifnotequal GROWLITHE, .WrongPokemon
-	; scall .CorrectPokemon
-	; setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	; sjump .ShowedGrowlitheVulpix
-
-; .AskVulpix:
-	; writetext BillsGrandpaVulpixText
-	; promptbutton
-	; writetext BillsGrandpaAskToSeeMonText
-	; yesorno
-	; iffalse .SaidNo
-	; scall .ExcitedToSee
-	; special BillsGrandfather
-	; iffalse .SaidNo
-	; ifnotequal VULPIX, .WrongPokemon
-	; scall .CorrectPokemon
-	; setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	; sjump .ShowedGrowlitheVulpix
-
-; .GotFireStone:
-	; writetext BillsGrandpaPichuText
-	; promptbutton
-	; writetext BillsGrandpaAskToSeeMonText
-	; yesorno
-	; iffalse .SaidNo
-	; scall .ExcitedToSee
-	; special BillsGrandfather
-	; iffalse .SaidNo
-	; ifnotequal PICHU, .WrongPokemon
-	; scall .CorrectPokemon
-	; setevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	; sjump .ShowedPichu
-
-; .ShowedLickitung:
-	; checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	; iftrue .GotEverstone
-	; scall .ReceiveItem
-	; verbosegiveitem EVERSTONE
-	; iffalse .BagFull
-	; setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	; setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	; closetext
-	; end
-
-; .ShowedOddish:
-	; checkevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	; iftrue .GotLeafStone
-	; scall .ReceiveItem
-	; verbosegiveitem LEAF_STONE
-	; iffalse .BagFull
-	; setevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	; setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	; closetext
-	; end
-
-; .ShowedStaryu:
-	; checkevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	; iftrue .GotWaterStone
-	; scall .ReceiveItem
-	; verbosegiveitem WATER_STONE
-	; iffalse .BagFull
-	; setevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	; setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	; closetext
-	; end
-
-; .ShowedGrowlitheVulpix:
-	; checkevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	; iftrue .GotFireStone
-	; scall .ReceiveItem
-	; verbosegiveitem FIRE_STONE
-	; iffalse .BagFull
-	; setevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	; setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	; closetext
-	; end
-
-; .ShowedPichu:
-	; scall .ReceiveItem
-	; verbosegiveitem THUNDERSTONE
-	; iffalse .BagFull
-	; setevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
-	; closetext
-	; end
-
-; .ExcitedToSee:
-	; writetext BillsGrandpaExcitedToSeeText
-	; promptbutton
-	; end
-
-; .SaidNo:
-	; writetext BillsGrandpaYouDontHaveItTextText
-	; waitbutton
-	; closetext
-	; end
-
-; .CorrectPokemon:
-	; writetext BillsGrandpaShownPokemonText
-	; promptbutton
-	; end
-
-; .ReceiveItem:
-	; writetext BillsGrandpaTokenOfAppreciationText
-	; promptbutton
-	; end
-
-; .JustShowedSomething:
-	; writetext BillsGrandpaComeAgainText
-	; waitbutton
-	; closetext
-	; end
-
-; .GotThunderstone:
-	; writetext BillsGrandpaShownAllThePokemonText
-	; waitbutton
-	; closetext
-	; end
-
-; .WrongPokemon:
-	; writetext BillsGrandpaWrongPokemonText
-	; waitbutton
-	; closetext
-	; end
-
-; .BagFull:
-	; closetext
-	; end
-
-; BillsGrandpaIntroText:
-	; text "Hm? You know BILL?"
-	; line "He's my grandson."
-
-	; para "He's in JOHTO. He"
-	; line "does something"
-
-	; para "with PCs, so I'm"
-	; line "house-sitting."
-	; done
-
-; BillsGrandpaAskToSeeMonText:
-	; text "If you have that"
-	; line "#MON, may I see"
-	; cont "it, please?"
-	; done
-
-; BillsGrandpaExcitedToSeeText:
-	; text "You will show me?"
-	; line "How good of you!"
-	; done
-
-; BillsGrandpaYouDontHaveItTextText:
-	; text "You don't have it?"
-	; line "That's too bad…"
-	; done
-
-; BillsGrandpaShownPokemonText:
-	; text "Ah, so that is"
-	; line "@"
-	; text_ram wStringBuffer3
-	; text "?"
-
-	; para "Isn't it cute!"
-	; line "That's so kind of"
-	; cont "you."
-	; done
-
-; BillsGrandpaTokenOfAppreciationText:
-	; text "Thanks!"
-
-	; para "This is a token of"
-	; line "my appreciation."
-	; done
-
-; BillsGrandpaComeAgainText:
-	; text "Come visit again"
-	; line "sometime."
-	; done
-
-; BillsGrandpaShownAllThePokemonText:
-	; text "Thanks for showing"
-	; line "me so many cute"
-	; cont "#MON."
-
-	; para "I really enjoyed"
-	; line "myself. I'm glad"
-
-	; para "I've lived such a"
-	; line "long life."
-	; done
-
-; BillsGrandpaWrongPokemonText:
-	; text "Hm?"
-
-	; para "That's not the"
-	; line "#MON that I was"
-	; cont "told about."
-	; done
-
-; BillsGrandpaLickitungText:
-	; text "My grandson BILL"
-	; line "told me about a"
-
-	; para "#MON that has a"
-	; line "long tongue."
-	; done
-
-; BillsGrandpaOddishText:
-	; text "Ah, my grandson"
-	; line "mentioned a round,"
-
-	; para "green #MON that"
-	; line "has leaves growing"
-	; cont "on its head."
-	; done
-
-; BillsGrandpaStaryuText:
-	; text "Do you know of a"
-	; line "sea #MON that"
-
-	; para "has a red sphere"
-	; line "in its body?"
-
-	; para "You know, the one"
-	; line "that's shaped like"
-	; cont "a star?"
-
-	; para "I heard that it"
-	; line "appears at night."
-
-	; para "I would surely"
-	; line "like to see it."
-	; done
-
-; BillsGrandpaGrowlitheText:
-	; text "BILL told me about"
-	; line "a #MON that is"
-
-	; para "very loyal to its"
-	; line "trainer."
-
-	; para "It's supposed to"
-	; line "ROAR well."
-	; done
-
-; BillsGrandpaVulpixText:
-	; text "I heard about a"
-	; line "cute #MON that"
-	; cont "has six tails."
-
-	; para "I would love to"
-	; line "hug a cute #MON"
-	; cont "like that."
-	; done
-
-; BillsGrandpaPichuText:
-	; text "Do you know that"
-	; line "hugely popular"
-	; cont "#MON?"
-
-	; para "The #MON that"
-	; line "has a yellow body"
-	; cont "and red cheeks."
-
-	; para "I would love to"
-	; line "see what it looks"
-
-	; para "like before it"
-	; line "evolves."
-	; done
-
 BillsHouseBillImNotAPokemonText:
 	text "Hiya! I'm a"
 	line "#MON…"
@@ -646,18 +337,11 @@ BillsHouseBillThankYouText:
 	line "That's a bummer."
 
 	para "I've got to thank"
-	line "you..."
+	line "you…"
 	
 	para "Oh here, maybe"
 	line "this'll do."
-	done ; prompt
-
-; SSTicketReceivedText:
-	; text "<PLAYER> received"
-	; line "an @"
-	; text_ram wStringBuffer
-	; text "!@"
-	; text_end
+	done
 
 SSTicketNoRoomText:
 	text "You've got too"
@@ -707,7 +391,7 @@ BillsHouseInitiatedText:
 BillsHousePokemonListText1:
 	text "BILL's favorite"
 	line "#MON list!"
-	done ; prompt
+	done
 
 BillsHousePokemonListText2:
 	text "Which #MON do"
@@ -724,10 +408,9 @@ BillsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	;BILLS PC -- before and after
 	bg_event  1,  4, BGEVENT_UP, BillsHouseBillsPCScript
 
 	def_object_events
-	object_event  6,  5, SPRITE_FAIRY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillIsAPokemonScript, -1;EVENT_BILL_SAID_USE_CELL_SEPARATOR ; Script should be initialised -- or does it reset every time in R/B?
-	object_event  4,  4, SPRITE_BILL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillSSTicketScript, EVENT_MET_BILL_2 ; ***
-	object_event  6,  5, SPRITE_BILL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillCheckOutMyPokemonScript, EVENT_MET_BILL_2 ; ***
+	object_event  6,  5, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillIsAPokemonScript, EVENT_MET_BILL ; Event resets when re-entering map in R/B
+	object_event  4,  4, SPRITE_BILL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillSSTicketScript, EVENT_USED_CELL_SEPARATOR_ON_BILL
+	object_event  6,  5, SPRITE_BILL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillCheckOutMyPokemonScript, EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
