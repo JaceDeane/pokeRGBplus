@@ -9,7 +9,20 @@ CeruleanTrashedHouse_MapScripts:
 	def_callbacks
 
 CeruleanTrashedHouseFishingGuruScript:
-	jumptextfaceplayer CeruleanTrashedHouseFishingGuruTheyStoleATMText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_5
+	iffalse .no_dig_tm
+	writetext CeruleanTrashedHouseFishingGuruWhatsLostIsLostText
+	waitbutton
+	closetext
+	end
+
+.no_dig_tm
+	writetext CeruleanTrashedHouseFishingGuruTheyStoleATMText
+	waitbutton
+	closetext
+	end
 
 CeruleanTrashedHouseGirlScript:
 	jumptextfaceplayer CeruleanTrashedHouseGirlText
@@ -24,12 +37,6 @@ CeruleanDiglett:
 
 CeruleanTrashedHouseWallHole:
 	jumptext CeruleanTrashedHouseWallHoleText
-
-CeruleanDiglettText:
-	text "DIGLETT: Dug dug."
-	done
-
-; R/B
 
 CeruleanTrashedHouseFishingGuruTheyStoleATMText:
 	text "Those miserable"
@@ -68,6 +75,10 @@ CeruleanTrashedHouseGirlText:
 CeruleanTrashedHouseWallHoleText:
 	text "TEAM ROCKET left"
 	line "a way out!"
+	done
+
+CeruleanDiglettText:
+	text "DIGLETT: Dug dug."
 	done
 
 CeruleanTrashedHouse_MapEvents:

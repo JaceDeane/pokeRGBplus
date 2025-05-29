@@ -1013,7 +1013,7 @@ CeruleanGymBadgeSpeechHouse_Blocks:
 	INCBIN "maps/CeruleanGymBadgeSpeechHouse.blk"
 
 CeruleanTrashedHouse_Blocks:
-	INCBIN "maps/House_Trashed.blk"
+	INCBIN "maps/CeruleanTrashedHouse.blk"
 
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"

@@ -15,33 +15,34 @@ CeruleanCity_MapScripts:
 	def_scene_scripts
 	scene_script CeruleanCityNoopScene, SCENE_CERULEANCITY_NOOP
 	scene_script CeruleanCityNoopScene, SCENE_CERULEANCITY_RIVAL_DEFEATED
+	scene_script CeruleanCityNoopScene, SCENE_CERULEANCITY_ROCKET_DEFEATED
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, CeruleanCityCallback
+	callback MAPCALLBACK_OBJECTS, CeruleanCityOfficerCallback
 
 CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
 
-CeruleanCityCallback:
+CeruleanCityOfficerCallback:
 	checkmapscene BILLS_HOUSE
 	ifequal SCENE_BILLSHOUSE_NOOP, .MoveOfficer
 	endcallback
-	
+
 .MoveOfficer
 	moveobject CERULEANCITY_GUARD, 28, 12
-    endcallback
+	endcallback
 
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
 	end
 
-CeruleanCityRivalBattleScene1:
-	moveobject CERULEANCITY_RIVAL, 21, 2 ; RIGHT
+CeruleanCityRivalBattleScene1: ; RIGHT
+	moveobject CERULEANCITY_RIVAL, 21, 2
 	;fallthrough
-CeruleanCityRivalBattleScene2:
-	showemote EMOTE_SHOCK, PLAYER, 15 ; LEFT
+CeruleanCityRivalBattleScene2: ; LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
 	appear CERULEANCITY_RIVAL
@@ -107,16 +108,58 @@ AfterBattle:
 	playmapmusic
 	end
 
-CeruleanCityRocketScript:
+CeruleanCityRocketScene1:
+	turnobject CERULEANCITY_ROCKET, UP
+	turnobject PLAYER, DOWN
+	sjump _RocketNoticesPlayer
+
+CeruleanCityRocketScene2:
+	turnobject CERULEANCITY_ROCKET, DOWN
+	turnobject PLAYER, UP
+	sjump _RocketNoticesPlayer
+
+CeruleanCityRocketScript: ; Directly talking to the Rocket
 	faceplayer
+_RocketNoticesPlayer:
 	opentext
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_5 ; Here in case player has too many items
+	iftrue .beatRocketThief
 	writetext CeruleanCityRocketText
+	playmusic MUSIC_EVIL_TRAINER_ENCOUNTER
 	waitbutton
 	closetext
-	; jump to event
+	winlosstext CeruleanCityRocketIGiveUpText, -1
+	loadtrainer GRUNTM, GRUNTM_5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_5
+.beatRocketThief
+	writetext CeruleanCityRocketIllReturnTheTMText
+	promptbutton
+	waitsfx
+	giveitem TM_DIG
+	iftrue .recieved_item
+	writetext CeruleanCityRocketTM28NoRoomText
+	waitbutton
+	closetext
 	end
 
-; Rocket event
+.recieved_item
+	writetext CeruleanCityRocketReceivedTM28Text
+	playsound SFX_GET_TM
+	waitsfx
+	itemnotify
+	writetext CeruleanCityRocketIBetterGetMovingText
+	waitbutton
+	closetext
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
+	disappear CERULEANCITY_ROCKET
+	pause 15
+	special FadeInFromBlack
+	setevent EVENT_CERULEAN_CITY_ROCKET_DONE
+	setscene SCENE_CERULEANCITY_ROCKET_DEFEATED
+	end
 
 CeruleanCityCooltrainerMScript:
 	jumptextfaceplayer CeruleanCityCooltrainerMText
@@ -159,61 +202,6 @@ CeruleanCityCooltrainerF1Script: ; TODO convert RB event -- Both have random odd
 	waitbutton
 	closetext
 	end
-
-; CeruleanCityFisherScript:
-	; faceplayer
-	; opentext
-	; checkevent EVENT_RETURNED_MACHINE_PART
-	; iftrue .ReturnedMachinePart
-	; checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
-	; iftrue .MetCeruleanRocket
-; .ReturnedMachinePart:
-	; writetext CeruleanCityFisherText
-	; waitbutton
-	; closetext
-	; end
-
-; .MetCeruleanRocket:
-	; writetext CeruleanCityFisherRocketTipText
-	; waitbutton
-	; closetext
-	; end
-
-; CeruleanCityYoungsterScript:
-	; faceplayer
-	; opentext
-	; writetext CeruleanCityYoungsterText1
-	; waitbutton
-	; closetext
-	; checkevent EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
-	; iffalse .BerserkGenePingsItemfinder
-	; end
-
-; .BerserkGenePingsItemfinder:
-	; waitsfx
-	; playsound SFX_SECOND_PART_OF_ITEMFINDER
-	; waitsfx
-	; playsound SFX_TRANSACTION
-	; waitsfx
-	; playsound SFX_SECOND_PART_OF_ITEMFINDER
-	; waitsfx
-	; playsound SFX_TRANSACTION
-	; waitsfx
-	; playsound SFX_SECOND_PART_OF_ITEMFINDER
-	; waitsfx
-	; playsound SFX_TRANSACTION
-	; waitsfx
-	; playsound SFX_SECOND_PART_OF_ITEMFINDER
-	; waitsfx
-	; playsound SFX_TRANSACTION
-	; waitsfx
-	; showemote EMOTE_SHOCK, CERULEANCITY_YOUNGSTER, 15
-	; turnobject CERULEANCITY_YOUNGSTER, LEFT
-	; opentext
-	; writetext CeruleanCityYoungsterText2
-	; waitbutton
-	; closetext
-	; end
 
 CeruleanCityCooltrainerF2Script:
 	jumptextfaceplayer CeruleanCityCooltrainerF2Text
@@ -327,17 +315,30 @@ CeruleanCityRivalIWentToBillsText:
 
 CeruleanCityRocketText:
 	text "Hey! Stay out!"
-	line "It's not your"
-	cont "yard! Huh? Me?"
+	line "It's not your yard!"
+	
+	para "Huh? Me?"
 
 	para "I'm an innocent"
 	line "bystander! Don't"
 	cont "you believe me?"
 	done
 
+CeruleanCityRocketIGiveUpText:
+	text "Stop!"
+
+	para "I give up! I'll"
+	line "leave quietly!"
+	done
+
+CeruleanCityRocketIllReturnTheTMText:
+	text "OK! I'll return"
+	line "the TM I stole!"
+	done
+
 CeruleanCityRocketReceivedTM28Text:
 	text "<PLAYER> recovered"
-	line "TM28 DIG!"
+	line "TM28!"
 	done
 
 CeruleanCityRocketIBetterGetMovingText:
@@ -351,17 +352,6 @@ CeruleanCityRocketTM28NoRoomText:
 
 	para "I can't run until"
 	line "I give it to you!"
-	done
-
-CeruleanCityRocketIGiveUpText:
-	text "Stop!"
-	line "I give up! I'll"
-	cont "leave quietly!"
-	done
-
-CeruleanCityRocketIllReturnTheTMText:
-	text "OK! I'll return"
-	line "the TM I stole!"
 	done
 
 CeruleanCityCooltrainerMText:
@@ -518,8 +508,10 @@ CeruleanCity_MapEvents:
 	warp_event  9,  9, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
 
 	def_coord_events
-	coord_event  20, 6, SCENE_CERULEANCITY_NOOP, CeruleanCityRivalBattleScene2
-	coord_event  21, 6, SCENE_CERULEANCITY_NOOP, CeruleanCityRivalBattleScene1
+	coord_event  20,  6, SCENE_CERULEANCITY_NOOP, CeruleanCityRivalBattleScene2
+	coord_event  21,  6, SCENE_CERULEANCITY_NOOP, CeruleanCityRivalBattleScene1
+	coord_event  30,  7, SCENE_CERULEANCITY_RIVAL_DEFEATED, CeruleanCityRocketScene1
+	coord_event  30,  9, SCENE_CERULEANCITY_RIVAL_DEFEATED, CeruleanCityRocketScene2
 
 	def_bg_events
 	bg_event 23, 19, BGEVENT_READ, CeruleanCitySign
@@ -531,7 +523,7 @@ CeruleanCity_MapEvents:
 
 	def_object_events
 	object_event 20,  2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDDEN_OBJECT
-	object_event 30,  8, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityRocketScript, -1
+	object_event 30,  8, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityRocketScript, EVENT_CERULEAN_CITY_ROCKET_DONE
 	object_event 31, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
 	object_event 15, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd1Script, -1
 	object_event  9, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd2Script, -1
