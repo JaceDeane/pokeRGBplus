@@ -500,19 +500,38 @@ StatsScreen_PlaceVerticalDivider: ; unreferenced
 	ret
 
 StatsScreen_PlaceHorizontalDivider:
-	hlcoord 0, 7
-	ld b, SCREEN_WIDTH
-	ld a, $32 ; horizontal divider (empty HP/exp bar) ; BATTLEHUD
+	hlcoord SCREEN_WIDTH-1, 1
+	ld bc, SCREEN_WIDTH
+	ld d, 6
 .loop
+	ld a, $78 ; vertical arrow line
+	ld [hl], a
+	add hl, bc
+	dec d
+	jr nz, .loop
+	hlcoord 0, 7
+	ld b, 8
+	ld a, $32 ; horizontal divider (empty HP/exp bar) ; BATTLEHUD
+.loop1
 	ld [hli], a
 	dec b
-	jr nz, .loop
+	jr nz, .loop1
+	ld a, $33 ; arrow head
+	ld [hli], a
+	ld b, 10
+	ld a, $34 ; arrow line
+.loop2
+	ld [hli], a
+	dec b
+	jr nz, .loop2
+	ld a, $35 ; arrow corner
+	ld [hli], a
 	ret
 
 StatsScreen_PlacePageSwitchArrows:
-	hlcoord 12, 6
+	hlcoord 11, 6
 	ld [hl], "◀"
-	hlcoord 19, 6
+	hlcoord 18, 6
 	ld [hl], "▶"
 	ret
 
@@ -1109,23 +1128,23 @@ StatsScreen_AnimateEgg:
 	ret
 
 StatsScreen_LoadPageIndicators:
-	hlcoord 13, 5
+	hlcoord 12, 5
 	ld a, $36 ; first of 4 small square tiles
 	call .load_square
-	hlcoord 15, 5
+	hlcoord 14, 5
 	ld a, $36 ; " " " "
 	call .load_square
-	hlcoord 17, 5
+	hlcoord 16, 5
 	ld a, $36 ; " " " "
 	call .load_square
 	ld a, c
 	cp GREEN_PAGE
 	ld a, $3a ; first of 4 large square tiles
-	hlcoord 13, 5 ; PINK_PAGE (< GREEN_PAGE)
+	hlcoord 12, 5 ; PINK_PAGE (< GREEN_PAGE)
 	jr c, .load_square
-	hlcoord 15, 5 ; GREEN_PAGE (= GREEN_PAGE)
+	hlcoord 14, 5 ; GREEN_PAGE (= GREEN_PAGE)
 	jr z, .load_square
-	hlcoord 17, 5 ; BLUE_PAGE (> GREEN_PAGE)
+	hlcoord 16, 5 ; BLUE_PAGE (> GREEN_PAGE)
 .load_square
 	push bc
 	ld [hli], a

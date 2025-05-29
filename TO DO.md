@@ -67,9 +67,7 @@ OTHER:
 
 ### GRAPHICS:
 
-- Update the Battle HUD
-
-- Update the Summary screen
+- Update the Summary screen*
 
 - Update the Pokédex UI
 

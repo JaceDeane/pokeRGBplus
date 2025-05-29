@@ -228,17 +228,17 @@ _CGB_StatsScreenHPPals:
 	ld a, $2 ; exp palette
 	call ByteFill
 
-	hlcoord 13, 5, wAttrmap
+	hlcoord 12, 5, wAttrmap
 	lb bc, 2, 2
 	ld a, $3 ; pink page palette
 	call FillBoxCGB
 
-	hlcoord 15, 5, wAttrmap
+	hlcoord 14, 5, wAttrmap
 	lb bc, 2, 2
 	ld a, $4 ; green page palette
 	call FillBoxCGB
 
-	hlcoord 17, 5, wAttrmap
+	hlcoord 16, 5, wAttrmap
 	lb bc, 2, 2
 	ld a, $5 ; blue page palette
 	call FillBoxCGB
