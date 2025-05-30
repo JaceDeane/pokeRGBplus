@@ -102,12 +102,12 @@ TrainerYoungsterTimmy:
 	end
 
 TrainerLassAli:
-	trainer LASS, ALI, EVENT_BEAT_LASS_ALI, Route24CooltrainerF1BattleText, Route24CooltrainerF1EndBattleText, 0, .Script
+	trainer LASS, ALI, EVENT_BEAT_LASS_ALI, Route24CooltrainerF2BattleText, Route24CooltrainerF2EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route24CooltrainerF1AfterBattleText
+	writetext Route24CooltrainerF2AfterBattleText
 	waitbutton
 	closetext
 	end

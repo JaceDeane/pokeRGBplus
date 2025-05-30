@@ -12,7 +12,8 @@ CeruleanGym_MapScripts:
 CeruleanGymMistyScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_CASCADEBADGE
+	;checkflag ENGINE_CASCADEBADGE
+	checkevent EVENT_BEAT_MISTY
 	iftrue .FightDone
 	writetext MistyIntroText
 	waitbutton
@@ -30,15 +31,25 @@ CeruleanGymMistyScript:
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
 .FightDone:
+	checkevent EVENT_GOT_TM11_BUBBLEBEAM
+	iftrue .SpeechAfterTM
 	writetext MistyFightDoneText
-	waitbutton
-	; give TM -- TODO
-	; writetext MistyTMNoRoomText
-	; waitbutton
+	promptbutton
+	verbosegiveitem TM_MUD_SLAP ; TODO TM_BUBBLEBEAM
+	iffalse .NoRoomForTM
+	setevent EVENT_GOT_TM11_BUBBLEBEAM
+.SpeechAfterTM:
 	writetext MistyTMExplanationText
 	waitbutton
 	closetext
 	end
+
+.NoRoomForTM:
+	writetext MistyTMNoRoomText
+	waitbutton
+	closetext
+	end
+
 
 TrainerPicnickerDiana:
 	trainer PICNICKER, DIANA, EVENT_BEAT_PICNICKER_DIANA, PicnickerDianaSeenText, PicnickerDianaBeatenText, 0, .Script
@@ -124,11 +135,11 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyFightDoneText:
-	text "MISTY: The CAS-"
-	line "CADEBADGE makes"
+	text "MISTY: The CASCADE"
+	line "BADGE makes all"
 	
-	para "all #MON up to"
-	line "Lv30 obey!"
+	para "#MON up to Lv30"
+	line "obey!"
 
 	para "That includes"
 	line "even outsiders!"
@@ -151,8 +162,8 @@ MistyTMNoRoomText:
 	done
 
 MistyTMExplanationText:
-	text "TM11 teaches"
-	line "BUBBLEBEAM!"
+	text "MISTY: TM11 tea-"
+	line "ches BUBBLEBEAM!"
 
 	para "Use it on an"
 	line "aquatic #MON!"

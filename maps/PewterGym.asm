@@ -11,7 +11,8 @@ PewterGym_MapScripts:
 PewterGymBrockScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_BOULDERBADGE
+	;checkflag ENGINE_BOULDERBADGE
+	checkevent EVENT_BEAT_BROCK
 	iftrue .FightDone
 	writetext BrockIntroText
 	waitbutton
@@ -33,21 +34,16 @@ PewterGymBrockScript:
 	writetext BrockBoulderBadgeText
 	waitbutton
 .FightDone:
-	checkevent EVENT_GOT_TM31_MUD_SLAP ; TODO -- New TM
+	checkevent EVENT_GOT_TM34_BIDE
 	iftrue .SpeechAfterTM
 	writetext BrockWaitTakeThisText
 	promptbutton
-	verbosegiveitem TM_MUD_SLAP ; TODO -- New TM
+	verbosegiveitem TM_MUD_SLAP ; TODO TM_BIDE
 	iffalse .NoRoomForTM
-	setevent EVENT_GOT_TM31_MUD_SLAP ; TODO -- New TM
+	setevent EVENT_GOT_TM34_BIDE
 	writetext BrockTMExplanationText
 	waitbutton
-	writetext BrockFightDoneText
-	waitbutton
-	closetext
-	end
-
-.SpeechAfterTM:
+.SpeechAfterTM:	
 	writetext BrockFightDoneText
 	waitbutton
 .NoRoomForTM:
@@ -135,9 +131,9 @@ ReceivedBoulderBadgeText:
 	done
 
 BrockBoulderBadgeText:
-	text "That's an official"
-	line "#MON LEAGUE"
-	cont "BADGE!"
+	text "BROCK: That's an"
+	line "official #MON"
+	cont "LEAGUE BADGE!"
 
 	para "Its bearer's"
 	line "#MON become"
@@ -149,46 +145,41 @@ BrockBoulderBadgeText:
 	done
 	
 BrockWaitTakeThisText:
-	text "Wait! Take this"
-	line "with you!"
+	text "BROCK: Wait! Take"
+	line "this with you!"
 	done
 
 BrockTMExplanationText:
-	text "A TM contains a"
-	line "technique that"
-	cont "can be taught to"
-	cont "#MON!"
+	text "BROCK: A TM con-"
+	line "tains a technique"
+	
+	para "that can be"
+	line "taught to #MON!"
 
 	para "A TM is good only"
 	line "once! So when you"
-	cont "use one to teach"
 	
-	para "a new technique,"
-	line "pick the #MON"
-	cont "carefully!"
-
-	; para "TM34 contains"
-	; line "BIDE!"
-
-	; para "Your #MON will"
-	; line "absorb damage in"
-	; cont "battle, then pay"
-	; cont "it back double!"
+	para "use one to teach"
+	line "a new technique,"
 	
-	para "TM31 contains" ; TEMP TEXT
-	line "MUD-SLAP."
+	para "pick the #MON"
+	line "carefully!"
 
-	para "It reduces the"
-	line "enemy's accuracy"
+	para "TM34 contains"
+	line "BIDE!"
 
-	para "while it causes"
-	line "damage."
+	para "Your #MON will"
+	line "absorb damage in"
+
+	para "battle, then pay"
+	line "it back double!"
 	done
 
 BrockFightDoneText:
-	text "There are all"
-	line "kinds of trainers"
-	cont "in the world!"
+	text "BROCK: There are"
+	line "all kinds of"
+	cont "trainers in the"
+	cont "world!"
 
 	para "You appear to be"
 	line "very gifted as a"
