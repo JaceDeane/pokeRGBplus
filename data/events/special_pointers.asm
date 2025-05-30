@@ -42,7 +42,7 @@ SpecialsPointers::
 	add_special PokemonCenterPC
 	add_special PlayersHousePC
 	add_special DayCareMan
-	add_special DayCareLady
+	add_special DayCareGentleman ; R/B (Was DayCareLady)
 	add_special DayCareManOutside
 	add_special MoveDeletion
 	add_special BankOfMom

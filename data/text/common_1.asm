@@ -1658,6 +1658,128 @@ _DaycareDummyText::
 	text_start
 	done
 
+; ################
+
+_DaycareGentlemanIntroText::
+	text "I run a DAYCARE."
+	line "Would you like me"
+	cont "to raise one of"
+	cont "your #MON?"
+	done
+
+_DaycareGentlemanWhichMonText::
+	text "Which #MON"
+	line "should I raise?"
+	prompt
+
+_DaycareGentlemanWillLookAfterMonText::
+	text "Fine, I'll look"
+	line "after @"
+	text_ram wStringBuffer1 ; wNameBuffer (R/B)
+	text_start
+	cont "for a while."
+	prompt
+
+_DaycareGentlemanComeSeeMeInAWhileText::
+	text "Come see me in"
+	line "a while."
+	done
+
+_DaycareGentlemanMonHasGrownText::
+	text "Your @"
+	text_ram wStringBuffer1 ; wNameBuffer (R/B)
+	text_start
+	line "has grown a lot!"
+
+	para "By level, it's"
+	line "grown by @"
+	; text_decimal wDayCareNumLevelsGrown, 1, 3 (R/B)
+	text_decimal wStringBuffer2 + 1, 1, 3
+	text "!"
+
+	para "Aren't I great?"
+	prompt ; no prompt in G/S
+	; done 
+
+_DaycareGentlemanOweMoneyText::
+	text "You owe me ¥@"
+	; text_bcd wDayCareTotalCost, 2 | LEADING_ZEROES | LEFT_ALIGN
+	text_decimal wStringBuffer2 + 2, 3, 4
+	text_start
+	line "for the return"
+	cont "of this #MON."
+	done
+
+_DaycareGentlemanGotMonBackText::
+	text "<PLAYER> got"
+	line "@"
+	text_ram wStringBuffer1 ; wDayCareMonName (R/B)
+	text " back!"
+	prompt
+
+_DaycareGentlemanMonNeedsMoreTimeText::
+	text "Back already?"
+	
+	para "Your @"
+	text_ram wStringBuffer1 ; wNameBuffer (R/B)
+	text_start
+	line "needs some more"
+	cont "time with me."
+	prompt ; no prompt in G/S
+	; done 
+
+_DaycareGentlemanAllRightComeAgainText:: ; Unified
+	text "All right then,"
+	line "come again."
+	done
+	;should this prompt?
+
+_DaycareGentlemanNoRoomForMonText::
+	text "You have no room"
+	line "for this #MON!"
+	prompt
+
+_DaycareGentlemanOnlyHaveOneMonText::
+	text "You only have one"
+	line "#MON with you."
+	done ; no done in G/S
+	; prompt
+
+_DaycareGentlemanCantAcceptMonWithHMText::
+	text "I can't accept a"
+	line "#MON that"
+	cont "knows an HM move."
+	done ; G/S uses prompt for these rejections
+	; prompt
+
+_DaycareGentlemanHeresYourMonText::
+	text "Thank you! Here's"
+	line "your #MON!"
+	prompt
+
+_DaycareGentlemanNotEnoughMoneyText::
+	text "Hey, you don't"
+	line "have enough money!"
+	prompt
+
+; New for Gen II edge cases
+_DaycareGentlemanCantAcceptEggText::
+	text "What? I have no"
+	line "idea what that is!"
+	prompt
+
+_DaycareGentlemanRemoveMailText::
+	text "Hey, remove this"
+	line "MAIL it's holding!"
+	prompt
+
+_DaycareGentlemanLastHealthyMonText::
+	text "That's your last"
+	line "healthy #MON!"
+	prompt
+
+; ################
+
 _DayCareManIntroText::
 	text "I'm the DAY-CARE"
 	line "MAN. Want me to"
