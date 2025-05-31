@@ -7,7 +7,7 @@ Route5SaffronGate_MapScripts:
 	def_callbacks
 
 Route5SaffronGateOfficerScript:
-	jumptextfaceplayer Route5SaffronGateOfficerText
+	jumptextfaceplayer _SaffronGateGuardGeeImThirstyText
 
 Route5SaffronGateOfficerText:
 	text "You're from JOHTO,"
@@ -16,6 +16,46 @@ Route5SaffronGateOfficerText:
 	para "How do you like"
 	line "KANTO? It's nice,"
 	cont "don't you agree?"
+	done
+
+;Add these to common text - or a special for the SaffronGuards
+_SaffronGateGuardGeeImThirstyText::
+	text "I'm on guard duty."
+	line "Gee, I'm thirsty,"
+	cont "though!"
+
+	para "Oh wait there,"
+	line "the road's closed."
+	done
+
+_SaffronGateGuardImParchedText::
+	text "Whoa, boy!"
+	line "I'm parched!"
+	cont "..."
+	cont "Huh? I can have"
+	cont "this drink?"
+	cont "Gee, thanks!@"
+	text_end
+
+_SaffronGateGuardYouCanGoOnThroughText::
+	text_start
+
+	para "..."
+	line "Glug glug..."
+	cont "..."
+	cont "Gulp..."
+	cont "If you want to go"
+	cont "to SAFFRON CITY..."
+	cont "..."
+	cont "You can go on"
+	cont "through. I'll"
+	cont "share this with"
+	cont "the other guards!"
+	done
+
+_SaffronGateGuardThanksForTheDrinkText::
+	text "Hi, thanks for"
+	line "the cool drinks!"
 	done
 
 Route5SaffronGate_MapEvents:

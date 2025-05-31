@@ -6,7 +6,7 @@
 ### MAPS:
 (Only interiors and dungeons left to do)
 
-- Route 5 -> (Day-care & Saffron north entrance gate)
+- Route 5 -> (Saffron north entrance gate) ** Narrower gates specially for Route5/6 to Saffron
 
 - Vermilion City: Fan Club, Gym, NPC homes
 
@@ -15,6 +15,8 @@
 ### EVENTS:
 
 MAIN:
+- Cerulean City Slowbro and its trainer having random-chosen text when spoken to
+
 - Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
 
 - Route 6 (Underground Path entrance & Saffron south entrance gate)
@@ -31,11 +33,14 @@ OTHER:
 - Do a "`get dirfacing_UP`" check in front of Viridian Gym's door, so that you can walk left to right without interruption
 
 (After the TM Update:)
-- Cerulean City Gym
+- Gyms and their reward TMs
+- TMs found in the overworld, Game Corner, etc.
 
 ### ENGINE / DATA:
 
-- Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE``
+- DayCareGentleman special needs to be updated and refined
+
+- Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE`` & ``SPRITE_LITTLE_GIRL EQU/ALIAS SPRITE_TWIN``
 
 - Adjust Indigo Plateau's roof palette for nighttime
 
@@ -57,11 +62,11 @@ OTHER:
 
 - Add the Link Receptionist into `jumpstd` events section
 
-- Update DVs, attributes, encounter music, etc. for Giovanni & other re-implemented R/B trainers
-
-- Determine proper party lineups for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
+- Update attributes, encounter music, etc. for re-implemented R/B trainers
 
 - Hide Cerulean Cave from wild Area location showings in the Pokédex
+
+- Determine proper party lineups for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
 
 - The Route 4 and Route 10 PokéCenters do NOT use a FlyData flag -- Confirmed
 
