@@ -320,15 +320,16 @@ ENDM
 	endgroup
 
 	newgroup FAST_SHIP                                            ; 15
-	map_const OLIVINE_PORT,                                10, 18 ;  1
-	map_const VERMILION_PORT,                              10, 18 ;  2
+	; map_const OLIVINE_PORT,                                10, 18 ;  1
+	; map_const VERMILION_PORT,                              10, 18 ;
+	map_const VERMILION_DOCK,                              14,  6 ;  2
 	map_const FAST_SHIP_1F,                                16,  9 ;  3
 	map_const FAST_SHIP_CABINS_NNW_NNE_NE,                  4, 16 ;  4
 	map_const FAST_SHIP_CABINS_SW_SSW_NW,                   4, 16 ;  5
 	map_const FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN,       5, 17 ;  6
 	map_const FAST_SHIP_B1F,                               16,  8 ;  7
-	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
-	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
+	; map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
+	; map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
 	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ; 11
 	map_const TIN_TOWER_ROOF,                              10,  9 ; 12

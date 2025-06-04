@@ -64,10 +64,10 @@ VermilionPortSailorAtGangwayScript:
 	; clearevent EVENT_BEAT_TEACHER_SHIRLEY
 	; clearevent EVENT_BEAT_SCHOOLBOY_NATE
 	; clearevent EVENT_BEAT_SCHOOLBOY_RICKY
-	setevent EVENT_FAST_SHIP_DESTINATION_OLIVINE
-	appear VERMILIONPORT_SAILOR1
-	setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_ENTER_SHIP
-	warp FAST_SHIP_1F, 25, 1
+	; setevent EVENT_FAST_SHIP_DESTINATION_OLIVINE
+	; appear VERMILIONPORT_SAILOR1
+	; setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_ENTER_SHIP
+	; warp FAST_SHIP_1F, 25, 1
 	end
 
 VermilionPortAlreadyRodeScript:
@@ -300,8 +300,8 @@ VermilionPort_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  5, VERMILION_PORT_PASSAGE, 5
-	warp_event  7, 17, FAST_SHIP_1F, 1
+	; warp_event  9,  5, VERMILION_PORT_PASSAGE, 5
+	; warp_event  7, 17, FAST_SHIP_1F, 1
 
 	def_coord_events
 	coord_event  7, 11, SCENE_VERMILIONPORT_ASK_ENTER_SHIP, VermilionPortWalkUpToShipScript
