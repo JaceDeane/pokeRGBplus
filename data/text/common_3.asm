@@ -923,12 +923,11 @@ _SpaceSpaceColonText:: ; unreferenced
 	done
 
 _PasswordAskResetText::
-	text "Password OK."
-	line "Select CONTINUE &"
-	cont "reset settings."
+	text "Select CONTINUE &"
+	line "reset settings."
 	prompt
 
-_PasswordWrongText::
+_PasswordWrongText:: ; unused -- Simplify Clock Tutorial
 	text "Wrong password!"
 	prompt
 
@@ -936,7 +935,7 @@ _PasswordAskResetClockText::
 	text "Reset the clock?"
 	done
 
-_PasswordAskEnterText::
+_PasswordAskEnterText:: ; unused -- Simplify Clock Tutorial
 	text "Please enter the"
 	line "password."
 	done
