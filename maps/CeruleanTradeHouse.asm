@@ -41,4 +41,4 @@ CeruleanTradeHouse_MapEvents:
 
 	def_object_events
 	object_event  5,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeHouseGrannyScript, -1
-	object_event  1,  2, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeHouseSageScript, -1
+	object_event  1,  2, SPRITE_GAMBLER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeHouseSageScript, -1

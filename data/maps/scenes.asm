@@ -24,21 +24,20 @@ MapScenes::
 	scene_var KARENS_ROOM,                                 wKarensRoomSceneID
 	scene_var LANCES_ROOM,                                 wLancesRoomSceneID
 	scene_var HALL_OF_FAME,                                wHallOfFameSceneID
-	scene_var ROUTE_27,                                    wRoute27SceneID ; Unused RGB+ -- TODO: Remove
-	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID ; Unused RGB+ -- TODO: Remove
+	scene_var ROUTE_27,                                    wRoute27SceneID ;***
+	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID ;***
 	scene_var PALLET_TOWN,                                 wPalletTownSceneID ; Updated R/B
-	;scene_var ELMS_LAB,                                    wElmsLabSceneID ; Unused RGB+ -- TODO: Remove
 	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID ; Updated R/B
 	scene_var OAKS_LAB,                                    wOaksLabSceneID ; Updated R/B
 	scene_var PEWTER_CITY,                                 wPewterCitySceneID ; Updated R/B
 	scene_var PEWTER_MUSEUM_OF_SCIENCE_1F,                 wPewterMuseumOfScienceSceneID ; Updated R/B
-	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
-	scene_var ROUTE_29,                                    wRoute29SceneID ; Unused RGB+ -- TODO: Remove
-	;scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID ; Unused RGB+ -- TODO: Remove
+	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID ;***
+	scene_var POKEMON_FAN_CLUB,                            wPokemonFanClubSceneID ; Updated R/B
+	scene_var VERMILION_CITY,                              wVermilionCitySceneID ; Updated R/B
 	scene_var VIRIDIAN_CITY,                               wViridianCitySceneID
 	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
 	scene_var ROUTE_22,                                    wRoute22SceneID
-	;scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID
+	scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID ;***
 	scene_var ROUTE_32,                                    wRoute32SceneID
 	scene_var ROUTE_35_NATIONAL_PARK_GATE,                 wRoute35NationalParkGateSceneID
 	scene_var ROUTE_36,                                    wRoute36SceneID
@@ -81,16 +80,19 @@ MapScenes::
 	scene_var TEAM_ROCKET_BASE_B2F,                        wTeamRocketBaseB2FSceneID
 	scene_var TEAM_ROCKET_BASE_B3F,                        wTeamRocketBaseB3FSceneID
 ; Unused in R/B
-	; scene_var GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, wGoldenrodUndergroundSwitchRoomEntrancesSceneID
-	; scene_var SILVER_CAVE_ROOM_3,                          wSilverCaveRoom3SceneID
-	; scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
-	; scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID
-	; scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
-	; scene_var OLIVINE_PORT,                                wOlivinePortSceneID
-	; scene_var VERMILION_PORT,                              wVermilionPortSceneID
-	; scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
-	; scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
-	; scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
+	scene_var GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, wGoldenrodUndergroundSwitchRoomEntrancesSceneID
+	scene_var SILVER_CAVE_ROOM_3,                          wSilverCaveRoom3SceneID
+	scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
+	scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID
+	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
+	ds 1 ;scene_var OLIVINE_PORT,                                wOlivinePortSceneID
+	;
+	scene_var VERMILION_DOCK,                              wVermilionDockSceneID
+; Unused in R/B
+	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
+	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
+	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
+	;
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	db -1 ; end
