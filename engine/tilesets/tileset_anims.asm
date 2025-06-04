@@ -122,6 +122,7 @@ UnusedTilesetAnim2: ; unreferenced
 	dw NULL,  DoneTileAnimation
 
 TilesetPortAnim:
+TilesetShipPortAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

@@ -124,6 +124,9 @@ INCLUDE "gfx/tilesets/cavern_palette_map.asm"
 TilesetGateKantoPalMap:
 INCLUDE "gfx/tilesets/gate_kanto_palette_map.asm"
 
+TilesetShipPortPalMap:
+INCLUDE "gfx/tilesets/ship_port_palette_map.asm"
+
 TilesetCemeteryPalMap:
 INCLUDE "gfx/tilesets/cemetery_palette_map.asm"
 

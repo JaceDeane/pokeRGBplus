@@ -2,7 +2,7 @@
 
 KantoWaterWildMons:
 
-	def_water_wildmons TOHJO_FALLS
+	def_water_wildmons VERMILION_DOCK ; Placeholder -- TODO
 	db 2 percent ; encounter rate
 	db 35, TENTACOOL
 	db 30, TENTACOOL

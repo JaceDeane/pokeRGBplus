@@ -100,15 +100,15 @@ SECTION "Johto Map Scripts 7", ROMX
 INCLUDE "maps/SafariZoneFuchsiaGateBeta.asm"
 INCLUDE "maps/SafariZoneBeta.asm"
 INCLUDE "maps/VictoryRoad.asm"
-INCLUDE "maps/OlivinePort.asm"
-INCLUDE "maps/VermilionPort.asm"
+; INCLUDE "maps/OlivinePort.asm"
+; INCLUDE "maps/VermilionPort.asm"
 INCLUDE "maps/FastShip1F.asm"
 INCLUDE "maps/FastShipCabins_NNW_NNE_NE.asm"
 INCLUDE "maps/FastShipCabins_SW_SSW_NW.asm"
 INCLUDE "maps/FastShipCabins_SE_SSE_CaptainsCabin.asm"
 INCLUDE "maps/FastShipB1F.asm"
-INCLUDE "maps/OlivinePortPassage.asm"
-INCLUDE "maps/VermilionPortPassage.asm"
+; INCLUDE "maps/OlivinePortPassage.asm"
+; INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/MountMoonSquare.asm" ; TODO -- Remove
 INCLUDE "maps/MountMoonGiftShop.asm" ; TODO -- Remove
 INCLUDE "maps/TinTowerRoof.asm"
@@ -144,7 +144,7 @@ INCLUDE "maps/IcePathB1F.asm"
 INCLUDE "maps/IcePathB2FMahoganySide.asm"
 INCLUDE "maps/IcePathB2FBlackthornSide.asm"
 INCLUDE "maps/IcePathB3F.asm"
-INCLUDE "maps/SoulHouse.asm"
+; INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
 
 
@@ -379,6 +379,7 @@ INCLUDE "maps/UndergroundPathWestEast.asm"
 INCLUDE "maps/RockTunnel1F.asm"
 INCLUDE "maps/RockTunnelB1F.asm"
 INCLUDE "maps/ViridianForest.asm"
+INCLUDE "maps/VermilionDock.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -547,5 +548,29 @@ INCLUDE "maps/IndigoPlateau.asm"
 INCLUDE "maps/Route21WestBorder.asm"
 INCLUDE "maps/Route11Gate1F.asm"
 INCLUDE "maps/Route11Gate2F.asm"
+
+
+SECTION "Map Scripts 18", ROMX
+
+
+SECTION "Map Scripts 19", ROMX
+
+
+SECTION "Map Scripts 20", ROMX
+
+
+SECTION "Map Scripts 21", ROMX
+
+
+SECTION "Map Scripts 22", ROMX
+
+
+SECTION "Map Scripts 23", ROMX
+
+
+SECTION "Map Scripts 24", ROMX
+
+
+SECTION "Map Scripts 25", ROMX
 
 ENDSECTION

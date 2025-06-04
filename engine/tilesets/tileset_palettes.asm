@@ -18,6 +18,8 @@ LoadSpecialMapPalette:
 	jr z, .redshouse
 	cp TILESET_GYM
 	jr z, .gym
+	cp TILESET_SHIP_PORT
+	jr z, .ship_port
 	jr .do_nothing
 
 .pokecom_2f
@@ -61,6 +63,19 @@ LoadSpecialMapPalette:
 
 .gym
 	call LoadGymPalette
+	scf
+	ret
+
+.ship_port
+	ld a, [wCurTimeOfDay]
+	cp NITE_F
+	jr z, .ship_port_nite
+	call LoadShipPortDayPalette
+	scf
+	ret
+
+.ship_port_nite
+	call LoadShipPortNitePalette
 	scf
 	ret
 
@@ -173,3 +188,22 @@ LoadGymPalette:
 
 GymPalette:
 INCLUDE "gfx/tilesets/gym.pal"
+
+LoadShipPortDayPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, ShipPortPalette_Day
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+LoadShipPortNitePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, ShipPortPalette_Nite
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+;ShipPortPalette:
+INCLUDE "gfx/tilesets/ship_port.pal"

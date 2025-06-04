@@ -16,3 +16,4 @@ rept 16
 endr
 
 	tilepal 1, BROWN, WATER, WATER, WATER, WATER, WATER, WATER, TEXT
+	tilepal 1, BROWN, TEXT

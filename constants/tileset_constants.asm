@@ -42,6 +42,7 @@
 	const TILESET_CAVERN               ;
 	const TILESET_DARK_CAVERN          ;
 	const TILESET_GATE_KANTO           ;
+	const TILESET_SHIP_PORT            ;
 	const TILESET_CEMETERY             ;
 	const TILESET_INTERIOR             ;
 	const TILESET_PLATEAU              ;

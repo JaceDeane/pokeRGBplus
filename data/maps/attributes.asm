@@ -589,7 +589,7 @@ ENDM
 	map_attributes MountMoonPokecenter1F, MOUNT_MOON_POKECENTER_1F, $00, 0
 	; map_attributes OlivinePort, OLIVINE_PORT, $0a, 0
 	; map_attributes VermilionPort, VERMILION_PORT, $0a, 0 ; Unused G/S
-	map_attributes VermilionDock, VERMILION_DOCK, $0d, 0
+	map_attributes VermilionDock, VERMILION_DOCK, $00, 0
 	map_attributes FastShip1F, FAST_SHIP_1F, $00, 0
 	map_attributes FastShipCabins_NNW_NNE_NE, FAST_SHIP_CABINS_NNW_NNE_NE, $00, 0
 	map_attributes FastShipCabins_SW_SSW_NW, FAST_SHIP_CABINS_SW_SSW_NW, $00, 0
@@ -619,7 +619,7 @@ ENDM
 	map_attributes LavenderSpeechHouse, LAVENDER_SPEECH_HOUSE, $00, 0
 	map_attributes LavenderNameRater, LAVENDER_NAME_RATER, $00, 0
 	map_attributes LavenderMart, LAVENDER_MART, $00, 0
-	map_attributes SoulHouse, SOUL_HOUSE, $00, 0
+	; map_attributes SoulHouse, SOUL_HOUSE, $00, 0
 	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
 	map_attributes Route8UndergroundPathEntrance, ROUTE_8_UNDERGROUND_PATH_ENTRANCE, $00, 0
@@ -699,7 +699,6 @@ ENDM
 	map_attributes CopycatsHouse2F, COPYCATS_HOUSE_2F, $00, 0
 	map_attributes Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route5SaffronGate, ROUTE_5_SAFFRON_GATE, $00, 0
-	map_attributes Route5CleanseTagHouse, ROUTE_5_CLEANSE_TAG_HOUSE, $00, 0
 	map_attributes DayCare, DAY_CARE, $00, 0
 	map_attributes CherrygroveMart, CHERRYGROVE_MART, $00, 0
 	map_attributes CherrygrovePokecenter1F, CHERRYGROVE_POKECENTER_1F, $00, 0

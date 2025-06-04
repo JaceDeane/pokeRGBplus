@@ -365,6 +365,7 @@ INCLUDE "data/tilesets/cavern_collision.asm"
 TilesetDarkCavernGFX::
 INCBIN "gfx/tilesets/dark_cavern.2bpp.lz"
 
+
 SECTION "Tileset Data 9", ROMX
 
 TilesetGateKantoGFX::
@@ -376,6 +377,15 @@ INCBIN "data/tilesets/gate_kanto_metatiles.bin"
 TilesetGateKantoColl::
 INCLUDE "data/tilesets/gate_kanto_collision.asm"
 
+TilesetShipPortGFX::
+INCBIN "gfx/tilesets/ship_port.2bpp.lz"
+
+TilesetShipPortMeta::
+INCBIN "data/tilesets/ship_port_metatiles.bin"
+
+TilesetShipPortColl::
+INCLUDE "data/tilesets/ship_port_collision.asm"
+
 TilesetCemeteryGFX::
 INCBIN "gfx/tilesets/cemetery.2bpp.lz"
 
@@ -384,6 +394,9 @@ INCBIN "data/tilesets/cemetery_metatiles.bin"
 
 TilesetCemeteryColl::
 INCLUDE "data/tilesets/cemetery_collision.asm"
+
+
+SECTION "Tileset Data 10", ROMX
 
 TilesetInteriorGFX::
 INCBIN "gfx/tilesets/interior.2bpp.lz"

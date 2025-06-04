@@ -330,11 +330,11 @@ FastShipCabins_SW_SSW_NW_Blocks:
 FastShipCabins_SE_SSE_CaptainsCabin_Blocks:
 	INCBIN "maps/FastShipCabins_SE_SSE_CaptainsCabin.blk"
 
-OlivinePort_Blocks:
-	INCBIN "maps/OlivinePort.blk"
+; OlivinePort_Blocks:
+	; INCBIN "maps/OlivinePort.blk"
 
-VermilionPort_Blocks:
-	INCBIN "maps/VermilionPort.blk"
+; VermilionPort_Blocks:
+	; INCBIN "maps/VermilionPort.blk"
 
 OlivineCafe_Blocks:
 SafariZoneMainOffice_Blocks:
@@ -352,8 +352,8 @@ LavRadioTower1F_Blocks:
 SilverCaveItemRooms_Blocks:
 	INCBIN "maps/SilverCaveItemRooms.blk"
 
-SoulHouse_Blocks:
-	INCBIN "maps/SoulHouse.blk"
+; SoulHouse_Blocks:
+	; INCBIN "maps/SoulHouse.blk"
 
 SeafoamGym_Blocks:
 	INCBIN "maps/SeafoamGym.blk"
@@ -361,9 +361,9 @@ SeafoamGym_Blocks:
 MrPokemonsHouse_Blocks:
 	; INCBIN "maps/MrPokemonsHouse.blk"
 
-OlivinePortPassage_Blocks:
-VermilionPortPassage_Blocks:
-	INCBIN "maps/PortPassage.blk"
+; OlivinePortPassage_Blocks:
+; VermilionPortPassage_Blocks:
+	; INCBIN "maps/PortPassage.blk"
 
 Route39Barn_Blocks:
 	INCBIN "maps/Route39Barn.blk"
@@ -578,7 +578,6 @@ Route16FuchsiaSpeechHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:
 MrPsychicsHouse_Blocks:
-Route5CleanseTagHouse_Blocks:
 	INCBIN "maps/House.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
@@ -995,6 +994,9 @@ CopycatsHouse1F_Blocks:
 CopycatsHouse2F_Blocks:
 	INCBIN "maps/CopycatsHouse2F.blk"
 
+
+SECTION "Map Blocks 4", ROMX
+
 ViridianForest_Blocks:
 	INCBIN "maps/ViridianForest.blk"
 	
@@ -1026,5 +1028,8 @@ Route21WestBorder_Blocks:
 
 BillsHouse_Blocks:
 INCBIN "maps/BillsHouse.blk"
+
+VermilionDock_Blocks:
+INCBIN "maps/VermilionDock.blk"
 
 ENDSECTION

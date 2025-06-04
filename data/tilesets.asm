@@ -56,6 +56,7 @@ Tilesets::
 	tileset TilesetCavern
 	tileset TilesetDarkCavern
 	tileset TilesetGateKanto
+	tileset TilesetShipPort
 	tileset TilesetCemetery
 	tileset TilesetInterior
 	tileset TilesetPlateau
