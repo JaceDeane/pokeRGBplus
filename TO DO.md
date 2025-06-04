@@ -8,7 +8,9 @@
 
 - Route 5 -> (Saffron north entrance gate) ** Narrower gates specially for Route5/6 to Saffron
 
-- Vermilion City: Fan Club, Gym, NPC homes
+- Vermilion City: Fan Club, NPC homes
+
+- S.S. Anne: Interiors and Bow
 
 - Cerulean Cave (1F, B1F, B2F)
 
@@ -17,9 +19,9 @@
 MAIN:
 - Cerulean City Slowbro and its trainer having random-chosen text when spoken to
 
-- Route 5 (Day-care, Underground Path entrance & Saffron north entrance gate)
+- Route 5 (Day-care & Saffron north entrance gate)
 
-- Route 6 (Underground Path entrance & Saffron south entrance gate)
+- Route 6 (Saffron south entrance gate)
 
 - Vermilion City (Fisher's house, Pokémon Center, Mart, Gym, Fan Club, Farfetch'd house, NPC houses)
 
@@ -40,7 +42,7 @@ OTHER:
 
 - DayCareGentleman special needs to be updated and refined
 
-- Make ``SPRITE_GAMBLER EQU/ALIAS SPRITE_SAGE`` & ``SPRITE_LITTLE_GIRL EQU/ALIAS SPRITE_TWIN``
+- Vermilion Dock (And S.S. Anne Bow) should load default map palette, then just overwrites the new ones as needed, rather than 3 seperate full palettes for MORN, DAY and NITE
 
 - Adjust Indigo Plateau's roof palette for nighttime
 
@@ -138,8 +140,6 @@ OTHER:
 - Picking up game corner coins ()
 
 - Add more music that changes at night (https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
-
-- Trashcan puzzle in Vermilion Gym (https://github.com/pret/pokecrystal/wiki/Trashcan-puzzle-in-Vermilion-Gym)
 
 - Add spinner tiles from Generation I Rocket Hideout (https://github.com/pret/pokecrystal/wiki/Add-spinner-tiles-from-Generation-I-Rocket-Hideout)
 
