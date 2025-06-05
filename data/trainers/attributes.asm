@@ -89,7 +89,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Koga
-	db FULL_HEAL, FULL_RESTORE ; items
+	db HYPER_POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -101,19 +101,19 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Brock
-	db HYPER_POTION, NO_ITEM ; items
+	db POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Misty
-	db FULL_HEAL, NO_ITEM ; items
+	db SUPER_POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Lt Surge
-	db HYPER_POTION, NO_ITEM ; items
+	db SUPER_POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -125,7 +125,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Erika
-	db HYPER_POTION, NO_ITEM ; items
+	db HYPER_POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -155,7 +155,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Leader Giovanni
-	db DIRE_HIT, NO_ITEM ; items
+	db MAX_POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -209,7 +209,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Sabrina
-	db HYPER_POTION, NO_ITEM ; items
+	db HYPER_POTION, FULL_HEAL ; items
 	db 25 ; base reward × 4 = ¥100 (R/B: ¥99)
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES

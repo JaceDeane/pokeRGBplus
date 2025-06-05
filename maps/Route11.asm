@@ -140,7 +140,7 @@ PsychicFidelAfterBattleText:
 	done
 
 DiglettsCaveSignText:
-	text "DIGLETT'S CAVE"
+	text "DIGLETT's CAVE"
 	done
 
 Route11_MapEvents:
