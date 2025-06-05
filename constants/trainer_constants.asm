@@ -174,7 +174,7 @@ DEF KRIS EQU __trainer_class__
 	const IRIS
 	const RELI
 	const ALI
-	const LASS_UNUSED
+	const KELSEY ; Unused in FR/LG -- replaces PICNICKER_UNUSED in FR/LG
 	const HALEY
 	const ANN
 	const DAWN
@@ -547,7 +547,7 @@ DEF KRIS EQU __trainer_class__
 	const DIANA
 	const NANCY
 	const ISABELLE
-	const KELSEY
+	const PICNICKER_UNUSED ; Unused in R/B -- replaced LASS_9 in FR/LG as KELSEY
 	const ALICIA
 	const CAITLIN
 	const HEIDI
@@ -572,6 +572,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass CAMPER ; 36 -- Updated to R/B, using FR/LG names
 	const LIAM
 	const SHANE
+	const FLINT ; FR/LG splits SHANE and FLINT despite same "Trainer" party in R/B
 	const ETHAN
 	const RICKY
 	const JEFF

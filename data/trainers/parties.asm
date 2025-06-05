@@ -659,8 +659,8 @@ LassGroup: ; Updated to R/B, using FR/LG names
 	db 14, NIDORAN_F
 	db -1 ; end
 
-	; LASS (9) ; Not named in FR/LG, unused in FR/LG?
-	db "UNUSED@", TRAINERTYPE_NORMAL
+	; LASS (9) ; Unused in FR/LG -- replaces PICNICKER_UNUSED in FR/LG
+	db "KELSEY@", TRAINERTYPE_NORMAL
 	db 15, NIDORAN_M
 	db 15, NIDORAN_F
 	db -1 ; end
@@ -2712,8 +2712,8 @@ PicnickerGroup: ; Updated to R/B, using FR/LG names
 	db 16, PIDGEY
 	db -1 ; end
 
-	; PICNICKER (4) ; Unused R/B
-	db "KELSEY@", TRAINERTYPE_NORMAL
+	; PICNICKER (4) ; Unused in R/B -- replaced LASS_9 in FR/LG as KELSEY
+	db "UNUSED@", TRAINERTYPE_NORMAL
 	db 22, BULBASAUR
 	;db 15, NIDORAN_M ; FR/LG
 	;db 15, NIDORAN_F ; FR/LG
@@ -2861,40 +2861,46 @@ CamperGroup: ; Updated to R/B, using FR/LG names
 
 	; CAMPER (2)
 	db "SHANE@", TRAINERTYPE_NORMAL
-	db 14, PSYDUCK ; RATTATA -- FR/LG
-	db 14, NIDORAN_M ; EKANS -- FR/LG
+	db 14, RATTATA
+	db 14, EKANS
+	db -1 ; end
+	
+	; CAMPER (3) SHANE and FLINT same "Trainer" party in R/B
+	db "FLINT@", TRAINERTYPE_NORMAL
+	db 14, RATTATA
+	db 14, EKANS
 	db -1 ; end
 
-	; CAMPER (3)
+	; CAMPER (4)
 	db "ETHAN@", TRAINERTYPE_NORMAL
 	db 18, MANKEY
 	db -1 ; end
 
-	; CAMPER (4)
+	; CAMPER (5)
 	db "RICKY@", TRAINERTYPE_NORMAL
 	db 20, SQUIRTLE
 	db -1 ; end
 
-	; CAMPER (5)
+	; CAMPER (6)
 	db "JEFF@", TRAINERTYPE_NORMAL
 	db 16, SPEAROW
 	db 16, RATICATE
 	db -1 ; end
 
-	; CAMPER (6) ; Unused
+	; CAMPER (7) ; Unused
 	db "UNUSED@", TRAINERTYPE_NORMAL
 	db 18, DIGLETT
 	db 18, DIGLETT
 	db 18, SANDSHREW
 	db -1 ; end
 
-	; CAMPER (7)
+	; CAMPER (8)
 	db "CHRIS@", TRAINERTYPE_NORMAL
 	db 21, GROWLITHE
 	db 21, CHARMANDER
 	db -1 ; end
 
-	; CAMPER (8)
+	; CAMPER (9)
 	db "DREW@", TRAINERTYPE_NORMAL
 	db 19, RATTATA
 	db 19, DIGLETT ; SANDSHREW -- FR/LG
@@ -2902,7 +2908,7 @@ CamperGroup: ; Updated to R/B, using FR/LG names
 	db 19, SANDSHREW
 	db -1 ; end
 
-	; CAMPER (9)
+	; CAMPER (10)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
 	db 29, NIDORAN_M
 	db 29, NIDORINO
