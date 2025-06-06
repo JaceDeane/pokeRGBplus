@@ -37,4 +37,6 @@ SpriteMons:
 	db LUGIA
 	db HO_OH
 	db SLOWPOKE
+	db SEEL
+	db OMANYTE
 	assert_table_length NUM_POKEMON_SPRITES
