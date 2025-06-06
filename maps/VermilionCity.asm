@@ -9,7 +9,8 @@
 VermilionCity_MapScripts:
 	def_scene_scripts
 	scene_script VermilionCityNoopScene, SCENE_VERMILIONCITY_NOOP
-	scene_script VermilionCityNoopScene, SCENE_VERMILIONCITY_NOOP2
+	scene_script VermilionCityPlayerCanPassScene, SCENE_VERMILIONCITY_PLAYER_CAN_PASS
+	scene_script VermilionCitySSAnneLeft, SCENE_VERMILIONCITY_SS_ANNE_LEFT
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VermilionCityFlypointCallback
@@ -19,6 +20,15 @@ VermilionCityFlypointCallback:
 	endcallback
 
 VermilionCityNoopScene:
+	end
+
+VermilionCityPlayerCanPassScene:
+	end
+
+VermilionCitySSAnneLeft:
+	applymovement PLAYER, VermilionCityPlayerWalksUpMovement
+	applymovement PLAYER, VermilionCityPlayerWalksUpMovement
+	setscene SCENE_VERMILIONCITY_NOOP
 	end
 
 VermilionCityBeautyScript:
@@ -41,51 +51,69 @@ VermilionCityGambler1Script:
 	end
 
 VermilionCityTicketCheckScene:
-	;fallthrough
+	turnobject VERMILIONCITY_SAILOR1, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	checkevent EVENT_SS_ANNE_LEFT
+	iffalse VermilionCitySailor1Script.greet_player_and_check_ticket
+	writetext VermilionCitySailor1ShipSetSailText
+	waitbutton
+	closetext
+	applymovement PLAYER, VermilionCityPlayerWalksUpMovement
+	turnobject VERMILIONCITY_SAILOR1, UP
+	end
+
 VermilionCitySailor1Script:
-	jumptextfaceplayer VermilionCitySailor1DoYouHaveATicketText
+	faceplayer
+	opentext
+	checkevent EVENT_SS_ANNE_LEFT
+	iftrue .ship_departed
+	checkscene SCENE_VERMILIONCITY_PLAYER_CAN_PASS
+	iftrue .greet_player
+	iffalse .greet_player_and_check_ticket
+	; readvar VAR_XCOORD
+	; getnum STRING_BUFFER_3
+	; ifequal 18, .greet_player
+	; ifequal 19, .greet_player_and_check_ticket
+.greet_player
+	writetext VermilionCitySailor1WelcomeToSSAnneText
+	waitbutton
+	closetext
+	end
 
-; VermilionCitySailor1Text:
-	; text_asm
-	; CheckEvent EVENT_SS_ANNE_LEFT
-	; jr nz, .ship_departed
-	; ld a, [wSpritePlayerStateData1FacingDirection]
-	; cp SPRITE_FACING_RIGHT
-	; jr z, .greet_player
-	; ld hl, .inFrontOfOrBehindGuardCoords
-	; call ArePlayerCoordsInArray
-	; jr nc, .greet_player_and_check_ticket
-; .greet_player
-	; ld hl, .WelcomeToSSAnneText
-	; call PrintText
-	; jr .end
-; .greet_player_and_check_ticket
-	; ld hl, .DoYouHaveATicketText
-	; call PrintText
-	; ld b, S_S_TICKET
-	; predef GetQuantityOfItemInBag
-	; ld a, b
-	; and a
-	; jr nz, .player_has_ticket
-	; ld hl, .YouNeedATicketText
-	; call PrintText
-	; jr .end
-; .player_has_ticket
-	; ld hl, .FlashedTicketText
-	; call PrintText
-	; ld a, SCRIPT_VERMILIONCITY_PLAYER_ALLOWED_TO_PASS
-	; ld [wVermilionCityCurScript], a
-	; jr .end
-; .ship_departed
-	; ld hl, .ShipSetSailText
-	; call PrintText
-; .end
-	; jp TextScriptEnd
+.greet_player_and_check_ticket
+	writetext VermilionCitySailor1DoYouHaveATicketText
+	waitbutton
+	checkitem S_S_TICKET
+	iftrue .player_has_ticket
+	writetext VermilionCitySailor1YouNeedATicketText
+	waitbutton
+	closetext
+	readvar VAR_XCOORD
+	getnum STRING_BUFFER_3
+	ifequal 18, .no_ticket
+	end
 
-; .inFrontOfOrBehindGuardCoords
-	; dbmapcoord 19, 29 ; in front of guard
-	; dbmapcoord 19, 31 ; behind guard
-	; db -1 ; end
+.no_ticket
+	applymovement PLAYER, VermilionCityPlayerWalksUpMovement
+	turnobject VERMILIONCITY_SAILOR1, UP
+	end
+
+.player_has_ticket
+	writetext VermilionCitySailor1FlashedTicketText
+	waitbutton
+	closetext
+	setscene SCENE_VERMILIONCITY_PLAYER_CAN_PASS
+	end
+	
+.ship_departed
+	writetext VermilionCitySailor1ShipSetSailText
+	waitbutton
+	closetext
+	end
+
+
+
 
 VermilionMachopOwner:
 	jumptextfaceplayer VermilionCityGambler2Text
@@ -190,6 +218,10 @@ VermilionCityHarborSign:
 
 ; VermilionCityHiddenFullHeal:
 	; hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
+
+VermilionCityPlayerWalksUpMovement:
+	step UP
+	step_end
 
 ; VermilionCitySnorlaxSleepingText:
 	; text "SNORLAX is snoring"

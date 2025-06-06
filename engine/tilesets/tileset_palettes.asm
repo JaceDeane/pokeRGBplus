@@ -20,6 +20,8 @@ LoadSpecialMapPalette:
 	jr z, .gym
 	cp TILESET_SHIP_PORT
 	jr z, .ship_port
+	cp TILESET_INTERIOR
+	jr z, .interior
 	jr .do_nothing
 
 .pokecom_2f
@@ -76,6 +78,14 @@ LoadSpecialMapPalette:
 
 .ship_port_nite
 	call LoadShipPortNitePalette
+	scf
+	ret
+
+.interior
+	ld a, [wMapNumber]
+	cp MAP_BILLS_HOUSE
+	jr z, .do_nothing
+	call LoadInteriorPalette
 	scf
 	ret
 
@@ -207,3 +217,14 @@ LoadShipPortNitePalette:
 
 ;ShipPortPalette:
 INCLUDE "gfx/tilesets/ship_port.pal"
+
+LoadInteriorPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, InteriorPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+InteriorPalette:
+INCLUDE "gfx/tilesets/interior.pal"

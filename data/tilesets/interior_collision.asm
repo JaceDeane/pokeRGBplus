@@ -18,8 +18,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 11
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 12
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 13
-	tilecoll WALL, WALL, FLOOR, WALL ; 14
-	tilecoll WALL, WALL, WALL, FLOOR ; 15
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 14
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 15
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 16
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 17
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 18
@@ -58,3 +58,7 @@
 	tilecoll FLOOR, WARP_PANEL, FLOOR, FLOOR ; 39
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 3a
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 3b
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 3c
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 3d
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 3e
+	tilecoll WALL, WALL, WALL, WALL ; 3f

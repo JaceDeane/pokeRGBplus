@@ -1,10 +1,10 @@
 	object_const_def
+	const POKEMONFANCLUB_PIKACHU_FAN
+	const POKEMONFANCLUB_SEEL_FAN
+	const POKEMONFANCLUB_PIKACHU
+	const POKEMONFANCLUB_SEEL
 	const POKEMONFANCLUB_CHAIRMAN
 	const POKEMONFANCLUB_RECEPTIONIST
-	const POKEMONFANCLUB_CLEFAIRY_GUY
-	const POKEMONFANCLUB_TEACHER
-	const POKEMONFANCLUB_FAIRY
-	const POKEMONFANCLUB_ODDISH
 
 PokemonFanClub_MapScripts:
 	def_scene_scripts
@@ -14,100 +14,143 @@ PokemonFanClub_MapScripts:
 PokemonFanClubChairmanScript:
 	faceplayer
 	opentext
-	checkevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	checkevent EVENT_GOT_BIKE_VOUCHER
 	iftrue .HeardSpeech
-	checkevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT_BUT_BAG_WAS_FULL
-	iftrue .HeardSpeechButBagFull
-	writetext PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText
+	writetext PokemonFanClubChairmanIntroText
 	yesorno
 	iffalse .NotListening
-	writetext PokemonFanClubChairmanRapidashText
+	writetext PokemonFanClubChairmanStoryText
 	promptbutton
-.HeardSpeechButBagFull:
-	writetext PokemonFanClubChairmanIWantYouToHaveThisText
-	promptbutton
-	verbosegiveitem RARE_CANDY
+	waitsfx
+	giveitem BIKE_VOUCHER
 	iffalse .BagFull
-	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
-	writetext PokemonFanClubChairmanItsARareCandyText
+	writetext PokemonFanClubReceivedBikeVoucherText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	itemnotify
+	setevent EVENT_GOT_BIKE_VOUCHER
+	writetext PokemonFanClubExplainBikeVoucherText
 	waitbutton
 	closetext
 	end
 
 .HeardSpeech:
-	writetext PokemonFanClubChairmanMoreTalesToTellText
+	writetext PokemonFanClubChairFinalText
 	waitbutton
 	closetext
 	end
 
 .NotListening:
-	writetext PokemonFanClubChairmanHowDisappointingText
+	writetext PokemonFanClubNoStoryText
 	waitbutton
+	closetext
+	end
+
 .BagFull:
+	writetext PokemonFanClubBagFullText
+	waitbutton
 	closetext
 	end
 
 PokemonFanClubReceptionistScript:
 	jumptextfaceplayer PokemonFanClubReceptionistText
 
-PokemonFanClubClefairyGuyScript:
+; PokemonFanClubClefairyGuyScript:
+	; faceplayer
+	; opentext
+	; checkevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
+	; iftrue .GotLostItem
+	; checkevent EVENT_RETURNED_MACHINE_PART
+	; iftrue .FoundClefairyDoll
+	; writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
+	; waitbutton
+	; closetext
+	; end
+
+; .FoundClefairyDoll:
+	; writetext PokemonFanClubClefairyGuyMakingDoWithADollIFoundText
+	; checkevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
+	; iftrue .MetCopycat
+	; waitbutton
+	; closetext
+	; end
+
+; .MetCopycat:
+	; promptbutton
+	; writetext PokemonFanClubClefairyGuyTakeThisDollBackToGirlText
+	; promptbutton
+	; waitsfx
+	; giveitem LOST_ITEM
+	; iffalse .NoRoom
+	; disappear POKEMONFANCLUB_FAIRY
+	; writetext PokemonFanClubPlayerReceivedDollText
+	; playsound SFX_KEY_ITEM
+	; waitsfx
+	; itemnotify
+	; setevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
+	; closetext
+	; end
+
+; .GotLostItem:
+	; writetext PokemonFanClubClefairyGuyGoingToGetARealClefairyText
+	; waitbutton
+	; closetext
+	; end
+
+; .NoRoom:
+	; writetext PokemonFanClubClefairyGuyPackIsJammedFullText
+	; waitbutton
+	; closetext
+	; end
+
+PokemonFanClubSeelFanScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
-	iftrue .GotLostItem
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .FoundClefairyDoll
-	writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
+	checkevent EVENT_SEEL_FAN_BOAST
+	iftrue .mine_is_better
+	writetext PokemonFanClubSeelFanNormalText
 	waitbutton
 	closetext
+	setevent EVENT_PIKACHU_FAN_BOAST
 	end
-
-.FoundClefairyDoll:
-	writetext PokemonFanClubClefairyGuyMakingDoWithADollIFoundText
-	checkevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
-	iftrue .MetCopycat
+	
+.mine_is_better
+	writetext PokemonFanClubSeelFanBetterText
 	waitbutton
 	closetext
+	clearevent EVENT_SEEL_FAN_BOAST
 	end
 
-.MetCopycat:
-	promptbutton
-	writetext PokemonFanClubClefairyGuyTakeThisDollBackToGirlText
-	promptbutton
-	waitsfx
-	giveitem LOST_ITEM
-	iffalse .NoRoom
-	disappear POKEMONFANCLUB_FAIRY
-	writetext PokemonFanClubPlayerReceivedDollText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	setevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
-	closetext
-	end
-
-.GotLostItem:
-	writetext PokemonFanClubClefairyGuyGoingToGetARealClefairyText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext PokemonFanClubClefairyGuyPackIsJammedFullText
-	waitbutton
-	closetext
-	end
-
-PokemonFanClubTeacherScript:
-	jumptextfaceplayer PokemonFanClubTeacherText
-
-PokemonFanClubClefairyDollScript:
-	jumptext PokemonFanClubClefairyDollText
-
-PokemonFanClubBayleefScript:
+PokemonFanClubSeelScript:
 	opentext
-	writetext PokemonFanClubBayleefText
-	cry BAYLEEF
+	writetext PokemonFanClubSeelText
+	cry SEEL
+	waitbutton
+	closetext
+	end
+
+PokemonFanClubPikachuFanScript:
+	faceplayer
+	opentext
+	checkevent EVENT_PIKACHU_FAN_BOAST
+	iftrue .mine_is_better
+	writetext PokemonFanClubPikachuFanNormalText
+	waitbutton
+	closetext
+	setevent EVENT_SEEL_FAN_BOAST
+	end
+	
+.mine_is_better
+	writetext PokemonFanClubPikachuFanBetterText
+	waitbutton
+	closetext
+	clearevent EVENT_PIKACHU_FAN_BOAST
+	end
+
+PokemonFanClubPikachuScript:
+	opentext
+	writetext PokemonFanClubPikachuText
+	cry PIKACHU
 	waitbutton
 	closetext
 	end
@@ -118,36 +161,39 @@ PokemonFanClubListenSign:
 PokemonFanClubBraggingSign:
 	jumptext PokemonFanClubBraggingSignText
 
-PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
+PokemonFanClubChairmanIntroText:
 	text "I'm the CHAIRMAN"
 	line "of the #MON FAN"
-	cont "CLUB."
+	cont "CLUB!"
 
-	para "I've raised over"
-	line "150 #MON."
+	para "I have collected"
+	line "over 100 #MON!"
 
 	para "I'm very fussy"
 	line "when it comes to"
-	cont "#MON."
+	cont "#MON!"
 
-	para "Did you visit just"
-	line "to hear about my"
-	cont "#MON?"
+	para "So…"
+
+	para "Did you come"
+	line "visit to hear"
+	cont "about my #MON?"
 	done
 
-PokemonFanClubChairmanRapidashText:
+PokemonFanClubChairmanStoryText:
 	text "Good!"
 	line "Then listen up!"
 
-	para "So… my favorite"
+	para "So… my favorite,"
 	line "RAPIDASH…"
 
 	para "It… cute… lovely…"
 	line "smart… unbearably…"
 	cont "plus… amazing… oh…"
 	cont "you think so?…"
-	cont "Too much… wild…"
-	cont "beautiful… kindly…"
+
+	para "Oh, yes… it…"
+	line "stunning… kindly…"
 	cont "love it!"
 
 	para "Hug it… when…"
@@ -156,131 +202,104 @@ PokemonFanClubChairmanRapidashText:
 	cont "spectacular…"
 	cont "ravishing… simply"
 	cont "divine…"
-	cont "Oops! Look at the"
-	cont "time! I've kept"
-	cont "you too long!"
-	done
 
-PokemonFanClubChairmanIWantYouToHaveThisText:
-	text "Thanks for hearing"
+	para "Oops! Look at the"
+	line "time! I've kept"
+	cont "you too long!"
+
+	para "Thanks for hearing"
 	line "me out. I want you"
 	cont "to have this!"
 	done
 
-PokemonFanClubChairmanItsARareCandyText:
-	text "It's a RARE CANDY"
-	line "that makes #MON"
-	cont "stronger."
-
-	para "I prefer making my"
-	line "#MON stronger"
-
-	para "by battling, so"
-	line "you can have it."
+PokemonFanClubReceivedBikeVoucherText:
+	text "<PLAYER> received"
+	line "a BIKE VOUCHER!"
 	done
 
-PokemonFanClubChairmanMoreTalesToTellText:
-	text "Hello, <PLAY_G>!"
+PokemonFanClubExplainBikeVoucherText:
+	text "Exchange that for"
+	line "a BICYCLE!"
+
+	para "Don't worry, my"
+	line "FEAROW will FLY"
+	cont "me anywhere!"
+
+	para "So, I don't need a"
+	line "BICYCLE!"
+
+	para "I hope you like"
+	line "cycling!"
+	done
+
+PokemonFanClubNoStoryText:
+	text "Oh… Come back"
+	line "when you want to"
+	cont "hear my story!"
+	
+	; text "How disappointing…"
+
+	; para "Come back if you"
+	; line "want to listen."
+	done
+
+PokemonFanClubChairFinalText:
+	text "Hello, <PLAYER>!"
 
 	para "Did you come see"
 	line "me about my #-"
 	cont "MON again?"
 
-	para "No? Oh… I had more"
-	line "tales to tell…"
+	para "No? Too bad!"
+	; para "No? Oh… I had more"
+	; line "tales to tell…"
 	done
 
-PokemonFanClubChairmanHowDisappointingText:
-	text "How disappointing…"
-
-	para "Come back if you"
-	line "want to listen."
+PokemonFanClubBagFullText:
+	text "Make room for"
+	line "this!"
 	done
 
 PokemonFanClubReceptionistText:
 	text "Our CHAIRMAN is"
-	line "very vocal when it"
-	cont "comes to #MON…"
+	line "very vocal about"
+	cont "#MON."
 	done
 
-PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
-	text "I love the way"
-	line "CLEFAIRY waggles"
-
-	para "its finger when"
-	line "it's trying to use"
-
-	para "METRONOME."
-	line "It's so adorable!"
+PokemonFanClubPikachuFanNormalText:
+	text "Won't you admire"
+	line "my PIKACHU's"
+	cont "adorable tail?"
 	done
 
-PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
-	text "I love CLEFAIRY,"
-	line "but I could never"
-
-	para "catch one. So I'm"
-	line "making do with a"
-
-	para "# DOLL that I"
-	line "found."
+PokemonFanClubPikachuFanBetterText:
+	text "Humph! My PIKACHU"
+	line "is twice as cute"
+	cont "as that one!"
 	done
 
-PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
-	text "Oh, I see now. The"
-	line "girl who lost this"
+PokemonFanClubSeelFanNormalText:
+	text "I just love my"
+	line "SEEL!"
 
-	para "# DOLL is sad…"
-
-	para "OK. Could you take"
-	line "this # DOLL"
-
-	para "back to that poor"
-	line "little girl?"
-
-	para "I'll befriend a"
-	line "real CLEFAIRY on"
-
-	para "my own one day."
-	line "No worries!"
+	para "It squeals when I"
+	line "hug it!"
 	done
 
-PokemonFanClubPlayerReceivedDollText:
-	text "<PLAYER> received"
-	line "# DOLL."
+PokemonFanClubSeelFanBetterText:
+	text "Oh dear!"
+
+	para "My SEEL is far"
+	line "more attractive!"
 	done
 
-PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
-	text "You watch. I'm"
-	line "going to get a"
-
-	para "real CLEFAIRY as"
-	line "my friend."
+PokemonFanClubPikachuText:
+	text "PIKACHU: Chu!"
+	line "Pikachu!"
 	done
 
-PokemonFanClubClefairyGuyPackIsJammedFullText:
-	text "Your PACK is"
-	line "jammed full."
-	done
-
-PokemonFanClubTeacherText:
-	text "Look at my darling"
-	line "BAYLEEF!"
-
-	para "The leaf on its"
-	line "head is so cute!"
-	done
-
-PokemonFanClubClefairyDollText:
-	text "It's a CLEFAIRY!"
-	line "Huh?"
-
-	para "Oh, right. It's a"
-	line "CLEFAIRY #"
-	cont "DOLL."
-	done
-
-PokemonFanClubBayleefText:
-	text "BAYLEEF: Li liif!"
+PokemonFanClubSeelText:
+	text "SEEL: Kyuoo!"
 	done
 
 PokemonFanClubListenSignText:
@@ -298,19 +317,19 @@ PokemonFanClub_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, VERMILION_CITY, 3
-	warp_event  3,  7, VERMILION_CITY, 3
+	warp_event  2,  7, VERMILION_CITY, 3 ;2
+	warp_event  3,  7, VERMILION_CITY, 3 ;2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  0, BGEVENT_READ, PokemonFanClubListenSign
-	bg_event  9,  0, BGEVENT_READ, PokemonFanClubBraggingSign
+	bg_event  1,  0, BGEVENT_READ, PokemonFanClubListenSign
+	bg_event  6,  0, BGEVENT_READ, PokemonFanClubBraggingSign
 
 	def_object_events
+	object_event  6,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubPikachuFanScript, -1
+	object_event  1,  3, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubSeelFanScript, -1
+	object_event  6,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubPikachuScript, -1
+	object_event  1,  4, SPRITE_SEEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokemonFanClubSeelScript, -1
 	object_event  3,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubChairmanScript, -1
-	object_event  4,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokemonFanClubReceptionistScript, -1
-	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubClefairyGuyScript, -1
-	object_event  7,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubTeacherScript, -1
-	object_event  2,  4, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonFanClubClefairyDollScript, EVENT_VERMILION_FAN_CLUB_DOLL
-	object_event  7,  3, SPRITE_ODDISH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokemonFanClubBayleefScript, -1
+	object_event  5,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokemonFanClubReceptionistScript, -1
