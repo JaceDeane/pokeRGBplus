@@ -70,7 +70,7 @@
 	const SPRITE_RECEPTIONIST ; 42
 	const SPRITE_OFFICER ; 43
 	const SPRITE_CAL ; 44
-	const SPRITE_SLOWPOKE ; 45
+	; const SPRITE_SLOWPOKE ; 45
 	const SPRITE_CAPTAIN ; 46
 	const SPRITE_BIG_LAPRAS ; 47
 	const SPRITE_GYM_GUIDE ; 48
@@ -162,6 +162,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_GYARADOS ; a0
 	const SPRITE_LUGIA ; a1
 	const SPRITE_HO_OH ; a2
+	const SPRITE_SLOWPOKE ; a3
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
