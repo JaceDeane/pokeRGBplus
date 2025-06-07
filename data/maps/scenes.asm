@@ -38,10 +38,10 @@ MapScenes::
 	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
 	scene_var ROUTE_22,                                    wRoute22SceneID
 	scene_var MR_POKEMONS_HOUSE,                           wMrPokemonsHouseSceneID ;***
-	scene_var ROUTE_32,                                    wRoute32SceneID
-	scene_var ROUTE_35_NATIONAL_PARK_GATE,                 wRoute35NationalParkGateSceneID
-	scene_var ROUTE_36,                                    wRoute36SceneID
-	scene_var ROUTE_36_NATIONAL_PARK_GATE,                 wRoute36NationalParkGateSceneID
+	scene_var ROUTE_5_SAFFRON_GATE,                        wRoute5SaffronGateSceneID ; wRoute32SceneID
+	scene_var ROUTE_6_SAFFRON_GATE,                        wRoute6SaffronGateSceneID ; wRoute35NationalParkGateSceneID
+	scene_var ROUTE_7_SAFFRON_GATE,                        wRoute7SaffronGateSceneID ; wRoute36SceneID
+	scene_var ROUTE_8_SAFFRON_GATE,                        wRoute8SaffronGateSceneID ; wRoute36NationalParkGateSceneID
 	scene_var AZALEA_TOWN,                                 wAzaleaTownSceneID
 	scene_var GOLDENROD_GYM,                               wGoldenrodGymSceneID
 	scene_var GOLDENROD_MAGNET_TRAIN_STATION,              wGoldenrodMagnetTrainStationSceneID

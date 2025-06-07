@@ -3075,10 +3075,10 @@ wViridianCitySceneID::                            db
 wViridianMartSceneID::                            db
 wRoute22SceneID::                                 db
 wMrPokemonsHouseSceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
-wRoute32SceneID::                                 db ;***
-wRoute35NationalParkGateSceneID::                 db ;***
-wRoute36SceneID::                                 db ;***
-wRoute36NationalParkGateSceneID::                 db ;***
+wRoute5SaffronGateSceneID::                       db ; Updated R/B
+wRoute6SaffronGateSceneID::                       db ; Updated R/B
+wRoute7SaffronGateSceneID::                       db ; Updated R/B
+wRoute8SaffronGateSceneID::                       db ; Updated R/B
 wAzaleaTownSceneID::                              db ;***
 wGoldenrodGymSceneID::                            db ;***
 wGoldenrodMagnetTrainStationSceneID::             db ;***

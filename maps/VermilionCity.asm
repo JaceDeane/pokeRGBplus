@@ -112,9 +112,6 @@ VermilionCitySailor1Script:
 	closetext
 	end
 
-
-
-
 VermilionMachopOwner:
 	jumptextfaceplayer VermilionCityGambler2Text
 

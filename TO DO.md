@@ -6,9 +6,7 @@
 ### MAPS:
 (Only interiors and dungeons left to do)
 
-- Route 5 -> (Saffron north entrance gate) ** Narrower gates specially for Route5/6 to Saffron
-
-- Vermilion City: Fan Club, NPC homes
+- Vermilion City: NPC homes
 
 - S.S. Anne: Interiors and Bow
 
@@ -17,13 +15,13 @@
 ### EVENTS:
 
 MAIN:
-- Cerulean City Slowbro and its trainer having random-chosen text when spoken to
+- Route 5 -> Day-Care
 
-- Route 5 (Day-care & Saffron north entrance gate)
+- Route 6 proper
 
-- Route 6 (Saffron south entrance gate)
+- Vermilion City (Fisher's house, Pokémon Center, Mart, Gym, Farfetch'd house, NPC house)
 
-- Vermilion City (Fisher's house, Pokémon Center, Mart, Gym, Fan Club, Farfetch'd house, NPC houses)
+- Vermilion Dock (scene triggers)
 
 - Route 11 (Route 11 gate 1F/2F)
 

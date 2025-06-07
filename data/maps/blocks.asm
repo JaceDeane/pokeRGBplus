@@ -587,16 +587,18 @@ Route43Gate_Blocks:
 Route35GoldenrodGate_Blocks:
 Route36RuinsOfAlphGate_Blocks:
 Route34IlexForestGate_Blocks:
-Route6SaffronGate_Blocks:
 Route40BattleTowerGate_Blocks:
 Route29Route46Gate_Blocks:
-Route5SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
-; Route5SaffronGate_Blocks:
+Route5SaffronGate_Blocks:
+Route6SaffronGate_Blocks:
+	INCBIN "maps/NorthSouthSaffronGate.blk"
+
+; Route???Gate_Blocks:
 	; INCBIN "maps/NorthSouthGate1F.blk"
 
-; Route5SaffronGate_Blocks:
+; Route???Gate_Blocks:
 	; INCBIN "maps/Gate2F.blk"
 
 CinnabarIsland_Blocks:
