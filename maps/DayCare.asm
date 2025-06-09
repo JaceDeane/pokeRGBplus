@@ -22,7 +22,7 @@ DayCare_MapScripts:
 DayCareGentlemanScript:
 	faceplayer
 	opentext
-	special DayCareGentleman ; Rename to DayCareGentleman -- don't use DayCareMan
+	special DayCareMan
 	waitbutton
 	closetext
 	end

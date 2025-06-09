@@ -1662,8 +1662,9 @@ _DaycareDummyText::
 
 _DaycareGentlemanIntroText::
 	text "I run a DAYCARE."
-	line "Would you like me"
-	cont "to raise one of"
+	
+	para "Would you like me"
+	line "to raise one of"
 	cont "your #MON?"
 	done
 
@@ -1715,7 +1716,7 @@ _DaycareGentlemanGotMonBackText::
 	line "@"
 	text_ram wStringBuffer1 ; wDayCareMonName (R/B)
 	text " back!"
-	prompt
+	done
 
 _DaycareGentlemanMonNeedsMoreTimeText::
 	text "Back already?"
@@ -1725,32 +1726,28 @@ _DaycareGentlemanMonNeedsMoreTimeText::
 	text_start
 	line "needs some more"
 	cont "time with me."
-	prompt ; no prompt in G/S
-	; done 
+	done
 
 _DaycareGentlemanAllRightComeAgainText:: ; Unified
 	text "All right then,"
 	line "come again."
-	done
-	;should this prompt?
+	done ; end of function
 
 _DaycareGentlemanNoRoomForMonText::
 	text "You have no room"
 	line "for this #MON!"
-	prompt
+	done
 
 _DaycareGentlemanOnlyHaveOneMonText::
 	text "You only have one"
 	line "#MON with you."
-	done ; no done in G/S
-	; prompt
+	done
 
 _DaycareGentlemanCantAcceptMonWithHMText::
 	text "I can't accept a"
 	line "#MON that"
 	cont "knows an HM move."
-	done ; G/S uses prompt for these rejections
-	; prompt
+	done
 
 _DaycareGentlemanHeresYourMonText::
 	text "Thank you! Here's"
@@ -1760,23 +1757,23 @@ _DaycareGentlemanHeresYourMonText::
 _DaycareGentlemanNotEnoughMoneyText::
 	text "Hey, you don't"
 	line "have enough money!"
-	prompt
+	done
 
 ; New for Gen II edge cases
 _DaycareGentlemanCantAcceptEggText::
 	text "What? I have no"
-	line "idea what that is!"
-	prompt
+	line "idea what this is!"
+	done
 
 _DaycareGentlemanRemoveMailText::
 	text "Hey, remove this"
 	line "MAIL it's holding!"
-	prompt
+	done
 
 _DaycareGentlemanLastHealthyMonText::
 	text "That's your last"
 	line "healthy #MON!"
-	prompt
+	done
 
 ; ################
 

@@ -45,7 +45,9 @@ DayCareMan:
 	jr nz, .AskWithdrawMon
 	ld hl, wDayCareMan
 	ld a, DAYCARETEXT_INTRO ; DAYCARETEXT_MAN_INTRO
-	call DayCareManIntroText
+	;call DayCareManIntroText
+	call PrintDayCareText
+	call YesNoBox
 	jr c, .cancel
 	call DayCareAskDepositPokemon
 	jr c, .print_text
@@ -67,7 +69,8 @@ DayCareMan:
 	ld hl, wDayCareMan
 	res DAYCAREMAN_HAS_MON_F, [hl]
 	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
-	jr .cancel
+	; jr .cancel ; No text after finishing transaction (R/B)
+	ret
 
 .print_text
 	call PrintDayCareText
@@ -77,13 +80,15 @@ DayCareMan:
 	call PrintDayCareText
 	ret
 
-DayCareGentleman: ; Was DayCareLady
+DayCareLady:
 	ld hl, wDayCareLady
 	bit DAYCARELADY_HAS_MON_F, [hl]
 	jr nz, .AskWithdrawMon
 	ld hl, wDayCareLady
 	ld a, DAYCARETEXT_INTRO
-	call DayCareLadyIntroText
+	; call DayCareLadyIntroText
+	call PrintDayCareText
+	call YesNoBox
 	jr c, .cancel
 	call DayCareAskDepositPokemon
 	jr c, .print_text
@@ -107,30 +112,31 @@ DayCareGentleman: ; Was DayCareLady
 	ld hl, wDayCareMan
 	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
 	jr .cancel
+	ret
 
 .print_text
 	call PrintDayCareText
 
 .cancel
-	ld a, DAYCARETEXT_ALL_RIGHT_COME_AGAIN ; DAYCARETEXT_OH_FINE
+	ld a, DAYCARETEXT_ALL_RIGHT_COME_AGAIN ; DAYCARETEXT_COME_AGAIN
 	call PrintDayCareText
 	ret
 
-DayCareLadyIntroText:
-	bit DAYCARELADY_ACTIVE_F, [hl]
-	jr nz, .okay
-	set DAYCARELADY_ACTIVE_F, [hl]
-	;inc a
-.okay
-	call PrintDayCareText
-	call YesNoBox
-	ret
+; DayCareLadyIntroText:
+	; bit DAYCARELADY_ACTIVE_F, [hl]
+	; jr nz, .okay
+	; set DAYCARELADY_ACTIVE_F, [hl]
+	; inc a
+; .okay
+	; call PrintDayCareText
+	; call YesNoBox
+	; ret
 
-DayCareManIntroText:
-	set DAYCAREMAN_ACTIVE_F, [hl]
-	call PrintDayCareText
-	call YesNoBox
-	ret
+; DayCareManIntroText:
+	; set DAYCAREMAN_ACTIVE_F, [hl]
+	; call PrintDayCareText
+	; call YesNoBox
+	; ret
 
 DayCareAskDepositPokemon:
 	ld a, [wPartyCount]
@@ -211,14 +217,17 @@ DayCare_AskWithdrawBreedMon:
 .grew_at_least_one_level
 	ld a, DAYCARETEXT_MON_HAS_GROWN ; DAYCARETEXT_MON_HAS_GROWN
 	call PrintDayCareText
-	call YesNoBox
-	jr c, .refused
+	; call YesNoBox
+	; jr c, .refused
+;fallthrough
 
 .owe_me_money
 	ld a, DAYCARETEXT_OWE_MONEY ; DAYCARETEXT_ASK_WITHDRAW
 	call PrintDayCareText
+	farcall PlaceMoneyTopRight
 	call YesNoBox
 	jr c, .refused
+;fallthrough
 
 .check_money
 	ld de, wMoney
@@ -232,7 +241,7 @@ DayCare_AskWithdrawBreedMon:
 	ret
 
 .refused
-	ld a, DAYCARETEXT_ALL_RIGHT_COME_AGAIN ; DAYCARETEXT_OH_FINE
+	;ld a, DAYCARETEXT_ALL_RIGHT_COME_AGAIN ; DAYCARETEXT_OH_FINE
 	scf
 	ret
 
@@ -250,6 +259,7 @@ DayCare_GetBackMonForMoney:
 	ld bc, wStringBuffer2 + 2
 	ld de, wMoney
 	farcall TakeMoney
+	special PlaceMoneyTopRight
 	ld a, DAYCARETEXT_HERES_YOUR_MON ; DAYCARETEXT_WITHDRAW
 	call PrintDayCareText
 	ld a, [wCurPartySpecies]
