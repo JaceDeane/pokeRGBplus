@@ -283,19 +283,20 @@ ENDM
 	endgroup
 
 	newgroup VERMILION                                            ; 12
-	map_const ROUTE_11,                                    30, 10 ;  1
-	map_const VERMILION_CITY,                              20, 18 ;  2
-	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  3
-	map_const VERMILION_POKECENTER_1F,                      7,  4 ;  4
-	map_const POKEMON_FAN_CLUB,                             4,  4 ;  5
-	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  6
-	map_const VERMILION_MART,                               4,  4 ;  7
-	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  8
-	map_const VERMILION_GYM,                                5,  9 ;  9
-	map_const ROUTE_6_SAFFRON_GATE,                         4,  4 ; 10
-	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 11
-	map_const ROUTE_11_GATE_1F,                             5,  4 ; 12
-	map_const ROUTE_11_GATE_2F,                             4,  4 ; 13
+	map_const ROUTE_6,                                     10, 18 ;  1
+	map_const ROUTE_11,                                    30, 10 ;  2
+	map_const VERMILION_CITY,                              20, 18 ;  3
+	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
+	map_const VERMILION_POKECENTER_1F,                      7,  4 ;  5
+	map_const POKEMON_FAN_CLUB,                             4,  4 ;  6
+	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  7
+	map_const VERMILION_MART,                               4,  4 ;  8
+	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  9
+	map_const VERMILION_GYM,                                5,  9 ; 10
+	map_const ROUTE_6_SAFFRON_GATE,                         4,  4 ; 11
+	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
+	map_const ROUTE_11_GATE_1F,                             5,  4 ; 13
+	map_const ROUTE_11_GATE_2F,                             4,  4 ; 14
 	endgroup
 
 	newgroup PALLET                                               ; 13
@@ -482,20 +483,19 @@ ENDM
 
 	newgroup SAFFRON                                              ; 25
 	map_const ROUTE_5,                                     10, 18 ;  1
-	map_const ROUTE_6,                                     10, 18 ;  2
-	map_const SAFFRON_CITY,                                20, 18 ;  3
-	map_const FIGHTING_DOJO,                                5,  6 ;  4
-	map_const SAFFRON_GYM,                                 10,  9 ;  5
-	map_const SAFFRON_MART,                                 4,  4 ;  6
-	map_const SAFFRON_POKECENTER_1F,                        7,  4 ;  7
-	map_const MR_PSYCHICS_HOUSE,                            4,  4 ;  8
-	map_const SAFFRON_MAGNET_TRAIN_STATION,                10,  9 ;  9
-	map_const SILPH_CO_1F,                                  8,  4 ; 10
-	map_const COPYCATS_HOUSE_1F,                            4,  4 ; 11
-	map_const COPYCATS_HOUSE_2F,                            5,  3 ; 12
-	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
-	map_const ROUTE_5_SAFFRON_GATE,                         4,  4 ; 14
-	map_const DAY_CARE,                                     4,  4 ; 15
+	map_const SAFFRON_CITY,                                20, 18 ;  2
+	map_const FIGHTING_DOJO,                                5,  6 ;  3
+	map_const SAFFRON_GYM,                                 10,  9 ;  4
+	map_const SAFFRON_MART,                                 4,  4 ;  5
+	map_const SAFFRON_POKECENTER_1F,                        7,  4 ;  6
+	map_const MR_PSYCHICS_HOUSE,                            4,  4 ;  7
+	map_const SAFFRON_MAGNET_TRAIN_STATION,                10,  9 ;  8
+	map_const SILPH_CO_1F,                                  8,  4 ;  9
+	map_const COPYCATS_HOUSE_1F,                            4,  4 ; 10
+	map_const COPYCATS_HOUSE_2F,                            5,  3 ; 11
+	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12
+	map_const ROUTE_5_SAFFRON_GATE,                         4,  4 ; 13
+	map_const DAY_CARE,                                     4,  4 ; 14
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26
