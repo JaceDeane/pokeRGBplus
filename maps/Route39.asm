@@ -24,33 +24,33 @@ Route39Miltank:
 	end
 
 TrainerPokefanmDerek:
-	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
+	; trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
+	; loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
 	endifjustbattled
 	opentext
-	checkflag ENGINE_DEREK_HAS_NUGGET
+	; checkflag ENGINE_DEREK_HAS_NUGGET
 	iftrue .HasNugget
-	checkcellnum PHONE_POKEFANM_DEREK
+	;checkcellnum PHONE_POKEFANM_DEREK
 	iftrue .NumberAccepted
 	checkpoke PIKACHU
 	iffalse .WantsPikachu
-	checkevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
+	;checkevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext PokefanMDerekText_NotBragging
 	promptbutton
-	setevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
+	;setevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_POKEFANM_DEREK
+	;askforphonenumber PHONE_POKEFANM_DEREK
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, POKEFANM, DEREK1
+	;gettrainername STRING_BUFFER_3, POKEFANM, DEREK1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
@@ -58,7 +58,7 @@ TrainerPokefanmDerek:
 	scall .Gift
 	verbosegiveitem NUGGET
 	iffalse .NoRoom
-	clearflag ENGINE_DEREK_HAS_NUGGET
+	;clearflag ENGINE_DEREK_HAS_NUGGET
 	sjump .NumberAccepted
 
 .NoRoom:
@@ -103,7 +103,7 @@ TrainerPokefanmDerek:
 	end
 
 TrainerPokefanfRuth:
-	trainer POKEFANF, RUTH, EVENT_BEAT_POKEFANF_RUTH, PokefanfRuthSeenText, PokefanfRuthBeatenText, 0, .Script
+	;trainer POKEFANF, RUTH, EVENT_BEAT_POKEFANF_RUTH, PokefanfRuthSeenText, PokefanfRuthBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -114,7 +114,7 @@ TrainerPokefanfRuth:
 	end
 
 TrainerSailorEugene:
-	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorEugeneSeenText, SailorEugeneBeatenText, 0, .Script
+	;trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorEugeneSeenText, SailorEugeneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -125,7 +125,7 @@ TrainerSailorEugene:
 	end
 
 TrainerPsychicNorman:
-	trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
+	;trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -140,16 +140,16 @@ TrainerPokefanfJaime:
 	opentext
 	checktime NITE
 	iffalse .NotNight
-	checkevent EVENT_BEAT_POKEFANF_JAIME
+	;checkevent EVENT_BEAT_POKEFANF_JAIME
 	iftrue .Beaten
 	writetext PokefanfJaimeSeenText
 	waitbutton
 	closetext
 	winlosstext PokefanfJaimeBeatenText, 0
-	loadtrainer POKEFANF, JAIME
+	;loadtrainer POKEFANF, JAIME
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_POKEFANF_JAIME
+	;setevent EVENT_BEAT_POKEFANF_JAIME
 	closetext
 	end
 

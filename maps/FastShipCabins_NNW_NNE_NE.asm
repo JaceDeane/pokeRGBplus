@@ -86,29 +86,29 @@ FastShipLazySailorScript:
 	waitbutton
 	closetext
 	winlosstext SailorStanlyBeatenText, 0
-	loadtrainer SAILOR, STANLY
+	;loadtrainer SAILOR, STANLY
 	startbattle
 	reloadmap
 	special HealParty
-	setevent EVENT_BEAT_SAILOR_STANLY
+	;setevent EVENT_BEAT_SAILOR_STANLY
 	opentext
 	writetext SailorStanlyAfterBattleText
 	waitbutton
 	closetext
-	setevent EVENT_FAST_SHIP_LAZY_SAILOR
-	setmapscene FAST_SHIP_B1F, SCENE_FASTSHIPB1F_NOOP
+	;setevent EVENT_FAST_SHIP_LAZY_SAILOR
+	;setmapscene FAST_SHIP_B1F, SCENE_FASTSHIPB1F_NOOP
 	readvar VAR_FACING
 	ifequal RIGHT, .Movement2
-	applymovement FASTSHIPCABINS_NNW_NNE_NE_SAILOR, FastShipLazySailorLeavesMovement1
+	;applymovement FASTSHIPCABINS_NNW_NNE_NE_SAILOR, FastShipLazySailorLeavesMovement1
 	playsound SFX_EXIT_BUILDING
-	disappear FASTSHIPCABINS_NNW_NNE_NE_SAILOR
+	;disappear FASTSHIPCABINS_NNW_NNE_NE_SAILOR
 	waitsfx
 	end
 
 .Movement2:
-	applymovement FASTSHIPCABINS_NNW_NNE_NE_SAILOR, FastShipLazySailorLeavesMovement2
+	;applymovement FASTSHIPCABINS_NNW_NNE_NE_SAILOR, FastShipLazySailorLeavesMovement2
 	playsound SFX_EXIT_BUILDING
-	disappear FASTSHIPCABINS_NNW_NNE_NE_SAILOR
+	;disappear FASTSHIPCABINS_NNW_NNE_NE_SAILOR
 	waitsfx
 	end
 

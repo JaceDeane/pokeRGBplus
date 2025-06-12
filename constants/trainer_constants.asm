@@ -312,12 +312,12 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTM_40
 	const GRUNTM_41
 
-	trainerclass GENTLEMAN ; 20
-	const PRESTON
-	const EDWARD
-	const GREGORY
-	const VIRGIL ; unused
-	const ALFRED
+	trainerclass GENTLEMAN ; 20 -- Updated to R/B, using FR/LG names
+	const THOMAS
+	const ARTHUR
+	const TUCKER
+	const NORTON ; unused
+	const WALTER
 
 	trainerclass SKIER ; 21
 	const ROXANNE
@@ -412,20 +412,15 @@ DEF KRIS EQU __trainer_class__
 	const DIANAZ
 	const BRIANA
 
-	trainerclass SAILOR ; 28
-	const EUGENE
-	const HUEY1
-	const TERRELL
-	const KENTZ
-	const ERNESTZ
-	const JEFFZ
-	const GARRETT
-	const KENNETH
-	const STANLY
-	const HARRY
-	const HUEY2
-	const HUEY3
-	const HUEY4
+	trainerclass SAILOR ; 28 -- Updated to R/B, using FR/LG names
+	const EDMOND
+	const TREVOR
+	const LEONARD
+	const DUNCAN
+	const HUEY
+	const DYLAN
+	const PHILLIP
+	const DWAYNE
 
 	trainerclass SUPER_NERD ; 29 -- Updated to R/B, using FR/LG names
 	const JOVAN
@@ -478,7 +473,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; unused
 	const KAZU ; unused
-	const DWAYNE
+	const DWAYNEZ
 	const HARRIS
 	const ZEKE
 	const CHARLES
@@ -490,7 +485,7 @@ DEF KRIS EQU __trainer_class__
 	const BLAINE1
 
 	trainerclass BURGLAR ; 2f
-	const DUNCAN
+	const DUNCANZ
 	const EDDIEZ
 	const COREYZ
 
@@ -592,7 +587,7 @@ DEF KRIS EQU __trainer_class__
 	const TROY
 	const JEFFREY
 	const PING
-	const EDMOND
+	const EDMONDZ
 	const NEAL
 	const LI
 	const GAKU
@@ -619,7 +614,7 @@ DEF KRIS EQU __trainer_class__
 	const ROBERT
 	const JOSHUA
 	const CARTER
-	const TREVOR
+	const TREVORZ
 	const BRANDON
 	const JEREMY
 	const COLIN
