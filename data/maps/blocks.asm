@@ -562,9 +562,9 @@ Route30BerryHouse_Blocks:
 
 CeruleanTradeHouse_Blocks:
 BillsFamilysHouse_Blocks:
-VermilionFishingSpeechHouse_Blocks:
-VermilionMagnetTrainSpeechHouse_Blocks:
-VermilionDiglettsCaveSpeechHouse_Blocks:
+VermilionOldRodHouse_Blocks:
+VermilionTradeHouse_Blocks:
+VermilionPidgeyHouse_Blocks:
 BluesHouse_Blocks:
 PewterNidoranSpeechHouse_Blocks:
 PewterSnoozeSpeechHouse_Blocks:

@@ -6,8 +6,6 @@
 ### MAPS:
 (Only interiors and dungeons left to do)
 
-- Vermilion City: NPC homes
-
 - S.S. Anne: Interiors and Bow
 
 - Cerulean Cave (1F, B1F, B2F)
@@ -15,12 +13,9 @@
 ### EVENTS:
 
 MAIN:
-
-- Vermilion City (Fisher's house, Pokémon Center, Mart, Farfetch'd house, NPC house)
+- Route 11 -> Gate 1F/2F
 
 - Vermilion Dock (scene triggers)
-
-- Route 11 -> Gate 1F/2F
 
 - S.S. Anne (All floors, Cabins, Deck, Captain's cabin)* New tileset(s) required
 
@@ -34,6 +29,8 @@ OTHER:
 - TMs found in the overworld, Game Corner, etc.
 
 ### ENGINE / DATA:
+
+- A new SPRITEMOVEDATA option that aligns sprites to the grid (useful for SPRITE_PAPER, etc.)
 
 - DayCareGentleman special needs to be updated and refined
 
@@ -75,7 +72,7 @@ OTHER:
 
 ### GRAPHICS:
 
-- Update the Summary screen*
+- Finish updating the Summary screen*
 
 - Update the Pokédex UI
 
@@ -89,7 +86,7 @@ OTHER:
 
 ### MUSIC: 
 
-- Add RBY music for Pokémon Center, Bicycle Music, etc.
+- Add RBY music for Pokémon Center, etc.
 
 - Add a "no intro" version of the Rival encounter theme for post-battle
 
@@ -114,7 +111,7 @@ OTHER:
 - Lass Ali on Route 24 acts as if already beaten when taking PSN damage right in front of her
 	- May be an engine bug for *any* trainer (?)
 
-- (!) Water palette in the Underground Path(s) seem to be different to the defined water palette?
+- (!) Water PAL in the Underground Path(s) seem to be different to the defined water palette?
 
 - (!) Border tiles when returning to Cerulean after using the Route 24 shortcut are seen (Need to find a way to manually load water blocks instead of the default defined one)
 

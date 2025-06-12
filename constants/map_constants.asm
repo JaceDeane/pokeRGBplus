@@ -286,12 +286,12 @@ ENDM
 	map_const ROUTE_6,                                     10, 18 ;  1
 	map_const ROUTE_11,                                    30, 10 ;  2
 	map_const VERMILION_CITY,                              20, 18 ;  3
-	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
+	map_const VERMILION_OLD_ROD_HOUSE,                      4,  4 ;  4
 	map_const VERMILION_POKECENTER_1F,                      7,  4 ;  5
 	map_const POKEMON_FAN_CLUB,                             4,  4 ;  6
-	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  7
+	map_const VERMILION_TRADE_HOUSE,                        4,  4 ;  7
 	map_const VERMILION_MART,                               4,  4 ;  8
-	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  9
+	map_const VERMILION_PIDGEY_HOUSE,                       4,  4 ;  9
 	map_const VERMILION_GYM,                                5,  9 ; 10
 	map_const ROUTE_6_SAFFRON_GATE,                         4,  4 ; 11
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 12

@@ -564,12 +564,12 @@ ENDM
 	map_attributes PokecomCenterAdminOfficeMobile, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, $00, 0
 	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00, 0
 	map_attributes Route34IlexForestGate, ROUTE_34_ILEX_FOREST_GATE, $00, 0
-	map_attributes VermilionFishingSpeechHouse, VERMILION_FISHING_SPEECH_HOUSE, $00, 0
+	map_attributes VermilionOldRodHouse, VERMILION_OLD_ROD_HOUSE, $00, 0
 	map_attributes VermilionPokecenter1F, VERMILION_POKECENTER_1F, $00, 0
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0
-	map_attributes VermilionMagnetTrainSpeechHouse, VERMILION_MAGNET_TRAIN_SPEECH_HOUSE, $00, 0
+	map_attributes VermilionTradeHouse, VERMILION_TRADE_HOUSE, $00, 0
 	map_attributes VermilionMart, VERMILION_MART, $00, 0
-	map_attributes VermilionDiglettsCaveSpeechHouse, VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE, $00, 0
+	map_attributes VermilionPidgeyHouse, VERMILION_PIDGEY_HOUSE, $00, 0
 	map_attributes VermilionGym, VERMILION_GYM, $00, 0
 	map_attributes Route6SaffronGate, ROUTE_6_SAFFRON_GATE, $00, 0
 	map_attributes Route6UndergroundPathEntrance, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, $00, 0

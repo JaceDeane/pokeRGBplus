@@ -243,7 +243,6 @@ SECTION "Johto Map Scripts 14", ROMX
 ;17
 INCLUDE "maps/MahoganyTown.asm"
 INCLUDE "maps/Route32.asm"
-INCLUDE "maps/VermilionMagnetTrainSpeechHouse.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 
 
@@ -450,11 +449,12 @@ INCLUDE "maps/Route5SaffronGate.asm"
 SECTION "Map Scripts 10", ROMX
 
 INCLUDE "maps/PewterCity.asm"
-INCLUDE "maps/VermilionFishingSpeechHouse.asm"
+INCLUDE "maps/VermilionOldRodHouse.asm"
 INCLUDE "maps/VermilionPokecenter1F.asm"
 INCLUDE "maps/PokemonFanClub.asm"
 INCLUDE "maps/VermilionMart.asm"
-INCLUDE "maps/VermilionDiglettsCaveSpeechHouse.asm"
+INCLUDE "maps/VermilionTradeHouse.asm"
+INCLUDE "maps/VermilionPidgeyHouse.asm"
 INCLUDE "maps/VermilionGym.asm"
 INCLUDE "maps/Route6SaffronGate.asm"
 INCLUDE "maps/Route6UndergroundPathEntrance.asm"

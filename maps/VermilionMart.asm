@@ -1,7 +1,7 @@
 	object_const_def
 	const VERMILIONMART_CLERK
-	const VERMILIONMART_SUPER_NERD
-	const VERMILIONMART_BEAUTY
+	const VERMILIONMART_COOLTRAINER_M
+	const VERMILIONMART_LASS
 
 VermilionMart_MapScripts:
 	def_scene_scripts
@@ -14,38 +14,51 @@ VermilionMartClerkScript:
 	closetext
 	end
 
-VermilionMartSuperNerdScript:
-	jumptextfaceplayer VermilionMartSuperNerdText
+VermilionMartCooltrainerMScript:
+	jumptextfaceplayer VermilionMartCooltrainerMText
 
-VermilionMartBeautyScript:
-	jumptextfaceplayer VermilionMartBeautyText
+VermilionMartLassScript:
+	jumptextfaceplayer VermilionMartLassText
 
-VermilionMartSuperNerdText:
-	text "TEAM ROCKET is no"
-	line "longer in KANTO."
+VermilionMartCooltrainerMText:
+	text "There are evil"
+	line "people who will"
 
-	para "That alone makes"
-	line "me happy."
+	para "use #MON for"
+	line "criminal acts."
+
+	para "TEAM ROCKET"
+	line "traffics in rare"
+	cont "#MON."
+
+	para "They also abandon"
+	line "#MON that they"
+
+	para "consider not to"
+	line "be popular or"
+	cont "useful."
 	done
 
-VermilionMartBeautyText:
-	text "I'm thinking about"
-	line "going shopping in"
-	cont "SAFFRON."
+VermilionMartLassText:
+	text "I think #MON"
+	line "can be good or"
+
+	para "bad. It depends"
+	line "on the trainer."
 	done
 
 VermilionMart_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, VERMILION_CITY, 5
-	warp_event  3,  7, VERMILION_CITY, 5
+	warp_event  3,  7, VERMILION_CITY, 3
+	warp_event  4,  7, VERMILION_CITY, 3
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMartClerkScript, -1
-	object_event  5,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionMartSuperNerdScript, -1
-	object_event  8,  6, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMartBeautyScript, -1
+	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMartClerkScript, -1
+	object_event  5,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMartCooltrainerMScript, -1
+	object_event  3,  3, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionMartLassScript, -1
