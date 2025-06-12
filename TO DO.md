@@ -15,15 +15,12 @@
 ### EVENTS:
 
 MAIN:
-- Route 5 -> Day-Care
 
-- Route 6 proper
-
-- Vermilion City (Fisher's house, Pokémon Center, Mart, Gym, Farfetch'd house, NPC house)
+- Vermilion City (Fisher's house, Pokémon Center, Mart, Farfetch'd house, NPC house)
 
 - Vermilion Dock (scene triggers)
 
-- Route 11 (Route 11 gate 1F/2F)
+- Route 11 -> Gate 1F/2F
 
 - S.S. Anne (All floors, Cabins, Deck, Captain's cabin)* New tileset(s) required
 
@@ -41,6 +38,8 @@ OTHER:
 - DayCareGentleman special needs to be updated and refined
 
 - Should there be a seperate Gate_Kanto tileset so that pot plants can use a gray/brown palette?
+
+- Standardise all text referecing Gym Badges. Currently flitters between using 'the' before the BADGE, and just referring to it as a proper noun
 
 - `farcall PlaceMoneyTopRight` should display MONEY on the top border like in R/B (unsure if `special PlaceMoneyTopRight` does this too)
 

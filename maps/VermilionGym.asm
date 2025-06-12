@@ -199,9 +199,9 @@ VermilionGymSurgeScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LTSURGE
-	setevent EVENT_BEAT_GENTLEMAN_GREGORY
-	setevent EVENT_BEAT_GUITARIST_VINCENT
-	setevent EVENT_BEAT_JUGGLER_HORTON
+	setevent EVENT_BEAT_GENTLEMAN_TUCKER
+	setevent EVENT_BEAT_ROCKER_RANDALL
+	setevent EVENT_BEAT_SAILOR_DWAYNE
 	opentext
 	writetext ReceivedThunderBadgeText
 	playsound SFX_GET_BADGE
@@ -218,35 +218,35 @@ VermilionGymSurgeScript:
 	closetext
 	end
 
-TrainerGentlemanGregory:
-	trainer GENTLEMAN, GREGORY, EVENT_BEAT_GENTLEMAN_GREGORY, GentlemanGregorySeenText, GentlemanGregoryBeatenText, 0, .Script
+TrainerGentlemanTucker:
+	trainer GENTLEMAN, TUCKER, EVENT_BEAT_GENTLEMAN_TUCKER, GentlemanTuckerSeenText, GentlemanTuckerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GentlemanGregoryAfterBattleText
+	writetext GentlemanTuckerAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGuitaristVincent:
-	trainer GUITARIST, VINCENT, EVENT_BEAT_GUITARIST_VINCENT, GuitaristVincentSeenText, GuitaristVincentBeatenText, 0, .Script
+TrainerRockerRandall:
+	trainer ROCKER, RANDALL, EVENT_BEAT_ROCKER_RANDALL, RockerRandallSeenText, RockerRandallBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GuitaristVincentAfterBattleText
+	writetext RockerRandallAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerJugglerHorton:
-	trainer JUGGLER, HORTON, EVENT_BEAT_JUGGLER_HORTON, JugglerHortonSeenText, JugglerHortonBeatenText, 0, .Script
+TrainerSailorDwayne:
+	trainer SAILOR, DWAYNE, EVENT_BEAT_SAILOR_DWAYNE, SailorDwayneSeenText, SailorDwayneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext JugglerHortonAfterBattleText
+	writetext SailorDwayneAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -278,155 +278,239 @@ VermilionGymStatue:
 .Beaten:
 	jumpstd GymStatue2Script
 
+; LtSurgeIntroText:
+	; text "SURGE: Hey, you"
+	; line "little tyke!"
+
+	; para "I have to hand it"
+	; line "to you. It may not"
+
+	; para "be very smart to"
+	; line "challenge me, but"
+	; cont "it takes guts!"
+
+	; para "When it comes to"
+	; line "electric #MON,"
+	; cont "I'm number one!"
+
+	; para "I've never lost on"
+	; line "the battlefield."
+
+	; para "I'll zap you just"
+	; line "like I did my"
+	; cont "enemies in war!"
+	; done
+
+; LtSurgeWinLossText:
+	; text "SURGE: Arrrgh!"
+	; line "You are strong!"
+
+	; para "OK, kid. You get"
+	; line "THUNDERBADGE!"
+	; done
+
+; ReceivedThunderBadgeText:
+	; text "<PLAYER> received"
+	; line "THUNDERBADGE."
+	; done
+
+; LtSurgeThunderBadgeText:
+	; text "SURGE: THUNDER-"
+	; line "BADGE increases"
+	; cont "#MON's speed. "
+
+	; para "Consider it proof"
+	; line "that you defeated"
+
+	; para "me. You wear it"
+	; line "proudly, hear?"
+	; done
+
+; LtSurgeFightDoneText:
+	; text "SURGE: Hey, kid!"
+	; line "Still slugging and"
+	; cont "chugging away?"
+
+	; para "My #MON and I"
+	; line "are still at it!"
+	; done
+
 LtSurgeIntroText:
-	text "SURGE: Hey, you"
-	line "little tyke!"
+	text "Hey, kid! What do"
+	line "you think you're"
+	cont "doing here?"
 
-	para "I have to hand it"
-	line "to you. It may not"
+	para "You won't live"
+	line "long in combat!"
+	cont "That's for sure!"
 
-	para "be very smart to"
-	line "challenge me, but"
-	cont "it takes guts!"
+	para "I tell you kid,"
+	line "electric #MON"
+	
+	para "saved me during"
+	line "the war!"
 
-	para "When it comes to"
-	line "electric #MON,"
-	cont "I'm number one!"
+	para "They zapped my"
+	line "enemies into"
+	cont "paralysis!"
 
-	para "I've never lost on"
-	line "the battlefield."
-
-	para "I'll zap you just"
-	line "like I did my"
-	cont "enemies in war!"
+	para "The same as I'll"
+	line "do to you!"
 	done
 
 LtSurgeWinLossText:
-	text "SURGE: Arrrgh!"
-	line "You are strong!"
+	text "SURGE: Whoa!"
 
-	para "OK, kid. You get"
-	line "THUNDERBADGE!"
+	para "You're the real"
+	line "deal, kid!"
+
+	para "Fine then, take"
+	line "the THUNDERBADGE!"
 	done
 
 ReceivedThunderBadgeText:
 	text "<PLAYER> received"
-	line "THUNDERBADGE."
+	line "the THUNDERBADGE."
 	done
 
 LtSurgeThunderBadgeText:
 	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
+	line "BADGE cranks up "
+	
+	para "your #MON's"
+	line "SPEED!"
 
-	para "Consider it proof"
-	line "that you defeated"
+	para "It also lets your"
+	line "#MON FLY any"
+	cont "time, kid!"
 
-	para "me. You wear it"
-	line "proudly, hear?"
+	para "You're special,"
+	line "kid! Take this!"
+	done
+
+; LtSurgeReceivedTM24Text:
+	; text "<PLAYER> received "
+	; line "@"
+	; text_ram wStringBuffer
+	; text "!@"
+	; text_end
+
+TM24ExplanationText:
+	text "SURGE: TM24 con-"
+	line "tains THUNDERBOLT!"
+
+	para "Teach it to an"
+	line "electric #MON!"
+	done
+
+LtSurgeTM24NoRoomText:
+	text "Yo kid, make room"
+	line "in your pack!"
 	done
 
 LtSurgeFightDoneText:
-	text "SURGE: Hey, kid!"
-	line "Still slugging and"
-	cont "chugging away?"
+	text "SURGE: A little"
+	line "word of advice,"
+	cont "kid!"
 
-	para "My #MON and I"
-	line "are still at it!"
+	para "Electricity is"
+	line "sure powerful!"
+
+	para "But, it's useless"
+	line "against ground-"
+	cont "type #MON!"
 	done
 
-GentlemanGregorySeenText:
-	text "You're here to"
-	line "defeat LT.SURGE?"
-
-	para "Not if I can help"
-	line "it!"
+GentlemanTuckerSeenText:
+	text "When I was in the"
+	line "Army, LT.SURGE"
+	cont "was my strict CO!"
 	done
 
-GentlemanGregoryBeatenText:
-	text "Sorry I failed"
-	line "you, LT.SURGE,"
-	cont "sir!"
+GentlemanTuckerBeatenText:
+	text "Stop!"
+	line "You're very good!"
 	done
 
-GentlemanGregoryAfterBattleText:
-	text "When I was still"
-	line "in the army, LT."
+GentlemanTuckerAfterBattleText:
+	text "The door won't"
+	line "open?"
 
-	para "SURGE saved my"
-	line "life."
+	para "LT.SURGE always"
+	line "was cautious!"
 	done
 
-GuitaristVincentSeenText:
-	text "LT.SURGE recog-"
-	line "nized my potential"
-
-	para "with electric"
-	line "#MON."
-
-	para "Think you can beat"
-	line "me?"
+RockerRandallSeenText:
+	text "I'm a lightweight,"
+	line "but I'm good with"
+	cont "electricity!"
 	done
 
-GuitaristVincentBeatenText:
-	text "Ooh, how shocking!"
+RockerRandallBeatenText:
+	text "Fried!"
 	done
 
-GuitaristVincentAfterBattleText:
-	text "If the GYM's traps"
-	line "were working, you"
+RockerRandallAfterBattleText:
+	text "OK, I'll talk!"
 
-	para "would have been"
-	line "toast…"
+	para "LT.SURGE said he"
+	line "hid door switches"
+	cont "inside something!"
 	done
 
-JugglerHortonSeenText:
-	text "I'm going to take"
-	line "you down! Prepare"
-	cont "to be shocked!"
+SailorDwayneSeenText:
+	text "This is no place"
+	line "for kids!"
 	done
 
-JugglerHortonBeatenText:
-	text "Gwaaah!"
-	line "I was overpowered…"
+SailorDwayneBeatenText:
+	text "Wow!"
+	line "Surprised me!"
 	done
 
-JugglerHortonAfterBattleText:
-	text "Don't get too com-"
-	line "fortable about"
+SailorDwayneAfterBattleText:
+	text "LT.SURGE set up"
+	line "double locks!"
+	cont "Here's a hint!"
 
-	para "beating me…"
-	line "LT.SURGE is tough."
+	para "When you open the"
+	line "1st lock, the 2nd"
+	
+	para "lock is right"
+	line "next to it!"
 	done
 
 VermilionGymGuideText:
-	text "Yo! CHAMP in"
+	text "Yo! Champ in"
 	line "making!"
 
-	para "You lucked out"
-	line "this time."
+	para "LT.SURGE has a"
+	line "nickname."
+	
+	para "People refer to"
+	line "him as the Light-"
+	cont "ning American!"
+
+	para "He's an expert on"
+	line "electric #MON!"
+
+	para "Birds and water"
+	line "#MON are at"
+	
+	para "risk! Beware of"
+	line "paralysis too!"
 
 	para "LT.SURGE is very"
-	line "cautious. He has"
+	line "cautious."
 
-	para "traps set all over"
-	line "the GYM."
-
-	para "But--he-heh--the"
-	line "traps aren't"
-	cont "active right now."
-
-	para "You'll have no"
-	line "problem getting to"
-	cont "LT.SURGE."
+	para "You'll have to"
+	line "break a code to"
+	cont "get to him!"
 	done
 
 VermilionGymGuideWinText:
-	text "Whew! That was an"
-	line "electrifying bout!"
-
-	para "It sure made me"
-	line "nervous."
+	text "Whew! That match"
+	line "was electric!"
 	done
 
 VermilionGymTrashCanText:
@@ -487,12 +571,12 @@ VermilionGym_MapEvents:
 	bg_event  5, 11, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  7, 11, BGEVENT_READ, VermilionGymTrashCanScript
 	bg_event  9, 11, BGEVENT_READ, VermilionGymTrashCanScript
-	bg_event  2, 14, BGEVENT_READ, VermilionGymStatue
-	bg_event  7, 14, BGEVENT_READ, VermilionGymStatue
+	bg_event  3, 14, BGEVENT_READ, VermilionGymStatue
+	bg_event  6, 14, BGEVENT_READ, VermilionGymStatue
 
 	def_object_events
-	object_event  5,  2, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, -1
-	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanGregory, -1 ; GENTLEMAN_3
-	object_event  3,  8, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 3, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristVincent, -1 ; ROCKER_1
-	object_event  0, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerJugglerHorton, -1 ; SAILOR_8
-	object_event  3, 14, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, VermilionGymGuideScript, -1
+	object_event  5,  1, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionGymSurgeScript, -1
+	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanTucker, -1
+	object_event  3,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 3, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerRockerRandall, -1 ; FR/LG use ENGINEER_BAILY (unused R/B)
+	object_event  0, 10, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorDwayne, -1
+	object_event  7, 14, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, VermilionGymGuideScript, -1
