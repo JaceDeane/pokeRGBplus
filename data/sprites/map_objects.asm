@@ -306,6 +306,14 @@ SpriteMovementData::
 	db 0 ; flags2
 	db 0 ; palette flags
 
+; SPRITEMOVEDATA_STILL_ALIGNED
+	db SPRITEMOVEFN_STILL_ALIGNED ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_STILL_ALIGNED ; action
+	db FIXED_FACING | SLIDING ; flags1
+	db 0 ; flags2
+	db 0 ; palette flags
+
 	assert_table_length NUM_SPRITEMOVEDATA
 
 ; unused

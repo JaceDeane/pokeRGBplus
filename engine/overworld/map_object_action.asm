@@ -20,6 +20,7 @@ ObjectActionPairPointers:
 	dw SetFacingGrassShake,            SetFacingStanding
 	dw SetFacingSkyfall,               SetFacingCurrent
 	dw SetFacingSitting,               SetFacingSitting
+	dw SetFacingStillAligned,          SetFacingStillAligned
 	assert_table_length NUM_OBJECT_ACTIONS
 
 SetFacingStanding:
@@ -302,4 +303,10 @@ SetFacingSitting:
 	ld hl, OBJECT_FACING
 	add hl, bc
 	ld [hl], FACING_SITTING
+	ret
+
+SetFacingStillAligned:
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld [hl], FACING_STILL_ALIGNED
 	ret

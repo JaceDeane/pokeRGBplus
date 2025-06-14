@@ -554,6 +554,7 @@ StepFunction_FromMovement:
 	dw MovementFunction_BoulderDust          ; 1a
 	dw MovementFunction_ShakingGrass         ; 1b
 	dw MovementFunction_Sitting              ; 1c
+	dw MovementFunction_StillAligned         ; 1d
 	assert_table_length NUM_SPRITEMOVEFN
 
 MovementFunction_Null:
@@ -987,6 +988,17 @@ MovementFunction_Sitting: ; Custom Object Function
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], OBJECT_ACTION_SITTING
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_RESTORE
+	ret
+
+MovementFunction_StillAligned:
+	call CopyLastCoordsToCoords
+	call EndSpriteMovement
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], OBJECT_ACTION_STILL_ALIGNED
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_RESTORE

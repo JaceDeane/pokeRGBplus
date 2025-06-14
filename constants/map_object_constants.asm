@@ -176,6 +176,7 @@ DEF MAPOBJECT_SCREEN_HEIGHT EQU (SCREEN_HEIGHT / 2) + 2
 	const SPRITEMOVEDATA_GRASS                ; 23
 	const SPRITEMOVEDATA_SWIM_WANDER          ; 24
 	const SPRITEMOVEDATA_SITTING              ; 25
+	const SPRITEMOVEDATA_STILL_ALIGNED        ; 26
 DEF NUM_SPRITEMOVEDATA EQU const_value
 
 ; StepFunction_FromMovement.Pointers indexes (see engine/overworld/map_objects.asm)
@@ -209,6 +210,7 @@ DEF NUM_SPRITEMOVEDATA EQU const_value
 	const SPRITEMOVEFN_BOULDERDUST           ; 1a
 	const SPRITEMOVEFN_GRASS                 ; 1b
 	const SPRITEMOVEFN_SITTING               ; 1c
+	const SPRITEMOVEFN_STILL_ALIGNED         ; 1d
 DEF NUM_SPRITEMOVEFN EQU const_value
 
 ; StepTypesJumptable indexes (see engine/overworld/map_objects.asm)
@@ -261,6 +263,7 @@ DEF NUM_STEP_TYPES EQU const_value
 	const OBJECT_ACTION_GRASS_SHAKE   ; 0f
 	const OBJECT_ACTION_SKYFALL       ; 10
 	const OBJECT_ACTION_SITTING       ; 11
+	const OBJECT_ACTION_STILL_ALIGNED ; 12
 DEF NUM_OBJECT_ACTIONS EQU const_value
 
 ; Facings indexes (see data/sprites/facings.asm)
@@ -298,6 +301,7 @@ DEF NUM_OBJECT_ACTIONS EQU const_value
 	const FACING_GRASS_1        ; 1e
 	const FACING_GRASS_2        ; 1f
 	const FACING_SITTING        ; 20
+	const FACING_STILL_ALIGNED  ; 21
 DEF NUM_FACINGS EQU const_value
 
 ; DoPlayerMovement.DoStep arguments (see engine/overworld/player_movement.asm)

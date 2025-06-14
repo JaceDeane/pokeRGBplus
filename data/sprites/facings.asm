@@ -34,6 +34,7 @@ Facings:
 	dw FacingGrass1
 	dw FacingGrass2
 	dw FacingSitting
+	dw FacingStillAligned
 	assert_table_length NUM_FACINGS
 	dw 0 ; end
 
@@ -244,3 +245,10 @@ FacingSitting:
 	db  0, 12, 0, $01
 	db  8,  4, RELATIVE_ATTRIBUTES, $02
 	db  8, 12, RELATIVE_ATTRIBUTES, $03
+
+FacingStillAligned:
+	db 4 ; #
+	db  4,  0, 0, $00
+	db  4,  8, 0, $01
+	db 12,  0, RELATIVE_ATTRIBUTES, $02
+	db 12,  8, RELATIVE_ATTRIBUTES, $03
