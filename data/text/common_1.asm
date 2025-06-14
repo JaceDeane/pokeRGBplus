@@ -344,6 +344,16 @@ _LookAdorableDecoText::
 	text "."
 	done
 
+_LookConsoleDecoText::
+	text "<PLAYER> played the"
+	line "@"
+	text_ram wStringBuffer3
+	text "."
+
+	para "…Okay!"
+	line "It's time to go!"
+	done
+
 _LookGiantDecoText::
 	text "A giant doll! It's"
 	line "fluffy and cuddly."

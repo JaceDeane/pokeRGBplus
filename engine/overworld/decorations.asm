@@ -3,6 +3,8 @@ InitDecorations:
 	ld [wDecoBed], a
 	ld a, DECO_TOWN_MAP
 	ld [wDecoPoster], a
+	ld a, DECO_N64
+	ld [wDecoConsole], a
 	ret
 
 _PlayerDecorationMenu:
@@ -1047,29 +1049,41 @@ DecorationDesc_NullPoster:
 
 DecorationDesc_LeftOrnament:
 	ld a, [wDecoLeftOrnament]
-	jr DecorationDesc_OrnamentOrConsole
+	jr DecorationDesc_Ornament
 
 DecorationDesc_RightOrnament:
 	ld a, [wDecoRightOrnament]
-	jr DecorationDesc_OrnamentOrConsole
+	jr DecorationDesc_Ornament
 
-DecorationDesc_Console:
-	ld a, [wDecoConsole]
-	jr DecorationDesc_OrnamentOrConsole
-
-DecorationDesc_OrnamentOrConsole:
+DecorationDesc_Ornament:
 	ld c, a
 	ld de, wStringBuffer3
 	call GetDecorationName_c_de
-	ld b, BANK(.OrnamentConsoleScript)
-	ld de, .OrnamentConsoleScript
+	ld b, BANK(.OrnamentScript)
+	ld de, .OrnamentScript
 	ret
 
-.OrnamentConsoleScript:
+.OrnamentScript:
 	jumptext .LookAdorableDecoText
 
 .LookAdorableDecoText:
 	text_far _LookAdorableDecoText
+	text_end
+
+DecorationDesc_Console:
+	ld a, [wDecoConsole]
+	ld c, a
+	ld de, wStringBuffer3
+	call GetDecorationName_c_de
+	ld b, BANK(.ConsoleScript)
+	ld de, .ConsoleScript
+	ret
+
+.ConsoleScript:
+	jumptext .LookConsoleDecoText
+
+.LookConsoleDecoText:
+	text_far _LookConsoleDecoText
 	text_end
 
 DecorationDesc_GiantOrnament:
@@ -1086,17 +1100,20 @@ DecorationDesc_GiantOrnament:
 
 ToggleMaptileDecorations:
 	; tile coordinates work the same way as for changeblock
-	lb de, 0, 4 ; bed coordinates
+	lb de, 0, 6 ; bed coordinates
 	ld a, [wDecoBed]
 	call SetDecorationTile
-	lb de, 7, 4 ; plant coordinates
+	lb de, 6, 6 ; plant coordinates
 	ld a, [wDecoPlant]
 	call SetDecorationTile
-	lb de, 6, 0 ; poster coordinates
+	lb de, 5, 0 ; poster coordinates
 	ld a, [wDecoPoster]
 	call SetDecorationTile
 	call SetPosterVisibility
-	lb de, 0, 0 ; carpet top-left coordinates
+	lb de, 3, 5 ; N64 coordinates
+	ld a, [wDecoConsole]
+	call SetDecorationTile
+	lb de, 2, 3 ; carpet top-left coordinates
 	call PadCoords_de
 	ld a, [wDecoCarpet]
 	and a
@@ -1104,7 +1121,7 @@ ToggleMaptileDecorations:
 	call _GetDecorationSprite
 	ld [hl], a
 	push af
-	lb de, 0, 2 ; carpet bottom-left coordinates
+	lb de, 2, 5 ; carpet bottom-left coordinates
 	call PadCoords_de
 	pop af
 	inc a

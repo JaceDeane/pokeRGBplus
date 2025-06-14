@@ -1,47 +1,47 @@
-	; object_const_def
+	object_const_def
 	; const REDSHOUSE2F_CONSOLE
-	; const REDSHOUSE2F_DOLL_1
-	; const REDSHOUSE2F_DOLL_2
-	; const REDSHOUSE2F_BIG_DOLL
+	const REDSHOUSE2F_DOLL_1
+	const REDSHOUSE2F_DOLL_2
+	const REDSHOUSE2F_BIG_DOLL
 
 RedsHouse2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	; callback MAPCALLBACK_NEWMAP, RedsHouse2FInitializeRoomCallback
-	; callback MAPCALLBACK_TILES, RedsHouse2FSetUpTileDecorationsCallback
+	callback MAPCALLBACK_NEWMAP, RedsHouse2FInitializeRoomCallback
+	callback MAPCALLBACK_TILES, RedsHouse2FSetUpTileDecorationsCallback
 
-; PlayersHouse2FInitializeRoomCallback:
-	; special ToggleDecorationsVisibility
-	; setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-	; endcallback
+RedsHouse2FInitializeRoomCallback:
+	special ToggleDecorationsVisibility
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	endcallback
 
-; PlayersHouse2FSetUpTileDecorationsCallback:
-	; special ToggleMaptileDecorations
-	; endcallback
+RedsHouse2FSetUpTileDecorationsCallback:
+	special ToggleMaptileDecorations
+	endcallback
 
-	; db 0, 0, 0 ; unused
+	db 0, 0, 0 ; unused
 
 RedsHouse2FN64Script:
 	jumptext RedsHouse2FN64Text
 
-; PlayersHouseDoll1Script::
-	; describedecoration DECODESC_LEFT_DOLL
+RedsHouseDoll1Script::
+	describedecoration DECODESC_LEFT_DOLL
 
-; PlayersHouseDoll2Script:
-	; describedecoration DECODESC_RIGHT_DOLL
+RedsHouseDoll2Script:
+	describedecoration DECODESC_RIGHT_DOLL
 
-; PlayersHouseBigDollScript:
-	; describedecoration DECODESC_BIG_DOLL
+RedsHouseBigDollScript:
+	describedecoration DECODESC_BIG_DOLL
 
-; PlayersHouseGameConsoleScript:
-	; describedecoration DECODESC_CONSOLE
+RedsHouseGameConsoleScript:
+	describedecoration DECODESC_CONSOLE
 
-; PlayersHousePosterScript:
-	; conditional_event EVENT_PLAYERS_ROOM_POSTER, .Script
+RedsHousePosterScript:
+	conditional_event EVENT_PLAYERS_ROOM_POSTER, .Script
 
-; .Script:
-	; describedecoration DECODESC_POSTER
+.Script:
+	describedecoration DECODESC_POSTER
 
 ; PlayersHouseRadioScript:
 	; checkevent EVENT_GOT_A_POKEMON_FROM_ELM
@@ -76,17 +76,7 @@ RedsHouse2FN64Script:
 ; PlayersHouseBookshelfScript:
 	; jumpstd PictureBookshelfScript
 
-; PlayersHousePCScript:
-	; opentext
-	; special PlayersHousePC
-	; iftrue .Warp
-	; closetext
-	; end
-; .Warp:
-	; warp NONE, 0, 0
-	; end
-
-RedsHouse2FN64Text:
+RedsHouse2FN64Text: ; unused
 	text "<PLAYER> played the"
 	line "N64."
 
@@ -133,14 +123,14 @@ RedsHouse2F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  5, BGEVENT_READ, RedsHouse2FN64Script
+	; bg_event  3,  5, BGEVENT_READ, RedsHouse2FN64Script
 	bg_event  0,  1, BGEVENT_UP, RedsHouse2FPCScript
 	; bg_event  3,  1, BGEVENT_READ, PlayersHouseRadioScript
 	; bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript
-	; bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript
+	bg_event  5,  0, BGEVENT_IFSET, RedsHousePosterScript
 
 	def_object_events
-	; object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseGameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE
-	; object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
-	; object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
-	; object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+	; object_event  3,  5, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL_ALIGNED, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RedsHouseGameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE
+	object_event  1,  1, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
+	object_event  2,  1, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
+	object_event  3,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
