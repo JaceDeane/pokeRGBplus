@@ -77,35 +77,35 @@ GoldenrodUndergroundWarehouse_Blocks:
 BetaElevator_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaElevator.blk"
 
-TinTower1F_Blocks:
-	INCBIN "maps/TinTower1F.blk"
+; TinTower1F_Blocks:
+	; INCBIN "maps/TinTower1F.blk"
 
-TinTower2F_Blocks:
-	INCBIN "maps/TinTower2F.blk"
+; TinTower2F_Blocks:
+	; INCBIN "maps/TinTower2F.blk"
 
-TinTower3F_Blocks:
-	INCBIN "maps/TinTower3F.blk"
+; TinTower3F_Blocks:
+	; INCBIN "maps/TinTower3F.blk"
 
-TinTower4F_Blocks:
-	INCBIN "maps/TinTower4F.blk"
+; TinTower4F_Blocks:
+	; INCBIN "maps/TinTower4F.blk"
 
-TinTower5F_Blocks:
-	INCBIN "maps/TinTower5F.blk"
+; TinTower5F_Blocks:
+	; INCBIN "maps/TinTower5F.blk"
 
-TinTower6F_Blocks:
-	INCBIN "maps/TinTower6F.blk"
+; TinTower6F_Blocks:
+	; INCBIN "maps/TinTower6F.blk"
 
-TinTower7F_Blocks:
-	INCBIN "maps/TinTower7F.blk"
+; TinTower7F_Blocks:
+	; INCBIN "maps/TinTower7F.blk"
 
-TinTower8F_Blocks:
-	INCBIN "maps/TinTower8F.blk"
+; TinTower8F_Blocks:
+	; INCBIN "maps/TinTower8F.blk"
 
-TinTower9F_Blocks:
-	INCBIN "maps/TinTower9F.blk"
+; TinTower9F_Blocks:
+	; INCBIN "maps/TinTower9F.blk"
 
-TinTowerRoof_Blocks:
-	INCBIN "maps/TinTowerRoof.blk"
+; TinTowerRoof_Blocks:
+	; INCBIN "maps/TinTowerRoof.blk"
 
 BurnedTower1F_Blocks:
 	INCBIN "maps/BurnedTower1F.blk"
@@ -1033,5 +1033,36 @@ INCBIN "maps/BillsHouse.blk"
 
 VermilionDock_Blocks:
 INCBIN "maps/VermilionDock.blk"
+
+
+; SECTION "Map Blocks 5", ROMX
+
+SSAnne1F_Blocks:
+INCBIN "maps/SSAnne1F.blk"
+
+SSAnne2F_Blocks:
+INCBIN "maps/SSAnne2F.blk"
+
+SSAnne3F_Blocks:
+INCBIN "maps/SSAnne3F.blk"
+
+SSAnneB1F_Blocks:
+INCBIN "maps/SSAnneB1F.blk"
+
+SSAnneBow_Blocks:
+INCBIN "maps/SSAnneBow.blk"
+
+SSAnneKitchen_Blocks:
+INCBIN "maps/SSAnneKitchen.blk"
+
+SSAnneCaptainsCabin_Blocks:
+INCBIN "maps/SSAnneCaptainsCabin.blk"
+
+SSAnne1FCabins_Blocks:
+SSAnneB1FCabins_Blocks:
+INCBIN "maps/SSAnne1FCabins.blk"
+
+SSAnne2FCabins_Blocks:
+INCBIN "maps/SSAnne2FCabins.blk"
 
 ENDSECTION

@@ -66,15 +66,15 @@ ENDM
 	map_const SPROUT_TOWER_1F,                             10,  8 ;  1
 	map_const SPROUT_TOWER_2F,                             10,  8 ;  2
 	map_const SPROUT_TOWER_3F,                             10,  8 ;  3
-	map_const TIN_TOWER_1F,                                10,  9 ;  4
-	map_const TIN_TOWER_2F,                                10,  9 ;  5
-	map_const TIN_TOWER_3F,                                10,  9 ;  6
-	map_const TIN_TOWER_4F,                                10,  9 ;  7
-	map_const TIN_TOWER_5F,                                10,  9 ;  8
-	map_const TIN_TOWER_6F,                                10,  9 ;  9
-	map_const TIN_TOWER_7F,                                10,  9 ; 10
-	map_const TIN_TOWER_8F,                                10,  9 ; 11
-	map_const TIN_TOWER_9F,                                10,  9 ; 12
+	; map_const TIN_TOWER_1F,                                10,  9 ;  4
+	; map_const TIN_TOWER_2F,                                10,  9 ;  5
+	; map_const TIN_TOWER_3F,                                10,  9 ;  6
+	; map_const TIN_TOWER_4F,                                10,  9 ;  7
+	; map_const TIN_TOWER_5F,                                10,  9 ;  8
+	; map_const TIN_TOWER_6F,                                10,  9 ;  9
+	; map_const TIN_TOWER_7F,                                10,  9 ; 10
+	; map_const TIN_TOWER_8F,                                10,  9 ; 11
+	; map_const TIN_TOWER_9F,                                10,  9 ; 12
 	map_const BURNED_TOWER_1F,                             10,  9 ; 13
 	map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	map_const NATIONAL_PARK,                               20, 27 ; 15
@@ -333,7 +333,17 @@ ENDM
 	; map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
 	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ; 11
-	map_const TIN_TOWER_ROOF,                              10,  9 ; 12
+	; map_const TIN_TOWER_ROOF,                              10,  9 ; 12
+	map_const SS_ANNE_1F,                                  20,  9 ; XX
+	map_const SS_ANNE_2F,                                  20,  9 ; XX
+	map_const SS_ANNE_3F,                                  10,  3 ; XX
+	map_const SS_ANNE_B1F,                                 15,  4 ; XX
+	map_const SS_ANNE_BOW,                                 10,  7 ; XX
+	map_const SS_ANNE_KITCHEN,                              7,  8 ; XX
+	map_const SS_ANNE_CAPTAINS_CABIN,                       3,  4 ; XX
+	map_const SS_ANNE_1F_CABINS,                           12,  8 ; XX
+	map_const SS_ANNE_2F_CABINS,                           12,  8 ; XX
+	map_const SS_ANNE_B1F_CABINS,                          12,  8 ; XX
 	endgroup
 
 	newgroup INDIGO                                               ; 16

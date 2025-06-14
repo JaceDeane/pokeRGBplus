@@ -386,15 +386,15 @@ ENDM
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
 	map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0
-	map_attributes TinTower1F, TIN_TOWER_1F, $00, 0
-	map_attributes TinTower2F, TIN_TOWER_2F, $00, 0
-	map_attributes TinTower3F, TIN_TOWER_3F, $00, 0
-	map_attributes TinTower4F, TIN_TOWER_4F, $00, 0
-	map_attributes TinTower5F, TIN_TOWER_5F, $00, 0
-	map_attributes TinTower6F, TIN_TOWER_6F, $00, 0
-	map_attributes TinTower7F, TIN_TOWER_7F, $00, 0
-	map_attributes TinTower8F, TIN_TOWER_8F, $00, 0
-	map_attributes TinTower9F, TIN_TOWER_9F, $00, 0
+	; map_attributes TinTower1F, TIN_TOWER_1F, $00, 0
+	; map_attributes TinTower2F, TIN_TOWER_2F, $00, 0
+	; map_attributes TinTower3F, TIN_TOWER_3F, $00, 0
+	; map_attributes TinTower4F, TIN_TOWER_4F, $00, 0
+	; map_attributes TinTower5F, TIN_TOWER_5F, $00, 0
+	; map_attributes TinTower6F, TIN_TOWER_6F, $00, 0
+	; map_attributes TinTower7F, TIN_TOWER_7F, $00, 0
+	; map_attributes TinTower8F, TIN_TOWER_8F, $00, 0
+	; map_attributes TinTower9F, TIN_TOWER_9F, $00, 0
 	map_attributes BurnedTower1F, BURNED_TOWER_1F, $00, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $09, 0
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
@@ -599,7 +599,17 @@ ENDM
 	; map_attributes VermilionPortPassage, VERMILION_PORT_PASSAGE, $00, 0
 	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $00, 0
-	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $00, 0
+	; map_attributes TinTowerRoof, TIN_TOWER_ROOF, $00, 0
+	map_attributes SSAnne1F, SS_ANNE_1F, $00, 0
+	map_attributes SSAnne2F, SS_ANNE_2F, $00, 0
+	map_attributes SSAnne3F, SS_ANNE_3F, $00, 0
+	map_attributes SSAnneB1F, SS_ANNE_B1F, $00, 0
+	map_attributes SSAnneBow, SS_ANNE_BOW, $00, 0
+	map_attributes SSAnneKitchen, SS_ANNE_KITCHEN, $00, 0
+	map_attributes SSAnneCaptainsCabin, SS_ANNE_CAPTAINS_CABIN, $00, 0
+	map_attributes SSAnne1FCabins, SS_ANNE_1F_CABINS, $00, 0
+	map_attributes SSAnne2FCabins, SS_ANNE_2F_CABINS, $00, 0
+	map_attributes SSAnneB1FCabins, SS_ANNE_B1F_CABINS, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
 	map_attributes KogasRoom, KOGAS_ROOM, $00, 0

@@ -64,7 +64,7 @@ MapScenes::
 	scene_var ROUTE_43_GATE,                               wRoute43GateSceneID
 	scene_var MOUNT_MOON_B2F,                              wMountMoonB2FSceneID
 	scene_var SPROUT_TOWER_3F,                             wSproutTower3FSceneID
-	scene_var TIN_TOWER_1F,                                wTinTower1FSceneID
+	ds 1 ;scene_var TIN_TOWER_1F,                                wTinTower1FSceneID
 	scene_var BURNED_TOWER_1F,                             wBurnedTower1FSceneID
 	scene_var BURNED_TOWER_B1F,                            wBurnedTowerB1FSceneID
 	scene_var RADIO_TOWER_5F,                              wRadioTower5FSceneID

@@ -285,15 +285,15 @@ INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 TilesetBetaWordRoomMeta::
 INCBIN "data/tilesets/beta_word_room_metatiles.bin"
 
+
+SECTION "Tileset Data 7", ROMX
+
 TilesetBetaWordRoomColl::
 TilesetHoOhWordRoomColl::
 TilesetKabutoWordRoomColl::
 TilesetOmanyteWordRoomColl::
 TilesetAerodactylWordRoomColl::
 INCLUDE "data/tilesets/beta_word_room_collision.asm"
-
-
-SECTION "Tileset Data 7", ROMX
 
 TilesetRuinsOfAlphGFX::
 TilesetBetaWordRoomGFX::

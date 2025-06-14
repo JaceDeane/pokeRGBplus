@@ -111,7 +111,7 @@ INCLUDE "maps/FastShipB1F.asm"
 ; INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/MountMoonSquare.asm" ; TODO -- Remove
 INCLUDE "maps/MountMoonGiftShop.asm" ; TODO -- Remove
-INCLUDE "maps/TinTowerRoof.asm"
+; INCLUDE "maps/TinTowerRoof.asm"
 
 
 SECTION "Johto Map Scripts 8", ROMX
@@ -197,15 +197,15 @@ INCLUDE "maps/KarensRoom.asm"
 INCLUDE "maps/SproutTower1F.asm"
 INCLUDE "maps/SproutTower2F.asm"
 INCLUDE "maps/SproutTower3F.asm"
-INCLUDE "maps/TinTower1F.asm"
-INCLUDE "maps/TinTower2F.asm"
-INCLUDE "maps/TinTower3F.asm"
-INCLUDE "maps/TinTower4F.asm"
-INCLUDE "maps/TinTower5F.asm"
-INCLUDE "maps/TinTower6F.asm"
-INCLUDE "maps/TinTower7F.asm"
-INCLUDE "maps/TinTower8F.asm"
-INCLUDE "maps/TinTower9F.asm"
+; INCLUDE "maps/TinTower1F.asm"
+; INCLUDE "maps/TinTower2F.asm"
+; INCLUDE "maps/TinTower3F.asm"
+; INCLUDE "maps/TinTower4F.asm"
+; INCLUDE "maps/TinTower5F.asm"
+; INCLUDE "maps/TinTower6F.asm"
+; INCLUDE "maps/TinTower7F.asm"
+; INCLUDE "maps/TinTower8F.asm"
+; INCLUDE "maps/TinTower9F.asm"
 INCLUDE "maps/BurnedTower1F.asm"
 INCLUDE "maps/BurnedTowerB1F.asm"
 
@@ -551,6 +551,17 @@ INCLUDE "maps/Route11Gate2F.asm"
 
 
 SECTION "Map Scripts 18", ROMX
+
+INCLUDE "maps/SSAnne1F.asm"
+INCLUDE "maps/SSAnne2F.asm"
+INCLUDE "maps/SSAnne3F.asm"
+INCLUDE "maps/SSAnneB1F.asm"
+INCLUDE "maps/SSAnneBow.asm"
+INCLUDE "maps/SSAnneKitchen.asm"
+INCLUDE "maps/SSAnneCaptainsCabin.asm"
+INCLUDE "maps/SSAnne1FCabins.asm"
+INCLUDE "maps/SSAnne2FCabins.asm"
+INCLUDE "maps/SSAnneB1FCabins.asm"
 
 
 SECTION "Map Scripts 19", ROMX

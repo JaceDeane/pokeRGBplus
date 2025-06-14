@@ -301,7 +301,7 @@ VermilionDock_MapEvents:
 
 	def_warp_events
 	warp_event 14,  4, VERMILION_CITY, 6
-	; warp_event 14,  6, FAST_SHIP_1F, 1
+	warp_event 14,  6, SS_ANNE_1F, 1
 
 	def_coord_events
 	; coord_event  7, 11, SCENE_VERMILIONDOCK_ASK_ENTER_SHIP, VermilionDockWalkUpToShipScript
