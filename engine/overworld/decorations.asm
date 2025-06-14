@@ -1110,9 +1110,6 @@ ToggleMaptileDecorations:
 	ld a, [wDecoPoster]
 	call SetDecorationTile
 	call SetPosterVisibility
-	lb de, 3, 5 ; N64 coordinates
-	ld a, [wDecoConsole]
-	call SetDecorationTile
 	lb de, 2, 3 ; carpet top-left coordinates
 	call PadCoords_de
 	ld a, [wDecoCarpet]
