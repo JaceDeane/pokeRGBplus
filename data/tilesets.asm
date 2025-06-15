@@ -32,7 +32,7 @@ Tilesets::
 	tileset TilesetTraditionalHouse
 	tileset TilesetTrainStation
 	tileset TilesetChampionsRoom
-	tileset TilesetLighthouse
+	tileset TilesetShip ; Lighthouse
 	tileset TilesetPlayersRoom
 	tileset TilesetPokeComCenter
 	tileset TilesetBattleTowerInside
@@ -60,4 +60,5 @@ Tilesets::
 	tileset TilesetCemetery
 	tileset TilesetInterior
 	tileset TilesetPlateau
+	tileset TilesetShipDeck
 	assert_table_length NUM_TILESETS + 1

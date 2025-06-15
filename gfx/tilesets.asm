@@ -255,14 +255,17 @@ INCBIN "data/tilesets/house_metatiles.bin"
 TilesetHouseColl::
 INCLUDE "data/tilesets/house_collision.asm"
 
-TilesetLighthouseGFX::
-INCBIN "gfx/tilesets/lighthouse.2bpp.lz"
+TilesetShipGFX::
+TilesetShipDeckGFX::
+INCBIN "gfx/tilesets/ship.2bpp.lz"
 
-TilesetLighthouseMeta::
-INCBIN "data/tilesets/lighthouse_metatiles.bin"
+TilesetShipMeta::
+TilesetShipDeckMeta::
+INCBIN "data/tilesets/ship_metatiles.bin"
 
-TilesetLighthouseColl::
-INCLUDE "data/tilesets/lighthouse_collision.asm"
+TilesetShipColl::
+TilesetShipDeckColl::
+INCLUDE "data/tilesets/ship_collision.asm"
 
 TilesetForestColl::
 INCLUDE "data/tilesets/forest_collision.asm"
@@ -282,11 +285,11 @@ INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl::
 INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
-TilesetBetaWordRoomMeta::
-INCBIN "data/tilesets/beta_word_room_metatiles.bin"
-
 
 SECTION "Tileset Data 7", ROMX
+
+TilesetBetaWordRoomMeta::
+INCBIN "data/tilesets/beta_word_room_metatiles.bin"
 
 TilesetBetaWordRoomColl::
 TilesetHoOhWordRoomColl::

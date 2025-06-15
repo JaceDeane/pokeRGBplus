@@ -18,7 +18,7 @@
 	const TILESET_TRADITIONAL_HOUSE    ; 10
 	const TILESET_TRAIN_STATION        ; 11
 	const TILESET_CHAMPIONS_ROOM       ; 12
-	const TILESET_LIGHTHOUSE           ; 13
+	const TILESET_SHIP                 ; 13 -- was LIGHTHOUSE
 	const TILESET_PLAYERS_ROOM         ; 14
 	const TILESET_POKECOM_CENTER       ; 15
 	const TILESET_BATTLE_TOWER_INSIDE  ; 16
@@ -46,6 +46,7 @@
 	const TILESET_CEMETERY             ;
 	const TILESET_INTERIOR             ;
 	const TILESET_PLATEAU              ;
+	const TILESET_SHIP_DECK            ;
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

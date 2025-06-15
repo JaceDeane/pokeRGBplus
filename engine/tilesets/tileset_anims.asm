@@ -282,6 +282,21 @@ TilesetDarkCavernAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
+TilesetShipDeckAnim:
+	dw vTiles2 tile $14, AnimateWaterTile
+	dw vTiles2 tile $1b, AnimateDarkWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
 TilesetPlayersHouseAnim:
@@ -295,7 +310,7 @@ TilesetGameCornerAnim:
 TilesetTraditionalHouseAnim:
 TilesetTrainStationAnim:
 TilesetChampionsRoomAnim:
-TilesetLighthouseAnim:
+TilesetShipAnim:
 TilesetPlayersRoomAnim:
 TilesetPokeComCenterAnim:
 TilesetBattleTowerInsideAnim:
@@ -511,6 +526,36 @@ AnimateWaterTile:
 
 .WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
+
+AnimateDarkWaterTile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .DarkWaterTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.DarkWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.DarkWaterTileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
+
+.DarkWaterTileFrames:
+	INCBIN "gfx/tilesets/water/water_dark.2bpp"
 
 ForestTreeLeftAnimation:
 ; Save the stack pointer in bc for WriteTile to restore

@@ -338,7 +338,7 @@ ENDM
 	map_const SS_ANNE_2F,                                  20,  9 ; XX
 	map_const SS_ANNE_3F,                                  10,  3 ; XX
 	map_const SS_ANNE_B1F,                                 15,  4 ; XX
-	map_const SS_ANNE_BOW,                                 10,  7 ; XX
+	map_const SS_ANNE_BOW,                                 10,  9 ; XX
 	map_const SS_ANNE_KITCHEN,                              7,  8 ; XX
 	map_const SS_ANNE_CAPTAINS_CABIN,                       3,  4 ; XX
 	map_const SS_ANNE_1F_CABINS,                           12,  8 ; XX

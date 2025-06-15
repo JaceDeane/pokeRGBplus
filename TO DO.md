@@ -30,6 +30,7 @@ OTHER:
 
 ### ENGINE / DATA:
 
+
 - DayCareGentleman special needs to be updated and refined
 
 - Should there be a seperate Gate_Kanto tileset so that pot plants can use a gray/brown palette?
@@ -38,7 +39,9 @@ OTHER:
 
 - `farcall PlaceMoneyTopRight` should display MONEY on the top border like in R/B (unsure if `special PlaceMoneyTopRight` does this too)
 
-- Vermilion Dock (And S.S. Anne Bow) should load default map palette, then just overwrites the new ones as needed, rather than 3 seperate full palettes for MORN, DAY and NITE
+- (!) Vermilion Dock (And S.S. Anne Bow) should load default map palette, then just overwrites the new ones as needed, rather than 3 seperate full palettes for MORN, DAY and NITE
+
+	- TILESET_SHIP_DECK should force-overwrite PAL_ROOF
 
 - Adjust Indigo Plateau's roof palette for nighttime
 

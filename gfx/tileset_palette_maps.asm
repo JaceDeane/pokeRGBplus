@@ -84,8 +84,11 @@ INCLUDE "gfx/tilesets/underground_palette_map.asm"
 TilesetChampionsRoomPalMap:
 INCLUDE "gfx/tilesets/champions_room_palette_map.asm"
 
-TilesetLighthousePalMap:
-INCLUDE "gfx/tilesets/lighthouse_palette_map.asm"
+TilesetShipPalMap:
+INCLUDE "gfx/tilesets/ship_palette_map.asm"
+
+TilesetShipDeckPalMap:
+INCLUDE "gfx/tilesets/ship_deck_palette_map.asm"
 
 TilesetPlayersRoomPalMap:
 INCLUDE "gfx/tilesets/players_room_palette_map.asm"
