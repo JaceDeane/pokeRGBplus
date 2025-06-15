@@ -386,15 +386,6 @@ ENDM
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
 	map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0
-	; map_attributes TinTower1F, TIN_TOWER_1F, $00, 0
-	; map_attributes TinTower2F, TIN_TOWER_2F, $00, 0
-	; map_attributes TinTower3F, TIN_TOWER_3F, $00, 0
-	; map_attributes TinTower4F, TIN_TOWER_4F, $00, 0
-	; map_attributes TinTower5F, TIN_TOWER_5F, $00, 0
-	; map_attributes TinTower6F, TIN_TOWER_6F, $00, 0
-	; map_attributes TinTower7F, TIN_TOWER_7F, $00, 0
-	; map_attributes TinTower8F, TIN_TOWER_8F, $00, 0
-	; map_attributes TinTower9F, TIN_TOWER_9F, $00, 0
 	map_attributes BurnedTower1F, BURNED_TOWER_1F, $00, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $09, 0
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0

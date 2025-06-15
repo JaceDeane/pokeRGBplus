@@ -66,15 +66,6 @@ ENDM
 	map_const SPROUT_TOWER_1F,                             10,  8 ;  1
 	map_const SPROUT_TOWER_2F,                             10,  8 ;  2
 	map_const SPROUT_TOWER_3F,                             10,  8 ;  3
-	; map_const TIN_TOWER_1F,                                10,  9 ;  4
-	; map_const TIN_TOWER_2F,                                10,  9 ;  5
-	; map_const TIN_TOWER_3F,                                10,  9 ;  6
-	; map_const TIN_TOWER_4F,                                10,  9 ;  7
-	; map_const TIN_TOWER_5F,                                10,  9 ;  8
-	; map_const TIN_TOWER_6F,                                10,  9 ;  9
-	; map_const TIN_TOWER_7F,                                10,  9 ; 10
-	; map_const TIN_TOWER_8F,                                10,  9 ; 11
-	; map_const TIN_TOWER_9F,                                10,  9 ; 12
 	map_const BURNED_TOWER_1F,                             10,  9 ; 13
 	map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	map_const NATIONAL_PARK,                               20, 27 ; 15

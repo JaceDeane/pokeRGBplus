@@ -77,36 +77,6 @@ GoldenrodUndergroundWarehouse_Blocks:
 BetaElevator_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaElevator.blk"
 
-; TinTower1F_Blocks:
-	; INCBIN "maps/TinTower1F.blk"
-
-; TinTower2F_Blocks:
-	; INCBIN "maps/TinTower2F.blk"
-
-; TinTower3F_Blocks:
-	; INCBIN "maps/TinTower3F.blk"
-
-; TinTower4F_Blocks:
-	; INCBIN "maps/TinTower4F.blk"
-
-; TinTower5F_Blocks:
-	; INCBIN "maps/TinTower5F.blk"
-
-; TinTower6F_Blocks:
-	; INCBIN "maps/TinTower6F.blk"
-
-; TinTower7F_Blocks:
-	; INCBIN "maps/TinTower7F.blk"
-
-; TinTower8F_Blocks:
-	; INCBIN "maps/TinTower8F.blk"
-
-; TinTower9F_Blocks:
-	; INCBIN "maps/TinTower9F.blk"
-
-; TinTowerRoof_Blocks:
-	; INCBIN "maps/TinTowerRoof.blk"
-
 BurnedTower1F_Blocks:
 	INCBIN "maps/BurnedTower1F.blk"
 
