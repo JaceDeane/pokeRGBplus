@@ -289,8 +289,8 @@ Pokedex_UpdateMainScreen:
 	and SELECT
 	jr nz, .select
 	ld a, [hl]
-	and START
-	jr nz, .start
+	; and START ; No search option until GSC
+	; jr nz, .start
 	call Pokedex_ListingHandleDPadInput
 	ret nc
 	call Pokedex_UpdateCursorOAM
@@ -1098,9 +1098,9 @@ Pokedex_FillColumn:
 
 Pokedex_DrawMainScreenBG:
 ; Draws the left sidebar and the bottom bar on the main screen.
-	hlcoord 0, 17
-	ld de, String_START_SEARCH
-	call Pokedex_PlaceString
+	; hlcoord 0, 17
+	; ld de, String_START_SEARCH
+	; call Pokedex_PlaceString
 	ld a, $32
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -1131,26 +1131,26 @@ Pokedex_DrawMainScreenBG:
 	hlcoord 5, 15
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 1, 17
-	ld de, String_SELECT_OPTION
-	call Pokedex_PlaceString
-	hlcoord 8, 1
-	ld b, 7
-	ld a, $5a
-	call Pokedex_FillColumn
-	hlcoord 8, 10
-	ld b, 6
-	ld a, $5a
-	call Pokedex_FillColumn
-	hlcoord 8, 0
-	ld [hl], $59
-	hlcoord 8, 8
-	ld [hl], $53
-	hlcoord 8, 9
-	ld [hl], $54
-	hlcoord 8, 16
-	ld [hl], $5b
-	call Pokedex_PlaceFrontpicTopLeftCorner
+	; hlcoord 1, 17
+	; ld de, String_SELECT_OPTION
+	; call Pokedex_PlaceString
+	; hlcoord 8, 1
+	; ld b, 7
+	; ld a, $5a
+	; call Pokedex_FillColumn
+	; hlcoord 8, 10
+	; ld b, 6
+	; ld a, $5a
+	; call Pokedex_FillColumn
+	; hlcoord 8, 0
+	; ld [hl], $59
+	; hlcoord 8, 8
+	; ld [hl], $53
+	; hlcoord 8, 9
+	; ld [hl], $54
+	; hlcoord 8, 16
+	; ld [hl], $5b
+	;call Pokedex_PlaceFrontpicTopLeftCorner
 	ret
 
 String_SEEN:
@@ -2478,11 +2478,11 @@ Pokedex_LoadGFX:
 	ld bc, $31 tiles
 	xor a
 	call ByteFill
-	call Pokedex_LoadInvertedFont
+	; call Pokedex_LoadInvertedFont
 	call LoadFontsExtra
 	ld hl, vTiles2 tile $60
 	ld bc, $20 tiles
-	call Pokedex_InvertTiles
+	; call Pokedex_InvertTiles
 	call Pokedex_CheckSGB
 	jr nz, .LoadPokedexLZ
 	farcall LoadSGBPokedexGFX
