@@ -172,18 +172,16 @@ EnterMapWarp:
 	call CheckIndoorMap
 	ret nz
 
-; MOUNT_MOON_SQUARE and TIN_TOWER_ROOF are outdoor maps within indoor maps.
-; Dig and Escape Rope should not take you to them.
+; SS_ANNE_BOW, (like MOUNT_MOON_SQUARE and TIN_TOWER_ROOF in GSC) is an outdoor map within indoor maps.
+; Dig and Escape Rope should not return you to them.
 	ld a, [wPrevMapGroup]
-	cp GROUP_MOUNT_MOON_SQUARE
-	jr nz, .not_mt_moon_square_or_tin_tower_roof
-	; assert GROUP_MOUNT_MOON_SQUARE == GROUP_TIN_TOWER_ROOF
+	cp GROUP_SS_ANNE_BOW
+	jr nz, .not_outdoor_within_indoor
+	; assert GROUP_SS_ANNE_BOW == GROUP_NONE ; insert other outdoor within indoor map here
 	ld a, [wPrevMapNumber]
-	cp MAP_MOUNT_MOON_SQUARE
+	cp MAP_SS_ANNE_BOW
 	ret z
-	; cp MAP_TIN_TOWER_ROOF
-	; ret z
-.not_mt_moon_square_or_tin_tower_roof
+.not_outdoor_within_indoor
 
 	ld a, [wPrevWarp]
 	ld [wDigWarpNumber], a
