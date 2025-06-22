@@ -23,27 +23,27 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
-	db MUSIC_EVIL_TRAINER_ENCOUNTER      ; scientist -- R/B
+	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; scientist -- R/B
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
 	db MUSIC_MALE_TRAINER_ENCOUNTER   ; youngster -- R/B
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
 	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; lass -- R/B
-	db MUSIC_EVIL_TRAINER_ENCOUNTER       ; leader_giovanni -- R/B
+	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; leader_giovanni -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
-	db MUSIC_FEMALE_TRAINER_ENCOUNTER      ; cooltrainerf -- R/B
-	db MUSIC_FEMALE_TRAINER_ENCOUNTER      ; beauty -- R/B
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; cooltrainerf -- R/B
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; beauty -- R/B
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; pokemaniac
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntm
-	db MUSIC_HIKER_ENCOUNTER       ; gentleman
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; gentleman -- R/B
 	db MUSIC_BEAUTY_ENCOUNTER      ; skier
 	db MUSIC_BEAUTY_ENCOUNTER      ; teacher
 	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
 	db MUSIC_MALE_TRAINER_ENCOUNTER   ; bug_catcher -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; fisher
-	db MUSIC_MALE_TRAINER_ENCOUNTER       ; swimmerm -- R/B
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; swimmerm -- R/B
 	db MUSIC_BEAUTY_ENCOUNTER      ; swimmerf
-	db MUSIC_HIKER_ENCOUNTER       ; sailor
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; sailor -- R/B
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; super_nerd
 	db MUSIC_RIVAL_ENCOUNTER       ; rival2
 	db MUSIC_HIKER_ENCOUNTER       ; guitarist
@@ -52,7 +52,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; burglar
 	db MUSIC_HIKER_ENCOUNTER       ; firebreather
-	db MUSIC_EVIL_TRAINER_ENCOUNTER  ; juggler -- R/B
+	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; juggler -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
 	db MUSIC_ROCKET_ENCOUNTER      ; executivem
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
@@ -76,8 +76,8 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; channeler
 	db MUSIC_HIKER_ENCOUNTER       ; cueball -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; engineer -- TODO
-	db MUSIC_EVIL_TRAINER_ENCOUNTER       ; gambler -- R/B
-	db MUSIC_EVIL_TRAINER_ENCOUNTER       ; rocker -- R/B
+	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; gambler -- R/B
+	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; rocker -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; tamer -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; lorelei -- TODO
 	db MUSIC_HIKER_ENCOUNTER       ; agatha -- TODO

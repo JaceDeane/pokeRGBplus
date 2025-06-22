@@ -6,9 +6,9 @@
 ### MAPS:
 (Only interiors and dungeons left to do)
 
-- S.S. Anne: Interiors and Bow
-
 - Cerulean Cave (1F, B1F, B2F)
+
+- 
 
 ### EVENTS:
 

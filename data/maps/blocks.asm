@@ -1029,10 +1029,10 @@ SSAnneCaptainsCabin_Blocks:
 INCBIN "maps/SSAnneCaptainsCabin.blk"
 
 SSAnne1FCabins_Blocks:
-SSAnneB1FCabins_Blocks:
 INCBIN "maps/SSAnne1FCabins.blk"
 
 SSAnne2FCabins_Blocks:
+SSAnneB1FCabins_Blocks:
 INCBIN "maps/SSAnne2FCabins.blk"
 
 ENDSECTION

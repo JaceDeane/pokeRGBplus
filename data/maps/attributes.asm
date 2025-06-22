@@ -595,7 +595,7 @@ ENDM
 	map_attributes SSAnne2F, SS_ANNE_2F, $00, 0
 	map_attributes SSAnne3F, SS_ANNE_3F, $00, 0
 	map_attributes SSAnneB1F, SS_ANNE_B1F, $00, 0
-	map_attributes SSAnneBow, SS_ANNE_BOW, $00, 0
+	map_attributes SSAnneBow, SS_ANNE_BOW, $23, 0
 	map_attributes SSAnneKitchen, SS_ANNE_KITCHEN, $00, 0
 	map_attributes SSAnneCaptainsCabin, SS_ANNE_CAPTAINS_CABIN, $00, 0
 	map_attributes SSAnne1FCabins, SS_ANNE_1F_CABINS, $00, 0

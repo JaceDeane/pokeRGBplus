@@ -122,6 +122,7 @@
 	const SPRITE_BALDING_GUY ; 7c
 	const SPRITE_AGATHA ; 7d
 	const SPRITE_LORELEI ; 7e
+	const SPRITE_WAITER ; 7f
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
