@@ -17,15 +17,15 @@ Route44_MapScripts:
 	def_callbacks
 
 TrainerBirdKeeperVance1:
-	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
+	; trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
+	; loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
 	endifjustbattled
 	opentext
 	checkflag ENGINE_VANCE_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_BIRDKEEPER_VANCE
+	; checkcellnum PHONE_BIRDKEEPER_VANCE
 	iftrue Route44NumberAcceptedM
 	checkevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
@@ -38,10 +38,10 @@ TrainerBirdKeeperVance1:
 .AskedAlready:
 	scall Route44AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_VANCE
+	; askforphonenumber PHONE_BIRDKEEPER_VANCE
 	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
+	; gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
 	scall Route44RegisteredNumberM
 	sjump Route44NumberAcceptedM
 
@@ -59,7 +59,7 @@ TrainerBirdKeeperVance1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer BIRD_KEEPER, VANCE1
+	; loadtrainer BIRD_KEEPER, VANCE1
 	startbattle
 	reloadmapafterbattle
 	loadmem wVanceFightCount, 1
@@ -67,7 +67,7 @@ TrainerBirdKeeperVance1:
 	end
 
 .LoadFight1:
-	loadtrainer BIRD_KEEPER, VANCE2
+	; loadtrainer BIRD_KEEPER, VANCE2
 	startbattle
 	reloadmapafterbattle
 	loadmem wVanceFightCount, 2
@@ -75,7 +75,7 @@ TrainerBirdKeeperVance1:
 	end
 
 .LoadFight2:
-	loadtrainer BIRD_KEEPER, VANCE3
+	; loadtrainer BIRD_KEEPER, VANCE3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_VANCE_READY_FOR_REMATCH
@@ -148,7 +148,7 @@ Route44RematchGiftM:
 	end
 
 TrainerPsychicPhil:
-	trainer PSYCHIC_T, PHIL, EVENT_BEAT_PSYCHIC_PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
+	; trainer PSYCHIC_T, PHIL, EVENT_BEAT_PSYCHIC_PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -159,17 +159,17 @@ TrainerPsychicPhil:
 	end
 
 TrainerFisherWilton1:
-	trainer FISHER, WILTON1, EVENT_BEAT_FISHER_WILTON, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
+	; trainer FISHER, WILTON1, EVENT_BEAT_FISHER_WILTON, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_FISHER_WILTON
+	; loadvar VAR_CALLERID, PHONE_FISHER_WILTON
 	endifjustbattled
 	opentext
 	checkflag ENGINE_WILTON_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkflag ENGINE_WILTON_HAS_ITEM
 	iftrue .HasItem
-	checkcellnum PHONE_FISHER_WILTON
+	; checkcellnum PHONE_FISHER_WILTON
 	iftrue Route44NumberAcceptedM
 	checkevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
@@ -182,10 +182,10 @@ TrainerFisherWilton1:
 .AskedAlready:
 	scall Route44AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_FISHER_WILTON
+	; askforphonenumber PHONE_FISHER_WILTON
 	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
-	gettrainername STRING_BUFFER_3, FISHER, WILTON1
+	; gettrainername STRING_BUFFER_3, FISHER, WILTON1
 	scall Route44RegisteredNumberM
 	sjump Route44NumberAcceptedM
 
@@ -203,7 +203,7 @@ TrainerFisherWilton1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer FISHER, WILTON1
+	; loadtrainer FISHER, WILTON1
 	startbattle
 	reloadmapafterbattle
 	loadmem wWiltonFightCount, 1
@@ -211,7 +211,7 @@ TrainerFisherWilton1:
 	end
 
 .LoadFight1:
-	loadtrainer FISHER, WILTON2
+	; loadtrainer FISHER, WILTON2
 	startbattle
 	reloadmapafterbattle
 	loadmem wWiltonFightCount, 2
@@ -219,7 +219,7 @@ TrainerFisherWilton1:
 	end
 
 .LoadFight2:
-	loadtrainer FISHER, WILTON3
+	; loadtrainer FISHER, WILTON3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_WILTON_READY_FOR_REMATCH
@@ -254,7 +254,7 @@ TrainerFisherWilton1:
 	sjump Route44PackFullM
 
 TrainerFisherEdgar:
-	trainer FISHER, EDGAR, EVENT_BEAT_FISHER_EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
+	; trainer FISHER, EDGAR, EVENT_BEAT_FISHER_EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -265,7 +265,7 @@ TrainerFisherEdgar:
 	end
 
 TrainerCooltrainerfCybil:
-	trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
+	; trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -276,7 +276,7 @@ TrainerCooltrainerfCybil:
 	end
 
 TrainerPokemaniacZach:
-	trainer POKEMANIAC, ZACH, EVENT_BEAT_POKEMANIAC_ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, .Script
+	; trainer POKEMANIAC, ZACH, EVENT_BEAT_POKEMANIAC_ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -287,7 +287,7 @@ TrainerPokemaniacZach:
 	end
 
 TrainerCooltrainermAllen:
-	trainer COOLTRAINERM, ALLEN, EVENT_BEAT_COOLTRAINERM_ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
+	; trainer COOLTRAINERM, ALLEN, EVENT_BEAT_COOLTRAINERM_ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

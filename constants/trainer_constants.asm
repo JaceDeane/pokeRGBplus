@@ -152,7 +152,7 @@ DEF KRIS EQU __trainer_class__
 	const TOBY
 	const DENIS
 	const VANCE1
-	const HANK
+	const HANKZ
 	const ROY
 	const BORIS
 	const BOB
@@ -254,7 +254,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
-	const ANDREW
+	const ANDREWZ
 	const CALVINZ
 	const SHANEZ
 	const BENZ
@@ -315,7 +315,8 @@ DEF KRIS EQU __trainer_class__
 	trainerclass GENTLEMAN ; 20 -- Updated to R/B, using FR/LG names
 	const THOMAS
 	const ARTHUR
-	const TUCKER
+	const BROOKS
+	const TUCKER ; FR/LG splits BROOKS and TUCKER despite same "Trainer" party in R/B
 	const NORTON ; unused
 	const WALTER
 
@@ -347,32 +348,18 @@ DEF KRIS EQU __trainer_class__
 	const BRENT
 	const CONNER
 
-	trainerclass FISHER ; 25
-	const JUSTINZ
-	const RALPH1
-	const ARNOLD
-	const KYLE
-	const HENRY
-	const MARVIN
-	const TULLY1
-	const ANDRE
-	const RAYMOND
-	const WILTON1
-	const EDGARZ
-	const JONAH
-	const MARTIN
-	const STEPHEN
-	const BARNEY
-	const RALPH2
-	const RALPH3
-	const TULLY2
-	const TULLY3
-	const WILTON2
-	const SCOTT
-	const WILTON3
-	const RALPH4
-	const RALPH5
-	const TULLY4
+	trainerclass FISHER ; 25 -- Updated to R/B, using FR/LG names
+	const DALE
+	const BARNY
+	const NED
+	const CHIP
+	const HANK
+	const ELLIOT
+	const RONALD
+	const CLAUDE
+	const WADE
+	const NOLAN
+	const ANDREW
 
 	trainerclass SWIMMERM ; 26 -- Updated to R/B, using FR/LG names
 	const LUIS
@@ -492,7 +479,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass FIREBREATHER ; 30
 	const OTIS
 	const DICK ; unused
-	const NED ; unused
+	const NEDZ ; unused
 	const BURT
 	const BILL
 	const WALT
@@ -604,8 +591,8 @@ DEF KRIS EQU __trainer_class__
 	const DORIS
 
 	trainerclass BOARDER ; 3a
-	const RONALD
-	const BRAD
+	const RONALDZ
+	const BRADZ
 	const DOUGLASZ
 
 	trainerclass POKEFANM ; 3b

@@ -144,7 +144,7 @@ MagikarpHouseSignScript:
 	end
 
 TrainerFisherAndre:
-	trainer FISHER, ANDRE, EVENT_BEAT_FISHER_ANDRE, FisherAndreSeenText, FisherAndreBeatenText, 0, .Script
+	; trainer FISHER, ANDRE, EVENT_BEAT_FISHER_ANDRE, FisherAndreSeenText, FisherAndreBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -155,7 +155,7 @@ TrainerFisherAndre:
 	end
 
 TrainerFisherRaymond:
-	trainer FISHER, RAYMOND, EVENT_BEAT_FISHER_RAYMOND, FisherRaymondSeenText, FisherRaymondBeatenText, 0, .Script
+	; trainer FISHER, RAYMOND, EVENT_BEAT_FISHER_RAYMOND, FisherRaymondSeenText, FisherRaymondBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -166,7 +166,7 @@ TrainerFisherRaymond:
 	end
 
 TrainerCooltrainermAaron:
-	trainer COOLTRAINERM, AARON, EVENT_BEAT_COOLTRAINERM_AARON, CooltrainermAaronSeenText, CooltrainermAaronBeatenText, 0, .Script
+	; trainer COOLTRAINERM, AARON, EVENT_BEAT_COOLTRAINERM_AARON, CooltrainermAaronSeenText, CooltrainermAaronBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -177,7 +177,7 @@ TrainerCooltrainermAaron:
 	end
 
 TrainerCooltrainerfLois:
-	trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script
+	; trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

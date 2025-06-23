@@ -12,7 +12,7 @@ Route12_MapScripts:
 	def_callbacks
 
 TrainerFisherKyle:
-	trainer FISHER, KYLE, EVENT_BEAT_FISHER_KYLE, FisherKyleSeenText, FisherKyleBeatenText, 0, .Script
+	; trainer FISHER, KYLE, EVENT_BEAT_FISHER_KYLE, FisherKyleSeenText, FisherKyleBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -23,7 +23,7 @@ TrainerFisherKyle:
 	end
 
 TrainerFisherMartin:
-	trainer FISHER, MARTIN, EVENT_BEAT_FISHER_MARTIN, FisherMartinSeenText, FisherMartinBeatenText, 0, .Script
+	; trainer FISHER, MARTIN, EVENT_BEAT_FISHER_MARTIN, FisherMartinSeenText, FisherMartinBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -34,7 +34,7 @@ TrainerFisherMartin:
 	end
 
 TrainerFisherStephen:
-	trainer FISHER, STEPHEN, EVENT_BEAT_FISHER_STEPHEN, FisherStephenSeenText, FisherStephenBeatenText, 0, .Script
+	; trainer FISHER, STEPHEN, EVENT_BEAT_FISHER_STEPHEN, FisherStephenSeenText, FisherStephenBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -45,7 +45,7 @@ TrainerFisherStephen:
 	end
 
 TrainerFisherBarney:
-	trainer FISHER, BARNEY, EVENT_BEAT_FISHER_BARNEY, FisherBarneySeenText, FisherBarneyBeatenText, 0, .Script
+	; trainer FISHER, BARNEY, EVENT_BEAT_FISHER_BARNEY, FisherBarneySeenText, FisherBarneyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
