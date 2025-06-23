@@ -10,7 +10,36 @@ SSAnneBow_MapScripts:
 
 	def_callbacks
 
-;
+TrainerSailorEdmond:
+	trainer SAILOR, EDMOND, EVENT_BEAT_SAILOR_EDMOND, SailorEdmondSeenText, SailorEdmondBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorEdmondAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSailorTrevor:
+	trainer SAILOR, TREVOR, EVENT_BEAT_SAILOR_TREVOR, SailorTrevorSeenText, SailorTrevorBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorTrevorAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SSAnneBowSuperNerdScript:
+	jumptextfaceplayer SSAnneBowSuperNerdText
+
+SSAnneBowSailor1Script:
+	jumptextfaceplayer SSAnneBowSailor1Text
+
+SSAnneBowCooltrainerMScript:
+	jumptextfaceplayer SSAnneBowCooltrainerMText
 
 SSAnneBowSuperNerdText:
 	text "The party's over."
@@ -30,39 +59,40 @@ SSAnneBowCooltrainerMText:
 	line "get some air."
 	done
 
-SSAnneBowSailor2BattleText:
+SailorEdmondSeenText:
 	text "Hey matey!"
 
 	para "Let's do a little"
 	line "jig!"
 	done
 
-SSAnneBowSailor2EndBattleText:
-	text "You're"
-	line "impressive!"
-	prompt
+SailorEdmondBeatenText:
+	text "You're impressive!"
+	done
 
-SSAnneBowSailor2AfterBattleText:
+SailorEdmondAfterBattleText:
 	text "How many kinds of"
 	line "#MON do you"
 	cont "think there are?"
 	done
 
-SSAnneBowSailor3BattleText:
+SailorTrevorSeenText:
 	text "Ahoy there!"
 	line "Are you seasick?"
 	done
 
-SSAnneBowSailor3EndBattleText:
-	text "I was"
-	line "just careless!"
-	prompt
+SailorTrevorBeatenText:
+	text "I was just care-"
+	line "less!"
+	done
 
-SSAnneBowSailor3AfterBattleText:
+SailorTrevorAfterBattleText:
 	text "My Pa said there"
 	line "are 100 kinds of"
-	cont "#MON. I think"
-	cont "there are more."
+	cont "#MON."
+
+	para "I think there are"
+	cont "more."
 	done
 
 SSAnneBow_MapEvents:
@@ -77,8 +107,8 @@ SSAnneBow_MapEvents:
 	def_bg_events
 
 	def_object_events
-	; object_event  5,  2, SPRITE_SUPER_NERD, STAY, UP, TEXT_SSANNEBOW_SUPER_NERD
-	; object_event  4,  9, SPRITE_SAILOR, STAY, NONE, TEXT_SSANNEBOW_SAILOR1
-	; object_event  7, 11, SPRITE_COOLTRAINER_M, STAY, NONE, TEXT_SSANNEBOW_COOLTRAINER_M
-	; object_event  4,  4, SPRITE_SAILOR, STAY, DOWN, TEXT_SSANNEBOW_SAILOR2, OPP_SAILOR, 1
-	; object_event 10,  8, SPRITE_SAILOR, STAY, UP, TEXT_SSANNEBOW_SAILOR3, OPP_SAILOR, 2
+	object_event  5,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, SSAnneBowSuperNerdScript, -1
+	object_event  4, 11, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSAnneBowSailor1Script, -1
+	object_event  7, 13, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_RED, OBJECTTYPE_SCRIPT, 0, SSAnneBowCooltrainerMScript, -1
+	object_event  4,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSailorEdmond, -1  ; Sailor1
+	object_event 10, 10, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSailorTrevor, -1 ; Sailor2
