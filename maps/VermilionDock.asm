@@ -1,22 +1,25 @@
-	; object_const_def
-	; const VERMILIONDOCK_SAILOR1
-	; const VERMILIONDOCK_SAILOR2
-	; const VERMILIONDOCK_SUPER_NERD
-
 VermilionDock_MapScripts:
 	def_scene_scripts
-	; scene_script VermilionDockNoopScene,      SCENE_VERMILIONDOCK_ASK_ENTER_SHIP
-	; scene_script VermilionDockLeaveShipScene, SCENE_VERMILIONDOCK_LEAVE_SHIP
+	scene_script VermilionDockNoopScene,      SCENE_VERMILIONDOCK_NOOP
+	scene_script VermilionDockSSAnneLeavesScene, SCENE_VERMILIONDOCK_SS_ANNE_LEAVES
 
 	def_callbacks
 	; callback MAPCALLBACK_NEWMAP, VermilionDockFlypointCallback
 
-; VermilionDockNoopScene:
-	; end
+VermilionDockNoopScene:
+	end
 
-; VermilionDockLeaveShipScene:
+VermilionDockSSAnneLeavesScene:
+	turnobject PLAYER, DOWN
+	
 	; sdefer VermilionDockLeaveShipScript
-	; end
+	pause 15
+	
+	setmapscene VERMILION_CITY, SCENE_VERMILIONCITY_SS_ANNE_LEFT
+	setscene SCENE_VERMILIONDOCK_NOOP
+	applymovement PLAYER, VermilionDockLeaveMovement
+	warpcheck ; warp VERMILION_CITY, 18, 31
+	end
 
 ; VermilionDockFlypointCallback:
 	; setflag ENGINE_FLYPOINT_VERMILION
@@ -195,36 +198,10 @@ VermilionDock_MapScripts:
 ; VermilionDockHiddenIron:
 	; hiddenitem IRON, EVENT_VERMILION_PORT_HIDDEN_IRON
 
-; VermilionDockEnterFastShipMovement:
-	; step DOWN
-	; step_end
-
-; VermilionDockLeaveFastShipMovement:
-	; step UP
-	; step_end
-
-; VermilionDockCannotEnterFastShipMovement:
-	; step RIGHT
-	; turn_head LEFT
-	; step_end
-
-; VermilionDockApproachFastShipMovement:
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step_end
-
-; VermilionDockApproachFastShipRightMovement:
-	; step RIGHT
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step DOWN
-	; step_end
+VermilionDockLeaveMovement:
+	step UP
+	step UP
+	step_end
 
 ; VermilionDockDepartingText:
 	; text "We're departing"

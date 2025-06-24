@@ -53,9 +53,9 @@ CeruleanCityRivalBattleScene2: ; LEFT
 	waitbutton
 	closetext
 	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
-		iftrue .Squirtle1
+		iftrue .Squirtle
 	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
-		iftrue .Bulbasaur1
+		iftrue .Bulbasaur
 	winlosstext CeruleanCityRivalWinText, CeruleanCityRivalLossText
 	setlasttalked CERULEANCITY_RIVAL
 	loadtrainer RIVAL1, RIVAL1_3_SQUIRTLE
@@ -63,9 +63,9 @@ CeruleanCityRivalBattleScene2: ; LEFT
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump AfterBattle
+	sjump .AfterBattle
 
-.Squirtle1:
+.Squirtle:
 	winlosstext CeruleanCityRivalWinText, CeruleanCityRivalLossText
 	setlasttalked CERULEANCITY_RIVAL
 	loadtrainer RIVAL1, RIVAL1_3_BULBASAUR
@@ -73,9 +73,9 @@ CeruleanCityRivalBattleScene2: ; LEFT
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump AfterBattle
+	sjump .AfterBattle
 
-.Bulbasaur1:
+.Bulbasaur:
 	winlosstext CeruleanCityRivalWinText, CeruleanCityRivalLossText
 	setlasttalked CERULEANCITY_RIVAL
 	loadtrainer RIVAL1, RIVAL1_3_CHARMANDER
@@ -83,9 +83,9 @@ CeruleanCityRivalBattleScene2: ; LEFT
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump AfterBattle
+	sjump .AfterBattle
 	
-AfterBattle:
+.AfterBattle:
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext CeruleanCityRivalIWentToBillsText

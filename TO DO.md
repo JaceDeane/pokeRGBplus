@@ -30,7 +30,6 @@ OTHER:
 
 ### ENGINE / DATA:
 
-
 - DayCareGentleman special needs to be updated and refined
 
 - Should there be a seperate Gate_Kanto tileset so that pot plants can use a gray/brown palette?

@@ -3123,8 +3123,8 @@ wDragonsDenB1FSceneID::                           db ;***
 wDragonShrineSceneID::                            db ;***
 wOlivinePortSceneID::                             db ;***
 wVermilionDockSceneID::                           db ; wVermilionPortSceneID
-wFastShip1FSceneID::                              db ;***
-wFastShipB1FSceneID::                             db ;***
+wSSAnne2FSceneID::                                db ; wFastShip1FSceneID
+wSSAnneCaptainsCabinSceneID::                     db ; wFastShipB1FSceneID
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
