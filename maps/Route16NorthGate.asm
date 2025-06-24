@@ -7,10 +7,10 @@ Route16NorthGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  0,  4, ROUTE_16, 6
-	warp_event  0,  5, ROUTE_16, 7
-	warp_event  3,  4, ROUTE_16, 8
-	warp_event  3,  5, ROUTE_16, 9
+	warp_event  0,  2, ROUTE_16, 6
+	warp_event  0,  3, ROUTE_16, 7
+	warp_event  9,  2, ROUTE_16, 8
+	warp_event  9,  3, ROUTE_16, 9
 
 	def_coord_events
 

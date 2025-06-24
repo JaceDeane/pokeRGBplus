@@ -66,7 +66,7 @@ Route16Gate1F_MapEvents:
 	warp_event  0,  5, ROUTE_16, 3
 	warp_event  9,  4, ROUTE_16, 4
 	warp_event  9,  5, ROUTE_16, 5
-	warp_event  7,  7, ROUTE_16_GATE_2F, 5
+	warp_event  9,  7, ROUTE_16_GATE_2F, 5
 
 	def_coord_events
 	coord_event  5,  4, SCENE_ROUTE161FGATE_BICYCLE_CHECK, Route16Gate1FBicycleCheck

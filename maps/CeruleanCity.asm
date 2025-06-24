@@ -5,9 +5,9 @@
 	const CERULEANCITY_SUPER_NERD1
 	const CERULEANCITY_SUPER_NERD2
 	const CERULEANCITY_GUARD
-	const CERULEANCITY_COOLTRAINER_F1
+	const CERULEANCITY_LASS1
 	const CERULEANCITY_SLOWBRO
-	const CERULEANCITY_COOLTRAINER_F2
+	const CERULEANCITY_LASS2
 	const CERULEANCITY_SUPER_NERD3
 	; const CERULEANCITY_GUARD2
 
@@ -198,42 +198,42 @@ CeruleanCitySlowbro:
 	closetext
 	end
 
-CeruleanCityCooltrainerF1Script:
+CeruleanCityLass1Script:
 	opentext
 	random 3 ; 33.3% chance of each dialogue
 		ifequal 1, .SecondText
 		ifequal 2, .ThirdText
-	writetext CeruleanCityCooltrainerF1SlowbroSonicboomText
+	writetext CeruleanCityLass1SlowbroSonicboomText
 	promptbutton
 	closetext
 	showemote EMOTE_QUESTION, CERULEANCITY_SLOWBRO, 15
 	cry SLOWBRO
 	opentext
-	writetext CeruleanCityCooltrainerF1SlowbroSonicboom2Text
+	writetext CeruleanCityLass1SlowbroSonicboom2Text
 	waitbutton
 	closetext
 	end
 
 .SecondText
-	writetext CeruleanCityCooltrainerF1SlowbroPunchText
+	writetext CeruleanCityLass1SlowbroPunchText
 	promptbutton
 	closetext
 	showemote EMOTE_QUESTION, CERULEANCITY_SLOWBRO, 15
 	cry SLOWBRO
 	opentext
-	writetext CeruleanCityCooltrainerF1SlowbroPunch2Text
+	writetext CeruleanCityLass1SlowbroPunch2Text
 	waitbutton
 	closetext
 	end
 
 .ThirdText
-	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
+	writetext CeruleanCityLass1SlowbroWithdrawText
 	promptbutton
 	closetext
 	showemote EMOTE_QUESTION, CERULEANCITY_SLOWBRO, 15
 	cry SLOWBRO
 	opentext
-	writetext CeruleanCityCooltrainerF1SlowbroWithdraw2Text
+	writetext CeruleanCityLass1SlowbroWithdraw2Text
 	waitbutton
 	closetext
 	readvar VAR_XCOORD
@@ -241,20 +241,20 @@ CeruleanCityCooltrainerF1Script:
 		ifequal 29, .Below
 		ifequal 30, .Right
 .Below
-	turnobject CERULEANCITY_COOLTRAINER_F1, DOWN
+	turnobject CERULEANCITY_LASS1, DOWN
 	sjump .end
 .Right
-	turnobject CERULEANCITY_COOLTRAINER_F1, RIGHT
+	turnobject CERULEANCITY_LASS1, RIGHT
 .end
 	opentext
-	writetext CeruleanCityCooltrainerF1SlowbroWithdraw3Text
+	writetext CeruleanCityLass1SlowbroWithdraw3Text
 	waitbutton
 	closetext
-	turnobject CERULEANCITY_COOLTRAINER_F1, LEFT
+	turnobject CERULEANCITY_LASS1, LEFT
 	end
 
-CeruleanCityCooltrainerF2Script:
-	jumptextfaceplayer CeruleanCityCooltrainerF2Text
+CeruleanCityLass2Script:
+	jumptextfaceplayer CeruleanCityLass2Text
 
 CeruleanCitySuperNerd3Script:
 	jumptextfaceplayer CeruleanCitySuperNerd3Text
@@ -441,34 +441,34 @@ CeruleanCityGuardText:
 	cont "with the ROCKETS!"
 	done
 
-CeruleanCityCooltrainerF1SlowbroSonicboomText:
+CeruleanCityLass1SlowbroSonicboomText:
 	text "OK! SLOWBRO!"
 	line "Use SONICBOOM!"
 	done
 
-CeruleanCityCooltrainerF1SlowbroSonicboom2Text:
+CeruleanCityLass1SlowbroSonicboom2Text:
 	text "Come on SLOWBRO,"
 	line "pay attention!"
 	done
 
-CeruleanCityCooltrainerF1SlowbroPunchText:
+CeruleanCityLass1SlowbroPunchText:
 	text "SLOWBRO, punch!"
 	done
 
-CeruleanCityCooltrainerF1SlowbroPunch2Text:
+CeruleanCityLass1SlowbroPunch2Text:
 	text "No! You blew it"
 	line "again!"
 	done
 
-CeruleanCityCooltrainerF1SlowbroWithdrawText:
+CeruleanCityLass1SlowbroWithdrawText:
 	text "SLOWBRO, WITHDRAW!"
 	done
 
-CeruleanCityCooltrainerF1SlowbroWithdraw2Text:
+CeruleanCityLass1SlowbroWithdraw2Text:
 	text "No! That's wrong!"
 	done
 	
-CeruleanCityCooltrainerF1SlowbroWithdraw3Text:
+CeruleanCityLass1SlowbroWithdraw3Text:
 	text "It's so hard to"
 	line "control #MON!"
 
@@ -499,7 +499,7 @@ CeruleanCitySlowbroIgnoredOrdersText:
 	line "ignored orders…"
 	done
 
-CeruleanCityCooltrainerF2Text:
+CeruleanCityLass2Text:
 	text "I want a bright"
 	line "red BICYCLE!"
 
@@ -588,8 +588,8 @@ CeruleanCity_MapEvents:
 	object_event 15, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd1Script, -1
 	object_event  9, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd2Script, -1
 	object_event 27, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1
-	object_event 29, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerF1Script, -1
+	object_event 29, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityLass1Script, -1
 	object_event 28, 26, SPRITE_SLOWPOKE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
-	object_event  9, 27, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerF2Script, -1
+	object_event  9, 27, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityLass2Script, -1
 	object_event  4, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd3Script, -1
 	; object_event 28, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1
