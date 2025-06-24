@@ -17,25 +17,6 @@ RedsMom:
 	iftrue .GotAPokemon
 	writetext MomWakeUpText
 	waitbutton
-	givepoke PIDGEY, 50, BERRY ; debug
-	givepoke MEW, 100, BERRY ; debug
-	waitsfx ; debug
-	playsound SFX_ITEM ; debug
-	waitsfx ; debug
-	setflag ENGINE_POKEDEX ; debug
-	setflag ENGINE_BOULDERBADGE ; debug
-	setflag ENGINE_CASCADEBADGE ; debug
-	setflag ENGINE_THUNDERBADGE ; debug
-	setflag ENGINE_RAINBOWBADGE ; debug
-	setflag ENGINE_SOULBADGE ; debug
-	setflag ENGINE_MARSHBADGE ; debug
-	setflag ENGINE_VOLCANOBADGE ; debug
-	setflag ENGINE_EARTHBADGE ; debug
-	giveitem HM_CUT ; debug
-	giveitem HM_FLY ; debug
-	giveitem HM_SURF ; debug
-	giveitem HM_STRENGTH ; debug
-	giveitem HM_FLASH ; debug
 	closetext
 	end
 	
