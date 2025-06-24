@@ -689,13 +689,6 @@ GetPlayerOrMonPalettePointer:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .dude
-	ld a, [wOtherTrainerClass]
-	cp RIVAL2
-	jr z, .rival
-	cp RIVAL3
-	jr z, .rival
-	cp BOSS_GIOVANNI
-	jr z, .giovanni
 	ld a, [wPlayerGender]
 	and a
 	jr z, .male
@@ -709,7 +702,21 @@ GetPlayerOrMonPalettePointer:
 .dude
 	ld hl, DudePalette
 	ret
-	
+
+GetFrontpicPalettePointer:
+	and a
+	jp nz, GetMonNormalOrShinyPalettePointer
+	ld a, [wTrainerClass] ; [wOtherTrainerClass]
+
+GetTrainerPalettePointer:
+	cp RIVAL2
+	jr z, .rival
+	cp RIVAL3
+	jr z, .rival
+	cp BOSS_GIOVANNI
+	jr z, .giovanni
+	jr nz, .trainer_palette
+
 .rival
 	ld hl, RivalPalette
 	ret
@@ -718,12 +725,7 @@ GetPlayerOrMonPalettePointer:
 	ld hl, GiovanniPalette
 	ret
 
-GetFrontpicPalettePointer:
-	and a
-	jp nz, GetMonNormalOrShinyPalettePointer
-	ld a, [wTrainerClass]
-
-GetTrainerPalettePointer:
+.trainer_palette
 	ld l, a
 	ld h, 0
 	add hl, hl
