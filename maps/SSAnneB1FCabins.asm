@@ -16,95 +16,174 @@ SSAnneB1FCabins_MapScripts:
 
 	def_callbacks
 
-;
+TrainerSailorLeonard:
+	trainer SAILOR, LEONARD, EVENT_BEAT_SAILOR_LEONARD, SailorLeonardSeenText, SailorLeonardBeatenText, 0, .Script
 
-SSAnneB1FCabinsMachokeText:
-	text "MACHOKE: Gwoh!"
-	line "Goggoh!@"
-	text_end
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorLeonardAfterBattleText
+	waitbutton
+	closetext
+	end
 
-SSAnneB1FCabinsSailor1BattleText:
+TrainerSailorDuncan:
+	trainer SAILOR, DUNCAN, EVENT_BEAT_SAILOR_DUNCAN, SailorDuncanSeenText, SailorDuncanBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorDuncanAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSailorHuey:
+	trainer SAILOR, HUEY, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorHueyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSailorDylan:
+	trainer SAILOR, DYLAN, EVENT_BEAT_SAILOR_DYLAN, SailorDylanSeenText, SailorDylanBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorDylanAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSailorPhillip:
+	trainer SAILOR, PHILLIP, EVENT_BEAT_SAILOR_PHILLIP, SailorPhillipSeenText, SailorPhillipBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SailorPhillipAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerFisherBarny:
+	trainer FISHER, BARNY, EVENT_BEAT_FISHER_BARNY, FisherBarnySeenText, FisherBarnyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext FisherBarnyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SSAnneB1FCabinsSuperNerdScript:
+	jumptextfaceplayer SSAnneB1FCabinsSuperNerdText
+
+SSAnneB1FCabinsMachoke:
+	opentext
+	writetext SSAnneB1FCabinsMachokeText
+	cry MACHOKE
+	waitbutton
+	closetext
+	end
+
+SSAnneB1FCabinsEther:
+	itemball ETHER
+
+SSAnneB1FCabinsTMRest:
+	itemball TM_REST
+
+SSAnneB1FCabinsMaxPotion:
+	itemball MAX_POTION
+
+SailorLeonardSeenText:
 	text "You know what they"
 	line "say about sailors"
 	cont "and fighting!"
 	done
 
-SSAnneB1FCabinsSailor1EndBattleText:
+SailorLeonardBeatenText:
 	text "Right!"
 	line "Good fight, mate!"
-	prompt
+	done
 
-SSAnneB1FCabinsSailor1AfterBattleText:
+SailorLeonardAfterBattleText:
 	text "Haha! Want to be"
 	line "a sailor, mate?"
 	done
 
-SSAnneB1FCabinsSailor2BattleText:
+SailorDuncanSeenText:
 	text "My sailor's pride"
 	line "is at stake!"
 	done
 
-SSAnneB1FCabinsSailor2EndBattleText:
-	text "Your"
-	line "spirit sank me!"
-	prompt
+SailorDuncanBeatenText:
+	text "Your spirit sank"
+	line "me!"
+	done
 
-SSAnneB1FCabinsSailor2AfterBattleText:
+SailorDuncanAfterBattleText:
 	text "Did you see the"
 	line "FISHING GURU in"
 	cont "VERMILION CITY?"
 	done
 
-SSAnneB1FCabinsSailor3BattleText:
+SailorHueySeenText:
 	text "Us sailors have"
 	line "#MON too!"
 	done
 
-SSAnneB1FCabinsSailor3EndBattleText:
-	text "OK, "
-	line "you're not bad."
-	prompt
+SailorHueyBeatenText:
+	text "OK, you're not bad."
+	done
 
-SSAnneB1FCabinsSailor3AfterBattleText:
+SailorHueyAfterBattleText:
 	text "We caught all our"
 	line "#MON while"
 	cont "out at sea!"
 	done
 
-SSAnneB1FCabinsSailor4BattleText:
-	text "I like feisty"
-	line "kids like you!@"
-	text_end
-
-SSAnneB1FCabinsSailor4EndBattleText:
-	text "Argh!"
-	line "Lost it!"
-	prompt
-
-SSAnneB1FCabinsSailor4AfterBattleText:
-	text "Sea #MON live"
-	line "in deep water."
-	cont "You'll need a ROD!"
+SailorDylanSeenText:
+	text "I like feisty kids"
+	line "like you!"
 	done
 
-SSAnneB1FCabinsSailor5BattleText:
+SailorDylanBeatenText:
+	text "Argh!"
+	line "Lost it!"
+	done
+
+SailorDylanAfterBattleText:
+	text "Sea #MON live"
+	line "in deep water."
+
+	para "You'll need a ROD!"
+	done
+
+SailorPhillipSeenText:
 	text "Matey, you're"
 	line "walking the plank"
 	cont "if you lose!"
 	done
 
-SSAnneB1FCabinsSailor5EndBattleText:
+SailorPhillipBeatenText:
 	text "Argh!"
 	line "Beaten by a kid!"
-	prompt
+	done
 
-SSAnneB1FCabinsSailor5AfterBattleText:
-	text "Jellyfish some-"
+SailorPhillipAfterBattleText: ; Remove reference to real-world jellyfish
+	text "TENTACOOL some-"
 	line "times drift into"
 	cont "the ship."
 	done
 
-SSAnneB1FCabinsFisherBattleText:
+FisherBarnySeenText:
 	text "Hello stranger!"
 	line "Stop and chat!"
 
@@ -112,16 +191,17 @@ SSAnneB1FCabinsFisherBattleText:
 	line "are from the sea!"
 	done
 
-SSAnneB1FCabinsFisherEndBattleText:
+FisherBarnyBeatenText:
 	text "Darn!"
-	line "I let that one"
-	cont "get away!"
-	prompt
 
-SSAnneB1FCabinsFisherAfterBattleText:
+	para "I let that one"
+	line "get away!"
+	done
+
+FisherBarnyAfterBattleText:
 	text "I was going to"
 	line "make you my"
-	cont "assistant too!"
+	cont "assistant, too!"
 	done
 
 SSAnneB1FCabinsSuperNerdText:
@@ -133,6 +213,10 @@ SSAnneB1FCabinsSuperNerdText:
 	cont "big rocks!"
 	done
 
+SSAnneB1FCabinsMachokeText:
+	text "MACHOKE: Gwoh!"
+	line "Goggoh!"
+	done
 
 SSAnneB1FCabins_MapEvents:
 	db 0, 0 ; filler
@@ -154,14 +238,14 @@ SSAnneB1FCabins_MapEvents:
 	def_bg_events
 
 	def_object_events
-	; object_event  0, 13, SPRITE_SAILOR, STAY, DOWN, TEXT_SSANNEB1FROOMS_SAILOR1, OPP_SAILOR, 3
-	; object_event  2, 11, SPRITE_SAILOR, STAY, DOWN, TEXT_SSANNEB1FROOMS_SAILOR2, OPP_SAILOR, 4
-	; object_event 12,  3, SPRITE_SAILOR, STAY, LEFT, TEXT_SSANNEB1FROOMS_SAILOR3, OPP_SAILOR, 5
-	; object_event 22,  2, SPRITE_SAILOR, STAY, DOWN, TEXT_SSANNEB1FROOMS_SAILOR4, OPP_SAILOR, 6
-	; object_event  0,  2, SPRITE_SAILOR, STAY, RIGHT, TEXT_SSANNEB1FROOMS_SAILOR5, OPP_SAILOR, 7
-	; object_event  0,  4, SPRITE_FISHER, STAY, RIGHT, TEXT_SSANNEB1FROOMS_FISHER, OPP_FISHER, 2
-	; object_event 10, 13, SPRITE_SUPER_NERD, STAY, RIGHT, TEXT_SSANNEB1FROOMS_SUPER_NERD
-	; object_event 11, 12, SPRITE_MONSTER, STAY, NONE, TEXT_SSANNEB1FROOMS_MACHOKE
-	; object_event 20,  2, SPRITE_POKE_BALL, STAY, NONE, TEXT_SSANNEB1FROOMS_ETHER, ETHER
-	; object_event 10,  2, SPRITE_POKE_BALL, STAY, NONE, TEXT_SSANNEB1FROOMS_TM_REST, TM_REST
-	; object_event 12, 11, SPRITE_POKE_BALL, STAY, NONE, TEXT_SSANNEB1FROOMS_MAX_POTION, MAX_POTION
+	object_event  0, 13, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSailorLeonard, -1 ; Sailor3
+	object_event  2, 11, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSailorDuncan, -1 ; Sailor4
+	object_event 12,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSailorHuey, -1 ; Sailor5
+	object_event 22,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSailorDylan, -1 ; Sailor6
+	object_event  0,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSailorPhillip, -1 ; Sailor7
+	object_event  0,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerFisherBarny, -1 ; Fisher2
+	object_event 10, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSAnneB1FCabinsSuperNerdScript, -1
+	object_event 11, 12, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, SSAnneB1FCabinsMachoke, -1
+	object_event 20,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SSAnneB1FCabinsEther, EVENT_SS_ANNE_B1F_CABINS_ETHER
+	object_event 10,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SSAnneB1FCabinsTMRest, EVENT_GOT_TM44_REST
+	object_event 12, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SSAnneB1FCabinsMaxPotion, EVENT_SS_ANNE_B1F_CABINS_MAX_POTION
