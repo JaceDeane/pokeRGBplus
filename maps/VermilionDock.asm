@@ -10,33 +10,290 @@ VermilionDockNoopScene:
 	end
 
 VermilionDockSSAnneLeavesScene:
+	special FadeOutMusic
 	turnobject PLAYER, DOWN
-	
-	; sdefer VermilionDockLeaveShipScript
 	pause 15
+	
+	; refreshscreen ; needed?
+	callasm VermilionDockSSAnneLeavesScript
+    ; ; --or--
+	; sdefer VermilionDockSSAnneLeavesScript
+	
+	callasm VermilionDock_EraseSSAnne
 	
 	setmapscene VERMILION_CITY, SCENE_VERMILIONCITY_SS_ANNE_LEFT
 	setscene SCENE_VERMILIONDOCK_NOOP
 	applymovement PLAYER, VermilionDockLeaveMovement
-	warpcheck ; warp VERMILION_CITY, 18, 31
+	
+	special FadeOutMusic
+	warp VERMILION_CITY, 18, 31 ; temp (?)
+	; warpcheck
+	; Does something extras need to happen for 'warpcheck' to trigger?
 	end
 
 ; VermilionDockFlypointCallback:
 	; setflag ENGINE_FLYPOINT_VERMILION
 	; endcallback
 
-; VermilionDockLeaveShipScript:
-	; applymovement PLAYER, VermilionDockLeaveFastShipMovement
-	; appear VermilionDock_SAILOR1
-	; setscene SCENE_VermilionDock_ASK_ENTER_SHIP
-	; setevent EVENT_FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN_TWIN_1
-	; setevent EVENT_FAST_SHIP_CABINS_SE_SSE_GENTLEMAN
-	; setevent EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	; clearevent EVENT_OLIVINE_PORT_PASSAGE_POKEFAN_M
-	; setevent EVENT_FAST_SHIP_FIRST_TIME
-	; setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	; blackoutmod VERMILION_CITY
-	; end
+VermilionDockSSAnneLeavesScript:
+	;playmusic MUSIC_SURF
+	ld de, MUSIC_SURF
+	call PlayMusic ; PlayMusic2 only plays once with no loop(?)
+	
+;(R/B)=
+	;farcall LoadSmokeTileFourTimes
+	; xor a
+	; ld [wSpritePlayerStateData1ImageIndex], a
+	ld c, 120
+	call DelayFrames
+	
+	;Replace tiles $08 and $09 with $0B
+	;OR -- replace block $06 with block $0f
+
+;=== the below code is taken from `mauvesea's` Scrolling Ship commit for pokegold-sw97 ===
+; [https://github.com/mauvesea/pokegold-sw97/commit/a62c7e142677764b3027649a91fdc2b284c457cb]
+
+	; ld a, 1
+	; ldh [rVBK], a
+
+	; hlbgcoord 0, 10 ; X, Y
+	; ld bc, SCREEN_WIDTH * 6 ; width, height
+	; ld a, PAL_BG_WATER
+	; call ByteFill
+
+	; ld a, 0
+	; ldh [rVBK], a
+
+	ld a, 1
+	ldh [hBGMapMode], a
+	; xor a
+	; ldh [hSCX], a ; magnet train script does these two also
+	; ldh [hSCY], a
+
+	hlcoord 0, 10 ; X, Y
+	ld bc, BG_MAP_WIDTH * 6 ; width, height
+	ld a, $14 ; water tile
+	call ByteFill ; FillMemory
+
+;(R/B)=
+	; ld a, 1
+	; ldh [hAutoBGTransferEnabled], a
+	; call Delay3
+	; xor a
+	; ldh [hAutoBGTransferEnabled], a
+	; ld [wSSAnneSmokeDriftAmount], a
+	; ldh [rOBP1], a
+	; ld a, 88
+	; ld [wSSAnneSmokeX], a
+	; ld hl, wMapViewVRAMPointer
+	; ld c, [hl]
+	; inc hl
+	; ld b, [hl]
+	; push bc
+	; push hl
+	
+	ld de, SFX_BOAT  ; ld a, SFX_SS_ANNE_HORN (R/B)
+	call WaitPlaySFX ; call PlaySoundWaitForCurrent (R/B)
+	
+	; ld a, $ff
+	; ; ld [wUpdateSpritesEnabled], a
+	; ld d, $0
+	; ld e, $8
+; .shift_columns_up
+	; ld hl, $2
+	; add hl, bc
+	; ld a, l
+	; ; ld [wMapViewVRAMPointer], a
+	; ld a, h
+	; ; ld [wMapViewVRAMPointer + 1], a
+	; push hl
+	; push de
+	; ; call ScheduleEastColumnRedraw ; ???
+	; call VermilionDock_EmitSmokePuff
+	; pop de
+	; ld b, $10
+.smoke_puff_drift_loop
+	; call VermilionDock_AnimSmokePuffDriftRight
+	ld c, 8 ; $8
+.delay_between_drifts
+	call VermilionDock_SyncScrollWithLY
+	dec c
+	jr nz, .delay_between_drifts
+	; inc d
+	; dec b
+	; jr nz, .smoke_puff_drift_loop
+	; pop bc
+	; dec e
+	; jr nz, .shift_columns_up
+	; xor a
+	; ldh [rWY], a
+	; ldh [hWY], a
+
+
+;============mauvesea===
+	; ld de, WaterScrollTile ; ? Can't we use the water tile already in-game?
+	; ld hl, vTiles2 tile $60
+	; lb bc, BANK(WaterScrollTile), 1
+	; call Get2bpp
+
+; .loop1
+	; push bc
+; SAME AS 'VermilionDock_SyncScrollWithLY'
+	; ld h, b  ; d
+	; ld l, 80 ; $50
+	; call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
+	; ld h, 0
+	; ld l, 128 ; $80
+	; call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
+;==============
+	; pop bc
+	; inc b ; d (R/B)
+	; dec c ; b (R/B)
+;(R/B) = pop bc
+;		 dec e
+	; ld a, b
+	; cp 64
+	; jr nz, .loop1
+
+	; push hl
+	; push bc
+	; push af
+	; ; ld a, $14 ; water tile
+	; hlcoord 0, 10 ; X, Y
+	; ld bc, SCREEN_WIDTH * 6 ;8 ; Y, X
+	; ld a, $14 ; water tile
+	; call ByteFill
+	; ; hlcoord 0, 11 ; X, Y
+	; ; ld bc, 8 ; Y, X
+	; ; call ByteFill
+	; ; hlcoord 0, 12 ; X, Y
+	; ; ld bc, 8 ; Y, X
+	; ; call ByteFill
+	; ; hlcoord 0, 13 ; X, Y
+	; ; ld bc, 8 ; Y, X
+	; ; call ByteFill
+	; ; hlcoord 0, 14 ; X, Y
+	; ; ld bc, 8 ; Y, X
+	; ; call ByteFill
+	; ; hlcoord 0, 15 ; X, Y
+	; ; ld bc, 8 ; Y, X
+	; ; call ByteFill
+	; ; hlcoord 0, 16 ; X, Y
+	; ; ld bc, 8 ; Y, X
+	; ; call ByteFill
+	; pop hl
+	; pop bc
+	; pop af
+
+.loop5
+	push bc
+	ld h, b
+	ld l, 80
+	call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
+	ld h, 0
+	ld l, 128
+	call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
+	pop bc
+	inc b
+	dec c
+	ld a, b
+	cp 0
+	jr nz, .loop5
+	ret
+
+VermilionDock_AnimSmokePuffDriftRight:
+	push bc
+	push de
+	ld hl, wShadowOAMSprite04XCoord
+	; ld a, [wSSAnneSmokeDriftAmount]
+	swap a
+	ld c, a
+	ld de, 4
+.drift_loop
+	inc [hl]
+	inc [hl]
+	add hl, de
+	dec c
+	jr nz, .drift_loop
+	pop de
+	pop bc
+	ret
+
+VermilionDock_EmitSmokePuff:
+; new smoke puff above the S.S. Anne's front smokestack
+	; ld a, [wSSAnneSmokeX]
+	sub 16
+	; ld [wSSAnneSmokeX], a
+	ld c, a
+	ld b, 100 ; Y
+	; ld a, [wSSAnneSmokeDriftAmount]
+	inc a
+	; ld [wSSAnneSmokeDriftAmount], a
+	ld a, $1
+	ld de, VermilionDockOAMBlock
+	; call WriteOAMBlock
+	ret
+
+VermilionDockOAMBlock:
+; tile ID, attributes
+	db $fc, $10
+	db $fd, $10
+	db $fe, $10
+	db $ff, $10
+
+VermilionDock_SyncScrollWithLY:
+	ld h, d
+	ld l, $50
+	call .sync_scroll_ly
+	ld h, $0
+	ld l, $80
+.sync_scroll_ly
+	ldh a, [rLY]
+	cp l
+	jr nz, .sync_scroll_ly
+	ld a, h
+	ldh [rSCX], a
+.wait_for_ly_match
+	ldh a, [rLY]
+	cp h
+	jr z, .wait_for_ly_match
+	ret
+
+VermilionDock_EraseSSAnne: ; similar to "MagnetTrain_InitLYOverrides" in magnet_train
+; Fill the area the S.S. Anne occupies in BG map 0 with water tiles.
+	
+	; wBGMapBuffer && wBGMapBufferEnd == ds 2 * SCREEN_WIDTH && nil
+	; wLYOverrides && wLYOverridesEnd == SCREEN_HEIGHT_PX && nil  ---- 'magnet_train'
+	
+	ld hl, wBGMapBuffer ; wVermilionDockTileMapBuffer
+	ld bc, wBGMapBufferEnd - wBGMapBuffer ; wVermilionDockTileMapBufferEnd - wVermilionDockTileMapBuffer
+	ld a, $14 ; water tile -- magnet train refs [wMagnetTrainInitPosition]
+	call ByteFill ; FillMemory
+	; hlbgcoord 0, 10
+	; ld de, wVermilionDockTileMapBuffer
+	; lb bc, BANK(wVermilionDockTileMapBuffer), 12
+	; call CopyVideoData
+
+;Magnet Train Script does the following also==
+	; ld hl, wLYOverridesBackup
+	; ld bc, wLYOverridesBackupEnd - wLYOverridesBackup
+	; ld a, [wMagnetTrainInitPosition]
+	; call ByteFill
+	; ld a, LOW(rSCX)
+	; ldh [hLCDCPointer], a
+;=============
+
+	ld de, SFX_BOAT  ; ld a, SFX_SS_ANNE_HORN (R/B)
+	call PlaySFX     ; call PlaySound (R/B)
+	ld c, 120
+	call DelayFrames
+;moved below from after the 'EraseSSAnne' call initially (R/B)
+	ld a, 0
+	ldh [hBGMapMode], a
+	ret
+
+WaterScrollTile:
+INCBIN "gfx/font/water_scroll.2bpp"
 
 ; VermilionDockSailorAtGangwayScript:
 	; faceplayer
