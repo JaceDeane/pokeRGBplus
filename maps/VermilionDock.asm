@@ -19,8 +19,6 @@ VermilionDockSSAnneLeavesScene:
     ; ; --or--
 	; sdefer VermilionDockSSAnneLeavesScript
 	
-	callasm VermilionDock_EraseSSAnne
-	
 	setmapscene VERMILION_CITY, SCENE_VERMILIONCITY_SS_ANNE_LEFT
 	setscene SCENE_VERMILIONDOCK_NOOP
 	applymovement PLAYER, VermilionDockLeaveMovement
@@ -36,82 +34,66 @@ VermilionDockSSAnneLeavesScene:
 	; endcallback
 
 VermilionDockSSAnneLeavesScript:
-	;playmusic MUSIC_SURF
 	ld de, MUSIC_SURF
 	call PlayMusic ; PlayMusic2 only plays once with no loop(?)
-	
 ;(R/B)=
 	;farcall LoadSmokeTileFourTimes
 	; xor a
 	; ld [wSpritePlayerStateData1ImageIndex], a
 	ld c, 120
 	call DelayFrames
-	
-	;Replace tiles $08 and $09 with $0B
-	;OR -- replace block $06 with block $0f
+	; ld b, $9c
+	; call CopyScreenTileBufferToVRAM ; copies wTileMap to BGMap address 'b * $100'
+	call CopyTilemapAtOnce
 
-;=== the below code is taken from `mauvesea's` Scrolling Ship commit for pokegold-sw97 ===
-; [https://github.com/mauvesea/pokegold-sw97/commit/a62c7e142677764b3027649a91fdc2b284c457cb]
-
-	; ld a, 1
-	; ldh [rVBK], a
-
-	; hlbgcoord 0, 10 ; X, Y
-	; ld bc, SCREEN_WIDTH * 6 ; width, height
-	; ld a, PAL_BG_WATER
-	; call ByteFill
-
-	; ld a, 0
-	; ldh [rVBK], a
-
-	ld a, 1
+	ld a, 3
 	ldh [hBGMapMode], a
-	; xor a
-	; ldh [hSCX], a ; magnet train script does these two also
-	; ldh [hSCY], a
 
+;Replace tiles $08 and $09 with $0B
+;OR -- replace block $06 with block $0f
 	hlcoord 0, 10 ; X, Y
-	ld bc, BG_MAP_WIDTH * 6 ; width, height
+	ld bc, SCREEN_WIDTH * 6 ; width, height
 	ld a, $14 ; water tile
 	call ByteFill ; FillMemory
+;Should also update new tiles with PAL_BG_WATER
 
 ;(R/B)=
-	; ld a, 1
-	; ldh [hAutoBGTransferEnabled], a
-	; call Delay3
-	; xor a
-	; ldh [hAutoBGTransferEnabled], a
+	ld a, 1
+	ldh [hBGMapUpdate], a ; hAutoBGTransferEnabled (R/B)hBGMapAddress?
+	ld c, 3
+	call DelayFrames ; call Delay3 does this and 'ld c, 3' in one
+	xor a ; reset 'a'
+	ldh [hBGMapUpdate], a ; hAutoBGTransferEnabled (R/B)
 	; ld [wSSAnneSmokeDriftAmount], a
-	; ldh [rOBP1], a
-	; ld a, 88
+	ldh [rOBP1], a ; -- Should this be rOBPI or rOBPD ??
+	ld a, 88
 	; ld [wSSAnneSmokeX], a
-	; ld hl, wMapViewVRAMPointer
-	; ld c, [hl]
-	; inc hl
-	; ld b, [hl]
-	; push bc
-	; push hl
-	
+	ld hl, wBGMapAnchor ; wMapViewVRAMPointer
+	ld c, [hl]
+	inc hl
+	ld b, [hl]
+	push bc
+	push hl
 	ld de, SFX_BOAT  ; ld a, SFX_SS_ANNE_HORN (R/B)
 	call WaitPlaySFX ; call PlaySoundWaitForCurrent (R/B)
-	
 	; ld a, $ff
-	; ; ld [wUpdateSpritesEnabled], a
-	; ld d, $0
-	; ld e, $8
-; .shift_columns_up
-	; ld hl, $2
-	; add hl, bc
-	; ld a, l
-	; ; ld [wMapViewVRAMPointer], a
-	; ld a, h
-	; ; ld [wMapViewVRAMPointer + 1], a
-	; push hl
-	; push de
-	; ; call ScheduleEastColumnRedraw ; ???
+	; ld [wSpriteUpdatesEnabled], a ; wUpdateSpritesEnabled (R/B)
+	ld d, 0 ; $0
+	ld e, 8 ; $8
+.shift_columns_up
+	ld hl, 2 ; $2
+	add hl, bc
+	ld a, l
+	ld [wBGMapAnchor], a ; wMapViewVRAMPointer (R/B)  
+	ld a, h
+	ld [wBGMapAnchor + 1], a ; wMapViewVRAMPointer (R/B)hBGMapAddress
+	push hl
+	push de
+	call ScrollMapRight ; call ScheduleEastColumnRedraw (R/B)
+	;call LoadOverworldTilemap;UpdateBGMapColumn ; UpdateOverworldMap.ScrollOverworldMapRight
 	; call VermilionDock_EmitSmokePuff
-	; pop de
-	; ld b, $10
+	pop de
+	ld b, $10
 .smoke_puff_drift_loop
 	; call VermilionDock_AnimSmokePuffDriftRight
 	ld c, 8 ; $8
@@ -119,86 +101,29 @@ VermilionDockSSAnneLeavesScript:
 	call VermilionDock_SyncScrollWithLY
 	dec c
 	jr nz, .delay_between_drifts
-	; inc d
-	; dec b
-	; jr nz, .smoke_puff_drift_loop
-	; pop bc
-	; dec e
-	; jr nz, .shift_columns_up
-	; xor a
-	; ldh [rWY], a
-	; ldh [hWY], a
-
-
-;============mauvesea===
-	; ld de, WaterScrollTile ; ? Can't we use the water tile already in-game?
-	; ld hl, vTiles2 tile $60
-	; lb bc, BANK(WaterScrollTile), 1
-	; call Get2bpp
-
-; .loop1
-	; push bc
-; SAME AS 'VermilionDock_SyncScrollWithLY'
-	; ld h, b  ; d
-	; ld l, 80 ; $50
-	; call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
-	; ld h, 0
-	; ld l, 128 ; $80
-	; call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
-;==============
-	; pop bc
-	; inc b ; d (R/B)
-	; dec c ; b (R/B)
-;(R/B) = pop bc
-;		 dec e
-	; ld a, b
-	; cp 64
-	; jr nz, .loop1
-
-	; push hl
-	; push bc
-	; push af
-	; ; ld a, $14 ; water tile
-	; hlcoord 0, 10 ; X, Y
-	; ld bc, SCREEN_WIDTH * 6 ;8 ; Y, X
-	; ld a, $14 ; water tile
-	; call ByteFill
-	; ; hlcoord 0, 11 ; X, Y
-	; ; ld bc, 8 ; Y, X
-	; ; call ByteFill
-	; ; hlcoord 0, 12 ; X, Y
-	; ; ld bc, 8 ; Y, X
-	; ; call ByteFill
-	; ; hlcoord 0, 13 ; X, Y
-	; ; ld bc, 8 ; Y, X
-	; ; call ByteFill
-	; ; hlcoord 0, 14 ; X, Y
-	; ; ld bc, 8 ; Y, X
-	; ; call ByteFill
-	; ; hlcoord 0, 15 ; X, Y
-	; ; ld bc, 8 ; Y, X
-	; ; call ByteFill
-	; ; hlcoord 0, 16 ; X, Y
-	; ; ld bc, 8 ; Y, X
-	; ; call ByteFill
-	; pop hl
-	; pop bc
-	; pop af
-
-.loop5
-	push bc
-	ld h, b
-	ld l, 80
-	call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
-	ld h, 0
-	ld l, 128
-	call VermilionDock_SyncScrollWithLY.sync_scroll_ly ; .subfunction
+	inc d
+	dec b
+	jr nz, .smoke_puff_drift_loop
 	pop bc
-	inc b
-	dec c
-	ld a, b
-	cp 0
-	jr nz, .loop5
+	dec e
+	jr nz, .shift_columns_up
+	xor a
+	ldh [rWY], a
+	ldh [hWY], a
+	call VermilionDock_EraseSSAnne
+;I have no idea what the following lines do -- YET
+	ld a, 144 ; $90 -- position in pixels
+	ldh [hWY], a
+	; ld a, $1
+	; ld [wSpriteUpdatesEnabled], a ; wUpdateSpritesEnabled (R/B)
+	pop hl
+	pop bc
+	ld [hl], b
+	dec hl
+	ld [hl], c
+	;call LoadPlayerSpriteGraphics
+	;ld hl, wNumberOfWarps
+	dec [hl]
 	ret
 
 VermilionDock_AnimSmokePuffDriftRight:
@@ -234,7 +159,7 @@ VermilionDock_EmitSmokePuff:
 	; call WriteOAMBlock
 	ret
 
-VermilionDockOAMBlock:
+VermilionDockOAMBlock: ; call FacingBoulderDust1/2
 ; tile ID, attributes
 	db $fc, $10
 	db $fd, $10
@@ -265,35 +190,61 @@ VermilionDock_EraseSSAnne: ; similar to "MagnetTrain_InitLYOverrides" in magnet_
 	; wBGMapBuffer && wBGMapBufferEnd == ds 2 * SCREEN_WIDTH && nil
 	; wLYOverrides && wLYOverridesEnd == SCREEN_HEIGHT_PX && nil  ---- 'magnet_train'
 	
+	;wVermilionDockTileMapBuffer==5 * BG_MAP_WIDTH + SCREEN_WIDTH (52*5 = 260)
+	;BG_MAP_WIDTH==32, SCREEN_WIDTH==20
+	
 	ld hl, wBGMapBuffer ; wVermilionDockTileMapBuffer
 	ld bc, wBGMapBufferEnd - wBGMapBuffer ; wVermilionDockTileMapBufferEnd - wVermilionDockTileMapBuffer
 	ld a, $14 ; water tile -- magnet train refs [wMagnetTrainInitPosition]
 	call ByteFill ; FillMemory
-	; hlbgcoord 0, 10
-	; ld de, wVermilionDockTileMapBuffer
-	; lb bc, BANK(wVermilionDockTileMapBuffer), 12
-	; call CopyVideoData
+;===new===
+	; ld a, 1
+	; ldh [rVBK], a ; switches VRAM bank (CGB only)
 
-;Magnet Train Script does the following also==
-	; ld hl, wLYOverridesBackup
-	; ld bc, wLYOverridesBackupEnd - wLYOverridesBackup
-	; ld a, [wMagnetTrainInitPosition]
+	; hlbgcoord 0, 10
+	; ld bc, 6 * BG_MAP_WIDTH
+	; ld a, PAL_BG_WATER
 	; call ByteFill
-	; ld a, LOW(rSCX)
-	; ldh [hLCDCPointer], a
+	
+	; ld a, 0
+	; ldh [rVBK], a
+;=========
+	hlbgcoord 0, 10, vBGMap1
+	ld de, wBGMapBuffer ; wVermilionDockTileMapBuffer
+	lb bc, BANK(wBGMapBuffer), 12 ; BANK(wVermilionDockTileMapBuffer), 12
+	call Request2bpp ; call CopyVideoData
+	
+;From "InitBattleDisplay.BlankBGMap":
+	; ld hl, wDecompressScratch
+	; ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	; ld a, " "
+	; call ByteFill
+
+	; ld de, wDecompressScratch
+	; hlbgcoord 0, 0
+	; lb bc, BANK(@), (BG_MAP_WIDTH * BG_MAP_HEIGHT) / LEN_2BPP_TILE
+	; call Request2bpp
 ;=============
 
+; Replace the blocks of the lower half of the ship with water blocks. This
+; leaves the upper half alone, but that doesn't matter because replacing any of
+; the blocks is unnecessary because the blocks the ship occupies are south of
+; the player and won't be redrawn when the player automatically walks north and
+; exits the map. This code could be removed without affecting anything.
+	; hlowcoord 5, 2, VERMILION_DOCK_WIDTH
+	; ld a, $0d ; water block
+	; ld [hli], a
+	; ld [hli], a
+	; ld [hli], a
+	; ld [hl], a
 	ld de, SFX_BOAT  ; ld a, SFX_SS_ANNE_HORN (R/B)
 	call PlaySFX     ; call PlaySound (R/B)
 	ld c, 120
 	call DelayFrames
-;moved below from after the 'EraseSSAnne' call initially (R/B)
-	ld a, 0
-	ldh [hBGMapMode], a
 	ret
 
-WaterScrollTile:
-INCBIN "gfx/font/water_scroll.2bpp"
+SSAnneShipTilemap:
+INCBIN "gfx/overworld/ss_anne_ship.tilemap"
 
 ; VermilionDockSailorAtGangwayScript:
 	; faceplayer
