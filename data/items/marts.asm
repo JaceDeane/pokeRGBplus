@@ -135,34 +135,34 @@ MartGoldenrod4F:
 
 MartGoldenrod5F1:
 	db 3 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
+	; db TM_THUNDERPUNCH
+	; db TM_FIRE_PUNCH
+	; db TM_ICE_PUNCH
 	db -1 ; end
 
 MartGoldenrod5F2:
 	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
+	; db TM_THUNDERPUNCH
+	; db TM_FIRE_PUNCH
+	; db TM_ICE_PUNCH
+	; db TM_HEADBUTT
 	db -1 ; end
 
 MartGoldenrod5F3:
 	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_ROCK_SMASH
+	; db TM_THUNDERPUNCH
+	; db TM_FIRE_PUNCH
+	; db TM_ICE_PUNCH
+	; db TM_ROCK_SMASH
 	db -1 ; end
 
 MartGoldenrod5F4:
 	db 5 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
-	db TM_ROCK_SMASH
+	; db TM_THUNDERPUNCH
+	; db TM_FIRE_PUNCH
+	; db TM_ICE_PUNCH
+	; db TM_HEADBUTT
+	; db TM_ROCK_SMASH
 	db -1 ; end
 
 MartOlivine:
@@ -306,11 +306,11 @@ MartCeladon2F2:
 
 MartCeladon3F:
 	db 5 ; # items
-	db TM_HIDDEN_POWER
-	db TM_SUNNY_DAY
-	db TM_PROTECT
-	db TM_RAIN_DANCE
-	db TM_SANDSTORM
+	; db TM_HIDDEN_POWER
+	; db TM_SUNNY_DAY
+	; db TM_PROTECT
+	; db TM_RAIN_DANCE
+	; db TM_SANDSTORM
 	db -1 ; end
 
 MartCeladon4F:
