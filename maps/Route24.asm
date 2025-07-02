@@ -124,7 +124,7 @@ TrainerBugCatcherCale:
 	end
 
 Route24ThunderWaveTM45:
-	itemball TM_MUD_SLAP ; TODO -- THUNDER_WAVE
+	itemball TM_THUNDER_WAVE
 
 Route24CooltrainerM1YouBeatOurContestText:
 	text "Congratulations!"

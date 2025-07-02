@@ -118,7 +118,7 @@ BillsHouseSign:
 	jumptext BillsHouseSignText
 
 Route25TMSeismicToss:
-	itemball TM_MUD_SLAP ; TM_SEISMIC_TOSS ; TODO -- TMs
+	itemball TM_SEISMIC_TOSS
 
 ; Route25HiddenPotion:
 	; hiddenitem POTION, EVENT_ROUTE_25_HIDDEN_POTION

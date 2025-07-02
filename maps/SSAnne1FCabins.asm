@@ -84,7 +84,7 @@ SSAnne1FCabinsGentleman3Script:
 	jumptextfaceplayer SSAnne1FCabinsGentleman3Text
 
 SSAnne1FCabinsTMBodySlam:
-	itemball TM_MUD_SLAP ; TM_BODY_SLAM ; TODO -- TMs
+	itemball TM_BODY_SLAM
 
 GentlemanThomasSeenText:
 	text "I travel alone"

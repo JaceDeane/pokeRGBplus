@@ -35,7 +35,7 @@ CeruleanGymMistyScript:
 	iftrue .SpeechAfterTM
 	writetext MistyFightDoneText
 	promptbutton
-	verbosegiveitem TM_MUD_SLAP ; TODO TM_BUBBLEBEAM
+	verbosegiveitem TM_BUBBLEBEAM
 	iffalse .NoRoomForTM
 	setevent EVENT_GOT_TM11_BUBBLEBEAM
 .SpeechAfterTM:

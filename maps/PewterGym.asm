@@ -38,7 +38,7 @@ PewterGymBrockScript:
 	iftrue .SpeechAfterTM
 	writetext BrockWaitTakeThisText
 	promptbutton
-	verbosegiveitem TM_MUD_SLAP ; TODO TM_BIDE
+	verbosegiveitem TM_BIDE
 	iffalse .NoRoomForTM
 	setevent EVENT_GOT_TM34_BIDE
 	writetext BrockTMExplanationText

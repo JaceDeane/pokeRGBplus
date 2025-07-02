@@ -234,41 +234,41 @@ DEF TM01 EQU const_value
 	; add_tm BLIZZARD     ; cd
 	; add_tm HYPER_BEAM   ; ce
 	; add_tm ICY_WIND     ; cf
-	add_tm PROTECT      ; d0
-	add_tm RAIN_DANCE   ; d1
-	add_tm GIGA_DRAIN   ; d2
-	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
-	add_tm SOLARBEAM    ; d5
-	add_tm IRON_TAIL    ; d6
-	add_tm DRAGONBREATH ; d7
-	add_tm THUNDER      ; d8
-	add_tm EARTHQUAKE   ; d9
-	add_tm RETURN       ; da
-	add_tm DIG          ; db
-	const ITEM_DC       ; dc
-	add_tm PSYCHIC_M    ; dd
-	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df
-	add_tm DOUBLE_TEAM  ; e0
-	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2
-	add_tm SLEEP_TALK   ; e3
-	add_tm SLUDGE_BOMB  ; e4
-	add_tm SANDSTORM    ; e5
-	add_tm FIRE_BLAST   ; e6
-	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8
-	add_tm THUNDERPUNCH ; e9
-	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb
-	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed
-	add_tm THIEF        ; ee
-	add_tm STEEL_WING   ; ef
-	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
-	add_tm NIGHTMARE    ; f2
+	; add_tm PROTECT      ; d0
+	; add_tm RAIN_DANCE   ; d1
+	; add_tm GIGA_DRAIN   ; d2
+	; add_tm ENDURE       ; d3
+	; add_tm FRUSTRATION  ; d4
+	; add_tm SOLARBEAM    ; d5
+	; add_tm IRON_TAIL    ; d6
+	; add_tm DRAGONBREATH ; d7
+	; add_tm THUNDER      ; d8
+	; add_tm EARTHQUAKE   ; d9
+	; add_tm RETURN       ; da
+	; add_tm DIG          ; db
+	; const ITEM_DC       ; dc
+	; add_tm PSYCHIC_M    ; dd
+	; add_tm SHADOW_BALL  ; de
+	; add_tm MUD_SLAP     ; df
+	; add_tm DOUBLE_TEAM  ; e0
+	; add_tm ICE_PUNCH    ; e1
+	; add_tm SWAGGER      ; e2
+	; add_tm SLEEP_TALK   ; e3
+	; add_tm SLUDGE_BOMB  ; e4
+	; add_tm SANDSTORM    ; e5
+	; add_tm FIRE_BLAST   ; e6
+	; add_tm SWIFT        ; e7
+	; add_tm DEFENSE_CURL ; e8
+	; add_tm THUNDERPUNCH ; e9
+	; add_tm DREAM_EATER  ; ea
+	; add_tm DETECT       ; eb
+	; add_tm REST         ; ec
+	; add_tm ATTRACT      ; ed
+	; add_tm THIEF        ; ee
+	; add_tm STEEL_WING   ; ef
+	; add_tm FIRE_PUNCH   ; f0
+	; add_tm FURY_CUTTER  ; f1
+	; add_tm NIGHTMARE    ; f2
 ;=========
 	add_tm MEGA_PUNCH   ; bf
 	add_tm RAZOR_WIND   ; c0
@@ -287,41 +287,41 @@ DEF TM01 EQU const_value
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce
 	add_tm PAY_DAY      ; cf
-	; add_tm SUBMISSION   ; d0
-	; add_tm COUNTER      ; d1
-	; add_tm SEISMIC_TOSS ; d2
-	; add_tm RAGE         ; d3
-	; add_tm MEGA_DRAIN   ; d4
-	; add_tm SOLARBEAM    ; d5
-	; add_tm DRAGON_RAGE  ; d6
-	; add_tm THUNDERBOLT  ; d7
-	; add_tm THUNDER      ; d8
-	; add_tm EARTHQUAKE   ; d9
-	; add_tm FISSURE      ; da
-	; add_tm DIG          ; db
-	; const ITEM_DC       ; dc
-	; add_tm PSYCHIC_M    ; dd
-	; add_tm TELEPORT     ; de
-	; add_tm MIMIC        ; df
-	; add_tm DOUBLE_TEAM  ; e0
-	; add_tm REFLECT      ; e1
-	; add_tm BIDE         ; e2
-	; add_tm METRONOME    ; e3
-	; add_tm SELFDESTRUCT ; e4
-	; add_tm EGG_BOMB     ; e5
-	; add_tm FIRE_BLAST   ; e6
-	; add_tm SWIFT        ; e7
-	; add_tm SKULL_BASH   ; e8
-	; add_tm SOFTBOILED   ; e9
-	; add_tm DREAM_EATER  ; ea
-	; add_tm SKY_ATTACK   ; eb
-	; add_tm REST         ; ec
-	; add_tm THUNDER_WAVE ; ed
-	; add_tm PSYWAVE      ; ee
-	; add_tm EXPLOSION    ; ef
-	; add_tm ROCK_SLIDE   ; f0
-	; add_tm TRI_ATTACK   ; f1
-	; add_tm SUBSTITUTE   ; f2
+	add_tm SUBMISSION   ; d0
+	add_tm COUNTER      ; d1
+	add_tm SEISMIC_TOSS ; d2
+	add_tm RAGE         ; d3
+	add_tm MEGA_DRAIN   ; d4
+	add_tm SOLARBEAM    ; d5
+	add_tm DRAGON_RAGE  ; d6
+	add_tm THUNDERBOLT  ; d7
+	add_tm THUNDER      ; d8
+	add_tm EARTHQUAKE   ; d9
+	add_tm FISSURE      ; da
+	add_tm DIG          ; db
+	const ITEM_DC       ; dc
+	add_tm PSYCHIC_M    ; dd
+	add_tm TELEPORT     ; de
+	add_tm MIMIC        ; df
+	add_tm DOUBLE_TEAM  ; e0
+	add_tm REFLECT      ; e1
+	add_tm BIDE         ; e2
+	add_tm METRONOME    ; e3
+	add_tm SELFDESTRUCT ; e4
+	add_tm EGG_BOMB     ; e5
+	add_tm FIRE_BLAST   ; e6
+	add_tm SWIFT        ; e7
+	add_tm SKULL_BASH   ; e8
+	add_tm SOFTBOILED   ; e9
+	add_tm DREAM_EATER  ; ea
+	add_tm SKY_ATTACK   ; eb
+	add_tm REST         ; ec
+	add_tm THUNDER_WAVE ; ed
+	add_tm PSYWAVE      ; ee
+	add_tm EXPLOSION    ; ef
+	add_tm ROCK_SLIDE   ; f0
+	add_tm TRI_ATTACK   ; f1
+	add_tm SUBSTITUTE   ; f2
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm

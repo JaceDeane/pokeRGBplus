@@ -32,7 +32,7 @@ Route4Sign:
 	jumptext Route4SignText
 
 Route4TMWhirlwind:
-	itemball TM_MUD_SLAP ; TM_WHIRLWIND ; TODO
+	itemball TM_WHIRLWIND
 
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
