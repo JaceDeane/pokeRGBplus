@@ -17,5 +17,7 @@
 	dn EGG_PLANT, EGG_PLANT ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
+	     MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     BIDE,         REST,         SUBSTITUTE,   CUT
 	; end

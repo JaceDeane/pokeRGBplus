@@ -17,5 +17,9 @@
 	dn EGG_WATER_1, EGG_WATER_3 ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm RAZOR_WIND,   SWORDS_DANCE, MEGA_KICK,    TOXIC,        BODY_SLAM,    \
+	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     \
+	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   SEISMIC_TOSS, RAGE,         \
+	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
+	     REST,         SUBSTITUTE,   SURF
 	; end

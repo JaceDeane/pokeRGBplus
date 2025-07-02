@@ -17,5 +17,8 @@
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
+	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
+	     BIDE,         SELFDESTRUCT, SKULL_BASH,   REST,         EXPLOSION,    \
+	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end

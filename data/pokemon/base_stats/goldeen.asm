@@ -17,5 +17,8 @@
 	dn EGG_WATER_2, EGG_WATER_2 ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm TOXIC,        HORN_DRILL,   TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
+	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         MIMIC,        \
+	     DOUBLE_TEAM,  BIDE,         SWIFT,        SKULL_BASH,   REST,         \
+	     SUBSTITUTE,   SURF
 	; end

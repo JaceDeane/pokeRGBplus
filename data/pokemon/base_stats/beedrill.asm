@@ -17,5 +17,8 @@
 	dn EGG_BUG, EGG_BUG ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
+	     RAGE,         MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     BIDE,         SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   \
+	     CUT
 	; end

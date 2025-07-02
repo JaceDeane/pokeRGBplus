@@ -17,5 +17,8 @@
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
+	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
+	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     SWIFT,        SKY_ATTACK,   REST,         SUBSTITUTE,   FLY
 	; end

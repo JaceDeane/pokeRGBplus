@@ -17,5 +17,10 @@
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
+	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
+	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
+	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
+	     REFLECT,      BIDE,         SKULL_BASH,   REST,         SUBSTITUTE,   \
+	     SURF,         STRENGTH
 	; end

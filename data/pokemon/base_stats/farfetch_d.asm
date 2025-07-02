@@ -17,5 +17,8 @@
 	dn EGG_FLYING, EGG_GROUND ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm RAZOR_WIND,   SWORDS_DANCE, WHIRLWIND,    TOXIC,        BODY_SLAM,    \
+	     TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         MIMIC,        DOUBLE_TEAM,  \
+	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
+	     SUBSTITUTE,   CUT,          FLY
 	; end

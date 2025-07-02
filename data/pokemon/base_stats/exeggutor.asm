@@ -17,5 +17,8 @@
 	dn EGG_PLANT, EGG_PLANT ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   RAGE,         \
+	     MEGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    TELEPORT,     MIMIC,        \
+	     DOUBLE_TEAM,  REFLECT,      BIDE,         SELFDESTRUCT, EGG_BOMB,     \
+	     REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE,   STRENGTH
 	; end
