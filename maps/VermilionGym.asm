@@ -189,7 +189,7 @@ CheckVermilionGymTrashCan:
 VermilionGymSurgeScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_THUNDERBADGE
+	checkflag EVENT_BEAT_LTSURGE ; ENGINE_THUNDERBADGE
 	iftrue .FightDone
 	writetext LtSurgeIntroText
 	waitbutton
@@ -207,13 +207,24 @@ VermilionGymSurgeScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_THUNDERBADGE
+.FightDone:
+	checkevent EVENT_GOT_TM24_THUNDERBOLT
+	iftrue .SpeechAfterTM
 	writetext LtSurgeThunderBadgeText
+	promptbutton
+	verbosegiveitem TM_THUNDERBOLT
+	iffalse .NoRoomForTM
+	setevent EVENT_GOT_TM24_THUNDERBOLT
+	writetext TM24ExplanationText
+	promptbutton
+.SpeechAfterTM:
+	writetext LtSurgeFightDoneText
 	waitbutton
 	closetext
 	end
 
-.FightDone:
-	writetext LtSurgeFightDoneText
+.NoRoomForTM:
+	writetext LtSurgeTM24NoRoomText
 	waitbutton
 	closetext
 	end
@@ -336,9 +347,10 @@ VermilionGymStatue:
 	; done
 
 LtSurgeIntroText:
-	text "Hey, kid! What do"
-	line "you think you're"
-	cont "doing here?"
+	text "SURGE: Hey, kid!"
+
+	para "What do you think"
+	line "you're doing here?"
 
 	para "You won't live"
 	line "long in combat!"
@@ -375,14 +387,14 @@ ReceivedThunderBadgeText:
 
 LtSurgeThunderBadgeText:
 	text "SURGE: THUNDER-"
-	line "BADGE cranks up "
+	line "BADGE cranks up"
 	
 	para "your #MON's"
 	line "SPEED!"
 
 	para "It also lets your"
-	line "#MON FLY any"
-	cont "time, kid!"
+	line "#MON use FLY"
+	cont "any time, kid!"
 
 	para "You're special,"
 	line "kid! Take this!"
@@ -416,7 +428,7 @@ LtSurgeFightDoneText:
 	para "Electricity is"
 	line "sure powerful!"
 
-	para "But, it's useless"
+	para "But it's useless"
 	line "against ground-"
 	cont "type #MON!"
 	done
@@ -494,17 +506,18 @@ VermilionGymGuideText:
 	para "He's an expert on"
 	line "electric #MON!"
 
-	para "Birds and water"
-	line "#MON are at"
+	para "Flying- and water-" ; changed from 'Birds' to specify types
+	line "type #MON are"
+	cont "at risk!"
 	
-	para "risk! Beware of"
+	para "Beware of"
 	line "paralysis too!"
 
 	para "LT.SURGE is very"
 	line "cautious."
 
 	para "You'll have to"
-	line "break a code to"
+	line "solve a puzzle to" ; changed from 'break a code'
 	cont "get to him!"
 	done
 
