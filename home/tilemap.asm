@@ -143,6 +143,89 @@ endr
 	ld sp, hl
 	ret
 
+CopyScreenToBGMap1::
+	ldh a, [hBGMapMode]
+	push af
+	xor a
+	ldh [hBGMapMode], a
+
+.wait
+	ldh a, [rLY]
+	cp $80 - 1
+	jr c, .wait
+
+	di
+	; Copy AttrMap (VRAM bank 1)
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, vBGMap0 ; $9800 ; source
+	ld de, vBGMap1 ; $9C00 ; destination
+	call .CopyScreenRegion_HBlank
+
+	; Copy Tilemap (VRAM bank 0)
+	ld a, 0
+	ldh [rVBK], a
+	ld hl, vBGMap0 ; $9800 ; source
+	ld de, vBGMap1 ; $9C00 ; destination
+	call .CopyScreenRegion_HBlank
+
+.wait2
+	ldh a, [rLY]
+	cp $80 - 1
+	jr c, .wait2
+	ei
+
+	pop af
+	ldh [hBGMapMode], a
+	ret
+
+; hl = source VRAM
+; de = dest VRAM
+; copies 20x18 screen tiles
+.CopyScreenRegion_HBlank:
+	ld b, SCREEN_HEIGHT ; 18
+	ld c, LOW(rSTAT)
+
+.row_loop
+	ld a, SCREEN_WIDTH ; 20
+	ldh [hTilesPerCycle], a
+
+.col_loop
+; if in v/hblank, wait until not in v/hblank (rSTAT & 2 == 0)
+.wait_hblank
+	ldh a, [c]
+	and 2
+	jr nz, .wait_hblank
+
+	ld a, [hl]
+	ld [de], a
+	inc hl
+	inc de
+
+	ldh a, [hTilesPerCycle]
+	dec a
+	ldh [hTilesPerCycle], a
+	jr nz, .col_loop
+
+	; move to next row (skip remaining tiles)
+	ld a, BG_MAP_WIDTH - SCREEN_WIDTH ; 12
+	add l
+	ld l, a
+	jr nc, .no_carry_hl
+	inc h
+
+.no_carry_hl
+	ld a, BG_MAP_WIDTH - SCREEN_WIDTH
+	add e
+	ld e, a
+	jr nc, .no_carry_de
+	inc d
+
+.no_carry_de
+	dec b
+	jr nz, .row_loop
+	ret
+
 SetDefaultBGPAndOBP::
 ; Inits the Palettes
 ; depending on the system the monochromes palettes or color palettes

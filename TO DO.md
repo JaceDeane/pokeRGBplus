@@ -15,18 +15,16 @@
 MAIN:
 - Route 11 -> Gate 1F/2F
 
-- Vermilion Dock (scene triggers)
+- Vermilion Dock (finish scene event)
 
-- S.S. Anne (All floors, Cabins, Deck, Captain's cabin)* New tileset(s) required
+- Route 2 Gate with Oak's Aide
 
 OTHER:
 - Include and check all hidden items from R/B exist and are in the right place
 
-- Do a "`get dirfacing_UP`" check in front of Viridian Gym's door, so that you can walk left to right without interruption
+- Add the Trainer Seen BGM before fighting Gym Leaders
 
-(After the TM Update:)
-- Gyms and their reward TMs
-- TMs found in the overworld, Game Corner, etc.
+- Do a "`get dirfacing_UP`" check in front of Viridian Gym's door, so that you can walk left to right without interruption
 
 ### ENGINE / DATA:
 
@@ -52,7 +50,7 @@ OTHER:
 	(CooltrainerM, etc. doesn't load in after exiting Viridian Forest)
 	- *Look into a dynamic sprite system...
 
-- Update TM/HM list* (This is an EXTENSIVE job. Pokémon learnsets will have to be updated. Will leave until towards the end -- G/S Pokémon will need to have custom TM/HM learnsets now)
+- Update TM/HM list* (G/S Pokémon need 'custom' TM/HM learnsets now)
 
 - Remove old G/S trainer EVENT flags (as needed)
 	
@@ -74,7 +72,7 @@ OTHER:
 
 - Finish updating the Summary screen*
 
-- Update the Pokédex UI
+- Finish updating the Pokédex UI
 
 - Add the mask to the player's title sprite (will need to condense OAM by 8x16 sprites)
 

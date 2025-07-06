@@ -37,37 +37,61 @@ VermilionDockSSAnneLeavesScript:
 	ld de, MUSIC_SURF
 	call PlayMusic ; PlayMusic2 only plays once with no loop(?)
 ;(R/B)=
-	;farcall LoadSmokeTileFourTimes
+	; farcall LoadSmokeTileFourTimes
 	; xor a
 	; ld [wSpritePlayerStateData1ImageIndex], a
 	ld c, 120
 	call DelayFrames
 	; ld b, $9c
 	; call CopyScreenTileBufferToVRAM ; copies wTileMap to BGMap address 'b * $100'
-	call CopyTilemapAtOnce
+	call CopyScreenToBGMap1 ; Custom function
+
+; Remove the gangplank
+	hlcoord 8, 10 ; X, Y
+	ld bc, 2 ; width*height
+	ld a, $0b ; remove gangplank
+	call ByteFill
+	
+	ld a, 1
+	ldh [hBGMapMode], a
+	ld c, 3
+	call DelayFrames
+	
+	hlcoord 8, 10, wAttrmap ; X, Y
+	ld bc, 2 ; width*height
+	ld a, PAL_BG_YELLOW ; Custom Ship Pal
+	call ByteFill
+
+	ld a, 2
+	ldh [hBGMapMode], a
+	ld c, 3
+	call DelayFrames
+; Remove the Ship from the 2nd tilemap
+	hlcoord 0, 10, wTilemap ; X, Y
+	ld bc, SCREEN_WIDTH * 6 ; width*height
+	ld a, $14 ; water tile
+	call ByteFill ; FillMemory (R/B)
 
 	ld a, 3
 	ldh [hBGMapMode], a
-
-;Replace tiles $08 and $09 with $0B
-;OR -- replace block $06 with block $0f
-	hlcoord 0, 10 ; X, Y
-	ld bc, SCREEN_WIDTH * 6 ; width, height
-	ld a, $14 ; water tile
-	call ByteFill ; FillMemory
-;Should also update new tiles with PAL_BG_WATER
-
-;(R/B)=
-	ld a, 1
-	ldh [hBGMapUpdate], a ; hAutoBGTransferEnabled (R/B)hBGMapAddress?
 	ld c, 3
-	call DelayFrames ; call Delay3 does this and 'ld c, 3' in one
-	xor a ; reset 'a'
-	ldh [hBGMapUpdate], a ; hAutoBGTransferEnabled (R/B)
-	; ld [wSSAnneSmokeDriftAmount], a
+	call DelayFrames
+
+	hlcoord 0, 10, wAttrmap ; X, Y
+	ld bc, SCREEN_WIDTH * 6 ; width*height
+	ld a, PAL_BG_WATER
+	call ByteFill
+
+	ld a, 4
+	ldh [hBGMapMode], a
+	ld c, 3
+	call DelayFrames
+
+	xor a
+	ld [wMemoryGameCard1], a
 	ldh [rOBP1], a ; -- Should this be rOBPI or rOBPD ??
 	ld a, 88
-	; ld [wSSAnneSmokeX], a
+	ld [wMemoryGameCard2], a
 	ld hl, wBGMapAnchor ; wMapViewVRAMPointer
 	ld c, [hl]
 	inc hl
@@ -76,8 +100,8 @@ VermilionDockSSAnneLeavesScript:
 	push hl
 	ld de, SFX_BOAT  ; ld a, SFX_SS_ANNE_HORN (R/B)
 	call WaitPlaySFX ; call PlaySoundWaitForCurrent (R/B)
-	; ld a, $ff
-	; ld [wSpriteUpdatesEnabled], a ; wUpdateSpritesEnabled (R/B)
+	ld a, FALSE ; $ff
+	ld [wSpriteUpdatesEnabled], a ; wUpdateSpritesEnabled (R/B)
 	ld d, 0 ; $0
 	ld e, 8 ; $8
 .shift_columns_up
@@ -91,11 +115,11 @@ VermilionDockSSAnneLeavesScript:
 	push de
 	call ScrollMapRight ; call ScheduleEastColumnRedraw (R/B)
 	;call LoadOverworldTilemap;UpdateBGMapColumn ; UpdateOverworldMap.ScrollOverworldMapRight
-	; call VermilionDock_EmitSmokePuff
+	call VermilionDock_EmitSmokePuff
 	pop de
 	ld b, $10
 .smoke_puff_drift_loop
-	; call VermilionDock_AnimSmokePuffDriftRight
+	call VermilionDock_AnimSmokePuffDriftRight
 	ld c, 8 ; $8
 .delay_between_drifts
 	call VermilionDock_SyncScrollWithLY
@@ -110,27 +134,27 @@ VermilionDockSSAnneLeavesScript:
 	xor a
 	ldh [rWY], a
 	ldh [hWY], a
-	call VermilionDock_EraseSSAnne
-;I have no idea what the following lines do -- YET
+	call VermilionDock_EraseSSAnne ; Is this needed now?
+;Surely just reversing "CopyVisibleBGMap0ToBGMap1_HBlankSafe" would be OK?
 	ld a, 144 ; $90 -- position in pixels
 	ldh [hWY], a
-	; ld a, $1
-	; ld [wSpriteUpdatesEnabled], a ; wUpdateSpritesEnabled (R/B)
+	ld a, TRUE ; $1
+	ld [wSpriteUpdatesEnabled], a ; wUpdateSpritesEnabled (R/B)
 	pop hl
 	pop bc
 	ld [hl], b
 	dec hl
 	ld [hl], c
-	;call LoadPlayerSpriteGraphics
-	;ld hl, wNumberOfWarps
-	dec [hl]
+	; call LoadPlayerSpriteGraphics
+	; ld hl, wNumberOfWarps
+	; dec [hl]
 	ret
 
 VermilionDock_AnimSmokePuffDriftRight:
 	push bc
 	push de
-	ld hl, wShadowOAMSprite04XCoord
-	; ld a, [wSSAnneSmokeDriftAmount]
+	ld hl, wShadowOAM + 4 * 4 ; wShadowOAMSprite04XCoord
+	ld a, [wMemoryGameCard1]
 	swap a
 	ld c, a
 	ld de, 4
@@ -146,16 +170,20 @@ VermilionDock_AnimSmokePuffDriftRight:
 
 VermilionDock_EmitSmokePuff:
 ; new smoke puff above the S.S. Anne's front smokestack
-	; ld a, [wSSAnneSmokeX]
+
+; Temp wVariables to test smoke OAM
+; wMemoryGameCard1 == wSSAnneSmokeDriftAmount
+; wMemoryGameCard2 == wSSAnneSmokeX
+	ld a, [wMemoryGameCard2]
 	sub 16
-	; ld [wSSAnneSmokeX], a
-	ld c, a
-	ld b, 100 ; Y
-	; ld a, [wSSAnneSmokeDriftAmount]
+	ld [wMemoryGameCard2], a
+	ld c, a ; X pos (in px)
+	ld b, 100 ; Y pos (in px)
+	ld a, [wMemoryGameCard1]
 	inc a
-	; ld [wSSAnneSmokeDriftAmount], a
-	ld a, $1
-	ld de, VermilionDockOAMBlock
+	ld [wMemoryGameCard1], a
+	ld a, $1	
+	; ld de, VermilionDockOAMBlock
 	; call WriteOAMBlock
 	ret
 
@@ -165,6 +193,9 @@ VermilionDockOAMBlock: ; call FacingBoulderDust1/2
 	db $fd, $10
 	db $fe, $10
 	db $ff, $10
+
+BoulderDustOAMData:
+	db $50, $60, $80, $00 ; Y, X, Tile ID, Attributes
 
 VermilionDock_SyncScrollWithLY:
 	ld h, d
@@ -184,48 +215,19 @@ VermilionDock_SyncScrollWithLY:
 	jr z, .wait_for_ly_match
 	ret
 
-VermilionDock_EraseSSAnne: ; similar to "MagnetTrain_InitLYOverrides" in magnet_train
+VermilionDock_EraseSSAnne:
 ; Fill the area the S.S. Anne occupies in BG map 0 with water tiles.
 	
-	; wBGMapBuffer && wBGMapBufferEnd == ds 2 * SCREEN_WIDTH && nil
-	; wLYOverrides && wLYOverridesEnd == SCREEN_HEIGHT_PX && nil  ---- 'magnet_train'
-	
-	;wVermilionDockTileMapBuffer==5 * BG_MAP_WIDTH + SCREEN_WIDTH (52*5 = 260)
-	;BG_MAP_WIDTH==32, SCREEN_WIDTH==20
-	
-	ld hl, wBGMapBuffer ; wVermilionDockTileMapBuffer
-	ld bc, wBGMapBufferEnd - wBGMapBuffer ; wVermilionDockTileMapBufferEnd - wVermilionDockTileMapBuffer
-	ld a, $14 ; water tile -- magnet train refs [wMagnetTrainInitPosition]
-	call ByteFill ; FillMemory
-;===new===
-	; ld a, 1
-	; ldh [rVBK], a ; switches VRAM bank (CGB only)
+	; ld hl, wBGMapBuffer ; wVermilionDockTileMapBuffer
+	; ld bc, wBGMapBufferEnd - wBGMapBuffer ; wVermilionDockTileMapBufferEnd - wVermilionDockTileMapBuffer
+	; ld a, $14 ; water tile -- magnet train refs [wMagnetTrainInitPosition]
+	; call ByteFill ; FillMemory
 
-	; hlbgcoord 0, 10
-	; ld bc, 6 * BG_MAP_WIDTH
-	; ld a, PAL_BG_WATER
-	; call ByteFill
+	; hlbgcoord 0, 10, vBGMap1
+	; ld de, wBGMapBuffer ; wVermilionDockTileMapBuffer
+	; lb bc, BANK(wBGMapBuffer), 12 ; BANK(wVermilionDockTileMapBuffer), 12
+	; call Request2bpp ; call CopyVideoData
 	
-	; ld a, 0
-	; ldh [rVBK], a
-;=========
-	hlbgcoord 0, 10, vBGMap1
-	ld de, wBGMapBuffer ; wVermilionDockTileMapBuffer
-	lb bc, BANK(wBGMapBuffer), 12 ; BANK(wVermilionDockTileMapBuffer), 12
-	call Request2bpp ; call CopyVideoData
-	
-;From "InitBattleDisplay.BlankBGMap":
-	; ld hl, wDecompressScratch
-	; ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
-	; ld a, " "
-	; call ByteFill
-
-	; ld de, wDecompressScratch
-	; hlbgcoord 0, 0
-	; lb bc, BANK(@), (BG_MAP_WIDTH * BG_MAP_HEIGHT) / LEN_2BPP_TILE
-	; call Request2bpp
-;=============
-
 ; Replace the blocks of the lower half of the ship with water blocks. This
 ; leaves the upper half alone, but that doesn't matter because replacing any of
 ; the blocks is unnecessary because the blocks the ship occupies are south of

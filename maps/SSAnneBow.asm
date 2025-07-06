@@ -92,7 +92,7 @@ SailorTrevorAfterBattleText:
 	cont "#MON."
 
 	para "I think there are"
-	cont "more."
+	line "more."
 	done
 
 SSAnneBow_MapEvents:
