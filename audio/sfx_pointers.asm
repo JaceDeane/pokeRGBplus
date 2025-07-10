@@ -2,7 +2,7 @@ SFX:
 ; entries correspond to SFX_* constants
 	table_width 3, SFX
 	dba Sfx_DexFanfare5079
-	dba Sfx_Item
+	dba Sfx_Item ; (G/S)
 	dba Sfx_CaughtMon
 	dba Sfx_PokeballsPlacedOnTable
 	dba Sfx_Potion
@@ -146,7 +146,7 @@ SFX:
 	dba Sfx_Present
 	dba Sfx_MorningSun
 	dba Sfx_LevelUp
-	dba Sfx_KeyItem
+	dba Sfx_KeyItem ; (G/S)
 	dba Sfx_Fanfare2
 	dba Sfx_RegisterPhoneNumber
 	dba Sfx_3rdPlace

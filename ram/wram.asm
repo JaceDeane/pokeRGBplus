@@ -3046,12 +3046,12 @@ wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
 wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db ;***
-wCeruleanCitySceneID::                            db ; Updated R/B
-wRoute24SceneID::                                 db ; Updated R/B
+wCeruleanCitySceneID::                            db ; wCeruleanGymSceneID
+wRoute24SceneID::                                 db ; wRoute25SceneID
 wBillsHouseSceneID::                              db ; wTrainerHouseB1FSceneID
-wRoute22GateSceneID::                             db ; Updated R/B
+wRoute22GateSceneID::                             db ; wVictoryRoadGateSceneID
 wSaffronMagnetTrainStationSceneID::               db ;***
-wRoute16Gate1FSceneID::                           db ; Updated R/B
+wRoute16Gate1FSceneID::                           db ; wRoute16GateSceneID
 wRoute17Route18GateSceneID::                      db
 wIndigoPlateauPokecenter1FSceneID::               db
 wWillsRoomSceneID::                               db ;***
@@ -3063,8 +3063,7 @@ wHallOfFameSceneID::                              db
 wRoute27SceneID::                                 db ;***
 wNewBarkTownSceneID::                             db ;***
 wPalletTownSceneID::                              db 
-; wElmsLabSceneID::                                 db
-wBluesHouseSceneID::                              db ; Updated R/B
+wBluesHouseSceneID::                              db ; wElmsLabSceneID
 wOaksLabSceneID::                                 db
 wPewterCitySceneID::                              db ; Updated R/B
 wPewterMuseumOfScienceSceneID::                   db ; Updated R/B
@@ -3074,11 +3073,11 @@ wVermilionCitySceneID::                           db ; wCherrygroveCitySceneID
 wViridianCitySceneID::                            db
 wViridianMartSceneID::                            db
 wRoute22SceneID::                                 db
-wMrPokemonsHouseSceneID::                         db ; Unused RGB+ -- TODO: Ready to remove, not called
-wRoute5SaffronGateSceneID::                       db ; Updated R/B
-wRoute6SaffronGateSceneID::                       db ; Updated R/B
-wRoute7SaffronGateSceneID::                       db ; Updated R/B
-wRoute8SaffronGateSceneID::                       db ; Updated R/B
+wMrPokemonsHouseSceneID::                         db ;*** Unused, not called
+wRoute5SaffronGateSceneID::                       db ; wRoute32SceneID
+wRoute6SaffronGateSceneID::                       db ; wRoute35NationalParkGateSceneID
+wRoute7SaffronGateSceneID::                       db ; wRoute36SceneID
+wRoute8SaffronGateSceneID::                       db ; wRoute36NationalParkGateSceneID
 wAzaleaTownSceneID::                              db ;***
 wGoldenrodGymSceneID::                            db ;***
 wGoldenrodMagnetTrainStationSceneID::             db ;***
@@ -3099,7 +3098,7 @@ wBattleTowerElevatorSceneID::                     db ;***
 wBattleTowerHallwaySceneID::                      db ;***
 wBattleTowerOutsideSceneID::                      db ;***
 wRoute43GateSceneID::                             db ;***
-wMountMoonB2FSceneID::                            db ; Updated R/B
+wMountMoonB2FSceneID::                            db ; wMountMoonSceneID
 wSproutTower3FSceneID::                           db ;***
 wTinTower1FSceneID::                              db ;***
 wBurnedTower1FSceneID::                           db ;***
@@ -3129,7 +3128,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 46
+	ds 42 ; ds 49 >> -7 as total 7 new wRAM labels added
 
 ; fight counts
 wJackFightCount::    db
