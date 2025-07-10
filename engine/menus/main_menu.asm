@@ -35,7 +35,12 @@ MainMenu:
 	res GAME_TIMER_COUNTING_F, [hl]
 	call MainMenu_GetWhichMenu
 	ld [wWhichIndexSet], a
+
+	ld a, [wHallOfFameCount]
+	and a
+	jr .BeforeHoF
 	call MainMenu_PrintCurrentTimeAndDay
+.BeforeHoF
 	ld hl, .MenuHeader
 	call LoadMenuHeader
 	call MainMenuJoypadLoop
@@ -240,7 +245,11 @@ MainMenu_GetWhichMenu:
 MainMenuJoypadLoop:
 	call SetUpMenu
 .loop
+	ld a, [wHallOfFameCount]
+	and a
+	jr .BeforeHoF
 	call MainMenu_PrintCurrentTimeAndDay
+.BeforeHoF
 	ld a, [w2DMenuFlags1]
 	set 5, a
 	ld [w2DMenuFlags1], a

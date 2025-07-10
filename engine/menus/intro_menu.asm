@@ -67,7 +67,7 @@ NewGame:
 	call OakSpeech
 	call InitializeWorld
 
-	ld a, LANDMARK_NEW_BARK_TOWN
+	ld a, LANDMARK_PALLET_TOWN ; LANDMARK_NEW_BARK_TOWN
 	ld [wPrevLandmark], a
 
 	ld a, SPAWN_HOME
@@ -630,15 +630,26 @@ Continue_DisplayGameTime:
 	jp PrintNum
 
 OakSpeech:
-	farcall InitClock
-	call RotateFourPalettesLeft
-	call ClearTilemap
+	; farcall InitClock
+	; call RotateFourPalettesLeft
+	; call ClearTilemap
+
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+
+	ld a, 10 ; default hour = 10 AM
+	ld [wStringBuffer2 + 1], a
+	xor a
+	ld [wStringBuffer2 + 2], a
+	ld [wStringBuffer2 + 3], a
+	call InitTimeOfDay
 
 	ld de, MUSIC_ROUTE_24
 	call PlayMusic
 
-	call RotateFourPalettesRight
-	call RotateThreePalettesRight
+	; call RotateFourPalettesRight
+	; call RotateThreePalettesRight
 	xor a
 	ld [wCurPartySpecies], a
 	ld a, POKEMON_PROF

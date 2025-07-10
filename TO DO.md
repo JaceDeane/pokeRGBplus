@@ -28,6 +28,9 @@ OTHER:
 
 ### ENGINE / DATA:
 
+- Allow time to be set on main menu, once a save has ben created (same appear conditions as `CONTINUE`)
+	- perhaps have a 24hr cooldown? (also allow for DST to be set in the same way)
+
 - DayCareGentleman special needs to be updated and refined
 
 - Should there be a seperate Gate_Kanto tileset so that pot plants can use a gray/brown palette?
