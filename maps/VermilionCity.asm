@@ -128,7 +128,7 @@ VermilionMachop:
 	closetext
 	end
 
-VermilionCitySailor2Script:
+VermilionCitySailor2Script: ; Disappears after the S.S. ANNE departs
 	jumptextfaceplayer VermilionCitySailor2Text
 
 ; VermilionSnorlax:
@@ -398,6 +398,6 @@ VermilionCity_MapEvents:
 	object_event 19, 30, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCitySailor1Script, -1
 	object_event 30,  7, SPRITE_GAMBLER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1 ; Gambler2
 	object_event 29,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
-	object_event 25, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCitySailor2Script, -1
+	object_event 25, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCitySailor2Script, EVENT_SS_ANNE_LEFT
 	
 	

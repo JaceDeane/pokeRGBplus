@@ -21,6 +21,7 @@ VermilionDockSSAnneLeavesScene:
 	
 	setmapscene VERMILION_CITY, SCENE_VERMILIONCITY_SS_ANNE_LEFT
 	setscene SCENE_VERMILIONDOCK_NOOP
+	setevent EVENT_SS_ANNE_LEFT
 	applymovement PLAYER, VermilionDockLeaveMovement
 	
 	special FadeOutMusic
@@ -174,6 +175,16 @@ VermilionDock_EmitSmokePuff:
 ; Temp wVariables to test smoke OAM
 ; wMemoryGameCard1 == wSSAnneSmokeDriftAmount
 ; wMemoryGameCard2 == wSSAnneSmokeX
+
+;Insert below somewhere into wRAM, in R/B this data was before the HoF labels
+;=================
+; NEXTU
+; ; multiplied by 16 to get the number of times to go right by 2 pixels
+; wSSAnneSmokeDriftAmount:: db
+; ; 0 = left half (X < 10)
+; ; 1 = right half (X >= 10)
+; wSSAnneSmokeX:: db
+
 	ld a, [wMemoryGameCard2]
 	sub 16
 	ld [wMemoryGameCard2], a
