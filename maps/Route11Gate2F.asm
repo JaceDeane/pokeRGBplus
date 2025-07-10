@@ -89,7 +89,7 @@ Route11Gate2FOaksAideHiText:
 	para "So, <PLAYER>! Have"
 	line "you caught at"
 
-	para "least 10 kinds of"
+	para "least 30 kinds of"
 	line "#MON?"
 	done
 

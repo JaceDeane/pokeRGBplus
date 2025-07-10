@@ -36,7 +36,7 @@ LoadFishingGFX:
 	ret
 
 FishingGFX:
-INCBIN "gfx/overworld/chris_fish.2bpp"
+INCBIN "gfx/overworld/red_fish.2bpp"
 
 KrisFishingGFX:
 INCBIN "gfx/overworld/kris_fish.2bpp"
