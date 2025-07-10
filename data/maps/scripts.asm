@@ -391,7 +391,7 @@ INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/ViridianTrainerSchool.asm"
 INCLUDE "maps/ViridianMart.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
-INCLUDE "maps/Route2NuggetHouse.asm"
+INCLUDE "maps/Route2TradeHouse.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route22Gate.asm"
 

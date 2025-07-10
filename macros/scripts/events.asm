@@ -1071,4 +1071,9 @@ MACRO trainerpic
 	db \1 ; trainer
 ENDM
 
+	const count_caught_command ; ab
+MACRO count_caught
+	db count_caught_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

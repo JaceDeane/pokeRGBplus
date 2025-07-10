@@ -675,7 +675,7 @@ ENDM
 	map_attributes ViridianTrainerSchool, VIRIDIAN_TRAINER_SCHOOL, $00, 0
 	map_attributes ViridianMart, VIRIDIAN_MART, $00, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
-	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0
+	map_attributes Route2TradeHouse, ROUTE_2_TRADE_HOUSE, $00, 0
 	map_attributes Route2Gate, ROUTE_2_GATE, $00, 0
 	map_attributes Route22Gate, ROUTE_22_GATE, $00, 0
 	map_attributes ViridianForestSouthGate, VIRIDIAN_FOREST_SOUTH_GATE, $00, 0

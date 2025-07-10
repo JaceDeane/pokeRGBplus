@@ -235,6 +235,7 @@ ScriptCommandTable:
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
+	dw Script_count_caught               ; ab
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2365,6 +2366,15 @@ Script_trainerpic:
 .ok
 	ld [wTrainerClass], a
 	farcall Trainerpic
+	ret
+
+Script_count_caught:
+; script command 0xab
+
+	ld hl, wPokedexCaught
+	ld b, wEndPokedexCaught - wPokedexCaught
+	call CountSetBits
+	ld [wStringBuffer4], a
 	ret
 
 Script_checkver_duplicate: ; unreferenced

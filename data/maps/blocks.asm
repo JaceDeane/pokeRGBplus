@@ -546,7 +546,7 @@ Route28SteelWingHouse_Blocks:
 CeladonMansionRoofHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
-Route2NuggetHouse_Blocks:
+Route2TradeHouse_Blocks:
 MrPsychicsHouse_Blocks:
 	INCBIN "maps/House.blk"
 

@@ -13,13 +13,13 @@ Route2GateOaksAideScript:
 	checkevent EVENT_GOT_HM05_FLASH
 	iftrue .FlashExplainText
 	writetext Route2GateOaksAideHiText
-	;promptbutton
 	yesorno
 	iffalse .No
 	sjump .Yes
 .Yes:
+	count_caught
 	readvar VAR_DEXCAUGHT
-	ifgreater 10, .Aide10Caught
+	ifgreater 9, .Aide10Caught ; there is no "ifequal-or-greater" option
 	writetext Route2GateOaksAideUhOhText ; Less than 10 Pokémon caught
 	waitbutton
 	closetext
@@ -37,7 +37,6 @@ Route2GateOaksAideScript:
 	verbosegiveitem HM_FLASH
 	;iffalse .NoRoom
 	setevent EVENT_GOT_HM05_FLASH
-	waitbutton
 	closetext
 	end
 
@@ -52,30 +51,33 @@ Route2GateYoungsterScript:
 
 Route2GateOaksAideHiText:
 	text "Hi! Remember me?"
-	line "I'm PROF.OAK's"
-	cont "AIDE!"
+	line "I'm PROF.OAK's AIDE!"
 
-	para "If you caught 10"
+	para "If you've caught 10"
 	line "kinds of #MON,"
-	cont "I'm supposed to"
-	cont "give you an HM05!"
+
+	para "I'm supposed to"
+	line "give you an HM05!"
 
 	para "So, <PLAYER>! Have"
 	line "you caught at"
-	cont "least 10 kinds of"
-	cont "#MON?"
+
+	para "least 10 kinds of"
+	line "#MON?"
 	done
 
 Route2GateOaksAideUhOhText:
 	text "Let's see…"
-	line "Uh-oh! You have"
-	cont "caught only ";@"
-	;text_ram wStringBuffer4
+
+	para "Uh-oh! You have"
+	line "caught only @"
+	text_decimal wStringBuffer4, 1, 3 ; text_ram wStringBuffer4 (R/B)
+	text_start
 	cont "kinds of #MON!"
 
 	para "You need 10 kinds"
 	line "if you want the"
-	cont "HM05 FLASH."
+	cont "HM for FLASH."
 	done
 
 Route2GateOaksAideComeBackText:
@@ -83,37 +85,37 @@ Route2GateOaksAideComeBackText:
 
 	para "When you get 10"
 	line "kinds, come back"
-	cont "for HM05 FLASH."
+	cont "for the FLASH HM."
 	done
 
 Route2GateOaksAideHereYouGoText:
 	text "Great! You have"
-	line "caught ";@"
-	;text_ram wStringBuffer4
+	line "caught @"
+	text_decimal wStringBuffer4, 1, 3 ; text_ram wStringBuffer4 (R/B)
 	text " kinds"
 	cont "of #MON!"
 	
 	para "Congratulations!"
-
-	para "Here you go!"
+	line "Here you go!"
 	done
 
-Route2GateOaksAideGotItemText:
-	text "<PLAYER> got the"
-	line "HM05 FLASH!@"
-	done
+; Route2GateOaksAideGotItemText:
+	; text "<PLAYER> got the"
+	; line "HM05 FLASH!"
+	; done
 
 Route2GateOaksAideFlashExplainText:
 	text "The HM FLASH"
-	line "lights even the"
-	cont "darkest dungeons."
+	line "lights up even the"
+	cont "darkest of caves."
 	done
 
 Route2GateYoungsterText:
 	text "Once a #MON"
 	line "learns FLASH, you"
-	cont "can get through"
-	cont "ROCK TUNNEL."
+
+	para "can get through"
+	line "ROCK TUNNEL."
 	done
 
 Route2Gate_MapEvents:
