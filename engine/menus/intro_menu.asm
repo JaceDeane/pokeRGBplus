@@ -594,7 +594,7 @@ Continue_UnknownGameTime:
 
 Continue_DisplayBadgeCount:
 	push hl
-	ld hl, wJohtoBadges
+	ld hl, wKantoBadges ; wJohtoBadges
 	ld b, 2
 	call CountSetBits
 	pop hl

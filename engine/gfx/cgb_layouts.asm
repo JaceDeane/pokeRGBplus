@@ -638,7 +638,7 @@ _CGB_TrainerCard:
 	ld a, SABRINA ; BLAINE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BLAINE ; replace with GIOVANNI
+	ld a, LEADER_GIOVANNI
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, PREDEFPAL_CGB_BADGE

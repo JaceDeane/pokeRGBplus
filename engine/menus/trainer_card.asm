@@ -47,8 +47,8 @@ TrainerCard:
 	farcall GetCardPic ; Loads the Player sprite and border GFX into vTiles
 
 	ld hl, CardStatusGFX
-	ld de, vTiles2 tile $2F;$29 ; Start Loading GFX
-	ld bc, 76 tiles;86 tiles ; ?Tiles Length?
+	ld de, vTiles2 tile $2F;$29 ; Start loading GFX
+	ld bc, 76 tiles;86 tiles ; Number of tiles
 	ld a, BANK(CardStatusGFX)
 	call FarCopyBytes
 
@@ -102,8 +102,8 @@ TrainerCard_Page1_LoadGFX:
 	call TrainerCard_InitBorder
 	call WaitBGMap
 	ld de, CardStatusGFX
-	ld hl, vTiles2 tile $2F;$29 ; Start Loading GFX
-	lb bc, BANK(CardStatusGFX), 76;86 ; ?Tiles Length?
+	ld hl, vTiles2 tile $2F;$29 ; Start loading GFX
+	lb bc, BANK(CardStatusGFX), 76;86 ; Number of tiles
 	call Request2bpp
 	call TrainerCard_Page1_PrintDexCaught_GameTime
 	call TrainerCard_IncrementJumptable
@@ -137,17 +137,27 @@ TrainerCard_Page2_LoadGFX:
 	call TrainerCard_InitBorder
 	call WaitBGMap
 	ld de, LeaderGFX
-	ld hl, vTiles2 tile $2F;$29 ; Start Loading GFX
-	lb bc, BANK(LeaderGFX), 76;86 ; ?Tiles Length?
+	ld hl, vTiles2 tile $2F;$29 ; Start loading GFX
+	lb bc, BANK(LeaderGFX), 76;86 ; Number of tiles
 	call Request2bpp
 	ld de, CardBadgesGFX
-	ld hl, vTiles2 tile $67;$79 ; Start Loading GFX
-	lb bc, BANK(CardBadgesGFX), 8 ; ?Tiles Length?
+	ld hl, vTiles2 tile $67;$79 ; Start loading GFX
+	lb bc, BANK(CardBadgesGFX), 8 ; Number of tiles
 	call Request2bpp
 	ld de, BadgeGFX
 	ld hl, vTiles0 tile $00
 	lb bc, BANK(BadgeGFX), 44
 	call Request2bpp
+	
+	ld a, [wKantoBadges]
+	bit EARTHBADGE, a
+	jr z, .done ; Only shows silhouette if unobtained
+	
+	ld de, GiovanniGFX
+	ld hl, vTiles2 tile $61 ; Start loading GFX
+	lb bc, BANK(GiovanniGFX), 6 ; Number of tiles
+	call Request2bpp
+.done
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	call TrainerCard_IncrementJumptable
 	ret
@@ -188,17 +198,17 @@ TrainerCard_Page3_LoadGFX:
 	ld d, 8
 	call TrainerCard_InitBorder
 	call WaitBGMap
-	ld de, LeaderGFX2
-	ld hl, vTiles2 tile $2F;$29 ; Start Loading GFX
-	lb bc, BANK(LeaderGFX2), 76;86 ; ?Tiles Length?
+	ld de, LeaderGFX
+	ld hl, vTiles2 tile $2F;$29 ; Start loading GFX
+	lb bc, BANK(LeaderGFX), 76;86 ; Number of tiles
 	call Request2bpp
 	ld de, CardBadgesGFX
-	ld hl, vTiles2 tile $67;$79 ; Start Loading GFX
-	lb bc, BANK(CardBadgesGFX), 8 ; ?Tiles Length?
+	ld hl, vTiles2 tile $67;$79 ; Start loading GFX
+	lb bc, BANK(CardBadgesGFX), 8 ; Number of tiles
 	call Request2bpp
-	ld de, BadgeGFX2
+	ld de, BadgeGFX
 	ld hl, vTiles0 tile $00
-	lb bc, BANK(BadgeGFX2), 44
+	lb bc, BANK(BadgeGFX), 44
 	call Request2bpp
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	call TrainerCard_IncrementJumptable
@@ -574,9 +584,8 @@ TrainerCard_KantoBadgesOAM:
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"
 CardBadgesGFX: INCBIN "gfx/trainer_card/card_badges.2bpp"
 
-LeaderGFX:  INCBIN "gfx/trainer_card/leaders.2bpp"
-LeaderGFX2: INCBIN "gfx/trainer_card/leaders.2bpp"
-BadgeGFX:   INCBIN "gfx/trainer_card/badges.2bpp"
-BadgeGFX2:  INCBIN "gfx/trainer_card/badges.2bpp"
+LeaderGFX:   INCBIN "gfx/trainer_card/leaders.2bpp"
+GiovanniGFX: INCBIN "gfx/trainer_card/giovanni.2bpp"
+BadgeGFX:    INCBIN "gfx/trainer_card/badges.2bpp"
 
 CardRightCornerGFX: INCBIN "gfx/trainer_card/card_right_corner.2bpp"

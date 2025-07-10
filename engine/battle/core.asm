@@ -6833,14 +6833,13 @@ BadgeStatBoosts:
 ; depending on which badges have been obtained.
 
 ; Every other badge boosts a stat, starting from the first.
-; GlacierBadge also boosts Special Defense, although the relevant code is buggy (see below).
 
-; 	ZephyrBadge:  Attack
-; 	PlainBadge:   Speed
-; 	MineralBadge: Defense
-; 	GlacierBadge: Special Attack and Special Defense
+; 	BoulderBadge: Attack (ZephyrBadge)
+; 	ThunderBadge: Speed (PlainBadge)
+; 	SoulBadge:    Defense (MineralBadge)
+; 	VolcanoBadge: Special Attack and Special Defense (GlacierBadge)
 
-; The boosted stats are in order, except PlainBadge and MineralBadge's boosts are swapped.
+; The boosted stats are in order, except ThunderBadge and SoulBadge's boosts are swapped.
 
 	ld a, [wLinkMode]
 	and a
@@ -6850,21 +6849,21 @@ BadgeStatBoosts:
 	and a
 	ret nz
 
-	ld a, [wJohtoBadges]
+	ld a, [wKantoBadges]
 
-; Swap badges 3 (PlainBadge) and 5 (MineralBadge).
+; Swap badges 3 (ThunderBadge) and 5 (SoulBadge).
 	ld d, a
-	and (1 << PLAINBADGE)
+	and (1 << THUNDERBADGE)
 	add a
 	add a
 	ld b, a
 	ld a, d
-	and (1 << MINERALBADGE)
+	and (1 << SOULBADGE)
 	rrca
 	rrca
 	ld c, a
 	ld a, d
-	and ((1 << ZEPHYRBADGE) | (1 << HIVEBADGE) | (1 << FOGBADGE) | (1 << STORMBADGE) | (1 << GLACIERBADGE) | (1 << RISINGBADGE))
+	and ((1 << BOULDERBADGE) | (1 << CASCADEBADGE) | (1 << RAINBOWBADGE) | (1 << MARSHBADGE) | (1 << VOLCANOBADGE) | (1 << EARTHBADGE))
 	or b
 	or c
 	ld b, a
