@@ -99,7 +99,7 @@ MtMoon1FZubatSign:
 	jumptext MtMoon1FBewareZubatSign
 
 MtMoon1FWaterGun:
-	itemball POKE_BALL ; TM_WATER_GUN - TODO
+	itemball TM_WATER_GUN
 	
 MtMoon1FPotion1:
 	itemball POTION

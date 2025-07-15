@@ -189,7 +189,7 @@ MtMoonB2FHPUP:
 	itemball HP_UP
 
 MtMoonB2FTMMegaPunch:
-	itemball TM_MEGA_PUNCH ; TODO
+	itemball TM_MEGA_PUNCH
 
 MtMoonB2FHiddenEther:
 	hiddenitem ETHER, EVENT_MT_MOON_B2F_HIDDEN_ETHER
