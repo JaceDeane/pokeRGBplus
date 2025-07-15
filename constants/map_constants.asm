@@ -144,12 +144,13 @@ ENDM
 	map_const MOUNT_MOON_B2F,                              23, 19 ; 88
 	map_const UNDERGROUND_PATH_NORTH_SOUTH,                 4, 23 ; 89
 	map_const UNDERGROUND_PATH_WEST_EAST,                  25,  4 ; 90
-	map_const ROCK_TUNNEL_1F,                              15, 18 ; 91
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 92
-	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 93
-	map_const SAFARI_ZONE_BETA,                            10, 18 ; 94
-	map_const VICTORY_ROAD,                                10, 36 ; 95
-	map_const VIRIDIAN_FOREST,                             17, 28 ; 96
+	map_const ROCK_TUNNEL_1F,                              20, 18 ; 91
+	map_const ROCK_TUNNEL_1F_ENTRANCE,                      4,  4 ; 92
+	map_const ROCK_TUNNEL_B1F,                             20, 18 ; 93
+	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 94
+	map_const SAFARI_ZONE_BETA,                            10, 18 ; 95
+	map_const VICTORY_ROAD,                                10, 36 ; 96
+	map_const VIRIDIAN_FOREST,                             17, 28 ; 97
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

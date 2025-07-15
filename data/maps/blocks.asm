@@ -925,6 +925,7 @@ MountMoon1F_Blocks:
 	INCBIN "maps/MountMoon1F.blk"
 	
 MountMoon1FExit_Blocks:
+RockTunnel1FEntrance_Blocks:
 	INCBIN "maps/MountMoon1FExit.blk"
 	
 MountMoonB1F_Blocks:

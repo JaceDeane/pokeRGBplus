@@ -24,11 +24,11 @@ RockTunnel1F_MapEvents:
 
 	def_warp_events
 	warp_event 15,  3, ROUTE_10, 1 ; TODO
-	warp_event 11, 25, ROUTE_10, 1 ; TODO
+	warp_event 15, 33, ROUTE_10, 1 ; TODO
 	warp_event  5,  3, ROCK_TUNNEL_B1F, 3
-	warp_event 15,  9, ROCK_TUNNEL_B1F, 2
-	warp_event 27,  3, ROCK_TUNNEL_B1F, 4
-	warp_event 27, 13, ROCK_TUNNEL_B1F, 1
+	warp_event 17, 11, ROCK_TUNNEL_B1F, 2
+	warp_event 37,  3, ROCK_TUNNEL_B1F, 4
+	warp_event 37, 17, ROCK_TUNNEL_B1F, 1
 
 	def_coord_events
 

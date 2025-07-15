@@ -479,8 +479,9 @@ ENDM
 	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $01, 0
 	map_attributes UndergroundPathNorthSouth, UNDERGROUND_PATH_NORTH_SOUTH, $00, 0
 	map_attributes UndergroundPathWestEast, UNDERGROUND_PATH_WEST_EAST, $00, 0
-	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
-	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
+	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $19, 0
+	map_attributes RockTunnel1FEntrance, ROCK_TUNNEL_1F_ENTRANCE, $19, 0
+	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $19, 0
 	map_attributes SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $00, 0
 	map_attributes SafariZoneBeta, SAFARI_ZONE_BETA, $13, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
