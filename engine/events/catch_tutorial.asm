@@ -17,9 +17,9 @@ CatchTutorial::
 	dw .DudeTutorial
 
 .DudeTutorial:
-; Back up your name to your Mom's name.
+; Back up your name to the uncalled "wGreensName"
 	ld hl, wPlayerName
-	ld de, wMomsName
+	ld de, wGreensName ; wMomsName ; -> wBillsName
 	ld bc, NAME_LENGTH
 	call CopyBytes
 ; Copy Dude's name to your name
@@ -46,7 +46,7 @@ CatchTutorial::
 	pop af
 
 	ld [wOptions], a
-	ld hl, wMomsName
+	ld hl, wGreensName ; wMomsName ; -> wBillsName
 	ld de, wPlayerName
 	ld bc, NAME_LENGTH
 	call CopyBytes

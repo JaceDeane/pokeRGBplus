@@ -131,6 +131,7 @@ BillsHouseBillsPCScript:
 	applymovement BILLSHOUSE_BILL1, BillsHouseExitMachineMovement
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_MET_BILL
+	special MetBill ; Changes <BILL> in "SOMEONE's PC" to "BILL's PC"
 	end
 
 .displayBillsHousePokemonList

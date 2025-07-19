@@ -106,6 +106,16 @@ NameRival:
 .DefaultName:
 	db "BLUE@"
 
+MetBill:
+	ld hl, .Bill
+	ld de, wBillsName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+	ret
+
+.Bill:
+	db "BILL@"
+
 NameRater:
 	farcall _NameRater
 	ret

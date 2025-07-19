@@ -2889,7 +2889,7 @@ wPlayerData::
 wPlayerID:: dw
 
 wPlayerName:: ds NAME_LENGTH
-wMomsName::   ds NAME_LENGTH
+wBillsName::  ds NAME_LENGTH
 wRivalName::  ds NAME_LENGTH
 wRedsName::   ds NAME_LENGTH
 wGreensName:: ds NAME_LENGTH

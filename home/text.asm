@@ -214,7 +214,7 @@ ENDM
 	dict "<SCROLL>",  _ContTextNoPause
 	dict "<_CONT>",   _ContText
 	dict "<PARA>",    Paragraph
-	dict "<MOM>",     PrintMomsName
+	dict "<BILL>",    PrintBillsName
 	dict "<PLAYER>",  PrintPlayerName
 	dict "<RIVAL>",   PrintRivalName
 	dict "<ROUTE>",   PlaceJPRoute
@@ -301,7 +301,7 @@ MACRO print_name
 	jp PlaceCommandCharacter
 ENDM
 
-PrintMomsName:   print_name wMomsName
+PrintBillsName:  print_name wBillsName
 PrintPlayerName: print_name wPlayerName
 PrintRivalName:  print_name wRivalName
 PrintRedsName:   print_name wRedsName

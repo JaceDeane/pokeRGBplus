@@ -5,19 +5,25 @@
 ```
 ### MAPS:
 (Only interiors and dungeons left to do)
+- Rock Tunnel
 
+- Pokémon Tower
+
+(Later)
 - Cerulean Cave (1F, B1F, B2F)
 
-- 
+- Power Plant
 
 ### EVENTS:
 
 MAIN:
-- Route 11 -> Gate 1F/2F
+- Route 9
 
-- Vermilion Dock (finish scene event)
+- Route 10 (Rock Tunnel PokeCenter)
 
-- Route 2 Gate with Oak's Aide
+- Rock Tunnel
+
+- Vermilion Dock (finish scene event - OBJ)
 
 OTHER:
 - Include and check all hidden items from R/B exist and are in the right place
@@ -70,6 +76,8 @@ OTHER:
 - Determine proper party lineups for Giovanni's (and the other important trainers') battles; Should Yellow version be prioritised?
 
 - The Route 4 and Route 10 PokéCenters do NOT use a FlyData flag -- Confirmed
+
+- Finish SOMEONE's PC to BILL's PC hardcoded text/calls (instead of using a variable for the name)
 
 ### GRAPHICS:
 

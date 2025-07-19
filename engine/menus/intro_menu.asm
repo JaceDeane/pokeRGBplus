@@ -282,8 +282,8 @@ InitializeNPCNames:
 	ld de, wRivalName
 	call .Copy
 
-	ld hl, .Mom
-	ld de, wMomsName
+	ld hl, .Bill
+	ld de, wBillsName
 	call .Copy
 
 	ld hl, .Red
@@ -301,7 +301,7 @@ InitializeNPCNames:
 .Rival:  db "BLUE@"
 .Red:    db "RED@"
 .Green:  db "GREEN@"
-.Mom:    db "MOM@"
+.Bill:   db "SOMEONE@"
 
 InitializeWorld:
 	call ShrinkPlayer

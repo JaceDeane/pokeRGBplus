@@ -204,7 +204,7 @@ CheckStringForErrors:
 	jr c, .NextChar
 	cp "<ENEMY>" + 1
 	jr c, .Fail
-	cp "<MOM>"
+	cp "<BILL>" ; <MOM>
 	jr c, .NextChar
 
 .Fail:
@@ -251,7 +251,7 @@ CheckStringForErrors_IgnoreTerminator:
 	jr c, .next
 	cp "<ENEMY>" + 1
 	jr c, .end
-	cp "<MOM>"
+	cp "<BILL>" ; <MOM>
 	jr c, .next
 
 .end
