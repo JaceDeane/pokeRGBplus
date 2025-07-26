@@ -30,7 +30,7 @@ CutTreeBlockPointers:
 	db $34, $6f, 0 ; tree
 	db $35, $4c, 0 ; tree
 	db $60, $6e, 0 ; tree
-	db $83, $8a, 0 ; tree
+	; db $83, $8a, 0 ; tree
 	db -1 ; end
 
 .park:
