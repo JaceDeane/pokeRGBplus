@@ -59,17 +59,6 @@ TrainerPicnickerCaitlin:
 	closetext
 	end
 
-; TrainerPicnickerHeidi:
-	; trainer PICNICKER, HEIDI, EVENT_BEAT_PICNICKER_HEIDI, PicnickerHeidiSeenText, PicnickerHeidiBeatenText, 0, .Script
-
-; .Script:
-	; endifjustbattled
-	; opentext
-	; writetext PicnickerHeidiAfterBattleText
-	; waitbutton
-	; closetext
-	; end
-
 TrainerHikerJeremy:
 	trainer HIKER, JEREMY, EVENT_BEAT_HIKER_JEREMY, HikerJeremySeenText, HikerJeremyBeatenText, 0, .Script
 

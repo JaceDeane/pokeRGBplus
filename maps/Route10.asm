@@ -1,33 +1,84 @@
 	object_const_def
-	const ROUTE10SOUTH_POKEFAN_M1
-	const ROUTE10SOUTH_POKEFAN_M2
+	const ROUTE10_SUPER_NERD1
+	const ROUTE10_HIKER1
+	const ROUTE10_SUPER_NERD2
+	const ROUTE10_LASS1
+	const ROUTE10_HIKER2
+	const ROUTE10_LASS2
 
 Route10_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-TrainerHikerJim:
-	;trainer HIKER, JIM, EVENT_BEAT_HIKER_JIM, HikerJimSeenText, HikerJimBeatenText, 0, .Script
+TrainerPokemaniacMark:
+	trainer POKEMANIAC, MARK, EVENT_BEAT_POKEMANIAC_MARK, PokemaniacMarkSeenText, PokemaniacMarkBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerJimAfterBattleText
+	writetext PokemaniacMarkAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanmRobert:
-	;trainer POKEFANM, ROBERT, EVENT_BEAT_POKEFANM_ROBERT, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
+TrainerHikerClark:
+	trainer HIKER, CLARK, EVENT_BEAT_HIKER_CLARK, HikerClarkSeenText, HikerClarkBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanmRobertAfterBattleText
+	writetext HikerClarkAfterBattleText
 	waitbutton
 	closetext
 	end
+
+TrainerPokemaniacHerman:
+	trainer POKEMANIAC, HERMAN, EVENT_BEAT_POKEMANIAC_HERMAN, PokemaniacHermanSeenText, PokemaniacHermanBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokemaniacHermanAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPicnickerHeidi:
+	trainer PICNICKER, HEIDI, EVENT_BEAT_PICNICKER_HEIDI, PicnickerHeidiSeenText, PicnickerHeidiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PicnickerHeidiAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerHikerTrent:
+	trainer HIKER, TRENT, EVENT_BEAT_HIKER_TRENT, HikerTrentSeenText, HikerTrentBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext HikerTrentAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPicnickerCarol:
+	trainer PICNICKER, CAROL, EVENT_BEAT_PICNICKER_CAROL, PicnickerCarolSeenText, PicnickerCarolBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PicnickerCarolAfterBattleText
+	waitbutton
+	closetext
+	end
+
+RockTunnelSign:
+	jumptext RockTunnelSignText
 
 Route10Sign:
 	jumptext Route10SignText
@@ -38,42 +89,112 @@ PowerPlantSign:
 Route10PokecenterSign:
 	jumpstd PokecenterSignScript
 
-PowerPlantSignText:
-	text "KANTO POWER PLANT"
+PokemaniacMarkSeenText:
+	text "Wow, are you a"
+	line "#MANIAC too?"
+
+	para "Want to see my"
+	line "collection?"
 	done
 
-HikerJimSeenText:
-	text "Hahahah!"
+PokemaniacMarkBeatenText:
+	text "Humph."
+	line "I'm not angry!"
 	done
 
-HikerJimBeatenText:
-	text "Hahaha-hachoo!"
+PokemaniacMarkAfterBattleText:
+	text "I have more rare"
+	line "#MON at home!"
 	done
 
-HikerJimAfterBattleText:
-	text "Hay fever is"
-	line "making me sneeze!"
-	cont "Ahahah-CHOO!"
+HikerClarkSeenText: ; May be Hiker Jim in G/S
+	text "Ha-hahah-ah-ha!"
 	done
 
-PokefanmRobertSeenText:
-	text "You like #MON,"
-	line "don't you?"
+HikerClarkBeatenText:
+	text "Ha-haha!"
+	line "Not laughing!"
 
-	para "Me too!"
+	para "Ha-hay fever!"
+	line "Haha-ha-choo!"
 	done
 
-PokefanmRobertBeatenText:
-	text "I'd have to say"
-	line "that's my loss."
+HikerClarkAfterBattleText:
+	text "Haha-ha-choo!"
+	line "Ha-choo!"
+	cont "Snort! Snivel!"
 	done
 
-PokefanmRobertAfterBattleText:
-	text "Look what you did"
-	line "to my #MON…"
+PokemaniacHermanSeenText:
+	text "Hi kid, want to"
+	line "see my #MON?"
+	done
 
-	para "I won't forget"
-	line "this…"
+PokemaniacHermanBeatenText:
+	text "Oh no!"
+	line "My #MON!"
+	done
+
+PokemaniacHermanAfterBattleText:
+	text "I don't like you"
+	line "for beating me!"
+	done
+
+PicnickerHeidiSeenText:
+	text "I've been to a"
+	line "#MON GYM a few"
+
+	para "times, but I've"
+	line "lost each time."
+	done
+
+PicnickerHeidiBeatenText:
+	text "Ohh!"
+	line "I blew it again!"
+	done
+
+PicnickerHeidiAfterBattleText:
+	text "I've noticed some"
+	line "#MANIACS prowl-"
+	cont "ing around."
+	done
+
+HikerTrentSeenText:
+	text "Ah! This mountain"
+	line "air is delicious!"
+	done
+
+HikerTrentBeatenText:
+	text "That cleared my"
+	line "head!"
+	done
+
+HikerTrentAfterBattleText:
+	text "I feel bloated on"
+	line "mountain air!"
+	done
+
+PicnickerCarolSeenText:
+	text "I'm feeling a bit"
+	line "faint from this"
+	cont "tough hike."
+	done
+
+PicnickerCarolBeatenText:
+	text "I'm not up to it!"
+	done
+
+PicnickerCarolAfterBattleText:
+	text "The #MON here"
+	line "are so chunky!"
+
+	para "There should be a"
+	line "pink one, with a"
+	cont "floral pattern!"
+	done
+
+RockTunnelSignText:
+	text "ROCK TUNNEL"
 	done
 
 Route10SignText:
@@ -81,6 +202,10 @@ Route10SignText:
 
 	para "CERULEAN CITY -"
 	line "LAVENDER TOWN"
+	done
+
+PowerPlantSignText:
+	text "POWER PLANT"
 	done
 
 Route10_MapEvents:
@@ -95,10 +220,15 @@ Route10_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  5, 41, BGEVENT_READ, PowerPlantSign
+	bg_event  7, 19, BGEVENT_READ, RockTunnelSign
 	bg_event 12, 19, BGEVENT_READ, Route10PokecenterSign
 	bg_event  9, 55, BGEVENT_READ, Route10Sign
+	bg_event  5, 41, BGEVENT_READ, PowerPlantSign
 
 	def_object_events
-	object_event 17, 21, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerJim, -1
-	object_event  8, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmRobert, -1
+	object_event 10, 44, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokemaniacMark, -1 ;(1)
+	object_event  3, 57, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerClark, -1 ;(7)
+	object_event 14, 64, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokemaniacHerman, -1 ;(2)
+	object_event  7, 25, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerHeidi, -1 ;(7)
+	object_event  3, 61, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerTrent, -1 ;(8)
+	object_event  7, 54, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerCarol, -1 ;(8)
