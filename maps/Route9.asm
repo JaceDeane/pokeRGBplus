@@ -70,13 +70,13 @@ TrainerPicnickerCaitlin:
 	; closetext
 	; end
 
-TrainerHikerEric:
-	trainer HIKER, ERIC, EVENT_BEAT_HIKER_ERIC, HikerEricSeenText, HikerEricBeatenText, 0, .Script
+TrainerHikerJeremy:
+	trainer HIKER, JEREMY, EVENT_BEAT_HIKER_JEREMY, HikerJeremySeenText, HikerJeremyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerEricAfterBattleText
+	writetext HikerJeremyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -196,14 +196,14 @@ PicnickerCaitlinAfterBattleText:
 	cont "luck to you!"
 	done
 
-HikerEricSeenText:
+HikerJeremySeenText:
 	text "Bwahaha!"
 
 	para "Great! I was"
 	line "bored, eh!"
 	done
 
-HikerEricBeatenText:
+HikerJeremyBeatenText:
 	text "Keep it coming,"
 	line "eh!"
 
@@ -211,7 +211,7 @@ HikerEricBeatenText:
 	line "of #MON!"
 	done
 
-HikerEricAfterBattleText:
+HikerJeremyAfterBattleText:
 	text "You sure had guts"
 	line "standing up to me"
 	cont "there, eh?"
@@ -306,12 +306,12 @@ Route9_MapEvents:
 
 	def_object_events
 	object_event 13, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerAlicia, -1 ;(5)
-	object_event 24,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperChris, -1;(7) FR/LG "Chris" (8)
-	object_event 31,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperDrew, -1;(8) FR/LG "Drew" (9)
+	object_event 24,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperChris, -1 ;(7) FR/LG "Chris" (8)
+	object_event 31,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperDrew, -1 ;(8) FR/LG "Drew" (9)
 	object_event 48,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerCaitlin, -1 ;(6) "Heidi" in G/S
-	object_event 16, 15, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerEric, -1;(11) FR/LG "Jeremy" chkT
-	object_event 43,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBrice, -1 ;(6)
+	object_event 16, 15, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerJeremy, -1 ;(11) Same team as "Eric" in R/B
+	object_event 43,  3, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBrice, -1 ;(6)
 	object_event 22,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherBrent, -1 ;13
-	object_event 45, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAlan, -1 ;(5)
+	object_event 45, 15, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAlan, -1 ;(5)
 	object_event 40,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherConner, -1 ;(14)
 	object_event 10, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route9TMTeleport, EVENT_GOT_TM30_TELEPORT

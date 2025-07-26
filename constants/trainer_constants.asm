@@ -206,7 +206,7 @@ DEF KRIS EQU __trainer_class__
 	const TYLERZ ; unused
 	const SEAN
 	const KEVIN
-	const STEVE ; unused
+	const STEVEZ ; unused
 	const ALLENZ
 	const DARIN
 
@@ -252,22 +252,14 @@ DEF KRIS EQU __trainer_class__
 	const VALERIEZ
 	const OLIVIA
 
-	trainerclass POKEMANIAC ; 1e
-	const LARRY
-	const ANDREWZ
-	const CALVINZ
-	const SHANEZ
-	const BENZ
-	const BRENT1
-	const RON
-	const ETHANZ
-	const BRENT2
-	const BRENT3
-	const ISSAC
-	const DONALD
-	const ZACH
-	const BRENT4
-	const MILLER
+	trainerclass POKEMANIAC ; 1e -- Updated to R/B, using FR/LG names
+	const MARK
+	const HERMAN
+	const COOPER
+	const STEVE
+	const WINSTON
+	const DAWSON
+	const ASHTON
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1
@@ -453,6 +445,7 @@ DEF KRIS EQU __trainer_class__
 	const DUDLEY
 	const ALLEN
 	const ERIC
+	const JEREMY ; FR/LG splits ERIC and JEREMY despite same "Trainer" party in R/B
 	const LENNY
 	const OLIVER
 	const LUCAS
@@ -514,11 +507,11 @@ DEF KRIS EQU __trainer_class__
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
 	const FRANKLINZ
-	const HERMAN
+	const HERMANZ
 	const FIDEL
 	const GREGZ
 	const NORMAN
-	const MARK
+	const MARKZ
 	const PHILZ
 	const RICHARDZ
 	const GILBERT
@@ -603,7 +596,7 @@ DEF KRIS EQU __trainer_class__
 	const CARTER
 	const TREVORZ
 	const BRANDON
-	const JEREMY
+	const JEREMYZ
 	const COLIN
 	const DEREK2 ; unused
 	const DEREK3 ; unused
