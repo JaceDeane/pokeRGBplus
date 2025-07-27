@@ -32,6 +32,18 @@ CinnabarPokecenter1FFisherText:
 	cont "erupted."
 	done
 
+CinnabarPokecenter1FSittingGuyText:
+	text "#MON can still"
+	line "learn techniques"
+
+	para "after canceling"
+	line "evolution."
+
+	para "Evolution can wait"
+	line "until new moves"
+	cont "have been learned."
+	done
+
 CinnabarPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 

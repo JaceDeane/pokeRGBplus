@@ -86,6 +86,15 @@ FuchsiaPokecenter1FJanineImpersonatorText2:
 	line "like her now!"
 	done
 
+FuchsiaCityPokecenter1FSittingGuyText:
+	text "If you're studying "
+	line "#MON, visit"
+	cont "the SAFARI ZONE."
+
+	para "It has all sorts"
+	line "of rare #MON."
+	done
+
 FuchsiaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 

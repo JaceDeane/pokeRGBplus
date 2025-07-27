@@ -109,6 +109,20 @@ SaffronPokecenter1FYoungsterText:
 	line "SAFFRON."
 	done
 
+SaffronCityPokecenter1FSittingGuyText1:
+	text "It would be great"
+	line "if the ELITE FOUR"
+	cont "came and stomped"
+	cont "TEAM ROCKET!"
+	done
+
+SaffronCityPokecenter1FSittingGuyText2:
+	text "TEAM ROCKET took"
+	line "off! We can go"
+	cont "out safely again!"
+	cont "That's great!"
+	done
+
 SaffronPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
