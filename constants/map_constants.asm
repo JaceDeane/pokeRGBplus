@@ -198,7 +198,7 @@ ENDM
 	map_const CERULEAN_POKECENTER_1F,                       7,  4 ;  4
 	map_const CERULEAN_GYM,                                 5,  7 ;  5
 	map_const CERULEAN_MART,                                4,  4 ;  6
-	map_const ROUTE_10_POKECENTER_1F,                       7,  4 ;  7
+	map_const ROCK_TUNNEL_POKECENTER,                       7,  4 ;  7
 	map_const POWER_PLANT,                                 10,  9 ;  8
 	map_const BILLS_HOUSE,                                  4,  4 ;  9
 	map_const ROUTE_4,                                     45,  9 ; 10

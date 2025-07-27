@@ -419,7 +419,7 @@ INCLUDE "maps/CeruleanTradeHouse.asm"
 INCLUDE "maps/CeruleanPokecenter1F.asm"
 INCLUDE "maps/CeruleanGym.asm"
 INCLUDE "maps/CeruleanMart.asm"
-INCLUDE "maps/Route10Pokecenter1F.asm"
+INCLUDE "maps/RockTunnelPokecenter.asm"
 INCLUDE "maps/PowerPlant.asm"
 INCLUDE "maps/BillsHouse.asm"
 

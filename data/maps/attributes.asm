@@ -511,7 +511,7 @@ ENDM
 	map_attributes CeruleanPokecenter1F, CERULEAN_POKECENTER_1F, $00, 0
 	map_attributes CeruleanGym, CERULEAN_GYM, $00, 0
 	map_attributes CeruleanMart, CERULEAN_MART, $00, 0
-	map_attributes Route10Pokecenter1F, ROUTE_10_POKECENTER_1F, $00, 0
+	map_attributes RockTunnelPokecenter, ROCK_TUNNEL_POKECENTER, $00, 0
 	map_attributes PowerPlant, POWER_PLANT, $00, 0
 	map_attributes BillsHouse, BILLS_HOUSE, $00, 0
 	map_attributes AzaleaPokecenter1F, AZALEA_POKECENTER_1F, $00, 0

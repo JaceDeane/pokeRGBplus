@@ -467,7 +467,7 @@ Route20_Blocks:
 BetaPokecenter_Blocks:
 CinnabarPokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
-Route10Pokecenter1F_Blocks:
+RockTunnelPokecenter_Blocks:
 VermilionPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 FuchsiaPokecenter1F_Blocks:

@@ -87,7 +87,7 @@ LavenderGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_HIKER
 	db SPRITE_SAGE ; GAMBLER
-	db SPRITE_MONSTER ; Used for...?
+	db SPRITE_LASS ; MONSTER - Used for...?
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_OFFICER ; GUARD ; Used for...?
@@ -168,38 +168,38 @@ SaffronGroupSprites:
 	db SPRITE_SILPH_WORKER_M
 	db 0 ; end
 
-; Route13 & Route14 -- south Route12, west Route11 & Route15
-; SPRITESET_SILENCE_BRIDGE
-	db SPRITE_BIKER
-	db SPRITE_SUPER_NERD
-	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_BEAUTY
-	db SPRITE_FISHER
-	db SPRITE_ROCKER
-	db SPRITE_MONSTER
-	; 9 of max 9 walking sprites
-	db SPRITE_POKE_BALL
-	db SPRITE_SNORLAX
-	db 0 ; end
+; ; Route13 & Route14 -- south Route12, west Route11 & Route15
+; ; SPRITESET_SILENCE_BRIDGE
+	; db SPRITE_BIKER
+	; db SPRITE_SUPER_NERD
+	; db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	; db SPRITE_COOLTRAINER_F
+	; db SPRITE_COOLTRAINER_M
+	; db SPRITE_BEAUTY
+	; db SPRITE_FISHER
+	; db SPRITE_ROCKER
+	; db SPRITE_MONSTER
+	; ; 9 of max 9 walking sprites
+	; db SPRITE_POKE_BALL
+	; db SPRITE_SNORLAX
+	; db 0 ; end
 
-; Route17 -- east Route16 & Route18
-; SPRITESET_CYCLING_ROAD
-	db SPRITE_BIKER
-	db SPRITE_COOLTRAINER_M
-	; db SPRITE_NONE
-	db SPRITE_FISHER
-	db SPRITE_ROCKER
-	db SPRITE_HIKER
-	db SPRITE_SAGE ; GAMBLER
-	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
-	db SPRITE_SUPER_NERD
-	; 8 of max 9 walking sprites
-	db SPRITE_POKE_BALL
-	db SPRITE_SNORLAX
-	db SPRITE_SILPH_WORKER_M
-	db 0 ; end
+; ; Route17 -- east Route16 & Route18
+; ; SPRITESET_CYCLING_ROAD
+	; db SPRITE_BIKER
+	; db SPRITE_COOLTRAINER_M
+	; ; db SPRITE_NONE
+	; db SPRITE_FISHER
+	; db SPRITE_ROCKER
+	; db SPRITE_HIKER
+	; db SPRITE_SAGE ; GAMBLER
+	; db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	; db SPRITE_SUPER_NERD
+	; ; 8 of max 9 walking sprites
+	; db SPRITE_POKE_BALL
+	; db SPRITE_SNORLAX
+	; db SPRITE_SILPH_WORKER_M
+	; db 0 ; end
 
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity
