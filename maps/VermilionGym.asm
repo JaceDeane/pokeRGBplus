@@ -43,12 +43,12 @@ VermilionGymTrashCanScript:
 
 .open_lock
 	opentext
-	writetext VermilionGymFoundSwitchText
-	playsound SFX_PUSH_BUTTON
-	promptbutton
 	checkevent EVENT_VERMILION_GYM_SWITCH_1
 	iftrue .second_switch
 	writetext VermilionGymFoundFirstSwitchText
+	playsound SFX_PUSH_BUTTON
+	promptbutton
+	writetext VermilionGymFirstLockOpenedText
 	playsound SFX_ENTER_DOOR
 	setevent EVENT_VERMILION_GYM_SWITCH_1
 	waitbutton
@@ -57,6 +57,12 @@ VermilionGymTrashCanScript:
 
 .second_switch
 	writetext VermilionGymFoundSecondSwitchText
+	playsound SFX_PUSH_BUTTON
+	promptbutton
+	writetext VermilionGymSecondLockOpenedText
+	playsound SFX_ENTER_DOOR
+	promptbutton
+	writetext VermilionGymMotorizedDoorOpenedText
 	waitbutton
 	playsound SFX_ENTER_DOOR
 	setevent EVENT_VERMILION_GYM_SWITCH_2
@@ -67,8 +73,6 @@ VermilionGymTrashCanScript:
 
 .reset_switches
 	opentext
-	writetext VermilionGymTrashCanText
-	promptbutton
 	writetext VermilionGymResetSwitchesText
 	playsound SFX_WRONG
 	waitbutton
@@ -189,7 +193,8 @@ CheckVermilionGymTrashCan:
 VermilionGymSurgeScript:
 	faceplayer
 	opentext
-	checkflag EVENT_BEAT_LTSURGE ; ENGINE_THUNDERBADGE
+	; checkflag ENGINE_THUNDERBADGE
+	checkevent EVENT_BEAT_LTSURGE
 	iftrue .FightDone
 	writetext LtSurgeIntroText
 	waitbutton
@@ -527,35 +532,48 @@ VermilionGymGuideWinText:
 	done
 
 VermilionGymTrashCanText:
-	text "Nope! Nothing here"
-	line "but trash."
+	text "Nope, there's"
+	line "only trash here."
 	done
 
-VermilionGymFoundSwitchText:
+VermilionGymFoundFirstSwitchText:
 	text "Hey!"
 
 	para "There's a switch"
 	line "under the trash!"
 
-	para "Better press it."
+	para "Better press it." ; "Turn it on!" (R/B)
 	done
 
-VermilionGymFoundFirstSwitchText:
-	text "The first electric"
+VermilionGymFirstLockOpenedText:
+	text "The 1st electric"
 	line "lock opened!"
 	done
 
 VermilionGymFoundSecondSwitchText:
-	text "The second"
-	line "electric lock"
-	cont "opened!"
+	text "Hey!"
 
-	para "The path ahead is"
-	line "clear!"
+	para "There's another"
+	line "switch under the"
+	cont "trash!"
+
+	para "Better press it." ; "Turn it on!" (R/B)
+	done
+
+VermilionGymSecondLockOpenedText:
+	text "The 2nd electric"
+	line "lock opened!"
+
+VermilionGymMotorizedDoorOpenedText:
+	text "The motorized door"
+	line "opened!"
 	done
 
 VermilionGymResetSwitchesText:
-	text "Hey! The electric"
+	text "Nope! There's"
+	line "only trash here."
+	
+	para "Hey! The electric"
 	line "locks were reset!"
 	done
 
