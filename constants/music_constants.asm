@@ -10,7 +10,7 @@
 	const MUSIC_KANTO_GYM_LEADER_BATTLE      ; 06
 	const MUSIC_KANTO_TRAINER_BATTLE         ; 07
 	const MUSIC_KANTO_WILD_BATTLE            ; 08
-	const MUSIC_POKEMON_CENTER               ; 09
+	const MUSIC_POKEMON_CENTER               ; 09 ; RGB+
 	const MUSIC_HIKER_ENCOUNTER              ; 0a
 	const MUSIC_LASS_ENCOUNTER               ; 0b
 	const MUSIC_OFFICER_ENCOUNTER            ; 0c

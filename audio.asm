@@ -35,7 +35,7 @@ INCLUDE "audio/music/route12.asm"
 INCLUDE "audio/music/kantogymbattle.asm"
 INCLUDE "audio/music/kantotrainerbattle.asm"
 INCLUDE "audio/music/kantowildbattle.asm"
-INCLUDE "audio/music/pokemoncenter.asm"
+INCLUDE "audio/music/pokemoncenter_rgbplus.asm" ; RGB+
 INCLUDE "audio/music/looklass.asm"
 INCLUDE "audio/music/lookofficer.asm"
 INCLUDE "audio/music/route2.asm"
@@ -136,7 +136,7 @@ INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
-INCLUDE "audio/music/lookrival_blue.asm" ; RGB+ New
+INCLUDE "audio/music/lookrival_blue.asm" ; RGB+ (New)
 
 
 SECTION "Songs 6", ROMX

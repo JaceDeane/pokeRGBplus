@@ -12,7 +12,7 @@ Music:
 	dba Music_KantoGymBattle
 	dba Music_KantoTrainerBattle
 	dba Music_KantoWildBattle
-	dba Music_PokemonCenter
+	dba Music_PokemonCenter_RGBplus ; RGB+
 	dba Music_LookHiker
 	dba Music_LookLass
 	dba Music_LookOfficer
@@ -35,7 +35,7 @@ Music:
 	dba Music_OaksLab ; RBY Oaks Lab ;ProfOaksPokemonTalk
 	dba Music_ProfOak
 	dba Music_LookRival ; Unused in RGB+
-	dba Music_LookRival_Blue ; RGB+ Look! Rival
+	dba Music_LookRival_Blue ; RGB+ - Look! Rival
 	dba Music_AfterTheRivalFight ; TODO - Remove
 	dba Music_Surfing ;Surf ; RBY Version
 	dba Music_Evolution
@@ -108,6 +108,7 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
+; from Gen I
 	dba Music_MeetMaleTrainer
 	dba Music_MeetFemaleTrainer
 	dba Music_MeetEvilTrainer
