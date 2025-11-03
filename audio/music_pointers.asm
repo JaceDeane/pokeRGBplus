@@ -17,7 +17,7 @@ Music:
 	dba Music_LookLass
 	dba Music_LookOfficer
 	dba Music_HealPokemon
-	dba Music_LavenderTown
+	dba Music_LavenderTown_RGBplus ; RGB+ (New)
 	dba Music_Route2
 	dba Music_MtMoon
 	dba Music_ShowMeAround

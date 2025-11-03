@@ -57,7 +57,7 @@ INCLUDE "audio/music/route26.asm"
 INCLUDE "audio/music/ecruteakcity.asm"
 INCLUDE "audio/music/lakeofragerocketradio.asm"
 INCLUDE "audio/music/magnettrain.asm"
-INCLUDE "audio/music/lavendertown.asm"
+INCLUDE "audio/music/lavendertown_rgbplus.asm" ; RGB+ (New)
 INCLUDE "audio/music/dancinghall.asm"
 INCLUDE "audio/music/contestresults.asm"
 INCLUDE "audio/music/route30.asm"

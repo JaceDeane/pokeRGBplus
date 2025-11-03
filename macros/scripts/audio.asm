@@ -319,3 +319,21 @@ ENDM
 MACRO sound_ret
 	db sound_ret_cmd
 ENDM
+
+; custom commands:
+
+MACRO  load_wave
+	db $f3
+	if _NARG > 16
+		REPT 16
+		dn \1, \2
+		SHIFT
+		SHIFT
+		ENDR
+	else
+		REPT 16
+		db \1
+		SHIFT
+		ENDR
+	endc
+ENDM
