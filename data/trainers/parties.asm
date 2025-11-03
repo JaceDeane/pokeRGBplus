@@ -2182,7 +2182,7 @@ HikerGroup: ; Updated to R/B, using FR/LG names
 	db 20, ONIX
 	db -1 ; end
 
-	; HIKER (12)/(11 - R/B)
+	; HIKER (13)/(12 - R/B)
 	db "LENNY@", TRAINERTYPE_NORMAL
 	db 19, GEODUDE
 	db 19, MACHOP
@@ -2190,14 +2190,14 @@ HikerGroup: ; Updated to R/B, using FR/LG names
 	db 19, GEODUDE
 	db -1 ; end
 
-	; HIKER (13)/(12 - R/B)
+	; HIKER (14)/(13 - R/B)
 	db "OLIVER@", TRAINERTYPE_NORMAL
 	db 20, ONIX
 	db 20, ONIX
 	db 20, GEODUDE
 	db -1 ; end
 
-	; HIKER (14)/(13 - R/B)
+	; HIKER (15)/(14 - R/B)
 	db "LUCAS@", TRAINERTYPE_NORMAL
 	db 21, GEODUDE
 	db 21, GRAVELER
