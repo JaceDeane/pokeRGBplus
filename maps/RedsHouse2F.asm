@@ -80,7 +80,10 @@ RedsHouse2FPCScript:
 	giveitem HM_STRENGTH ; debug
 	giveitem HM_FLASH ; debug
 	; warp NONE, 0, 0
-	warp VERMILION_CITY, 18, 29
+	; warp VERMILION_GYM,  4, 17
+	; warp VERMILION_CITY, 18, 29 ; SS Anne Testing
+	; giveitem S_S_TICKET ; SS Anne Testing
+	warp ROUTE_10, 11, 20
 	end
 
 RedsHouse2F_MapEvents:

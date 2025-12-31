@@ -1,5 +1,5 @@
 MACRO decoration
-	; type, name, action, event flag, tile/sprite
+	; type, name, action, event flag, tile/sprite/block starting address
 	db \1, \2, \3
 	dw \4
 	db \5
