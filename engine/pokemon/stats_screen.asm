@@ -500,9 +500,9 @@ StatsScreen_PlaceVerticalDivider: ; unreferenced
 	ret
 
 StatsScreen_PlaceHorizontalDivider:
-	hlcoord SCREEN_WIDTH-1, 1
+	hlcoord SCREEN_WIDTH-1, 5; 1
 	ld bc, SCREEN_WIDTH
-	ld d, 6
+	ld d, 2; 6
 .loop
 	ld a, $78 ; vertical arrow line
 	ld [hl], a

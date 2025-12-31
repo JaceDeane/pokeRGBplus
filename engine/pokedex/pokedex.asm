@@ -15,7 +15,7 @@
 	const DEXSTATE_UPDATE_UNOWN_MODE
 	const DEXSTATE_EXIT
 
-DEF POKEDEX_SCX EQU 5
+DEF POKEDEX_SCX EQU 0;5
 EXPORT POKEDEX_SCX
 
 Pokedex:
@@ -1101,34 +1101,34 @@ Pokedex_DrawMainScreenBG:
 	; hlcoord 0, 17
 	; ld de, String_START_SEARCH
 	; call Pokedex_PlaceString
-	ld a, $32
+	; ld a, $32 ; bg fill tile
+	; hlcoord 0, 0
+	; ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	; call ByteFill
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call ByteFill
-	hlcoord 0, 0
-	lb bc, 7, 7
+	lb bc, 16, 18 ;7, 7
 	call Pokedex_PlaceBorder
-	hlcoord 0, 9
-	lb bc, 6, 7
-	call Pokedex_PlaceBorder
-	hlcoord 1, 11
+	; hlcoord 0, 9
+	; lb bc, 6, 7
+	; call Pokedex_PlaceBorder
+	hlcoord 15, 2 ;1, 11
 	ld de, String_SEEN
 	call Pokedex_PlaceString
 	ld hl, wPokedexSeen
 	ld b, wEndPokedexSeen - wPokedexSeen
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 5, 12
+	hlcoord 15, 3;5, 12
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 1, 14
+	hlcoord 15, 5 ;1, 14
 	ld de, String_OWN
 	call Pokedex_PlaceString
 	ld hl, wPokedexCaught
 	ld b, wEndPokedexCaught - wPokedexCaught
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 5, 15
+	hlcoord 15, 6;5, 15
 	lb bc, 1, 3
 	call PrintNum
 	; hlcoord 1, 17
@@ -1166,42 +1166,33 @@ String_START_SEARCH:
 Pokedex_DrawDexEntryScreenBG:
 	call Pokedex_FillBackgroundColor2
 	hlcoord 0, 0
-	lb bc, 15, 18
+	lb bc, 16, 18
 	call Pokedex_PlaceBorder
-	hlcoord 19, 0
-	ld [hl], $34
-	hlcoord 19, 1
-	ld a, " "
-	ld b, 15
-	call Pokedex_FillColumn
-	ld [hl], $39
-	hlcoord 1, 10
-	ld bc, 19
-	ld a, $61
-	call ByteFill
-	hlcoord 1, 17
-	ld bc, 18
-	ld a, " "
-	call ByteFill
-	hlcoord 9, 7
+	hlcoord 0, 9
+	ld de, .DividerLine
+	call Pokedex_PlaceString
+	hlcoord 9, 6
 	ld de, .Height
 	call Pokedex_PlaceString
-	hlcoord 9, 9
+	hlcoord 9, 8
 	ld de, .Weight
 	call Pokedex_PlaceString
-	hlcoord 0, 17
-	ld de, .MenuItems
-	call Pokedex_PlaceString
+	; hlcoord 0, 17
+	; ld de, .MenuItems
+	; call Pokedex_PlaceString
 	call Pokedex_PlaceFrontpicTopLeftCorner
 	ret
 
 .Number: ; unreferenced
 	db $5c, $5d, -1 ; No.
+.DividerLine:
+	db $6b, $4f, $61, $4f, $61, $4f, $61, $4f, $61, $61
+	db $61, $61, $4f, $61, $4f, $61, $4f, $61, $4f, $6c, -1
 .Height:
 	db "HT  ?", $5e, "??", $5f, -1 ; HT  ?'??"
 .Weight:
 	db "WT   ???lb", -1
-.MenuItems:
+.MenuItems: ; now unreferenced
 	db $3b, " PAGE AREA CRY PRNT", -1
 
 Pokedex_DrawOptionScreenBG:

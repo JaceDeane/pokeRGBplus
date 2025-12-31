@@ -24,10 +24,10 @@ LoadQuestionMarkPic:
 INCBIN "gfx/pokedex/question_mark.2bpp.lz"
 
 DrawPokedexListWindow:
-	ld a, $32
-	hlcoord 0, 17
-	ld bc, 12
-	call ByteFill
+	; ld a, $32 ; red bg tile
+	; hlcoord 0, 17
+	; ld bc, 12
+	; call ByteFill
 	hlcoord 0, 1
 	lb bc, 15, 11
 	call ClearBox
@@ -39,33 +39,34 @@ DrawPokedexListWindow:
 	hlcoord 0, 16
 	ld bc, 11
 	call ByteFill
-	hlcoord 5, 0
-	ld [hl], $3f
-	hlcoord 5, 16
-	ld [hl], $40
-	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
-	jr z, .OldMode
-; scroll bar
-	hlcoord 11, 0
-	ld [hl], $50
-	ld a, $51
-	hlcoord 11, 1
-	ld b, SCREEN_HEIGHT - 3
-	call Pokedex_FillColumn2
-	ld [hl], $52
-	jr .Done
+	; hlcoord 5, 0
+	; ld [hl], $3f
+	; hlcoord 5, 16
+	; ld [hl], $40
+; Don't need to check for a scroll bar
+	; ld a, [wCurDexMode]
+	; cp DEXMODE_OLD
+	; jr z, .OldMode
+; ; scroll bar
+	; hlcoord 11, 0
+	; ld [hl], $50
+	; ld a, $51
+	; hlcoord 11, 1
+	; ld b, SCREEN_HEIGHT - 3
+	; call Pokedex_FillColumn2
+	; ld [hl], $52
+	; jr .Done
 
-.OldMode:
-; no scroll bar
-	hlcoord 11, 0
-	ld [hl], $66
-	ld a, $67
-	hlcoord 11, 1
-	ld b, SCREEN_HEIGHT - 3
-	call Pokedex_FillColumn2
-	ld [hl], $68
-.Done:
+; .OldMode:
+; ; no scroll bar
+	; hlcoord 11, 0
+	; ld [hl], $66
+	; ld a, $67
+	; hlcoord 11, 1
+	; ld b, SCREEN_HEIGHT - 3
+	; call Pokedex_FillColumn2
+	; ld [hl], $68
+; .Done:
 	ret
 
 DrawPokedexSearchResultsWindow:
@@ -129,18 +130,18 @@ DrawDexEntryScreenRightEdge:
 	ldh [hBGMapAddress], a
 	ld a, h
 	ldh [hBGMapAddress + 1], a
-	hlcoord 19, 0
-	ld [hl], $35 ; $66
-	hlcoord 19, 1
-	ld a, $37 ; $67
-	ld b, 15
-	call Pokedex_FillColumn2
-	ld [hl], $3a ; $68
-	hlcoord 19, 17
-	ld [hl], $3c
+	; hlcoord 18, 0
+	; ld [hl], $35 ; $66
+	; hlcoord 18, 1
+	; ld a, $37 ; $67
+	; ld b, 15
+	; call Pokedex_FillColumn2
+	; ld [hl], $3a ; $68
+	; hlcoord 19, 17
+	; ld [hl], $3c
 	xor a
 	ld b, SCREEN_HEIGHT
-	hlcoord 19, 0, wAttrmap
+	hlcoord 18, 0, wAttrmap
 	call Pokedex_FillColumn2
 	call WaitBGMap2
 	pop hl
