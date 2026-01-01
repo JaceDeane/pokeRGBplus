@@ -28,17 +28,17 @@ DrawPokedexListWindow:
 	; hlcoord 0, 17
 	; ld bc, 12
 	; call ByteFill
-	hlcoord 0, 1
-	lb bc, 15, 11
+	hlcoord 1, 2
+	lb bc, 15, 13
 	call ClearBox
-	ld a, $34
-	hlcoord 0, 0
-	ld bc, 11
-	call ByteFill
-	ld a, $39
-	hlcoord 0, 16
-	ld bc, 11
-	call ByteFill
+	; ld a, $34
+	; hlcoord 0, 0
+	; ld bc, 11
+	; call ByteFill
+	; ld a, $39
+	; hlcoord 0, 16
+	; ld bc, 11
+	; call ByteFill
 	; hlcoord 5, 0
 	; ld [hl], $3f
 	; hlcoord 5, 16
