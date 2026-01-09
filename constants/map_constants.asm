@@ -95,12 +95,12 @@ ENDM
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
 	map_const SLOWPOKE_WELL_B1F,                           10,  9 ; 40
 	map_const SLOWPOKE_WELL_B2F,                           10,  9 ; 41
-	map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ; 42
-	map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ; 43
-	map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ; 44
-	map_const OLIVINE_LIGHTHOUSE_4F,                       10,  9 ; 45
-	map_const OLIVINE_LIGHTHOUSE_5F,                       10,  9 ; 46
-	map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ; 47
+	; map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ; 42
+	; map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ; 43
+	; map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ; 44
+	; map_const OLIVINE_LIGHTHOUSE_4F,                       10,  9 ; 45
+	; map_const OLIVINE_LIGHTHOUSE_5F,                       10,  9 ; 46
+	; map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ; 47
 	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
 	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ; 49
 	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ; 50
@@ -151,6 +151,13 @@ ENDM
 	map_const SAFARI_ZONE_BETA,                            10, 18 ; 95
 	map_const VICTORY_ROAD,                                10, 36 ; 96
 	map_const VIRIDIAN_FOREST,                             17, 28 ; 97
+	map_const POKEMON_TOWER_1F,                            10,  9 ; 98
+	map_const POKEMON_TOWER_2F,                            10,  9 ; 99
+	map_const POKEMON_TOWER_3F,                            10,  9 ; 100
+	map_const POKEMON_TOWER_4F,                            10,  9 ; 101
+	map_const POKEMON_TOWER_5F,                            10,  9 ; 102
+	map_const POKEMON_TOWER_6F,                            10,  9 ; 103
+	map_const POKEMON_TOWER_7F,                            10,  9 ; 104
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

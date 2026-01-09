@@ -119,6 +119,7 @@
 	const MUSIC_CERULEAN_CITY                ; R/B
 	const MUSIC_ROUTE_24                     ; R/B
 	const MUSIC_SS_ANNE                      ; R/B
+	const MUSIC_POKEMON_TOWER                ; R/B
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

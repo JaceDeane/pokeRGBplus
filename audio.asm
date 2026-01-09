@@ -57,7 +57,7 @@ INCLUDE "audio/music/route26.asm"
 INCLUDE "audio/music/ecruteakcity.asm"
 INCLUDE "audio/music/lakeofragerocketradio.asm"
 INCLUDE "audio/music/magnettrain.asm"
-INCLUDE "audio/music/lavendertown.asm"
+INCLUDE "audio/music/rby/lavendertown.asm" ; RBY Version
 INCLUDE "audio/music/dancinghall.asm"
 INCLUDE "audio/music/contestresults.asm"
 INCLUDE "audio/music/route30.asm"
@@ -158,7 +158,7 @@ INCLUDE "audio/music/rby/titlescreen.asm" ; RBY Version
 INCLUDE "audio/music/rby/surfing.asm" ; RBY Version
 INCLUDE "audio/music/rby/bikeriding.asm" ; RBY Version
 INCLUDE "audio/music/rby/ssanne.asm" ; RBY Version
-
+INCLUDE "audio/music/rby/pokemontower.asm" ; RBY Version
 
 
 SECTION "Extra Songs 1", ROMX

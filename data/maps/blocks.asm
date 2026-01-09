@@ -222,23 +222,23 @@ BlackthornGym1F_Blocks:
 BlackthornGym2F_Blocks:
 	INCBIN "maps/BlackthornGym2F.blk"
 
-OlivineLighthouse1F_Blocks:
-	INCBIN "maps/OlivineLighthouse1F.blk"
+; OlivineLighthouse1F_Blocks:
+	; INCBIN "maps/OlivineLighthouse1F.blk"
 
-OlivineLighthouse2F_Blocks:
-	INCBIN "maps/OlivineLighthouse2F.blk"
+; OlivineLighthouse2F_Blocks:
+	; INCBIN "maps/OlivineLighthouse2F.blk"
 
-OlivineLighthouse3F_Blocks:
-	INCBIN "maps/OlivineLighthouse3F.blk"
+; OlivineLighthouse3F_Blocks:
+	; INCBIN "maps/OlivineLighthouse3F.blk"
 
-OlivineLighthouse4F_Blocks:
-	INCBIN "maps/OlivineLighthouse4F.blk"
+; OlivineLighthouse4F_Blocks:
+	; INCBIN "maps/OlivineLighthouse4F.blk"
 
-OlivineLighthouse5F_Blocks:
-	INCBIN "maps/OlivineLighthouse5F.blk"
+; OlivineLighthouse5F_Blocks:
+	; INCBIN "maps/OlivineLighthouse5F.blk"
 
-OlivineLighthouse6F_Blocks:
-	INCBIN "maps/OlivineLighthouse6F.blk"
+; OlivineLighthouse6F_Blocks:
+	; INCBIN "maps/OlivineLighthouse6F.blk"
 
 
 SECTION "Johto Map Blocks 3", ROMX
@@ -1035,5 +1035,26 @@ INCBIN "maps/SSAnne1FCabins.blk"
 SSAnne2FCabins_Blocks:
 SSAnneB1FCabins_Blocks:
 INCBIN "maps/SSAnne2FCabins.blk"
+
+PokemonTower1F_Blocks:
+INCBIN "maps/PokemonTower1F.blk"
+
+PokemonTower2F_Blocks:
+INCBIN "maps/PokemonTower2F.blk"
+
+PokemonTower3F_Blocks:
+INCBIN "maps/PokemonTower3F.blk"
+
+PokemonTower4F_Blocks:
+INCBIN "maps/PokemonTower4F.blk"
+
+PokemonTower5F_Blocks:
+INCBIN "maps/PokemonTower5F.blk"
+
+PokemonTower6F_Blocks:
+INCBIN "maps/PokemonTower6F.blk"
+
+PokemonTower7F_Blocks:
+INCBIN "maps/PokemonTower7F.blk"
 
 ENDSECTION

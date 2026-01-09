@@ -1,8 +1,7 @@
 	object_const_def
-	const LAVENDERTOWN_POKEFAN_M
-	const LAVENDERTOWN_TEACHER
-	const LAVENDERTOWN_GRAMPS
-	const LAVENDERTOWN_YOUNGSTER
+	const LAVENDERTOWN_LITTLE_GIRL
+	const LAVENDERTOWN_COOLTRAINER_M
+	const LAVENDERTOWN_SUPER_NERD
 
 LavenderTown_MapScripts:
 	def_scene_scripts
@@ -14,29 +13,40 @@ LavenderTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_LAVENDER
 	endcallback
 
-LavenderTownPokefanMScript:
-	jumptextfaceplayer LavenderTownPokefanMText
+LavenderTownLittleGirlScript:
+	faceplayer
+	opentext
+	writetext LavenderTownLittleGirlDoYouBelieveInGhostsText
+	yesorno
+	iffalse .No
+	writetext LavenderTownLittleGirlSoThereAreBelieversText
+	waitbutton
+	closetext
+	end
+	
+.No
+	writetext LavenderTownLittleGirlHaHaGuessNotText
+	waitbutton
+	closetext
+	end
 
-LavenderTownTeacherScript:
-	jumptextfaceplayer LavenderTownTeacherText
+LavenderTownCooltrainerMScript:
+	jumptextfaceplayer LavenderTownCooltrainerMText
 
-LavenderTownGrampsScript:
-	jumptextfaceplayer LavenderTownGrampsText
-
-LavenderTownYoungsterScript:
-	jumptextfaceplayer LavenderTownYoungsterText
+LavenderTownSuperNerdScript:
+	jumptextfaceplayer LavenderTownSuperNerdText
 
 LavenderTownSign:
 	jumptext LavenderTownSignText
 
-KantoRadioStationSign:
-	jumptext KantoRadioStationSignText
+SilphScopeSign:
+	jumptext SilphScopeSignText
 
 VolunteerPokemonHouseSign:
 	jumptext VolunteerPokemonHouseSignText
 
-SoulHouseSign:
-	jumptext SoulHouseSignText
+PokemonTowerSign:
+	jumptext PokemonTowerSignText
 
 LavenderPokecenterSignText:
 	jumpstd PokecenterSignScript
@@ -44,35 +54,44 @@ LavenderPokecenterSignText:
 LavenderMartSignText:
 	jumpstd MartSignScript
 
-LavenderTownPokefanMText:
-	text "That's quite some"
-	line "building, eh?"
-
-	para "It's KANTO's RADIO"
-	line "TOWER."
+LavenderTownLittleGirlDoYouBelieveInGhostsText:
+	text "Do you believe in"
+	line "ghosts?"
 	done
 
-LavenderTownTeacherText:
-	text "KANTO has many"
-	line "good radio shows."
+LavenderTownLittleGirlSoThereAreBelieversText:
+	text "Really? So there"
+	line "are believers…"
 	done
 
-LavenderTownGrampsText:
-	text "People come from"
-	line "all over to pay"
+LavenderTownLittleGirlHaHaGuessNotText:
+	text "Hahaha, I guess"
+	line "not."
 
-	para "their respects to"
-	line "the departed souls"
+	para "That white hand"
+	line "on your shoulder…"
+	cont "it's not real."
+	done
+
+LavenderTownCooltrainerMText:
+	text "This town is known"
+	line "as the grave site"
 	cont "of #MON."
+
+	para "Memorial services"
+	line "are held in"
+	cont "#MON TOWER."
 	done
 
-LavenderTownYoungsterText:
-	text "You need a #"
-	line "FLUTE to wake"
-	cont "sleeping #MON."
+LavenderTownSuperNerdText:
+	text "Ghosts appeared"
+	line "in #MON TOWER."
 
-	para "Every trainer has"
-	line "to know that!"
+	para "I think they're"
+	line "the spirits of"
+
+	para "#MON that the"
+	line "ROCKETS killed."
 	done
 
 LavenderTownSignText:
@@ -82,13 +101,13 @@ LavenderTownSignText:
 	line "Town"
 	done
 
-KantoRadioStationSignText:
-	text "KANTO RADIO"
-	line "STATION"
+SilphScopeSignText:
+	text "New SILPH SCOPE!"
 
-	para "Your Favorite"
-	line "Programs On-Air"
-	cont "Around the Clock!"
+	para "Make the Invisible"
+	line "Plain to See!"
+
+	para "SILPH CO."
 	done
 
 VolunteerPokemonHouseSignText:
@@ -96,8 +115,8 @@ VolunteerPokemonHouseSignText:
 	line "#MON HOUSE"
 	done
 
-SoulHouseSignText:
-	text "SOUL HOUSE"
+PokemonTowerSignText:
+	text "#MON TOWER"
 
 	para "May the Souls of"
 	line "#MON Rest Easy"
@@ -112,21 +131,19 @@ LavenderTown_MapEvents:
 	warp_event  3, 13, LAVENDER_SPEECH_HOUSE, 1
 	warp_event  7, 13, LAVENDER_NAME_RATER, 1
 	warp_event 15, 13, LAVENDER_MART, 2
-	;warp_event 19, 16, SOUL_HOUSE, 1
-	warp_event 14,  5, LAV_RADIO_TOWER_1F, 1
+	warp_event 14,  5, POKEMON_TOWER_1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  9,  3, BGEVENT_READ, LavenderTownSign
-	bg_event 17,  7, BGEVENT_READ, KantoRadioStationSign
-	bg_event  5,  9, BGEVENT_READ, VolunteerPokemonHouseSign
-	bg_event 11,  9, BGEVENT_READ, SoulHouseSign
-	bg_event  4,  5, BGEVENT_READ, LavenderPokecenterSignText
+	bg_event 11,  9, BGEVENT_READ, LavenderTownSign
+	bg_event  9,  3, BGEVENT_READ, SilphScopeSign
 	bg_event 16, 13, BGEVENT_READ, LavenderMartSignText
+	bg_event  4,  5, BGEVENT_READ, LavenderPokecenterSignText
+	bg_event  5,  9, BGEVENT_READ, VolunteerPokemonHouseSign
+	bg_event 17,  7, BGEVENT_READ, PokemonTowerSign
 
 	def_object_events
-	object_event 12,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
-	object_event  2, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
-	object_event 13, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
-	object_event  6, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownYoungsterScript, -1
+	object_event 15,  9, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownLittleGirlScript, -1
+	object_event  9, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownCooltrainerMScript, -1
+	object_event  8,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LavenderTownSuperNerdScript, -1

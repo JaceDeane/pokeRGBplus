@@ -16,9 +16,9 @@ PhoneContacts:
 	phone TRAINER_NONE, PHONECONTACT_BIKESHOP, OAKS_LAB,                  0,       UnusedPhoneScript,        0,       UnusedPhoneScript
 	phone TRAINER_NONE, PHONECONTACT_BILL,     N_A,                       ANYTIME, BillPhoneCalleeScript,    0,       BillPhoneCallerScript
 	phone TRAINER_NONE, PHONECONTACT_ELM,      ELMS_LAB,                  ANYTIME, ElmPhoneCalleeScript,     0,       ElmPhoneCallerScript
-	phone TRAINER_NONE, PHONE_00,              NATIONAL_PARK,             ANYTIME, UnusedPhoneScript,        0,       UnusedPhoneScript
-	phone TRAINER_NONE, PHONE_00,              NATIONAL_PARK,             ANYTIME, UnusedPhoneScript,        0,       UnusedPhoneScript
-	phone TRAINER_NONE, PHONE_00,              OLIVINE_LIGHTHOUSE_2F,     ANYTIME, UnusedPhoneScript,        0,       UnusedPhoneScript
+	phone TRAINER_NONE, PHONE_00,              N_A,   					  ANYTIME, UnusedPhoneScript,        0,       UnusedPhoneScript
+	phone TRAINER_NONE, PHONE_00,              N_A,   					  ANYTIME, UnusedPhoneScript,        0,       UnusedPhoneScript
+	phone TRAINER_NONE, PHONE_00,              N_A,   					  ANYTIME, UnusedPhoneScript,        0,       UnusedPhoneScript
 	phone TRAINER_NONE, PHONE_00,              N_A,                       0,       UnusedPhoneScript,        0,       UnusedPhoneScript
 	phone TRAINER_NONE, PHONE_00,              N_A,                       0,       UnusedPhoneScript,        0,       UnusedPhoneScript
 	phone TRAINER_NONE, PHONE_00,              N_A,                       0,       UnusedPhoneScript,        0,       UnusedPhoneScript

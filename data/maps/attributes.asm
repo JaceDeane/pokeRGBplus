@@ -415,12 +415,12 @@ ENDM
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
 	map_attributes SlowpokeWellB1F, SLOWPOKE_WELL_B1F, $09, 0
 	map_attributes SlowpokeWellB2F, SLOWPOKE_WELL_B2F, $09, 0
-	map_attributes OlivineLighthouse1F, OLIVINE_LIGHTHOUSE_1F, $00, 0
-	map_attributes OlivineLighthouse2F, OLIVINE_LIGHTHOUSE_2F, $00, 0
-	map_attributes OlivineLighthouse3F, OLIVINE_LIGHTHOUSE_3F, $00, 0
-	map_attributes OlivineLighthouse4F, OLIVINE_LIGHTHOUSE_4F, $00, 0
-	map_attributes OlivineLighthouse5F, OLIVINE_LIGHTHOUSE_5F, $00, 0
-	map_attributes OlivineLighthouse6F, OLIVINE_LIGHTHOUSE_6F, $00, 0
+	; map_attributes OlivineLighthouse1F, OLIVINE_LIGHTHOUSE_1F, $00, 0
+	; map_attributes OlivineLighthouse2F, OLIVINE_LIGHTHOUSE_2F, $00, 0
+	; map_attributes OlivineLighthouse3F, OLIVINE_LIGHTHOUSE_3F, $00, 0
+	; map_attributes OlivineLighthouse4F, OLIVINE_LIGHTHOUSE_4F, $00, 0
+	; map_attributes OlivineLighthouse5F, OLIVINE_LIGHTHOUSE_5F, $00, 0
+	; map_attributes OlivineLighthouse6F, OLIVINE_LIGHTHOUSE_6F, $00, 0
 	map_attributes MahoganyMart1F, MAHOGANY_MART_1F, $00, 0
 	map_attributes TeamRocketBaseB1F, TEAM_ROCKET_BASE_B1F, $00, 0
 	map_attributes TeamRocketBaseB2F, TEAM_ROCKET_BASE_B2F, $00, 0
@@ -486,6 +486,13 @@ ENDM
 	map_attributes SafariZoneBeta, SAFARI_ZONE_BETA, $13, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $02, 0
+	map_attributes PokemonTower1F, POKEMON_TOWER_1F, $00, 0
+	map_attributes PokemonTower2F, POKEMON_TOWER_2F, $00, 0
+	map_attributes PokemonTower3F, POKEMON_TOWER_3F, $00, 0
+	map_attributes PokemonTower4F, POKEMON_TOWER_4F, $00, 0
+	map_attributes PokemonTower5F, POKEMON_TOWER_5F, $00, 0
+	map_attributes PokemonTower6F, POKEMON_TOWER_6F, $00, 0
+	map_attributes PokemonTower7F, POKEMON_TOWER_7F, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0

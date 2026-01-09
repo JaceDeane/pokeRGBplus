@@ -122,4 +122,5 @@ Music:
 	dba Music_RBYCeruleanCity
 	dba Music_RBYRoute24
 	dba Music_SSAnne
+	dba Music_PokemonTower
 	assert_table_length NUM_MUSIC_SONGS
