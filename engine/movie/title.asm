@@ -26,16 +26,6 @@ _TitleScreen:
 	; ld de, vTiles1
 	; call Decompress
 
-; Load title Pokémon
-IF DEF(_RED)
-	ld a, CHARMANDER ; which Pokemon to show first on the title screen
-ENDC
-IF DEF(_BLUE)
-	ld a, SQUIRTLE ; which Pokemon to show first on the title screen
-ENDC
-	ld [wTitleMonSpecies], a
-	call LoadTitleMonSprite
-
 ; Clear screen palettes
 	hlbgcoord 0, 0
 	ld bc, 20 * BG_MAP_WIDTH
@@ -91,7 +81,7 @@ ENDC
 	ld de, vTiles1
 	call Decompress
 
-; Decompress background crystal
+; Decompress player gfx
 	ld hl, TitleRedGFX
 	ld de, vTiles0
 	call Decompress
@@ -99,6 +89,16 @@ ENDC
 	; ld hl, TitleRedGFX
 	; ld de, $24
 	; call Decompress
+
+; Load title Pokémon
+IF DEF(_RED)
+	ld a, CHARMANDER ; which Pokemon to show first on the title screen
+ENDC
+IF DEF(_BLUE)
+	ld a, SQUIRTLE ; which Pokemon to show first on the title screen
+ENDC
+	ld [wTitleMonSpecies], a
+	call LoadTitleMonSprite
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
@@ -142,11 +142,6 @@ ENDC
 
 ; Initialize player character (instead of background crystal)
 	call DrawPlayerCharacter ; was "InitializeBackground"
-
-; initialise the pokeball in the player's hand
-	ld hl, wShadowOAMSprite10
-	ld a, $0A ;$74 -- Correct vTiles location
-	ld [hl], a
 
 ; Update palette colors
 	ldh a, [rSVBK]
@@ -232,8 +227,11 @@ ENDC
 
 ; Play starting sound effect
 	call SFXChannelsOff
-	ld de, SFX_TITLE_SCREEN_ENTRANCE
-	call PlaySFX
+	; ld de, SFX_TITLE_SCREEN_ENTRANCE
+	; call PlaySFX
+; Play the shown Pokémon's cry
+	ld a, [wTitleMonSpecies]
+	call PlayCry
 
 	ret
 
@@ -324,73 +322,150 @@ DrawTitleGraphic:
 	jr nz, .bgrows
 	ret
 
-DrawPlayerCharacter: ; InitializeBackground:
-	ld hl, wShadowOAMSprite00
-	ld d, $52 ; initial Y coord
-	ld e, $0 ; number of tiles to advance for each bgrows...?
-	ld c, 7 ; number of times to repeat loading the 'tilemap width' integer
+; InitializeBackground:
+DrawPlayerCharacter: 
+	ld hl, .TitleRedOAM
+	ld de, wShadowOAMSprite00
 .loop
-	push bc
-	call .InitColumn
-	pop bc
-	ld a, $8 ;10
-	add d
-	ld d, a
-	dec c
-	jr nz, .loop
+	ld a, [hli] ; y
+	cp -1
+	ret z
+	ld [de], a
+	inc de
+	ld a, [hli] ; x
+	ld [de], a
+	inc de
+	ld a, [hli] ; tile id
+	ld [de], a
+	inc de
+	ld a, [hli] ; attributes
+	ld [de], a
+	inc de
+	jr .loop
 	ret
 
-.InitColumn:
-	ld c, $5 ; Tilemap width
-	ld b, $54 ; X-location(from left+16)
-.loop2 ; .innerLoop
-	ld a, d
-	ld [hli], a ; y
-	ld a, b
-	ld [hli], a ; x
-	add $8
-	ld b, a
-	ld a, e 
-	ld [hli], a ; tile id
-	inc e
-	;inc e ; skip loading a tile
-	ld a, 0 ; Palette ID/FX (adding "| PRIORITY" means OAM is affected by tile priority)
-	ld [hli], a ; attributes
-	dec c
-	jr nz, .loop2
-	ret
-	
+.TitleRedOAM:
+; X tile, Y tile, X pixel, Y pixel, vTile offset, attributes
+; (X-location = X * 8 from left+16) && (Y-location from top+16)
+	dbsprite 12, 12,  2,  0, $01, 0
+	dbsprite 13, 12,  2,  0, $02, 0
+	dbsprite 14, 12,  2,  0, $03, 0;
+	dbsprite 12, 13,  2,  0, $06, 0
+	dbsprite 13, 13,  2,  0, $07, 0
+	dbsprite 14, 13,  2,  0, $08, 0
+	dbsprite 15, 13,  2,  0, $09, 0;
+	dbsprite 11, 14,  2,  0, $0A, 0 ; wShadowOAMSprite07 (Poké Ball)
+	dbsprite 12, 14,  2,  0, $0B, 0
+	dbsprite 13, 14,  2,  0, $0C, 0
+	dbsprite 14, 14,  2,  0, $0D, 0
+	dbsprite 15, 14,  2,  0, $0E, 0;
+	dbsprite 11, 15,  2,  0, $0F, 0
+	dbsprite 12, 15,  2,  0, $10, 0
+	dbsprite 13, 15,  2,  0, $11, 0
+	dbsprite 14, 15,  2,  0, $12, 0
+	dbsprite 15, 15,  2,  0, $13, 0;
+	dbsprite 13, 16,  2,  0, $16, 0
+	dbsprite 14, 16,  2,  0, $17, 0
+	dbsprite 15, 16,  2,  0, $18, 0;
+	dbsprite 13, 17,  2,  0, $1B, 0
+	dbsprite 14, 17,  2,  0, $1C, 0
+	dbsprite 15, 17,  2,  0, $1D, 0;
+	dbsprite 12, 18,  2,  0, $1F, 0
+	dbsprite 13, 18,  2,  0, $20, 0
+	dbsprite 14, 18,  2,  0, $21, 0
+	dbsprite 15, 18,  2,  0, $22, 0
+	db -1
+
+;##############
+	; ld hl, wShadowOAMSprite00
+	; ld d, $52 ; initial Y coord
+	; ld e, $0 ; number of tiles to advance for each bgrows...?
+	; ld c, 7 ; number of times to repeat loading the 'tilemap width' integer
+; .loop
+	; push bc
+	; call .InitColumn
+	; pop bc
+	; ld a, $8 ;10
+	; add d
+	; ld d, a
+	; dec c
+	; jr nz, .loop
+	; ret
+
+; .InitColumn:
+	; ld c, $5 ; Tilemap width
+	; ld b, $54 ; X-location(from left+16)
+; .loop2 ; .innerLoop
+	; ld a, d
+	; ld [hli], a ; y
+	; ld a, b
+	; ld [hli], a ; x
+	; add $8
+	; ld b, a
+	; ld a, e 
+	; ld [hli], a ; tile id
+	; inc e
+	; ;inc e ; skip loading a tile
+	; ld a, 0 ; Palette ID/FX (adding "| PRIORITY" means OAM is affected by tile priority)
+	; ld [hli], a ; attributes
+	; dec c
+	; jr nz, .loop2
+	; ret
+
 LoadTitleMonSprite:
+;wTitleMonSpecies
+;wTempSpecies
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	; hlcoord 5, 10 ; X,Y Coords
 	call GetBaseData ; call GetMonHeader
-	ld de, vTiles1
+	ld de, vTiles0 tile $50 ;vTiles2
 	predef GetMonFrontpic ; jp LoadFrontSpriteByMonIndex
+	
+	hlcoord 5, 11
+	xor a
+	ld b, 7
+.row
+	ld c, 7
+	push af
+	push hl
+.col
+	ld [hli], a
+	add $7
+	dec c
+	jr nz, .col
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+	pop af
+	inc a
+	dec b
+	jr nz, .row
 	ret
 
 AnimateTitleRed:
 ; Move the title screen crystal downward until it's fully visible
+;***TO DO - temporarily uncalled***
 
 ; Stop at y=80 (6)
 ; y is really from the bottom of the sprite, which is two tiles high
-	ld hl, wShadowOAMSprite00YCoord
+	ld hl, wShadowOAMSprite00XCoord
 	ld a, [hl]
-	cp 80 + 2 * TILE_WIDTH ; Stop position
+	cp 80 ; Stop position
 	ret z
 
 ; Move all 30 parts of the crystal down by 2
-	ld c, 35 ; OAM object total
+	ld c, 27 ; OAM object total
 .loop
+	ld hl, wShadowOAMSprite00XCoord ;*
 	ld a, [hl]
-	add 2
-	ld [hli], a ; y
+	sub 2 ; move left by 2px
+	ld [hl], a ; x
 rept SPRITEOAMSTRUCT_LENGTH - 1
 	inc hl
 endr
 	dec c
 	jr nz, .loop
-
 	ret
 
 TitleLogoGFX:

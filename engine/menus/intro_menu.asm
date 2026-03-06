@@ -1240,7 +1240,7 @@ TitleScreenEntrance:
 	dec b
 	jr nz, .loop
 
-	farcall AnimateTitleRed ; Brings OAM into view -- should slide player in from right
+	; farcall AnimateTitleRed ; Brings OAM into view -- should slide player in from right
 	ret
 
 .done
