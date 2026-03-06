@@ -257,7 +257,7 @@ INCLUDE "gfx/stats/stats.pal"
 
 _CGB_Pokedex:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_CGB_BADGE; PREDEFPAL_POKEDEX ; -- RB GREY
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
 	ld a, [wCurPartySpecies]
@@ -763,7 +763,7 @@ _CGB_BetaPikachuMinigame:
 
 _CGB_PokedexSearchOption:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_CGB_BADGE; PREDEFPAL_POKEDEX
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	call WipeAttrmap
