@@ -45,32 +45,21 @@ _TitleScreen:
 ; BG Map 0:
 
 ; Apply logo palette:
-
 ; lines 2-8
 	hlbgcoord 0, 2
 	ld bc, 7 * BG_MAP_WIDTH ; 7 rows
-	ld a, 2
+	ld a, 1
 	call ByteFill
-; line 9 (Version text palette)
+; line 9 (Version text palette -- decided in .pal file)
 	hlbgcoord 5, 9
 	ld bc, 11 ; length in tiles
-IF DEF(_RED)
-	ld a, 1
-ELIF DEF(_BLUE)
-	ld a, 3
-ENDC
+	ld a, 2
 	call ByteFill
-; lines 10-18
+; lines 10-18  (Placeholder for Pokemon palette)
 	hlbgcoord 0, 10
 	ld bc, 8 * BG_MAP_WIDTH ; 8 rows
-	ld a, 7
+	ld a, 3
 	call ByteFill
-
-; Suicune gfx
-	; hlbgcoord 0, 12
-	; ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	; ld a, 0 | VRAM_BANK_1
-	; call ByteFill
 
 ; Back to VRAM bank 0
 	ld a, 0
@@ -85,20 +74,6 @@ ENDC
 	ld hl, TitleRedGFX
 	ld de, vTiles0
 	call Decompress
-
-	; ld hl, TitleRedGFX
-	; ld de, $24
-	; call Decompress
-
-; Load title Pokémon
-IF DEF(_RED)
-	ld a, CHARMANDER ; which Pokemon to show first on the title screen
-ENDC
-IF DEF(_BLUE)
-	ld a, SQUIRTLE ; which Pokemon to show first on the title screen
-ENDC
-	ld [wTitleMonSpecies], a
-	call LoadTitleMonSprite
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
@@ -117,6 +92,7 @@ ENDC
 	hlbgcoord 2, 0, vBGMap1
 	lb bc, 1, 16
 	ld d, $c
+	; ld d, $60
 	ld e, 16
 	call DrawTitleGraphic
 
@@ -127,21 +103,41 @@ ELIF DEF(_BLUE)
 	ld hl, TitleBlueVersionGFX
 ENDC
 	ld de, vTiles1 tile $9c ; vTiles location start address
+	; ld de, vTiles1 tile $d0 ; vTiles location start address
 	call Decompress
 
 ; Draw version logo
 	hlcoord 6, 9
 	lb bc, 1, 9
 	ld d, $1c ; Tile number to start loading
+	; ld d, $50 ; Tile number to start loading
 	ld e, 9
 	call DrawTitleGraphic
 
-; Initialize running Suicune?
-	; ld d, $0
-	; call LoadSuicuneFrame
-
 ; Initialize player character (instead of background crystal)
 	call DrawPlayerCharacter ; was "InitializeBackground"
+
+; Load title Pokemon
+IF DEF(_RED)
+	ld a, CHARMANDER ; which Pokemon to show first on the title screen
+ENDC
+IF DEF(_BLUE)
+	ld a, SQUIRTLE ; which Pokemon to show first on the title screen
+ENDC
+	ld [wTitleMonSpecies], a
+		ld [wCurPartySpecies], a
+		ld [wCurSpecies], a ; ??
+	call LoadTitleMonSprite
+	
+	; ld e, 1                        ; nonzero = mon, not trainer
+	; farcall ApplyMonOrTrainerPals
+	;	ld a, [wCurPartySpecies]
+	;farcall GetMonPalettePointer
+	;ld de, wBGPals1
+	;farcall LoadPalette_White_Col1_Col2_Black
+	
+	; ld e, 0
+	; call LoadMonPaletteAsNthBGPal
 
 ; Update palette colors
 	ldh a, [rSVBK]
@@ -150,17 +146,23 @@ ENDC
 	ldh [rSVBK], a
 
 	ld hl, TitleScreenPalettes
-	ld de, wBGPals1
+	ld de, wBGPals1 ;palette 1
 	ld bc, 16 palettes
 	call CopyBytes
 
 	ld hl, TitleScreenPalettes
-	ld de, wBGPals2
+	ld de, wBGPals2 ;palette 1
 	ld bc, 16 palettes
 	call CopyBytes
 
 	pop af
 	ldh [rSVBK], a
+
+; Draw title Pokemon palette
+	; hlcoord 5, 11, wAttrmap
+	; lb bc, 7, 7
+	; ld a, $7
+	; call FillBoxCGB
 
 ; LY/SCX trickery starts here
 
@@ -227,11 +229,12 @@ ENDC
 
 ; Play starting sound effect
 	call SFXChannelsOff
-	; ld de, SFX_TITLE_SCREEN_ENTRANCE
-	; call PlaySFX
-; Play the shown Pokémon's cry
-	ld a, [wTitleMonSpecies]
-	call PlayCry
+	ld de, SFX_TITLE_SCREEN_ENTRANCE
+	call PlaySFX
+
+; Play the shown Pokemon's cry ---- not until A pressed!
+	; ld a, [wTitleMonSpecies]
+	; call PlayCry
 
 	ret
 
@@ -415,32 +418,36 @@ DrawPlayerCharacter:
 LoadTitleMonSprite:
 ;wTitleMonSpecies
 ;wTempSpecies
-	ld [wCurPartySpecies], a
-	ld [wCurSpecies], a
-	; hlcoord 5, 10 ; X,Y Coords
 	call GetBaseData ; call GetMonHeader
-	ld de, vTiles0 tile $50 ;vTiles2
+	ld de, vTiles2 tile $30 ; vTiles0 tile $50
 	predef GetMonFrontpic ; jp LoadFrontSpriteByMonIndex
 	
+	; ld e, 1 ; e nonzero = load mon palette (zero = trainer)
+	; farcall ApplyMonOrTrainerPals
+	; ld a, TRUE
+	; ldh [hCGBPalUpdate], a
+	
 	hlcoord 5, 11
-	xor a
-	ld b, 7
-.row
-	ld c, 7
-	push af
-	push hl
+	ld d, $30           ; match the vTiles2 offset you loaded into
+    ld e, 7
 .col
-	ld [hli], a
-	add $7
-	dec c
-	jr nz, .col
-	pop hl
-	ld de, SCREEN_WIDTH
-	add hl, de
-	pop af
-	inc a
-	dec b
-	jr nz, .row
+    ld b, 7
+    push hl
+.row
+    ld [hl], d
+    inc d
+    ld a, l
+    add SCREEN_WIDTH
+    ld l, a
+    adc h
+    sub l
+    ld h, a
+    dec b
+    jr nz, .row
+    pop hl
+    inc hl
+    dec e
+    jr nz, .col
 	ret
 
 AnimateTitleRed:
