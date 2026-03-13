@@ -1,10 +1,10 @@
 	db "ARMOR@" ; species name
 	dw 607, 4450 ; height, weight
 
-	db   "In just one of its"
-	next "mighty hands, it"
-	next "has the power to"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "make the ground"
-	next "shake and moun-"
-	next "tains crumble.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

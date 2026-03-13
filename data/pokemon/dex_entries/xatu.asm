@@ -1,10 +1,10 @@
 	db "MYSTIC@" ; species name
 	dw 411, 330 ; height, weight
 
-	db   "Once it begins to"
-	next "meditate at sun-"
-	next "rise, the entire"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "day will pass"
-	next "before it will"
-	next "move again.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

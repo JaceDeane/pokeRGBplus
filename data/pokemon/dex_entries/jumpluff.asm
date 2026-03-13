@@ -1,10 +1,10 @@
 	db "COTTONWEED@" ; species name
 	dw 207, 70 ; height, weight
 
-	db   "Even in the fierc-"
-	next "est wind, it can"
-	next "control its fluff"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "to make its way to"
-	next "any place in the"
-	next "world it wants.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

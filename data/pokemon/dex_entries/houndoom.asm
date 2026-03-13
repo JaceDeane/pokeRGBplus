@@ -1,10 +1,10 @@
 	db "DARK@" ; species name
 	dw 407, 770 ; height, weight
 
-	db   "The pungent-"
-	next "smelling flame"
-	next "that shoots from"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "its mouth results"
-	next "from toxins burn-"
-	next "ing in its body.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

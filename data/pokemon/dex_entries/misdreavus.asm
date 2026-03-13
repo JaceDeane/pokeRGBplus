@@ -1,10 +1,10 @@
 	db "SCREECH@" ; species name
 	dw 204, 20 ; height, weight
 
-	db   "It loves to watch"
-	next "people it's scar-"
-	next "ed. It frightens"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "them by screaming"
-	next "loudly or appear-"
-	next "ing suddenly.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

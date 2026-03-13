@@ -1,10 +1,10 @@
 	db "SUN@" ; species name
 	dw 207, 190 ; height, weight
 
-	db   "As the hot season"
-	next "approaches, the"
-	next "petals on this"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "#MON's face"
-	next "become more vivid"
-	next "and lively.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

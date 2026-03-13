@@ -1,10 +1,10 @@
 	db "COTTONWEED@" ; species name
 	dw 200, 20 ; height, weight
 
-	db   "As soon as it"
-	next "rains, it closes"
-	next "its flower and"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "hides in the shade"
-	next "of a tree to avoid"
-	next "getting wet.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

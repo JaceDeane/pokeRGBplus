@@ -1,10 +1,10 @@
 	db "AQUARABBIT@" ; species name
 	dw 207, 630 ; height, weight
 
-	db   "The bubble-like"
-	next "pattern on its"
-	next "stomach helps it"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "camouflage itself"
-	next "when it's in the"
-	next "water.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

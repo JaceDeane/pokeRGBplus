@@ -1,10 +1,10 @@
 	db "SINGLEHORN@" ; species name
 	dw 411, 1190 ; height, weight
 
-	db   "With its Herculean"
-	next "powers, it can"
-	next "easily throw arou-"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "nd an object that"
-	next "is 100 times its"
-	next "own weight.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

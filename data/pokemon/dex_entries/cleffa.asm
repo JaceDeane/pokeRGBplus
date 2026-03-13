@@ -1,10 +1,10 @@
 	db "STARSHAPE@" ; species name
 	dw 100, 70 ; height, weight
 
-	db   "If the impact site"
-	next "of a meteorite is"
-	next "found, this"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "#MON is certain"
-	next "to be within the"
-	next "immediate area.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

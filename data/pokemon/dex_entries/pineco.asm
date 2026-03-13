@@ -1,10 +1,10 @@
 	db "BAGWORM@" ; species name
 	dw 200, 160 ; height, weight
 
-	db   "It spits out a"
-	next "fluid that it uses"
-	next "to glue tree bark"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "to its body. The"
-	next "fluid hardens when"
-	next "it touches air.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

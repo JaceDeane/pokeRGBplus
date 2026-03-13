@@ -1,10 +1,10 @@
 	db "WOOL@" ; species name
 	dw 207, 290 ; height, weight
 
-	db   "Because of its"
-	next "rubbery, electric-"
-	next "ity-resistant"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "skin, it can store"
-	next "lots of electric-"
-	next "ity in its fur.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "TIMETRAVEL@" ; species name
 	dw 200, 110 ; height, weight
 
-	db   "Revered as a"
-	next "guardian of the"
-	next "forest, CELEBI"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "appears wherever"
-	next "beautiful forests"
-	next "exist.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

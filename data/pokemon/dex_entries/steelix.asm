@@ -1,10 +1,10 @@
 	db "IRON SNAKE@" ; species name
 	dw 3002, 8820 ; height, weight
 
-	db   "The many small"
-	next "metal particles"
-	next "that cover this"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "#MON's body"
-	next "reflect bright"
-	next "light well.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

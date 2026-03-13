@@ -1,10 +1,10 @@
 	db "WOOL@" ; species name
 	dw 200, 170 ; height, weight
 
-	db   "It stores lots of"
-	next "air in its soft"
-	next "fur, allowing it"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "to stay cool in"
-	next "summer and warm"
-	next "in winter.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

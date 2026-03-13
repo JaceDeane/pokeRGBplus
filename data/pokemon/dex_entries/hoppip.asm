@@ -1,10 +1,10 @@
 	db "COTTONWEED@" ; species name
 	dw 104, 10 ; height, weight
 
-	db   "It can be carried"
-	next "away on even the"
-	next "gentlest breeze."
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "It may even float"
-	next "all the way to the"
-	next "next town.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

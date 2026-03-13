@@ -1,10 +1,10 @@
 	db "THUNDER@" ; species name
 	dw 603, 3920 ; height, weight
 
-	db   "This rough #MON"
-	next "stores energy"
-	next "inside its body,"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "then sweeps across"
-	next "the land, shooting"
-	next "off electricity.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

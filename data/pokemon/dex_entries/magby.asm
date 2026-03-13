@@ -1,10 +1,10 @@
 	db "LIVE COAL@" ; species name
 	dw 204, 470 ; height, weight
 
-	db   "It naturally spits"
-	next "an 1100-degree"
-	next "flame. It is said"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "when many appear,"
-	next "it heralds a"
-	next "volcanic eruption.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

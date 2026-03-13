@@ -1,10 +1,10 @@
 	db "SHARP CLAW@" ; species name
 	dw 211, 620 ; height, weight
 
-	db   "This cunning"
-	next "#MON hides"
-	next "under the cover"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "of darkness,"
-	next "waiting to attack"
-	next "its prey.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

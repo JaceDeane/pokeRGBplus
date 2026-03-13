@@ -1,10 +1,10 @@
 	db "HANDSTAND@" ; species name
 	dw 407, 1060 ; height, weight
 
-	db   "After doing a"
-	next "handstand to"
-	next "throw off the"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "opponent's timing,"
-	next "it presents its"
-	next "fancy kick moves.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

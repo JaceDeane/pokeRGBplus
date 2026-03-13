@@ -1,10 +1,10 @@
 	db "SYMBOL@" ; species name
 	dw 108, 110 ; height, weight
 
-	db   "Because different"
-	next "types of UNOWN"
-	next "exist, it is said"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "that they must"
-	next "have a variety of"
-	next "abilities.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

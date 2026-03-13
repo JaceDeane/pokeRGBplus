@@ -1,10 +1,10 @@
 	db "AQUAMOUSE@" ; species name
 	dw 104, 190 ; height, weight
 
-	db   "The fur on its"
-	next "body naturally"
-	next "repels water. It"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "can stay dry, even"
-	next "when it plays in"
-	next "the water.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

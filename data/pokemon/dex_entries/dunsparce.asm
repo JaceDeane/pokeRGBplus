@@ -1,10 +1,10 @@
 	db "LAND SNAKE@" ; species name
 	dw 411, 310 ; height, weight
 
-	db   "It hides deep"
-	next "inside caves where"
-	next "no light ever"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "reaches it and"
-	next "remains virtually"
-	next "motionless there.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

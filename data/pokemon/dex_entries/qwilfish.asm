@@ -1,10 +1,10 @@
 	db "BALLOON@" ; species name
 	dw 108, 90 ; height, weight
 
-	db   "When faced with a"
-	next "larger opponent,"
-	next "it swallows as"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "much water as it"
-	next "can to match the"
-	next "opponent's size.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

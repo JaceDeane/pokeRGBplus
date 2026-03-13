@@ -1,10 +1,10 @@
 	db "ARMOR@" ; species name
 	dw 307, 2650 ; height, weight
 
-	db   "Because this"
-	next "#MON's skin is"
-	next "so tough, a normal"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "attack won't even"
-	next "leave a scratch on"
-	next "it.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

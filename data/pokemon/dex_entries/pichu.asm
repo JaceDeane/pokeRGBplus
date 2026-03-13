@@ -1,10 +1,10 @@
 	db "TINY MOUSE@" ; species name
 	dw 100, 40 ; height, weight
 
-	db   "It is unskilled at"
-	next "storing electric"
-	next "power. Any kind of"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "shock causes it to"
-	next "discharge energy"
-	next "spontaneously.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

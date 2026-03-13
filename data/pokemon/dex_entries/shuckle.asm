@@ -1,10 +1,10 @@
 	db "MOLD@" ; species name
 	dw 200, 450 ; height, weight
 
-	db   "The fluid secreted"
-	next "by its toes carves"
-	next "holes in rocks for"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "nesting and can be"
-	next "mixed with BERRIES"
-	next "to make a drink.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

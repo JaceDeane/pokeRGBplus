@@ -1,10 +1,10 @@
 	db "SCUFFLE@" ; species name
 	dw 204, 460 ; height, weight
 
-	db   "To brush up on its"
-	next "fighting skills,"
-	next "it will challenge"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "anyone. It has a"
-	next "very strong com-"
-	next "petitive spirit.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

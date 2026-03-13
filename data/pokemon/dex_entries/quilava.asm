@@ -1,10 +1,10 @@
 	db "VOLCANO@" ; species name
 	dw 211, 420 ; height, weight
 
-	db   "Before battle, it"
-	next "turns its back on"
-	next "its opponent to"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "demonstrate how"
-	next "ferociously its"
-	next "fire blazes.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "JET@" ; species name
 	dw 200, 260 ; height, weight
 
-	db   "To escape from an"
-	next "attacker, it may"
-	next "shoot water out of"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "its mouth, then"
-	next "use that force to"
-	next "swim backward.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

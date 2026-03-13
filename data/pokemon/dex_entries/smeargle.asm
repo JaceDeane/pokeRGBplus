@@ -1,10 +1,10 @@
 	db "PAINTER@" ; species name
 	dw 311, 1280 ; height, weight
 
-	db   "The color of the"
-	next "mysterious fluid"
-	next "secreted from its"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "tail is predeter-"
-	next "mined for each"
-	next "SMEARGLE.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

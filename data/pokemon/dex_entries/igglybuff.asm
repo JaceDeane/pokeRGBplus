@@ -1,10 +1,10 @@
 	db "BALLOON@" ; species name
 	dw 100, 20 ; height, weight
 
-	db   "Instead of walking"
-	next "with its short"
-	next "legs, it moves"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "around by bouncing"
-	next "on its soft,"
-	next "tender body.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

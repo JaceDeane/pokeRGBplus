@@ -1,10 +1,10 @@
 	db "IMITATION@" ; species name
 	dw 311, 840 ; height, weight
 
-	db   "If a tree branch"
-	next "shakes when there"
-	next "is no wind, it's a"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "SUDOWOODO, not a"
-	next "tree. It hides"
-	next "from the rain.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "ROCK SKIN@" ; species name
 	dw 200, 1590 ; height, weight
 
-	db   "Born deep under-"
-	next "ground, this"
-	next "#MON becomes a"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "pupa after eating"
-	next "enough dirt to"
-	next "make a mountain.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "HAPPINESS@" ; species name
 	dw 200, 70 ; height, weight
 
-	db   "Although it does"
-	next "not flap its wings"
-	next "very much, it can"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "stay up in the air"
-	next "as it tags along"
-	next "after its trainer.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "FIVE STAR@" ; species name
 	dw 407, 780 ; height, weight
 
-	db   "In the daytime"
-	next "when it gets warm,"
-	next "it curls up inside"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "a big leaf and"
-	next "drifts off into"
-	next "a deep slumber.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "DRAGON@" ; species name
 	dw 511, 3350 ; height, weight
 
-	db   "It stores energy"
-	next "by sleeping at"
-	next "underwater depths"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "at which no other"
-	next "life forms can"
-	next "survive.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

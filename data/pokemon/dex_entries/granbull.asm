@@ -1,10 +1,10 @@
 	db "FAIRY@" ; species name
 	dw 407, 1070 ; height, weight
 
-	db   "It can make most"
-	next "any #MON run"
-	next "away simply by"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "opening its mouth"
-	next "wide to reveal its"
-	next "big fangs.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

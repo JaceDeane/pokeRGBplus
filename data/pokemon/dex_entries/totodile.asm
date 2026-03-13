@@ -1,10 +1,10 @@
 	db "BIG JAW@" ; species name
 	dw 200, 210 ; height, weight
 
-	db   "This rough critter"
-	next "chomps at any"
-	next "moving object it"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "sees. Turning your"
-	next "back on it is not"
-	next "recommended.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

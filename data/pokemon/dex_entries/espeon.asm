@@ -1,10 +1,10 @@
 	db "SUN@" ; species name
 	dw 211, 580 ; height, weight
 
-	db   "The tip of its"
-	next "forked tail"
-	next "quivers when it is"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "predicting its"
-	next "opponent's next"
-	next "move.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

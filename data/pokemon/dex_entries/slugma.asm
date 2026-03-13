@@ -1,10 +1,10 @@
 	db "LAVA@" ; species name
 	dw 204, 770 ; height, weight
 
-	db   "These group to-"
-	next "gether in areas"
-	next "that are hotter"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "than normal. If it"
-	next "cools off, its"
-	next "skin hardens.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

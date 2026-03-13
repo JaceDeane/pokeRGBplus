@@ -1,10 +1,10 @@
 	db "VOLCANO@" ; species name
 	dw 507, 1750 ; height, weight
 
-	db   "When heat from its"
-	next "body causes the"
-	next "air around it to"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "shimmer, this is a"
-	next "sign that it is"
-	next "ready to battle.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

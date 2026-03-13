@@ -1,10 +1,10 @@
 	db "LITTLE BEAR@" ; species name
 	dw 200, 190 ; height, weight
 
-	db   "It always licks"
-	next "honey. Its palm"
-	next "tastes sweet"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "because of all the"
-	next "honey it has"
-	next "absorbed.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

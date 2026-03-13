@@ -1,10 +1,10 @@
 	db "JET@" ; species name
 	dw 211, 630 ; height, weight
 
-	db   "Its instinct is to"
-	next "bury itself in"
-	next "holes. It often"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "steals the nesting"
-	next "holes of others to"
-	next "sleep in them.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

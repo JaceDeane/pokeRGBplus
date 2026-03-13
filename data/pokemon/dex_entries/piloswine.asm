@@ -1,10 +1,10 @@
 	db "SWINE@" ; species name
 	dw 307, 1230 ; height, weight
 
-	db   "Although its legs"
-	next "are short, its"
-	next "rugged hooves"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "prevent it from"
-	next "slipping, even on"
-	next "icy ground.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

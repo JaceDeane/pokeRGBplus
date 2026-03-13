@@ -1,10 +1,10 @@
 	db "LONG TAIL@" ; species name
 	dw 207, 250 ; height, weight
 
-	db   "It uses its tail"
-	next "to hang on to tree"
-	next "branches. It uses"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "its momentum to"
-	next "swing from one"
-	next "branch to another.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

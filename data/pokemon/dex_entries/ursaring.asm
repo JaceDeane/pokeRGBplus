@@ -1,10 +1,10 @@
 	db "HIBERNANT@" ; species name
 	dw 511, 2770 ; height, weight
 
-	db   "Although it has a"
-	next "large body, it is"
-	next "quite skilled at"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "climbing trees. It"
-	next "eats and sleeps in"
-	next "the treetops.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

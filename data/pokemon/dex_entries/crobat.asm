@@ -1,10 +1,10 @@
 	db "BAT@" ; species name
 	dw 511, 1650 ; height, weight
 
-	db   "As a result of its"
-	next "pursuit of faster,"
-	next "yet more silent"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "flight, a new set"
-	next "of wings grew on"
-	next "its hind legs.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

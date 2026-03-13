@@ -1,10 +1,10 @@
 	db "OWL@" ; species name
 	dw 204, 470 ; height, weight
 
-	db   "It begins to hoot"
-	next "at the same time"
-	next "every day. Some"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "trainers use them"
-	next "in place of"
-	next "clocks.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

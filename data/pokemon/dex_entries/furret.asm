@@ -1,10 +1,10 @@
 	db "LONG BODY@" ; species name
 	dw 511, 720 ; height, weight
 
-	db   "It lives in narrow"
-	next "burrows that fit"
-	next "its slim body. The"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "deeper the nests"
-	next "go, the more maze-"
-	next "like they become.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

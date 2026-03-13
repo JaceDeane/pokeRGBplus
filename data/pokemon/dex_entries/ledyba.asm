@@ -1,10 +1,10 @@
 	db "FIVE STAR@" ; species name
 	dw 303, 240 ; height, weight
 
-	db   "It is timid and"
-	next "clusters together"
-	next "with others. The"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "fluid secreted by"
-	next "its feet indicates"
-	next "its location.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

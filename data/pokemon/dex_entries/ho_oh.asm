@@ -1,10 +1,10 @@
 	db "RAINBOW@" ; species name
 	dw 1206, 4390 ; height, weight
 
-	db   "It will reveal"
-	next "itself before a"
-	next "pure-hearted"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "trainer by shining"
-	next "its bright rain-"
-	next "bow-colored wings.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "MILK COW@" ; species name
 	dw 311, 1660 ; height, weight
 
-	db   "In order to milk a"
-	next "MILTANK, one must"
-	next "have a knack for"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "rhythmically pull-"
-	next "ing up and down"
-	next "on its udders.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

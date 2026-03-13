@@ -1,10 +1,10 @@
 	db "PATIENT@" ; species name
 	dw 403, 630 ; height, weight
 
-	db   "In order to con-"
-	next "ceal its black"
-	next "tail, it lives in"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "a dark cave and"
-	next "only moves about"
-	next "at night.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

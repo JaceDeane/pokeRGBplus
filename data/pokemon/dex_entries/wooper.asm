@@ -1,10 +1,10 @@
 	db "WATER FISH@" ; species name
 	dw 104, 190 ; height, weight
 
-	db   "A mucous"
-	next "membrane covers"
-	next "its body. Touching"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "it barehanded will"
-	next "cause a shooting"
-	next "pain.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

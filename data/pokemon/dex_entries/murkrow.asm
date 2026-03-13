@@ -1,10 +1,10 @@
 	db "DARKNESS@" ; species name
 	dw 108, 50 ; height, weight
 
-	db   "It hides any shiny"
-	next "object it finds in"
-	next "a secret location."
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "MURKROW and"
-	next "MEOWTH loot one"
-	next "another's stashes.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

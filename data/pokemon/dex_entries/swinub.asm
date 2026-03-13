@@ -1,10 +1,10 @@
 	db "PIG@" ; species name
 	dw 104, 140 ; height, weight
 
-	db   "It uses the tip of"
-	next "its nose to dig"
-	next "for food. Its nose"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "is so tough that"
-	next "even frozen ground"
-	next "poses no problem.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

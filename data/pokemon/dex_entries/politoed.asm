@@ -1,10 +1,10 @@
 	db "FROG@" ; species name
 	dw 307, 750 ; height, weight
 
-	db   "When it expands"
-	next "its throat to"
-	next "croak out a tune,"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "nearby POLIWAG and"
-	next "POLIWHIRL gather"
-	next "immediately.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

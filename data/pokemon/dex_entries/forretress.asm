@@ -1,10 +1,10 @@
 	db "BAGWORM@" ; species name
 	dw 311, 2770 ; height, weight
 
-	db   "Usually found"
-	next "hanging on to a"
-	next "fat tree trunk. It"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "shoots out bits of"
-	next "its shell when it"
-	next "sees action.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

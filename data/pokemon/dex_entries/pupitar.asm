@@ -1,10 +1,10 @@
 	db "HARD SHELL@" ; species name
 	dw 311, 3350 ; height, weight
 
-	db   "It will not stay"
-	next "still, even while"
-	next "it's a pupa. It"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "already has arms"
-	next "and legs under its"
-	next "solid shell.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

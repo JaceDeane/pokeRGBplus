@@ -1,10 +1,10 @@
 	db "BIG JAW@" ; species name
 	dw 707, 1960 ; height, weight
 
-	db   "Although it has a"
-	next "massive body, its"
-	next "powerful hind legs"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "enable it to move"
-	next "quickly, even on"
-	next "the ground.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

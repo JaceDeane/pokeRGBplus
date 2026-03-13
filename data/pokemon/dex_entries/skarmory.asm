@@ -1,10 +1,10 @@
 	db "ARMOR BIRD@" ; species name
 	dw 507, 1110 ; height, weight
 
-	db   "The feathers that"
-	next "it sheds are very"
-	next "sharp. It is said"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "that people once"
-	next "used the feathers"
-	next "as swords.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

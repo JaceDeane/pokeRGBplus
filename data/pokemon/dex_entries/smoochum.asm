@@ -1,10 +1,10 @@
 	db "KISS@" ; species name
 	dw 104, 130 ; height, weight
 
-	db   "The sensitivity of"
-	next "its lips develops"
-	next "most quickly."
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "It uses them to"
-	next "try to identify"
-	next "unknown objects.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

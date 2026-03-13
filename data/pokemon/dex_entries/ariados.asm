@@ -1,10 +1,10 @@
 	db "LONG LEG@" ; species name
 	dw 307, 740 ; height, weight
 
-	db   "Rather than mak-"
-	next "ing a nest in one"
-	next "specific spot, it"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "wanders in search"
-	next "of food after"
-	next "darkness falls.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

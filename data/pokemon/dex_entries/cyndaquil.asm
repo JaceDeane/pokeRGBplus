@@ -1,10 +1,10 @@
 	db "FIRE MOUSE@" ; species name
 	dw 108, 170 ; height, weight
 
-	db   "The fire that"
-	next "spouts from its"
-	next "back burns hottest"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "when it is angry."
-	next "The flaring flames"
-	next "intimidate foes.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

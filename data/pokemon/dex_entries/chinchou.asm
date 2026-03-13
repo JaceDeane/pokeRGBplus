@@ -1,10 +1,10 @@
 	db "ANGLER@" ; species name
 	dw 108, 260 ; height, weight
 
-	db   "Its antennae, whi-"
-	next "ch evolved from a"
-	next "fin, have both po-"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "sitive and neg-"
-	next "ative charges flo-"
-	next "wing through them.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

@@ -1,10 +1,10 @@
 	db "BIG JAW@" ; species name
 	dw 307, 550 ; height, weight
 
-	db   "The tips of its"
-	next "fangs are slanted"
-	next "backward. Once"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "those fangs clamp"
-	next "down, the prey has"
-	next "no hope of escape.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"

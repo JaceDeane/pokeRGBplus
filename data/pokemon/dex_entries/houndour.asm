@@ -1,10 +1,10 @@
 	db "DARK@" ; species name
 	dw 200, 240 ; height, weight
 
-	db   "Around dawn, its"
-	next "ominous howl"
-	next "echoes through the"
+	db   "This Pokémon has"
+	next "just been dis-"
+	next "covered."
 
-	page "area to announce"
-	next "that this is its"
-	next "territory.@"
+	page "It is currently"
+	next "under investi-"
+	next "gation.@"
