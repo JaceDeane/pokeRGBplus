@@ -1,5 +1,8 @@
 	object_const_def
-	;const POKESEERSHOUSE_GRANNY
+	const POKEMONTOWER3F_CHANNELER1
+	const POKEMONTOWER3F_CHANNELER2
+	const POKEMONTOWER3F_CHANNELER3
+	const POKEMONTOWER3F_ESCAPE_ROPE
 
 PokemonTower3F_MapScripts:
 	def_scene_scripts
@@ -10,8 +13,8 @@ PokemonTower3F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	; warp_event  2,  7, CIANWOOD_CITY, 7
-	; warp_event  3,  7, CIANWOOD_CITY, 7
+	warp_event  3,  9, POKEMON_TOWER_2F, 1
+	warp_event 18,  9, POKEMON_TOWER_4F, 2
 
 	def_coord_events
 
@@ -19,3 +22,8 @@ PokemonTower3F_MapEvents:
 
 	def_object_events
 	; object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1
+
+	; object_event 12,  3, SPRITE_CHANNELER, STAY, LEFT, TEXT_POKEMONTOWER3F_CHANNELER1, OPP_CHANNELER, 5
+	; object_event  9,  8, SPRITE_CHANNELER, STAY, DOWN, TEXT_POKEMONTOWER3F_CHANNELER2, OPP_CHANNELER, 6
+	; object_event 10, 13, SPRITE_CHANNELER, STAY, DOWN, TEXT_POKEMONTOWER3F_CHANNELER3, OPP_CHANNELER, 8
+	; object_event 12,  1, SPRITE_POKE_BALL, STAY, NONE, TEXT_POKEMONTOWER3F_ESCAPE_ROPE, ESCAPE_ROPE

@@ -325,6 +325,191 @@ ENDC
 	db  5, PIKACHU
 	end_grass_wildmons
 
+	def_grass_wildmons POKEMON_TOWER_3F ; R/B
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 24, GASTLY
+	db 20, CUBONE
+	db 22, CUBONE
+	db 25, HAUNTER
+	; day
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 24, GASTLY
+	db 20, CUBONE
+	db 22, CUBONE
+	db 25, HAUNTER
+	; nite
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 24, GASTLY
+	db 20, CUBONE
+	db 22, CUBONE
+	db 25, HAUNTER
+	end_grass_wildmons
+
+	def_grass_wildmons POKEMON_TOWER_4F ; R/B
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 25, HAUNTER
+	db 20, CUBONE
+	db 22, CUBONE
+	db 24, GASTLY
+	; day
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 25, HAUNTER
+	db 20, CUBONE
+	db 22, CUBONE
+	db 24, GASTLY
+	; nite
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 25, HAUNTER
+	db 20, CUBONE
+	db 22, CUBONE
+	db 24, GASTLY
+	end_grass_wildmons
+
+	def_grass_wildmons POKEMON_TOWER_5F ; R/B
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 25, HAUNTER
+	db 20, CUBONE
+	db 22, CUBONE
+	db 24, GASTLY
+	; day
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 25, HAUNTER
+	db 20, CUBONE
+	db 22, CUBONE
+	db 24, GASTLY
+	; nite
+	db 20, GASTLY
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 19, GASTLY
+	db 18, GASTLY
+	db 25, HAUNTER
+	db 20, CUBONE
+	db 22, CUBONE
+	db 24, GASTLY
+	end_grass_wildmons
+
+	def_grass_wildmons POKEMON_TOWER_6F ; R/B
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 24, GASTLY
+	db 20, GASTLY
+	db 19, GASTLY
+	db 26, HAUNTER
+	db 22, CUBONE
+	db 24, CUBONE
+	db 28, HAUNTER
+	; day
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 24, GASTLY
+	db 20, GASTLY
+	db 19, GASTLY
+	db 26, HAUNTER
+	db 22, CUBONE
+	db 24, CUBONE
+	db 28, HAUNTER
+	; nite
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 24, GASTLY
+	db 20, GASTLY
+	db 19, GASTLY
+	db 26, HAUNTER
+	db 22, CUBONE
+	db 24, CUBONE
+	db 28, HAUNTER
+	end_grass_wildmons
+
+	def_grass_wildmons POKEMON_TOWER_7F ; R/B
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 24, GASTLY
+	db 20, GASTLY
+	db 28, HAUNTER
+	db 22, CUBONE
+	db 24, CUBONE
+	db 28, HAUNTER
+	db 30, HAUNTER
+	; day
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 24, GASTLY
+	db 20, GASTLY
+	db 28, HAUNTER
+	db 22, CUBONE
+	db 24, CUBONE
+	db 28, HAUNTER
+	db 30, HAUNTER
+	; nite
+	db 21, GASTLY
+	db 22, GASTLY
+	db 23, GASTLY
+	db 24, GASTLY
+	db 20, GASTLY
+	db 28, HAUNTER
+	db 22, CUBONE
+	db 24, CUBONE
+	db 28, HAUNTER
+	db 30, HAUNTER
+	end_grass_wildmons
+
 	; def_grass_wildmons TOHJO_FALLS
 	; db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; ; morn
