@@ -14,7 +14,7 @@ MrFujisHouse_MapScripts:
 MrFujisHouseSuperNerdScript:
 	faceplayer
 	opentext
-	checkevent EVENT_SS_ANNE_LEFT ; EVENT_RESCUED_MR_FUJI
+	checkevent EVENT_RESCUED_MR_FUJI
 	iftrue .rescued_fuji
 	writetext MrFujisHouseSuperNerdNotHereText
 	waitbutton
@@ -30,7 +30,7 @@ MrFujisHouseSuperNerdScript:
 MrFujisHouseLittleGirlScript:
 	faceplayer
 	opentext
-	checkevent EVENT_SS_ANNE_LEFT ; EVENT_RESCUED_MR_FUJI
+	checkevent EVENT_RESCUED_MR_FUJI
 	iftrue .rescued_fuji
 	writetext MrFujisHouseLittleGirlThisIsMrFujisHouseText
 	waitbutton
@@ -62,7 +62,7 @@ MrFujisNidorino:
 MrFujisHouseMrFujiScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_BIKE_VOUCHER ; EVENT_GOT_POKE_FLUTE
+	checkevent EVENT_GOT_POKE_FLUTE
 	iftrue .FluteRecieved
 	writetext MrFujisHouseMrFujiThisMayHelpText
 	promptbutton
@@ -73,7 +73,7 @@ MrFujisHouseMrFujiScript:
 	playsound SFX_KEY_ITEM
 	waitsfx
 	itemnotify
-	setevent EVENT_GOT_BIKE_VOUCHER ; EVENT_GOT_POKE_FLUTE
+	setevent EVENT_GOT_POKE_FLUTE
 	writetext MrFujisHouseMrFujiExplainPokeFluteText
 	waitbutton
 	closetext
@@ -204,6 +204,6 @@ MrFujisHouse_MapEvents:
 	object_event  3,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHouseSuperNerdScript, -1
 	object_event  6,  3, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseLittleGirlScript, -1
 	object_event  6,  4, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisPsyduck, -1 ;Stays UP in R/B
-	object_event  1,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1 ;Wanders?
-	object_event  3,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseMrFujiScript, EVENT_SS_ANNE_LEFT ; EVENT_RESCUED_MR_FUJI
+	object_event  1,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1
+	object_event  3,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseMrFujiScript, EVENT_MR_FUJI
 	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL_ALIGNED, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseMagazine, -1

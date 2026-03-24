@@ -83,7 +83,7 @@ RedsHouse2FPCScript:
 	; warp VERMILION_GYM,  4, 17
 	; warp VERMILION_CITY, 18, 29 ; SS Anne Testing
 	; giveitem S_S_TICKET ; SS Anne Testing
-	warp ROUTE_10, 11, 20
+	warp LAVENDER_TOWN, 3, 6
 	end
 
 RedsHouse2F_MapEvents:
