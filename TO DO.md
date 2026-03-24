@@ -5,9 +5,9 @@
 ```
 ### MAPS:
 (Only interiors and dungeons left to do)
-- Rock Tunnel
-
 - Pokémon Tower
+
+- Lavender Town - interiors
 
 (Later)
 - Cerulean Cave (1F, B1F, B2F)
@@ -17,11 +17,9 @@
 ### EVENTS:
 
 MAIN:
-- Route 9
+- Pokémon Tower
 
-- Route 10 (Rock Tunnel PokeCenter)
-
-- Rock Tunnel
+- Lavender Town - interiors
 
 - Vermilion Dock (finish scene event - OBJ)
 
@@ -51,7 +49,7 @@ OTHER:
 
 - Adjust Indigo Plateau's roof palette for nighttime
 
-- (!) Finish the title screen so that Red's sprite displays, and the Pokémon slide in and out of frame
+- (!) Finish the title screen so that the Pokémon palette displays, and the Pokémon slides in/out & cycles
 
 - Title screen should loop indefinitely
 
@@ -119,6 +117,8 @@ OTHER:
 
 - Lass Ali on Route 24 acts as if already beaten when taking PSN damage right in front of her
 	- May be an engine bug for *any* trainer (?)
+
+- #MON TOWER text for location sign seems to be offset from centre?
 
 - (!) Water PAL in the Underground Path(s) seem to be different to the defined water palette?
 

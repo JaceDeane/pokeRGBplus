@@ -629,7 +629,7 @@ ENDM
 	map_attributes LavenderNameRater, LAVENDER_NAME_RATER, $00, 0
 	map_attributes LavenderMart, LAVENDER_MART, $00, 0
 	; map_attributes SoulHouse, SOUL_HOUSE, $00, 0
-	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
+	; map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
 	map_attributes Route8UndergroundPathEntrance, ROUTE_8_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $00, 0

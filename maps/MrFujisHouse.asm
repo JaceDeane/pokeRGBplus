@@ -1,9 +1,10 @@
 	object_const_def
 	const MRFUJISHOUSE_SUPER_NERD
-	const MRFUJISHOUSE_LASS
+	const MRFUJISHOUSE_LITTLE_GIRL
 	const MRFUJISHOUSE_PSYDUCK
 	const MRFUJISHOUSE_NIDORINO
-	const MRFUJISHOUSE_PIDGEY
+	const MRFUJISHOUSE_MR_FUJI
+	const MRFUJISHOUSE_POKEDEX
 
 MrFujisHouse_MapScripts:
 	def_scene_scripts
@@ -11,10 +12,36 @@ MrFujisHouse_MapScripts:
 	def_callbacks
 
 MrFujisHouseSuperNerdScript:
-	jumptextfaceplayer MrFujisHouseSuperNerdText
+	faceplayer
+	opentext
+	checkevent EVENT_SS_ANNE_LEFT ; EVENT_RESCUED_MR_FUJI
+	iftrue .rescued_fuji
+	writetext MrFujisHouseSuperNerdNotHereText
+	waitbutton
+	closetext
+	end
 
-MrFujisHouseLassScript:
-	jumptextfaceplayer MrFujisHouseLassText
+.rescued_fuji:
+	writetext MrFujisHouseSuperNerdBeenPrayingText
+	waitbutton
+	closetext
+	end
+
+MrFujisHouseLittleGirlScript:
+	faceplayer
+	opentext
+	checkevent EVENT_SS_ANNE_LEFT ; EVENT_RESCUED_MR_FUJI
+	iftrue .rescued_fuji
+	writetext MrFujisHouseLittleGirlThisIsMrFujisHouseText
+	waitbutton
+	closetext
+	end
+
+.rescued_fuji:
+	writetext MrFujisHouseLittleGirlPokemonAreNiceToHugText
+	waitbutton
+	closetext
+	end
 
 MrFujisPsyduck:
 	opentext
@@ -32,49 +59,132 @@ MrFujisNidorino:
 	closetext
 	end
 
-MrFujisPidgey:
+MrFujisHouseMrFujiScript:
+	faceplayer
 	opentext
-	writetext MrFujisPidgeyText
-	cry PIDGEY
+	checkevent EVENT_GOT_BIKE_VOUCHER ; EVENT_GOT_POKE_FLUTE
+	iftrue .FluteRecieved
+	writetext MrFujisHouseMrFujiThisMayHelpText
+	promptbutton
+	waitsfx
+	giveitem POKE_FLUTE
+	iffalse .BagFull
+	writetext MrFujisHouseReceivedPokeFluteText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	itemnotify
+	setevent EVENT_GOT_BIKE_VOUCHER ; EVENT_GOT_POKE_FLUTE
+	writetext MrFujisHouseMrFujiExplainPokeFluteText
 	waitbutton
 	closetext
 	end
 
+.FluteRecieved:
+	writetext MrFujisHouseMrFujiFluteGivenText
+	waitbutton
+	closetext
+	end
+
+.BagFull:
+	writetext MrFujisHouseBagFullText
+	waitbutton
+	closetext
+	end
+
+MrFujisHouseMagazine:
+	jumptext MrFujisHouseMagazineText
+
 MrFujisHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
-MrFujisHouseSuperNerdText:
-	text "MR.FUJI does live"
-	line "here, but he's not"
+MrFujisHouseSuperNerdNotHereText:
+	text "That's odd, MR.FUJI"
+	line "isn't here."
 
-	para "home now."
-
-	para "He should be at"
-	line "the SOUL HOUSE."
+	para "Where'd he go?"
 	done
 
-MrFujisHouseLassText:
-	text "Some cold-hearted"
-	line "people stop caring"
-	cont "for their #MON."
+MrFujisHouseSuperNerdBeenPrayingText:
+	text "MR.FUJI had been"
+	line "praying alone for"
+	cont "CUBONE's mother."
+	done
 
-	para "Grandpa takes in"
-	line "the poor homeless"
+MrFujisHouseLittleGirlThisIsMrFujisHouseText:
+	text "This is really"
+	line "MR.FUJI's house."
 
-	para "#MON and takes"
-	line "care of them."
+	para "He's really kind!"
+
+	para "He looks after"
+	line "abandoned and"
+	cont "orphaned #MON!"
+	done
+
+MrFujisHouseLittleGirlPokemonAreNiceToHugText:
+	text "It's so warm!"
+
+	para "#MON are so"
+	line "nice to hug!"
 	done
 
 MrFujisPsyduckText:
-	text "PSYDUCK: Gu-guwa?"
+	text "PSYDUCK: Gwappa?"
 	done
 
 MrFujisNidorinoText:
-	text "NIDORINO: Gyun!"
+	text "NIDORINO: Gaoo!"
 	done
 
-MrFujisPidgeyText:
-	text "PIDGEY: Pijji!"
+MrFujisHouseMrFujiThisMayHelpText:
+	text "MR.FUJI: <PLAYER>."
+
+	para "Your #DEX quest"
+	line "may fail without"
+
+	para "love for your"
+	line "#MON."
+
+	para "I think this may"
+	line "help your quest."
+	done
+
+MrFujisHouseReceivedPokeFluteText:
+	text "<PLAYER> received"
+	line "a # FLUTE!"
+	done
+
+MrFujisHouseMrFujiExplainPokeFluteText:
+	text "Upon hearing the"
+	line "# FLUTE,"
+
+	para "sleeping #MON"
+	line "will spring awake."
+
+	para "It works on all"
+	line "sleeping #MON."
+	done
+
+MrFujisHouseBagFullText:
+	text "You must make"
+	line "room for this!"
+	done
+
+MrFujisHouseMrFujiFluteGivenText:
+	text "MR.FUJI: Has my"
+	line "FLUTE helped you?"
+	done
+
+MrFujisHouseMagazineText:
+	text "#MON Monthly"
+	line "Grand Prize"
+	cont "Drawing!"
+
+	para "The application"
+	line "form is…"
+
+	para "Gone! It's been"
+	line "clipped out!"
 	done
 
 MrFujisHouse_MapEvents:
@@ -91,8 +201,9 @@ MrFujisHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, MrFujisHouseBookshelf
 
 	def_object_events
-	object_event  4,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHouseSuperNerdScript, -1
-	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseLassScript, -1
-	object_event  7,  4, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisPsyduck, -1
-	object_event  5,  5, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1
-	object_event  1,  3, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MrFujisPidgey, -1
+	object_event  3,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHouseSuperNerdScript, -1
+	object_event  6,  3, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseLittleGirlScript, -1
+	object_event  6,  4, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisPsyduck, -1 ;Stays UP in R/B
+	object_event  1,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1 ;Wanders?
+	object_event  3,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseMrFujiScript, EVENT_SS_ANNE_LEFT ; EVENT_RESCUED_MR_FUJI
+	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL_ALIGNED, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseMagazine, -1

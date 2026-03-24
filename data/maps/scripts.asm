@@ -145,7 +145,7 @@ INCLUDE "maps/IcePathB2FMahoganySide.asm"
 INCLUDE "maps/IcePathB2FBlackthornSide.asm"
 INCLUDE "maps/IcePathB3F.asm"
 ; INCLUDE "maps/SoulHouse.asm"
-INCLUDE "maps/LavRadioTower1F.asm"
+; INCLUDE "maps/LavRadioTower1F.asm"
 
 
 SECTION "Johto Map Scripts 10", ROMX

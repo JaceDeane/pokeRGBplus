@@ -316,8 +316,8 @@ PlayersHouse2F_Blocks:
 SaffronMagnetTrainStation_Blocks:
 	INCBIN "maps/SaffronMagnetTrainStation.blk"
 
-LavRadioTower1F_Blocks:
-	INCBIN "maps/LavRadioTower1F.blk"
+; LavRadioTower1F_Blocks:
+	; INCBIN "maps/LavRadioTower1F.blk"
 
 SilverCaveItemRooms_Blocks:
 	INCBIN "maps/SilverCaveItemRooms.blk"
@@ -547,6 +547,7 @@ CeladonMansionRoofHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2TradeHouse_Blocks:
+MrFujisHouse_Blocks:
 MrPsychicsHouse_Blocks:
 	INCBIN "maps/House.blk"
 
@@ -897,8 +898,8 @@ RedsHouse2F_Blocks:
 OaksLab_Blocks:
 	INCBIN "maps/OaksLab.blk"
 
-MrFujisHouse_Blocks:
-	INCBIN "maps/MrFujisHouse.blk"
+; MrFujisHouse_Blocks:
+	; INCBIN "maps/MrFujisHouse.blk"
 
 DayCare_Blocks:
 	INCBIN "maps/DayCare.blk"

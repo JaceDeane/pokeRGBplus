@@ -380,12 +380,12 @@ ENDM
 	map_const LAVENDER_TOWN,                               10,  9 ;  4
 	map_const LAVENDER_POKECENTER_1F,                       7,  4 ;  5
 	; map_const LAVENDER_POKECENTER_2F_BETA,                  8,  4 ;  6
-	map_const MR_FUJIS_HOUSE,                               5,  4 ;  7
+	map_const MR_FUJIS_HOUSE,                               4,  4 ;  7
 	map_const LAVENDER_SPEECH_HOUSE,                        4,  4 ;  8
 	map_const LAVENDER_NAME_RATER,                          4,  4 ;  9
 	map_const LAVENDER_MART,                                4,  4 ; 10
 	; map_const SOUL_HOUSE,                                   5,  4 ; 11
-	map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
+	; map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
 	map_const ROUTE_8_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 14
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 15
