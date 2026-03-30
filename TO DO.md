@@ -34,6 +34,8 @@ OTHER:
 
 - Allow time to be set on main menu, once a save has ben created (same appear conditions as `CONTINUE`)
 	- perhaps have a 24hr cooldown? (also allow for DST to be set in the same way)
+	
+- Change `GHOST` 'Get out…' text from prompt to just start anim as soon as text has finished printing
 
 - DayCareGentleman special needs to be updated and refined
 
