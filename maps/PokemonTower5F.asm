@@ -11,6 +11,77 @@ PokemonTower5F_MapScripts:
 
 	def_callbacks
 
+PokemonTower5FChanneler1Text:
+	text "Come, child! I"
+	line "sealed this space"
+	cont "with white magic!"
+
+	para "You can rest here!"
+	done
+
+PokemonTower5FChanneler2BattleText:
+	text "Give… me…"
+	line "your… soul…"
+	done
+
+PokemonTower5FChanneler2EndBattleText:
+	text "Gasp!"
+	prompt
+
+PokemonTower5FChanneler2AfterBattleText:
+	text "I was under"
+	line "possession!"
+	done
+
+PokemonTower5FChanneler3BattleText:
+	text "You… shall…"
+	line "join… us…"
+	done
+
+PokemonTower5FChanneler3EndBattleText:
+	text "What a nightmare!"
+	prompt
+
+PokemonTower5FChanneler3AfterBattleText:
+	text "I was possessed!"
+	done
+
+PokemonTower5FChanneler4BattleText:
+	text "Zombies!"
+	done
+
+PokemonTower5FChanneler4EndBattleText:
+	text "Ha?"
+	prompt
+
+PokemonTower5FChanneler4AfterBattleText:
+	text "I regained my"
+	line "senses!"
+	done
+
+PokemonTower5FChanneler5BattleText:
+	text "Urgah…"
+	line "Urff…"
+	done
+
+PokemonTower5FChanneler5EndBattleText:
+	text "Whoo!"
+	prompt
+
+PokemonTower5FChanneler5AfterBattleText:
+	text "I fell to evil"
+	line "spirits despite"
+	cont "my training!"
+	done
+
+PokemonTower5FPurifiedZoneText:
+	text "Entered purified,"
+	line "protected zone!"
+
+	para "<PLAYER>'s #MON"
+	line "are fully healed!"
+	done
+
 PokemonTower5F_MapEvents:
 	db 0, 0 ; filler
 

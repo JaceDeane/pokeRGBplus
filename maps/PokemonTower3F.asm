@@ -9,6 +9,52 @@ PokemonTower3F_MapScripts:
 
 	def_callbacks
 
+PokemonTower3FChanneler1BattleText:
+	text "Urrg… Awaa…"
+	line "Huhu… graa…"
+	done
+
+PokemonTower3FChanneler1EndBattleText:
+	text "Hwa!"
+	line "I'm saved!"
+	prompt
+
+PokemonTower3FChanneler1AfterBattleText:
+	text "The GHOSTS can be"
+	line "identified by the"
+	cont "SILPH SCOPE."
+	done
+
+PokemonTower3FChanneler2BattleText:
+	text "Kekeke…"
+	line "Kwaaah!"
+	done
+
+PokemonTower3FChanneler2EndBattleText:
+	text "Hmm?"
+	line "What am I doing?"
+	prompt
+
+PokemonTower3FChanneler2AfterBattleText:
+	text "Sorry! I was"
+	line "possessed!"
+	done
+
+PokemonTower3FChanneler3BattleText:
+	text "Be gone!"
+	line "Evil spirit!"
+	done
+
+PokemonTower3FChanneler3EndBattleText:
+	text "Whew!"
+	line "The spirit left!"
+	prompt
+
+PokemonTower3FChanneler3AfterBattleText:
+	text "My friends were"
+	line "possessed too!"
+	done
+
 PokemonTower3F_MapEvents:
 	db 0, 0 ; filler
 

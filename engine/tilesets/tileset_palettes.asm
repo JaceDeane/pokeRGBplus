@@ -22,6 +22,8 @@ LoadSpecialMapPalette:
 	jr z, .ship_port
 	cp TILESET_INTERIOR
 	jr z, .interior
+	cp TILESET_CEMETERY
+	jr z, .cemetery
 	jr .do_nothing
 
 .pokecom_2f
@@ -86,6 +88,25 @@ LoadSpecialMapPalette:
 	cp MAP_BILLS_HOUSE
 	jr z, .do_nothing
 	call LoadInteriorPalette
+	scf
+	ret
+
+.cemetery
+	ld a, [wEnvironment]
+	and $7
+	cp INDOOR ; Not Pokemon Tower
+	jr z, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_POKEMON_TOWER_1F
+	jr z, .cemetery_not_dark
+	cp MAP_POKEMON_TOWER_2F
+	jr z, .cemetery_not_dark
+	call LoadPokemonTowerDarkPalette
+	scf
+	ret
+
+.cemetery_not_dark
+	call LoadPokemonTowerPalette
 	scf
 	ret
 
@@ -228,3 +249,25 @@ LoadInteriorPalette:
 
 InteriorPalette:
 INCLUDE "gfx/tilesets/interior.pal"
+
+LoadPokemonTowerDarkPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PokemonTowerDarkPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+PokemonTowerDarkPalette:
+INCLUDE "gfx/tilesets/pokemon_tower_dark.pal"
+
+LoadPokemonTowerPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PokemonTowerPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+PokemonTowerPalette:
+INCLUDE "gfx/tilesets/pokemon_tower.pal"
