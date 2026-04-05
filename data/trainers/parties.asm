@@ -995,102 +995,106 @@ CooltrainerFGroup:
 	db 35, SEADRA,     SWIFT, LEER, WATERFALL, TWISTER
 	db -1 ; end
 
-BeautyGroup:
+BeautyGroup: ; Updated to R/B, using FR/LG names
 	; BEAUTY (1)
-	db "VICTORIA@", TRAINERTYPE_NORMAL
-	db  9, SENTRET
-	db 13, SENTRET
-	db 17, SENTRET
+	db "BRIDGET@", TRAINERTYPE_NORMAL
+	db 21, ODDISH
+	db 21, BELLSPROUT
+	db 21, ODDISH
+	db 21, BELLSPROUT
 	db -1 ; end
 
 	; BEAUTY (2)
-	db "SAMANTHA@", TRAINERTYPE_MOVES
-	db 16, MEOWTH,     SCRATCH, GROWL, BITE, PAY_DAY
-	db 16, MEOWTH,     SCRATCH, GROWL, BITE, SLASH
+	db "TAMIA@", TRAINERTYPE_NORMAL
+	db 24, BELLSPROUT
+	db 24, BELLSPROUT
 	db -1 ; end
 
 	; BEAUTY (3)
-	db "JULIE@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
+	db "LORI@", TRAINERTYPE_NORMAL
+	db 26, EXEGGCUTE
 	db -1 ; end
 
 	; BEAUTY (4)
-	db "JACLYN@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
+	db "LOLA@", TRAINERTYPE_NORMAL
+	db 27, RATTATA
+	db 27, PIKACHU
+	db 27, RATTATA
 	db -1 ; end
 
 	; BEAUTY (5)
-	db "BRENDA@", TRAINERTYPE_NORMAL
-	db 16, FURRET
+	db "SHEILA@", TRAINERTYPE_NORMAL
+	db 29, CLEFAIRY
+	db 29, MEOWTH
 	db -1 ; end
 
-	; BEAUTY (6)
-	db "CASSIE@", TRAINERTYPE_NORMAL
-	db 28, VILEPLUME
-	db 34, BUTTERFREE
+	; BEAUTY (6) ; Moves to SWIMMERF (1) in FRLG
+	db "TIFFANY@", TRAINERTYPE_NORMAL
+	db 35, SEAKING
 	db -1 ; end
 
-	; BEAUTY (7)
-	db "CAROLINE@", TRAINERTYPE_NORMAL
-	db 30, MARILL
-	db 32, SEEL
-	db 30, MARILL
+	; BEAUTY (7) ; Moves to SWIMMERF (2) in FRLG
+	db "NORA@", TRAINERTYPE_NORMAL
+	db 30, SHELLDER
+	db 30, SHELLDER
+	db 30, CLOYSTER
 	db -1 ; end
 
-	; BEAUTY (8)
-	db "CARLENE@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
+	; BEAUTY (8) ; Moves to SWIMMERF (3) in FRLG
+	db "MELISSA@", TRAINERTYPE_NORMAL
+	db 31, POLIWAG
+	db 31, SEAKING
 	db -1 ; end
 
 	; BEAUTY (9)
-	db "JESSICA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
+	db "GRACE@", TRAINERTYPE_NORMAL
+	db 29, PIDGEOTTO
+	db 29, WIGGLYTUFF
 	db -1 ; end
 
 	; BEAUTY (10)
-	db "RACHAEL@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (11)
-	db "ANGELICA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (12)
-	db "KENDRA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (13)
-	db "VERONICA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (14)
-	db "JULIA@", TRAINERTYPE_NORMAL
-	db 32, PARAS
-	db 32, EXEGGCUTE
-	db 35, PARASECT
-	db -1 ; end
-
-	; BEAUTY (15)
-	db "THERESA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (16)
-	db "VALERIE@", TRAINERTYPE_MOVES
-	db 17, HOPPIP,     SYNTHESIS, TAIL_WHIP, TACKLE, POISONPOWDER
-	db 17, SKIPLOOM,   SYNTHESIS, TAIL_WHIP, TACKLE, STUN_SPORE
-	db -1 ; end
-
-	; BEAUTY (17)
 	db "OLIVIA@", TRAINERTYPE_NORMAL
-	db 19, CORSOLA
+	db 29, BULBASAUR
+	db 29, IVYSAUR
 	db -1 ; end
 
-PokemaniacGroup:
+	; BEAUTY (11) ; Unused R/B
+	db "LAUREN@", TRAINERTYPE_NORMAL
+	db 33, WEEPINBELL
+	db 33, BELLSPROUT
+	db 33, WEEPINBELL
+	db -1 ; end
+
+	; BEAUTY (12) ; Moves to SWIMMERF (4) in FRLG
+	db "ANYA@", TRAINERTYPE_NORMAL
+	db 27, POLIWAG
+	db 30, GOLDEEN
+	db 30, SEAKING
+	db 27, GOLDEEN
+	db 27, POLIWAG
+	db -1 ; end
+
+	; BEAUTY (13) ; Moves to SWIMMERF (5) in FRLG
+	db "ALICE@", TRAINERTYPE_NORMAL
+	db 30, GOLDEEN
+	db 30, SEAKING
+	db -1 ; end
+
+	; BEAUTY (14) ; Moves to SWIMMERF (6) in FRLG
+	db "CONNIE@", TRAINERTYPE_NORMAL
+	db 29, STARYU
+	db 29, STARYU
+	db 29, STARYU
+	db -1 ; end
+
+	; BEAUTY (15) ; Moves to SWIMMERF (7) in FRLG
+	db "SHIRLEY@", TRAINERTYPE_NORMAL
+	db 30, SEADRA
+	db 30, HORSEA
+	db 30, SEADRA
+	db -1 ; end
+
+PokemaniacGroup: ; Updated to R/B, using FR/LG names
 	; POKEMANIAC (1)
 	db "MARK@", TRAINERTYPE_NORMAL
 	db 30, RHYHORN
@@ -1744,113 +1748,52 @@ SwimmerMGroup: ; Updated to R/B, using FR/LG names
 	db 32, SEADRA
 	db -1 ; end
 
-SwimmerFGroup:
-	; SWIMMERF (1)
-	db "ELAINE@", TRAINERTYPE_NORMAL
-	db 21, STARYU
-	db -1 ; end
-
-	; SWIMMERF (2)
-	db "PAULA@", TRAINERTYPE_NORMAL
-	db 19, STARYU
-	db 19, SHELLDER
-	db -1 ; end
-
-	; SWIMMERF (3)
-	db "KAYLEE@", TRAINERTYPE_NORMAL
-	db 18, GOLDEEN
-	db 20, GOLDEEN
-	db 20, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (4)
-	db "SUSIE@", TRAINERTYPE_MOVES
-	db 20, PSYDUCK,    SCRATCH, TAIL_WHIP, DISABLE, CONFUSION
-	db 22, GOLDEEN,    PECK, TAIL_WHIP, SUPERSONIC, HORN_ATTACK
-	db -1 ; end
-
-	; SWIMMERF (5)
-	db "DENISE@", TRAINERTYPE_NORMAL
-	db 22, SEEL
-	db -1 ; end
-
-	; SWIMMERF (6)
-	db "KARA@", TRAINERTYPE_NORMAL
-	db 20, STARYU
-	db 20, STARMIE
-	db -1 ; end
-
-	; SWIMMERF (7)
-	db "WENDY@", TRAINERTYPE_MOVES
-	db 21, HORSEA,     BUBBLE, SMOKESCREEN, LEER, WATER_GUN
-	db 21, HORSEA,     DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
-	db -1 ; end
-
-	; SWIMMERF (8)
-	db "LISA@", TRAINERTYPE_NORMAL
-	db 28, JYNX
-	db -1 ; end
-
-	; SWIMMERF (9)
-	db "JILL@", TRAINERTYPE_NORMAL
-	db 28, DEWGONG
-	db -1 ; end
-
-	; SWIMMERF (10)
-	db "MARY@", TRAINERTYPE_NORMAL
-	db 20, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (11)
-	db "KATIE@", TRAINERTYPE_NORMAL
-	db 33, DEWGONG
-	db -1 ; end
-
-	; SWIMMERF (12)
-	db "DAWN@", TRAINERTYPE_NORMAL
-	db 34, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (13)
-	db "TARA@", TRAINERTYPE_NORMAL
-	db 20, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (14)
-	db "NICOLE@", TRAINERTYPE_NORMAL
-	db 29, MARILL
-	db 29, MARILL
-	db 32, LAPRAS
-	db -1 ; end
-
-	; SWIMMERF (15)
-	db "LORI@", TRAINERTYPE_NORMAL
-	db 32, STARMIE
-	db 32, STARMIE
-	db -1 ; end
-
-	; SWIMMERF (16)
-	db "JODY@", TRAINERTYPE_NORMAL
-	db 20, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (17)
-	db "NIKKI@", TRAINERTYPE_NORMAL
-	db 28, SEEL
-	db 28, SEEL
-	db 28, SEEL
-	db 28, DEWGONG
-	db -1 ; end
-
-	; SWIMMERF (18)
-	db "DIANA@", TRAINERTYPE_NORMAL
-	db 37, GOLDUCK
-	db -1 ; end
-
-	; SWIMMERF (19)
-	db "BRIANA@", TRAINERTYPE_NORMAL
+SwimmerFGroup: ; Updated to FR/LG
+	; SWIMMERF (1) ; Replaces BEAUTY_TIFFANY (FR/LG)
+	db "TIFFANY@", TRAINERTYPE_NORMAL
 	db 35, SEAKING
-	db 35, SEAKING
+	db -1 ; end
+
+	; SWIMMERF (2) ; Replaces BEAUTY_NORA (FR/LG)
+	db "NORA@", TRAINERTYPE_NORMAL
+	db 30, SHELLDER
+	db 30, SHELLDER
+	db 30, CLOYSTER
+	db -1 ; end
+
+	; SWIMMERF (3) ; Replaces BEAUTY_MELISSA (FR/LG)
+	db "MELISSA@", TRAINERTYPE_NORMAL
+	db 31, POLIWAG
+	db 31, SEAKING
+	db -1 ; end
+
+	; SWIMMERF (4) ; Replaces BEAUTY_ANYA (FR/LG)
+	db "ANYA@", TRAINERTYPE_NORMAL
+	db 27, POLIWAG
+	db 30, GOLDEEN
+	db 30, SEAKING
+	db 27, GOLDEEN
+	db 27, POLIWAG
+	db -1 ; end
+
+	; SWIMMERF (5) ; Replaces BEAUTY_ALICE (FR/LG)
+	db "ALICE@", TRAINERTYPE_NORMAL
+	db 30, GOLDEEN
+	db 30, SEAKING
+	db -1 ; end
+
+	; SWIMMERF (6) ; Replaces BEAUTY_CONNIE (FR/LG)
+	db "CONNIE@", TRAINERTYPE_NORMAL
+	db 29, STARYU
+	db 29, STARYU
+	db 29, STARYU
+	db -1 ; end
+
+	; SWIMMERF (7) ; Replaces BEAUTY_SHIRLEY (FR/LG)
+	db "SHIRLEY@", TRAINERTYPE_NORMAL
+	db 30, SEADRA
+	db 30, HORSEA
+	db 30, SEADRA
 	db -1 ; end
 
 SailorGroup: ; Updated to R/B, using FR/LG names
@@ -2203,63 +2146,107 @@ HikerGroup: ; Updated to R/B, using FR/LG names
 	db 21, GRAVELER
 	db -1 ; end
 
-BikerGroup:
+BikerGroup: ; Updated to R/B, using FR/LG names
 	; BIKER (1)
-	db "BENNY@", TRAINERTYPE_NORMAL
-	db 20, KOFFING
-	db 20, KOFFING
-	db 20, KOFFING
+	db "JARED@", TRAINERTYPE_NORMAL
+	db 28, KOFFING
+	db 28, KOFFING
+	db 28, KOFFING
 	db -1 ; end
 
 	; BIKER (2)
-	db "KAZU@", TRAINERTYPE_NORMAL
-	db 20, KOFFING
-	db 20, KOFFING
-	db 20, KOFFING
+	db "MALIK@", TRAINERTYPE_NORMAL
+	db 29, KOFFING
+	db 29, GRIMER
 	db -1 ; end
 
 	; BIKER (3)
-	db "DWAYNE@", TRAINERTYPE_NORMAL
-	db 27, KOFFING
-	db 28, KOFFING
-	db 29, KOFFING
-	db 30, KOFFING
+	db "ERNEST@", TRAINERTYPE_NORMAL
+	db 25, KOFFING
+	db 25, KOFFING
+	db 25, WEEZING
+	db 25, KOFFING
+	db 25, GRIMER
 	db -1 ; end
 
 	; BIKER (4)
-	db "HARRIS@", TRAINERTYPE_NORMAL
-	db 34, FLAREON
+	db "ALEX@", TRAINERTYPE_NORMAL
+	db 28, KOFFING
+	db 28, GRIMER
+	db 28, WEEZING
 	db -1 ; end
 
 	; BIKER (5)
-	db "ZEKE@", TRAINERTYPE_NORMAL
-	db 32, KOFFING
-	db 32, KOFFING
+	db "LAO@", TRAINERTYPE_NORMAL
+	db 29, GRIMER
+	db 29, KOFFING
 	db -1 ; end
 
-	; BIKER (6)
-	db "CHARLES@", TRAINERTYPE_NORMAL
-	db 30, KOFFING
-	db 30, CHARMELEON
-	db 30, WEEZING
+	; BIKER (6) ; Unused in R/B -- ? TODO CONFIRM
+	db "UNUSED@", TRAINERTYPE_NORMAL
+	db 33, WEEZING
 	db -1 ; end
 
 	; BIKER (7)
-	db "RILEY@", TRAINERTYPE_NORMAL
-	db 34, WEEZING
+	db "HIDEO@", TRAINERTYPE_NORMAL
+	db 26, GRIMER
+	db 26, GRIMER
+	db 26, GRIMER
+	db 26, GRIMER
 	db -1 ; end
 
 	; BIKER (8)
-	db "JOEL@", TRAINERTYPE_NORMAL
-	db 32, MAGMAR
-	db 32, MAGMAR
+	db "RUBEN@", TRAINERTYPE_NORMAL
+	db 28, WEEZING
+	db 28, KOFFING
+	db 28, WEEZING
 	db -1 ; end
 
 	; BIKER (9)
-	db "GLENN@", TRAINERTYPE_NORMAL
+	db "BILLY@", TRAINERTYPE_NORMAL
+	db 33, MUK
+	db -1 ; end
+	
+	; BIKER (10)
+	db "NIKOLAS@", TRAINERTYPE_NORMAL
+	db 29, VOLTORB
+	db 29, VOLTORB
+	db -1 ; end
+	
+	; BIKER (11)
+	db "JAXON@", TRAINERTYPE_NORMAL
+	db 29, WEEZING
+	db 29, MUK
+	db -1 ; end
+
+	; BIKER (12)
+	db "WILLIAM@", TRAINERTYPE_NORMAL
+	db 25, KOFFING
+	db 25, WEEZING
+	db 25, KOFFING
+	db 25, KOFFING
+	db 25, WEEZING
+	db -1 ; end
+
+	; BIKER (13)
+	db "LUKAS@", TRAINERTYPE_NORMAL
+	db 26, KOFFING
+	db 26, KOFFING
+	db 26, GRIMER
+	db 26, KOFFING
+	db -1 ; end
+
+	; BIKER (14)
+	db "ISAAC@", TRAINERTYPE_NORMAL
+	db 28, GRIMER
+	db 28, GRIMER
 	db 28, KOFFING
-	db 30, MAGMAR
-	db 32, WEEZING
+	db -1 ; end
+
+	; BIKER (15)
+	db "GERALD@", TRAINERTYPE_NORMAL
+	db 29, KOFFING
+	db 29, MUK
 	db -1 ; end
 
 BlaineGroup:
@@ -2271,25 +2258,57 @@ BlaineGroup:
 	db -1 ; end
 
 BurglarGroup:
-	; BURGLAR (1)
-	db "DUNCAN@", TRAINERTYPE_NORMAL
-	db 23, KOFFING
-	db 25, MAGMAR
-	db 23, KOFFING
+	; BURGLAR (1) ; Unused R/B
+	db "UNUSED@", TRAINERTYPE_NORMAL
+	db 29, GROWLITHE
+	db 29, VULPIX
 	db -1 ; end
 
-	; BURGLAR (2)
-	db "EDDIE@", TRAINERTYPE_MOVES
-	db 26, GROWLITHE,  ROAR, EMBER, LEER, TAKE_DOWN
-	db 24, KOFFING,    TACKLE, SMOG, SLUDGE, SMOKESCREEN
+	; BURGLAR (2) ; Unused R/B
+	db "UNUSED@", TRAINERTYPE_NORMAL
+	db 33, GROWLITHE
 	db -1 ; end
 
-	; BURGLAR (3)
-	db "COREY@", TRAINERTYPE_NORMAL
-	db 25, KOFFING
-	db 28, MAGMAR
-	db 25, KOFFING
-	db 30, KOFFING
+	; BURGLAR (3) ; Unused R/B
+	db "UNUSED@", TRAINERTYPE_NORMAL
+	db 28, VULPIX
+	db 28, CHARMANDER
+	db 28, PONYTA
+	db -1 ; end
+	
+	; BURGLAR (4)
+	db "QUINN@", TRAINERTYPE_NORMAL
+	db 36, GROWLITHE
+	db 36, VULPIX
+	db 36, NINETALES
+	db -1 ; end
+
+	; BURGLAR (5)
+	db "RAMON@", TRAINERTYPE_NORMAL
+	db 41, PONYTA
+	db -1 ; end
+
+	; BURGLAR (6)
+	db "DUSTY@", TRAINERTYPE_NORMAL
+	db 37, VULPIX
+	db 37, GROWLITHE
+	db -1 ; end
+	
+	; BURGLAR (7)
+	db "ARNIE@", TRAINERTYPE_NORMAL
+	db 34, CHARMANDER
+	db 34, CHARMELEON
+	db -1 ; end
+
+	; BURGLAR (8)
+	db "SIMON@", TRAINERTYPE_NORMAL
+	db 38, NINETALES
+	db -1 ; end
+	
+	; BURGLAR (9)
+	db "LEWIS@", TRAINERTYPE_NORMAL
+	db 34, GROWLITHE
+	db 34, PONYTA
 	db -1 ; end
 
 FirebreatherGroup:
@@ -2342,52 +2361,58 @@ FirebreatherGroup:
 	db 28, KOFFING
 	db -1 ; end
 
-JugglerGroup:
+JugglerGroup: ; Updated to R/B, using FR/LG names
 	; JUGGLER (1)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db  2, VOLTORB
-	db  6, VOLTORB
-	db 10, VOLTORB
-	db 14, VOLTORB
+	db "DALTON@", TRAINERTYPE_NORMAL
+	db 29, KADABRA
+	db 29, MR__MIME
 	db -1 ; end
 
 	; JUGGLER (2)
-	db "FRITZ@", TRAINERTYPE_NORMAL
-	db 29, MR__MIME
-	db 29, MAGMAR
-	db 29, MACHOKE
+	db "NELSON@", TRAINERTYPE_NORMAL
+	db 41, DROWZEE
+	db 41, HYPNO
+	db 41, KADABRA
+	db 41, KADABRA
 	db -1 ; end
 
 	; JUGGLER (3)
-	db "HORTON@", TRAINERTYPE_NORMAL
-	db 33, ELECTRODE
-	db 33, ELECTRODE
-	db 33, ELECTRODE
-	db 33, ELECTRODE
+	db "KIRK@", TRAINERTYPE_NORMAL
+	db 31, DROWZEE
+	db 31, DROWZEE
+	db 31, KADABRA
+	db 31, DROWZEE
 	db -1 ; end
 
 	; JUGGLER (4)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db  6, VOLTORB
-	db 10, VOLTORB
-	db 14, VOLTORB
-	db 18, VOLTORB
+	db "SHAWN@", TRAINERTYPE_NORMAL
+	db 34, DROWZEE
+	db 34, HYPNO
 	db -1 ; end
 
 	; JUGGLER (5)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
+	db "GREGORY@", TRAINERTYPE_NORMAL
+	db 48, MR__MIME
 	db -1 ; end
 
-	; JUGGLER (6)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
+	; JUGGLER (6) ; Unused R/B -- used in FR/LG
+	db "EDWARD@", TRAINERTYPE_NORMAL
+	db 33, HYPNO
+	; db 46, VOLTORB ; FR/LG
+	; db 46, VOLTORB ; FR/LG
+	; db 47, ELECTRODE ; FR/LG
+	; db 48, MR__MIME ; FR/LG
+	db -1 ; end
+	
+	; JUGGLER (7)
+	db "KAYDEN@", TRAINERTYPE_NORMAL
+	db 38, HYPNO
+	db -1 ; end
+	
+	; JUGGLER (8)
+	db "NATE@", TRAINERTYPE_NORMAL
+	db 34, DROWZEE
+	db 34, KADABRA
 	db -1 ; end
 
 BlackbeltGroup:
@@ -2478,80 +2503,35 @@ ExecutiveMGroup:
 	db 22, KOFFING
 	db -1 ; end
 
-PsychicGroup:
+PsychicGroup: ; Updated to R/B, using FR/LG names
 	; PSYCHIC_T (1)
-	db "NATHAN@", TRAINERTYPE_NORMAL
-	db 26, GIRAFARIG
+	db "JOHAN@", TRAINERTYPE_NORMAL
+	db 31, KADABRA
+	db 31, SLOWPOKE
+	db 31, MR__MIME
+	db 31, KADABRA
 	db -1 ; end
 
 	; PSYCHIC_T (2)
-	db "FRANKLIN@", TRAINERTYPE_NORMAL
-	db 37, KADABRA
+	db "TYRON@", TRAINERTYPE_NORMAL
+	db 34, MR__MIME
+	db 34, KADABRA
 	db -1 ; end
 
 	; PSYCHIC_T (3)
-	db "HERMAN@", TRAINERTYPE_NORMAL
-	db 30, EXEGGCUTE
-	db 30, EXEGGCUTE
-	db 30, EXEGGUTOR
+	db "CAMERON@", TRAINERTYPE_NORMAL
+	db 33, SLOWPOKE
+	db 33, SLOWPOKE
+	db 33, SLOWBRO
 	db -1 ; end
 
 	; PSYCHIC_T (4)
-	db "FIDEL@", TRAINERTYPE_NORMAL
-	db 34, XATU
-	db -1 ; end
-
-	; PSYCHIC_T (5)
-	db "GREG@", TRAINERTYPE_MOVES
-	db 17, DROWZEE,    HYPNOSIS, DISABLE, DREAM_EATER, NO_MOVE
-	db -1 ; end
-
-	; PSYCHIC_T (6)
-	db "NORMAN@", TRAINERTYPE_MOVES
-	db 17, SLOWPOKE,   TACKLE, GROWL, WATER_GUN, NO_MOVE
-	db 20, SLOWPOKE,   CURSE, BODY_SLAM, WATER_GUN, CONFUSION
-	db -1 ; end
-
-	; PSYCHIC_T (7)
-	db "MARK@", TRAINERTYPE_MOVES
-	db 13, ABRA,       TELEPORT, FLASH, NO_MOVE, NO_MOVE
-	db 13, ABRA,       TELEPORT, FLASH, NO_MOVE, NO_MOVE
-	db 15, KADABRA,    TELEPORT, KINESIS, CONFUSION, NO_MOVE
-	db -1 ; end
-
-	; PSYCHIC_T (8)
-	db "PHIL@", TRAINERTYPE_MOVES
-	db 24, NATU,       LEER, NIGHT_SHADE, FUTURE_SIGHT, CONFUSE_RAY
-	db 26, KADABRA,    DISABLE, PSYBEAM, RECOVER, FUTURE_SIGHT
-	db -1 ; end
-
-	; PSYCHIC_T (9)
-	db "RICHARD@", TRAINERTYPE_NORMAL
-	db 36, ESPEON
-	db -1 ; end
-
-	; PSYCHIC_T (10)
-	db "GILBERT@", TRAINERTYPE_NORMAL
-	db 30, STARMIE
-	db 30, EXEGGCUTE
-	db 34, GIRAFARIG
-	db -1 ; end
-
-	; PSYCHIC_T (11)
-	db "JARED@", TRAINERTYPE_NORMAL
-	db 32, MR__MIME
-	db 32, EXEGGCUTE
-	db 35, EXEGGCUTE
-	db -1 ; end
-
-	; PSYCHIC_T (12)
-	db "RODNEY@", TRAINERTYPE_NORMAL
-	db 29, DROWZEE
-	db 33, HYPNO
+	db "PRESTON@", TRAINERTYPE_NORMAL
+	db 38, SLOWBRO
 	db -1 ; end
 
 PicnickerGroup: ; Updated to R/B, using FR/LG names
-		; PICNICKER (1)
+	; PICNICKER (1)
 	db "DIANA@", TRAINERTYPE_NORMAL
 	db 19, GOLDEEN
 	db -1 ; end

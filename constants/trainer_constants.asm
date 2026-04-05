@@ -127,9 +127,9 @@ DEF KRIS EQU __trainer_class__
 	const TOMMY
 	const DUDLEYZ
 	const JOE
-	const BILLY
+	const BILLYZ
 	const CHAD1
-	const NATE
+	const NATEZ
 	const RICKYZ
 	const JACK2
 	const JACK3
@@ -214,7 +214,7 @@ DEF KRIS EQU __trainer_class__
 	const GWENZ
 	const LOIS
 	const FRAN
-	const LOLA
+	const LOLAZ
 	const KATE
 	const IRENEZ
 	const KELLY
@@ -224,7 +224,7 @@ DEF KRIS EQU __trainer_class__
 	const MEGANZ
 	const BETH2
 	const CAROLZ
-	const QUINN
+	const QUINNZ
 	const EMMA
 	const CYBIL
 	const JENN
@@ -233,24 +233,22 @@ DEF KRIS EQU __trainer_class__
 	const REENA3
 	const CARA
 
-	trainerclass BEAUTY ; 1d
-	const VICTORIA
-	const SAMANTHA
-	const JULIE ; unused
-	const JACLYN ; unused
-	const BRENDA ; unused
-	const CASSIE
-	const CAROLINE ; unused
-	const CARLENE ; unused
-	const JESSICA ; unused
-	const RACHAEL ; unused
-	const ANGELICAZ ; unused
-	const KENDRA ; unused
-	const VERONICA ; unused
-	const JULIAZ
-	const THERESA ; unused
-	const VALERIEZ
+	trainerclass BEAUTY ; 1d -- Updated to R/B, using FR/LG names
+	const BRIDGET
+	const TAMIA
+	const LORI
+	const LOLA
+	const SHEILA
+	const BEAUTY_TIFFANY ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
+	const BEAUTY_NORA ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
+	const BEAUTY_MELISSA ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
+	const GRACE
 	const OLIVIA
+	const LAUREN
+	const BEAUTY_ANYA ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
+	const BEAUTY_ALICE ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
+	const BEAUTY_CONNIE ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
+	const BEAUTY_SHIRLEY ; Unused in FR/LG -- becomes SWIMMERF in FR/LG
 
 	trainerclass POKEMANIAC ; 1e -- Updated to R/B, using FR/LG names
 	const MARK
@@ -319,7 +317,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass TEACHER ; 22
 	const COLETTE
 	const HILLARY
-	const SHIRLEY
+	const SHIRLEYZ
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -370,26 +368,14 @@ DEF KRIS EQU __trainer_class__
 	const JEROME
 	const ROLAND
 
-	trainerclass SWIMMERF ; 27
-	const ELAINE
-	const PAULAZ
-	const KAYLEE
-	const SUSIE
-	const DENISE
-	const KARA
-	const WENDY
-	const LISAZ ; unused
-	const JILL ; unused
-	const MARY ; unused
-	const KATIE ; unused
-	const DAWNZ
-	const TARA ; unused
-	const NICOLE
-	const LORI
-	const JODYZ ; unused
-	const NIKKI
-	const DIANAZ
-	const BRIANA
+	trainerclass SWIMMERF ; 27 -- Updated to FR/LG
+	const TIFFANY
+	const NORA
+	const MELISSA
+	const ANYA
+	const ALICE
+	const CONNIE
+	const SHIRLEY
 
 	trainerclass SAILOR ; 28 -- Updated to R/B, using FR/LG names
 	const EDMOND
@@ -450,24 +436,36 @@ DEF KRIS EQU __trainer_class__
 	const OLIVER
 	const LUCAS
 
-	trainerclass BIKER ; 2d
-	const BIKER_BENNY ; unused
-	const KAZU ; unused
-	const DWAYNEZ
-	const HARRIS
-	const ZEKE
-	const CHARLES
-	const RILEY
-	const JOEL
-	const GLENNZ
-
+	trainerclass BIKER ; 2d -- Updated to R/B, using FR/LG names
+	const JARED
+	const MALIK
+	const ERNEST
+	const ALEX
+	const LAO
+	const BIKER_UNUSED; Unused R/B
+	const HIDEO
+	const RUBEN
+	const BILLY
+	const NIKOLAS
+	const JAXON
+	const WILLIAM
+	const LUKAS
+	const ISAAC
+	const GERALD
+	
 	trainerclass BLAINE ; 2e
 	const BLAINE1
 
-	trainerclass BURGLAR ; 2f
-	const DUNCANZ
-	const EDDIEZ
-	const COREYZ
+	trainerclass BURGLAR ; 2f -- Updated to R/B, using FR/LG names
+	const BURGLAR_UNUSED1 ; Unused R/B
+	const BURGLAR_UNUSED2 ; Unused R/B
+	const BURGLAR_UNUSED3 ; Unused R/B
+	const QUINN
+	const RAMON
+	const DUSTY
+	const ARNIE
+	const SIMON
+	const LEWIS
 
 	trainerclass FIREBREATHER ; 30
 	const OTIS
@@ -479,19 +477,21 @@ DEF KRIS EQU __trainer_class__
 	const RAY
 	const LYLE
 
-	trainerclass JUGGLER ; 31
-	const IRWIN1
-	const FRITZ
-	const HORTON
-	const IRWIN2 ; unused
-	const IRWIN3 ; unused
-	const IRWIN4 ; unused
+	trainerclass JUGGLER ; 31 -- Updated to R/B, using FR/LG names
+	const DALTON
+	const NELSON
+	const KIRK
+	const SHAWN
+	const GREGORY
+	const EDWARD ; Unused in R/B -- used in FR/LG
+	const KAYDEN
+	const NATE
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1 ; unused
 	const YOSHI
 	const KENJI2 ; unused
-	const LAO
+	const LAOZ
 	const NOBZ
 	const KIYO
 	const LUNG
@@ -505,18 +505,10 @@ DEF KRIS EQU __trainer_class__
 	const EXECUTIVEM_4
 
 	trainerclass PSYCHIC_T ; 34
-	const NATHAN
-	const FRANKLINZ
-	const HERMANZ
-	const FIDEL
-	const GREGZ
-	const NORMAN
-	const MARKZ
-	const PHILZ
-	const RICHARDZ
-	const GILBERT
-	const JARED
-	const RODNEY
+	const JOHAN
+	const TYRON
+	const CAMERON
+	const PRESTON
 
 	trainerclass PICNICKER ; 35 -- Updated to R/B, using FR/LG names
 	const DIANA
@@ -576,7 +568,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass MEDIUM ; 39
 	const MARTHAZ
-	const GRACE
+	const GRACEZ
 	const BETHANY ; unused
 	const MARGRET ; unused
 	const ETHEL ; unused
@@ -589,7 +581,7 @@ DEF KRIS EQU __trainer_class__
 	const DOUGLASZ
 
 	trainerclass POKEFANM ; 3b
-	const WILLIAM
+	const WILLIAMZ
 	const DEREK1
 	const ROBERT
 	const JOSHUA
@@ -600,7 +592,7 @@ DEF KRIS EQU __trainer_class__
 	const COLIN
 	const DEREK2 ; unused
 	const DEREK3 ; unused
-	const ALEX
+	const ALEXZ
 	const REX
 	const ALLAN
 
