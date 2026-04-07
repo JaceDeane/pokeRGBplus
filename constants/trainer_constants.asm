@@ -94,12 +94,20 @@ DEF KRIS EQU __trainer_class__
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
 
-	trainerclass SCIENTIST ; 14
-	const ROSS
-	const MITCH
-	const JED
-	const MARC
-	const RICHZ
+	trainerclass SCIENTIST ; 14 -- Updated to R/B, using FR/LG names
+	const TED ; Unused R/B -- used in FR/LG
+	const CONNOR
+	const JERRY
+	const JOSE
+	const RODNEY
+	const BEAU
+	const TAYLOR
+	const JOSHUA
+	const PARKER
+	const ED
+	const TRAVIS
+	const BRAYDON
+	const IVAN
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
@@ -144,26 +152,24 @@ DEF KRIS EQU __trainer_class__
 	const CHAD4
 	const CHAD5
 
-	trainerclass BIRD_KEEPER ; 18
-	const ROD
-	const ABE
-	const BRYAN
-	const THEO
-	const TOBY
-	const DENIS
-	const VANCE1
-	const HANKZ
-	const ROY
-	const BORIS
-	const BOB
-	const JOSE1
-	const PETER
-	const JOSE2
+	trainerclass BIRD_KEEPER ; 18 -- Updated to R/B, using FR/LG names
+	const SEBASTIAN
 	const PERRY
-	const BRET
-	const JOSE3
-	const VANCE2
-	const VANCE3
+	const ROBERT
+	const DONALD
+	const BENNY
+	const EDWIN
+	const CHESTER
+	const WILTON
+	const RAMIRO
+	const JACOB
+	const ROGER
+	const REED ; Unused R/B
+	const KEITH ; Unused R/B
+	const CARTER
+	const MITCH
+	const BECK
+	const MARLON
 
 	trainerclass LASS ; 19 -- Updated to R/B, using FR/LG names
 	const JANICE
@@ -188,50 +194,27 @@ DEF KRIS EQU __trainer_class__
 	trainerclass LEADER_GIOVANNI ; 1a  -- Updated to R/B
 	const LEADER_GIOVANNI1
 
-	trainerclass COOLTRAINERM ; 1b
-	const NICK
-	const AARON
-	const PAUL
-	const CODY
-	const MIKE
-	const GAVEN1
-	const GAVEN2
-	const RYAN
-	const JAKE
-	const GAVEN3
-	const BLAKE
-	const BRIAN
-	const ERICK ; unused
-	const ANDY ; unused
-	const TYLERZ ; unused
-	const SEAN
-	const KEVIN
-	const STEVEZ ; unused
-	const ALLENZ
-	const DARIN
+	trainerclass COOLTRAINERM ; 1b -- Updated to R/B, using FR/LG names
+	const SAMUEL
+	const GEORGE
+	const COLBY
+	const PAUL ; Unused R/B -- used in FR/LG
+	const ROLANDO
+	const GILBERT ; Unused R/B -- used in FR/LG
+	const OWEN ; Unused R/B -- used in FR/LG
+	const BERKE ; Unused R/B -- used in FR/LG
+	const YUJI
+	const WARREN
 
-	trainerclass COOLTRAINERF ; 1c
-	const GWENZ
-	const LOIS
-	const FRAN
-	const LOLAZ
-	const KATE
-	const IRENEZ
-	const KELLY
-	const JOYCE
-	const BETH1
-	const REENA1
-	const MEGANZ
-	const BETH2
-	const CAROLZ
-	const QUINNZ
-	const EMMA
-	const CYBIL
-	const JENN
-	const BETH3
-	const REENA2
-	const REENA3
-	const CARA
+	trainerclass COOLTRAINERF ; 1c -- Updated to R/B, using FR/LG names
+	const MARY
+	const CAROLINE
+	const ALEXA
+	const SHANNON ; Unused R/B -- used in FR/LG
+	const NAOMI
+	const BROOKE ; Unused R/B -- used in FR/LG
+	const AUSTINA ; Unused R/B -- used in FR/LG
+	const JULIE ; Unused R/B -- used in FR/LG
 
 	trainerclass BEAUTY ; 1d -- Updated to R/B, using FR/LG names
 	const BRIDGET
@@ -259,7 +242,7 @@ DEF KRIS EQU __trainer_class__
 	const DAWSON
 	const ASHTON
 
-	trainerclass GRUNTM ; 1f
+	trainerclass GRUNTM ; 1f -- Updated to R/B
 	const GRUNTM_1
 	const GRUNTM_2
 	const GRUNTM_3
@@ -368,7 +351,7 @@ DEF KRIS EQU __trainer_class__
 	const JEROME
 	const ROLAND
 
-	trainerclass SWIMMERF ; 27 -- Updated to FR/LG
+	trainerclass SWIMMERF ; 27 -- Updated to FR/LG conventions
 	const TIFFANY
 	const NORA
 	const MELISSA
@@ -487,16 +470,16 @@ DEF KRIS EQU __trainer_class__
 	const KAYDEN
 	const NATE
 
-	trainerclass BLACKBELT_T ; 32
-	const KENJI1 ; unused
-	const YOSHI
-	const KENJI2 ; unused
-	const LAOZ
-	const NOBZ
+	trainerclass BLACKBELT_T ; 32 -- Updated to R/B, using FR/LG names
+	const KOICHI
+	const MIKE
+	const HIDEKI
+	const AARON
+	const HITOSHI
+	const ATSUSHI
 	const KIYO
-	const LUNG
-	const KENJI3
-	const WAI
+	const TAKASHI
+	const DAISUKE
 
 	trainerclass EXECUTIVEM ; 33
 	const EXECUTIVEM_1
@@ -504,7 +487,7 @@ DEF KRIS EQU __trainer_class__
 	const EXECUTIVEM_3
 	const EXECUTIVEM_4
 
-	trainerclass PSYCHIC_T ; 34
+	trainerclass PSYCHIC_T ; 34 -- Updated to R/B, using FR/LG names
 	const JOHAN
 	const TYRON
 	const CAMERON
@@ -583,9 +566,9 @@ DEF KRIS EQU __trainer_class__
 	trainerclass POKEFANM ; 3b
 	const WILLIAMZ
 	const DEREK1
-	const ROBERT
-	const JOSHUA
-	const CARTER
+	const ROBERTZ
+	const JOSHUAZ
+	const CARTERZ
 	const TREVORZ
 	const BRANDON
 	const JEREMYZ
@@ -633,7 +616,7 @@ DEF KRIS EQU __trainer_class__
 	const RIVAL3_1_SQUIRTLE
 
 	trainerclass OFFICER ; 41
-	const KEITH
+	const KEITHZ
 	const DIRKZ
 
 	trainerclass GRUNTF ; 42
