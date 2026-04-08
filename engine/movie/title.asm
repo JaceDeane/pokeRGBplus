@@ -89,6 +89,7 @@ _TitleScreen:
 	call DrawTitleGraphic
 
 ; Draw copyright text
+	; hlcoord 2, 18
 	hlbgcoord 2, 0, vBGMap1
 	lb bc, 1, 16
 	ld d, $c
@@ -158,11 +159,9 @@ ENDC
 	pop af
 	ldh [rSVBK], a
 
-; Draw title Pokemon palette
-	; hlcoord 5, 11, wAttrmap
-	; lb bc, 7, 7
-	; ld a, $7
-	; call FillBoxCGB
+	ld de, wBGPals1 palette 3 color 1 ; fill point for 2x colours
+	farcall LoadPokemonPalette
+	call UpdateTimePals
 
 ; LY/SCX trickery starts here
 
@@ -217,6 +216,14 @@ ENDC
 	ldh [hWX], a
 	ld a, -112
 	ldh [hWY], a
+	
+;R/B ***
+	; xor a
+	; ldh [hSCX], a
+	; ld a, $40
+	; ldh [hSCY], a
+	; ld a, $90
+	; ldh [hWY], a
 
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
@@ -227,15 +234,10 @@ ENDC
 	; xor a
 	; ld [wSuicuneFrame], a
 
-; Play starting sound effect
+; Play starting sound effect *** to be moved into logo bounce
 	call SFXChannelsOff
 	ld de, SFX_TITLE_SCREEN_ENTRANCE
 	call PlaySFX
-
-; Play the shown Pokemon's cry ---- not until A pressed!
-	; ld a, [wTitleMonSpecies]
-	; call PlayCry
-
 	ret
 
 SuicuneFrameIterator:
@@ -357,7 +359,7 @@ DrawPlayerCharacter:
 	dbsprite 13, 13,  2,  0, $07, 0
 	dbsprite 14, 13,  2,  0, $08, 0
 	dbsprite 15, 13,  2,  0, $09, 0;
-	dbsprite 11, 14,  2,  0, $0A, 0 ; wShadowOAMSprite07 (Poké Ball)
+	dbsprite 11, 14,  2,  4, $0A, 0 ; wShadowOAMSprite07 (Poké Ball)
 	dbsprite 12, 14,  2,  0, $0B, 0
 	dbsprite 13, 14,  2,  0, $0C, 0
 	dbsprite 14, 14,  2,  0, $0D, 0
@@ -449,6 +451,129 @@ LoadTitleMonSprite:
     dec e
     jr nz, .col
 	ret
+
+; R/B code ***
+TitleScroll_WaitBall:
+; Wait around for the TitleBall animation to play out.
+; hi: speed
+; lo: duration
+	db $05, $05, 0
+
+TitleScroll_In:
+; Scroll a TitleMon in from the right.
+; hi: speed
+; lo: duration
+	db $a2, $94, $84, $63, $52, $31, $11, 0
+
+TitleScroll_Out:
+; Scroll a TitleMon out to the left.
+; hi: speed
+; lo: duration
+	db $12, $22, $32, $42, $52, $62, $83, $93, 0
+
+TitleScroll:
+	ld a, d
+
+	ld bc, TitleScroll_In
+	ld d, $88
+	ld e, 0 ; don't animate titleball
+
+	and a
+	jr nz, .ok
+
+	ld bc, TitleScroll_Out
+	ld d, $00
+	ld e, 0 ; don't animate titleball
+.ok
+
+_TitleScroll:
+	ld a, [bc]
+	and a
+	ret z
+
+	inc bc
+	push bc
+
+	ld b, a
+	and $f
+	ld c, a
+	ld a, b
+	and $f0
+	swap a
+	ld b, a
+
+.loop
+	ld h, d
+	ld l, $48
+	call .ScrollBetween
+
+	ld h, $00
+	ld l, $88
+	call .ScrollBetween
+
+	ld a, d
+	add b
+	ld d, a
+
+	call GetTitleBallY
+	dec c
+	jr nz, .loop
+
+	pop bc
+	jr _TitleScroll
+
+.ScrollBetween:
+.wait
+	ldh a, [rLY] ; rLY
+	cp l
+	jr nz, .wait
+
+	ld a, h
+	ldh [rSCX], a
+
+.wait2
+	ldh a, [rLY] ; rLY
+	cp h
+	jr z, .wait2
+	ret
+
+TitleBallYTable:
+; OBJ y-positions for the Poke Ball held by Red in the title screen.
+; This is really two 0-terminated lists. Initiated with an index of 1.
+	db 0, $71, $6f, $6e, $6d, $6c, $6d, $6e, $6f, $71, $74, 0
+
+TitleScreenAnimateBallIfStarterOut:
+; Animate the TitleBall if a starter just got scrolled out.
+	ld a, [wTitleMonSpecies]
+	cp CHARMANDER
+	jr z, .ok
+	cp SQUIRTLE
+	jr z, .ok
+	cp BULBASAUR
+	ret nz
+.ok
+	ld e, 1 ; animate titleball
+	ld bc, TitleScroll_WaitBall
+	ld d, 0
+	jp _TitleScroll
+
+GetTitleBallY:
+; Get position e from TitleBallYTable
+	push de
+	push hl
+	xor a
+	ld d, a
+	ld hl, TitleBallYTable
+	add hl, de
+	ld a, [hl]
+	pop hl
+	pop de
+	and a
+	ret z
+	ld [wShadowOAMSprite07YCoord], a; ld [wShadowOAMSprite10YCoord], a
+	inc e
+	ret
+; R/B code ***
 
 AnimateTitleRed:
 ; Move the title screen crystal downward until it's fully visible

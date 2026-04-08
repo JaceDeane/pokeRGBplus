@@ -117,6 +117,12 @@ OTHER:
 
 - (!) Building _DEBUG causes an overflow
 
+- Title Screen:
+	-Timing on button presses to break DelayFrames loop
+	-The ball OAM doesn't bounce when a starter is chosen
+	-New TitleMon chosen is sometimes the same as current, yet it scrolls anyway
+	-GFX glitching when loading new mon, etc. timing of this will be looked into further
+
 - Lass Ali on Route 24 acts as if already beaten when taking PSN damage right in front of her
 	- May be an engine bug for *any* trainer (?)
 

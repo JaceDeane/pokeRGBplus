@@ -1213,6 +1213,9 @@ TitleScreenNextScene: ; unreferenced
 
 TitleScreenEntrance:
 ; Animate the logo:
+	
+
+
 ; Move each line by 4 pixels until our count hits 0.
 	ldh a, [hSCX]
 	and a
@@ -1254,6 +1257,7 @@ TitleScreenEntrance:
 	ld de, MUSIC_TITLE
 	call PlayMusic
 
+; To comment out *** R/B
 	ld a, $88
 	ldh [hWY], a
 	ret
@@ -1273,18 +1277,26 @@ TitleScreenTimer:
 
 TitleScreenMain:
 ; Run the timer down.
-	ld hl, wTitleScreenTimer
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	ld a, e
-	or d
-	jr z, .end
+	; ld hl, wTitleScreenTimer
+	; ld e, [hl]
+	; inc hl
+	; ld d, [hl]
+	; ld a, e
+	; or d
+	; jr z, .end
 
-	dec de
-	ld [hl], d
-	dec hl
-	ld [hl], e
+	; dec de
+	; ld [hl], d
+	; dec hl
+	; ld [hl], e
+;Don't run down the timer -- for that purpose anyway
+; assuming this is inside a loop on its own...
+	ld c, 200
+	call DelayFrames
+	call TitleScreenScrollInMon
+	call DelayFrame
+	farcall TitleScreenAnimateBallIfStarterOut
+	call TitleScreenPickNewMon
 
 ; Save data can be deleted by pressing Up + B + Select.
 	call GetJoypad
@@ -1366,6 +1378,11 @@ TitleScreenEnd:
 	and a
 	ret nz
 
+; Is now when to play the TitleMon's cry? -- functions TBC w pokecrystal
+	; ld a, [wTitleMonSpecies]
+	; call PlayCry
+	; call WaitForSoundToFinish
+
 	ld a, TITLESCREENOPTION_RESTART
 	ld [wTitleScreenSelectedOption], a
 
@@ -1381,6 +1398,55 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jp Init
+
+; R/B code ***
+TitleScreenPickNewMon:
+; Move the mon to the next layer (?) -- find pokecrystal equivalent
+	; ld a, HIGH(vBGMap0)
+	; call TitleScreenCopyTileMapToVRAM
+	ld a, HIGH(vBGMap0)
+	ldh [hBGMapAddress + 1], a
+	ld c, 3
+	call DelayFrames
+
+.loop
+; Keep looping until a mon different from the current one is picked.
+	call Random
+	and $f
+	ld c, a
+	ld b, 0
+	ld hl, TitleMons
+	add hl, bc
+	ld a, [hl]
+	ld hl, wTitleMonSpecies
+
+; Can't be the same as before.
+	cp [hl]
+	jr z, .loop
+
+	ld [hl], a
+		ld [wTitleMonSpecies], a
+		ld [wCurPartySpecies], a
+		ld [wCurSpecies], a ; ??
+	farcall LoadTitleMonSprite
+	
+	ld de, wBGPals1 palette 3 color 1 ; fill point for 2x colours
+	farcall LoadPokemonPalette
+	call UpdateTimePals
+
+	ld a, $90
+	ldh [hWY], a
+	ld d, 1 ; scroll out
+	farcall TitleScroll
+	ret
+
+TitleScreenScrollInMon:
+	ld d, 0 ; scroll in
+	farcall TitleScroll
+	xor a
+	ldh [hWY], a
+	ret
+; R/B code ***
 
 UpdateTitleTrailSprite: ; unreferenced
 	; If bit 0 or 1 of [wTitleScreenTimer] is set, we don't need to be here.
@@ -1458,6 +1524,8 @@ CopyrightString:
 	db   $73, $74, $75, $76, $77, $78, $79, $7a, $7b, $7c
 
 	db "@"
+
+INCLUDE "data/pokemon/title_mons.asm"
 
 GameInit::
 	farcall TryLoadSaveData
