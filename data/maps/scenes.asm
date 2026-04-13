@@ -66,9 +66,10 @@ MapScenes::
 	scene_var MOUNT_MOON_B2F,                              wMountMoonB2FSceneID
 ; Unused in R/B
 	; scene_var SPROUT_TOWER_3F,                             wSproutTower3FSceneID
-	; scene_var TIN_TOWER_1F,                                wTinTower1FSceneID
-	; scene_var BURNED_TOWER_1F,                             wBurnedTower1FSceneID
-	; scene_var BURNED_TOWER_B1F,                            wBurnedTowerB1FSceneID
+	scene_var POKEMON_TOWER_2F,                            wPokemonTower2FSceneID
+	scene_var POKEMON_TOWER_6F,                            wPokemonTower6FSceneID
+	scene_var POKEMON_TOWER_7F,                            wPokemonTower7FSceneID
+; Unused in R/B
 	; scene_var RADIO_TOWER_5F,                              wRadioTower5FSceneID
 	; scene_var RUINS_OF_ALPH_OUTSIDE,                       wRuinsOfAlphOutsideSceneID
 	; scene_var RUINS_OF_ALPH_RESEARCH_CENTER,               wRuinsOfAlphResearchCenterSceneID

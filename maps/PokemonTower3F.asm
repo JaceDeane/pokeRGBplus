@@ -9,48 +9,84 @@ PokemonTower3F_MapScripts:
 
 	def_callbacks
 
-PokemonTower3FChanneler1BattleText:
+TrainerChannelerLaurel: ;5
+	trainer CHANNELER, LAUREL, EVENT_BEAT_CHANNELER_LAUREL, ChannelerLaurelSeenText, ChannelerLaurelBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerLaurelAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerChannelerJody: ;6
+	trainer CHANNELER, JODY, EVENT_BEAT_CHANNELER_JODY, ChannelerJodySeenText, ChannelerJodyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerJodyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerChannelerRuth: ;8
+	trainer CHANNELER, RUTH, EVENT_BEAT_CHANNELER_RUTH, ChannelerRuthSeenText, ChannelerRuthBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerRuthAfterBattleText
+	waitbutton
+	closetext
+	end
+
+PokemonTower3FEscapeRope:
+	itemball ESCAPE_ROPE
+
+ChannelerLaurelSeenText:
 	text "Urrg… Awaa…"
 	line "Huhu… graa…"
 	done
 
-PokemonTower3FChanneler1EndBattleText:
+ChannelerLaurelBeatenText:
 	text "Hwa!"
 	line "I'm saved!"
-	prompt
+	done
 
-PokemonTower3FChanneler1AfterBattleText:
+ChannelerLaurelAfterBattleText:
 	text "The GHOSTS can be"
 	line "identified by the"
 	cont "SILPH SCOPE."
 	done
 
-PokemonTower3FChanneler2BattleText:
+ChannelerJodySeenText:
 	text "Kekeke…"
 	line "Kwaaah!"
 	done
 
-PokemonTower3FChanneler2EndBattleText:
+ChannelerJodyBeatenText:
 	text "Hmm?"
 	line "What am I doing?"
-	prompt
+	done
 
-PokemonTower3FChanneler2AfterBattleText:
+ChannelerJodyAfterBattleText:
 	text "Sorry! I was"
 	line "possessed!"
 	done
 
-PokemonTower3FChanneler3BattleText:
+ChannelerRuthSeenText:
 	text "Be gone!"
 	line "Evil spirit!"
 	done
 
-PokemonTower3FChanneler3EndBattleText:
+ChannelerRuthBeatenText:
 	text "Whew!"
 	line "The spirit left!"
-	prompt
+	done
 
-PokemonTower3FChanneler3AfterBattleText:
+ChannelerRuthAfterBattleText:
 	text "My friends were"
 	line "possessed too!"
 	done
@@ -67,7 +103,10 @@ PokemonTower3F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	; object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1
+	object_event 12,  3, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerChannelerLaurel, -1
+	object_event  9,  8, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerChannelerJody, -1
+	object_event 10, 13, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerChannelerRuth, -1
+	object_event 12,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PokemonTower3FEscapeRope, EVENT_POKEMON_TOWER_3F_ESCAPE_ROPE
 
 	; object_event 12,  3, SPRITE_CHANNELER, STAY, LEFT, TEXT_POKEMONTOWER3F_CHANNELER1, OPP_CHANNELER, 5
 	; object_event  9,  8, SPRITE_CHANNELER, STAY, DOWN, TEXT_POKEMONTOWER3F_CHANNELER2, OPP_CHANNELER, 6

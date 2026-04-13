@@ -3100,9 +3100,9 @@ wBattleTowerOutsideSceneID::                      db ;***
 wRoute43GateSceneID::                             db ;***
 wMountMoonB2FSceneID::                            db ; wMountMoonSceneID
 wSproutTower3FSceneID::                           db ;***
-wTinTower1FSceneID::                              db ;***
-wBurnedTower1FSceneID::                           db ;***
-wBurnedTowerB1FSceneID::                          db ;***
+wPokemonTower2FSceneID::                          db ; wTinTower1FSceneID
+wPokemonTower6FSceneID::                          db ; wBurnedTower1FSceneID
+wPokemonTower7FSceneID::                          db ; wBurnedTowerB1FSceneID
 wRadioTower5FSceneID::                            db ;***
 wRuinsOfAlphOutsideSceneID::                      db ;***
 wRuinsOfAlphResearchCenterSceneID::               db ;***
