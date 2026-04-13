@@ -11,47 +11,89 @@ PokemonTower4F_MapScripts:
 
 	def_callbacks
 
-PokemonTower4FChanneler1BattleText:
+TrainerChannelerPaula: ;9
+	trainer CHANNELER, PAULA, EVENT_BEAT_CHANNELER_PAULA, ChannelerPaulaSeenText, ChannelerPaulaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerPaulaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerChannelerLaurel: ;10
+	trainer CHANNELER, LAUREL, EVENT_BEAT_CHANNELER_LAUREL, ChannelerLaurelSeenText, ChannelerLaurelBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerLaurelAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerChannelerJody: ;12
+	trainer CHANNELER, JODY, EVENT_BEAT_CHANNELER_JODY, ChannelerJodySeenText, ChannelerJodyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerJodyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+PokemonTower4FElixer:
+	itemball ELIXER
+
+PokemonTower4FAwakening:
+	itemball AWAKENING
+
+PokemonTower4FHPUP:
+	itemball HP_UP
+
+ChannelerPaulaSeenText:
 	text "GHOST! No!"
 	line "Kwaaah!"
 	done
 
-PokemonTower4FChanneler1EndBattleText:
+ChannelerPaulaBeatenText:
 	text "Where is the"
 	line "GHOST?"
-	prompt
+	done
 
-PokemonTower4FChanneler1AfterBattleText:
+ChannelerPaulaAfterBattleText:
 	text "I must have been"
 	line "dreaming…"
 	done
 
-PokemonTower4FChanneler2BattleText:
+ChannelerLaurelSeenText:
 	text "Be cursed with me!"
 	line "Kwaaah!"
 	done
 
-PokemonTower4FChanneler2EndBattleText:
+ChannelerLaurelBeatenText:
 	text "What!"
-	prompt
+	done
 
-PokemonTower4FChanneler2AfterBattleText:
+ChannelerLaurelAfterBattleText:
 	text "We can't crack"
 	line "the identity of"
 	cont "the GHOSTS."
 	done
 
-PokemonTower4FChanneler3BattleText:
+ChannelerJodySeenText:
 	text "Huhuhu…"
 	line "Beat me not!"
 	done
 
-PokemonTower4FChanneler3EndBattleText:
+ChannelerJodyBeatenText:
 	text "Huh?"
 	line "Who? What?"
-	prompt
+	done
 
-PokemonTower4FChanneler3AfterBattleText:
+ChannelerJodyAfterBattleText:
 	text "May the departed"
 	line "souls of #MON"
 	cont "rest in peace…"
@@ -70,11 +112,9 @@ PokemonTower4F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	; object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1
-
-	; object_event  5, 10, SPRITE_CHANNELER, STAY, RIGHT, TEXT_POKEMONTOWER4F_CHANNELER1, OPP_CHANNELER, 9
-	; object_event 15,  7, SPRITE_CHANNELER, STAY, DOWN, TEXT_POKEMONTOWER4F_CHANNELER2, OPP_CHANNELER, 10
-	; object_event 14, 12, SPRITE_CHANNELER, STAY, LEFT, TEXT_POKEMONTOWER4F_CHANNELER3, OPP_CHANNELER, 12
-	; object_event 12, 10, SPRITE_POKE_BALL, STAY, NONE, TEXT_POKEMONTOWER4F_ELIXER, ELIXER
-	; object_event  9, 10, SPRITE_POKE_BALL, STAY, NONE, TEXT_POKEMONTOWER4F_AWAKENING, AWAKENING
-	; object_event 12, 16, SPRITE_POKE_BALL, STAY, NONE, TEXT_POKEMONTOWER4F_HP_UP, HP_UP
+	object_event  5, 10, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerChannelerPaula, -1
+	object_event 15,  7, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerChannelerLaurel, -1
+	object_event 14, 12, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerChannelerJody, -1
+	object_event 12, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PokemonTower4FElixer, EVENT_POKEMON_TOWER_4F_ELIXER
+	object_event  9, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PokemonTower4FAwakening, EVENT_POKEMON_TOWER_4F_AWAKENING
+	object_event 12, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PokemonTower4FHPUP, EVENT_POKEMON_TOWER_4F_HP_UP

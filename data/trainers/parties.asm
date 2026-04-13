@@ -3130,86 +3130,87 @@ KabutopsFossilGroup:
 AerodactylFossilGroup:
 
 ChannelerGroup: ; Updated to R/B (Unused trainers not added), using FR/LG names
-	; CHANNELER (1)
+; Pokémon Tower 3F
+	; CHANNELER (1) <5>
 	db "PATRICIA@", TRAINERTYPE_NORMAL
 	db 23, GASTLY
 	db -1 ; end
 
-	; CHANNELER (2)
+	; CHANNELER (2) <6>
 	db "CARLY@", TRAINERTYPE_NORMAL
 	db 24, GASTLY
 	db -1 ; end
 
-	; CHANNELER (3)
+	; CHANNELER (3) <8>
 	db "HOPE@", TRAINERTYPE_NORMAL
 	db 22, GASTLY
 	db -1 ; end
-
-	; CHANNELER (4)
+; Pokémon Tower 4F
+	; CHANNELER (4) <9>
 	db "PAULA@", TRAINERTYPE_NORMAL
 	db 24, GASTLY
 	db -1 ; end
 
-	; CHANNELER (5)
+	; CHANNELER (5) <10>
 	db "LAUREL@", TRAINERTYPE_NORMAL
 	db 23, GASTLY
 	db 23, GASTLY
 	db -1 ; end
 
-	; CHANNELER (6)
+	; CHANNELER (6) <12>
 	db "JODY@", TRAINERTYPE_NORMAL
 	db 22, GASTLY
 	db -1 ; end
-
-	; CHANNELER (7)
+; Pokémon Tower 5F
+	; CHANNELER (7) <14>
 	db "TAMMY@", TRAINERTYPE_NORMAL
 	db 23, HAUNTER
 	db -1 ; end
 
-	; CHANNELER (8)
+	; CHANNELER (8) <16>
 	db "RUTH@", TRAINERTYPE_NORMAL
 	db 22, GASTLY
 	db -1 ; end
 
-	; CHANNELER (9)
+	; CHANNELER (9) <17>
 	db "KARINA@", TRAINERTYPE_NORMAL
 	db 24, GASTLY
 	db -1 ; end
 
-	; CHANNELER (10)
+	; CHANNELER (10) <18>
 	db "JANAE@", TRAINERTYPE_NORMAL
 	db 22, GASTLY
 	db -1 ; end
-
-	; CHANNELER (11)
+; Pokémon Tower 6F
+	; CHANNELER (11) <19>
 	db "ANGELICA@", TRAINERTYPE_NORMAL
 	db 22, GASTLY
 	db 22, GASTLY
 	db 22, GASTLY
 	db -1 ; end
 
-	; CHANNELER (12)
+	; CHANNELER (12) <20>
 	db "EMILIA@", TRAINERTYPE_NORMAL
 	db 24, GASTLY
 	db -1 ; end
 
-	; CHANNELER (13)
+	; CHANNELER (13) <21>
 	db "JENNIFER@", TRAINERTYPE_NORMAL
 	db 24, GASTLY
 	db -1 ; end
-
-	; CHANNELER (14)
+; Saffron Gym
+	; CHANNELER (14) <22>
 	db "AMANDA@", TRAINERTYPE_NORMAL
 	db 34, GASTLY
 	db 34, HAUNTER
 	db -1 ; end
 
-	; CHANNELER (15)
+	; CHANNELER (15) <23>
 	db "STACY@", TRAINERTYPE_NORMAL
 	db 38, HAUNTER
 	db -1 ; end
 
-	; CHANNELER (16)
+	; CHANNELER (16) <24>
 	db "TASHA@", TRAINERTYPE_NORMAL
 	db 33, GASTLY
 	db 33, GASTLY

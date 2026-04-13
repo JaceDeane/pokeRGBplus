@@ -79,6 +79,8 @@ RedsHouse2FPCScript:
 	giveitem HM_SURF ; debug
 	giveitem HM_STRENGTH ; debug
 	giveitem HM_FLASH ; debug
+	giveitem MAX_REPEL ; debug
+	giveitem MAX_REPEL ; debug
 	; warp NONE, 0, 0
 	; warp VERMILION_GYM,  4, 17
 	; warp VERMILION_CITY, 18, 29 ; SS Anne Testing

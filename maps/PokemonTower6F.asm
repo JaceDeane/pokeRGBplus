@@ -7,33 +7,114 @@
 
 PokemonTower6F_MapScripts:
 	def_scene_scripts
+	scene_script PokemonTower6FNoopScene, SCENE_POKEMONTOWER6F_GHOST
+	scene_script PokemonTower6FNoopScene, SCENE_POKEMONTOWER6F_GHOST_DEPARTED
 
 	def_callbacks
 
-PokemonTower6FChanneler1BattleText:
+PokemonTower6FNoopScene:
+	end
+
+MarowakBattleScript:
+	; checkevent EVENT_BEAT_GHOST_MAROWAK
+		; iftrue .beaten_ghost
+	opentext
+	writetext PokemonTower6FBeGoneText
+	waitbutton
+	closetext
+	special FadeOutToWhite
+	cry MAROWAK
+	special FadeInFromWhite
+	setlasttalked -1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_GHOST
+	loadwildmon MAROWAK, 30
+	startbattle
+	ifequal WIN, BeatenGhost ;check if defeated
+	reloadmapafterbattle
+	applymovement PLAYER, StepRight
+	giveitem SILPH_SCOPE ; debug
+	end
+
+BeatenGhost:
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GHOST_MAROWAK
+	opentext
+	writetext PokemonTower6FGhostWasCubonesMotherText
+	waitbutton
+	cry MAROWAK
+	writetext PokemonTower6FSoulWasCalmedText
+	waitbutton
+	closetext
+	setscene SCENE_POKEMONTOWER6F_GHOST_DEPARTED
+	end
+
+TrainerChannelerAngelica: ;19
+	trainer CHANNELER, ANGELICA, EVENT_BEAT_CHANNELER_ANGELICA, ChannelerAngelicaSeenText, ChannelerAngelicaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerAngelicaBeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerChannelerEmilia: ;20
+	trainer CHANNELER, EMILIA, EVENT_BEAT_CHANNELER_EMILIA, ChannelerEmiliaSeenText, ChannelerEmiliaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerEmiliaBeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerChannelerJennifer: ;21
+	trainer CHANNELER, JENNIFER, EVENT_BEAT_CHANNELER_JENNIFER, ChannelerJenniferSeenText, ChannelerJenniferBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ChannelerJenniferBeatenText
+	waitbutton
+	closetext
+	end
+
+PokemonTower6FRareCandy:
+	itemball RARE_CANDY
+
+PokemonTower6FXAccuracy:
+	itemball X_ACCURACY
+
+StepRight:
+	step RIGHT
+	step_end
+
+ChannelerAngelicaSeenText:
 	text "Give… me…"
 	line "blood…"
 	done
 
-PokemonTower6FChanneler1EndBattleText:
+ChannelerAngelicaBeatenText:
 	text "Groan!"
-	prompt
+	done
 
-PokemonTower6FChanneler1AfterBattleText:
+ChannelerAngelicaAfterBattleText:
 	text "I feel anemic"
 	line "and weak…"
 	done
 
-PokemonTower6FChanneler2BattleText:
+ChannelerEmiliaSeenText:
 	text "Urff… Kwaah!"
 	done
 
-PokemonTower6FChanneler2EndBattleText:
+ChannelerEmiliaBeatenText:
 	text "Something fell"
 	line "out!"
-	prompt
+	done
 
-PokemonTower6FChanneler2AfterBattleText:
+ChannelerEmiliaAfterBattleText:
 	text "My hair didn't"
 	line "fall out!"
 	
@@ -41,16 +122,16 @@ PokemonTower6FChanneler2AfterBattleText:
 	line "evil spirit!"
 	done
 
-PokemonTower6FChanneler3BattleText:
+ChannelerJenniferSeenText:
 	text "Ke… ke… ke… "
 	line "ke… ke… ke!!"
 	done
 
-PokemonTower6FChanneler3EndBattleText:
+ChannelerJenniferBeatenText:
 	text "Keee!"
-	prompt
+	done
 
-PokemonTower6FChanneler3AfterBattleText:
+ChannelerJenniferAfterBattleText:
 	text "What's going on"
 	line "here?"
 	done
@@ -82,14 +163,13 @@ PokemonTower6F_MapEvents:
 	warp_event  9, 16, POKEMON_TOWER_7F, 1
 
 	def_coord_events
+	coord_event 10, 16, SCENE_POKEMONTOWER6F_GHOST, MarowakBattleScript
 
 	def_bg_events
 
 	def_object_events
-	; object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1
-
-	; object_event 12, 10, SPRITE_CHANNELER, STAY, RIGHT, TEXT_POKEMONTOWER6F_CHANNELER1, OPP_CHANNELER, 19
-	; object_event  9,  5, SPRITE_CHANNELER, STAY, DOWN, TEXT_POKEMONTOWER6F_CHANNELER2, OPP_CHANNELER, 20
-	; object_event 16,  5, SPRITE_CHANNELER, STAY, LEFT, TEXT_POKEMONTOWER6F_CHANNELER3, OPP_CHANNELER, 21
-	; object_event  6,  8, SPRITE_POKE_BALL, STAY, NONE, TEXT_POKEMONTOWER6F_RARE_CANDY, RARE_CANDY
-	; object_event 14, 14, SPRITE_POKE_BALL, STAY, NONE, TEXT_POKEMONTOWER6F_X_ACCURACY, X_ACCURACY
+	object_event 12, 10, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerChannelerAngelica, -1
+	object_event  9,  5, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerChannelerEmilia, -1
+	object_event 16,  5, SPRITE_CHANNELER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerChannelerJennifer, -1
+	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PokemonTower6FRareCandy, EVENT_POKEMON_TOWER_6F_RARE_CANDY
+	object_event 14, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PokemonTower6FXAccuracy, EVENT_POKEMON_TOWER_6F_X_ACCURACY
