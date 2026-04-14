@@ -27,10 +27,10 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
 	db MUSIC_MALE_TRAINER_ENCOUNTER   ; youngster -- R/B
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; bird_keeper -- R/B
 	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; lass -- R/B
 	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; leader_giovanni -- R/B
-	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
+	db MUSIC_MALE_TRAINER_ENCOUNTER   ; cooltrainerm -- R/B
 	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; cooltrainerf -- R/B
 	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; beauty -- R/B
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; pokemaniac
@@ -55,8 +55,8 @@ TrainerEncounterMusic::
 	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; juggler -- R/B
 	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
 	db MUSIC_ROCKET_ENCOUNTER      ; executivem
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
-	db MUSIC_FEMALE_TRAINER_ENCOUNTER        ; picnicker -- R/B
+	db MUSIC_SAGE_ENCOUNTER           ; psychic_t
+	db MUSIC_FEMALE_TRAINER_ENCOUNTER ; picnicker -- R/B
 	db MUSIC_MALE_TRAINER_ENCOUNTER   ; camper -- R/B
 	db MUSIC_ROCKET_ENCOUNTER      ; executivef
 	db MUSIC_SAGE_ENCOUNTER        ; sage
@@ -66,23 +66,26 @@ TrainerEncounterMusic::
 	db MUSIC_KIMONO_ENCOUNTER      ; kimono_girl
 	db MUSIC_LASS_ENCOUNTER        ; twins
 	db MUSIC_BEAUTY_ENCOUNTER      ; pokefanf
-	db MUSIC_HIKER_ENCOUNTER       ; red
+	db MUSIC_RIVAL_ENCOUNTER       ; red
 	db MUSIC_RIVAL_ENCOUNTER       ; rival3
-	db MUSIC_HIKER_ENCOUNTER       ; officer
+	db MUSIC_OFFICER_ENCOUNTER     ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_ROCKET_ENCOUNTER      ; kabutops_fossil
 	db MUSIC_ROCKET_ENCOUNTER      ; aerodactyl_fossil
-	db MUSIC_SAGE_ENCOUNTER        ; channeler
-	db MUSIC_HIKER_ENCOUNTER       ; cueball -- TODO
-	db MUSIC_HIKER_ENCOUNTER       ; engineer -- TODO
+	db MUSIC_SAGE_ENCOUNTER           ; channeler
+	db MUSIC_OFFICER_ENCOUNTER        ; cueball
+	db MUSIC_OFFICER_ENCOUNTER        ; engineer
 	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; gambler -- R/B
 	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; rocker -- R/B
-	db MUSIC_HIKER_ENCOUNTER       ; tamer -- TODO
-	db MUSIC_HIKER_ENCOUNTER       ; lorelei -- TODO
-	db MUSIC_HIKER_ENCOUNTER       ; agatha -- TODO
+	db MUSIC_EVIL_TRAINER_ENCOUNTER   ; tamer
+	db MUSIC_BEAUTY_ENCOUNTER      ; lorelei
+	db MUSIC_SAGE_ENCOUNTER        ; agatha
 	db MUSIC_ROCKET_ENCOUNTER      ; boss_giovanni
 	assert_table_length NUM_TRAINER_CLASSES + 1
 	db MUSIC_HIKER_ENCOUNTER       ; unused
 	db MUSIC_HIKER_ENCOUNTER       ; unused
 	db MUSIC_HIKER_ENCOUNTER       ; unused
+
+; MUSIC_HIKER_ENCOUNTER (G/S)   == MUSIC_EVIL_TRAINER_ENCOUNTER (R/B)
+; MUSIC_OFFICER_ENCOUNTER (G/S) == MUSIC_MALE_TRAINER_ENCOUNTER (R/B)

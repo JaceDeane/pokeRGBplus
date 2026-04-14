@@ -1106,27 +1106,36 @@ ToggleMaptileDecorations:
 	lb de, 6, 6 ; plant coordinates
 	ld a, [wDecoPlant]
 	call SetDecorationTile
-	lb de, 5, 0 ; poster coordinates
+	lb de, 4, 0 ; poster coordinates
 	ld a, [wDecoPoster]
 	call SetDecorationTile
 	call SetPosterVisibility
-	lb de, 2, 3 ; carpet top-left coordinates
+	lb de, 2, 2 ; carpet top-left coordinates
 	call PadCoords_de
 	ld a, [wDecoCarpet]
 	and a
 	ret z
 	call _GetDecorationSprite
-	ld [hl], a
+	ld [hli], a
+	inc a
+	ld [hl], a ; carpet top-right
+
 	push af
-	lb de, 2, 5 ; carpet bottom-left coordinates
+	lb de, 2, 4 ; carpet middle-left coordinates
+	call PadCoords_de
+	pop af
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a ; carpet middle-right block
+
+	push af
+	lb de, 2, 6 ; carpet bottom-left coordinates
 	call PadCoords_de
 	pop af
 	inc a
 	ld [hli], a ; carpet bottom-left block
-	inc a
-	ld [hli], a ; carpet bottom-middle block
-	dec a
-	ld [hl], a ; carpet bottom-right block
+	ld [hl], a ; carpet bottom-right block (same as prev)
 	ret
 
 SetPosterVisibility:

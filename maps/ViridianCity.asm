@@ -81,18 +81,18 @@ ViridianCity_TurnLeftMovement:
 	turn_head LEFT
 	step_end
 	
-ViridianCity_TurnDownMovement:
-	turn_head DOWN
-	step_end
+; ViridianCity_TurnDownMovement:
+	; turn_head DOWN
+	; step_end
 	
 ViridianCity_TurnStepDownMovement:
 	turn_head DOWN
 	step DOWN
 	step_end
 	
-; ViridianCity_TurnDownMovement3:
-	; jump_step DOWN
-	; step_end
+ViridianCity_TurnDownMovement3:
+	jump_step DOWN
+	step_end
 	
 ViridianCityGirlScript:
 	checkevent EVENT_GAMBLER_AWAKE
@@ -151,10 +151,11 @@ ViridianGymLockedDoorScript:
 	writetext ViridianCityGymLockedText
 	waitbutton
 	closetext
-	applymovement PLAYER, ViridianCity_TurnDownMovement
-	;playsound SFX_LEDGE_1
-	;applymovement PLAYER, ViridianCity_TurnDownMovement3
-	;waitsfx
+	; applymovement PLAYER, ViridianCity_TurnDownMovement
+; Player only turning down instead of ledge jumping allows player to bypass the coord event
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement PLAYER, ViridianCity_TurnDownMovement3
+	waitsfx
 	end
 	
 ViridianCityYoungster2Script:

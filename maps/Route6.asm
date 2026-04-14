@@ -12,23 +12,48 @@ Route6_MapScripts:
 	def_callbacks
 
 TrainerCamperRicky:
-	trainer CAMPER, RICKY, EVENT_BEAT_CAMPER_RICKY, CamperRickySeenText, CamperRickyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	checkevent EVENT_BEAT_CAMPER_RICKY
+		iftrue CamperRickyPicnickerNancyAfterBattleScript
+	faceplayer
+	playmusic MUSIC_MALE_TRAINER_ENCOUNTER
+	showemote EMOTE_SHOCK, LAST_TALKED, 30
+	faceobject PLAYER, LAST_TALKED
 	opentext
-	writetext CamperRickyAndPicnickerNancyAfterBattleText
+	writetext CamperRickySeenText
 	waitbutton
+	closetext
+	winlosstext CamperRickyBeatenText, 0
+	loadtrainer CAMPER, RICKY
+	startbattle
+	turnobject ROUTE6_COOLTRAINER_M1, RIGHT
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CAMPER_RICKY
 	closetext
 	end
 
 TrainerPicnickerNancy:
-	trainer PICNICKER, NANCY, EVENT_BEAT_PICNICKER_NANCY, PicnickerNancySeenText, PicnickerNancyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	checkevent EVENT_BEAT_PICNICKER_NANCY
+		iftrue CamperRickyPicnickerNancyAfterBattleScript
+	faceplayer
+	playmusic MUSIC_FEMALE_TRAINER_ENCOUNTER
+	showemote EMOTE_SHOCK, LAST_TALKED, 30
+	faceobject PLAYER, LAST_TALKED
 	opentext
-	writetext CamperRickyAndPicnickerNancyAfterBattleText
+	writetext PicnickerNancySeenText
+	waitbutton
+	closetext
+	winlosstext PicnickerNancyBeatenText, 0
+	loadtrainer PICNICKER, NANCY
+	startbattle
+	turnobject ROUTE6_LASS1, LEFT
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PICNICKER_NANCY
+	closetext
+	end
+
+CamperRickyPicnickerNancyAfterBattleScript:
+	opentext
+	writetext CamperRickyPicnickerNancyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -101,7 +126,7 @@ PicnickerNancyBeatenText:
 	line "I hate losing!"
 	done
 
-CamperRickyAndPicnickerNancyAfterBattleText:
+CamperRickyPicnickerNancyAfterBattleText:
 	text "Whisper…"
 	line "whisper…"
 	done
@@ -188,8 +213,8 @@ Route6_MapEvents:
 	bg_event 19, 15, BGEVENT_READ, Route6UndergroundPathSign
 
 	def_object_events	
-	object_event 10, 21, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerCamperRicky, -1
-	object_event 11, 21, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerPicnickerNancy, -1
+	object_event 10, 21, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerCamperRicky, -1
+	object_event 11, 21, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerPicnickerNancy, -1
 	object_event  0, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherKeigo, -1
 	object_event 11, 31, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJeff, -1
 	object_event 11, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerIsabelle, -1

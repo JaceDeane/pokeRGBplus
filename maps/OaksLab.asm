@@ -467,7 +467,7 @@ CharmanderPokeBallScript:
 	waitsfx
 	closetext
 	readvar VAR_FACING
-	ifequal RIGHT, OaksDirections
+	ifequal RIGHT, OaksDirections ; superfluous check
 	sjump OaksDirections
 
 SquirtlePokeBallScript:
@@ -592,6 +592,9 @@ OaksDirections:
 	setevent EVENT_RIVAL_CHOSE_STARTER
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
 	setscene SCENE_OAKSLAB_TAKE_YOU_ON
+	; Needs `OAKSLAB_BLUE` to actually load (?)
+	; setval SPRITEMOVEDATA_STANDING_UP
+    ; writemem wMap6ObjectMovement
 	end
 
 RivalBattleScript:
@@ -1341,29 +1344,31 @@ OaksLabTrashcanText:
 
 OaksLabPCText:
 	text "There's an e-mail"
-	line "message here!"
+	line "message here."
 
-	para "..."
+	para "<……><……><……>"
 
 	para "Calling all"
 	line "#MON trainers!"
 
 	para "The elite trainers"
-	line "of #MON LEAGUE"
-	cont "are ready to take"
-	cont "on all comers!"
+	line "of the #MON"
+	cont "LEAGUE are ready"
+
+	para "to take on all"
+	line "challengers!"
 
 	para "Bring your best"
 	line "#MON and see"
 	cont "how you rate as a"
 	cont "trainer!"
 
-	para "#MON LEAGUE HQ"
+	para "#MON LEAGUE HQ,"
 	line "INDIGO PLATEAU"
 
-	para "PS: PROF.OAK,"
+	para "P.S.: PROF.OAK,"
 	line "please visit us!"
-	cont "..."
+	cont "<……>"
 	done
 
 OaksLab_MapEvents:

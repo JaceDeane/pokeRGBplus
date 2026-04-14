@@ -54,12 +54,16 @@ RedsHouse2FN64Text: ; unused
 RedsHouse2FPCScript:
 	opentext
 	special PlayersHousePC
-	; iftrue .Warp ; debug - TODO
-	sjump .Warp ; debug
+	iftrue .Warp
 	closetext
 	end
 .Warp:
-	;debug
+; This warp is used as a map refresh, and is REQUIRED
+	warp NONE, 0, 0
+	end
+
+RedsHouse2FTestScript:
+	opentext
 	givepoke PIDGEY, 50, BERRY ; debug
 	givepoke MEW, 100, BERRY ; debug
 	waitsfx ; debug
@@ -79,13 +83,13 @@ RedsHouse2FPCScript:
 	giveitem HM_SURF ; debug
 	giveitem HM_STRENGTH ; debug
 	giveitem HM_FLASH ; debug
-	giveitem MAX_REPEL ; debug
-	giveitem MAX_REPEL ; debug
-	; warp NONE, 0, 0
-	; warp VERMILION_GYM,  4, 17
+	giveitem MAX_REPEL, 5 ; debug
+	giveitem ULTRA_BALL, 50 ; debug
+	; setevent EVENT_DECO_CARPET_1 ; debug
+	; setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP ; debug
 	; warp VERMILION_CITY, 18, 29 ; SS Anne Testing
 	; giveitem S_S_TICKET ; SS Anne Testing
-	warp LAVENDER_TOWN, 3, 6
+	warp LAVENDER_TOWN, 3, 6 ; debug
 	end
 
 RedsHouse2F_MapEvents:
@@ -98,6 +102,7 @@ RedsHouse2F_MapEvents:
 
 	def_bg_events
 	; bg_event  3,  5, BGEVENT_READ, RedsHouse2FN64Script
+	bg_event  3,  4, BGEVENT_DOWN, RedsHouse2FTestScript ; DEBUG - TODO
 	bg_event  0,  1, BGEVENT_UP, RedsHouse2FPCScript
 	bg_event  5,  0, BGEVENT_IFSET, RedsHousePosterScript
 

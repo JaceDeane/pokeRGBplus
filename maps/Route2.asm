@@ -4,7 +4,7 @@
 	; const ROUTE2_BUG_CATCHER3
 	const ROUTE2_POKE_BALL1
 	const ROUTE2_POKE_BALL2
-	const ROUTE2_FRUIT_TREE
+	; const ROUTE2_FRUIT_TREE
 
 Route2_MapScripts:
 	def_scene_scripts
@@ -56,8 +56,8 @@ Route2MoonStone:
 Route2HPUp:
 	itemball HP_UP
 
-Route2FruitTree:
-	fruittree FRUITTREE_ROUTE_2
+; Route2FruitTree:
+	; fruittree FRUITTREE_ROUTE_2
 
 ; BugCatcherRobSeenText:
 	; text "My bug #MON are"
@@ -149,4 +149,4 @@ Route2_MapEvents:
 	; object_event  0, 40, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDoug, -1
 	object_event 13, 54, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2MoonStone, EVENT_ROUTE_2_MOON_STONE
 	object_event 13, 45, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2HPUp, EVENT_ROUTE_2_HP_UP
-	object_event 16, 15, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
+	; object_event 16, 15, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
