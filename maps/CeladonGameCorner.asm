@@ -324,8 +324,8 @@ CeladonGameCorner_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 14, 13, CELADON_CITY, 6
 	warp_event 15, 13, CELADON_CITY, 6
+	warp_event 16, 13, CELADON_CITY, 6
 
 	def_coord_events
 
@@ -366,7 +366,7 @@ CeladonGameCorner_MapEvents:
 	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
+	; bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
 	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPoster2Script
 
 	def_object_events

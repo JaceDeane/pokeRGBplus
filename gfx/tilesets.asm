@@ -354,6 +354,8 @@ INCBIN "data/tilesets/gym_metatiles.bin"
 TilesetGymColl::
 INCLUDE "data/tilesets/gym_collision.asm"
 
+SECTION "Tileset Data 9", ROMX
+
 TilesetCavernGFX::
 INCBIN "gfx/tilesets/cavern.2bpp.lz"
 
@@ -367,9 +369,6 @@ INCLUDE "data/tilesets/cavern_collision.asm"
 
 TilesetDarkCavernGFX::
 INCBIN "gfx/tilesets/dark_cavern.2bpp.lz"
-
-
-SECTION "Tileset Data 9", ROMX
 
 TilesetGateKantoGFX::
 INCBIN "gfx/tilesets/gate_kanto.2bpp.lz"

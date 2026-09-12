@@ -28,8 +28,8 @@ CeladonPokecenter1FSittingGuyScript:
 	jumptextfaceplayer LavenderPokecenter1FSittingGuyText
 
 CeladonPokecenter1FGentlemanText:
-	text "The # FLUTE awa-"
-	line "kens #MON with"
+	text "The # FLUTE"
+	line "wakes #MON with"
 
 	cont "a sound that only"
 	cont "they can hear!"

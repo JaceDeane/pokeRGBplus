@@ -539,7 +539,7 @@ BluesHouse_Blocks:
 PewterNidoranSpeechHouse_Blocks:
 PewterSnoozeSpeechHouse_Blocks:
 BillsBrothersHouse_Blocks:
-LavenderSpeechHouse_Blocks:
+LavenderCuboneHouse_Blocks:
 LavenderNameRater_Blocks:
 Route12SuperRodHouse_Blocks:
 Route28SteelWingHouse_Blocks:

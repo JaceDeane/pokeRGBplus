@@ -1,7 +1,7 @@
 	object_const_def
 	const LAVENDERMART_CLERK
-	const LAVENDERMART_POKEFAN_M
-	const LAVENDERMART_ROCKER
+	const LAVENDERMART_BALDING_GUY
+	const LAVENDERMART_COOLTRAINER_M
 
 LavenderMart_MapScripts:
 	def_scene_scripts
@@ -14,35 +14,57 @@ LavenderMartClerkScript:
 	closetext
 	end
 
-LavenderMartPokefanMScript:
-	jumptextfaceplayer LavenderMartPokefanMText
+LavenderMartBaldingGuyScript:
+	jumptextfaceplayer LavenderMartBaldingGuyText
 
-LavenderMartRockerScript:
-	jumptextfaceplayer LavenderMartRockerText
+LavenderMartCooltrainerMScript:
+	faceplayer
+	opentext
+	checkevent EVENT_RESCUED_MR_FUJI
+	iftrue .rescued_fuji
+	writetext LavenderMartCooltrainerMReviveText
+	waitbutton
+	closetext
+	end
 
-LavenderMartPokefanMText:
-	text "REPEL is a neces-"
-	line "sity if you are"
+.rescued_fuji:
+	writetext LavenderMartCooltrainerMNuggetText
+	waitbutton
+	closetext
+	end
 
-	para "going to explore a"
-	line "cave."
+LavenderMartBaldingGuyText:
+	text "I'm searching for"
+	line "items that raise"
 
-	para "Even though I like"
-	line "exploring, I still"
+	para "the stats of"
+	line "#MON during a"
+	cont "single battle."
 
-	para "haven't made it to"
-	line "all the caves."
+	para "X ATTACK, X"
+	line "DEFEND, X SPEED"
+
+	para "and X SPECIAL are"
+	line "what I'm after."
+
+	para "Do you know where"
+	line "I can get them?"
 	done
 
-LavenderMartRockerText:
-	text "I heard about a"
-	line "craftsman who"
+LavenderMartCooltrainerMReviveText:
+	text "You know REVIVE?"
 
-	para "makes custom BALLS"
-	line "in the JOHTO town"
+	para "It revives any"
+	line "fainted #MON!"
+	done
 
-	para "of AZALEA. I wish"
-	line "I had some."
+LavenderMartCooltrainerMNuggetText:
+	text "I found a NUGGET"
+	line "in the mountains."
+
+	para "I thought it was"
+	line "useless, but it"
+	cont "sold for ¥5000!"
 	done
 
 LavenderMart_MapEvents:
@@ -57,6 +79,6 @@ LavenderMart_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartClerkScript, -1
-	object_event  6,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderMartPokefanMScript, -1
-	object_event  9,  2, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartRockerScript, -1
+	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartClerkScript, -1
+	object_event  3,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderMartBaldingGuyScript, -1
+	object_event  7,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderMartCooltrainerMScript, -1

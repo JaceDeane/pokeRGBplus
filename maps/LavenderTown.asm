@@ -128,7 +128,7 @@ LavenderTown_MapEvents:
 	def_warp_events
 	warp_event  3,  5, LAVENDER_POKECENTER_1F, 1
 	warp_event  7,  9, MR_FUJIS_HOUSE, 1
-	warp_event  3, 13, LAVENDER_SPEECH_HOUSE, 1
+	warp_event  3, 13, LAVENDER_CUBONE_HOUSE, 1
 	warp_event  7, 13, LAVENDER_NAME_RATER, 1
 	warp_event 15, 13, LAVENDER_MART, 2
 	warp_event 14,  5, POKEMON_TOWER_1F, 1

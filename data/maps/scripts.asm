@@ -378,7 +378,7 @@ SECTION "Map Scripts 5", ROMX
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/LavenderPokecenter1F.asm"
 INCLUDE "maps/MrFujisHouse.asm"
-INCLUDE "maps/LavenderSpeechHouse.asm"
+INCLUDE "maps/LavenderCuboneHouse.asm"
 INCLUDE "maps/LavenderNameRater.asm"
 INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
