@@ -2360,8 +2360,9 @@ Pokedex_GetArea:
 	call FillKantoMap
 	call .PlaceString_MonsNest
 	call TownMapPals
-	; hlbgcoord 0, 0, vBGMap1 ; Do not load Johto's map at all
+	; hlbgcoord 0, 0, vBGMap1 ; Load Kanto's map into vBGMap0 instead
 	; call TownMapBGUpdate
+
 	; call FillJohtoMap
 	; call .PlaceString_MonsNest
 	; call TownMapPals
@@ -2487,7 +2488,7 @@ Pokedex_GetArea:
 .nestloop
 	ld a, [de]
 	and a
-	jr z, .done_nest
+	jr z, .exit_loop
 	push de
 	ld e, a
 	push hl
@@ -2509,12 +2510,38 @@ Pokedex_GetArea:
 	inc de
 	jr .nestloop
 
+.exit_loop
+	ld a, l
+	cp LOW(wShadowOAMSprite00) ; were any OAM entries written?
+	jr nz, .done_nest
+; if no OAM entries were written, print area unknown text
+	; call FillKantoMap ; hard-coded Kanto map fill 
+	ld de, KantoMap + SCREEN_WIDTH
+	hlcoord 0, 1
+	call FillTownMap.loop
+	call .PlaceString_MonsNest
+
+	hlcoord 1, 7
+	lb bc, 2, 15
+	call Textbox ; call TextBoxBorder (R/B)
+	hlcoord 2, 9
+	ld de, .String_AreaUnknown
+	call PlaceString
+	call TownMapPals
+	hlbgcoord 0, 0
+	call TownMapBGUpdate
+	; xor a
+	; ldh [hBGMapMode], a
+	; call WaitBGMap
 .done_nest
 	ld hl, wShadowOAM
 	decoord 0, 0
 	ld bc, wShadowOAMEnd - wShadowOAM
 	call CopyBytes
 	ret
+
+.String_AreaUnknown:
+	db " AREA UNKNOWN@"
 
 .HideNestsShowPlayer:
 	call .CheckPlayerLocation

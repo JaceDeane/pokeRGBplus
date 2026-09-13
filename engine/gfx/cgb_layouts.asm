@@ -260,6 +260,7 @@ _CGB_Pokedex:
 	ld a, PREDEFPAL_CGB_BADGE; PREDEFPAL_POKEDEX ; -- RB GREY
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
+
 	ld a, [wCurPartySpecies]
 	cp $ff
 	jr nz, .is_pokemon
@@ -277,11 +278,12 @@ _CGB_Pokedex:
 	ld a, $1 ; green question mark palette
 	call FillBoxCGB
 	call InitPartyMenuOBPals
-	ld hl, PokedexCursorPalette
-	ld de, wOBPals1 palette 7 ; green cursor palette
-	ld bc, 1 palettes
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
+
+	; ld hl, PokedexCursorPalette
+	; ld de, wOBPals1 palette 7 ; green cursor palette
+	; ld bc, 1 palettes
+	; ld a, BANK(wOBPals1)
+	; call FarCopyWRAM
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
@@ -762,11 +764,31 @@ _CGB_BetaPikachuMinigame:
 	ret
 
 _CGB_PokedexSearchOption:
+; Old function below (simple full-screen single palette)
+	; ld de, wBGPals1
+	; ld a, PREDEFPAL_CGB_BADGE; PREDEFPAL_POKEDEX
+	; call GetPredefPal
+	; call LoadHLPaletteIntoDE
+	; call WipeAttrmap
+	; call ApplyAttrmap
+	; call ApplyPals
+	; ld a, TRUE
+	; ldh [hCGBPalUpdate], a
+
 	ld de, wBGPals1
-	ld a, PREDEFPAL_CGB_BADGE; PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_CGB_BADGE ; RB GREY
 	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	call WipeAttrmap
+	call LoadHLPaletteIntoDE ; dex interface palette
+	ld a, PREDEFPAL_POKEDEX ; RB RED
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; caught icon palette
+
+	hlcoord 3, 2, wAttrmap
+	lb bc, 15, 1
+	ld a, $1 ; caught icon palette
+	call FillBoxCGB
+	call InitPartyMenuOBPals
+
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
