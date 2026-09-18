@@ -352,10 +352,9 @@ VermilionGymStatue:
 	; done
 
 LtSurgeIntroText:
-	text "SURGE: Hey, kid!"
-
-	para "What do you think"
-	line "you're doing here?"
+	text "Hey, kid! What do"
+	line "you think you're"
+	cont "doing here?"
 
 	para "You won't live"
 	line "long in combat!"
@@ -376,7 +375,7 @@ LtSurgeIntroText:
 	done
 
 LtSurgeWinLossText:
-	text "SURGE: Whoa!"
+	text "Whoa!"
 
 	para "You're the real"
 	line "deal, kid!"
@@ -387,15 +386,13 @@ LtSurgeWinLossText:
 
 ReceivedThunderBadgeText:
 	text "<PLAYER> received"
-	line "the THUNDERBADGE."
+	line "THUNDERBADGE."
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE cranks up"
-	
-	para "your #MON's"
-	line "SPEED!"
+	text "The THUNDERBADGE"
+	line "cranks up your"
+	cont "#MON's SPEED!"
 
 	para "It also lets your"
 	line "#MON use FLY"
@@ -405,16 +402,9 @@ LtSurgeThunderBadgeText:
 	line "kid! Take this!"
 	done
 
-; LtSurgeReceivedTM24Text:
-	; text "<PLAYER> received "
-	; line "@"
-	; text_ram wStringBuffer
-	; text "!@"
-	; text_end
-
 TM24ExplanationText:
-	text "SURGE: TM24 con-"
-	line "tains THUNDERBOLT!"
+	text "TM24 contains"
+	line "THUNDERBOLT!"
 
 	para "Teach it to an"
 	line "electric #MON!"
@@ -426,9 +416,8 @@ LtSurgeTM24NoRoomText:
 	done
 
 LtSurgeFightDoneText:
-	text "SURGE: A little"
-	line "word of advice,"
-	cont "kid!"
+	text "A little word of"
+	line "advice, kid!"
 
 	para "Electricity is"
 	line "sure powerful!"
@@ -498,7 +487,7 @@ SailorDwayneAfterBattleText:
 	done
 
 VermilionGymGuideText:
-	text "Yo! Champ in"
+	text "Yo! CHAMP in"
 	line "making!"
 
 	para "LT.SURGE has a"
@@ -563,6 +552,7 @@ VermilionGymFoundSecondSwitchText:
 VermilionGymSecondLockOpenedText:
 	text "The 2nd electric"
 	line "lock opened!"
+	done
 
 VermilionGymMotorizedDoorOpenedText:
 	text "The motorized door"

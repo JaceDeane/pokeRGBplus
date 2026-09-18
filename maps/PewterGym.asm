@@ -117,8 +117,8 @@ BrockIntroText:
 	done
 
 BrockWinLossText:
-	text "BROCK: I took"
-	line "you for granted."
+	text "I took you for"
+	line "granted."
 
 	para "As proof of your"
 	line "victory, here's"
@@ -127,13 +127,13 @@ BrockWinLossText:
 
 ReceivedBoulderBadgeText:
 	text "<PLAYER> received"
-	line "the BOULDERBADGE!"
+	line "BOULDERBADGE!"
 	done
 
 BrockBoulderBadgeText:
-	text "BROCK: That's an"
-	line "official #MON"
-	cont "LEAGUE BADGE!"
+	text "That's an official"
+	line "#MON LEAGUE"
+	cont "BADGE!"
 
 	para "Its bearer's"
 	line "#MON become"
@@ -145,16 +145,16 @@ BrockBoulderBadgeText:
 	done
 	
 BrockWaitTakeThisText:
-	text "BROCK: Wait! Take"
-	line "this with you!"
+	text "Wait! Take this"
+	line "with you!"
 	done
 
 BrockTMExplanationText:
-	text "BROCK: A TM con-"
-	line "tains a technique"
+	text "A TM contains a"
+	line "technique that"
 	
-	para "that can be"
-	line "taught to #MON!"
+	para "can be taught to"
+	line "#MON!"
 
 	para "A TM is good only"
 	line "once! So when you"
@@ -176,10 +176,9 @@ BrockTMExplanationText:
 	done
 
 BrockFightDoneText:
-	text "BROCK: There are"
-	line "all kinds of"
-	cont "trainers in the"
-	cont "world!"
+	text "There are all"
+	line "kinds of trainers"
+	cont "in the world!"
 
 	para "You appear to be"
 	line "very gifted as a"
@@ -216,8 +215,9 @@ CamperLiamAfterBattleText:
 PewterGymGuideText:
 	text "Hiya! I can tell"
 	line "you have what it"
-	cont "takes to become a"
-	cont "#MON champ!"
+
+	para "takes to become a"
+	line "#MON CHAMP!"
 
 	para "I'm no trainer,"
 	line "but I can tell"
@@ -235,13 +235,15 @@ PewterGymGuideBeginAdviceText:
 PewterGymGuideAdviceText:
 	text "The 1st #MON"
 	line "out in a match is"
-	cont "at the top of the"
-	cont "#MON LIST!"
+
+	para "at the top of the"
+	line "#MON LIST!"
 
 	para "By changing the"
 	line "order of #MON,"
-	cont "matches could be"
-	cont "made easier!"
+
+	para "matches could be"
+	line "made easier!"
 	done
 
 PewterGymGuideFreeServiceText:
@@ -252,8 +254,9 @@ PewterGymGuideFreeServiceText:
 
 PewterGymGuideWinText:
 	text "Just as I thought!"
-	line "You're #MON"
-	cont "champ material!"
+
+	para "You're #MON"
+	line "CHAMP material!"
 	done
 
 PewterGym_MapEvents:

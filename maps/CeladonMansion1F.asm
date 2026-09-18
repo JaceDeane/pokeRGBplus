@@ -63,7 +63,7 @@ CeladonMansion1FClefairyText:
 	done
 
 CeladonMansion1FNidoranFText:
-	text "NIDORAN: Kya"
+	text "NIDORAN♀: Kya"
 	line "kyaoo!"
 	done
 

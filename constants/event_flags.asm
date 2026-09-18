@@ -273,17 +273,17 @@
 	const EVENT_RESCUED_MR_FUJI
 	const EVENT_GOT_POKE_FLUTE
 	const EVENT_TEAM_ROCKET_DISAPPEAR_POKEMON_TOWER ;Reserving early
-	const_skip 9 ; reserving
 
 ; Celadon City events
-	; const EVENT_FOUND_ROCKET_HIDEOUT
-	; const EVENT_GOT_10_COINS
-	; const EVENT_GOT_20_COINS
-	; const EVENT_GOT_20_COINS_2
-	; const EVENT_GOT_COIN_CASE
-	; const EVENT_TEAM_ROCKET_APPEARED_CELADON_CITY
+	const EVENT_FOUND_ROCKET_HIDEOUT
+	const EVENT_GOT_10_COINS
+	const EVENT_GOT_20_COINS
+	const EVENT_GOT_20_COINS_2
+	const EVENT_GOT_COIN_CASE
+	const EVENT_TEAM_ROCKET_APPEARED_CELADON_CITY
 
 ; Fuchsia City events
+	const_skip 3 ; reserving
 	; const EVENT_GOT_HM04 ; Already defined
 	; const EVENT_GAVE_GOLD_TEETH
 	; const EVENT_SAFARI_GAME_OVER

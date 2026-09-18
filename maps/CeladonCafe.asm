@@ -1,226 +1,193 @@
 	object_const_def
-	const CELADONCAFE_SUPER_NERD
-	const CELADONCAFE_FISHER1
-	const CELADONCAFE_FISHER2
-	const CELADONCAFE_FISHER3
-	const CELADONCAFE_TEACHER
+	const CELADONCAFE_COOK
+	const CELADONCAFE_MIDDLE_AGED_WOMAN
+	const CELADONCAFE_MIDDLE_AGED_MAN
+	const CELADONCAFE_FISHER
+	const CELADONCAFE_GYM_GUIDE
 
 CeladonCafe_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CeladonCafeChef:
-	faceplayer
-	opentext
-	writetext ChefText_Eatathon
-	waitbutton
-	closetext
-	end
+CeladonCafeChefScript:
+	jumptextfaceplayer CeladonCafeChefText
 
-CeladonCafeFisher1:
-	opentext
-	writetext Fisher1Text_Snarfle
-	waitbutton
-	closetext
-	faceplayer
-	opentext
-	writetext Fisher1Text_Concentration
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_FISHER1, LEFT
-	end
+CeladonCafeMiddleAgedWomanScript:
+	jumptextfaceplayer CeladonCafeMiddleAgedWomanText
 
-CeladonCafeFisher2:
-	opentext
-	writetext Fisher2Text_GulpChew
-	waitbutton
-	closetext
-	faceplayer
-	opentext
-	writetext Fisher2Text_Quantity
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_FISHER2, RIGHT
-	end
+CeladonCafeMiddleAgedManScript:
+	jumptextfaceplayer CeladonCafeMiddleAgedManText
 
-CeladonCafeFisher3:
-	opentext
-	writetext Fisher3Text_MunchMunch
-	waitbutton
-	closetext
-	faceplayer
-	opentext
-	writetext Fisher3Text_GoldenrodIsBest
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_FISHER3, RIGHT
-	end
-
-CeladonCafeTeacher:
-	checkitem COIN_CASE
-	iftrue .HasCoinCase
-	opentext
-	writetext TeacherText_CrunchCrunch
-	waitbutton
-	closetext
-	faceplayer
-	opentext
-	writetext TeacherText_NoCoinCase
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_TEACHER, LEFT
-	end
-
-.HasCoinCase:
-	opentext
-	writetext TeacherText_KeepEating
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_TEACHER, RIGHT
-	opentext
-	writetext TeacherText_MoreChef
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_TEACHER, LEFT
-	end
+CeladonCafeFisherScript:
+	jumptextfaceplayer CeladonCafeFisherText
+	; opentext
+	; writetext Fisher3Text_MunchMunch
+	; waitbutton
+	; closetext
+	; faceplayer
+	; opentext
+	; writetext Fisher3Text_GoldenrodIsBest
+	; waitbutton
+	; closetext
+	; turnobject CELADONCAFE_FISHER3, RIGHT
+	; end
 
 EatathonContestPoster:
 	jumptext EatathonContestPosterText
 
-CeladonCafeTrashcan:
-	checkevent EVENT_FOUND_LEFTOVERS_IN_CELADON_CAFE
-	iftrue .TrashEmpty
-	giveitem LEFTOVERS
-	iffalse .PackFull
+; CeladonCafeTrashcan:
+	; checkevent EVENT_FOUND_LEFTOVERS_IN_CELADON_CAFE
+	; iftrue .TrashEmpty
+	; giveitem LEFTOVERS
+	; iffalse .PackFull
+	; opentext
+	; getitemname STRING_BUFFER_3, LEFTOVERS
+	; writetext FoundLeftoversText
+	; playsound SFX_ITEM
+	; waitsfx
+	; itemnotify
+	; closetext
+	; setevent EVENT_FOUND_LEFTOVERS_IN_CELADON_CAFE
+	; end
+
+; .PackFull:
+	; opentext
+	; getitemname STRING_BUFFER_3, LEFTOVERS
+	; writetext FoundLeftoversText
+	; promptbutton
+	; writetext NoRoomForLeftoversText
+	; waitbutton
+	; closetext
+	; end
+
+; .TrashEmpty:
+	; jumpstd TrashCanScript
+
+CeladonCafeGymGuideScript:
+	faceplayer
 	opentext
-	getitemname STRING_BUFFER_3, LEFTOVERS
-	writetext FoundLeftoversText
-	playsound SFX_ITEM
+	checkevent EVENT_GOT_COIN_CASE
+	iftrue .GotItem
+	writetext CeladonCafeGymGuideImFlatOutBustedText
+	promptbutton
+	waitsfx
+	giveitem COIN_CASE
+	iffalse .BagFull
+	writetext CeladonCafeGymGuideReceivedCoinCaseText
+	playsound SFX_KEY_ITEM
 	waitsfx
 	itemnotify
+	setevent EVENT_GOT_COIN_CASE
+	waitbutton ; is wait sfx enough?
 	closetext
-	setevent EVENT_FOUND_LEFTOVERS_IN_CELADON_CAFE
 	end
 
-.PackFull:
-	opentext
-	getitemname STRING_BUFFER_3, LEFTOVERS
-	writetext FoundLeftoversText
-	promptbutton
-	writetext NoRoomForLeftoversText
+.GotItem:
+	writetext CeladonCafeGymGuideWinItBackText
 	waitbutton
 	closetext
 	end
 
-.TrashEmpty:
-	jumpstd TrashCanScript
-
-ChefText_Eatathon:
-	text "Hi!"
-
-	para "We're holding an"
-	line "eatathon contest."
-
-	para "We can't serve you"
-	line "right now. Sorry."
-	done
-
-Fisher1Text_Snarfle:
-	text "…Snarfle, chew…"
-	done
-
-Fisher1Text_Concentration:
-	text "Don't talk to me!"
-
-	para "You'll break my"
-	line "concentration!"
-	done
-
-Fisher2Text_GulpChew:
-	text "…Gulp… Chew…"
-	done
-
-Fisher2Text_Quantity:
-	text "I take quantity"
-	line "over quality!"
-
-	para "I'm happy when I'm"
-	line "full!"
-	done
-
-Fisher3Text_MunchMunch:
-	text "Munch, munch…"
-	done
-
-Fisher3Text_GoldenrodIsBest:
-	text "The food is good"
-	line "here, but GOLDEN-"
-	cont "ROD has the best"
-	cont "food anywhere."
-	done
-
-TeacherText_CrunchCrunch:
-	text "Crunch… Crunch…"
-	done
-
-TeacherText_NoCoinCase:
-	text "Nobody here will"
-	line "give you a COIN"
-
-	para "CASE. You should"
-	line "look in JOHTO."
-	done
-
-TeacherText_KeepEating:
-	text "Crunch… Crunch…"
-
-	para "I can keep eating!"
-	done
-
-TeacherText_MoreChef:
-	text "More, CHEF!"
-	done
+.BagFull:
+	writetext CeladonCafeGymGuideCoinCaseNoRoomText
+	waitbutton
+	closetext
+	end
 
 EatathonContestPosterText:
 	text "Eatathon Contest!"
-	line "No time limit!"
-
-	para "A battle without"
-	line "end! The biggest"
-
-	para "muncher gets it"
-	line "all for free!"
+	line "Coming Soon!"
 	done
 
-FoundLeftoversText:
-	text "<PLAYER> found"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
+; FoundLeftoversText:
+	; text "<PLAYER> found"
+	; line "@"
+	; text_ram wStringBuffer3
+	; text "!"
+	; done
+
+; NoRoomForLeftoversText:
+	; text "But <PLAYER> can't"
+	; line "hold another item…"
+	; done
+
+CeladonCafeChefText:
+	text "Hi!"
+
+	para "We're taking a"
+	line "break now. Sorry."
 	done
 
-NoRoomForLeftoversText:
-	text "But <PLAYER> can't"
-	line "hold another item…"
+CeladonCafeMiddleAgedWomanText:
+	text "My #MON are"
+	line "weak, so I often"
+
+	para "have to go to the"
+	line "DEPT. STORE." ;DRUG STORE (R/B)
+	done
+
+CeladonCafeMiddleAgedManText:
+	text "Psst! There's a"
+	line "basement under"
+	cont "the GAME CORNER."
+	done
+
+CeladonCafeFisherText:
+	text "Munch, munch…"
+
+	para "The man at that"
+	line "table lost it all"
+	cont "at the slots."
+	done
+
+CeladonCafeGymGuideImFlatOutBustedText:
+	text "Go ahead! Laugh!"
+
+	para "I'm flat out"
+	line "busted!"
+
+	para "No more slots for"
+	line "me! I'm going"
+	cont "straight!"
+
+	para "Here! I won't be"
+	line "needing this any-"
+	cont "more!"
+	done ;prompt
+
+CeladonCafeGymGuideReceivedCoinCaseText:
+	text "<PLAYER> received"
+	line "a COIN CASE!"
+	done
+
+CeladonCafeGymGuideCoinCaseNoRoomText:
+	text "Make room for"
+	line "this!"
+	done
+
+CeladonCafeGymGuideWinItBackText:
+	text "I always thought"
+	line "I was going to"
+	cont "win it back…"
 	done
 
 CeladonCafe_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, CELADON_CITY, 9
-	warp_event  7,  7, CELADON_CITY, 9
+	warp_event  6,  7, CELADON_CITY, 11
+	warp_event  7,  7, CELADON_CITY, 11
 
 	def_coord_events
 
 	def_bg_events
 	bg_event  5,  0, BGEVENT_READ, EatathonContestPoster
-	bg_event  7,  1, BGEVENT_READ, CeladonCafeTrashcan
+	; bg_event  7,  1, BGEVENT_READ, CeladonCafeTrashcan
 
 	def_object_events
-	object_event  9,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCafeChef, -1
-	object_event  4,  6, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher1, -1
-	object_event  1,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher2, -1
-	object_event  1,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisher3, -1
-	object_event  4,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeTeacher, -1
+	object_event  8,  5, SPRITE_COOK, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCafeChefScript, -1
+	object_event  7,  2, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeMiddleAgedWomanScript, -1
+	object_event  1,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeMiddleAgedManScript, -1
+	object_event  5,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisherScript, -1
+	object_event  0,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeGymGuideScript, -1

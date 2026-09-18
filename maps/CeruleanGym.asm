@@ -98,8 +98,8 @@ CeruleanGymStatue:
 	jumpstd GymStatue2Script
 
 MistyIntroText:
-	text "MISTY: Hi, you're"
-	line "a new face!"
+	text "Hi, you're a new"
+	line "face!"
 
 	para "Trainers who want"
 	line "to turn pro have"
@@ -119,7 +119,7 @@ MistyIntroText:
 	done
 
 MistyWinLossText:
-	text "MISTY: Wow!"
+	text "Wow!"
 	line "You're too much!"
 
 	para "All right!"
@@ -131,15 +131,13 @@ MistyWinLossText:
 
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
-	line "the CASCADEBADGE."
+	line "CASCADEBADGE."
 	done
 
 MistyFightDoneText:
-	text "MISTY: The CASCADE"
-	line "BADGE makes all"
-	
-	para "#MON up to Lv30"
-	line "obey!"
+	text "The CASCADEBADGE"
+	line "makes all #MON"
+	cont "up to L30 obey!"
 
 	para "That includes"
 	line "even outsiders!"
@@ -162,8 +160,8 @@ MistyTMNoRoomText:
 	done
 
 MistyTMExplanationText:
-	text "MISTY: TM11 tea-"
-	line "ches BUBBLEBEAM!"
+	text "TM11 teaches"
+	line "BUBBLEBEAM!"
 
 	para "Use it on an"
 	line "aquatic #MON!"
@@ -208,7 +206,7 @@ SwimmermLuisAfterBattleText:
 	done
 
 CeruleanGymGuideText:
-	text "Yo! Champ in"
+	text "Yo! CHAMP in"
 	line "making!"
 
 	para "Here's my advice!"

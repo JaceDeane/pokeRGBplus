@@ -23,11 +23,11 @@ PewterNidoran:
 	end
 
 PewterNidoranSpeechHouseLittleBoyText:
-	text "NIDORAN, sit!"
+	text "NIDORAN♂, sit!"
 	done
 
 PewterNidoranText:
-	text "NIDORAN: Bowbow!"
+	text "NIDORAN♂: Bowbow!"
 	done
 
 PewterNidoranSpeechHouseMiddleAgedManText:

@@ -1,10 +1,12 @@
 	object_const_def
 	const CELADONGYM_ERIKA
 	const CELADONGYM_LASS1
+	const CELADONGYM_BEAUTY1
+	const CELADONGYM_PICNICKER
+	const CELADONGYM_BEAUTY2
 	const CELADONGYM_LASS2
-	const CELADONGYM_BEAUTY
-	const CELADONGYM_TWIN1
-	const CELADONGYM_TWIN2
+	const CELADONGYM_BEAUTY3
+    const CELADONGYM_COOLTRAINER_F
 
 CeladonGym_MapScripts:
 	def_scene_scripts
@@ -24,80 +26,116 @@ CeladonGymErikaScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ERIKA
-	;setevent EVENT_BEAT_LASS_MICHELLE
-	;setevent EVENT_BEAT_PICNICKER_TANYA
-	;setevent EVENT_BEAT_BEAUTY_JULIA
-	;setevent EVENT_BEAT_TWINS_JO_AND_ZOE
+	setevent EVENT_BEAT_LASS_KAY
+	setevent EVENT_BEAT_BEAUTY_BRIDGET
+	setevent EVENT_BEAT_PICNICKER_TINA
+	setevent EVENT_BEAT_BEAUTY_TAMIA
+	setevent EVENT_BEAT_LASS_LISA
+	setevent EVENT_BEAT_BEAUTY_LORI
+	setevent EVENT_BEAT_COOLTRAINERF_MARY
 	opentext
 	writetext PlayerReceivedRainbowBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_RAINBOWBADGE
-.FightDone:
-	checkevent EVENT_GOT_TM19_GIGA_DRAIN
-	iftrue .GotGigaDrain
-	writetext ErikaExplainTMText
+	writetext ErikaRainbowBadgeInfoText
 	promptbutton
-	; verbosegiveitem TM_GIGA_DRAIN
-	iffalse .GotGigaDrain
-	setevent EVENT_GOT_TM19_GIGA_DRAIN
+.FightDone:
+	checkevent EVENT_GOT_TM21_MEGA_DRAIN
+	iftrue .GotGigaDrain
+	verbosegiveitem TM_MEGA_DRAIN
+	iffalse .NoRoom
+	writetext ErikaExplainTMText
+	waitbutton
+	setevent EVENT_GOT_TM21_MEGA_DRAIN
+	closetext
+	end
+	
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerLassMichelle:
-	;trainer LASS, MICHELLE, EVENT_BEAT_LASS_MICHELLE, LassMichelleSeenText, LassMichelleBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext LassMichelleAfterBattleText
+.NoRoom:
+	writetext ErikaNoRoomText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerTanya:
-	;trainer PICNICKER, TANYA, EVENT_BEAT_PICNICKER_TANYA, PicnickerTanyaSeenText, PicnickerTanyaBeatenText, 0, .Script
+TrainerLassKay:
+	trainer LASS, KAY, EVENT_BEAT_LASS_KAY, LassKaySeenText, LassKayBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerTanyaAfterBattleText
+	writetext LassKayBeatenText
 	waitbutton
 	closetext
 	end
 
-TrainerBeautyJulia:
-	;trainer BEAUTY, JULIA, EVENT_BEAT_BEAUTY_JULIA, BeautyJuliaSeenText, BeautyJuliaBeatenText, 0, .Script
+TrainerBeautyBridget:
+	trainer BEAUTY, BRIDGET, EVENT_BEAT_BEAUTY_BRIDGET, BeautyBridgetSeenText, BeautyBridgetBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyJuliaAfterBattleText
+	writetext BeautyBridgetBeatenText
 	waitbutton
 	closetext
 	end
 
-TrainerTwinsJoAndZoe1:
-	;trainer TWINS, JOANDZOE1, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe1SeenText, TwinsJoAndZoe1BeatenText, 0, .Script
+TrainerPicnickerTina:
+	trainer PICNICKER, TINA, EVENT_BEAT_PICNICKER_TINA, PicnickerTinaSeenText, PicnickerTinaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext TwinsJoAndZoe1AfterBattleText
+	writetext PicnickerTinaBeatenText
 	waitbutton
 	closetext
 	end
 
-TrainerTwinsJoAndZoe2:
-	;trainer TWINS, JOANDZOE2, EVENT_BEAT_TWINS_JO_AND_ZOE, TwinsJoAndZoe2SeenText, TwinsJoAndZoe2BeatenText, 0, .Script
+TrainerBeautyTamia:
+	trainer BEAUTY, TAMIA, EVENT_BEAT_BEAUTY_TAMIA, BeautyTamiaSeenText, BeautyTamiaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext TwinsJoAndZoe2AfterBattleText
+	writetext BeautyTamiaBeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerLassLisa:
+	trainer LASS, LISA, EVENT_BEAT_LASS_LISA, LassLisaSeenText, LassLisaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassLisaBeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyLori:
+	trainer BEAUTY, LORI, EVENT_BEAT_BEAUTY_LORI, BeautyLoriSeenText, BeautyLoriBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyLoriBeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerFMary:
+	trainer COOLTRAINERF, MARY, EVENT_BEAT_COOLTRAINERF_MARY, CooltrainerFMarySeenText, CooltrainerFMaryBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainerFMaryBeatenText
 	waitbutton
 	closetext
 	end
@@ -110,28 +148,31 @@ CeladonGymStatue:
 	gettrainername STRING_BUFFER_4, ERIKA, ERIKA1
 	jumpstd GymStatue2Script
 
-ErikaBeforeBattleText:
-	text "ERIKA: Hello…"
-	line "Lovely weather,"
+ErikaBeforeBattleText: ;CeladonGymErikaPreBattleText
+	text "Hello… Lovely"
+	line "weather isn't it?"
 
-	para "isn't it?"
-	line "It's so pleasant…"
+	para "It's so pleasant…"
 
-	para "…I'm afraid I may"
-	line "doze off…"
+	para "…Oh dear…"
+
+	para "…I must have dozed"
+	line "off… Welcome."
 
 	para "My name is ERIKA."
 	line "I am the LEADER of"
 	cont "CELADON GYM."
 
-	para "…Oh? All the way"
-	line "from JOHTO, you"
-	cont "say? How nice…"
+	para "I teach the art of"
+	line "flower arranging…"
+
+	para "My #MON are of"
+	line "the grass-type…"
 
 	para "Oh. I'm sorry, I"
-	line "didn't realize"
+	line "had no idea that"
 
-	para "that you wished to"
+	para "you wished to"
 	line "challenge me."
 
 	para "Very well, but I"
@@ -139,14 +180,14 @@ ErikaBeforeBattleText:
 	done
 
 ErikaBeatenText:
-	text "ERIKA: Oh!"
+	text "Oh!"
 	line "I concede defeat…"
 
 	para "You are remarkably"
 	line "strong…"
 
-	para "I shall give you"
-	line "RAINBOWBADGE…"
+	para "I must confer you"
+	line "the RAINBOWBADGE…"
 	done
 
 PlayerReceivedRainbowBadgeText:
@@ -154,123 +195,195 @@ PlayerReceivedRainbowBadgeText:
 	line "RAINBOWBADGE."
 	done
 
+ErikaRainbowBadgeInfoText:
+	text "The RAINBOWBADGE"
+	line "will make #MON"
+	cont "up to L50 obey."
+
+	para "It also allows"
+	line "#MON to use"
+
+	para "STRENGTH outside"
+	line "of battle."
+
+	para "Please also take"
+	line "this with you."
+	done
+
 ErikaExplainTMText:
-	text "ERIKA: That was a"
-	line "delightful match."
+	text "TM21 contains"
+	line "MEGA DRAIN."
+	
+	para "It drains half" ;Mix of GenI and GenII wording for conciseness
+	line "the damage it"
 
-	para "I felt inspired."
-	line "Please, I wish you"
-	cont "to have this TM."
+	para "inflicts to heal"
+	line "your #MON…"
+	done
 
-	para "It is GIGA DRAIN."
-
-	para "It is a wonderful"
-	line "move that drains"
-
-	para "half the damage it"
-	line "inflicts to heal"
-	cont "your #MON."
-
-	para "Please use it if"
-	line "it pleases you…"
+ErikaNoRoomText:
+	text "You should make"
+	line "room for this…"
 	done
 
 ErikaAfterBattleText:
-	text "ERIKA: Losing"
-	line "leaves a bitter"
-	cont "aftertaste…"
+	text "You're cataloging"
+	line "#MON?"
+	
+	para "I must say, I'm"
+	line "impressed…"
 
-	para "But knowing that"
-	line "there are strong"
+	para "I would never"
+	line "collect a #MON"
 
-	para "trainers spurs me"
-	line "to do better…"
+	para "if they were"
+	line "unattractive…"
 	done
 
-LassMichelleSeenText:
-	text "Do you think a"
-	line "girls-only GYM"
-	cont "is rare?"
+; CeladonGymReceivedTM21Text:
+	; text "<PLAYER> received"
+	; line "@"
+	; text_ram wStringBuffer
+	; text "!@"
+	; text_end
+
+LassKaySeenText:
+	text "Hey!"
+
+	para "You're not allowed"
+	line "in here!"
 	done
 
-LassMichelleBeatenText:
-	text "Oh, bleah!"
+LassKayBeatenText:
+	text "You're too rough!"
+	done ;prompt
+
+LassKayAfterBattleText:
+	text "Bleaah!"
+
+	para "I hope ERIKA"
+	line "wipes you out!"
 	done
 
-LassMichelleAfterBattleText:
-	text "I just got care-"
-	line "less, that's all!"
+BeautyBridgetSeenText:
+	text "I was getting"
+	line "bored."
 	done
 
-PicnickerTanyaSeenText:
-	text "Oh, a battle?"
-	line "That's kind of"
-	cont "scary, but OK!"
+BeautyBridgetBeatenText:
+	text "My makeup!"
+	done ;prompt
+
+BeautyBridgetAfterBattleText:
+	text "Grass-type #MON"
+	line "are tough against"
+	cont "water-types!"
+
+	para "They also have an"
+	line "edge on rock and"
+	cont "ground #MON!"
 	done
 
-PicnickerTanyaBeatenText:
-	text "Oh, that's it?"
+PicnickerTinaSeenText:
+	text "Aren't you the"
+	line "peeping Tom?"
 	done
 
-PicnickerTanyaAfterBattleText:
-	text "Oh, look at all"
-	line "your BADGES. No"
+PicnickerTinaBeatenText:
+	text "I'm in shock!"
+	done ;prompt
 
-	para "wonder I couldn't"
-	line "win!"
+PicnickerTinaAfterBattleText:
+	text "Oh, you weren't"
+	line "peeping? We get a"
+	cont "lot of gawkers!"
 	done
 
-BeautyJuliaSeenText:
-	text "Were you looking"
-	line "at these flowers"
-	cont "or at me?"
+BeautyTamiaSeenText:
+	text "Look at my grass"
+	line "#MON!"
+
+	para "They're so easy"
+	line "to raise!"
 	done
 
-BeautyJuliaBeatenText:
-	text "How annoying!"
+BeautyTamiaBeatenText:
+	text "No!"
+	done ;prompt
+
+BeautyTamiaAfterBattleText:
+	text "We only use grass-"
+	line "type #MON at"
+	cont "our GYM!"
+
+	para "We also use them"
+	line "for making flower"
+	cont "arrangements!"
 	done
 
-BeautyJuliaAfterBattleText:
-	text "How do I go about"
-	line "becoming ladylike"
-	cont "like ERIKA?"
+LassLisaSeenText:
+	text "Don't bring any"
+	line "bugs or fire"
+	cont "#MON in here!"
 	done
 
-TwinsJoAndZoe1SeenText:
-	text "We'll show you"
-	line "#MON moves that"
-	cont "ERIKA taught us!"
+LassLisaBeatenText:
+	text "Oh! You!"
+	done ;prompt
+
+LassLisaAfterBattleText:
+	text "Our LEADER, ERIKA,"
+	line "might be quiet,"
+
+	para "but she's also"
+	line "very skilled!"
 	done
 
-TwinsJoAndZoe1BeatenText:
-	text "Oh… We lost…"
+BeautyLoriSeenText:
+	text "Pleased to meet"
+	line "you. My hobby is"
+	cont "#MON training."
 	done
 
-TwinsJoAndZoe1AfterBattleText:
-	text "ERIKA will get you"
-	line "back for us!"
+BeautyLoriBeatenText:
+	text "Oh! Splendid!"
+	done ;prompt
+
+BeautyLoriAfterBattleText:
+	text "I have a blind"
+	line "date coming up."
+
+	para "I have to learn"
+	line "to be polite."
 	done
 
-TwinsJoAndZoe2SeenText:
-	text "We're going to"
-	line "protect ERIKA!"
+CooltrainerFMarySeenText:
+	text "Welcome to the"
+	line "CELADON GYM!"
+
+	para "You better not"
+	line "underestimate"
+	cont "girl power!"
 	done
 
-TwinsJoAndZoe2BeatenText:
-	text "We couldn't win…"
-	done
+CooltrainerFMaryBeatenText:
+	text "Oh! Beaten!"
+	done ;prompt
 
-TwinsJoAndZoe2AfterBattleText:
-	text "ERIKA is much,"
-	line "much stronger!"
+CooltrainerFMaryAfterBattleText:
+	text "I didn't bring my"
+	line "best #MON!"
+
+	para "Wait 'til next"
+	line "time!"
 	done
 
 CeladonGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, CELADON_CITY, 8
-	warp_event  5, 17, CELADON_CITY, 8
+	warp_event  4, 17, CELADON_CITY, 7
+	warp_event  5, 17, CELADON_CITY, 7
 
 	def_coord_events
 
@@ -279,9 +392,11 @@ CeladonGym_MapEvents:
 	bg_event  6, 15, BGEVENT_READ, CeladonGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymErikaScript, -1
-	object_event  7,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassMichelle, -1
-	object_event  2,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTanya, -1
-	object_event  3,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
-	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
-	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1
+	object_event  4,  3, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymErikaScript, -1
+	object_event  2, 11, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerLassKay, -1 ;OPP_LASS, 17
+	object_event  7, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBeautyBridget, -1 ;OPP_BEAUTY, 1
+	object_event  9,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerTina, -1 ;OPP_JR_TRAINER_F, 11
+	object_event  1,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerBeautyTamia, -1 ;OPP_BEAUTY, 2
+	object_event  6,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerLassLisa, -1 ;OPP_LASS, 18
+	object_event  3,  3, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerBeautyLori, -1 ;OPP_BEAUTY, 3
+	object_event  5,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerFMary, -1 ;OPP_COOLTRAINER_F, 1
