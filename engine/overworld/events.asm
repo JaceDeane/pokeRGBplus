@@ -864,6 +864,9 @@ SelectMenuCallback:
 	end
 
 CountStep:
+	ld a, MAPCALLBACK_STEP
+	call RunMapCallback
+	
 	; Don't count steps in link communication rooms.
 	ld a, [wLinkMode]
 	and a

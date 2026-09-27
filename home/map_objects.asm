@@ -628,3 +628,63 @@ GetSpriteDirection::
 	ld a, [hl]
 	maskbits NUM_DIRECTIONS, 2
 	ret
+
+ArePlayerCoordsInArray:: ; R/B, edited from SnorlaxAwake `special`
+; INPUT:
+; hl = address of array
+; OUTPUT:
+; [wScriptVar] is 1 if the conditions are met, otherwise 0.
+
+; 	ld hl, ExampleArrayCoords
+; 	call ArePlayerCoordsInArray
+; 	ld a, [wScriptVar]
+;	and a
+;	jr z, .player_in_array_function   ||  jr nz, .player_not_in_array_function
+;			*OR*
+; 	iftrue .player_in_array_function  ||  iffalse .player_not_in_array_function
+
+; ExampleArrayCoords:
+	; ;   x,  y
+	; db 33,  8 ; left
+	; db 34, 10 ; below
+	; db 35, 10 ; below
+	; db 36,  8 ; right
+	; db 36,  9 ; right
+	; db -1
+;================================================================================
+	ld a, [wXCoord]
+	ld b, a
+	ld a, [wYCoord]
+	ld c, a
+	; fallthrough
+
+; CheckCoords::
+	; xor a
+	; ld [wScriptVar], a ;wCoordIndex
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .not_in_array
+	; push hl
+	; ld hl, wScriptVar ;wCoordIndex
+	; inc [hl]
+	; pop hl
+	cp b
+	jr nz, .nextcoord
+	ld a, [hli]
+	cp c
+	jr nz, .loop
+	
+	ld a, TRUE
+	jr .in_array
+
+.nextcoord
+	inc hl
+	jr .loop
+
+.not_in_array
+	xor a
+.in_array
+	ld [wScriptVar], a
+	ret
+

@@ -15,12 +15,62 @@ MountMoonB2F_MapScripts:
 	scene_script MtMoonB2FNoopScene, SCENE_MT_MOON_B2F_NOOP
 
 	def_callbacks
-	
+	callback MAPCALLBACK_STEP, MtMoonB2FCallback
+
 MtMoonB2FFossilScene:
 	end
 
 MtMoonB2FNoopScene:
 	end
+
+MtMoonB2FCallback:
+	; ld hl, MtMoonB2FFossilAreaCoords
+	; call ArePlayerCoordsInArray
+	; jr c, .disable_battles
+	; ld hl, wEnabledPlayerEvents
+	; set 4, [hl]
+	; ret
+	
+; .disable_battles
+	; ld hl, wEnabledPlayerEvents
+	; res 4, [hl]
+	; ret
+	callasm MtMoonB2FCoordCheck
+	endcallback
+
+MtMoonB2FCoordCheck:
+	ld hl, MtMoonB2FFossilAreaCoords
+	call ArePlayerCoordsInArray
+	ld a, [wScriptVar]
+	and a
+	jr z, .enable_battles
+	ld hl, wStatusFlags
+	set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	ret
+
+.enable_battles
+	ld hl, wStatusFlags
+	res STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	ret
+
+MtMoonB2FFossilAreaCoords:
+	db 13,  7
+	db 14,  7
+	db 15,  7
+	db 16,  7
+	db 13,  8
+	db 14,  8
+	db 15,  8
+	db 16,  8
+	db 13,  9
+	db 14,  9
+	db 15,  9
+	db 16,  9
+	db 13, 10
+	db 14, 10
+	db 15, 10
+	db 16, 10
+	db -1 ; end
 
 MtMoonB2FSuperNerdScript:
 	faceplayer
