@@ -855,3 +855,66 @@ QueueFollowerFirstStep:
 .same_xy
 	scf
 	ret
+
+ArePlayerCoordsInArray:: ; R/B, edited from SnorlaxAwake `special`
+; INPUT:
+; hl = address of array
+; OUTPUT:
+; sets carry if the coordinates are in the array, clears carry if not
+
+; 	ld hl, ExampleArrayCoords
+; 	call ArePlayerCoordsInArray
+; 	iftrue // jr c, .player_in_array_function
+;			*OR*
+; 	iffalse // jr nc, .player_not_in_array_function
+
+; ExampleArrayCoords:
+	; ;   x,  y
+	; db 33,  8 ; left
+	; db 34, 10 ; below
+	; db 35, 10 ; below
+	; db 36,  8 ; right
+	; db 36,  9 ; right
+	; db -1
+;================================================================================
+	ld a, [wXCoord] ; Y/X load order swapped compared to R/B
+	ld b, a
+	ld a, [wYCoord]
+	ld c, a
+	; fallthrough
+
+; CheckCoords::
+	; xor a
+	; ld [wCoordIndex], a
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .not_in_array
+	; push hl
+	; ld hl, wCoordIndex
+	; inc [hl]
+	; pop hl
+	cp b
+	jr nz, .compareYCoord
+	ld a, [hli]
+	cp c
+	jr nz, .loop
+
+	ld a, TRUE
+	jr .in_array
+
+.compareYCoord
+	inc hl
+	jr .loop
+
+; .not_in_array
+	; xor a
+; .in_array
+	; ld [wScriptVar], a
+	; ret
+.in_array
+	scf
+	ret
+.not_in_array
+	and a
+	ret

@@ -349,7 +349,7 @@ SnorlaxAwake:
 ; outputs:
 ; wScriptVar is 1 if the conditions are met, otherwise 0.
 
-; check background music
+; check background music, unlike R/B's "ArePlayerCoordsInArray"
 	ld a, [wMapMusic]
 	cp MUSIC_POKE_FLUTE_CHANNEL
 	jr nz, .nope

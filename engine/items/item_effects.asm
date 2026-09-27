@@ -2182,14 +2182,55 @@ PokeFluteEffect:
 	ld a, [wBattleMode]
 	and a
 	jr nz, .in_battle
-	; overworld flute code was dummied out here
+; if not in battle
+	; call ItemUseReloadOverworldData
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_12
+	jr nz, .notRoute12
+	ld de, EVENT_BEAT_ROUTE12_SNORLAX ; checkevent
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .no_snorlax ; iftrue
+; if the player hasn't beaten Route 12 Snorlax
+	ld hl, Route12SnorlaxFluteCoords
+	call ArePlayerCoordsInArray
+	jr nc, .no_snorlax ; iffalse
+	ld hl, .PlayedTheFlute
+	call PrintText
+	ld de, EVENT_FIGHT_ROUTE12_SNORLAX ; Enables ability to fight Snorlax
+	ld b, SET_FLAG
+	call EventFlagAction
+	ret
 
+.notRoute12
+	cp MAP_ROUTE_16
+	jr nz, .no_snorlax
+	ld de, EVENT_BEAT_ROUTE16_SNORLAX ; checkevent
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .no_snorlax ; iftrue
+; if the player hasn't beaten Route 16 Snorlax
+	ld hl, Route16SnorlaxFluteCoords
+	call ArePlayerCoordsInArray
+	jr nc, .no_snorlax ; iffalse
+	ld hl, .PlayedTheFlute
+	call PrintText
+	ld de, EVENT_FIGHT_ROUTE16_SNORLAX ; Enables ability to fight Snorlax
+	ld b, SET_FLAG
+	call EventFlagAction
+	ret
+
+.no_snorlax
+	ld hl, .PlayedFluteText ; Had no effect
+	jp z, PrintText
 .in_battle
 	xor a
 	ld [wPokeFluteCuredSleep], a
-
 	ld b, ~SLP_MASK
-
 	ld hl, wPartyMon1Status
 	call .CureSleep
 
@@ -2199,7 +2240,6 @@ PokeFluteEffect:
 	ld hl, wOTPartyMon1Status
 	call .CureSleep
 .skip_otrainer
-
 	ld hl, wBattleMonStatus
 	ld a, [hl]
 	and b
@@ -2211,16 +2251,26 @@ PokeFluteEffect:
 
 	ld a, [wPokeFluteCuredSleep]
 	and a
-	ld hl, .PlayedFluteText
+	ld hl, .PlayedFluteText ;Had no effect
 	jp z, PrintText
 	ld hl, .PlayedTheFlute
 	call PrintText
 
 	ld a, [wLowHealthAlarm]
 	and 1 << DANGER_ON_F
-	jr nz, .dummy
-	; more code was dummied out here
-.dummy
+	jr nz, .skip_music ;.dummy
+	; call WaitForSoundToFinish ; wait for sound to end
+	; farcall Music_PokeFluteInBattle ; play in-battle pokeflute music
+; .music_wait_loop ; wait for music to finish playing
+	; ld a, [wChannelSoundIDs + CHAN7]
+	; and a ; music off?
+	; jr nz, .music_wait_loop
+		push de
+		ld de, SFX_POKEFLUTE
+		call WaitPlaySFX
+		call WaitSFX
+		pop de
+.skip_music ;.dummy
 	ld hl, .FluteWakeUpText
 	jp PrintText
 
@@ -2258,7 +2308,7 @@ PokeFluteEffect:
 	ld a, [wBattleMode]
 	and a
 	jr nz, .battle
-
+; play out-of-battle Pokeflute music
 	push de
 	ld de, SFX_POKEFLUTE
 	call WaitPlaySFX
@@ -2267,6 +2317,20 @@ PokeFluteEffect:
 
 .battle
 	jp PokeFluteTerminator
+
+Route12SnorlaxFluteCoords:
+	;   x,  y
+	db  9, 62 ; one space West of Snorlax
+	db 10, 61 ; one space North of Snorlax
+	db 10, 63 ; one space South of Snorlax
+	db 11, 62 ; one space East of Snorlax
+	db -1 ; end
+
+Route16SnorlaxFluteCoords:
+	;   x,  y
+	db 27, 10 ; one space East of Snorlax
+	db 25, 10 ; one space West of Snorlax
+	db -1 ; end
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText

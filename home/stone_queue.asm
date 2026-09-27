@@ -35,7 +35,7 @@ HandleStoneQueue::
 	and a
 	ret
 
-.IsObjectOnWarp:
+.IsObjectOnWarp: ; Similar to R/B's "CheckBoulderCoords" but only checks warps
 	push de
 
 	ld hl, OBJECT_MAP_X
