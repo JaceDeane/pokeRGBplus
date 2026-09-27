@@ -45,7 +45,7 @@ RivalsHouseSign:
 OakStopsYouLeft:
 	playmusic MUSIC_PROF_OAK
 	opentext
-	writetext PalletTownOakHeyWaitDontGoOutText
+	writetext PalletTownOakAppearsText
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
 	appear PALLETTOWN_OAK
@@ -63,7 +63,7 @@ OakStopsYouLeft:
 OakStopsYouRight:
 	playmusic MUSIC_PROF_OAK
 	opentext
-	writetext PalletTownOakHeyWaitDontGoOutText
+	writetext PalletTownOakAppearsText
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
 	appear PALLETTOWN_OAK
@@ -148,7 +148,7 @@ PalletTownOakWalkToLabRight:
 	step UP
 	step_end
 
-PalletTownOakHeyWaitDontGoOutText:
+PalletTownOakAppearsText:
 	text "OAK: Hey! Wait!"
 	line "Don't go out!"
 	done
@@ -158,6 +158,34 @@ PalletTownOakItsUnsafeText:
 	line "Wild #MON live"
 	cont "in tall grass!"
 
+	para "You need your own"
+	line "#MON for your"
+	cont "protection."
+	
+	para "I know!"
+
+	para "Here, come with"
+	line "me!"
+	done
+
+;Yellow
+PalletTownOakWalksUpText:
+	text "OAK: That was"
+	line "close!"
+
+	para "Wild #MON live"
+	line "in tall grass!"
+	done
+
+PalletTownOakWhewText:
+	text "OAK: Whew…"
+	done
+
+PalletTownOakGrassText:
+	text "OAK: A #MON can"
+	line "appear anytime in"
+	cont "tall grass."
+;Below same as R/B
 	para "You need your own"
 	line "#MON for your"
 	cont "protection."
@@ -228,5 +256,6 @@ PalletTown_MapEvents:
 
 	def_object_events
 	object_event  3,  8, SPRITE_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownGirlScript, -1
-	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
+	object_event 11, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
 	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_OAK_APPEARED_IN_PALLET
+;Oak starts from 10,4 in Yellow

@@ -5,9 +5,12 @@
 ```
 ### MAPS:
 (Only interiors and dungeons left to do)
-- Pokémon Tower
-
-- Lavender Town - interiors
+- Celadon Cafe
+- Celadon Mansion
+- Celadon Dept. Store
+- Game Corner & Prize Room
+- Rocket Hideout
+- Celadon Hotel
 
 (Later)
 - Cerulean Cave (1F, B1F, B2F)
@@ -17,11 +20,15 @@
 ### EVENTS:
 
 MAIN:
-- Pokémon Tower
+- Celadon Cafe
+- Celadon Mansion
+- Celadon Dept. Store
+- Game Corner & Prize Room
+- Rocket Hideout
+- Celadon Hotel
 
-- Lavender Town - interiors
-
-- Vermilion Dock (finish scene event - OBJ)
+- Pokémon Tower 5F (purified space)
+- Vermilion Dock (finish scene event - OAM OBJ)
 
 OTHER:
 - Include and check all hidden items from R/B exist and are in the right place
@@ -32,7 +39,7 @@ OTHER:
 
 ### ENGINE / DATA:
 
-- Allow time to be set on main menu, once a save has ben created (same appear conditions as `CONTINUE`)
+- Allow time to be set on main menu, once a save has been created (same appear conditions as `CONTINUE`)
 	- perhaps have a 24hr cooldown? (also allow for DST to be set in the same way)
 	
 - Change `GHOST` 'Get out…' text from prompt to just start anim as soon as text has finished printing
@@ -85,6 +92,8 @@ OTHER:
 
 - Finish updating the Pokédex UI
 
+- Finalise title screen & fix copyright line glitch
+
 - Add the mask to the player's title sprite (will need to condense OAM by 8x16 sprites)
 
 - Remove the now-redundant non-walking sprite versions (https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#4-remove-the-now-redundant-non-walking-sprite-versions)
@@ -95,15 +104,13 @@ OTHER:
 
 ### MUSIC: 
 
-- Add RBY music for Pokémon Center, etc.
-
 - Add a "no intro" version of the Rival encounter theme for post-battle
 
 - (!) Playback sound of the R/B `Title Screen` track is bugged
 
 - Create unique Gen II-styled arrangements of the original Gen I music tracks
 
-- Custom `Battle! Rival` track for Blue (?)
+- Custom `Battle! Rival` track for Blue [90%]
 
 - Night version of Kanto Wild Battle theme (?)
 
@@ -119,7 +126,6 @@ OTHER:
 
 - Title Screen:
 	-Timing on button presses to break DelayFrames loop
-	-The ball OAM doesn't bounce when a starter is chosen
 	-New TitleMon chosen is sometimes the same as current, yet it scrolls anyway
 	-GFX glitching when loading new mon, etc. timing of this will be looked into further
 
@@ -169,3 +175,8 @@ OTHER:
 ## Commits:
 
 - ~~Scroll the SS.Anne when Departing~~ (https://github.com/mauvesea/pokegold-sw97/commit/a62c7e142677764b3027649a91fdc2b284c457cb) & (https://github.com/mauvesea/pokegold-sw97/commit/25f5339d8d784e2e0410b05280a70042e550c449)
+
+## Credits:
+
+- IsabelleChiming for original `Battle! Rival Blue` composition (https://www.youtube.com/watch?v=i_Qp5wcSCmU)
+- Sour for the BATTLETYPE_GHOST scared animation

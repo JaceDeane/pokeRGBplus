@@ -680,6 +680,14 @@ GetBattlemonBackpicPalettePointer:
 	ret
 
 GetEnemyFrontpicPalettePointer:
+	ld a, [wBattleType]
+	cp BATTLETYPE_GHOST
+	jr nz, .not_ghost
+	ld a, GASTLY
+	call _GetMonPalettePointer
+	ret
+
+.not_ghost
 	push de
 	farcall GetEnemyMonDVs
 	ld c, l

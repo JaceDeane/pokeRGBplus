@@ -675,8 +675,13 @@ PokeBallEffect:
 
 	call CloseSRAM
 
-	checkevent EVENT_MET_BILL
-	iftrue .met_bill
+	ld de, EVENT_MET_BILL ; checkevent
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .met_bill ; iftrue
+	
 	ld hl, BallSentToSomeonesPCText
 	call PrintText
 	jr .got_text
