@@ -16,8 +16,8 @@ PokemonTower6FNoopScene:
 	end
 
 MarowakBattleScript:
-	; checkevent EVENT_BEAT_GHOST_MAROWAK
-		; iftrue .beaten_ghost
+	checkevent EVENT_BEAT_GHOST_MAROWAK
+	iftrue .beaten_ghost
 	opentext
 	writetext PokemonTower6FBeGoneText
 	waitbutton
@@ -29,13 +29,12 @@ MarowakBattleScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_GHOST
 	loadwildmon MAROWAK, 30
 	startbattle
-	ifequal WIN, BeatenGhost ;check if defeated
+	ifequal WIN, .beaten_ghost ;check if defeated
 	reloadmapafterbattle
 	applymovement PLAYER, StepRight
-	giveitem SILPH_SCOPE ; debug
 	end
 
-BeatenGhost:
+.beaten_ghost
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GHOST_MAROWAK
 	opentext

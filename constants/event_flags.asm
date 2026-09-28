@@ -268,7 +268,7 @@
 
 ; Lavender Town events
 	const EVENT_BEAT_POKEMON_TOWER_RIVAL
-	const EVENT_IN_PURIFIED_ZONE ;Reserving early (is this needed?)
+	; const EVENT_IN_PURIFIED_ZONE ; Replaced with EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	const EVENT_BEAT_GHOST_MAROWAK
 	const EVENT_RESCUED_MR_FUJI
 	const EVENT_GOT_POKE_FLUTE

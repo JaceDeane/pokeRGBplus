@@ -16,6 +16,7 @@ PokemonTower7FMrFujiScript:
 	waitbutton
 	closetext
 	setevent EVENT_RESCUED_MR_FUJI
+		clearevent EVENT_MR_FUJI ; could this not just be one flag?
 	; setevent EVENT_RESCUED_MR_FUJI_2 ; unchecked anywhere in R/B
 
 	; ld a, HS_MR_FUJIS_HOUSE_MR_FUJI
@@ -65,6 +66,7 @@ TrainerRocketGrunt19:
 .ExitDown
 	applymovement POKEMONTOWER7F_ROCKET1, PokemonTower7FRocketExitDownMovement
 .ok
+	playsound SFX_EXIT_BUILDING
 	disappear POKEMONTOWER7F_ROCKET1
 	end
 
@@ -92,6 +94,7 @@ TrainerRocketGrunt20:
 .ExitDown
 	applymovement POKEMONTOWER7F_ROCKET2, PokemonTower7FRocketExitDownMovement
 .ok
+	playsound SFX_EXIT_BUILDING
 	disappear POKEMONTOWER7F_ROCKET2
 	end
 
@@ -116,6 +119,7 @@ TrainerRocketGrunt21:
 .ExitDown
 	applymovement POKEMONTOWER7F_ROCKET3, PokemonTower7FRocketExitDownMovement
 .ok
+	playsound SFX_EXIT_BUILDING
 	disappear POKEMONTOWER7F_ROCKET3
 	end
 

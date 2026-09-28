@@ -12,7 +12,7 @@ PokemonTower5F_MapScripts:
 	scene_script PokemonTower5FPurifiedZoneScene, SCENE_POKEMONTOWER5F_PURIFIEDZONE
 
 	def_callbacks
-	; callback MAPCALLBACK_OBJECTS, PureZoneCallback
+	callback MAPCALLBACK_STEP, PurifiedZoneCallback
 
 PokemonTower5FNoopScene:
 	end
@@ -20,39 +20,57 @@ PokemonTower5FNoopScene:
 PokemonTower5FPurifiedZoneScene:
 	end
 
-PureZoneCallback:
-	; call CheckCurrentMapCoordEvents
-	; jr c, .in_purified_zone
-	checkevent EVENT_IN_PURIFIED_ZONE
-	iftrue .in_purified_zone
-	
-	ld hl, wEnabledPlayerEvents ; EnableWildEncounters
-	set 4, [hl]
-	clearevent EVENT_IN_PURIFIED_ZONE
+PurifiedZoneCallback:
+	callasm PurifiedZoneCoordCheck
 	endcallback
 
-.in_purified_zone
-	endcallback
+PurifiedZoneCoordCheck:
+	ld hl, PurifiedZoneCoords
+	call ArePlayerCoordsInArray
+	ld a, [wScriptVar]
+	and a
+	jr z, .outside_zone
 
-PurifiedZoneScript:
-	checkevent EVENT_IN_PURIFIED_ZONE
-	iffalse .entering_zone
-	; do nothing
-	end
+	ld de, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1 ; EVENT_IN_PURIFIED_ZONE
+	ld b, CHECK_FLAG
+	call EventFlagAction ; checkevent
+	ld a, c
+	and a
+	ret nz ; already in Purified Zone
 
-.entering_zone
-	setevent EVENT_IN_PURIFIED_ZONE
-	ld hl, wEnabledPlayerEvents ; DisableWildEncounters
-	res 4, [hl]
-	special HealParty
-	special FadeOutToWhite
-	pause 6 ; 2x (DelayFrames3)
-	special FadeInFromWhite
-	opentext
-	writetext PokemonTower5FPurifiedZoneText
-	waitbutton
-	closetext
-	end
+	ld de, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1 ; EVENT_IN_PURIFIED_ZONE
+	ld b, SET_FLAG
+	call EventFlagAction
+	farcall Script_wildoff
+
+	predef HealParty
+	call RotateThreePalettesRight
+	ld c, 10
+	call DelayFrames
+	call RotateThreePalettesLeft ; like `FadeInFromWhite`, without the pal0 overwrite
+	call UpdateTimePals
+
+	call OpenText
+	ld hl, PokemonTower5FPurifiedZoneText
+	call PrintText
+	call WaitButton
+	call HDMATransferTilemapAndAttrmap_Menu
+	call CloseText
+	ret
+
+.outside_zone ; leaving Zone, enable encounters
+	ld de, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1 ; EVENT_IN_PURIFIED_ZONE
+	ld b, RESET_FLAG
+	call EventFlagAction
+	farcall Script_wildon
+	ret
+
+PurifiedZoneCoords:
+	db 10,  8
+	db 11,  8
+	db 10,  9
+	db 11,  9
+	db -1 ; end
 
 PokemonTower5FChannelerScript:
 	jumptextfaceplayer PokemonTower5FChannelerText
@@ -167,10 +185,10 @@ ChannelerJanaeAfterBattleText:
 	cont "my training!"
 	done
 
-PokemonTower5FPurifiedZoneText: ; Syntax
+PokemonTower5FPurifiedZoneText:
 	text "Entered the"
-	line "purified and pro-"
-	cont "tected zone!"
+	line "purified and"
+	cont "protected zone!"
 
 	para "<PLAYER>'s #MON"
 	line "are fully healed!"
@@ -184,10 +202,6 @@ PokemonTower5F_MapEvents:
 	warp_event 18,  9, POKEMON_TOWER_6F, 1
 
 	def_coord_events
-	coord_event 10,  8, SCENE_POKEMONTOWER5F_NOOP, PurifiedZoneScript
-	coord_event 11,  8, SCENE_POKEMONTOWER5F_NOOP, PurifiedZoneScript
-	coord_event 10,  9, SCENE_POKEMONTOWER5F_NOOP, PurifiedZoneScript
-	coord_event 11,  9, SCENE_POKEMONTOWER5F_NOOP, PurifiedZoneScript
 
 	def_bg_events
 

@@ -2,6 +2,9 @@ ResetMapBufferEventFlags::
 	xor a
 	ld hl, wEventFlags
 	ld [hli], a
+; Reset disabled wild encounters flag
+	ld hl, wStatusFlags
+	res STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
 	ret
 
 ResetBikeFlags::

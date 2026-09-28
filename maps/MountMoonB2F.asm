@@ -44,13 +44,11 @@ MtMoonB2FCoordCheck:
 	ld a, [wScriptVar]
 	and a
 	jr z, .enable_battles
-	ld hl, wStatusFlags
-	set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	farcall Script_wildoff
 	ret
 
 .enable_battles
-	ld hl, wStatusFlags
-	res STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	farcall Script_wildon
 	ret
 
 MtMoonB2FFossilAreaCoords:

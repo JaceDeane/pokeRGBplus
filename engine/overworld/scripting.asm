@@ -2032,12 +2032,12 @@ _EngineFlagAction:
 	farcall EngineFlagAction
 	ret
 
-Script_wildoff:
+Script_wildoff::
 	ld hl, wStatusFlags
 	set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
 	ret
 
-Script_wildon:
+Script_wildon::
 	ld hl, wStatusFlags
 	res STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
 	ret
