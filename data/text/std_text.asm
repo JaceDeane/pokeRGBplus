@@ -393,3 +393,11 @@ RegisteredNumber2Text:
 	text_ram wStringBuffer3
 	text "'s number."
 	done
+
+FishingGuruPhotoText:
+	text "It's a photo of"
+	line "people fishing…"
+
+	para "They're having a"
+	line "great time…"
+	done

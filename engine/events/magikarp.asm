@@ -29,8 +29,8 @@ CheckMagikarpLength:
 	call CalcMagikarpLength
 	call PrintMagikarpLength
 	farcall StubbedTrainerRankings_MagikarpLength
-	ld hl, .MagikarpGuruMeasureText
-	call PrintText
+	; ld hl, .MagikarpGuruMeasureText ; FR/LG doesn't tell you size until outcome
+	; call PrintText
 
 	; Did we beat the record?
 	ld hl, wMagikarpLength
@@ -278,11 +278,9 @@ CalcMagikarpLength:
 	ret
 
 .BCLessThanDE:
-; BUG: Magikarp lengths can be miscalculated (see docs/bugs_and_glitches.md)
 	ld a, b
 	cp d
 	ret c
-	ret nc
 	ld a, c
 	cp e
 	ret

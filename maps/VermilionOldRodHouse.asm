@@ -16,7 +16,7 @@ VermilionOldRodHouseFishingGuruScript:
 	iffalse .Refused
 	writetext VermilionOldRodHouseFishingGuruTakeThisText
 	promptbutton
-	verbosegiveitem OLD_ROD
+	verbosegiveitem OLD_ROD ; syntax? "recieved a OLD ROD!"
 	iffalse .BagFull
 	writetext VermilionOldRodHouseFishingGuruFishingIsAWayOfLifeText
 	waitbutton
@@ -42,8 +42,8 @@ VermilionOldRodHouseFishingGuruScript:
 	closetext
 	end
 
-FishingDudesHousePhoto:
-	jumptext FishingDudesHousePhotoText
+OldRodHousePhoto:
+	jumpstd FishingGuruPhotoScript
 
 ; FishingDudeText:
 	; text "I am the FISHING"
@@ -100,14 +100,6 @@ VermilionOldRodHouseFishingGuruNoRoomText:
 	line "for my gift!"
 	done
 
-FishingDudesHousePhotoText:
-	text "It's a photo of"
-	line "people fishing…"
-
-	para "They're having a"
-	line "great time…"
-	done
-
 VermilionOldRodHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -118,7 +110,7 @@ VermilionOldRodHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  0, BGEVENT_READ, FishingDudesHousePhoto
+	bg_event  3,  0, BGEVENT_READ, OldRodHousePhoto
 
 	def_object_events
 	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionOldRodHouseFishingGuruScript, -1

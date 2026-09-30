@@ -1056,8 +1056,6 @@ _KarpGuruRecordText::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _LuckyNumberMatchPartyText::
 	text "Congratulations!"
 
