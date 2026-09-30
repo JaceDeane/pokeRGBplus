@@ -213,8 +213,8 @@ VermilionGymSign:
 VermilionCityHarborSign:
 	jumptext VermilionCityHarborSignText
 
-; VermilionCityHiddenFullHeal:
-	; hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
+VermilionCityHiddenMaxEther:
+	hiddenitem MAX_ETHER, EVENT_VERMILION_CITY_HIDDEN_MAX_ETHER
 
 VermilionCityPlayerWalksUpMovement:
 	step UP
@@ -390,7 +390,7 @@ VermilionCity_MapEvents:
 	bg_event  7, 13, BGEVENT_READ, PokemonFanClubSign
 	bg_event  7, 19, BGEVENT_READ, VermilionGymSign
 	bg_event 29, 15, BGEVENT_READ, VermilionCityHarborSign
-	; bg_event 14, 19, BGEVENT_ITEM, VermilionCityHiddenFullHeal
+	bg_event 14, 11, BGEVENT_ITEM, VermilionCityHiddenMaxEther
 
 	def_object_events
 	object_event 19,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1

@@ -277,6 +277,9 @@ CeruleanBikeShopSign:
 CeruleanGymSign:
 	jumptext CeruleanGymSignText
 
+CeruleanCityHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_CERULEAN_CITY_HIDDEN_RARE_CANDY
+
 CeruleanCityRivalApproachMovement:
 	step DOWN
 	step DOWN
@@ -580,6 +583,7 @@ CeruleanCity_MapEvents:
 	bg_event 20, 17, BGEVENT_READ, CeruleanCityPokecenterSign
 	bg_event 11, 25, BGEVENT_READ, CeruleanBikeShopSign
 	bg_event 27, 21, BGEVENT_READ, CeruleanGymSign
+	bg_event 15,  8, BGEVENT_ITEM, CeruleanCityHiddenRareCandy
 
 	def_object_events
 	object_event 20,  2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDDEN_OBJECT

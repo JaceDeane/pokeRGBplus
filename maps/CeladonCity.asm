@@ -92,8 +92,8 @@ CeladonCityPrizeExchangeSign:
 CeladonCityGameCornerSign:
 	jumptext CeladonCityGameCornerSignText
 
-; CeladonCityHiddenPpUp:
-	; hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
+CeladonCityHiddenPpUp:
+	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
 CeladonCityLittleGirlText:
 	text "I got my KOFFING"
@@ -297,7 +297,7 @@ CeladonCity_MapEvents:
 	bg_event 39, 21, BGEVENT_READ, CeladonCityTrainerTips2
 	bg_event 33, 21, BGEVENT_READ, CeladonCityPrizeExchangeSign
 	bg_event 27, 21, BGEVENT_READ, CeladonCityGameCornerSign
-	; bg_event 48, 15, BGEVENT_ITEM, CeladonCityHiddenPpUp
+	bg_event 48, 15, BGEVENT_ITEM, CeladonCityHiddenPpUp
 
 	def_object_events
 	object_event  8, 17, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityLittleGirlScript, -1

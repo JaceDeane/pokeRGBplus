@@ -19,7 +19,7 @@ ViridianGymBlueScript:
 	loadtrainer LEADER_GIOVANNI, LEADER_GIOVANNI1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_BLUE
+	; setevent EVENT_BEAT_BLUE
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -39,8 +39,8 @@ ViridianGymBlueScript:
 ViridianGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_BLUE
-	iftrue .ViridianGymGuideWinScript
+	; checkevent EVENT_BEAT_BLUE
+	; iftrue .ViridianGymGuideWinScript
 	writetext ViridianGymGuideText
 	waitbutton
 	closetext

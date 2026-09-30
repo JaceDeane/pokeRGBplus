@@ -25,7 +25,7 @@ Route24CooltrainerM1Script:
 	opentext
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_6
 	iftrue .beaten_grunt
-	checkevent EVENT_GOT_NUGGET
+	checkevent EVENT_GOT_NUGGET_FROM_GUY
 	iftrue .got_item
 	writetext Route24CooltrainerM1YouBeatOurContestText
 	waitbutton
@@ -33,7 +33,7 @@ Route24CooltrainerM1Script:
 	promptbutton
 	verbosegiveitem NUGGET
 	iffalse .bag_full
-	setevent EVENT_GOT_NUGGET
+	setevent EVENT_GOT_NUGGET_FROM_GUY
 .got_item
 	writetext Route24CooltrainerM1JoinTeamRocketText
 	playmusic MUSIC_EVIL_TRAINER_ENCOUNTER

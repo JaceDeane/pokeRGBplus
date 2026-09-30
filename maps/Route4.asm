@@ -34,8 +34,8 @@ Route4Sign:
 Route4TMWhirlwind:
 	itemball TM_WHIRLWIND
 
-Route4HiddenUltraBall:
-	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
+Route4HiddenGreatBall:
+	hiddenitem GREAT_BALL, EVENT_ROUTE_4_HIDDEN_GREAT_BALL
 
 Route4LassText:
 	text "Ouch! I tripped"
@@ -87,7 +87,7 @@ Route4_MapEvents:
 	bg_event 12,  5, BGEVENT_READ, MtMoonPokecenterSign
 	bg_event 17,  7, BGEVENT_READ, MtMoonSign
 	bg_event 27,  7, BGEVENT_READ, Route4Sign
-	;bg_event 32,  3, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 40,  3, BGEVENT_ITEM, Route4HiddenGreatBall
 
 	def_object_events
 	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route4LassScript, -1
