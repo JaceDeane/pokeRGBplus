@@ -144,7 +144,7 @@ MtMoonB2FDomeFossilScript:
 	opentext
 	writetext MtMoonB2FSuperNerdThenThisIsMineText
 	disappear MT_MOON_B2F_HELIX_FOSSIL
-	playsound SFX_KEY_ITEM
+	playsound SFX_RB_KEY_ITEM
 	waitsfx
 	closetext
 	end
@@ -171,7 +171,7 @@ MtMoonB2FHelixFossilScript:
 	opentext
 	writetext MtMoonB2FSuperNerdThenThisIsMineText
 	disappear MT_MOON_B2F_DOME_FOSSIL
-	playsound SFX_KEY_ITEM
+	playsound SFX_RB_KEY_ITEM
 	waitsfx
 	closetext
 	end

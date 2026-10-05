@@ -120,7 +120,7 @@ BillsHouseBillsPCScript:
 	playsound SFX_SECOND_PART_OF_ITEMFINDER ; SFX_TINK (R/B)
 	waitsfx
 	pause 16;32
-	playsound SFX_ITEM ; SFX_GET_ITEM_1 (R/B) ; TODO -- Still the G/S fanfare
+	playsound SFX_RB_ITEM_1
 	waitsfx
 	playsound SFX_ENTER_DOOR
 	waitsfx

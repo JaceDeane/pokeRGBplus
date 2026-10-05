@@ -24,7 +24,7 @@ CeruleanBikeShopClerkScript:
 	takeitem BIKE_VOUCHER
 	giveitem BICYCLE
 	writetext CeruleanBikeShopExchangedVoucherText
-	playsound SFX_KEY_ITEM
+	playsound SFX_RB_KEY_ITEM
 	waitsfx
 	itemnotify
 	setevent EVENT_GOT_BICYCLE

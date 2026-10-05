@@ -6,7 +6,7 @@ HiddenItemScript::
 	giveitem ITEM_FROM_MEM
 	iffalse .bag_full
 	callasm SetMemEvent
-	specialsound
+	specialsound ; always SFX_GET_ITEM_2 in R/B
 	itemnotify
 	sjump .finish
 

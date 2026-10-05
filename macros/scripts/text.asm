@@ -78,6 +78,9 @@ MACRO sound_dex_fanfare_50_79
 	db TX_SOUND_DEX_FANFARE_50_79
 ENDM
 
+DEF TX_SOUND_LEVEL_UP EQU TX_SOUND_DEX_FANFARE_50_79
+DEF sound_level_up EQUS "sound_dex_fanfare_50_79"
+
 	const TX_DOTS ; $0c
 MACRO text_dots
 	db TX_DOTS

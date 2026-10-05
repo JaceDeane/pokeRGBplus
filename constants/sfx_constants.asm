@@ -164,7 +164,7 @@
 	const SFX_DEX_FANFARE_170_199         ; a1
 	const SFX_DEX_FANFARE_200_229         ; a2
 	const SFX_DEX_FANFARE_230_PLUS        ; a3
-	const SFX_EVOLVED                     ; a4
+	const SFX_EVOLVED                     ; a4 -- evolution shimmer sfx
 	const SFX_MASTER_BALL                 ; a5
 	const SFX_EGG_HATCH                   ; a6
 	const SFX_GS_INTRO_CHARIZARD_FIREBALL ; a7
@@ -208,4 +208,19 @@
 	const SFX_TWO_PC_BEEPS                ; cc
 	const SFX_4_NOTE_DITTY                ; cd
 	const SFX_TWINKLE                     ; ce
+	const SFX_UNUSED                      ; cf
 DEF NUM_SFX EQU const_value
+
+; R/B SFX refits
+DEF SFX_RB_ITEM_1			EQU SFX_LEVEL_UP ; same as SFX_DEX_FANFARE_50_79
+DEF SFX_RB_ITEM_2			EQU SFX_CAUGHT_MON ;(Gen II)
+DEF SFX_RB_KEY_ITEM			EQU SFX_DEX_FANFARE_80_109 
+DEF SFX_RB_LEVEL_UP			EQU SFX_ITEM ;(Gen II)
+DEF SFX_RB_CAUGHT_MON		EQU SFX_UNUSED ;(Gen II)
+
+; Same, renamed:
+DEF SFX_SILPH_SCOPE			EQU SFX_SHINE
+DEF SFX_SAFARI_ZONE_PA		EQU SFX_ELEVATOR_END
+DEF SFX_TINK				EQU SFX_SECOND_PART_OF_ITEMFINDER
+DEF SFX_POKEDEX_RATING		EQU SFX_DEX_FANFARE_20_49
+DEF SFX_DEX_PAGE_ADDED		EQU SFX_SLOT_MACHINE_START

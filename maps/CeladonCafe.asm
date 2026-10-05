@@ -75,7 +75,7 @@ CeladonCafeGymGuideScript:
 	giveitem COIN_CASE
 	iffalse .BagFull
 	writetext CeladonCafeGymGuideReceivedCoinCaseText
-	playsound SFX_KEY_ITEM
+	playsound SFX_RB_KEY_ITEM
 	waitsfx
 	itemnotify
 	setevent EVENT_GOT_COIN_CASE

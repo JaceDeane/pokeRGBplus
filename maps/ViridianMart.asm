@@ -39,9 +39,11 @@ ViridianMartParcelScript:
 	writetext ViridianMartClerkParcelQuestText
 	promptbutton
 	verbosegiveitem OAKS_PARCEL
-	;waitsfx
-	;writetext ViridianMartGotParcelText
-	;playsound SFX_KEY_ITEM
+	; waitsfx
+	; writetext ViridianMartGotParcelText
+	; playsound SFX_RB_KEY_ITEM
+	; waitsfx
+	; itemnotify
 	writetext ViridianMartClerkSayHiToOakText
 	waitbutton
 	closetext

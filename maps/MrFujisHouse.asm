@@ -70,7 +70,7 @@ MrFujisHouseMrFujiScript:
 	giveitem POKE_FLUTE
 	iffalse .BagFull
 	writetext MrFujisHouseReceivedPokeFluteText
-	playsound SFX_KEY_ITEM
+	playsound SFX_RB_KEY_ITEM
 	waitsfx
 	itemnotify
 	setevent EVENT_GOT_POKE_FLUTE
