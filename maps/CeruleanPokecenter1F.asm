@@ -31,8 +31,9 @@ CeruleanPokecenterSuperNerdText:
 
 	para "I heard that"
 	line "he'll do whatever"
-	cont "it takes to get"
-	cont "rare #MON!"
+
+	para "it takes to get"
+	line "rare #MON!"
 	done
 
 CeruleanPokecenterGentlemanText:

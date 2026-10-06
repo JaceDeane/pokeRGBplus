@@ -102,8 +102,9 @@ BugCatcherRickSeenText:
 
 BugCatcherRickBeatenText:
 	text "No!"
-	line "CATERPIE can't"
-	cont "hack it!"
+
+	para "CATERPIE can't"
+	line "hack it!"
 	done
 
 BugCatcherRickAfterBattleText:
@@ -163,8 +164,9 @@ ViridianForestTrainerTips1Text:
 
 	para "If you want to"
 	line "avoid battles,"
-	cont "stay away from"
-	cont "grassy areas!"
+
+	para "stay away from"
+	line "grassy areas!"
 	done
 
 ViridianForestUseAntidoteSignText:
@@ -177,9 +179,8 @@ ViridianForestTrainerTips2Text:
 	text "TRAINER TIPS"
 
 	para "Contact PROF.OAK"
-	line "via PC to get"
-	cont "your #DEX"
-	cont "evaluated!"
+	line "via PC to get your"
+	cont "#DEX evaluated!"
 	done
 
 ViridianForestTrainerTips3Text:
