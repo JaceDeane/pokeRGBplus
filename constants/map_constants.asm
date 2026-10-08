@@ -388,7 +388,9 @@ ENDM
 	; map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
 	map_const ROUTE_8_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 14
-	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 15
+	map_const ROUTE_12_GATE_1F,                             5,  4 ; 15
+	map_const ROUTE_12_GATE_2F,                             4,  4 ; 16
+	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 17
 	endgroup
 
 	newgroup SILVER                                               ; 19
@@ -412,12 +414,12 @@ ENDM
 	map_const ROUTE_16,                                    20,  9 ;  2
 	map_const ROUTE_17,                                    10, 72 ;  3
 	map_const CELADON_CITY,                                25, 18 ;  4
-	map_const CELADON_DEPT_STORE_1F,                        8,  4 ;  5
-	map_const CELADON_DEPT_STORE_2F,                        8,  4 ;  6
-	map_const CELADON_DEPT_STORE_3F,                        8,  4 ;  7
-	map_const CELADON_DEPT_STORE_4F,                        8,  4 ;  8
-	map_const CELADON_DEPT_STORE_5F,                        8,  4 ;  9
-	map_const CELADON_DEPT_STORE_6F,                        8,  4 ; 10
+	map_const CELADON_DEPT_STORE_1F,                       10,  4 ;  5
+	map_const CELADON_DEPT_STORE_2F,                       10,  4 ;  6
+	map_const CELADON_DEPT_STORE_3F,                       10,  4 ;  7
+	map_const CELADON_DEPT_STORE_4F,                       10,  4 ;  8
+	map_const CELADON_DEPT_STORE_5F,                       10,  4 ;  9
+	map_const CELADON_DEPT_STORE_ROOF,                     10,  4 ; 10
 	map_const CELADON_DEPT_STORE_ELEVATOR,                  2,  2 ; 11
 	map_const CELADON_MANSION_1F,                           4,  5 ; 12
 	map_const CELADON_MANSION_2F,                           4,  5 ; 13
@@ -427,7 +429,7 @@ ENDM
 	map_const CELADON_POKECENTER_1F,                        7,  4 ; 17
 	; map_const CELADON_POKECENTER_2F_BETA,                   8,  4 ; 18
 	map_const CELADON_GAME_CORNER,                         10,  7 ; 19
-	map_const CELADON_GAME_CORNER_PRIZE_ROOM,               3,  3 ; 20
+	map_const CELADON_GAME_CORNER_PRIZE_ROOM,               5,  4 ; 20
 	map_const CELADON_GYM,                                  5,  9 ; 21
 	map_const CELADON_CAFE,                                 6,  4 ; 22
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23

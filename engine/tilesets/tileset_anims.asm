@@ -327,6 +327,7 @@ TilesetRedsHouseAnim:
 TilesetGateKantoAnim:
 TilesetCemeteryAnim:
 TilesetInteriorAnim:
+TilesetLobbyAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

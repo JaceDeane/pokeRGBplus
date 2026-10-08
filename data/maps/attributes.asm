@@ -632,6 +632,8 @@ ENDM
 	; map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
 	map_attributes Route8UndergroundPathEntrance, ROUTE_8_UNDERGROUND_PATH_ENTRANCE, $00, 0
+	map_attributes Route12Gate1F, ROUTE_12_GATE_1F, $00, 0
+	map_attributes Route12Gate2F, ROUTE_12_GATE_2F, $00, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $00, 0
 	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
 	map_attributes Route28SteelWingHouse, ROUTE_28_STEEL_WING_HOUSE, $00, 0
@@ -646,7 +648,7 @@ ENDM
 	map_attributes CeladonDeptStore3F, CELADON_DEPT_STORE_3F, $00, 0
 	map_attributes CeladonDeptStore4F, CELADON_DEPT_STORE_4F, $00, 0
 	map_attributes CeladonDeptStore5F, CELADON_DEPT_STORE_5F, $00, 0
-	map_attributes CeladonDeptStore6F, CELADON_DEPT_STORE_6F, $00, 0
+	map_attributes CeladonDeptStoreRoof, CELADON_DEPT_STORE_ROOF, $00, 0
 	map_attributes CeladonDeptStoreElevator, CELADON_DEPT_STORE_ELEVATOR, $00, 0
 	map_attributes CeladonMansion1F, CELADON_MANSION_1F, $00, 0
 	map_attributes CeladonMansion2F, CELADON_MANSION_2F, $00, 0

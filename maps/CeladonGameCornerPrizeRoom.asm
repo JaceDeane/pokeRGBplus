@@ -278,8 +278,8 @@ CeladonGameCornerPrizeRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  5, CELADON_CITY, 7
-	warp_event  3,  5, CELADON_CITY, 7
+	warp_event  4,  7, CELADON_CITY, 7
+	warp_event  5,  7, CELADON_CITY, 7
 
 	def_coord_events
 
@@ -288,5 +288,5 @@ CeladonGameCornerPrizeRoom_MapEvents:
 	bg_event  4,  1, BGEVENT_READ, CeladonGameCornerPrizeRoomPokemonVendor
 
 	def_object_events
-	object_event  0,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomGentlemanScript, -1
+	object_event  0,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomGentlemanScript, -1
 	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPharmacistScript, -1

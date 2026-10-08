@@ -47,6 +47,7 @@
 	const TILESET_INTERIOR             ;
 	const TILESET_PLATEAU              ;
 	const TILESET_SHIP_DECK            ;
+	const TILESET_LOBBY	               ;
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

@@ -526,8 +526,8 @@ GoldTeethDesc:
 	next "ZONE's WARDEN.@"
 
 SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S.AQUA.@"
+	db   "Required to board"
+	next "the S.S.ANNE.@"
 
 MysteryEggDesc:
 	db   "An EGG obtained"

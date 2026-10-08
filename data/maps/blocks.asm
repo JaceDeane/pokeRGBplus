@@ -562,15 +562,12 @@ Route40BattleTowerGate_Blocks:
 Route29Route46Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
+Route12Gate1F_Blocks:
+	INCBIN "maps/NorthSouthGate1F.blk"
+
 Route5SaffronGate_Blocks:
 Route6SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthSaffronGate.blk"
-
-; Route???Gate_Blocks:
-	; INCBIN "maps/NorthSouthGate1F.blk"
-
-; Route???Gate_Blocks:
-	; INCBIN "maps/Gate2F.blk"
 
 CinnabarIsland_Blocks:
 	INCBIN "maps/CinnabarIsland.blk"
@@ -612,6 +609,7 @@ Route16Gate1F_Blocks:
 	INCBIN "maps/EastWestGate1F.blk"
 
 Route11Gate2F_Blocks:
+Route12Gate2F_Blocks:
 Route16Gate2F_Blocks:
 	INCBIN "maps/Gate2F.blk"
 
@@ -692,31 +690,31 @@ BetaCinnabarPokemonLabRoom3_Blocks: ; unreferenced
 
 GoldenrodDeptStore1F_Blocks:
 CeladonDeptStore1F_Blocks:
-	INCBIN "maps/DeptStore1F.blk"
+	INCBIN "maps/CeladonDeptStore1F.blk"
 
 GoldenrodDeptStore2F_Blocks:
 CeladonDeptStore2F_Blocks:
-	INCBIN "maps/DeptStore2F.blk"
+	INCBIN "maps/CeladonDeptStore2F.blk"
 
 GoldenrodDeptStore3F_Blocks:
 CeladonDeptStore3F_Blocks:
-	INCBIN "maps/DeptStore3F.blk"
+	INCBIN "maps/CeladonDeptStore3F.blk"
 
 GoldenrodDeptStore4F_Blocks:
 CeladonDeptStore4F_Blocks:
-	INCBIN "maps/DeptStore4F.blk"
+	INCBIN "maps/CeladonDeptStore4F.blk"
 
 GoldenrodDeptStore5F_Blocks:
 CeladonDeptStore5F_Blocks:
-	INCBIN "maps/DeptStore5F.blk"
+	INCBIN "maps/CeladonDeptStore5F.blk"
 
 GoldenrodDeptStore6F_Blocks:
-CeladonDeptStore6F_Blocks:
-	INCBIN "maps/DeptStore6F.blk"
+CeladonDeptStoreRoof_Blocks:
+	INCBIN "maps/CeladonDeptStoreRoof.blk"
 
 GoldenrodDeptStoreElevator_Blocks:
 CeladonDeptStoreElevator_Blocks:
-	INCBIN "maps/DeptStoreElevator.blk"
+	INCBIN "maps/CeladonDeptStoreElevator.blk"
 
 CeladonMansion1F_Blocks:
 	INCBIN "maps/CeladonMansion1F.blk"

@@ -55,6 +55,7 @@ Route12SuperRodHouseFishingGuruScript:
 	writetext Route12SuperRodHouseFishingGuruLookForwardToGreaterRecordsText
 	waitbutton
 	closetext
+	setevent EVENT_SET_MAGIKARP_RECORD
 	clearevent EVENT_MAGIKARP_REWARD_ON_STANDBY
 	end
 
@@ -274,5 +275,5 @@ Route12SuperRodHouse_MapEvents:
 	bg_event  3,  0, BGEVENT_READ, SuperRodHousePhoto
 
 	def_object_events
-	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1
+	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1
 	object_event  4,  3, SPRITE_PAPER, SPRITEMOVEDATA_STILL_ALIGNED, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SuperRodHouseRecordSignScript, -1

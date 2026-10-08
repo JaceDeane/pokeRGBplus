@@ -107,8 +107,8 @@ Route12TMPayDay:
 Route12Iron:
 	itemball IRON
 
-Route12HiddenElixer:
-	hiddenitem ELIXER, EVENT_ROUTE_12_HIDDEN_ELIXER
+Route12HiddenHyperPotion:
+	hiddenitem HYPER_POTION, EVENT_ROUTE_12_HIDDEN_HYPER_POTION
 
 Route12SnorlaxText:
 	text "A sleeping #MON"
@@ -256,9 +256,9 @@ Route12_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 15, ROUTE_12_SUPER_ROD_HOUSE, 1
-	warp_event 11, 15, ROUTE_12_SUPER_ROD_HOUSE, 1
-	warp_event 10, 21, ROUTE_12_SUPER_ROD_HOUSE, 1
+	warp_event 10, 15, ROUTE_12_GATE_1F, 1
+	warp_event 11, 15, ROUTE_12_GATE_1F, 2
+	warp_event 10, 21, ROUTE_12_GATE_1F, 3
 	warp_event 11, 77, ROUTE_12_SUPER_ROD_HOUSE, 1
 
 	def_coord_events
@@ -266,7 +266,7 @@ Route12_MapEvents:
 	def_bg_events
 	bg_event 13, 13, BGEVENT_READ, Route12Sign
 	bg_event 11, 63, BGEVENT_READ, FishingSpotSign
-	; bg_event 15,  7, BGEVENT_ITEM, Route12HiddenElixer
+	bg_event  2, 63, BGEVENT_ITEM, Route12HiddenHyperPotion
 
 	def_object_events
 	object_event 10, 62, SPRITE_SNORLAX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route12SnorlaxScript, -1

@@ -1,21 +1,20 @@
 	object_const_def
-	; const ROUTE8UNDERGROUNDPATHENTRANCE_TEACHER
+	const ROUTE8UNDERGROUNDPATHENTRANCE_GIRL
 
 Route8UndergroundPathEntrance_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-; Route8UndergroundPathEntranceTeacherScript:
-	; jumptextfaceplayer Route8UndergroundPathEntranceTeacherText
+Route8UndergroundPathEntranceGirlScript:
+	jumptextfaceplayer Route8UndergroundPathEntranceGirlText
 
-; Route8UndergroundPathEntranceTeacherText:
-	; text "Many cities in"
-	; line "JOHTO have long"
+Route8UndergroundPathEntranceGirlText:
+	text "The dept. store"
+	line "in CELADON has a"
+	cont "great selection!"
+	done
 
-	; para "histories. I'd"
-	; line "love to visit!"
-	; done
 
 Route8UndergroundPathEntrance_MapEvents:
 	db 0, 0 ; filler
@@ -30,4 +29,4 @@ Route8UndergroundPathEntrance_MapEvents:
 	def_bg_events
 
 	def_object_events
-	; object_event  2,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route8UndergroundPathEntranceTeacherScript, -1
+	object_event  3,  4, SPRITE_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route8UndergroundPathEntranceGirlScript, -1

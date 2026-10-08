@@ -24,6 +24,8 @@ LoadSpecialMapPalette:
 	jr z, .interior
 	cp TILESET_CEMETERY
 	jr z, .cemetery
+	cp TILESET_LOBBY
+	jr z, .lobby
 	jr .do_nothing
 
 .pokecom_2f
@@ -107,6 +109,19 @@ LoadSpecialMapPalette:
 
 .cemetery_not_dark
 	call LoadPokemonTowerPalette
+	scf
+	ret
+
+.lobby
+	ld a, [wMapNumber]
+	cp MAP_CELADON_DEPT_STORE_ROOF
+	jr z, .rooftop
+	cp MAP_CELADON_MANSION_ROOF
+	jr z, .rooftop
+	jr .do_nothing
+
+.rooftop
+	call LoadMansionPalette ; call LoadRooftopPalette ; TODO -- change pal time of day
 	scf
 	ret
 
@@ -271,3 +286,14 @@ LoadPokemonTowerPalette:
 
 PokemonTowerPalette:
 INCLUDE "gfx/tilesets/pokemon_tower.pal"
+
+; LoadRooftopPalette:
+	; ld a, BANK(wBGPals1)
+	; ld de, wBGPals1
+	; ld hl, RooftopPalette
+	; ld bc, 8 palettes
+	; call FarCopyWRAM
+	; ret
+
+; RooftopPalette:
+; INCLUDE "gfx/tilesets/rooftop.pal"

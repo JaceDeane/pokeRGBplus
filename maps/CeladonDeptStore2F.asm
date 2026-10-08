@@ -2,7 +2,7 @@
 	const CELADONDEPTSTORE2F_CLERK1
 	const CELADONDEPTSTORE2F_CLERK2
 	const CELADONDEPTSTORE2F_POKEFAN_M
-	const CELADONDEPTSTORE2F_YOUNGSTER
+	const CELADONDEPTSTORE2F_GIRL
 
 CeladonDeptStore2F_MapScripts:
 	def_scene_scripts
@@ -70,18 +70,23 @@ CeladonDeptStore2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 12,  0, CELADON_DEPT_STORE_3F, 1
-	warp_event 15,  0, CELADON_DEPT_STORE_1F, 3
-	warp_event  2,  0, CELADON_DEPT_STORE_ELEVATOR, 1
+	warp_event 12,  1, CELADON_DEPT_STORE_3F, 1
+	warp_event 16,  1, CELADON_DEPT_STORE_1F, 5
+	warp_event  1,  1, CELADON_DEPT_STORE_ELEVATOR, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 14,  0, BGEVENT_READ, CeladonDeptStore2FDirectory
-	bg_event  3,  0, BGEVENT_READ, CeladonDeptStore2FElevatorButton
+	bg_event 14,  1, BGEVENT_READ, CeladonDeptStore2FDirectory
+	bg_event  2,  1, BGEVENT_READ, CeladonDeptStore2FElevatorButton
 
 	def_object_events
-	object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FClerk1Script, -1
-	object_event 14,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FClerk2Script, -1
-	object_event  5,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FPokefanMScript, -1
-	object_event  6,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FYoungsterScript, -1
+	object_event  5,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FClerk1Script, -1
+	object_event  6,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FClerk2Script, -1
+	object_event 19,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FPokefanMScript, -1
+	object_event 14,  4, SPRITE_GIRL, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FYoungsterScript, -1
+
+	; object_event  5,  3, SPRITE_CLERK, STAY, DOWN, TEXT_CELADONMART2F_CLERK1
+	; object_event  6,  3, SPRITE_CLERK, STAY, DOWN, TEXT_CELADONMART2F_CLERK2
+	; object_event 19,  5, SPRITE_MIDDLE_AGED_MAN, STAY, NONE, TEXT_CELADONMART2F_MIDDLE_AGED_MAN
+	; object_event 14,  4, SPRITE_GIRL, WALK, UP_DOWN, TEXT_CELADONMART2F_GIRL

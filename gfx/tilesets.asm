@@ -426,3 +426,12 @@ INCBIN "data/tilesets/plateau_metatiles.bin"
 
 TilesetPlateauColl::
 INCLUDE "data/tilesets/plateau_collision.asm"
+
+TilesetLobbyGFX::
+INCBIN "gfx/tilesets/lobby.2bpp.lz"
+
+TilesetLobbyMeta::
+INCBIN "data/tilesets/lobby_metatiles.bin"
+
+TilesetLobbyColl::
+INCLUDE "data/tilesets/lobby_collision.asm"

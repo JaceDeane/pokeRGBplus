@@ -333,7 +333,7 @@ INCLUDE "maps/CeladonDeptStore2F.asm"
 INCLUDE "maps/CeladonDeptStore3F.asm"
 INCLUDE "maps/CeladonDeptStore4F.asm"
 INCLUDE "maps/CeladonDeptStore5F.asm"
-INCLUDE "maps/CeladonDeptStore6F.asm"
+INCLUDE "maps/CeladonDeptStoreRoof.asm"
 INCLUDE "maps/CeladonDeptStoreElevator.asm"
 INCLUDE "maps/CeladonMansion1F.asm"
 INCLUDE "maps/CeladonMansion2F.asm"
@@ -540,6 +540,8 @@ INCLUDE "maps/IndigoPlateau.asm"
 INCLUDE "maps/Route21WestBorder.asm"
 INCLUDE "maps/Route11Gate1F.asm"
 INCLUDE "maps/Route11Gate2F.asm"
+INCLUDE "maps/Route12Gate1F.asm"
+INCLUDE "maps/Route12Gate2F.asm"
 
 
 SECTION "Map Scripts 18", ROMX

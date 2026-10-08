@@ -3,7 +3,6 @@
 	const CELADONDEPTSTORE5F_CLERK2
 	const CELADONDEPTSTORE5F_GENTLEMAN
 	const CELADONDEPTSTORE5F_SAILOR
-	const CELADONDEPTSTORE5F_TEACHER
 
 CeladonDeptStore5F_MapScripts:
 	def_scene_scripts
@@ -73,19 +72,23 @@ CeladonDeptStore5F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 12,  0, CELADON_DEPT_STORE_4F, 1
-	warp_event 15,  0, CELADON_DEPT_STORE_6F, 1
-	warp_event  2,  0, CELADON_DEPT_STORE_ELEVATOR, 1
+	warp_event 12,  1, CELADON_DEPT_STORE_4F, 1
+	warp_event 16,  1, CELADON_DEPT_STORE_ROOF, 1
+	warp_event  1,  1, CELADON_DEPT_STORE_ELEVATOR, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 14,  0, BGEVENT_READ, CeladonDeptStore5FDirectory
-	bg_event  3,  0, BGEVENT_READ, CeladonDeptStore5FElevatorButton
+	bg_event 14,  1, BGEVENT_READ, CeladonDeptStore5FDirectory
+	bg_event  2,  1, BGEVENT_READ, CeladonDeptStore5FElevatorButton
 
 	def_object_events
-	object_event  7,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk1Script, -1
-	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk2Script, -1
-	object_event 13,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FGentlemanScript, -1
-	object_event  3,  4, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FSailorScript, -1
-	object_event  1,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FTeacherScript, -1
+	object_event  5,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk1Script, -1
+	object_event  6,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk2Script, -1
+	object_event 14,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FGentlemanScript, -1
+	object_event  2,  6, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FSailorScript, -1
+
+	; object_event 14,  5, SPRITE_GENTLEMAN, WALK, UP_DOWN, TEXT_CELADONMART5F_GENTLEMAN
+	; object_event  2,  6, SPRITE_SAILOR, STAY, NONE, TEXT_CELADONMART5F_SAILOR
+	; object_event  5,  3, SPRITE_CLERK, STAY, DOWN, TEXT_CELADONMART5F_CLERK1
+	; object_event  6,  3, SPRITE_CLERK, STAY, DOWN, TEXT_CELADONMART5F_CLERK2
