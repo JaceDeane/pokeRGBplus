@@ -28,17 +28,20 @@ CeladonDeptStore4FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 CeladonDeptStore4FSuperNerdText:
-	text "I'm here to buy"
-	line "SURF MAIL to send"
-	cont "to my girlfriend."
+	text "I'm going to buy"
+	line "a # DOLL for"
+	cont "my girlfriend!"
 	done
 
 CeladonDeptStore4FYoungsterText:
-	text "This is the only"
-	line "place where you"
+	text "I heard something"
+	line "useful."
 
-	para "can buy LOVELY"
-	line "MAIL."
+	para "You can run from"
+	line "wild #MON by"
+
+	para "distracting them"
+	line "with a # DOLL!"
 	done
 
 CeladonDeptStore4FDirectoryText:
@@ -46,14 +49,18 @@ CeladonDeptStore4FDirectoryText:
 	line "With Gifts!"
 
 	para "4F: WISEMAN GIFTS"
+	
+	para "Evolution Special!"
+	line "ELEMENTAL STONES"
+	cont "on sale now!"
 	done
 
 CeladonDeptStore4F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 12,  1, CELADON_DEPT_STORE_5F, 1
-	warp_event 16,  1, CELADON_DEPT_STORE_3F, 2
+	warp_event 16,  1, CELADON_DEPT_STORE_5F, 1
+	warp_event 12,  1, CELADON_DEPT_STORE_3F, 2
 	warp_event  1,  1, CELADON_DEPT_STORE_ELEVATOR, 1
 
 	def_coord_events

@@ -11,14 +11,17 @@ CeladonDeptStore1F_MapScripts:
 CeladonDeptStore1FReceptionistScript:
 	jumptextfaceplayer CeladonDeptStore1FReceptionistText
 
-CeladonDeptStore1FGentlemanScript:
-	jumptextfaceplayer CeladonDeptStore1FGentlemanText
+; CeladonDeptStore1FGentlemanScript:
+	; jumptextfaceplayer CeladonDeptStore1FGentlemanText
 
-CeladonDeptStore1FTeacherScript:
-	jumptextfaceplayer CeladonDeptStore1FTeacherText
+; CeladonDeptStore1FTeacherScript:
+	; jumptextfaceplayer CeladonDeptStore1FTeacherText
 
 CeladonDeptStore1FDirectory:
 	jumptext CeladonDeptStore1FDirectoryText
+
+CeladonDeptStore1FCurrentFloorSign:
+	jumptext CeladonDeptStore1FCurrentFloorText
 
 CeladonDeptStore1FElevatorButton:
 	jumpstd ElevatorButtonScript
@@ -28,31 +31,34 @@ CeladonDeptStore1FReceptionistText:
 	line "CELADON DEPT."
 	cont "STORE!"
 
-	para "The directory is"
-	line "on the wall."
+	para "The directory sign"
+	line "to your right"
+
+	para "describes the"
+	line "store layout."
 	done
 
-CeladonDeptStore1FGentlemanText:
-	text "This DEPT.STORE is"
-	line "part of the same"
+; CeladonDeptStore1FGentlemanText:
+	; text "This DEPT.STORE is"
+	; line "part of the same"
 
-	para "chain as the one"
-	line "in GOLDENROD CITY."
+	; para "chain as the one"
+	; line "in GOLDENROD CITY."
 
-	para "They were both"
-	line "renovated at the"
-	cont "same time."
-	done
+	; para "They were both"
+	; line "renovated at the"
+	; cont "same time."
+	; done
 
-CeladonDeptStore1FTeacherText:
-	text "This is my first"
-	line "time here."
+; CeladonDeptStore1FTeacherText:
+	; text "This is my first"
+	; line "time here."
 
-	para "It's so big…"
+	; para "It's so big…"
 
-	para "I'm afraid I'll"
-	line "get lost."
-	done
+	; para "I'm afraid I'll"
+	; line "get lost."
+	; done
 
 CeladonDeptStore1FDirectoryText:
 	text "1F: SERVICE"
@@ -67,7 +73,13 @@ CeladonDeptStore1FDirectoryText:
 
 	para "5F: DRUG STORE"
 
-	para "ROOFTOP SQUARE"
+	para "ROOFTOP SQUARE:"
+	line "VENDING MACHINES"
+	done
+
+CeladonDeptStore1FCurrentFloorText:
+	text "1F: SERVICE"
+	line "    COUNTER"
 	done
 
 CeladonDeptStore1F_MapEvents:
@@ -84,7 +96,8 @@ CeladonDeptStore1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 14,  1, BGEVENT_READ, CeladonDeptStore1FDirectory
+	bg_event 11,  4, BGEVENT_READ, CeladonDeptStore1FDirectory
+	bg_event 14,  1, BGEVENT_READ, CeladonDeptStore1FCurrentFloorSign
 	bg_event  2,  1, BGEVENT_READ, CeladonDeptStore1FElevatorButton
 
 	def_object_events

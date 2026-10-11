@@ -20,8 +20,8 @@ CeladonDeptStoreRoofSuperNerdScript:
 	jumptextfaceplayer CeladonDeptStoreRoofSuperNerdText
 
 CeladonDeptStoreRoofLittleGirlScript:
-	;TODO
-	jumptextfaceplayer CeladonDeptStoreRoofLittleGirlText
+	;TODO ***********
+	jumptextfaceplayer CeladonDeptStoreRoofLittleGirlImThirstyText
 
 CeladonDeptStoreRoofVendingMachine:
 	opentext
@@ -34,6 +34,8 @@ CeladonDeptStoreRoofVendingMachine:
 	ifequal 1, .FreshWater
 	ifequal 2, .SodaPop
 	ifequal 3, .Lemonade
+	writetext CeladonVendingNotThirstyText
+	waitbutton
 	closetext
 	end
 
@@ -113,7 +115,7 @@ CeladonClangText:
 	para "@"
 	text_ram wStringBuffer3
 	text_start
-	line "popped out."
+	line "popped out!"
 	done
 
 CeladonVendingNoMoneyText:
@@ -126,24 +128,130 @@ CeladonVendingNoSpaceText:
 	line "room for stuff…"
 	done
 
-CeladonDeptStoreRoofSuperNerdText:
-	text "A vending machine"
-	line "with a prize rou-"
-	cont "lette…"
-
-	para "You never see"
-	line "those anymore."
+CeladonVendingNotThirstyText:
+	text "Not thirsty!"
 	done
 
-CeladonDeptStoreRoofLittleGirlText:
-	text "Aww! There's no"
-	line "games here!"
+CeladonDeptStoreRoofLittleGirlImThirstyText:
+	text "I'm thirsty!"
+	line "I want something"
+	cont "to drink!"
+	done
 
-	para "I wanted to play…"
+CeladonDeptStoreRoofLittleGirlGiveHerADrinkText:
+	text "I'm thirsty!"
+	line "I want something"
+	cont "to drink!"
+
+	para "Give her a drink?"
+	done
+
+CeladonDeptStoreRoofLittleGirlWhichDrinkText:
+	text "Give her which"
+	line "drink?"
+	done
+
+CeladonDeptStoreRoofLittleGirlFreshWaterText:
+	text "Yay!"
+
+	para "FRESH WATER!"
+
+	para "Thank you!"
+
+	para "You can have this"
+	line "from me!"
+	done ; text_end
+
+; CeladonDeptStoreRoofLittleGirlReceivedTM13Text:
+	; text "<PLAYER> received"
+	; line "@"
+	; text_ram wStringBuffer
+	; text "!@"
+	; text_end
+
+CeladonDeptStoreRoofLittleGirlTM13ExplanationText:
+	text "TM13 contains"
+	line "ICE BEAM!"
+
+	para "It can freeze the"
+	line "target sometimes!"
+	done ; text_end
+
+CeladonDeptStoreRoofLittleGirlSodaPopText:
+	text "Yay!"
+
+	para "SODA POP!"
+
+	para "Thank you!"
+
+	para "You can have this"
+	line "from me!"
+	done ; text_end
+
+; CeladonDeptStoreRoofLittleGirlReceivedTM48Text:
+	; text "<PLAYER> received"
+	; line "@"
+	; text_ram wStringBuffer
+	; text "!@"
+	; text_end
+
+CeladonDeptStoreRoofLittleGirlTM48ExplanationText:
+	text "TM48 contains"
+	line "ROCK SLIDE!"
+
+	para "It can spook the"
+	line "target sometimes!"
+	done ; text_end
+
+CeladonDeptStoreRoofLittleGirlLemonadeText:
+	text "Yay!"
+
+	para "LEMONADE!"
+
+	para "Thank you!"
+
+	para "You can have this"
+	line "from me!"
+	done ; text_end
+
+; CeladonDeptStoreRoofLittleGirlReceivedTM49Text:
+	; text "<PLAYER> received"
+	; line "TM49!@"
+	; text_end
+
+CeladonDeptStoreRoofLittleGirlTM49ExplanationText:
+	text "TM49 contains"
+	line "TRI ATTACK!"
+	
+	para "It burns, freezes,"
+	line "or paralyzes the"
+	cont "target sometimes!"
+	done ; text_end
+
+CeladonDeptStoreRoofLittleGirlNoRoomText:
+	text "You don't have"
+	line "space for this!"
+	done ; text_end
+
+CeladonDeptStoreRoofLittleGirlNotThirstyText:
+	text "No thank you!"
+
+	para "I'm not thirsty"
+	line "after all!"
+	done ; text_end
+
+CeladonDeptStoreRoofSuperNerdText:
+	text "My sister is a"
+	line "trainer, believe"
+	cont "it or not."
+
+	para "But she's so"
+	line "immature, she"
+	cont "drives me nuts!"
 	done
 
 CeladonDeptStoreRoofDirectoryText:
-	text "ROOFTOP SQUARE"
+	text "ROOFTOP SQUARE:"
 	line "VENDING MACHINES"
 	done
 

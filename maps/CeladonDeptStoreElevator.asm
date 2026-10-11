@@ -17,7 +17,7 @@ CeladonDeptStoreElevatorScript:
 
 CeladonDeptStoreElevatorData:
 	db 6 ; floors
-	elevfloor FLOOR_1F, 4, CELADON_DEPT_STORE_1F
+	elevfloor FLOOR_1F, 6, CELADON_DEPT_STORE_1F
 	elevfloor FLOOR_2F, 3, CELADON_DEPT_STORE_2F
 	elevfloor FLOOR_3F, 3, CELADON_DEPT_STORE_3F
 	elevfloor FLOOR_4F, 3, CELADON_DEPT_STORE_4F

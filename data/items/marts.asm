@@ -24,17 +24,21 @@ Marts:
 	dw MartCerulean
 	dw MartVermilion
 	dw MartLavender
-	dw MartCeladon2F1
-	dw MartCeladon2F2
+	dw MartCeladon2FClerk1
+	dw MartCeladon2FClerk2
 	dw MartCeladon3F
 	dw MartCeladon4F
-	dw MartCeladon5F1
-	dw MartCeladon5F2
+	dw MartCeladon5FClerk1
+	dw MartCeladon5FClerk2
 	dw MartFuchsia
 	dw MartSaffron
 	dw MartCinnabar
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartCeladon2FClerk1_2
+	dw MartCeladon2FClerk2_2
+	dw MartCeladon4F_2
+	dw MartCeladon5FClerk2_2
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -279,24 +283,20 @@ MartLavender:
 	db PARLYZ_HEAL
 	db -1 ; end
 
-MartCeladon2F1:
-	db 7 ; # items
+MartCeladon2FClerk1:
+	db 5 ; # items
 	db POTION
 	db SUPER_POTION
-	db HYPER_POTION
-	db MAX_POTION
 	db REVIVE
+	db REPEL
 	db SUPER_REPEL
-	db MAX_REPEL
 	db -1 ; end
 
-MartCeladon2F2:
-	db 10 ; # items
+MartCeladon2FClerk2:
+	db 8 ; # items
 	db POKE_BALL
 	db GREAT_BALL
-	db ULTRA_BALL
 	db ESCAPE_ROPE
-	db FULL_HEAL
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL
@@ -305,31 +305,28 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 5 ; # items
-	; db TM_HIDDEN_POWER
-	; db TM_SUNNY_DAY
-	; db TM_PROTECT
-	; db TM_RAIN_DANCE
-	; db TM_SANDSTORM
+	db 9 ; # items
+	db TM_DOUBLE_TEAM
+	db TM_REFLECT
+	db TM_RAZOR_WIND
+	db TM_HORN_DRILL
+	db TM_EGG_BOMB
+	db TM_MEGA_PUNCH
+	db TM_MEGA_KICK
+	db TM_TAKE_DOWN
+	db TM_SUBMISSION
 	db -1 ; end
 
 MartCeladon4F:
-	db 3 ; # items
-	db POKE_DOLL
-	db LOVELY_MAIL
-	db SURF_MAIL
-	db -1 ; end
-
-MartCeladon5F1:
 	db 5 ; # items
-	db HP_UP
-	db PROTEIN
-	db IRON
-	db CARBOS
-	db CALCIUM
+	db POKE_DOLL
+	db FIRE_STONE
+	db THUNDERSTONE
+	db WATER_STONE
+	db LEAF_STONE
 	db -1 ; end
 
-MartCeladon5F2:
+MartCeladon5FClerk1:
 	db 7 ; # items
 	db X_ACCURACY
 	db GUARD_SPEC
@@ -338,6 +335,15 @@ MartCeladon5F2:
 	db X_DEFEND
 	db X_SPEED
 	db X_SPECIAL
+	db -1 ; end
+
+MartCeladon5FClerk2:
+	db 5 ; # items
+	db HP_UP
+	db PROTEIN
+	db IRON
+	db CARBOS
+	db CALCIUM
 	db -1 ; end
 
 MartFuchsia:
@@ -388,6 +394,53 @@ MartUnderground:
 	db ENERGY_ROOT
 	db HEAL_POWDER
 	db REVIVAL_HERB
+	db -1 ; end
+
+MartCeladon2FClerk1_2:
+	db 8 ; # items
+	db POTION
+	db SUPER_POTION
+	db HYPER_POTION
+	db MAX_POTION
+	db REVIVE
+	db REPEL
+	db SUPER_REPEL
+	db MAX_REPEL
+	db -1 ; end
+
+MartCeladon2FClerk2_2:
+	db 10 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db ESCAPE_ROPE
+	db FULL_HEAL
+	db ANTIDOTE
+	db BURN_HEAL
+	db ICE_HEAL
+	db AWAKENING
+	db PARLYZ_HEAL
+	db -1 ; end
+
+MartCeladon4F_2:
+	db 7 ; # items
+	db POKE_DOLL
+	db FIRE_STONE
+	db THUNDERSTONE
+	db WATER_STONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
+	db -1 ; end
+
+MartCeladon5FClerk2_2:
+	db 6 ; # items
+	db HP_UP
+	db PROTEIN
+	db IRON
+	db CARBOS
+	db CALCIUM
+	db PP_UP
 	db -1 ; end
 
 DefaultMart:

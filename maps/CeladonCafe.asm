@@ -76,7 +76,7 @@ CeladonCafeGymGuideScript:
 	iffalse .BagFull
 	writetext CeladonCafeGymGuideReceivedCoinCaseText
 	playsound SFX_RB_KEY_ITEM
-	waitsfx
+	; waitsfx
 	itemnotify
 	setevent EVENT_GOT_COIN_CASE
 	waitbutton ; is wait sfx enough?

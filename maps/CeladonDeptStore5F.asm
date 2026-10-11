@@ -12,14 +12,14 @@ CeladonDeptStore5F_MapScripts:
 CeladonDeptStore5FClerk1Script:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_CELADON_5F_1
+	pokemart MARTTYPE_STANDARD, MART_CELADON_5F_CLERK1
 	closetext
 	end
 
 CeladonDeptStore5FClerk2Script:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_CELADON_5F_2
+	pokemart MARTTYPE_STANDARD, MART_CELADON_5F_CLERK2
 	closetext
 	end
 
@@ -29,8 +29,8 @@ CeladonDeptStore5FGentlemanScript:
 CeladonDeptStore5FSailorScript:
 	jumptextfaceplayer CeladonDeptStore5FSailorText
 
-CeladonDeptStore5FTeacherScript:
-	jumptextfaceplayer CeladonDeptStore5FTeacherText
+; CeladonDeptStore5FTeacherScript:
+	; jumptextfaceplayer CeladonDeptStore5FTeacherText
 
 CeladonDeptStore5FDirectory:
 	jumptext CeladonDeptStore5FDirectoryText
@@ -39,41 +39,53 @@ CeladonDeptStore5FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 CeladonDeptStore5FGentlemanText:
-	text "I want to buy some"
-	line "items that raise"
+	text "#MON stat"
+	line "enhancers can be"
+	cont "bought only here."
 
-	para "#MON stats, but"
-	line "I don't have"
-	cont "enough money…"
+	para "Use CALCIUM to"
+	line "increase SPECIAL"
+	cont "stats."
+
+	para "Use CARBOS to"
+	line "increase SPEED."
 	done
 
 CeladonDeptStore5FSailorText:
-	text "I want PP UP, so I"
-	line "can raise the PP"
+	text "I'm here for"
+	line "#MON stat"
+	cont "enhancers."
 
-	para "of moves. But you"
-	line "can't buy it…"
+	para "PROTEIN increases"
+	line "ATTACK power,"
+
+	para "and IRON increases"
+	line "DEFENSE!"
 	done
 
-CeladonDeptStore5FTeacherText:
-	text "Using items on"
-	line "them makes #-"
-	cont "MON happy."
+; CeladonDeptStore5FTeacherText:
+	; text "Using items on"
+	; line "them makes #-"
+	; cont "MON happy."
 
-	para "They hate certain"
-	line "items, though…"
-	done
+	; para "They hate certain"
+	; line "items, though…"
+	; done
 
 CeladonDeptStore5FDirectoryText:
-	text "5F: DRUG STORE"
+	text "Let Us Pump Up"
+	line "Your #MON!"
+	
+	; para "5F: DRUG STORE"
+	para "5F: MEDICINE BOX"
 	done
 
 CeladonDeptStore5F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 12,  1, CELADON_DEPT_STORE_4F, 1
-	warp_event 16,  1, CELADON_DEPT_STORE_ROOF, 1
+	warp_event 16,  1, CELADON_DEPT_STORE_4F, 1
+	warp_event 12,  1, CELADON_DEPT_STORE_ROOF, 1
 	warp_event  1,  1, CELADON_DEPT_STORE_ELEVATOR, 1
 
 	def_coord_events
@@ -83,8 +95,8 @@ CeladonDeptStore5F_MapEvents:
 	bg_event  2,  1, BGEVENT_READ, CeladonDeptStore5FElevatorButton
 
 	def_object_events
-	object_event  5,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk1Script, -1
-	object_event  6,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk2Script, -1
+	object_event  5,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk1Script, -1
+	object_event  6,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FClerk2Script, -1
 	object_event 14,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FGentlemanScript, -1
 	object_event  2,  6, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore5FSailorScript, -1
 

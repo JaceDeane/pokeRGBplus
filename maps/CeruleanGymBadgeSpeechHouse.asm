@@ -203,7 +203,7 @@ CeruleanGymBadgeSpeechHouseMarshBadgeText:
 
 CeruleanGymBadgeSpeechHouseVolcanoBadgeText:
 	text "Your #MON's"
-	line "SP.ATK and SP.DEF"
+	line "SPECIAL stats" ; SPCL.ATK and SPCL.DEF don't quite fit
 	cont "increase a bit."
 	done
 

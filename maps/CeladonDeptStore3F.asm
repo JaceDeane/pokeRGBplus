@@ -85,6 +85,113 @@ CeladonDeptStore3FSuperNerdText:
 	line "some rare moves."
 	done
 
+
+CeladonMart3FClerkTM18PreReceiveText:
+	text "Oh, hi! I finally"
+	line "finished #MON!"
+
+	para "Not done yet?"
+
+	para "This might be"
+	line "useful!"
+	done ; prompt
+
+; CeladonMart3FClerkReceivedTM18Text:
+	; text "<PLAYER> received"
+	; line "@"
+	; text_ram wStringBuffer
+	; text "!@"
+	; text_end
+
+CeladonMart3FClerkTM18ExplanationText:
+	text "TM18 is COUNTER!"
+
+	para "Not like the one"
+	line "I'm leaning on,"
+	cont "mind you!"
+	done
+
+; CeladonMart3FClerkTM18NoRoomText:
+	; text "Your pack is full"
+	; line "of items!"
+	; done
+
+CeladonMart3FGameBoyKid1Text:
+	text "Captured #MON"
+	line "are registered"
+
+	para "with an ID No."
+	line "and OT, the name"
+
+	para "of the Original"
+	line "Trainer that"
+	cont "caught it!"
+	done
+
+CeladonMart3FGameBoyKid2Text:
+	text "All right!"
+
+	para "My buddy's going"
+	line "to trade me his"
+
+	para "KANGASKHAN for my"
+	line "GRAVELER!"
+	done
+
+CeladonMart3FGameBoyKid3Text:
+	text "Come on GRAVELER!"
+
+	para "I love GRAVELER!"
+	line "I collect them!"
+
+	para "Huh?"
+
+	para "GRAVELER turned"
+	line "into a different"
+	cont "#MON!"
+	done
+
+CeladonMart3FLittleBoyText:
+	text "You can identify"
+	line "#MON you got"
+
+	para "in trades by"
+	line "their ID Numbers!"
+	done
+
+CeladonMart3FSNESText:
+	text "It's an SNES!"
+	done
+
+CeladonMart3FRPGText:
+	text "An RPG! There's"
+	line "no time for that!"
+	done
+
+CeladonMart3FSportsGameText:
+	text "A sports game!"
+	line "Dad'll like that!"
+	done
+
+CeladonMart3FPuzzleGameText:
+	text "A puzzle game!"
+	line "Looks addictive!"
+	done
+
+CeladonMart3FFightingGameText:
+	text "A fighting game!"
+	line "Looks tough!"
+	done
+
+CeladonMart3FCurrentFloorSignText:
+	text "3F: TV GAME SHOP"
+	done
+
+CeladonMart3FPokemonPosterText:
+	text "Red and Blue!"
+	line "Both are #MON!"
+	done
+
 CeladonDeptStore3FDirectoryText:
 	text "3F: TM SHOP"
 
@@ -96,8 +203,8 @@ CeladonDeptStore3F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 12,  1, CELADON_DEPT_STORE_2F, 1
-	warp_event 16,  1, CELADON_DEPT_STORE_4F, 2
+	warp_event 16,  1, CELADON_DEPT_STORE_2F, 1
+	warp_event 12,  1, CELADON_DEPT_STORE_4F, 2
 	warp_event  1,  1, CELADON_DEPT_STORE_ELEVATOR, 1
 
 	def_coord_events
