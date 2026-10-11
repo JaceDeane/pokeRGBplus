@@ -22,7 +22,7 @@ Route5_MapEvents:
 	warp_event 17, 27, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1
 	warp_event  8, 31, ROUTE_5_SAFFRON_GATE, 1
 	warp_event  9, 31, ROUTE_5_SAFFRON_GATE, 2
-	warp_event  9, 21, DAY_CARE, 1
+	warp_event 10, 21, DAY_CARE, 1
 
 	def_coord_events
 

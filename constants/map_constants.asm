@@ -361,7 +361,7 @@ ENDM
 	map_const ROUTE_13,                                    30,  9 ;  1
 	map_const ROUTE_14,                                    10, 27 ;  2
 	map_const ROUTE_15,                                    30,  9 ;  3
-	map_const ROUTE_18,                                    25,  9 ;  4
+	map_const ROUTE_18,                                    25, 10 ;  4
 	map_const FUCHSIA_CITY,                                20, 18 ;  5
 	map_const FUCHSIA_MART,                                 4,  4 ;  6
 	map_const SAFARI_ZONE_MAIN_OFFICE,                      4,  4 ;  7

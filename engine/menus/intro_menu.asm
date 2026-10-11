@@ -264,18 +264,18 @@ SetDefaultBoxNames:
 .Box:
 	db "BOX@"
 
-InitializeMagikarpHouse:
+InitializeMagikarpHouse: ; Initialise to zero
 	ld hl, wBestMagikarpLengthFeet
-	ld a, $3
+	ld a, $0
 	ld [hli], a
-	ld a, $6
+	ld a, $0
 	ld [hli], a
-	ld de, .Ralph
+	ld de, .Blank
 	call CopyName2
 	ret
 
-.Ralph:
-	db "RALPH@"
+.Blank:
+	db " @"
 
 InitializeNPCNames:
 	ld hl, .Rival

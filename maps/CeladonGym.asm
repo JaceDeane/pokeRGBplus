@@ -69,7 +69,7 @@ TrainerLassKay:
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassKayBeatenText
+	writetext LassKayAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -80,7 +80,7 @@ TrainerBeautyBridget:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyBridgetBeatenText
+	writetext BeautyBridgetAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -91,7 +91,7 @@ TrainerPicnickerTina:
 .Script:
 	endifjustbattled
 	opentext
-	writetext PicnickerTinaBeatenText
+	writetext PicnickerTinaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -102,7 +102,7 @@ TrainerBeautyTamia:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyTamiaBeatenText
+	writetext BeautyTamiaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -113,7 +113,7 @@ TrainerLassLisa:
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassLisaBeatenText
+	writetext LassLisaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -124,7 +124,7 @@ TrainerBeautyLori:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BeautyLoriBeatenText
+	writetext BeautyLoriAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -135,7 +135,7 @@ TrainerCooltrainerFMary:
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerFMaryBeatenText
+	writetext CooltrainerFMaryAfterBattleText
 	waitbutton
 	closetext
 	end

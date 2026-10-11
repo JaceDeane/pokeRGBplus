@@ -236,6 +236,7 @@ ScriptCommandTable:
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
 	dw Script_count_caught               ; ab
+	dw Script_changeborderblock          ; ac
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2367,7 +2368,7 @@ Script_checksave:
 	ret
 
 Script_trainerpic:
-; script command 0xac
+; script command 0xaa
 ; parameters:
 ;     trainer (TrainerParam)
 
@@ -2382,12 +2383,18 @@ Script_trainerpic:
 
 Script_count_caught:
 ; script command 0xab
-
 	ld hl, wPokedexCaught
 	ld b, wEndPokedexCaught - wPokedexCaught
 	call CountSetBits
 	ld [wStringBuffer4], a
 	ret
+
+Script_changeborderblock:
+; script command 0xac
+    call GetScriptByte
+    ld [wMapBorderBlock], a
+    ret
+	
 
 Script_checkver_duplicate: ; unreferenced
 	ld a, [.gs_version]

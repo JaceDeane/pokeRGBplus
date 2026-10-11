@@ -1076,4 +1076,10 @@ MACRO count_caught
 	db count_caught_command
 ENDM
 
+	const changeborderblock_command ;
+MACRO changeborderblock
+    db changeborderblock_command
+    db \1 ; block
+endm
+
 DEF NUM_EVENT_COMMANDS EQU const_value

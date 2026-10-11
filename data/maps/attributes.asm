@@ -168,26 +168,26 @@ ENDM
 	; connection south, Route30, ROUTE_30, 10
 	; connection west, VioletCity, VIOLET_CITY, -9
 
-	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH
-	connection north, VioletCity, VIOLET_CITY, 0
-	connection south, Route33, ROUTE_33, 0
+	map_attributes Route32, ROUTE_32, $05, 0
+	; connection north, VioletCity, VIOLET_CITY, 0
+	; connection south, Route33, ROUTE_33, 0
 
-	map_attributes Route33, ROUTE_33, $05, NORTH | WEST
-	connection north, Route32, ROUTE_32, 0
-	connection west, AzaleaTown, AZALEA_TOWN, 0
+	map_attributes Route33, ROUTE_33, $05, 0
+	; connection north, Route32, ROUTE_32, 0
+	; connection west, AzaleaTown, AZALEA_TOWN, 0
 
-	map_attributes Route34, ROUTE_34, $05, NORTH | EAST
-	connection north, GoldenrodCity, GOLDENROD_CITY, -5
-	connection east, AzaleaTown, AZALEA_TOWN, 18
+	map_attributes Route34, ROUTE_34, $05, 0
+	; connection north, GoldenrodCity, GOLDENROD_CITY, -5
+	; connection east, AzaleaTown, AZALEA_TOWN, 18
 
-	map_attributes Route35, ROUTE_35, $05, NORTH | SOUTH
-	connection north, Route36, ROUTE_36, 0
-	connection south, GoldenrodCity, GOLDENROD_CITY, -5
+	map_attributes Route35, ROUTE_35, $05, 0
+	; connection north, Route36, ROUTE_36, 0
+	; connection south, GoldenrodCity, GOLDENROD_CITY, -5
 
-	map_attributes Route36, ROUTE_36, $05, NORTH | SOUTH | EAST
-	connection north, Route37, ROUTE_37, 10
-	connection south, Route35, ROUTE_35, 0
-	connection east, VioletCity, VIOLET_CITY, 0
+	map_attributes Route36, ROUTE_36, $05, 0
+	; connection north, Route37, ROUTE_37, 10
+	; connection south, Route35, ROUTE_35, 0
+	; connection east, VioletCity, VIOLET_CITY, 0
 
 	map_attributes Route37, ROUTE_37, $05, NORTH | SOUTH
 	connection north, EcruteakCity, ECRUTEAK_CITY, -5
@@ -277,7 +277,7 @@ ENDM
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $0f, SOUTH | WEST | EAST
 	connection south, Route19, ROUTE_19, 5
 	connection west, Route18, ROUTE_18, 4
-	connection east, Route15, ROUTE_15, 9
+	connection east, Route15, ROUTE_15, 4
 
 	map_attributes Route18, ROUTE_18, $43, NORTH | EAST
 	connection north, Route17, ROUTE_17, 0
@@ -336,7 +336,7 @@ ENDM
 	map_attributes SaffronCity, SAFFRON_CITY, $0f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5
 	connection south, Route6, ROUTE_6, 5
-	connection west, Route7, ROUTE_7, 3
+	connection west, Route7, ROUTE_7, 5
 	connection east, Route8, ROUTE_8, 4
 
 	map_attributes Route5, ROUTE_5, $0f, NORTH | SOUTH
@@ -648,7 +648,7 @@ ENDM
 	map_attributes CeladonDeptStore3F, CELADON_DEPT_STORE_3F, $00, 0
 	map_attributes CeladonDeptStore4F, CELADON_DEPT_STORE_4F, $00, 0
 	map_attributes CeladonDeptStore5F, CELADON_DEPT_STORE_5F, $00, 0
-	map_attributes CeladonDeptStoreRoof, CELADON_DEPT_STORE_ROOF, $00, 0
+	map_attributes CeladonDeptStoreRoof, CELADON_DEPT_STORE_ROOF, $42, 0
 	map_attributes CeladonDeptStoreElevator, CELADON_DEPT_STORE_ELEVATOR, $00, 0
 	map_attributes CeladonMansion1F, CELADON_MANSION_1F, $00, 0
 	map_attributes CeladonMansion2F, CELADON_MANSION_2F, $00, 0

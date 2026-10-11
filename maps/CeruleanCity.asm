@@ -20,6 +20,7 @@ CeruleanCity_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 	callback MAPCALLBACK_OBJECTS, CeruleanCityOfficerCallback
+	callback MAPCALLBACK_STEP, BorderWaterCallback
 
 CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
@@ -33,6 +34,56 @@ CeruleanCityOfficerCallback:
 .MoveOfficer
 	moveobject CERULEANCITY_GUARD, 28, 12
 	endcallback
+
+BorderWaterCallback:
+	callasm BorderWaterCoordCheck
+	endcallback
+
+BorderWaterCoordCheck:
+	ld hl, BorderWaterAreaCoords
+	call ArePlayerCoordsInArray
+	ld a, [wScriptVar]
+	and a
+	jr z, .outside_area
+
+	ld de, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	ld b, CHECK_FLAG
+	call EventFlagAction ; checkevent
+	ld a, c
+	and a
+	ret nz ; already in area
+
+	ld de, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	ld b, SET_FLAG
+	call EventFlagAction
+
+	ld a, $43
+	ld [wMapBorderBlock], a
+	ret
+
+.outside_area
+	ld de, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	ld b, RESET_FLAG
+	call EventFlagAction
+
+	ld a, $0f
+	ld [wMapBorderBlock], a
+	ret
+
+BorderWaterAreaCoords:
+	db 23,  0
+	db 24,  0
+	db 25,  0
+	db 23,  1
+	db 24,  1
+	db 25,  1
+	db 23,  2
+	db 24,  2
+	db 25,  2
+	db 23,  3
+	db 24,  3
+	db 25,  3
+	db -1 ; end
 
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_RIVAL ; Ensures the Rival remains unseen if Player blacks out
