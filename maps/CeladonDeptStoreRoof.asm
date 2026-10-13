@@ -20,8 +20,263 @@ CeladonDeptStoreRoofSuperNerdScript:
 	jumptextfaceplayer CeladonDeptStoreRoofSuperNerdText
 
 CeladonDeptStoreRoofLittleGirlScript:
-	;TODO ***********
-	jumptextfaceplayer CeladonDeptStoreRoofLittleGirlImThirstyText
+	faceplayer
+	opentext
+	checkitem FRESH_WATER
+	iftrue .AskDrink
+	checkitem SODA_POP
+	iftrue .AskDrink
+	checkitem LEMONADE
+	iftrue .AskDrink
+	iffalse .NoDrinksInBag
+.AskDrink:
+	writetext CeladonDeptStoreRoofLittleGirlGiveHerADrinkText
+	yesorno
+	iffalse .Cancel
+	writetext CeladonDeptStoreRoofLittleGirlWhichDrinkText
+	promptbutton
+	; special ThirstyGirl
+	; ifequal FALSE, 		 .Cancel
+	; ifequal FRESH_WATER, .GaveFreshWater
+	; ifequal SODA_POP,	 .GaveSodaPop
+	; ifequal LEMONADE,	 .GaveLemonade
+	;sjump
+	
+; BRANCHING CHECK
+	checkitem FRESH_WATER
+	iftrue .HasWater
+	; no FRESH_WATER
+	checkitem SODA_POP
+	iftrue .NoWater_HasSoda
+	; no FRESH_WATER or SODA_POP
+	checkitem LEMONADE
+	iftrue .HasLemonadeOnly
+	; somehow got this far with no drinks??
+	sjump .Cancel
+	
+.HasWater:
+	; branch A
+	checkitem SODA_POP
+	iftrue .HasWater_HasSoda
+	; no SODA_POP
+	checkitem LEMONADE
+	iftrue .HasWater_HasLemonade
+	; no LEMONADE
+	loadmenu .MenuHeader_HasWaterOnly ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveFreshWater
+	sjump .Cancel
+
+.HasWater_HasSoda:
+	; branch A_1
+	checkitem LEMONADE
+	iftrue .HasAll3
+	; no LEMONADE
+	loadmenu .MenuHeader_HasWater_HasSoda ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveFreshWater
+	ifequal 2, .GaveSodaPop
+	sjump .Cancel
+
+.HasAll3:
+	; branch A_1a
+	loadmenu .MenuHeader_HasAll3 ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveFreshWater
+	ifequal 2, .GaveSodaPop
+	ifequal 3, .GaveLemonade
+	sjump .Cancel
+
+.HasWater_HasLemonade:
+	; branch A_2
+	loadmenu .MenuHeader_HasWater_HasLemonade ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveFreshWater
+	ifequal 2, .GaveLemonade
+	sjump .Cancel
+
+.NoWater_HasSoda:
+	; branch B - has SODA_POP
+	checkitem LEMONADE
+	iftrue .NoWater_HasSoda_HasLemonade
+	; no LEMONADE
+	loadmenu .MenuHeader_HasSodaOnly ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveSodaPop
+	sjump .Cancel
+
+.NoWater_HasSoda_HasLemonade:
+	; branch B_1
+	loadmenu .MenuHeader_HasSoda_HasLemonade ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveSodaPop
+	ifequal 2, .GaveLemonade
+	sjump .Cancel
+
+.HasLemonadeOnly:
+	; branch C
+	loadmenu .MenuHeader_HasLemonadeOnly ; result
+	verticalmenu
+	closewindow
+	ifequal 1, .GaveLemonade
+	sjump .Cancel
+
+.NoDrinksInBag:
+	writetext CeladonDeptStoreRoofLittleGirlImThirstyText
+	waitbutton
+.Cancel:
+	closetext
+	end
+
+.GaveFreshWater:
+	checkevent EVENT_GOT_TM13_ICE_BEAM
+	iftrue .AlreadyGotTM
+	writetext CeladonDeptStoreRoofLittleGirlFreshWaterText
+	promptbutton
+	takeitem FRESH_WATER
+	verbosegiveitem TM_ICE_BEAM
+	iffalse .NoRoom
+	writetext CeladonDeptStoreRoofLittleGirlTM13ExplanationText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TM13_ICE_BEAM
+	end
+
+.GaveSodaPop:
+	checkevent EVENT_GOT_TM48_ROCK_SLIDE
+	iftrue .AlreadyGotTM
+	writetext CeladonDeptStoreRoofLittleGirlSodaPopText
+	promptbutton
+	takeitem SODA_POP
+	verbosegiveitem TM_ROCK_SLIDE
+	iffalse .NoRoom
+	writetext CeladonDeptStoreRoofLittleGirlTM48ExplanationText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TM48_ROCK_SLIDE
+	end
+
+.GaveLemonade:
+	checkevent EVENT_GOT_TM49_TRI_ATTACK
+	iftrue .AlreadyGotTM
+	writetext CeladonDeptStoreRoofLittleGirlLemonadeText
+	promptbutton
+	takeitem LEMONADE
+	verbosegiveitem TM_TRI_ATTACK
+	iffalse .NoRoom
+	writetext CeladonDeptStoreRoofLittleGirlTM49ExplanationText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TM49_TRI_ATTACK
+	end
+
+.AlreadyGotTM:
+	writetext CeladonDeptStoreRoofLittleGirlNotThirstyText
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext CeladonDeptStoreRoofLittleGirlNoRoomText
+	waitbutton
+	closetext
+	end
+;====================
+.MenuHeader_HasWaterOnly:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2 + 4, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasWaterOnly
+	db 1 ; default option
+
+.MenuData_HasWaterOnly:
+	db STATICMENU_CURSOR ; flags
+	db 2 ; items
+	db "FRESH WATER@"
+	db "CANCEL@"
+
+.MenuHeader_HasWater_HasSoda:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2 + 2, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasWater_HasSoda
+	db 1 ; default option
+
+.MenuData_HasWater_HasSoda:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "FRESH WATER@"
+	db "SODA POP@"
+	db "CANCEL@"
+
+.MenuHeader_HasAll3:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasAll3
+	db 1 ; default option
+
+.MenuData_HasAll3:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "FRESH WATER@"
+	db "SODA POP@"
+	db "LEMONADE@"
+	db "CANCEL@"
+
+.MenuHeader_HasWater_HasLemonade:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2 + 2, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasWater_HasLemonade
+	db 1 ; default option
+
+.MenuData_HasWater_HasLemonade:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "FRESH WATER@"
+	db "LEMONADE@"
+	db "CANCEL@"
+
+.MenuHeader_HasSodaOnly:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2 + 4, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasSodaOnly
+	db 1 ; default option
+
+.MenuData_HasSodaOnly:
+	db STATICMENU_CURSOR ; flags
+	db 2 ; items
+	db "SODA POP@"
+	db "CANCEL@"
+
+.MenuHeader_HasSoda_HasLemonade:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2 + 2, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasSoda_HasLemonade
+	db 1 ; default option
+
+.MenuData_HasSoda_HasLemonade:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "SODA POP@"
+	db "LEMONADE@"
+	db "CANCEL@"
+
+.MenuHeader_HasLemonadeOnly:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2 + 4, SCREEN_WIDTH - 7, TEXTBOX_Y - 1
+	dw .MenuData_HasLemonadeOnly
+	db 1 ; default option
+
+.MenuData_HasLemonadeOnly:
+	db STATICMENU_CURSOR ; flags
+	db 2 ; items
+	db "LEMONADE@"
+	db "CANCEL@"
+;====================
 
 CeladonDeptStoreRoofVendingMachine:
 	opentext
@@ -160,14 +415,7 @@ CeladonDeptStoreRoofLittleGirlFreshWaterText:
 
 	para "You can have this"
 	line "from me!"
-	done ; text_end
-
-; CeladonDeptStoreRoofLittleGirlReceivedTM13Text:
-	; text "<PLAYER> received"
-	; line "@"
-	; text_ram wStringBuffer
-	; text "!@"
-	; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlTM13ExplanationText:
 	text "TM13 contains"
@@ -175,7 +423,7 @@ CeladonDeptStoreRoofLittleGirlTM13ExplanationText:
 
 	para "It can freeze the"
 	line "target sometimes!"
-	done ; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlSodaPopText:
 	text "Yay!"
@@ -186,14 +434,7 @@ CeladonDeptStoreRoofLittleGirlSodaPopText:
 
 	para "You can have this"
 	line "from me!"
-	done ; text_end
-
-; CeladonDeptStoreRoofLittleGirlReceivedTM48Text:
-	; text "<PLAYER> received"
-	; line "@"
-	; text_ram wStringBuffer
-	; text "!@"
-	; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlTM48ExplanationText:
 	text "TM48 contains"
@@ -201,7 +442,7 @@ CeladonDeptStoreRoofLittleGirlTM48ExplanationText:
 
 	para "It can spook the"
 	line "target sometimes!"
-	done ; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlLemonadeText:
 	text "Yay!"
@@ -212,12 +453,7 @@ CeladonDeptStoreRoofLittleGirlLemonadeText:
 
 	para "You can have this"
 	line "from me!"
-	done ; text_end
-
-; CeladonDeptStoreRoofLittleGirlReceivedTM49Text:
-	; text "<PLAYER> received"
-	; line "TM49!@"
-	; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlTM49ExplanationText:
 	text "TM49 contains"
@@ -226,19 +462,19 @@ CeladonDeptStoreRoofLittleGirlTM49ExplanationText:
 	para "It burns, freezes,"
 	line "or paralyzes the"
 	cont "target sometimes!"
-	done ; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlNoRoomText:
 	text "You don't have"
 	line "space for this!"
-	done ; text_end
+	done
 
 CeladonDeptStoreRoofLittleGirlNotThirstyText:
 	text "No thank you!"
 
 	para "I'm not thirsty"
 	line "after all!"
-	done ; text_end
+	done
 
 CeladonDeptStoreRoofSuperNerdText:
 	text "My sister is a"

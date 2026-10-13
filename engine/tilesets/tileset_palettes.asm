@@ -198,16 +198,17 @@ LoadMansionPalette:
 	ld hl, MansionPalette2
 	ld bc, 1 palettes
 	call FarCopyWRAM
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1 palette PAL_BG_WATER
-	ld hl, MansionPalette1 palette 6
-	ld bc, 1 palettes
-	call FarCopyWRAM
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1 palette PAL_BG_ROOF
-	ld hl, MansionPalette1 palette 8
-	ld bc, 1 palettes
-	call FarCopyWRAM
+; Mobile BG PALs
+	; ld a, BANK(wBGPals1)
+	; ld de, wBGPals1 palette PAL_BG_WATER
+	; ld hl, MansionPalette1 palette 6
+	; ld bc, 1 palettes
+	; call FarCopyWRAM
+	; ld a, BANK(wBGPals1)
+	; ld de, wBGPals1 palette PAL_BG_ROOF
+	; ld hl, MansionPalette1 palette 8
+	; ld bc, 1 palettes
+	; call FarCopyWRAM
 	ret
 
 MansionPalette2:
