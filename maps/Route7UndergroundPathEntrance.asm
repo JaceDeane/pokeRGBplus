@@ -18,7 +18,7 @@ Route7UndergroundPathEntranceMiddleAgedManText:
 
 Route7UndergroundPathEntranceCopyUnusedGirlText:
 	text "I want to shop at"
-	line "the dept. store"
+	line "the DEPT.STORE"
 	cont "in CELADON, but…"
 
 	para "There are so many"

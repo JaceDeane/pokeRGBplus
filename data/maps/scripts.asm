@@ -354,7 +354,8 @@ INCLUDE "maps/Route16Gate1F.asm"
 INCLUDE "maps/Route16Gate2F.asm"
 INCLUDE "maps/Route16NorthGate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
-INCLUDE "maps/Route17Route18Gate.asm"
+INCLUDE "maps/Route18Gate1F.asm"
+INCLUDE "maps/Route18Gate2F.asm"
 
 
 SECTION "Map Scripts 4", ROMX

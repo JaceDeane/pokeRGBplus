@@ -12,14 +12,28 @@ CeladonDeptStore2F_MapScripts:
 CeladonDeptStore2FClerk1Script:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatenEliteFour
 	pokemart MARTTYPE_STANDARD, MART_CELADON_2F_CLERK1
+	sjump .done
+
+.BeatenEliteFour:
+	pokemart MARTTYPE_STANDARD, MART_CELADON_2F_CLERK1_2
+.done:
 	closetext
 	end
 
 CeladonDeptStore2FClerk2Script:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatenEliteFour
 	pokemart MARTTYPE_STANDARD, MART_CELADON_2F_CLERK2
+	sjump .done
+
+.BeatenEliteFour:
+	pokemart MARTTYPE_STANDARD, MART_CELADON_2F_CLERK2_2
+.done:
 	closetext
 	end
 
@@ -76,8 +90,3 @@ CeladonDeptStore2F_MapEvents:
 	object_event  6,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FClerk2Script, -1
 	object_event 19,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FPokefanMScript, -1
 	object_event 14,  4, SPRITE_GIRL, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore2FGirlScript, -1
-
-	; object_event  5,  3, SPRITE_CLERK, STAY, DOWN, TEXT_CELADONMART2F_CLERK1
-	; object_event  6,  3, SPRITE_CLERK, STAY, DOWN, TEXT_CELADONMART2F_CLERK2
-	; object_event 19,  5, SPRITE_MIDDLE_AGED_MAN, STAY, NONE, TEXT_CELADONMART2F_MIDDLE_AGED_MAN
-	; object_event 14,  4, SPRITE_GIRL, WALK, UP_DOWN, TEXT_CELADONMART2F_GIRL

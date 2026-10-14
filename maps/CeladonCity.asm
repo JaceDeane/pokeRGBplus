@@ -138,13 +138,6 @@ CeladonCityGramps3Text:
 	line "dropping by!"
 	done ; prompt
 
-; CeladonCityGramps3ReceivedTM41Text:
-	; text "<PLAYER> received"
-	; line "@"
-	; text_ram wStringBuffer
-	; text "!@"
-	; text_end
-
 CeladonCityGramps3TM41ExplanationText:
 	text "TM41 teaches"
 	line "SOFTBOILED!"

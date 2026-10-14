@@ -20,42 +20,53 @@ Route16Gate1FBicycleCheck:
 
 .NoBicycle:
 	showemote EMOTE_SHOCK, ROUTE16GATE1F_OFFICER, 15
-	turnobject PLAYER, UP
 	opentext
-	writetext Route16Gate1FCannotPassText
+	writetext Route16Gate1FOfficerWaitUpText
 	waitbutton
 	closetext
-	applymovement PLAYER, Route16Gate1FCannotPassMovement
+	readvar VAR_YCOORD
+        getnum STRING_BUFFER_3
+        ifequal 4, .HigherTile
+        ifequal 5, .LowerTile
+.HigherTile
+	turnobject PLAYER, UP
+	sjump .ok
+.LowerTile
+	applymovement PLAYER, Route16Gate1FPlayerStepUpMovement
+.ok
+	opentext
+	writetext Route16Gate1FOfficerNoPedestriansText
+	waitbutton
+	closetext
+	applymovement PLAYER, Route16Gate1FPlayerStepRightMovement
 	end
 
-Route16Gate1FCannotPassMovement:
+Route16Gate1FPlayerStepUpMovement:
+	step UP
+	step_end
+
+Route16Gate1FPlayerStepRightMovement:
 	step RIGHT
-	turn_head LEFT
+	; turn_head LEFT
 	step_end
 
 Route16Gate1FOfficerText:
-	text "CYCLING ROAD"
-	line "starts here."
+	text "CYCLING ROAD is a"
+	line "downhill course"
+	cont "by the sea."
 
-	para "It's all downhill,"
-	line "so it's totally"
-	cont "exhilarating."
-
-	para "It's a great sort"
-	line "of feeling that"
-
-	para "you can't get from"
-	line "a ship or train."
+	para "It's a great ride."
 	done
 
-Route16Gate1FCannotPassText:
-	text "Hey! Whoa! Stop!"
+Route16Gate1FOfficerWaitUpText:
+	text "Excuse me!"
+	line "Wait up please!"
+	done
 
-	para "You can't go out"
-	line "on the CYCLING"
-
-	para "ROAD without a"
-	line "BICYCLE."
+Route16Gate1FOfficerNoPedestriansText:
+	text "No pedestrians"
+	line "are allowed on"
+	cont "CYCLING ROAD!"
 	done
 
 Route16Gate1F_MapEvents:
@@ -66,7 +77,7 @@ Route16Gate1F_MapEvents:
 	warp_event  0,  5, ROUTE_16, 3
 	warp_event  9,  4, ROUTE_16, 4
 	warp_event  9,  5, ROUTE_16, 5
-	warp_event  9,  7, ROUTE_16_GATE_2F, 5
+	warp_event  9,  7, ROUTE_16_GATE_2F, 1
 
 	def_coord_events
 	coord_event  5,  4, SCENE_ROUTE161FGATE_BICYCLE_CHECK, Route16Gate1FBicycleCheck

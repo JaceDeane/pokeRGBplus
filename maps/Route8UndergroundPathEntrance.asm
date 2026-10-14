@@ -10,7 +10,7 @@ Route8UndergroundPathEntranceGirlScript:
 	jumptextfaceplayer Route8UndergroundPathEntranceGirlText
 
 Route8UndergroundPathEntranceGirlText:
-	text "The dept. store"
+	text "The DEPT.STORE"
 	line "in CELADON has a"
 	cont "great selection!"
 	done

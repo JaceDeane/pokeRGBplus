@@ -11,7 +11,14 @@ CeladonDeptStore4F_MapScripts:
 CeladonDeptStore4FClerkScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatenEliteFour
 	pokemart MARTTYPE_STANDARD, MART_CELADON_4F
+	sjump .done
+
+.BeatenEliteFour:
+	pokemart MARTTYPE_STANDARD, MART_CELADON_4F_2
+.done:
 	closetext
 	end
 
@@ -73,7 +80,3 @@ CeladonDeptStore4F_MapEvents:
 	object_event  5,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore4FClerkScript, -1
 	object_event 15,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 3, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore4FSuperNerdScript, -1
 	object_event  5,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 3, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore4FYoungsterScript, -1
-
-	; object_event  5,  7, SPRITE_CLERK, STAY, NONE, TEXT_CELADONMART4F_CLERK
-	; object_event 15,  5, SPRITE_SUPER_NERD, WALK, LEFT_RIGHT, TEXT_CELADONMART4F_SUPER_NERD
-	; object_event  5,  2, SPRITE_YOUNGSTER, WALK, LEFT_RIGHT, TEXT_CELADONMART4F_YOUNGSTER

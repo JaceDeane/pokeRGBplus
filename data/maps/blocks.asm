@@ -600,17 +600,18 @@ IlexForestAzaleaGate_Blocks:
 Route15FuchsiaGate_Blocks:
 Route8SaffronGate_Blocks:
 Route7SaffronGate_Blocks:
-Route17Route18Gate_Blocks:
 Route31VioletGate_Blocks:
 	INCBIN "maps/EastWestGate.blk"
 
 Route11Gate1F_Blocks:
 Route16Gate1F_Blocks:
+Route18Gate1F_Blocks:
 	INCBIN "maps/EastWestGate1F.blk"
 
 Route11Gate2F_Blocks:
 Route12Gate2F_Blocks:
 Route16Gate2F_Blocks:
+Route18Gate2F_Blocks:
 	INCBIN "maps/Gate2F.blk"
 
 VermilionCity_Blocks:

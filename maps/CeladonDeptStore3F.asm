@@ -10,36 +10,91 @@ CeladonDeptStore3F_MapScripts:
 
 	def_callbacks
 
-CeladonDeptStore3FClerkScript:
+CeladonDeptStore3FClerk1Script:
 	faceplayer
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_CELADON_3F
 	closetext
 	end
 
-CeladonDeptStore3FYoungsterScript:
-	jumptextfaceplayer CeladonDeptStore3FYoungsterText
-
-CeladonDeptStore3FGameboyKid1Script:
+CeladonDeptStore3FClerk2Script:
 	faceplayer
 	opentext
-	writetext CeladonDeptStore3FGameboyKid1Text
+	checkevent EVENT_GOT_TM18_COUNTER
+	iftrue .AlreadyGotTM
+	writetext CeladonDeptStore3FClerkTM18PreReceiveText
+	promptbutton
+	verbosegiveitem TM_COUNTER
+	iffalse .NoRoom
+	setevent EVENT_GOT_TM18_COUNTER
+	writetext CeladonDeptStore3FClerkTM18ExplanationText
+	promptbutton
+	writetext CeladonDeptStore3FClerkTM18ComeVisitText
 	waitbutton
+	sjump .done
+
+.NoRoom:
+	writetext CeladonDeptStore3FClerkTM18NoRoomText
+	waitbutton
+	sjump .done
+
+.AlreadyGotTM:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatenEliteFour
+	writetext CeladonDeptStore3FClerkTM18ComeVisitText
+	waitbutton
+	sjump .done
+
+.BeatenEliteFour:
+	pokemart MARTTYPE_STANDARD, MART_CELADON_3F_CLERK2
+.done:
 	closetext
-	turnobject CELADONDEPTSTORE3F_GAMEBOY_KID1, DOWN
 	end
 
-CeladonDeptStore3FGameboyKid2Script:
+CeladonDeptStore3FGameBoyKid1Script:
 	faceplayer
 	opentext
-	writetext CeladonDeptStore3FGameboyKid2Text
+	writetext CeladonDeptStore3FGameBoyKid1Text
+	waitbutton
+	closetext
+	turnobject CELADONDEPTSTORE3F_GAMEBOY_KID1, RIGHT
+	end
+
+CeladonDeptStore3FGameBoyKid2Script:
+	faceplayer
+	opentext
+	writetext CeladonDeptStore3FGameBoyKid2Text
 	waitbutton
 	closetext
 	turnobject CELADONDEPTSTORE3F_GAMEBOY_KID2, DOWN
 	end
 
-CeladonDeptStore3FSuperNerdScript:
-	jumptextfaceplayer CeladonDeptStore3FSuperNerdText
+CeladonDeptStore3FGameBoyKid3Script:
+	faceplayer
+	opentext
+	writetext CeladonDeptStore3FGameBoyKid3Text
+	waitbutton
+	closetext
+	turnobject CELADONDEPTSTORE3F_GAMEBOY_KID3, DOWN
+	end
+
+CeladonDeptStore3FLittleBoyScript:
+	jumptextfaceplayer CeladonDeptStore3FLittleBoyText
+
+CeladonDeptStore3FSNES:
+	jumptext CeladonDeptStore3FSNESText
+
+CeladonDeptStore3FRPG:
+	jumptext CeladonDeptStore3FRPGText
+
+CeladonDeptStore3FSportsGame:
+	jumptext CeladonDeptStore3FSportsGameText
+
+CeladonDeptStore3FPuzzleGame:
+	jumptext CeladonDeptStore3FPuzzleGameText
+
+CeladonDeptStore3FFightingGame:
+	jumptext CeladonDeptStore3FFightingGameText
 
 CeladonDeptStore3FElevatorButton:
 	jumpstd ElevatorButtonScript
@@ -47,46 +102,10 @@ CeladonDeptStore3FElevatorButton:
 CeladonDeptStore3FDirectory:
 	jumptext CeladonDeptStore3FDirectoryText
 
-CeladonDeptStore3FYoungsterText:
-	text "I can't decide"
-	line "which #MON I"
+CeladonDeptStore3FPokemonPoster:
+	jumptext CeladonDeptStore3FPokemonPosterText
 
-	para "should use this TM"
-	line "on…"
-	done
-
-CeladonDeptStore3FGameboyKid1Text:
-	text "Uh-oh! I traded my"
-	line "#MON without"
-
-	para "removing the UP-"
-	line "GRADE from it."
-	done
-
-CeladonDeptStore3FGameboyKid2Text:
-	text "Yeah! I'm finally"
-	line "getting a PORYGON!"
-
-	para "I'm no good at the"
-	line "slots, so I could"
-
-	para "never get enough"
-	line "coins…"
-
-	para "…Huh?"
-
-	para "The traded PORYGON"
-	line "turned into a dif-"
-	cont "ferent #MON!"
-	done
-
-CeladonDeptStore3FSuperNerdText:
-	text "The TM SHOP sells"
-	line "some rare moves."
-	done
-
-
-CeladonMart3FClerkTM18PreReceiveText:
+CeladonDeptStore3FClerkTM18PreReceiveText:
 	text "Oh, hi! I finally"
 	line "finished #MON!"
 
@@ -94,16 +113,9 @@ CeladonMart3FClerkTM18PreReceiveText:
 
 	para "This might be"
 	line "useful!"
-	done ; prompt
+	done
 
-; CeladonMart3FClerkReceivedTM18Text:
-	; text "<PLAYER> received"
-	; line "@"
-	; text_ram wStringBuffer
-	; text "!@"
-	; text_end
-
-CeladonMart3FClerkTM18ExplanationText:
+CeladonDeptStore3FClerkTM18ExplanationText:
 	text "TM18 is COUNTER!"
 
 	para "Not like the one"
@@ -111,12 +123,20 @@ CeladonMart3FClerkTM18ExplanationText:
 	cont "mind you!"
 	done
 
-; CeladonMart3FClerkTM18NoRoomText:
-	; text "Your pack is full"
-	; line "of items!"
-	; done
+CeladonDeptStore3FClerkTM18NoRoomText:
+	text "Your pack is full"
+	line "of items!"
+	done
 
-CeladonMart3FGameBoyKid1Text:
+CeladonDeptStore3FClerkTM18ComeVisitText:
+	text "Come visit me once"
+	line "you beat the game."
+
+	para "I'll sell you some"
+	line "extra TMs!"
+	done
+
+CeladonDeptStore3FGameBoyKid1Text:
 	text "Captured #MON"
 	line "are registered"
 
@@ -128,7 +148,7 @@ CeladonMart3FGameBoyKid1Text:
 	cont "caught it!"
 	done
 
-CeladonMart3FGameBoyKid2Text:
+CeladonDeptStore3FGameBoyKid2Text:
 	text "All right!"
 
 	para "My buddy's going"
@@ -138,7 +158,7 @@ CeladonMart3FGameBoyKid2Text:
 	line "GRAVELER!"
 	done
 
-CeladonMart3FGameBoyKid3Text:
+CeladonDeptStore3FGameBoyKid3Text:
 	text "Come on GRAVELER!"
 
 	para "I love GRAVELER!"
@@ -146,48 +166,44 @@ CeladonMart3FGameBoyKid3Text:
 
 	para "Huh?"
 
-	para "GRAVELER turned"
+	para "GRAVELER evolved" ; clarity
 	line "into a different"
 	cont "#MON!"
 	done
 
-CeladonMart3FLittleBoyText:
+CeladonDeptStore3FLittleBoyText:
 	text "You can identify"
 	line "#MON you got"
 
 	para "in trades by"
-	line "their ID Numbers!"
+	line "their ID Numbers."
 	done
 
-CeladonMart3FSNESText:
+CeladonDeptStore3FSNESText:
 	text "It's an SNES!"
 	done
 
-CeladonMart3FRPGText:
+CeladonDeptStore3FRPGText:
 	text "An RPG! There's"
 	line "no time for that!"
 	done
 
-CeladonMart3FSportsGameText:
+CeladonDeptStore3FSportsGameText:
 	text "A sports game!"
 	line "Dad'll like that!"
 	done
 
-CeladonMart3FPuzzleGameText:
+CeladonDeptStore3FPuzzleGameText:
 	text "A puzzle game!"
 	line "Looks addictive!"
 	done
 
-CeladonMart3FFightingGameText:
+CeladonDeptStore3FFightingGameText:
 	text "A fighting game!"
 	line "Looks tough!"
 	done
 
-CeladonMart3FCurrentFloorSignText:
-	text "3F: TV GAME SHOP"
-	done
-
-CeladonMart3FPokemonPosterText:
+CeladonDeptStore3FPokemonPosterText:
 	text "Red and Blue!"
 	line "Both are #MON!"
 	done
@@ -210,32 +226,24 @@ CeladonDeptStore3F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  2,  4, BGEVENT_READ, CeladonDeptStore3FSNES
+	bg_event  3,  4, BGEVENT_READ, CeladonDeptStore3FRPG
+	bg_event  5,  4, BGEVENT_READ, CeladonDeptStore3FSNES
+	bg_event  6,  4, BGEVENT_READ, CeladonDeptStore3FSportsGame
+	bg_event  2,  6, BGEVENT_READ, CeladonDeptStore3FSNES
+	bg_event  3,  6, BGEVENT_READ, CeladonDeptStore3FPuzzleGame
+	bg_event  5,  6, BGEVENT_READ, CeladonDeptStore3FSNES
+	bg_event  6,  6, BGEVENT_READ, CeladonDeptStore3FFightingGame
 	bg_event 14,  1, BGEVENT_READ, CeladonDeptStore3FDirectory
 	bg_event  2,  1, BGEVENT_READ, CeladonDeptStore3FElevatorButton
-	
-	; bg_event  2,  4, TEXT_CELADONDEPTSTORE3F_SNES1
-	; bg_event  3,  4, TEXT_CELADONDEPTSTORE3F_RPG
-	; bg_event  5,  4, TEXT_CELADONDEPTSTORE3F_SNES2
-	; bg_event  6,  4, TEXT_CELADONDEPTSTORE3F_SPORTS_GAME
-	; bg_event  2,  6, TEXT_CELADONDEPTSTORE3F_SNES3
-	; bg_event  3,  6, TEXT_CELADONDEPTSTORE3F_PUZZLE_GAME
-	; bg_event  5,  6, TEXT_CELADONDEPTSTORE3F_SNES4
-	; bg_event  6,  6, TEXT_CELADONDEPTSTORE3F_FIGHTING_GAME
-	; bg_event 14,  1, TEXT_CELADONDEPTSTORE3F_CURRENT_FLOOR_SIGN
-	; bg_event  4,  1, TEXT_CELADONDEPTSTORE3F_POKEMON_POSTER1
-	; bg_event  6,  1, TEXT_CELADONDEPTSTORE3F_POKEMON_POSTER2
-	; bg_event 10,  1, TEXT_CELADONDEPTSTORE3F_POKEMON_POSTER3
+	bg_event  4,  1, BGEVENT_READ, CeladonDeptStore3FPokemonPoster
+	bg_event  6,  1, BGEVENT_READ, CeladonDeptStore3FPokemonPoster
+	bg_event 10,  1, BGEVENT_READ, CeladonDeptStore3FPokemonPoster
 
 	def_object_events
-	object_event 16,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FClerkScript, -1
-	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FYoungsterScript, -1
-	object_event  7,  2, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FGameboyKid1Script, -1
-	object_event  8,  2, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FGameboyKid2Script, -1
-	object_event 11,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FSuperNerdScript, -1
-
-	; object_event 16,  5, SPRITE_CLERK, STAY, NONE, TEXT_CELADONDEPTSTORE3F_CLERK
-	; object_event 11,  6, SPRITE_GAMEBOY_KID, STAY, RIGHT, TEXT_CELADONDEPTSTORE3F_GAMEBOY_KID1
-	; object_event  7,  2, SPRITE_GAMEBOY_KID, STAY, DOWN, TEXT_CELADONDEPTSTORE3F_GAMEBOY_KID2
-	; object_event  8,  2, SPRITE_GAMEBOY_KID, STAY, DOWN, TEXT_CELADONDEPTSTORE3F_GAMEBOY_KID3
-	; object_event  2,  5, SPRITE_LITTLE_BOY, STAY, UP, TEXT_CELADONDEPTSTORE3F_LITTLE_BOY
-
+	object_event 14,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FClerk1Script, -1
+	object_event 16,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FClerk2Script, -1	
+	object_event 11,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FGameBoyKid1Script, -1
+	object_event  7,  2, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FGameBoyKid2Script, -1
+	object_event  8,  2, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FGameBoyKid3Script, -1
+	object_event  2,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore3FLittleBoyScript, -1

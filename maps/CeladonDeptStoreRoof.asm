@@ -34,7 +34,7 @@ CeladonDeptStoreRoofLittleGirlScript:
 	yesorno
 	iffalse .Cancel
 	writetext CeladonDeptStoreRoofLittleGirlWhichDrinkText
-	promptbutton
+	; promptbutton
 	; special ThirstyGirl
 	; ifequal FALSE, 		 .Cancel
 	; ifequal FRESH_WATER, .GaveFreshWater
@@ -137,7 +137,8 @@ CeladonDeptStoreRoofLittleGirlScript:
 .GaveFreshWater:
 	checkevent EVENT_GOT_TM13_ICE_BEAM
 	iftrue .AlreadyGotTM
-	writetext CeladonDeptStoreRoofLittleGirlFreshWaterText
+	getitemname STRING_BUFFER_3, FRESH_WATER
+	writetext CeladonDeptStoreRoofLittleGirlYayThankYouText
 	promptbutton
 	takeitem FRESH_WATER
 	verbosegiveitem TM_ICE_BEAM
@@ -151,7 +152,8 @@ CeladonDeptStoreRoofLittleGirlScript:
 .GaveSodaPop:
 	checkevent EVENT_GOT_TM48_ROCK_SLIDE
 	iftrue .AlreadyGotTM
-	writetext CeladonDeptStoreRoofLittleGirlSodaPopText
+	getitemname STRING_BUFFER_3, SODA_POP
+	writetext CeladonDeptStoreRoofLittleGirlYayThankYouText
 	promptbutton
 	takeitem SODA_POP
 	verbosegiveitem TM_ROCK_SLIDE
@@ -165,7 +167,8 @@ CeladonDeptStoreRoofLittleGirlScript:
 .GaveLemonade:
 	checkevent EVENT_GOT_TM49_TRI_ATTACK
 	iftrue .AlreadyGotTM
-	writetext CeladonDeptStoreRoofLittleGirlLemonadeText
+	getitemname STRING_BUFFER_3, LEMONADE
+	writetext CeladonDeptStoreRoofLittleGirlYayThankYouText
 	promptbutton
 	takeitem LEMONADE
 	verbosegiveitem TM_TRI_ATTACK
@@ -280,8 +283,8 @@ CeladonDeptStoreRoofLittleGirlScript:
 
 CeladonDeptStoreRoofVendingMachine:
 	opentext
-	writetext CeladonVendingText
 .Start:
+	writetext CeladonVendingText
 	special PlaceMoneyTopRight
 	loadmenu .MenuHeader
 	verticalmenu
@@ -406,10 +409,12 @@ CeladonDeptStoreRoofLittleGirlWhichDrinkText:
 	line "drink?"
 	done
 
-CeladonDeptStoreRoofLittleGirlFreshWaterText:
+CeladonDeptStoreRoofLittleGirlYayThankYouText:
 	text "Yay!"
 
-	para "FRESH WATER!"
+	para "@"
+	text_ram wStringBuffer3
+	text "!"
 
 	para "Thank you!"
 
@@ -425,34 +430,12 @@ CeladonDeptStoreRoofLittleGirlTM13ExplanationText:
 	line "target sometimes!"
 	done
 
-CeladonDeptStoreRoofLittleGirlSodaPopText:
-	text "Yay!"
-
-	para "SODA POP!"
-
-	para "Thank you!"
-
-	para "You can have this"
-	line "from me!"
-	done
-
 CeladonDeptStoreRoofLittleGirlTM48ExplanationText:
 	text "TM48 contains"
 	line "ROCK SLIDE!"
 
 	para "It can spook the"
 	line "target sometimes!"
-	done
-
-CeladonDeptStoreRoofLittleGirlLemonadeText:
-	text "Yay!"
-
-	para "LEMONADE!"
-
-	para "Thank you!"
-
-	para "You can have this"
-	line "from me!"
 	done
 
 CeladonDeptStoreRoofLittleGirlTM49ExplanationText:

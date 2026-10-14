@@ -3052,7 +3052,7 @@ wBillsHouseSceneID::                              db ; wTrainerHouseB1FSceneID
 wRoute22GateSceneID::                             db ; wVictoryRoadGateSceneID
 wSaffronMagnetTrainStationSceneID::               db ;***
 wRoute16Gate1FSceneID::                           db ; wRoute16GateSceneID
-wRoute17Route18GateSceneID::                      db
+wRoute18Gate1FSceneID::                           db ; wRoute17Route18GateSceneID
 wIndigoPlateauPokecenter1FSceneID::               db
 wWillsRoomSceneID::                               db ;***
 wKogasRoomSceneID::                               db ;***

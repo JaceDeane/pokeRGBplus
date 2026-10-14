@@ -371,6 +371,8 @@ ENDM
 	; map_const FUCHSIA_POKECENTER_2F_BETA,                   8,  4 ; 11
 	map_const SAFARI_ZONE_WARDENS_HOME,                     5,  4 ; 12
 	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 13
+	map_const ROUTE_18_GATE_1F,                             5,  4 ; 14
+	map_const ROUTE_18_GATE_2F,                             4,  4 ; 15
 	endgroup
 
 	newgroup LAVENDER                                             ; 18
@@ -438,7 +440,6 @@ ENDM
 	map_const ROUTE_16_NORTH_GATE,                          5,  3 ; 26
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 27
 	map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 28
-	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 29
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

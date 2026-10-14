@@ -37,6 +37,7 @@ Marts:
 	dw MartUnderground
 	dw MartCeladon2FClerk1_2
 	dw MartCeladon2FClerk2_2
+	dw MartCeladon3FClerk2
 	dw MartCeladon4F_2
 	dw MartCeladon5FClerk2_2
 	assert_table_length NUM_MARTS
@@ -293,10 +294,10 @@ MartCeladon2FClerk1:
 	db -1 ; end
 
 MartCeladon2FClerk2:
-	db 8 ; # items
+	db 7 ; # items
 	db POKE_BALL
 	db GREAT_BALL
-	db ESCAPE_ROPE
+	; db ESCAPE_ROPE ; doesn't sell in Gen I
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL
@@ -306,15 +307,15 @@ MartCeladon2FClerk2:
 
 MartCeladon3F:
 	db 9 ; # items
-	db TM_DOUBLE_TEAM
-	db TM_REFLECT
-	db TM_RAZOR_WIND
-	db TM_HORN_DRILL
-	db TM_EGG_BOMB
-	db TM_MEGA_PUNCH
-	db TM_MEGA_KICK
-	db TM_TAKE_DOWN
-	db TM_SUBMISSION
+	db TM_MEGA_PUNCH  ; TM01
+	db TM_RAZOR_WIND  ; TM02
+	db TM_MEGA_KICK	  ; TM05
+	db TM_HORN_DRILL  ; TM07
+	db TM_TAKE_DOWN	  ; TM09
+	db TM_SUBMISSION  ; TM17
+	db TM_DOUBLE_TEAM ; TM32
+	db TM_REFLECT	  ; TM33
+	db TM_EGG_BOMB	  ; TM37
 	db -1 ; end
 
 MartCeladon4F:
@@ -420,6 +421,20 @@ MartCeladon2FClerk2_2:
 	db ICE_HEAL
 	db AWAKENING
 	db PARLYZ_HEAL
+	db -1 ; end
+
+MartCeladon3FClerk2:
+	db 10 ; # items
+	db TM_SWORDS_DANCE ; TM03
+	db TM_DOUBLE_EDGE  ; TM10
+	db TM_ICE_BEAM     ; TM13
+	db TM_BLIZZARD     ; TM14
+	db TM_SEISMIC_TOSS ; TM19
+	db TM_MEGA_DRAIN   ; TM21
+	db TM_THUNDERBOLT  ; TM24
+	db TM_EARTHQUAKE   ; TM26
+	db TM_SWIFT        ; TM39
+	db TM_REST         ; TM44
 	db -1 ; end
 
 MartCeladon4F_2:

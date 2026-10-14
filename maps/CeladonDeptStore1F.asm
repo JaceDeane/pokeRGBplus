@@ -1,7 +1,5 @@
 	object_const_def
 	const CELADONDEPTSTORE1F_RECEPTIONIST
-	; const CELADONDEPTSTORE1F_GENTLEMAN
-	; const CELADONDEPTSTORE1F_TEACHER
 
 CeladonDeptStore1F_MapScripts:
 	def_scene_scripts
@@ -10,12 +8,6 @@ CeladonDeptStore1F_MapScripts:
 
 CeladonDeptStore1FReceptionistScript:
 	jumptextfaceplayer CeladonDeptStore1FReceptionistText
-
-; CeladonDeptStore1FGentlemanScript:
-	; jumptextfaceplayer CeladonDeptStore1FGentlemanText
-
-; CeladonDeptStore1FTeacherScript:
-	; jumptextfaceplayer CeladonDeptStore1FTeacherText
 
 CeladonDeptStore1FDirectory:
 	jumptext CeladonDeptStore1FDirectoryText
@@ -38,28 +30,6 @@ CeladonDeptStore1FReceptionistText:
 	line "store layout."
 	done
 
-; CeladonDeptStore1FGentlemanText:
-	; text "This DEPT.STORE is"
-	; line "part of the same"
-
-	; para "chain as the one"
-	; line "in GOLDENROD CITY."
-
-	; para "They were both"
-	; line "renovated at the"
-	; cont "same time."
-	; done
-
-; CeladonDeptStore1FTeacherText:
-	; text "This is my first"
-	; line "time here."
-
-	; para "It's so big…"
-
-	; para "I'm afraid I'll"
-	; line "get lost."
-	; done
-
 CeladonDeptStore1FDirectoryText:
 	text "1F: SERVICE"
 	line "    COUNTER"
@@ -71,7 +41,7 @@ CeladonDeptStore1FDirectoryText:
 
 	para "4F: WISEMAN GIFTS"
 
-	para "5F: DRUG STORE"
+	para "5F: MEDICINE BOX"
 
 	para "ROOFTOP SQUARE:"
 	line "VENDING MACHINES"
@@ -102,5 +72,3 @@ CeladonDeptStore1F_MapEvents:
 
 	def_object_events
 	object_event  8,  3, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore1FReceptionistScript, -1
-	; object_event 11,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore1FGentlemanScript, -1
-	; object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore1FTeacherScript, -1
