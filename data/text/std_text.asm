@@ -300,8 +300,8 @@ GymStatue_WinningTrainers2Text:
 	done
 
 CoinVendor_WelcomeText:
-	text "Welcome to the"
-	line "GAME CORNER."
+	text "Welcome to ROCKET"
+	line "GAME CORNER!"
 	done
 
 CoinVendor_NoCoinCaseText:
@@ -317,24 +317,27 @@ CoinVendor_IntroText:
 	text "Do you need some"
 	line "game coins?"
 
-	para "It costs ¥1000 for"
-	line "50 coins. Do you"
-	cont "want some?"
+	para "It's ¥1000 for 50"
+	line "coins, or ¥10000"
+	cont "for 500 coins."
+
+	para "Do you want some"
+	line "coins?"
 	done
 
 CoinVendor_Buy50CoinsText:
-	text "Thank you!"
-	line "Here are 50 coins."
+	text "Thank you! Here"
+	line "are your 50 coins."
 	done
 
 CoinVendor_Buy500CoinsText:
-	text "Thank you! Here"
-	line "are 500 coins."
+	text "Thanks! Here are"
+	line "your 500 coins."
 	done
 
 CoinVendor_NotEnoughMoneyText:
-	text "You don't have"
-	line "enough money."
+	text "You can't afford"
+	line "the coins!"
 	done
 
 CoinVendor_CoinCaseFullText:
@@ -343,8 +346,8 @@ CoinVendor_CoinCaseFullText:
 	done
 
 CoinVendor_CancelText:
-	text "No coins for you?"
-	line "Come again!"
+	text "No? Please come"
+	line "play sometime!"
 	done
 
 BugContestPrizeNoRoomText:

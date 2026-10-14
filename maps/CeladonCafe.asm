@@ -74,12 +74,12 @@ CeladonCafeGymGuideScript:
 	waitsfx
 	giveitem COIN_CASE
 	iffalse .BagFull
-	writetext CeladonCafeGymGuideReceivedCoinCaseText
 	playsound SFX_RB_KEY_ITEM
-	; waitsfx
+	writetext CeladonCafeGymGuideReceivedCoinCaseText
+	waitsfx
 	itemnotify
 	setevent EVENT_GOT_COIN_CASE
-	waitbutton ; is wait sfx enough?
+	; waitbutton ; is wait sfx enough?
 	closetext
 	end
 
@@ -148,18 +148,19 @@ CeladonCafeGymGuideImFlatOutBustedText:
 	line "busted!"
 
 	para "No more slots for"
-	line "me! I'm going"
-	cont "straight!"
+	line "me!"
+
+	para "I'm going straight!"
 
 	para "Here! I won't be"
-	line "needing this any-"
-	cont "more!"
+	line "needing this"
+	cont "anymore!"
 	done ;prompt
 
 CeladonCafeGymGuideReceivedCoinCaseText:
 	text "<PLAYER> received"
 	line "a COIN CASE!"
-	done
+	prompt
 
 CeladonCafeGymGuideCoinCaseNoRoomText:
 	text "Make room for"
@@ -176,17 +177,17 @@ CeladonCafe_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, CELADON_CITY, 11
-	warp_event  7,  7, CELADON_CITY, 11
+	warp_event  3,  7, CELADON_CITY, 11
+	warp_event  4,  7, CELADON_CITY, 11
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  5,  0, BGEVENT_READ, EatathonContestPoster
+	bg_event  4,  0, BGEVENT_READ, EatathonContestPoster
 	; bg_event  7,  1, BGEVENT_READ, CeladonCafeTrashcan
 
 	def_object_events
-	object_event  8,  5, SPRITE_COOK, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCafeChefScript, -1
+	object_event  8,  4, SPRITE_COOK, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCafeChefScript, -1
 	object_event  7,  2, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeMiddleAgedWomanScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeMiddleAgedManScript, -1
 	object_event  5,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonCafeFisherScript, -1
