@@ -543,7 +543,6 @@ LavenderCuboneHouse_Blocks:
 LavenderNameRater_Blocks:
 Route12SuperRodHouse_Blocks:
 Route28SteelWingHouse_Blocks:
-CeladonMansionRoofHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2TradeHouse_Blocks:
@@ -886,6 +885,7 @@ ViridianGym_Blocks:
 	INCBIN "maps/ViridianGym.blk"
 	
 ViridianTrainerSchool_Blocks:
+CeladonMansionRoofHouse_Blocks:
 	INCBIN "maps/SchoolHouse.blk"
 
 RedsHouse1F_Blocks:
@@ -1056,5 +1056,11 @@ INCBIN "maps/PokemonTower6F.blk"
 
 PokemonTower7F_Blocks:
 INCBIN "maps/PokemonTower7F.blk"
+
+CeladonHotel_Blocks:
+INCBIN "maps/CeladonHotel.blk"
+
+CeladonChiefHouse_Blocks:
+INCBIN "maps/CeladonChiefHouse.blk"
 
 ENDSECTION

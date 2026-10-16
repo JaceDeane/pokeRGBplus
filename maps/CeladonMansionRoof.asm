@@ -31,6 +31,10 @@ CeladonMansionRoofGraffitiText:
 	line "moustache!"
 	done
 
+CeladonMansionRoofHouseSignText:
+	text "I KNOW EVERYTHING!"
+	done
+
 CeladonMansionRoof_MapEvents:
 	db 0, 0 ; filler
 

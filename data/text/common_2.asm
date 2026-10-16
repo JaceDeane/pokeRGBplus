@@ -538,6 +538,18 @@ _CantCarryItemText::
 	cont "items."
 	done
 
+_FoundPokeText::
+	text "<PLAYER> obtained"
+	line "@"
+    text_ram wStringBuffer3
+    text "!"
+	done
+
+_NoRoomPokeText::
+	text "But there's no room"
+	line "for this #MON!"
+	done
+
 _WhitedOutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"

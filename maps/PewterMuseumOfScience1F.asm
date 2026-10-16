@@ -96,6 +96,7 @@ PewterMuseumOfScience1FFossilScientistScript:
 	promptbutton
 	verbosegiveitem OLD_AMBER
 	iffalse .BagFull
+	disappear PEWTERMUSEUMOFSCIENCE1F_OLD_AMBER
 	setevent EVENT_GOT_OLD_AMBER
 	writetext PewterMuseumOfScience1FFossilScientistGetOldAmberCheckedText
 	waitbutton
@@ -118,11 +119,7 @@ PewterMuseumOfScience1FScientistScript:
 	jumptextfaceplayer PewterMuseumOfScience1FScientistText
 
 PewterMuseumOfScience1FOldAmberScript:
-	opentext
-	writetext PewterMuseumOfScience1FOldAmberText
-	waitbutton
-	closetext
-	end
+	jumptext PewterMuseumOfScience1FOldAmberText
 
 KabutopsFossilSignScript:
 	reanchormap
@@ -290,4 +287,4 @@ PewterMuseumOfScience1F_MapEvents:
 	object_event  1,  4, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseumOfScience1FGamblerScript, -1
 	object_event 15,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseumOfScience1FFossilScientistScript, -1
 	object_event 17,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseumOfScience1FScientistScript, -1
-	object_event 16,  2, SPRITE_OLD_AMBER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseumOfScience1FOldAmberScript, -1
+	object_event 16,  2, SPRITE_OLD_AMBER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseumOfScience1FOldAmberScript, EVENT_GOT_OLD_AMBER

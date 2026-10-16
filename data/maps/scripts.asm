@@ -568,7 +568,8 @@ INCLUDE "maps/PokemonTower4F.asm"
 INCLUDE "maps/PokemonTower5F.asm"
 INCLUDE "maps/PokemonTower6F.asm"
 INCLUDE "maps/PokemonTower7F.asm"
-
+INCLUDE "maps/CeladonHotel.asm"
+INCLUDE "maps/CeladonChiefHouse.asm"
 
 SECTION "Map Scripts 20", ROMX
 

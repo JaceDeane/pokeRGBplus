@@ -40,10 +40,15 @@ CheckForHiddenItems:
 	jr c, .next
 	cp SCREEN_WIDTH / 2
 	jr nc, .next
-; Is this BG event a hidden item?  If not, go to the next BG event.
+; Is this BG event a hidden item/coins?  If not, go to the next BG event.
 	call .GetFarByte
 	cp BGEVENT_ITEM
-	jr nz, .next
+	jr z, .is_eligible
+	cp BGEVENT_COINS
+	jr z, .is_eligible
+	jr .next
+
+.is_eligible
 ; Has this item already been found?  If not, set off the Itemfinder.
 	ld a, [wCurMapScriptBank]
 	call GetFarWord

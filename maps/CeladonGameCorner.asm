@@ -286,6 +286,45 @@ CeladonGameCornerSodaCanScript:
 	closetext
 	end
 
+; CeladonCityHiddenPpUp:
+	; hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
+
+CeladonGameCornerHidden10Coins_1:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_1
+
+CeladonGameCornerHidden10Coins_2:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_2
+
+CeladonGameCornerHidden10Coins_3:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_3
+
+CeladonGameCornerHidden10Coins_4:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_4
+
+CeladonGameCornerHidden10Coins_5:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_5
+
+CeladonGameCornerHidden10Coins_6:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_6
+
+CeladonGameCornerHidden10Coins_7:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_7
+
+CeladonGameCornerHidden10Coins_8:
+	hiddencoins 10, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_10_8
+
+CeladonGameCornerHidden20Coins_1:
+	hiddencoins 20, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_20_1
+
+CeladonGameCornerHidden20Coins_2:
+	hiddencoins 20, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_20_2
+
+CeladonGameCornerHidden40Coins:
+	hiddencoins 40, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_40
+
+CeladonGameCornerHidden100Coins:
+	hiddencoins 100, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_100
+
 CeladonGameCornerUnusedMovementData: ; unreferenced
 	step RIGHT
 	turn_head LEFT
@@ -504,32 +543,32 @@ CeladonGameCorner_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  1,  6, BGEVENT_READ, CeladonGameCornerCardFlipScript
+	; bg_event  1,  6, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  1,  7, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  1,  8, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  1,  9, BGEVENT_READ, CeladonGameCornerCardFlipScript
+	; bg_event  1,  9, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  1, 10, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  1, 11, BGEVENT_LEFT, CeladonGameCornerCardFlipScript
 	bg_event  6,  6, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  6,  7, BGEVENT_READ, CeladonGameCornerCardFlipScript
+	; bg_event  6,  7, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6,  8, BGEVENT_READ, CeladonGameCornerOutOfOrderScript ;CeladonGameCornerCardFlipScript
 	bg_event  6,  9, BGEVENT_READ, CeladonGameCornerSodaCanScript
 	bg_event  6, 10, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6, 11, BGEVENT_RIGHT, CeladonGameCornerCardFlipScript
 	bg_event  7,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event  7,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
+	; bg_event  7,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event  7,  8, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event  7,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event  7, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	; bg_event  7, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
 	bg_event  7, 11, BGEVENT_LEFT, CeladonGameCornerLuckySlotMachineScript
 	bg_event 12,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 12,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 12,  8, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 12,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 12, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
+	; bg_event 12, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
 	bg_event 13,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
+	; bg_event 13,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 13,  8, BGEVENT_READ, CeladonGameCornerOutToLunchScript ;CeladonGameCornerLuckySlotMachineScript
 	bg_event 13,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 13, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
@@ -537,10 +576,23 @@ CeladonGameCorner_MapEvents:
 	bg_event 18,  6, BGEVENT_READ, CeladonGameCornerSomeonesKeysScript ;CeladonGameCornerLuckySlotMachineScript
 	bg_event 18,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18,  8, BGEVENT_READ, CeladonGameCornerLighterScript
-	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
+	; bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
 	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPosterScript
+	
+	bg_event  0,  4, BGEVENT_COINS, CeladonGameCornerHidden10Coins_1
+	bg_event  1, 12, BGEVENT_COINS, CeladonGameCornerHidden10Coins_2
+	bg_event  3,  7, BGEVENT_COINS, CeladonGameCornerHidden20Coins_1
+	bg_event  3, 10, BGEVENT_COINS, CeladonGameCornerHidden10Coins_3
+	bg_event  4,  8, BGEVENT_COINS, CeladonGameCornerHidden10Coins_4
+	bg_event  9,  8, BGEVENT_COINS, CeladonGameCornerHidden20Coins_2
+	bg_event  9, 11, BGEVENT_COINS, CeladonGameCornerHidden10Coins_5
+	bg_event 16, 10, BGEVENT_COINS, CeladonGameCornerHidden10Coins_6
+	bg_event 10, 12, BGEVENT_COINS, CeladonGameCornerHidden10Coins_7
+	bg_event 11,  3, BGEVENT_COINS, CeladonGameCornerHidden40Coins
+	bg_event 15,  4, BGEVENT_COINS, CeladonGameCornerHidden100Coins
+	bg_event 12, 11, BGEVENT_COINS, CeladonGameCornerHidden10Coins_8
 	
 	; hidden_object  0,  8, COIN+10, HiddenCoins
 	; hidden_object  1, 16, COIN+10, HiddenCoins

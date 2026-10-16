@@ -440,6 +440,8 @@ ENDM
 	map_const ROUTE_16_NORTH_GATE,                          5,  3 ; 26
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 27
 	map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 28
+	map_const CELADON_HOTEL,                                7,  4 ; 29
+	map_const CELADON_CHIEF_HOUSE,                          4,  4 ; 30
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

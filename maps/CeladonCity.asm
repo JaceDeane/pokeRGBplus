@@ -275,8 +275,8 @@ CeladonCity_MapEvents:
 	warp_event 39, 19, CELADON_DEPT_STORE_1F, 1 ;unused R/B (5F)
 	warp_event 33, 19, CELADON_GAME_CORNER_PRIZE_ROOM, 1 ;GAME_CORNER_PRIZE_ROOM (R/B)
 	warp_event 31, 27, CELADON_CAFE, 1 ;CELADON_DINER (R/B)
-	; warp_event 35, 27, CELADON_CHIEF_HOUSE, 1
-	; warp_event 43, 27, CELADON_HOTEL, 1
+	warp_event 35, 27, CELADON_CHIEF_HOUSE, 1
+	warp_event 43, 27, CELADON_HOTEL, 1
 
 	def_coord_events
 

@@ -668,6 +668,8 @@ ENDM
 	map_attributes Route16NorthGate, ROUTE_16_NORTH_GATE, $00, 0
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0
 	map_attributes Route7UndergroundPathEntrance, ROUTE_7_UNDERGROUND_PATH_ENTRANCE, $00, 0
+	map_attributes CeladonHotel, CELADON_HOTEL, $00, 0
+	map_attributes CeladonChiefHouse, CELADON_CHIEF_HOUSE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
 	map_attributes CianwoodGym, CIANWOOD_GYM, $00, 0
 	map_attributes CianwoodPokecenter1F, CIANWOOD_POKECENTER_1F, $00, 0

@@ -187,6 +187,80 @@ CeladonMansion3FReferenceMaterialText:
 	cont "a # DOLL."
 	done
 
+; =============
+
+; CeladonMansion3FProgrammerText:
+	; text "Me? I'm the"
+	; line "programmer!"
+	; done
+
+; CeladonMansion3FGraphicArtistText:
+	; text "I'm the graphic"
+	; line "artist!"
+	; cont "I drew you!"
+	; done
+
+; CeladonMansion3FWriterText:
+	; text "I wrote the story!"
+	; line "Isn't ERIKA cute?"
+
+	; para "I like MISTY a"
+	; line "lot too!"
+
+	; para "Oh, and SABRINA,"
+	; line "I like her!"
+	; done
+
+; CeladonMansion3FGameDesignerText:
+	; text "Is that right?"
+
+	; para "I'm the game"
+	; line "designer!"
+
+	; para "Filling up your"
+	; line "#DEX is tough,"
+	; cont "but don't quit!"
+
+	; para "When you finish,"
+	; line "come tell me!"
+	; done
+
+; CeladonMansion3FGameDesignerCompletedDexText:
+	; text "Wow! Excellent!"
+
+	; para "You completed"
+	; line "your #DEX!"
+
+	; para "Congratulations!"
+	; line "…"
+	; done
+
+; CeladonMansion3FGameProgramPCText:
+	; text "It's the game"
+	; line "program! Messing"
+
+	; para "with it could bug"
+	; line "out the game!"
+	; done
+
+; CeladonMansion3FPlayingGamePCText:
+	; text "Someone's playing"
+	; line "a game instead of"
+	; cont "working!"
+	; done
+
+; CeladonMansion3FGameScriptPCText:
+	; text "It's the script!"
+
+	; para "Better not look"
+	; line "at the ending!"
+	; done
+
+; CeladonMansion3FDevRoomSignText:
+	; text "GAME FREAK"
+	; line "Development Room"
+	; done
+
 CeladonMansion3F_MapEvents:
 	db 0, 0 ; filler
 
@@ -201,11 +275,11 @@ CeladonMansion3F_MapEvents:
 	def_bg_events
 	bg_event  5,  8, BGEVENT_UP, CeladonMansion3FDevRoomSign
 	bg_event  4,  3, BGEVENT_UP, CeladonMansion3FDrawing
-	bg_event  1,  6, BGEVENT_UP, CeladonMansion3FGameProgram
-	bg_event  1,  3, BGEVENT_UP, CeladonMansion3FReferenceMaterial
+	bg_event  1,  3, BGEVENT_UP, CeladonMansion3FGameProgram
+	bg_event  1,  6, BGEVENT_UP, CeladonMansion3FReferenceMaterial
 
 	def_object_events
-	object_event  3,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakGameDesignerScript, -1
-	object_event  3,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakGraphicArtistScript, -1
-	object_event  0,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakProgrammerScript, -1
-	object_event  0,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakCharacterDesignerScript, -1
+	object_event  3,  6, SPRITE_SILPH_WORKER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakGameDesignerScript, -1
+	object_event  3,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakGraphicArtistScript, -1
+	object_event  0,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GameFreakProgrammerScript, -1
+	object_event  0,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GameFreakCharacterDesignerScript, -1 ; Writer
