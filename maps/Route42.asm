@@ -320,11 +320,11 @@ Route42_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  0,  8, ROUTE_42_ECRUTEAK_GATE, 3
-	warp_event  0,  9, ROUTE_42_ECRUTEAK_GATE, 4
-	warp_event 10,  5, MOUNT_MORTAR_1F_OUTSIDE, 1
-	warp_event 28,  9, MOUNT_MORTAR_1F_OUTSIDE, 2
-	warp_event 46,  7, MOUNT_MORTAR_1F_OUTSIDE, 3
+	; warp_event  0,  8, ROUTE_42_ECRUTEAK_GATE, 3
+	; warp_event  0,  9, ROUTE_42_ECRUTEAK_GATE, 4
+	; warp_event 10,  5, MOUNT_MORTAR_1F_OUTSIDE, 1
+	; warp_event 28,  9, MOUNT_MORTAR_1F_OUTSIDE, 2
+	; warp_event 46,  7, MOUNT_MORTAR_1F_OUTSIDE, 3
 
 	def_coord_events
 	; coord_event 24, 14, SCENE_ROUTE42_SUICUNE, Route42SuicuneScript

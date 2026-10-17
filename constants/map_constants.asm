@@ -63,9 +63,9 @@ ENDM
 	endgroup
 
 	newgroup DUNGEONS                                             ;  3
-	map_const SPROUT_TOWER_1F,                             10,  8 ;  1
-	map_const SPROUT_TOWER_2F,                             10,  8 ;  2
-	map_const SPROUT_TOWER_3F,                             10,  8 ;  3
+	; map_const SPROUT_TOWER_1F,                             10,  8 ;  1
+	; map_const SPROUT_TOWER_2F,                             10,  8 ;  2
+	; map_const SPROUT_TOWER_3F,                             10,  8 ;  3
 	map_const BURNED_TOWER_1F,                             10,  9 ; 13
 	map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	map_const NATIONAL_PARK,                               20, 27 ; 15
@@ -110,10 +110,10 @@ ENDM
 	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 15, 18 ; 54
 	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ; 55
 	map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ; 56
-	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
-	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
-	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
-	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
+	; map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
+	; map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
+	; map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
+	; map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	map_const ICE_PATH_1F,                                 20, 18 ; 61
 	map_const ICE_PATH_B1F,                                10, 18 ; 62
 	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 63
@@ -158,6 +158,11 @@ ENDM
 	map_const POKEMON_TOWER_5F,                            10,  9 ; 102
 	map_const POKEMON_TOWER_6F,                            10,  9 ; 103
 	map_const POKEMON_TOWER_7F,                            10,  9 ; 104
+	map_const ROCKET_HIDEOUT_B1F,                          15, 14 ; 49
+	map_const ROCKET_HIDEOUT_B2F,                          15, 14 ; 50
+	map_const ROCKET_HIDEOUT_B3F,                          15, 14 ; 51
+	map_const ROCKET_HIDEOUT_B4F,                          15, 12 ; 49
+	map_const ROCKET_HIDEOUT_ELEVATOR,                      2,  3 ; 50
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -434,7 +439,7 @@ ENDM
 	map_const CELADON_GAME_CORNER_PRIZE_ROOM,               5,  4 ; 20
 	map_const CELADON_GYM,                                  5,  9 ; 21
 	map_const CELADON_CAFE,                                 5,  4 ; 22
-	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
+	map_const ROUTE_16_FLY_HOUSE,                           4,  4 ; 23
 	map_const ROUTE_16_GATE_1F,                             5,  4 ; 24
 	map_const ROUTE_16_GATE_2F,                             4,  4 ; 25
 	map_const ROUTE_16_NORTH_GATE,                          5,  3 ; 26

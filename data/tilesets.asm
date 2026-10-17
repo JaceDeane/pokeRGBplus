@@ -62,4 +62,5 @@ Tilesets::
 	tileset TilesetPlateau
 	tileset TilesetShipDeck
 	tileset TilesetLobby
+	tileset TilesetFacilityRB
 	assert_table_length NUM_TILESETS + 1

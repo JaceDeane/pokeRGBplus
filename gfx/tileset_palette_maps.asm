@@ -142,6 +142,9 @@ INCLUDE "gfx/tilesets/plateau_palette_map.asm"
 TilesetLobbyPalMap:
 INCLUDE "gfx/tilesets/lobby_palette_map.asm"
 
+TilesetFacilityRBPalMap:
+INCLUDE "gfx/tilesets/facility_rb_palette_map.asm"
+
 MapGroupPalettes: ; unreferenced
 ; entries correspond to MAPGROUP_* constants
 rept NUM_MAP_GROUPS

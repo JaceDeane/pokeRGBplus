@@ -435,3 +435,14 @@ INCBIN "data/tilesets/lobby_metatiles.bin"
 
 TilesetLobbyColl::
 INCLUDE "data/tilesets/lobby_collision.asm"
+
+SECTION "Tileset Data 11", ROMX
+
+TilesetFacilityRBGFX::
+INCBIN "gfx/tilesets/facility_rb.2bpp.lz"
+
+TilesetFacilityRBMeta::
+INCBIN "data/tilesets/facility_rb_metatiles.bin"
+
+TilesetFacilityRBColl::
+INCLUDE "data/tilesets/facility_rb_collision.asm"

@@ -383,9 +383,9 @@ ENDM
 	map_attributes IndigoPlateau, INDIGO_PLATEAU, $0f, SOUTH
 	connection south, Route22, ROUTE_22, 0
 	
-	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
-	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
-	map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0
+	; map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
+	; map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
+	; map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0
 	map_attributes BurnedTower1F, BURNED_TOWER_1F, $00, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $09, 0
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
@@ -430,10 +430,10 @@ ENDM
 	map_attributes GoldenrodUndergroundSwitchRoomEntrances, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, $00, 0
 	map_attributes GoldenrodDeptStoreB1F, GOLDENROD_DEPT_STORE_B1F, $00, 0
 	map_attributes GoldenrodUndergroundWarehouse, GOLDENROD_UNDERGROUND_WAREHOUSE, $00, 0
-	map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $09, 0
-	map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $09, 0
-	map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $09, 0
-	map_attributes MountMortarB1F, MOUNT_MORTAR_B1F, $09, 0
+	; map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $09, 0
+	; map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $09, 0
+	; map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $09, 0
+	; map_attributes MountMortarB1F, MOUNT_MORTAR_B1F, $09, 0
 	map_attributes IcePath1F, ICE_PATH_1F, $09, 0
 	map_attributes IcePathB1F, ICE_PATH_B1F, $19, 0
 	map_attributes IcePathB2FMahoganySide, ICE_PATH_B2F_MAHOGANY_SIDE, $19, 0
@@ -493,6 +493,11 @@ ENDM
 	map_attributes PokemonTower5F, POKEMON_TOWER_5F, $00, 0
 	map_attributes PokemonTower6F, POKEMON_TOWER_6F, $00, 0
 	map_attributes PokemonTower7F, POKEMON_TOWER_7F, $00, 0
+	map_attributes RocketHideoutB1F, ROCKET_HIDEOUT_B1F, $00, 0
+	map_attributes RocketHideoutB2F, ROCKET_HIDEOUT_B2F, $00, 0
+	map_attributes RocketHideoutB3F, ROCKET_HIDEOUT_B3F, $00, 0
+	map_attributes RocketHideoutB4F, ROCKET_HIDEOUT_B4F, $00, 0
+	map_attributes RocketHideoutElevator, ROCKET_HIDEOUT_ELEVATOR, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
@@ -662,7 +667,7 @@ ENDM
 	map_attributes CeladonGameCornerPrizeRoom, CELADON_GAME_CORNER_PRIZE_ROOM, $00, 0
 	map_attributes CeladonGym, CELADON_GYM, $00, 0
 	map_attributes CeladonCafe, CELADON_CAFE, $00, 0
-	map_attributes Route16FuchsiaSpeechHouse, ROUTE_16_FUCHSIA_SPEECH_HOUSE, $00, 0
+	map_attributes Route16FlyHouse, ROUTE_16_FLY_HOUSE, $00, 0
 	map_attributes Route16Gate1F, ROUTE_16_GATE_1F, $00, 0
 	map_attributes Route16Gate2F, ROUTE_16_GATE_2F, $00, 0
 	map_attributes Route16NorthGate, ROUTE_16_NORTH_GATE, $00, 0

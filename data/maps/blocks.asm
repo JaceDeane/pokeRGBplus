@@ -89,17 +89,17 @@ BetaCaveTestMap_Blocks: ; unreferenced
 
 SECTION "Johto Map Blocks 2b", ROMX
 
-MountMortar1FOutside_Blocks:
-	INCBIN "maps/MountMortar1FOutside.blk"
+; MountMortar1FOutside_Blocks:
+	; INCBIN "maps/MountMortar1FOutside.blk"
 
-MountMortar1FInside_Blocks:
-	INCBIN "maps/MountMortar1FInside.blk"
+; MountMortar1FInside_Blocks:
+	; INCBIN "maps/MountMortar1FInside.blk"
 
-MountMortar2FInside_Blocks:
-	INCBIN "maps/MountMortar2FInside.blk"
+; MountMortar2FInside_Blocks:
+	; INCBIN "maps/MountMortar2FInside.blk"
 
-MountMortarB1F_Blocks:
-	INCBIN "maps/MountMortarB1F.blk"
+; MountMortarB1F_Blocks:
+	; INCBIN "maps/MountMortarB1F.blk"
 
 IcePath1F_Blocks:
 	INCBIN "maps/IcePath1F.blk"
@@ -543,7 +543,7 @@ LavenderCuboneHouse_Blocks:
 LavenderNameRater_Blocks:
 Route12SuperRodHouse_Blocks:
 Route28SteelWingHouse_Blocks:
-Route16FuchsiaSpeechHouse_Blocks:
+Route16FlyHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2TradeHouse_Blocks:
 MrFujisHouse_Blocks:
@@ -640,8 +640,8 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.blk"
 
-BetaSproutTower8_Blocks: ; unreferenced
-	INCBIN "maps/unused/BetaSproutTower8.blk"
+; BetaSproutTower8_Blocks: ; unreferenced
+	; INCBIN "maps/unused/BetaSproutTower8.blk"
 
 OlivineMart_Blocks:
 EcruteakMart_Blocks:
@@ -784,14 +784,14 @@ RuinsOfAlphOmanyteChamber_Blocks:
 RuinsOfAlphAerodactylChamber_Blocks:
 	INCBIN "maps/RuinsOfAlphPuzzleChamber.blk"
 
-SproutTower1F_Blocks:
-	INCBIN "maps/SproutTower1F.blk"
+; SproutTower1F_Blocks:
+	; INCBIN "maps/SproutTower1F.blk"
 
-SproutTower2F_Blocks:
-	INCBIN "maps/SproutTower2F.blk"
+; SproutTower2F_Blocks:
+	; INCBIN "maps/SproutTower2F.blk"
 
-SproutTower3F_Blocks:
-	INCBIN "maps/SproutTower3F.blk"
+; SproutTower3F_Blocks:
+	; INCBIN "maps/SproutTower3F.blk"
 
 RadioTower1F_Blocks:
 	INCBIN "maps/RadioTower1F.blk"
@@ -1062,5 +1062,20 @@ INCBIN "maps/CeladonHotel.blk"
 
 CeladonChiefHouse_Blocks:
 INCBIN "maps/CeladonChiefHouse.blk"
+
+RocketHideoutB1F_Blocks:
+INCBIN "maps/RocketHideoutB1F.blk"
+
+RocketHideoutB2F_Blocks:
+INCBIN "maps/RocketHideoutB2F.blk"
+
+RocketHideoutB3F_Blocks:
+INCBIN "maps/RocketHideoutB3F.blk"
+
+RocketHideoutB4F_Blocks:
+INCBIN "maps/RocketHideoutB4F.blk"
+
+RocketHideoutElevator_Blocks:
+INCBIN "maps/RocketHideoutElevator.blk"
 
 ENDSECTION

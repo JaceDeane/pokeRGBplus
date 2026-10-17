@@ -4,12 +4,12 @@ LoadSpecialMapPalette:
 	jr z, .pokecom_2f
 	cp TILESET_BATTLE_TOWER_INSIDE
 	jr z, .battle_tower_inside
-	cp TILESET_ICE_PATH
-	jr z, .ice_path
+	; cp TILESET_ICE_PATH
+	; jr z, .ice_path
 	cp TILESET_HOUSE
 	jr z, .house
-	cp TILESET_RADIO_TOWER
-	jr z, .radio_tower
+	; cp TILESET_RADIO_TOWER
+	; jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	cp TILESET_HOUSE_KANTO
@@ -26,7 +26,10 @@ LoadSpecialMapPalette:
 	jr z, .cemetery
 	cp TILESET_LOBBY
 	jr z, .lobby
-	jr .do_nothing
+	cp TILESET_FACILITY_RB
+	jr z, .facility_rb
+	;jr .do_nothing
+	jp .do_nothing
 
 .pokecom_2f
 	call LoadPokeComPalette
@@ -38,24 +41,24 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.ice_path
-	ld a, [wEnvironment]
-	and $7
-	cp INDOOR ; Hall of Fame
-	jr z, .do_nothing
-	call LoadIcePathPalette
-	scf
-	ret
+; .ice_path
+	; ld a, [wEnvironment]
+	; and $7
+	; cp INDOOR ; Hall of Fame
+	; jr z, .do_nothing
+	; call LoadIcePathPalette
+	; scf
+	; ret
 
 .house
 	call LoadHousePalette
 	scf
 	ret
 
-.radio_tower
-	call LoadRadioTowerPalette
-	scf
-	ret
+; .radio_tower
+	; call LoadRadioTowerPalette
+	; scf
+	; ret
 
 .mansion_mobile
 	call LoadMansionPalette
@@ -125,6 +128,23 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.facility_rb
+	ld a, [wEnvironment]
+	and $7
+	cp INDOOR ; Not a DUNGEON
+	jr z, .not_red
+	ld a, [wMapNumber]
+	cp MAP_POWER_PLANT ; Only DUNGEON that isn't red-walled
+	jr z, .not_red
+	call LoadFacilityRBCinnabarMansionPalette
+	scf
+	ret
+
+.not_red
+	call LoadFacilityRBPalette
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
@@ -151,16 +171,16 @@ LoadBattleTowerInsidePalette:
 BattleTowerInsidePalette:
 INCLUDE "gfx/tilesets/battle_tower_inside.pal"
 
-LoadIcePathPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, IcePathPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+; LoadIcePathPalette:
+	; ld a, BANK(wBGPals1)
+	; ld de, wBGPals1
+	; ld hl, IcePathPalette
+	; ld bc, 8 palettes
+	; call FarCopyWRAM
+	; ret
 
-IcePathPalette:
-INCLUDE "gfx/tilesets/ice_path.pal"
+; IcePathPalette:
+; INCLUDE "gfx/tilesets/ice_path.pal"
 
 LoadHousePalette:
 	ld a, BANK(wBGPals1)
@@ -173,16 +193,16 @@ LoadHousePalette:
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
 
-LoadRadioTowerPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, RadioTowerPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+; LoadRadioTowerPalette:
+	; ld a, BANK(wBGPals1)
+	; ld de, wBGPals1
+	; ld hl, RadioTowerPalette
+	; ld bc, 8 palettes
+	; call FarCopyWRAM
+	; ret
 
-RadioTowerPalette:
-INCLUDE "gfx/tilesets/radio_tower.pal"
+; RadioTowerPalette:
+; INCLUDE "gfx/tilesets/radio_tower.pal"
 
 MansionPalette1:
 INCLUDE "gfx/tilesets/mansion_1.pal"
@@ -298,3 +318,30 @@ INCLUDE "gfx/tilesets/pokemon_tower.pal"
 
 ; RooftopPalette:
 ; INCLUDE "gfx/tilesets/rooftop.pal"
+
+LoadFacilityRBPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, FacilityRBPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+LoadFacilityRBCinnabarMansionPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, FacilityRBPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1 palette PAL_BG_WATER
+	ld hl, FacilityRBCinnabarMansionPalette
+	ld bc, 1 palettes
+	call FarCopyWRAM
+	ret
+
+FacilityRBPalette:
+INCLUDE "gfx/tilesets/facility_rb.pal"
+
+FacilityRBCinnabarMansionPalette:
+INCLUDE "gfx/tilesets/facility_rb_cinnabar_mansion.pal"
