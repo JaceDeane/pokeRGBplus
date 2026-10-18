@@ -297,6 +297,14 @@ TilesetShipDeckAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetFacilityRBAnim:
+	dw SpinnerTilePointer1, AnimateSpinnerTile
+	dw SpinnerTilePointer2, AnimateSpinnerTile
+	dw SpinnerTilePointer3, AnimateSpinnerTile
+	dw SpinnerTilePointer4, AnimateSpinnerTile
+	dw NULL,  StandingTileFrame
+	dw NULL,  DoneTileAnimation
+
 TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
 TilesetPlayersHouseAnim:
@@ -328,7 +336,6 @@ TilesetGateKantoAnim:
 TilesetCemeteryAnim:
 TilesetInteriorAnim:
 TilesetLobbyAnim:
-TilesetFacilityRBAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -934,6 +941,46 @@ AnimateWhirlpoolTile:
 	ld h, d
 	jr WriteTile
 
+AnimateSpinnerTile:
+; Input de points to the destination in VRAM, then the source tile frames
+; Shows frame 0 unless the player is spinning
+
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; de = the destination in VRAM
+	ld l, e
+	ld h, d
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	inc hl
+
+; a = frame index (0 when not spinning)
+	; ld a, [wSpinning]
+	; and a
+	; jr z, .got_frame
+	ld a, [wSpinFrame]      ; 0 or 1, flips once per step
+
+;.got_frame
+; hl = the source tile frames + a * 16
+	swap a
+	add [hl]
+	inc hl
+	ld h, [hl]
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jr WriteTile
+
 WriteTileFromAnimBuffer:
 ; Save the stack pointer in bc for WriteTile to restore
 	ld hl, sp+0
@@ -1196,3 +1243,13 @@ WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
 WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
 WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
 WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
+
+SpinnerTilePointer1: dw vTiles2 tile $20, SpinnerTiles1
+SpinnerTilePointer2: dw vTiles2 tile $21, SpinnerTiles2
+SpinnerTilePointer3: dw vTiles2 tile $30, SpinnerTiles3
+SpinnerTilePointer4: dw vTiles2 tile $31, SpinnerTiles4
+
+SpinnerTiles1: INCBIN "gfx/tilesets/spinners/1.2bpp"
+SpinnerTiles2: INCBIN "gfx/tilesets/spinners/2.2bpp"
+SpinnerTiles3: INCBIN "gfx/tilesets/spinners/3.2bpp"
+SpinnerTiles4: INCBIN "gfx/tilesets/spinners/4.2bpp"

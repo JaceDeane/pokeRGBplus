@@ -1276,7 +1276,7 @@ OaksLabOakDeliverParcelText:
 	line "something for me?"
 
 	para "<PLAYER> delivered"
-	line "OAK's PARCEL.@"
+	line "OAK's PARCEL."
 	done;text_end
 
 OaksLabOakParcelThanksText:
@@ -1340,7 +1340,7 @@ OaksLabOakGotPokedexText:
 	cont "these with you!"
 
 	para "<PLAYER> got a"
-	line "#DEX from OAK!@"
+	line "#DEX from OAK!"
 	done;text_end
 
 OaksLabOakThatWasMyDreamText:

@@ -5,6 +5,8 @@ RocketHideoutElevator_MapScripts:
 
 RocketHideoutElevatorScript:
 	opentext
+	checkitem LIFT_KEY
+	iffalse .NoKey
 	elevator RocketHideoutElevatorData
 	closetext
 	iffalse .Done
@@ -12,6 +14,11 @@ RocketHideoutElevatorScript:
 	playsound SFX_ELEVATOR
 	earthquake 60
 	waitsfx
+	sjump .Done
+
+.NoKey:
+	writetext RocketHideoutElevatorNoLiftKeyText
+	closetext
 .Done:
 	end
 
@@ -21,6 +28,11 @@ RocketHideoutElevatorData:
 	elevfloor FLOOR_B2F, 3, ROCKET_HIDEOUT_B2F
 	elevfloor FLOOR_B4F, 2, ROCKET_HIDEOUT_B4F
 	db -1 ; end
+
+RocketHideoutElevatorNoLiftKeyText:
+	text "It appears to"
+	line "need a key."
+	done
 
 RocketHideoutElevator_MapEvents:
 	db 0, 0 ; filler

@@ -29,7 +29,7 @@ PlayersNeighborsHouseRadioScript:
 	pause 45
 	writetext PlayerNeighborRadioText3
 	pause 45
-	musicfadeout MUSIC_NEW_BARK_TOWN, 16
+	; musicfadeout MUSIC_NEW_BARK_TOWN, 16
 	writetext PlayerNeighborRadioText4
 	pause 45
 	closetext

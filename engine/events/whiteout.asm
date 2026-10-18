@@ -48,6 +48,7 @@ HalveMoney:
 ; Halve the player's money.
 	xor a
 	ld [wSpinning], a
+	ld [wSpinFrame], a
 	ld hl, wMoney
 	ld a, [hl]
 	srl a

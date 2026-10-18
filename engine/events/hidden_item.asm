@@ -43,7 +43,7 @@ HiddenCoinsScript::
 	readmem wHiddenItemID
 	getnum STRING_BUFFER_3
 	writetext .PlayerFoundCoinsText
-	playsound SFX_RB_ITEM_1 ; SFX_GET_COIN_FROM_SLOTS
+	playsound SFX_TRANSACTION ; SFX_RB_ITEM_1
 	waitsfx
 	callasm GiveHiddenCoins
 	callasm SetMemEvent

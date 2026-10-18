@@ -1,6 +1,7 @@
 	object_const_def
 	const CELADONGAMECORNER_CLERK1
 	const CELADONGAMECORNER_RECEPTIONIST
+	const CELADONGAMECORNER_ROCKET
 	const CELADONGAMECORNER_POKEFAN_M
 	const CELADONGAMECORNER_BEAUTY
 	const CELADONGAMECORNER_FISHING_GURU
@@ -9,20 +10,26 @@
 	const CELADONGAMECORNER_GAMBLER
 	const CELADONGAMECORNER_CLERK2
 	const CELADONGAMECORNER_GENTLEMAN
-	const CELADONGAMECORNER_ROCKET
-
-	; const EVENT_FOUND_ROCKET_HIDEOUT
 
 CeladonGameCorner_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, RocketHideoutStairsCallback
+
+RocketHideoutStairsCallback:
+	checkevent EVENT_FOUND_ROCKET_HIDEOUT
+	iftrue .KeepEntranceOpen
+	changeblock 17, 0, $5c ; wall
+.KeepEntranceOpen:
+	; changeblock 17, 0, $43 ; stairs
+	endcallback
 
 CeladonGameCornerCoinVendorScript:
 	jumpstd GameCornerCoinVendorScript
 
 CeladonGameCornerReceptionistScript:
-	;jumptextfaceplayer CeladonGameCornerReceptionistText
+	jumptextfaceplayer CeladonGameCornerReceptionistText
 
 CeladonGameCornerPokefanMScript:
 	faceplayer
@@ -231,18 +238,60 @@ CeladonGameCornerGentlemanScript:
 	turnobject CELADONGAMECORNER_GENTLEMAN, RIGHT
 	end
 
-CeladonGameCornerRocketScript: ; TODO
+CeladonGameCornerRocketScript:
 	faceplayer
 	opentext
-	;writetext CeladonGameCornerGrampsText
+	writetext CeladonGameCornerRocketSeenText
+	playmusic MUSIC_EVIL_TRAINER_ENCOUNTER
 	waitbutton
 	closetext
+	winlosstext CeladonGameCornerRocketBeatenText, -1
+	loadtrainer GRUNTM, GRUNTM_7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_7
+	writetext CeladonGameCornerRocketAfterBattleText
+	waitbutton
+	closetext
+	readvar VAR_XCOORD
+		getnum STRING_BUFFER_3
+		ifequal 10, .WalkAround
+	applymovement CELADONGAMECORNER_ROCKET, CeladonGameCornerRocketLeaveMovement_WalkDirect
+	sjump .ok
+.WalkAround
+	applymovement CELADONGAMECORNER_ROCKET, CeladonGameCornerRocketLeaveMovement_WalkAroundPlayer
+.ok
+	playsound SFX_PUSH_BUTTON
+	waitsfx
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	playsound SFX_EXIT_BUILDING
+	disappear CELADONGAMECORNER_ROCKET
+	waitsfx
+	end
+
+CeladonGameCornerSwitchPosterScript:
+	opentext
+	writetext CeladonGameCornerSwitchBehindPosterText
+	playsound SFX_PUSH_BUTTON ; SFX_SWITCH (R/B)
+	waitsfx
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	promptbutton
+	closetext
+	checkevent EVENT_FOUND_ROCKET_HIDEOUT
+	iftrue .FoundHideout
+	setevent EVENT_FOUND_ROCKET_HIDEOUT
+	changeblock 17, 0, $43 ; stairs
+	refreshmap
+.FoundHideout
 	end
 
 CeladonGameCornerPosterScript:
-	jumptext CeladonGameCornerSwitchBehindPosterText
-	; TODO
+	conditional_event EVENT_FOUND_ROCKET_HIDEOUT, .Script
 
+.Script:
+	jumptext CeladonGameCornerPosterText
 
 CeladonGameCornerLuckySlotMachineScript:
 	random 6
@@ -325,21 +374,26 @@ CeladonGameCornerHidden40Coins:
 CeladonGameCornerHidden100Coins:
 	hiddencoins 100, EVENT_CELADON_GAME_CORNER_HIDDEN_COINS_100
 
-CeladonGameCornerUnusedMovementData: ; unreferenced
+CeladonGameCornerRocketLeaveMovement_WalkAroundPlayer:
+	step DOWN
 	step RIGHT
-	turn_head LEFT
+	step RIGHT
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 
-CeladonGameCornerPoster1Text:
-	text "Hey!"
+CeladonGameCornerRocketLeaveMovement_WalkDirect:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
 
-	para "Underneath this"
-	line "poster…"
-
-	para "There's nothing!"
-	done
-
-CeladonGameCornerPoster2Text:
+CeladonGameCornerPosterText:
 	text "Hey!"
 
 	para "Underneath this"
@@ -515,7 +569,8 @@ CeladonGameCornerSwitchBehindPosterText:
 
 	para "A switch behind"
 	line "the poster!?"
-	cont "Let's push it!"
+
+	para "Let's push it!"
 	done
 
 CeladonGameCornerOutOfOrderText:
@@ -539,6 +594,7 @@ CeladonGameCorner_MapEvents:
 	def_warp_events
 	warp_event 15, 13, CELADON_CITY, 8
 	warp_event 16, 13, CELADON_CITY, 8
+	warp_event 17,  0, ROCKET_HIDEOUT_B1F, 2
 
 	def_coord_events
 
@@ -579,8 +635,8 @@ CeladonGameCorner_MapEvents:
 	; bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
-	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPosterScript
-	
+	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerSwitchPosterScript
+	bg_event 17,  0, BGEVENT_IFNOTSET, CeladonGameCornerPosterScript
 	bg_event  0,  4, BGEVENT_COINS, CeladonGameCornerHidden10Coins_1
 	bg_event  1, 12, BGEVENT_COINS, CeladonGameCornerHidden10Coins_2
 	bg_event  3,  7, BGEVENT_COINS, CeladonGameCornerHidden20Coins_1
@@ -593,23 +649,11 @@ CeladonGameCorner_MapEvents:
 	bg_event 11,  3, BGEVENT_COINS, CeladonGameCornerHidden40Coins
 	bg_event 15,  4, BGEVENT_COINS, CeladonGameCornerHidden100Coins
 	bg_event 12, 11, BGEVENT_COINS, CeladonGameCornerHidden10Coins_8
-	
-	; hidden_object  0,  8, COIN+10, HiddenCoins
-	; hidden_object  1, 16, COIN+10, HiddenCoins
-	; hidden_object  3, 11, COIN+20, HiddenCoins
-	; hidden_object  3, 14, COIN+10, HiddenCoins
-	; hidden_object  4, 12, COIN+10, HiddenCoins
-	; hidden_object  9, 12, COIN+20, HiddenCoins
-	; hidden_object  9, 15, COIN+10, HiddenCoins
-	; hidden_object 16, 14, COIN+10, HiddenCoins
-	; hidden_object 10, 16, COIN+10, HiddenCoins
-	; hidden_object 11,  7, COIN+40, HiddenCoins
-	; hidden_object 15,  8, COIN+100, HiddenCoins
-	; hidden_object 12, 15, COIN+10, HiddenCoins
 
 	def_object_events
 	object_event  5,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerCoinVendorScript, -1
 	object_event  2,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerReceptionistScript, -1
+	object_event  9,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerRocketScript, EVENT_BEAT_ROCKET_GRUNTM_7 ; Rocket (7 R/B)
 	object_event  2,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPokefanMScript, -1
 	object_event  2,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerBeautyScript, -1
 	object_event  5,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFishingGuruScript, -1
@@ -618,18 +662,5 @@ CeladonGameCorner_MapEvents:
 	object_event 11, 11, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerGamblerScript, -1
 	object_event 14,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerClerk2Script, -1
 	object_event 17,  9, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerGentlemanScript, -1
-	object_event  9,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerRocketScript, -1 ; Rocket (7 R/B)
 	; object_event  8, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFisherScript, -1
 	; object_event  8, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFisherScript, -1
-	
-	; object_event  2,  6-4, SPRITE_BEAUTY, STAY, DOWN, TEXT_GAMECORNER_BEAUTY1
-	; object_event  5,  6-4, SPRITE_CLERK, STAY, DOWN, TEXT_GAMECORNER_CLERK1
-	; object_event  2, 10-4, SPRITE_MIDDLE_AGED_MAN, STAY, LEFT, TEXT_GAMECORNER_MIDDLE_AGED_MAN1
-	; object_event  2, 13-4, SPRITE_BEAUTY, STAY, LEFT, TEXT_GAMECORNER_BEAUTY2
-	; object_event  5, 11-4, SPRITE_FISHING_GURU, STAY, RIGHT, TEXT_GAMECORNER_FISHING_GURU
-	; object_event  8, 11-4, SPRITE_MIDDLE_AGED_WOMAN, STAY, LEFT, TEXT_GAMECORNER_MIDDLE_AGED_WOMAN
-	; object_event  8, 14-4, SPRITE_GYM_GUIDE, STAY, LEFT, TEXT_GAMECORNER_GYM_GUIDE
-	; object_event 11, 15-4, SPRITE_GAMBLER, STAY, RIGHT, TEXT_GAMECORNER_GAMBLER
-	; object_event 14, 11-4, SPRITE_CLERK, STAY, LEFT, TEXT_GAMECORNER_CLERK2
-	; object_event 17, 13-4, SPRITE_GENTLEMAN, STAY, RIGHT, TEXT_GAMECORNER_GENTLEMAN
-	; object_event  9,  5-4, SPRITE_ROCKET, STAY, UP, TEXT_GAMECORNER_ROCKET, OPP_ROCKET, 7

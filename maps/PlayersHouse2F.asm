@@ -56,7 +56,7 @@ PlayersHouseRadioScript:
 	pause 45
 	writetext PlayersRadioText3
 	pause 45
-	musicfadeout MUSIC_NEW_BARK_TOWN, 16
+	; musicfadeout MUSIC_NEW_BARK_TOWN, 16
 	writetext PlayersRadioText4
 	pause 45
 	closetext

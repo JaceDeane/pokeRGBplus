@@ -322,16 +322,18 @@ DoPlayerMovement::
 	ret
 
 .spin
-	ld de, SFX_SQUEAK
-	call PlaySFX
+	ld hl, wSpinFrame
+	ld a, [hl]
+	xor 1
+	ld [hl], a
 	ld a, STEP_SPIN
 	call .DoStep
 	scf
 	ret
 
 .bump
+	call StopSpinning
 	xor a
-	ld [wSpinning], a
 	ret
 
 .TrySurf:
@@ -528,11 +530,17 @@ DoPlayerMovement::
 	db $80 | UP
 	db $80 | LEFT
 	db $80 | RIGHT
-.SpinStep
-	turn_in_down
-	turn_in_up
-	turn_in_left
-	turn_in_right
+.SpinStep:
+; slower, anti-clockwise spin steps
+	turn_away_down
+	turn_away_up
+	turn_away_left
+	turn_away_right
+; faster, clockwise spin steps
+	; turn_in_down
+	; turn_in_up
+	; turn_in_left
+	; turn_in_right
 
 .StandInPlace:
 	ld a, 0
@@ -834,24 +842,39 @@ CheckStandingOnIce::
 CheckSpinning::
 	ld a, [wPlayerTileCollision]
 	cp COLL_STOP_SPIN
-	jr z, .stop_spin
+	jr z, StopSpinning ; .stop_spin
 	call CheckSpinTile
-	jr z, .start_spin
+	jr z, .spin_tile
 	ld a, [wSpinning]
 	and a
 	ret
 
-.start_spin
+; play SFX every time a spinner is stepped on
+; .start_spin
+	; ld a, c
+	; inc a
+	; ld [wSpinning], a
+	; and a
+	; ld de, SFX_SQUEAK
+	; call PlaySFX
+	; ret
+
+; play SFX only on spinner activation
+.spin_tile
+	ld a, [wSpinning]
+	and a
+	jr nz, .already_spinning
+	ld de, SFX_SQUEAK
+	call PlaySFX
+.already_spinning
 	ld a, c
 	inc a
 	ld [wSpinning], a
 	and a
 	ret
 
-.stop_spin
-	xor a
-	ld [wSpinning], a
-	ret
+; .stop_spin
+	; jr StopSpinning
 
 CheckSpinTile:
 	cp COLL_SPIN_UP
@@ -869,6 +892,23 @@ CheckSpinTile:
 	ld c, STANDING
 	ret
 
+StopSpinning::
+; Face the direction of the spin, then clear the spin state.
+; Returns z set, a = 0 (callers rely on both).
+	ld a, [wSpinning]
+	and a
+	ret z                    ; not spinning: nothing to do
+	dec a                    ; DOWN/UP/LEFT/RIGHT = 0-3
+	add a
+	add a                    ; OW_DOWN/UP/LEFT/RIGHT = dir << 2
+	push bc
+	ld bc, wPlayerStruct
+	call SetSpriteDirection
+	pop bc
+	xor a
+	ld [wSpinning], a
+	ld [wSpinFrame], a
+	ret
 
 StopPlayerForEvent::
 	ld hl, wPlayerNextMovement

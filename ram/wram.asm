@@ -2405,6 +2405,7 @@ wPlayerStepFlags:: db
 wPlayerStepDirection:: db
 
 wSpinning:: db
+wSpinFrame:: db
 
 wBGMapAnchor:: dw
 

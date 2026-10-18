@@ -62,14 +62,14 @@
 	tilecoll FLOOR, WALL, FLOOR, CUT_TREE ; 3d
 	tilecoll FLOOR, WALL, WALL, WALL ; 3e
 	tilecoll FLOOR, FLOOR, WALL, CUT_TREE ; 3f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 40
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 41
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 42
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 43
+	tilecoll FLOOR, FLOOR, FLOOR, STOP_SPIN ; 40
+	tilecoll FLOOR, STOP_SPIN, FLOOR, FLOOR ; 41
+	tilecoll FLOOR, SPIN_LEFT, FLOOR, SPIN_LEFT ; 42
+	tilecoll FLOOR, FLOOR, SPIN_UP, SPIN_UP ; 43
 	tilecoll WALL, WALL, WALL, WALL ; 44
 	tilecoll WALL, WALL, WALL, WALL ; 45
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 46
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 47
+	tilecoll FLOOR, FLOOR, STOP_SPIN, SPIN_UP ; 47
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 48
 	tilecoll WALL, WALL, WALL, FLOOR ; 49
 	tilecoll WALL, WALL, FLOOR, WALL ; 4a
@@ -85,19 +85,19 @@
 	tilecoll WALL, FLOOR, FLOOR, WALL ; 54
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 55
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 56
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 57
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 58
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 59
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 5a
+	tilecoll SPIN_RIGHT, FLOOR, WALL, WALL ; 57
+	tilecoll FLOOR, WALL, STOP_SPIN, SPIN_RIGHT ; 58
+	tilecoll FLOOR, STOP_SPIN, WALL, WALL ; 59
+	tilecoll WALL, WALL, FLOOR, STOP_SPIN ; 5a
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 5b
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5c
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 5d
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 5e
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 5f
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 60
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 61
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 62
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 63
+	tilecoll SPIN_DOWN, STOP_SPIN, FLOOR, FLOOR ; 5c
+	tilecoll WALL, WALL, FLOOR, SPIN_LEFT ; 5d
+	tilecoll FLOOR, STOP_SPIN, WALL, WALL ; 5e
+	tilecoll WALL, WALL, FLOOR, STOP_SPIN ; 5f
+	tilecoll SPIN_DOWN, WALL, FLOOR, WALL ; 60
+	tilecoll FLOOR, FLOOR, STOP_SPIN, FLOOR ; 61
+	tilecoll STOP_SPIN, FLOOR, FLOOR, FLOOR ; 62
+	tilecoll FLOOR, SPIN_RIGHT, FLOOR, WALL ; 63
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 64
 	tilecoll WALL, WALL, WALL, WALL ; 65
 	tilecoll WALL, WALL, WALL, WALL ; 66

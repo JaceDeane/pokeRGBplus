@@ -6,8 +6,8 @@ ObjectActionPairPointers:
 	dw SetFacingStandAction,           SetFacingCurrent
 	dw SetFacingStepAction,            SetFacingCurrent
 	dw SetFacingBumpAction,            SetFacingCurrent
-	dw SetFacingCounterclockwiseSpin,  SetFacingCurrent
-	dw SetFacingCounterclockwiseSpin2, SetFacingStanding
+	dw SetFacingClockwiseSpin,         SetFacingCurrent
+	dw SetFacingClockwiseSpin2,        SetFacingStanding
 	dw SetFacingFish,                  SetFacingFish
 	dw SetFacingShadow,                SetFacingStanding
 	dw SetFacingEmote,                 SetFacingEmote
@@ -122,8 +122,8 @@ SetFacingBumpAction:
 	ld [hl], a
 	ret
 
-SetFacingCounterclockwiseSpin:
-	call CounterclockwiseSpinAction
+SetFacingClockwiseSpin:
+	call ClockwiseSpinAction
 	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld a, [hl]
@@ -133,15 +133,15 @@ SetFacingCounterclockwiseSpin:
 	ld [hl], a
 	ret
 
-SetFacingCounterclockwiseSpin2:
-	call CounterclockwiseSpinAction
+SetFacingClockwiseSpin2:
+	call ClockwiseSpinAction
 	jp SetFacingStanding
 
-CounterclockwiseSpinAction:
+ClockwiseSpinAction:
 ; Here, OBJECT_STEP_FRAME consists of two 2-bit components,
 ; using only bits 0,1 and 4,5.
-; bits 0,1 is a timer (4 overworld frames)
-; bits 4,5 determines the facing - the direction is counterclockwise.
+; bits 0,1 is a timer (2 overworld frames)
+; bits 4,5 determines the facing - the direction is clockwise.
 	ld hl, OBJECT_STEP_FRAME
 	add hl, bc
 	ld a, [hl]
@@ -152,7 +152,7 @@ CounterclockwiseSpinAction:
 	inc a
 	and %00001111
 	ld d, a
-	cp 4
+	cp 2
 	jr c, .ok
 
 	ld d, 0
@@ -178,9 +178,9 @@ CounterclockwiseSpinAction:
 
 .facings:
 	db OW_DOWN
-	db OW_RIGHT
-	db OW_UP
 	db OW_LEFT
+	db OW_UP
+	db OW_RIGHT
 
 SetFacingFish:
 	call GetSpriteDirection
