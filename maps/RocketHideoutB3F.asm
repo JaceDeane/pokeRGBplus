@@ -54,7 +54,8 @@ TrainerRocketGrunt14AfterBattleText:
 	para "Oh, the machine"
 	line "the BOSS stole?"
 
-	para "It's here somewhere."
+	para "It's here, some-"
+	line "where…"
 	done
 
 TrainerRocketGrunt15SeenText:
@@ -88,7 +89,7 @@ RocketHideoutB3F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 10, 22, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerRocketGrunt14, -1
-	object_event 26, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt15, -1
+	object_event 10, 22, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerRocketGrunt14, -1
+	object_event 26, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt15, -1
 	object_event 26, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RocketHideoutB3FTMDoubleEdge, EVENT_GOT_TM10_DOUBLE_EDGE
 	object_event 20, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RocketHideoutB3FRareCandy, EVENT_ROCKET_HIDEOUT_B3F_RARE_CANDY

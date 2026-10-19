@@ -14,8 +14,8 @@ RocketHideoutB4F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, RocketHideoutB4FShutterCallback
-	callback MAPCALLBACK_OBJECTS, RocketHideoutB4FSilphScopeCallback
-	callback MAPCALLBACK_OBJECTS, RocketHideoutB4FLiftKeyCallback
+	callback MAPCALLBACK_OBJECTS, RocketHideoutB4FSilphScopeLiftKeyCallback
+	; callback MAPCALLBACK_OBJECTS, RocketHideoutB4FLiftKeyCallback
 
 RocketHideoutB4FShutterCallback:
 	checkevent EVENT_ROCKET_HIDEOUT_B4F_DOOR_UNLOCKED
@@ -23,23 +23,22 @@ RocketHideoutB4FShutterCallback:
 	endcallback
 
 .Change:
-	changeblock 12, 5, $0e ; floor
+	changeblock 24, 10, $0e ; floor
 	endcallback
 
-RocketHideoutB4FSilphScopeCallback:
+RocketHideoutB4FSilphScopeLiftKeyCallback:
 	checkevent EVENT_BEAT_GIOVANNI_ROCKET_HIDEOUT
 	iftrue .ShowSilphScope
 	disappear ROCKETHIDEOUTB4F_SILPH_SCOPE
-	sjump .End
+	sjump .SilphScopeDone
 
 .ShowSilphScope
 	checkevent EVENT_GOT_SILPH_SCOPE
-	iftrue .End
+	iftrue .SilphScopeDone
 	appear ROCKETHIDEOUTB4F_SILPH_SCOPE
-.End
-	endcallback
-
-RocketHideoutB4FLiftKeyCallback:
+.SilphScopeDone
+	;endcallback
+;RocketHideoutB4FLiftKeyCallback:
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_18
 	iftrue .ShowLiftKey
 	disappear ROCKETHIDEOUTB4F_LIFT_KEY
@@ -53,6 +52,7 @@ RocketHideoutB4FLiftKeyCallback:
 	endcallback
 
 RocketHideoutB4FGiovanniScript:
+	faceplayer
 	opentext
 	writetext RocketHideoutB4FGiovanniPreBattleText
 	playmusic MUSIC_ROCKET_ENCOUNTER ; MUSIC_EVIL_TRAINER_ENCOUNTER
@@ -131,7 +131,7 @@ RocketHideoutB4FShutter:
 	; waitbutton
 	setevent EVENT_ROCKET_HIDEOUT_B4F_DOOR_UNLOCKED
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 5, $0e ; floor
+	changeblock 24, 10, $0e ; floor
 	refreshmap
 	; closetext
 	waitsfx
@@ -200,9 +200,30 @@ TrainerRocketGrunt18AfterBattleText:
 	done
 
 RocketHideoutB4FGiovanniPreBattleText:
-	text "So! I must say, I"
-	line "am impressed you"
-	cont "got here!"
+	text "So! I must say,"
+	line "I am impressed you"
+	cont "got here."
+
+	para "TEAM ROCKET"
+	line "captures #MON"
+
+	para "from around the"
+	line "world."
+
+	para "They're important"
+	line "tools for keeping"
+
+	para "our criminal"
+	line "enterprise going."
+
+	para "And I, GIOVANNI,"
+	line "am the leader!"
+
+	para "Now… for your"
+	line "insolence,"
+
+	para "you will feel"
+	line "a world of pain!"
 	done
 
 RocketHideoutB4FGiovanniBeatenText:
@@ -220,6 +241,8 @@ RocketHideoutB4FGiovanniAfterBattleText:
 
 	para "understand what I"
 	line "hope to achieve."
+
+	para "<……> <……> <……>"
 
 	para "I shall step"
 	line "aside this time!"
@@ -239,11 +262,11 @@ RocketHideoutB4F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 11, BGEVENT_IFNOTSET, RocketHideoutB4FShutter
-	bg_event 25, 11, BGEVENT_IFNOTSET, RocketHideoutB4FShutter
+	; bg_event 24, 11, BGEVENT_IFNOTSET, RocketHideoutB4FShutter
+	; bg_event 25, 11, BGEVENT_IFNOTSET, RocketHideoutB4FShutter
 
 	def_object_events
-	object_event 25,  3, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, RocketHideoutB4FGiovanniScript, -1
+	object_event 25,  3, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketHideoutB4FGiovanniScript, EVENT_BEAT_GIOVANNI_ROCKET_HIDEOUT
 	object_event 23, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerRocketGrunt16, -1
 	object_event 26, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerRocketGrunt17, -1
 	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerRocketGrunt18, -1

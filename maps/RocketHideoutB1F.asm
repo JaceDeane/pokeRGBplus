@@ -19,7 +19,7 @@ RocketHideoutB1FShutterCallback:
 	endcallback
 
 .Change:
-	changeblock 12, 8, $0e ; floor
+	changeblock 24, 16, $0e ; floor
 	endcallback
 
 TrainerRocketGrunt8:
@@ -70,7 +70,11 @@ TrainerRocketGrunt12:
 	trainer GRUNTM, GRUNTM_12, EVENT_BEAT_ROCKET_GRUNTM_12, TrainerRocketGrunt12SeenText, TrainerRocketGrunt12BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
+	; endifjustbattled
+	checkevent EVENT_ROCKET_HIDEOUT_B1F_DOOR_UNLOCKED
+	iftrue .door_unlocked
+	scall RocketHideoutB1FShutter.Script
+.door_unlocked
 	opentext
 	writetext TrainerRocketGrunt12AfterBattleText
 	waitbutton
@@ -89,7 +93,7 @@ RocketHideoutB1FShutter:
 	; waitbutton
 	setevent EVENT_ROCKET_HIDEOUT_B1F_DOOR_UNLOCKED
 	playsound SFX_ENTER_DOOR
-	changeblock 12, 8, $0e ; floor
+	changeblock 24, 16, $0e ; floor
 	refreshmap
 	; closetext
 	waitsfx
@@ -190,14 +194,14 @@ RocketHideoutB1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 24, 16, BGEVENT_IFNOTSET, RocketHideoutB1FShutter
-	bg_event 25, 16, BGEVENT_IFNOTSET, RocketHideoutB1FShutter
+	; bg_event 24, 16, BGEVENT_IFNOTSET, RocketHideoutB1FShutter
+	; bg_event 25, 16, BGEVENT_IFNOTSET, RocketHideoutB1FShutter
 
 	def_object_events
 	object_event 26,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerRocketGrunt8, -1
 	object_event 12,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerRocketGrunt9, -1
 	object_event 18, 17, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerRocketGrunt10, -1
 	object_event 15, 25, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerRocketGrunt11, -1
-	object_event 28, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerRocketGrunt12, -1
+	object_event 28, 18, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerRocketGrunt12, -1
 	object_event 11, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RocketHideoutB1FEscapeRope, EVENT_ROCKET_HIDEOUT_B1F_ESCAPE_ROPE
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RocketHideoutB1FHyperPotion, EVENT_ROCKET_HIDEOUT_B1F_HYPER_POTION
