@@ -40,6 +40,10 @@ OutdoorSprites:
 ; SplitMapSpriteSets:
 	; table_width 4
 	; db NORTH_SOUTH, 37, PewterGroupSprites, ViridianGroupSprites ; SPLITSET_ROUTE_2
+	; db NORTH_SOUTH, 33, CeruleanGroupSprites, SaffronGroupSprites ; SPLITSET_ROUTE_5
+	; db NORTH_SOUTH,  2, SaffronGroupSprites, VermilionGroupSprites ; SPLITSET_ROUTE_6
+	; db EAST_WEST,   17, CeladonGroupSprites, SaffronGroupSprites ; SPLITSET_ROUTE_7
+	; db EAST_WEST,    3, SaffronGroupSprites, LavenderGroupSprites ; SPLITSET_ROUTE_8
 	; db NORTH_SOUTH, 50, CeruleanGroupSprites, LavenderGroupSprites ; SPLITSET_ROUTE_10
 	; db EAST_WEST,   57, VermilionGroupSprites, SPRITESET_SILENCE_BRIDGE ; SPLITSET_ROUTE_11
 	; db NORTH_SOUTH, 21, LavenderGroupSprites, SPRITESET_SILENCE_BRIDGE ; SPLITSET_ROUTE_12
@@ -47,10 +51,6 @@ OutdoorSprites:
 	; db EAST_WEST,   24, SPRITESET_CYCLING_ROAD, CeladonGroupSprites ; SPLITSET_ROUTE_16
 	; db EAST_WEST,   34, SPRITESET_CYCLING_ROAD, FuchsiaGroupSprites ; SPLITSET_ROUTE_18
 	; db EAST_WEST,   53, CinnabarGroupSprites, FuchsiaGroupSprites ; SPLITSET_ROUTE_20
-	; db NORTH_SOUTH, 33, CeruleanGroupSprites, SaffronGroupSprites ; SPLITSET_ROUTE_5
-	; db NORTH_SOUTH,  2, SaffronGroupSprites, VermilionGroupSprites ; SPLITSET_ROUTE_6
-	; db EAST_WEST,   17, CeladonGroupSprites, SaffronGroupSprites ; SPLITSET_ROUTE_7
-	; db EAST_WEST,    3, SaffronGroupSprites, LavenderGroupSprites ; SPLITSET_ROUTE_8
 	; assert_table_length NUM_SPLIT_SETS
 
 ; Route1 and ViridianCity are connected
@@ -111,7 +111,7 @@ LavenderGroupSprites:
 	db SPRITE_LASS ; MONSTER - Used for...?
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_COOLTRAINER_M
-	db SPRITE_OFFICER ; GUARD ; Used for...?
+	db SPRITE_FISHER ; was OFFICER / GUARD (Used for...?)
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
 	;db SPRITE_UNUSED_GAMBLER_ASLEEP_2
@@ -189,38 +189,38 @@ SaffronGroupSprites:
 	db SPRITE_SILPH_WORKER_M
 	db 0 ; end
 
-; ; Route13 & Route14 -- south Route12, west Route11 & Route15
-; SilenceBridgeSprites: ; SPRITESET_SILENCE_BRIDGE
-	; db SPRITE_BIKER
-	; db SPRITE_SUPER_NERD
-	; db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
-	; db SPRITE_COOLTRAINER_F
-	; db SPRITE_COOLTRAINER_M
-	; db SPRITE_BEAUTY
-	; db SPRITE_FISHER
-	; db SPRITE_ROCKER
-	; db SPRITE_MONSTER
-	; ; 9 of max 9 walking sprites
-	; db SPRITE_POKE_BALL
-	; ; db SPRITE_SNORLAX ;TODO - Add special OW GFX
-	; db 0 ; end
+; Route13 & Route14 -- south Route12, west Route11 & Route15
+SilenceBridgeSprites: ; SPRITESET_SILENCE_BRIDGE
+	db SPRITE_BIKER
+	db SPRITE_SUPER_NERD
+	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_BEAUTY
+	db SPRITE_FISHER
+	db SPRITE_ROCKER
+	db SPRITE_MONSTER
+	; 9 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	; db SPRITE_SNORLAX ;TODO - Add special OW GFX
+	db 0 ; end
 
-; ; Route17 -- east Route16 & Route18
-; CyclingRoadSprites ; SPRITESET_CYCLING_ROAD
-	; db SPRITE_BIKER
-	; db SPRITE_COOLTRAINER_M
-	; ; db SPRITE_NONE
-	; db SPRITE_FISHER
-	; db SPRITE_ROCKER
-	; db SPRITE_HIKER
-	; db SPRITE_SAGE ; GAMBLER
-	; db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
-	; db SPRITE_SUPER_NERD
-	; ; 8 of max 9 walking sprites
-	; db SPRITE_POKE_BALL
-	; ; db SPRITE_SNORLAX ;TODO - Add special OW GFX
-	; db SPRITE_SILPH_WORKER_M
-	; db 0 ; end
+; Route17 -- east Route16 & Route18
+CyclingRoadSprites: ; SPRITESET_CYCLING_ROAD
+	db SPRITE_BIKER
+	db SPRITE_COOLTRAINER_M
+	; db SPRITE_NONE
+	db SPRITE_FISHER
+	db SPRITE_ROCKER
+	db SPRITE_HIKER
+	db SPRITE_SAGE ; GAMBLER
+	db SPRITE_POKEFAN_M ; MIDDLE_AGED_MAN
+	db SPRITE_SUPER_NERD
+	; 8 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	; db SPRITE_SNORLAX ;TODO - Add special OW GFX
+	db SPRITE_SILPH_WORKER_M
+	db 0 ; end
 
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity

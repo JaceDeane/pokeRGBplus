@@ -1308,10 +1308,7 @@ _FluteWakeUpText::
 Text_PlayedPokeFlute::
 	text "<PLAYER> played the"
 	line "# FLUTE.@"
-	text_promptbutton
 	text_end
-
-	text_end ; unreferenced
 
 _BlueCardBalanceText::
 	text "You now have"

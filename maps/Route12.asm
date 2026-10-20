@@ -16,7 +16,52 @@ Route12_MapScripts:
 	def_callbacks
 
 Route12SnorlaxScript:
-	jumptextfaceplayer Route12SnorlaxText ; TODO
+	checkitem POKE_FLUTE
+	iftrue .Fight
+	jumptext SleepingSnorlaxText
+
+.Fight:
+	opentext
+	writetext SleepingSnorlaxText
+	promptbutton
+	writetext UseThePokeFluteText
+	yesorno
+	iffalse Route12DidntUsePokeFluteScript
+	musicfadeout MUSIC_NONE, 1
+	farwritetext Text_PlayedPokeFlute
+	waitsfx
+	playsound SFX_POKEFLUTE
+	waitsfx
+	closetext
+PokeFluteSnorlaxRoute12:: ; export (for when you use Poké Flute from pack)
+	playmapmusic
+	opentext
+	writetext SnorlaxWokeUpText
+	cry SNORLAX
+	promptbutton
+	writetext SnorlaxAttackedText
+	waitbutton
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon SNORLAX, 30
+	startbattle
+	setevent EVENT_BEAT_ROUTE12_SNORLAX
+	disappear ROUTE12_SNORLAX
+	ifequal DRAW, Route12DidntCatchSnorlax
+	reloadmapafterbattle
+	end
+
+Route12DidntUsePokeFluteScript:
+	closetext
+	end
+
+Route12DidntCatchSnorlax:
+	reloadmapafterbattle
+	opentext
+	writetext SnorlaxCalmedDownText
+	waitbutton
+	closetext
+	end
 
 TrainerFisherNed:
 	trainer FISHER, NED, EVENT_BEAT_FISHER_NED, FisherNedSeenText, FisherNedBeatenText, 0, .Script
@@ -110,24 +155,29 @@ Route12Iron:
 Route12HiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ROUTE_12_HIDDEN_HYPER_POTION
 
-Route12SnorlaxText:
+SleepingSnorlaxText::
 	text "A sleeping #MON"
 	line "blocks the way!"
 	done
 
-Route12SnorlaxWokeUpText:
-	text "SNORLAX woke up!"
+UseThePokeFluteText::
+	text "Want to use the"
+	line "# FLUTE?"
+	done
 
-	para "It attacked in a"
+SnorlaxWokeUpText::
+	text "SNORLAX woke up!"
+	done
+
+SnorlaxAttackedText::
+	text "It attacked in a"
 	line "grumpy rage!"
 	done
 
-Route12SnorlaxCalmedDownText:
-	text "SNORLAX calmed"
-	line "down! With a big"
-
-	para "yawn, it returned"
-	line "to the mountains!"
+SnorlaxCalmedDownText::
+	text "With a big yawn,"
+	line "SNORLAX returned"
+	cont "to the mountains!"
 	done
 
 FisherNedSeenText:

@@ -1,3 +1,6 @@
+	object_const_def
+	const ROUTE16_SNORLAX
+
 Route16_MapScripts:
 	def_scene_scripts
 
@@ -15,6 +18,54 @@ Route16AlwaysOnBikeCallback:
 .CanWalk:
 	clearflag ENGINE_ALWAYS_ON_BIKE
 	endcallback
+
+Route16SnorlaxScript:
+	checkitem POKE_FLUTE
+	iftrue .Fight
+	jumptext SleepingSnorlaxText
+
+.Fight:
+	opentext
+	farwritetext SleepingSnorlaxText
+	promptbutton
+	farwritetext UseThePokeFluteText
+	yesorno
+	iffalse Route16DidntUsePokeFluteScript
+	musicfadeout MUSIC_NONE, 1
+	farwritetext Text_PlayedPokeFlute
+	waitsfx
+	playsound SFX_POKEFLUTE
+	waitsfx
+	closetext
+PokeFluteSnorlaxRoute16:: ; export (for when you use Poké Flute from pack)
+	playmapmusic
+	opentext
+	farwritetext SnorlaxWokeUpText
+	cry SNORLAX
+	promptbutton
+	farwritetext SnorlaxAttackedText
+	waitbutton
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon SNORLAX, 30
+	startbattle
+	setevent EVENT_BEAT_ROUTE12_SNORLAX
+	disappear ROUTE12_SNORLAX
+	ifequal DRAW, Route16DidntCatchSnorlax
+	reloadmapafterbattle
+	end
+
+Route16DidntUsePokeFluteScript:
+	closetext
+	end
+
+Route16DidntCatchSnorlax:
+	reloadmapafterbattle
+	opentext
+	farwritetext SnorlaxCalmedDownText
+	waitbutton
+	closetext
+	end
 
 CyclingRoadSign:
 	jumptext CyclingRoadSignText
@@ -46,3 +97,4 @@ Route16_MapEvents:
 	bg_event 27, 11, BGEVENT_READ, CyclingRoadSign
 
 	def_object_events
+	object_event 26, 10, SPRITE_SNORLAX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route16SnorlaxScript, -1
