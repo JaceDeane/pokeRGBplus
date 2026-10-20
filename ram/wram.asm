@@ -2663,6 +2663,8 @@ wOtherTrainerID::
 	db
 
 wForcedSwitch:: db
+wEnemyMonLinearFlag:: db ; new Linear Enemy Party routine
+wEnemyMonLinearIndex:: db ; new Linear Enemy Party routine
 
 wTrainerClass:: db
 

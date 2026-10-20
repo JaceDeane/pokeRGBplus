@@ -2053,6 +2053,8 @@ HandleEnemyMonFaint:
 	ld a, d
 	and a
 	jp z, LostBattle
+	
+	farcall ResyncEnemyLinearIndex
 
 	ld hl, wBattleMonHP
 	ld a, [hli]
@@ -2381,8 +2383,9 @@ EnemyPartyMonEntrance:
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
-	inc a
-	ret
+	farcall AdvanceEnemyLinearIndex
+  	ld a, 1 ; inc a
+  	ret
 
 WinTrainerBattle:
 ; Player won the battle
@@ -3173,6 +3176,7 @@ EnemySwitch:
 	call CheckWhetherSwitchmonIsPredetermined
 	jr c, .skip
 	call FindMonInOTPartyToSwitchIntoBattle
+	farcall FilterEnemySwitchNotLast
 .skip
 	; 'b' contains the PartyNr of the mon the AI will switch to
 	call LoadEnemyMonToSwitchTo
@@ -3198,6 +3202,7 @@ EnemySwitch_SetMode:
 	call CheckWhetherSwitchmonIsPredetermined
 	jr c, .skip
 	call FindMonInOTPartyToSwitchIntoBattle
+	farcall FilterEnemySwitchNotLast
 .skip
 	; 'b' contains the PartyNr of the mon the AI will switch to
 	call LoadEnemyMonToSwitchTo
@@ -3208,6 +3213,25 @@ EnemySwitch_SetMode:
 	jp ShowSetEnemyMonAndSendOutAnimation
 
 CheckWhetherSwitchmonIsPredetermined:
+; returns with carry flag (c) set and b = index (0-based) if predetermined
+; otherwise c clear and fall through to "normal"
+
+	; forced switch (Roar/Whirlwind/Teleport) must bypass linear
+    ld a, [wForcedSwitch]
+	and a
+    jr nz, .normal
+	
+	; if not using mode 1: linear order, do normal
+    ld a, [wEnemyMonLinearFlag]
+    cp SWITCH_ORDER_LINEAR
+    jr nz, .normal
+
+	; mode 1: linear (use persistent zero-based linear pointer)
+    ld a, [wEnemyMonLinearIndex]
+    ld b, a
+    jr .return_carry
+
+.normal
 ; returns the enemy switchmon index in b, or
 ; returns carry if the index is not yet determined.
 	ld a, [wLinkMode]
@@ -8460,6 +8484,8 @@ CleanUpBattleRAM:
 	ld [wKeyItemsPocketScrollPosition], a
 	ld [wItemsPocketScrollPosition], a
 	ld [wBallsPocketScrollPosition], a
+	ld [wEnemyMonLinearFlag], a
+	ld [wEnemyMonLinearIndex], a
 	ld hl, wPlayerSubStatus1
 	ld b, wEnemyFuryCutterCount - wPlayerSubStatus1
 .loop

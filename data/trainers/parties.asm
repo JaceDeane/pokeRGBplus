@@ -2173,7 +2173,7 @@ BlaineGroup:
 	db 50, RAPIDASH,   QUICK_ATTACK, FIRE_SPIN, FURY_ATTACK, FIRE_BLAST
 	db -1 ; end
 
-BurglarGroup:
+BurglarGroup: ; Updated to R/B, using FR/LG names
 	; BURGLAR (1) ; Unused R/B
 	db "UNUSED@", TRAINERTYPE_NORMAL
 	db 29, GROWLITHE

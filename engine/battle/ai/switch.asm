@@ -173,7 +173,7 @@ CheckPlayerMoveTypeMatchups:
 	ld [wEnemyAISwitchScore], a
 	ret
 
-CheckAbleToSwitch:
+_CheckAbleToSwitch:
 	xor a
 	ld [wEnemySwitchMonParam], a
 	call FindAliveEnemyMons
@@ -287,6 +287,24 @@ CheckAbleToSwitch:
 	ld a, [wEnemyAISwitchScore]
 	add $10
 	ld [wEnemySwitchMonParam], a
+	ret
+
+CheckAbleToSwitch:
+	call _CheckAbleToSwitch
+	ld a, [wEnemyMonLinearFlag]
+	cp SWITCH_ORDER_NOT_LAST
+	ret nz
+
+	ld a, [wOTPartyCount]
+	dec a
+	ld b, a                  ; b = last slot
+	ld a, [wEnemySwitchMonParam]
+	and $0f                  ; chosen slot
+	cp b
+	ret nz
+
+	xor a
+	ld [wEnemySwitchMonParam], a   ; don't voluntarily switch to the last mon
 	ret
 
 FindAliveEnemyMons:
@@ -655,4 +673,134 @@ FindEnemyMonsWithAtLeastQuarterMaxHP:
 	pop bc
 	and c
 	ld c, a
+	ret
+
+AdvanceEnemyLinearIndex::
+; Linear mode: after a mon enters, point the index at the next living mon.
+; in: b = slot of the mon that entered
+	ld a, [wEnemyMonLinearFlag]
+	cp SWITCH_ORDER_LINEAR
+	ret nz
+
+	; handles when order disrupted from Whirlwind/Roar, etc.
+	ld a, b
+	ld [wEnemyMonLinearIndex], a
+	ld a, [wCurOTMon]
+	inc a
+	ld b, a                  ; candidate = current + 1
+	ld a, [wOTPartyCount]
+	ld c, a
+.scan
+	ld a, b
+	cp c
+	jr nc, .none
+
+	push bc
+	ld hl, wOTPartyMon1HP
+	call GetPartyLocation
+	ld a, [hli]
+	or [hl]
+	pop bc
+	jr nz, .found
+
+	inc b
+	jr .scan
+
+.found
+	ld a, b
+	ld [wEnemyMonLinearIndex], a
+	ret
+
+.none
+	xor a
+	ld [wEnemyMonLinearIndex], a
+	ret
+
+ResyncEnemyLinearIndex::
+; Linear mode: after an enemy mon faints, point the index at the next living mon (wrapping).
+	ld a, [wEnemyMonLinearFlag]
+	cp SWITCH_ORDER_LINEAR
+	ret nz
+
+	ld a, [wCurOTMon]
+	inc a
+	ld b, a
+	ld a, [wOTPartyCount]
+	ld c, a
+	dec a
+	cp b
+	jr nc, .ok
+	ld b, 0                  ; wrap if past index end
+.ok
+; if wild battle, store index and exit
+	ld a, [wBattleMode]
+	dec a
+	jr z, .store_index
+.loop
+; all fainted: leave the index alone
+	dec c
+	ret z
+; test candidate mon HP
+	ld a, b
+	ld hl, wOTPartyMon1HP
+	push bc
+	call GetPartyLocation
+	ld a, [hli]
+	or [hl]
+	pop bc
+	jr nz, .store_index
+
+; candidate fainted → advance and wrap
+	inc b
+	ld a, [wOTPartyCount]
+	dec a
+	cp b
+	jr nc, .loop
+	ld b, 0
+	jr .loop
+
+.store_index
+	ld a, b
+	ld [wEnemyMonLinearIndex], a
+	ret
+
+FilterEnemySwitchNotLast::
+; in: b = slot chosen by the normal logic
+; out: b unchanged, unless it is the last slot and another mon is alive
+	ld a, [wEnemyMonLinearFlag]
+	cp SWITCH_ORDER_NOT_LAST
+	ret nz
+
+	ld a, [wOTPartyCount]
+	dec a
+	ret z                    ; one-mon party
+
+	cp b
+	ret nz                   ; didn't pick the last slot
+	ld c, a                  ; c = number of non-last slots
+	ld e, 0
+.loop
+	ld a, [wCurOTMon]
+	cp e
+	jr z, .next
+	push bc
+	push de
+	ld a, e
+	ld hl, wOTPartyMon1HP
+	call GetPartyLocation
+	ld a, [hli]
+	or [hl]
+	pop de
+	pop bc
+	jr nz, .found
+
+.next
+	inc e
+	ld a, e
+	cp c
+	jr c, .loop
+	ret                      ; nobody else alive: keep the last mon
+
+.found
+	ld b, e                  ; first living, non-current, non-last mon
 	ret
