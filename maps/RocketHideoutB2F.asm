@@ -44,7 +44,7 @@ TrainerRocketGrunt13BeatenText:
 	done
 
 TrainerRocketGrunt13AfterBattleText:
-	text "The TEAM ROCKET HQ"
+	text "TEAM ROCKET HQ"
 	line "has four basement"
 	cont "floors."
 

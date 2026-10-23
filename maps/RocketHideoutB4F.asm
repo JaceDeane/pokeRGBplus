@@ -55,7 +55,9 @@ RocketHideoutB4FGiovanniScript:
 	faceplayer
 	opentext
 	writetext RocketHideoutB4FGiovanniPreBattleText
-	playmusic MUSIC_ROCKET_ENCOUNTER ; MUSIC_EVIL_TRAINER_ENCOUNTER
+	promptbutton
+	playmusic MUSIC_EVIL_TRAINER_ENCOUNTER ; MUSIC_ROCKET_ENCOUNTER
+	writetext RocketHideoutB4FGiovanniPreBattleText2
 	waitbutton
 	closetext
 	winlosstext RocketHideoutB4FGiovanniBeatenText, -1
@@ -68,10 +70,10 @@ RocketHideoutB4FGiovanniScript:
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	disappear ROCKETHIDEOUTB4F_GIOVANNI
+	setevent EVENT_BEAT_GIOVANNI_ROCKET_HIDEOUT
 	appear ROCKETHIDEOUTB4F_SILPH_SCOPE
 	pause 15
 	special FadeInFromBlack
-	setevent EVENT_BEAT_GIOVANNI_ROCKET_HIDEOUT
 	end
 
 TrainerRocketGrunt16:
@@ -221,8 +223,10 @@ RocketHideoutB4FGiovanniPreBattleText:
 
 	para "Now… for your"
 	line "insolence,"
+	done
 
-	para "you will feel"
+RocketHideoutB4FGiovanniPreBattleText2:
+	text "you will feel"
 	line "a world of pain!"
 	done
 

@@ -1,6 +1,7 @@
 	object_const_def
-	; const ROUTE18_YOUNGSTER1
-	; const ROUTE18_YOUNGSTER2
+	const ROUTE18_COOLTRAINER_M1
+	const ROUTE18_COOLTRAINER_M2
+	const ROUTE18_COOLTRAINER_M3
 
 Route18_MapScripts:
 	def_scene_scripts
@@ -18,73 +19,105 @@ Route18AlwaysOnBikeCallback:
 	clearflag ENGINE_ALWAYS_ON_BIKE
 	endcallback
 
-; TrainerBirdKeeperBoris:
-	; trainer BIRD_KEEPER, BORIS, EVENT_BEAT_BIRD_KEEPER_BORIS, BirdKeeperBorisSeenText, BirdKeeperBorisBeatenText, 0, .Script
+TrainerBirdKeeperWilton:
+	trainer BIRD_KEEPER, WILTON, EVENT_BEAT_BIRD_KEEPER_WILTON, BirdKeeperWiltonSeenText, BirdKeeperWiltonBeatenText, 0, .Script
 
-; .Script:
-	; endifjustbattled
-	; opentext
-	; writetext BirdKeeperBorisAfterBattleText
-	; waitbutton
-	; closetext
-	; end
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperWiltonAfterBattleText
+	waitbutton
+	closetext
+	end
 
-; TrainerBirdKeeperBob:
-	; trainer BIRD_KEEPER, BOB, EVENT_BEAT_BIRD_KEEPER_BOB, BirdKeeperBobSeenText, BirdKeeperBobBeatenText, 0, .Script
+TrainerBirdKeeperRamiro:
+	trainer BIRD_KEEPER, RAMIRO, EVENT_BEAT_BIRD_KEEPER_RAMIRO, BirdKeeperRamiroSeenText, BirdKeeperRamiroBeatenText, 0, .Script
 
-; .Script:
-	; endifjustbattled
-	; opentext
-	; writetext BirdKeeperBobAfterBattleText
-	; waitbutton
-	; closetext
-	; end
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperRamiroAfterBattleText
+	waitbutton
+	closetext
+	end
 
-; Route18Sign:
-	; jumptext Route18SignText
+TrainerBirdKeeperJacob:
+	trainer BIRD_KEEPER, JACOB, EVENT_BEAT_BIRD_KEEPER_JACOB, BirdKeeperJacobSeenText, BirdKeeperJacobBeatenText, 0, .Script
 
-; BirdKeeperBorisSeenText:
-	; text "If you're looking"
-	; line "for #MON, you"
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperJacobAfterBattleText
+	waitbutton
+	closetext
+	end
 
-	; para "have to look in"
-	; line "the tall grass."
-	; done
+Route18Sign:
+	jumptext Route18SignText
 
-; BirdKeeperBorisBeatenText:
-	; text "Ayieee!"
-	; done
+Route18CyclingRoadSign:
+	jumptext Route18CyclingRoadSignText
 
-; BirdKeeperBorisAfterBattleText:
-	; text "Since you're so"
-	; line "strong, it must be"
-	; cont "fun to battle."
-	; done
+BirdKeeperWiltonSeenText:
+	text "I always check"
+	line "every grassy area"
+	cont "for new #MON."
+	done
 
-; BirdKeeperBobSeenText:
-	; text "CYCLING ROAD is a"
-	; line "quick shortcut to"
-	; cont "CELADON."
-	; done
+BirdKeeperWiltonBeatenText:
+	text "Tch!"
+	done ; prompt
 
-; BirdKeeperBobBeatenText:
-	; text "…Whew!"
-	; done
+BirdKeeperWiltonAfterBattleText:
+	text "I wish I had a"
+	line "BIKE!"
+	done
 
-; BirdKeeperBobAfterBattleText:
-	; text "If you don't have"
-	; line "a BICYCLE, you're"
+BirdKeeperRamiroSeenText:
+	text "Kurukkoo!"
 
-	; para "not allowed to use"
-	; line "the shortcut."
-	; done
+	para "How do you like"
+	line "my bird call?"
+	done
 
-; Route18SignText:
-	; text "ROUTE 18"
+BirdKeeperRamiroBeatenText:
+	text "I had to bug you!"
+	done ; prompt
 
-	; para "CELADON CITY -"
-	; line "FUCHSIA CITY"
-	; done
+BirdKeeperRamiroAfterBattleText:
+	text "I also collect sea"
+	line "#MON on"
+	cont "weekends!"
+	done
+
+BirdKeeperJacobSeenText:
+	text "This is my turf!"
+	line "Get out of here!"
+	done
+
+BirdKeeperJacobBeatenText:
+	text "Darn!"
+	done ; prompt
+
+BirdKeeperJacobAfterBattleText:
+	text "This is my fave"
+	line "#MON hunting"
+	cont "area!"
+	done
+
+Route18SignText:
+	text "ROUTE 18"
+
+	para "CELADON CITY -"
+	line "FUCHSIA CITY"
+	done
+
+Route18CyclingRoadSignText:
+	text "CYCLING ROAD"
+
+	para "No pedestrians"
+	line "permitted!"
+	done
 
 Route18_MapEvents:
 	db 0, 0 ; filler
@@ -98,8 +131,10 @@ Route18_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	; bg_event 43,  7, BGEVENT_READ, Route18Sign
+	bg_event 43,  7, BGEVENT_READ, Route18Sign
+	bg_event 33,  5, BGEVENT_READ, Route18CyclingRoadSign
 
 	def_object_events
-	; object_event 38, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBoris, -1
-	; object_event 42, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBob, -1
+	object_event 36, 11, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperWilton, -1 ; OPP_BIRD_KEEPER, 8
+	object_event 40, 15, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRamiro, -1 ; OPP_BIRD_KEEPER, 9
+	object_event 42, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperJacob, -1 ; OPP_BIRD_KEEPER, 10

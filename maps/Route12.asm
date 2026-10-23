@@ -16,23 +16,25 @@ Route12_MapScripts:
 	def_callbacks
 
 Route12SnorlaxScript:
-	checkitem POKE_FLUTE
-	iftrue .Fight
-	jumptext SleepingSnorlaxText
-
-.Fight:
 	opentext
 	writetext SleepingSnorlaxText
+	checkitem POKE_FLUTE
+	iftrue .Fight
+	waitbutton
+	sjump Route12DidntCatchSnorlax.end
+
+.Fight:
 	promptbutton
 	writetext UseThePokeFluteText
 	yesorno
-	iffalse Route12DidntUsePokeFluteScript
+	iffalse Route12DidntCatchSnorlax.end
 	musicfadeout MUSIC_NONE, 1
 	farwritetext Text_PlayedPokeFlute
 	waitsfx
 	playsound SFX_POKEFLUTE
 	waitsfx
 	closetext
+	;fallthrough
 PokeFluteSnorlaxRoute12:: ; export (for when you use Poké Flute from pack)
 	playmapmusic
 	opentext
@@ -51,15 +53,12 @@ PokeFluteSnorlaxRoute12:: ; export (for when you use Poké Flute from pack)
 	reloadmapafterbattle
 	end
 
-Route12DidntUsePokeFluteScript:
-	closetext
-	end
-
 Route12DidntCatchSnorlax:
 	reloadmapafterbattle
 	opentext
 	writetext SnorlaxCalmedDownText
 	waitbutton
+.end
 	closetext
 	end
 

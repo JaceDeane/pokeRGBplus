@@ -425,9 +425,9 @@ DEF KRIS EQU __trainer_class__
 	const ERNEST
 	const ALEX
 	const LAO
-	const BIKER_UNUSED; Unused R/B
 	const HIDEO
 	const RUBEN
+	const VIRGIL
 	const BILLY
 	const NIKOLAS
 	const JAXON
