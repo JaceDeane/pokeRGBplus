@@ -124,6 +124,7 @@
 	const SPRITE_LORELEI ; 7e
 	const SPRITE_WAITER ; 7f
 	const SPRITE_MACHOP_OW ; 8a
+	const SPRITE_SWIMMER_GUARD ; 8b
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

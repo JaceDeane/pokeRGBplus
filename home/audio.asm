@@ -442,6 +442,16 @@ SpecialMapMusic::
 	ret
 
 .surf
+	; ld a, [wMapGroup]
+	; cp GROUP_ROUTE_23
+	; jr nz, .nospecialcase
+; don't think we need to check the Map Group..?
+; don't play surf music if on Route 23
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_23
+	jr z, .no
+	
+.nospecialcase
 	ld de, MUSIC_SURF
 	scf
 	ret

@@ -97,8 +97,8 @@ INCLUDE "maps/LakeOfRage.asm"
 
 SECTION "Johto Map Scripts 7", ROMX
 ;8
-INCLUDE "maps/SafariZoneFuchsiaGateBeta.asm"
-INCLUDE "maps/SafariZoneBeta.asm"
+; INCLUDE "maps/SafariZoneFuchsiaGateBeta.asm"
+; INCLUDE "maps/SafariZoneBeta.asm"
 INCLUDE "maps/VictoryRoad.asm"
 ; INCLUDE "maps/OlivinePort.asm"
 ; INCLUDE "maps/VermilionPort.asm"
@@ -464,10 +464,12 @@ INCLUDE "maps/FuchsiaCity.asm"
 INCLUDE "maps/FuchsiaMart.asm"
 INCLUDE "maps/SafariZoneMainOffice.asm"
 INCLUDE "maps/FuchsiaGym.asm"
-INCLUDE "maps/BillsBrothersHouse.asm"
+INCLUDE "maps/BillsGrandpasHouse.asm"
 INCLUDE "maps/FuchsiaPokecenter1F.asm"
-INCLUDE "maps/SafariZoneWardensHome.asm"
+INCLUDE "maps/SafariZoneWardensHouse.asm"
 INCLUDE "maps/Route15FuchsiaGate.asm"
+INCLUDE "maps/SafariZoneGate.asm"
+INCLUDE "maps/FuchsiaGoodRodHouse.asm"
 
 
 SECTION "Map Scripts 12", ROMX

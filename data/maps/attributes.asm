@@ -482,8 +482,8 @@ ENDM
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $19, 0
 	map_attributes RockTunnel1FEntrance, ROCK_TUNNEL_1F_ENTRANCE, $19, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $19, 0
-	map_attributes SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $00, 0
-	map_attributes SafariZoneBeta, SAFARI_ZONE_BETA, $13, 0
+	; map_attributes SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $00, 0
+	; map_attributes SafariZoneBeta, SAFARI_ZONE_BETA, $13, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $02, 0
 	map_attributes PokemonTower1F, POKEMON_TOWER_1F, $00, 0
@@ -624,9 +624,11 @@ ENDM
 	map_attributes FuchsiaMart, FUCHSIA_MART, $00, 0
 	map_attributes SafariZoneMainOffice, SAFARI_ZONE_MAIN_OFFICE, $00, 0
 	map_attributes FuchsiaGym, FUCHSIA_GYM, $00, 0
-	map_attributes BillsBrothersHouse, BILLS_BROTHERS_HOUSE, $00, 0
+	map_attributes BillsGrandpasHouse, BILLS_GRANDPAS_HOUSE, $00, 0
 	map_attributes FuchsiaPokecenter1F, FUCHSIA_POKECENTER_1F, $00, 0
-	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
+	map_attributes SafariZoneWardensHouse, SAFARI_ZONE_WARDENS_HOUSE, $00, 0
+	map_attributes SafariZoneGate, SAFARI_ZONE_GATE, $00, 0
+	map_attributes FuchsiaGoodRodHouse, FUCHSIA_GOOD_ROD_HOUSE, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
 	map_attributes Route18Gate1F, ROUTE_18_GATE_1F, $00, 0
 	map_attributes Route18Gate2F, ROUTE_18_GATE_2F, $00, 0

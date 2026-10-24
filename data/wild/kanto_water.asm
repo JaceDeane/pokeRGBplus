@@ -40,14 +40,14 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_12
 	db 6 percent ; encounter rate
 	db 25, TENTACOOL
-	db 25, QUAGSIRE
+	db 25, TENTACOOL ; QUAGSIRE
 	db 25, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_13
 	db 6 percent ; encounter rate
 	db 25, TENTACOOL
-	db 25, QUAGSIRE
+	db 25, TENTACOOL ; QUAGSIRE
 	db 25, TENTACRUEL
 	end_water_wildmons
 
@@ -73,6 +73,13 @@ KantoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_22
+	db 2 percent ; encounter rate
+	db 10, POLIWAG
+	db 5, POLIWAG
+	db 10, POLIWHIRL
+	end_water_wildmons
+
+	def_water_wildmons ROUTE_23 ; No encounters on the water in R/B
 	db 2 percent ; encounter rate
 	db 10, POLIWAG
 	db 5, POLIWAG

@@ -2814,7 +2814,7 @@ Pokedex_LoadUnownFrontpicTiles:
 _NewPokedexEntry:
 	xor a
 	ldh [hBGMapMode], a
-	farcall DrawDexEntryScreenRightEdge
+	; farcall DrawDexEntryScreenRightEdge
 	call Pokedex_ResetBGMapMode
 	call DisableLCD
 	call LoadStandardFont
@@ -2825,12 +2825,12 @@ _NewPokedexEntry:
 	ld [wCurPartySpecies], a
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_DrawFootprint
-	hlcoord 0, 17
-	ld [hl], $3b
-	inc hl
-	ld bc, 19
-	ld a, " "
-	call ByteFill
+	; hlcoord 0, 17
+	; ld [hl], $3b
+	; inc hl
+	; ld bc, 19
+	; ld a, " "
+	; call ByteFill
 	farcall DisplayDexEntry
 	call EnableLCD
 	call WaitBGMap

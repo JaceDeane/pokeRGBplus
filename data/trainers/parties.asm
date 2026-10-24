@@ -2332,16 +2332,26 @@ JugglerGroup: ; Updated to R/B, using FR/LG names
 
 	; JUGGLER (3)
 	db "KIRK@", TRAINERTYPE_NORMAL
-	db 31, DROWZEE
-	db 31, DROWZEE
-	db 31, KADABRA
-	db 31, DROWZEE
+;R/B
+	; db 31, DROWZEE
+	; db 31, DROWZEE
+	; db 31, KADABRA
+	; db 31, DROWZEE
+;RGB+
+	db 31, KOFFING
+	db 31, KOFFING
+	db 31, MUK
+	db 31, KOFFING
 	db -1 ; end
 
 	; JUGGLER (4)
 	db "SHAWN@", TRAINERTYPE_NORMAL
-	db 34, DROWZEE
-	db 34, HYPNO
+;R/B
+	; db 34, DROWZEE
+	; db 34, HYPNO
+;RGB+
+	db 34, KOFFING
+	db 34, WEEZING
 	db -1 ; end
 
 	; JUGGLER (5)
@@ -2360,13 +2370,20 @@ JugglerGroup: ; Updated to R/B, using FR/LG names
 	
 	; JUGGLER (7)
 	db "KAYDEN@", TRAINERTYPE_NORMAL
-	db 38, HYPNO
+;R/B
+	;db 38, HYPNO
+;RGB+
+	db 38, MUK
 	db -1 ; end
 	
 	; JUGGLER (8)
 	db "NATE@", TRAINERTYPE_NORMAL
-	db 34, DROWZEE
-	db 34, KADABRA
+;R/B
+	; db 34, DROWZEE
+	; db 34, KADABRA
+;RGB+
+	db 34, KOFFING
+	db 34, MUK
 	db -1 ; end
 
 BlackbeltGroup: ; Updated to R/B, using FR/LG names
@@ -3393,14 +3410,23 @@ RockerGroup: ; Updated to R/B, using FR/LG names
 TamerGroup: ; Updated to R/B, using FR/LG names
 	; TAMER (1)
 	db "PHIL@", TRAINERTYPE_NORMAL
-	db 34, SANDSLASH
-	db 34, ARBOK
+;R/B
+	; db 34, SANDSLASH
+	; db 34, ARBOK
+;LGPE
+	db 34, NIDORINO
+	db 34, NIDORINA
 	db -1 ; end
 
 	; TAMER (2)
 	db "EDGAR@", TRAINERTYPE_NORMAL
+;R/B
+	; db 33, ARBOK
+	; db 33, SANDSLASH
+	; db 33, ARBOK
+;LGPE
 	db 33, ARBOK
-	db 33, SANDSLASH
+	db 33, ARBOK
 	db 33, ARBOK
 	db -1 ; end
 

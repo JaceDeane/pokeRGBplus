@@ -1,6 +1,6 @@
 	object_const_def
 	const FUCHSIAMART_CLERK
-	const FUCHSIAMART_FISHER
+	const FUCHSIAMART_POKEFAN_M
 	const FUCHSIAMART_COOLTRAINER_F
 
 FuchsiaMart_MapScripts:
@@ -14,25 +14,26 @@ FuchsiaMartClerkScript:
 	closetext
 	end
 
-FuchsiaMartFisherScript:
-	jumptextfaceplayer FuchsiaMartFisherText
+FuchsiaMartMiddleAgedManScript:
+	jumptextfaceplayer FuchsiaMartMiddleAgedManText
 
 FuchsiaMartCooltrainerFScript:
 	jumptextfaceplayer FuchsiaMartCooltrainerFText
 
-FuchsiaMartFisherText:
-	text "I was hoping to"
-	line "buy some SAFARI"
+FuchsiaMartMiddleAgedManText:
+	text "Do you have a"
+	line "SAFARI ZONE flag?"
 
-	para "ZONE souvenirs,"
-	line "but it's closed…"
+	para "What about cards"
+	line "or calendars?"
 	done
 
 FuchsiaMartCooltrainerFText:
-	text "The SAFARI ZONE"
-	line "WARDEN's grand-"
-	cont "daughter lives in"
-	cont "town."
+	text "Did you try X"
+	line "SPEED?"
+
+	para "It speeds up a"
+	line "#MON in battle!"
 	done
 
 FuchsiaMart_MapEvents:
@@ -47,6 +48,6 @@ FuchsiaMart_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaMartClerkScript, -1
-	object_event  3,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaMartFisherScript, -1
-	object_event  7,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaMartCooltrainerFScript, -1
+	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaMartClerkScript, -1
+	object_event  4,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaMartMiddleAgedManScript, -1
+	object_event  6,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaMartCooltrainerFScript, -1

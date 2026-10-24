@@ -147,8 +147,8 @@ ENDM
 	map_const ROCK_TUNNEL_1F,                              20, 18 ; 91
 	map_const ROCK_TUNNEL_1F_ENTRANCE,                      4,  4 ; 92
 	map_const ROCK_TUNNEL_B1F,                             20, 18 ; 93
-	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 94
-	map_const SAFARI_ZONE_BETA,                            10, 18 ; 95
+	; map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 94
+	; map_const SAFARI_ZONE_BETA,                            10, 18 ; 95
 	map_const VICTORY_ROAD,                                10, 36 ; 96
 	map_const VIRIDIAN_FOREST,                             17, 28 ; 97
 	map_const POKEMON_TOWER_1F,                            10,  9 ; 98
@@ -369,12 +369,14 @@ ENDM
 	map_const ROUTE_18,                                    25, 10 ;  4
 	map_const FUCHSIA_CITY,                                20, 18 ;  5
 	map_const FUCHSIA_MART,                                 4,  4 ;  6
-	map_const SAFARI_ZONE_MAIN_OFFICE,                      4,  4 ;  7
+	map_const SAFARI_ZONE_MAIN_OFFICE,                      7,  4 ;  7
 	map_const FUCHSIA_GYM,                                  5,  9 ;  8
-	map_const BILLS_BROTHERS_HOUSE,                         4,  4 ;  9
+	map_const BILLS_GRANDPAS_HOUSE,                         4,  4 ;  9
 	map_const FUCHSIA_POKECENTER_1F,                        7,  4 ; 10
 	; map_const FUCHSIA_POKECENTER_2F_BETA,                   8,  4 ; 11
-	map_const SAFARI_ZONE_WARDENS_HOME,                     5,  4 ; 12
+	map_const SAFARI_ZONE_WARDENS_HOUSE,                     5,  4 ; 12
+	map_const SAFARI_ZONE_GATE,                             5,  4 ; XX
+	map_const FUCHSIA_GOOD_ROD_HOUSE,                       4,  4 ; XX
 	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 13
 	map_const ROUTE_18_GATE_1F,                             5,  4 ; 14
 	map_const ROUTE_18_GATE_2F,                             4,  4 ; 15

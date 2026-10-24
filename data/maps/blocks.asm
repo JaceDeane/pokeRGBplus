@@ -307,8 +307,10 @@ FastShipCabins_SE_SSE_CaptainsCabin_Blocks:
 	; INCBIN "maps/VermilionPort.blk"
 
 OlivineCafe_Blocks:
-SafariZoneMainOffice_Blocks:
 	INCBIN "maps/OlivineCafe.blk"
+
+SafariZoneMainOffice_Blocks:
+	INCBIN "maps/SafariZoneMainOffice.blk"
 
 PlayersHouse2F_Blocks:
 	INCBIN "maps/PlayersHouse2F.blk"
@@ -538,7 +540,7 @@ VermilionPidgeyHouse_Blocks:
 BluesHouse_Blocks:
 PewterNidoranSpeechHouse_Blocks:
 PewterSnoozeSpeechHouse_Blocks:
-BillsBrothersHouse_Blocks:
+BillsGrandpasHouse_Blocks:
 LavenderCuboneHouse_Blocks:
 LavenderNameRater_Blocks:
 Route12SuperRodHouse_Blocks:
@@ -550,7 +552,7 @@ MrFujisHouse_Blocks:
 MrPsychicsHouse_Blocks:
 	INCBIN "maps/House.blk"
 
-SafariZoneFuchsiaGateBeta_Blocks:
+; SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
@@ -559,6 +561,7 @@ Route36RuinsOfAlphGate_Blocks:
 Route34IlexForestGate_Blocks:
 Route40BattleTowerGate_Blocks:
 Route29Route46Gate_Blocks:
+SafariZoneGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
 Route12Gate1F_Blocks:
@@ -872,8 +875,10 @@ PowerPlant_Blocks:
 	INCBIN "maps/PowerPlant.blk"
 
 PokemonFanClub_Blocks:
-SafariZoneWardensHome_Blocks:
 	INCBIN "maps/PokemonFanClub.blk"
+
+SafariZoneWardensHouse_Blocks:
+	INCBIN "maps/SafariZoneWardensHouse.blk"
 
 FightingDojo_Blocks:
 	INCBIN "maps/FightingDojo.blk"
@@ -943,8 +948,8 @@ Route16NorthGate_Blocks:
 FuchsiaGym_Blocks:
 	INCBIN "maps/FuchsiaGym.blk"
 
-SafariZoneBeta_Blocks:
-	INCBIN "maps/SafariZoneBeta.blk"
+; SafariZoneBeta_Blocks:
+	; INCBIN "maps/SafariZoneBeta.blk"
 
 UndergroundPathNorthSouth_Blocks:
 	INCBIN "maps/UndergroundPathNorthSouth.blk" ; Update
@@ -984,6 +989,7 @@ PewterMuseumOfScience1F_Blocks:
 PewterMuseumOfScience2F_Blocks:
 	INCBIN "maps/PewterMuseumOfScience2F.blk"
 
+FuchsiaGoodRodHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 	INCBIN "maps/CeruleanGymBadgeSpeechHouse.blk"
 

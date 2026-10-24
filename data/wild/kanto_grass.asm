@@ -1794,7 +1794,72 @@ IF DEF(_BLUE)
 ENDC
 	end_grass_wildmons
 
-; ROUTE 23
+	def_grass_wildmons ROUTE_23 ; R/B
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+IF DEF(_RED)
+	db 26, EKANS
+ENDC
+IF DEF(_BLUE)
+	db 26, SANDSHREW
+ENDC
+	db 33, DITTO
+	db 26, SPEAROW
+	db 38, FEAROW
+	db 38, DITTO
+	db 38, FEAROW
+IF DEF(_RED)
+	db 41, ARBOK
+ENDC
+IF DEF(_BLUE)
+	db 41, SANDSLASH
+ENDC
+	db 43, DITTO
+	db 41, FEAROW
+	db 43, FEAROW
+	; day
+IF DEF(_RED)
+	db 26, EKANS
+ENDC
+IF DEF(_BLUE)
+	db 26, SANDSHREW
+ENDC
+	db 33, DITTO
+	db 26, SPEAROW
+	db 38, FEAROW
+	db 38, DITTO
+	db 38, FEAROW
+IF DEF(_RED)
+	db 41, ARBOK
+ENDC
+IF DEF(_BLUE)
+	db 41, SANDSLASH
+ENDC
+	db 43, DITTO
+	db 41, FEAROW
+	db 43, FEAROW
+	; nite
+IF DEF(_RED)
+	db 26, EKANS
+ENDC
+IF DEF(_BLUE)
+	db 26, SANDSHREW
+ENDC
+	db 33, DITTO
+	db 26, SPEAROW
+	db 38, FEAROW
+	db 38, DITTO
+	db 38, FEAROW
+IF DEF(_RED)
+	db 41, ARBOK
+ENDC
+IF DEF(_BLUE)
+	db 41, SANDSLASH
+ENDC
+	db 43, DITTO
+	db 41, FEAROW
+	db 43, FEAROW
+	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24 ; R/B
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite

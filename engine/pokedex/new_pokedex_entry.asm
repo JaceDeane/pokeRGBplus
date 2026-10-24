@@ -10,9 +10,9 @@ NewPokedexEntry:
 	call ClearSprites
 	ld a, [wPokedexStatus]
 	push af
-	ldh a, [hSCX]
-	add POKEDEX_SCX
-	ldh [hSCX], a
+	; ldh a, [hSCX]
+	; add POKEDEX_SCX
+	; ldh [hSCX], a
 	xor a
 	ld [wPokedexStatus], a
 	farcall _NewPokedexEntry
@@ -30,9 +30,9 @@ NewPokedexEntry:
 	ld [wPokedexStatus], a
 	call MaxVolume
 	call RotateThreePalettesRight
-	ldh a, [hSCX]
-	add -POKEDEX_SCX
-	ldh [hSCX], a
+	; ldh a, [hSCX]
+	; add -POKEDEX_SCX
+	; ldh [hSCX], a
 	call .ReturnFromDexRegistration
 	pop af
 	ldh [hMapAnims], a
@@ -42,7 +42,7 @@ NewPokedexEntry:
 	call ClearTilemap
 	call LoadFontsExtra
 	call LoadStandardFont
-	farcall Pokedex_PlaceFrontpicTopLeftCorner
+	; farcall Pokedex_PlaceFrontpicTopLeftCorner
 	call WaitBGMap2
 	farcall GetEnemyMonDVs
 	ld a, [hli]
