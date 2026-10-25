@@ -75,21 +75,21 @@ ENDM
 	map_const RADIO_TOWER_3F,                               9,  4 ; 19
 	map_const RADIO_TOWER_4F,                               9,  4 ; 20
 	map_const RADIO_TOWER_5F,                               9,  4 ; 21
-	map_const RUINS_OF_ALPH_OUTSIDE,                       10, 18 ; 22
-	map_const RUINS_OF_ALPH_HO_OH_CHAMBER,                  4,  5 ; 23
-	map_const RUINS_OF_ALPH_KABUTO_CHAMBER,                 4,  5 ; 24
-	map_const RUINS_OF_ALPH_OMANYTE_CHAMBER,                4,  5 ; 25
-	map_const RUINS_OF_ALPH_AERODACTYL_CHAMBER,             4,  5 ; 26
-	map_const RUINS_OF_ALPH_INNER_CHAMBER,                 10, 14 ; 27
-	map_const RUINS_OF_ALPH_RESEARCH_CENTER,                4,  4 ; 28
-	map_const RUINS_OF_ALPH_HO_OH_ITEM_ROOM,                4,  5 ; 29
-	map_const RUINS_OF_ALPH_KABUTO_ITEM_ROOM,               4,  5 ; 30
-	map_const RUINS_OF_ALPH_OMANYTE_ITEM_ROOM,              4,  5 ; 31
-	map_const RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM,           4,  5 ; 32
-	map_const RUINS_OF_ALPH_HO_OH_WORD_ROOM,               10, 12 ; 33
-	map_const RUINS_OF_ALPH_KABUTO_WORD_ROOM,              10,  7 ; 34
-	map_const RUINS_OF_ALPH_OMANYTE_WORD_ROOM,             10,  8 ; 35
-	map_const RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          10,  7 ; 36
+	; map_const RUINS_OF_ALPH_OUTSIDE,                       10, 18 ; 22
+	; map_const RUINS_OF_ALPH_HO_OH_CHAMBER,                  4,  5 ; 23
+	; map_const RUINS_OF_ALPH_KABUTO_CHAMBER,                 4,  5 ; 24
+	; map_const RUINS_OF_ALPH_OMANYTE_CHAMBER,                4,  5 ; 25
+	; map_const RUINS_OF_ALPH_AERODACTYL_CHAMBER,             4,  5 ; 26
+	; map_const RUINS_OF_ALPH_INNER_CHAMBER,                 10, 14 ; 27
+	; map_const RUINS_OF_ALPH_RESEARCH_CENTER,                4,  4 ; 28
+	; map_const RUINS_OF_ALPH_HO_OH_ITEM_ROOM,                4,  5 ; 29
+	; map_const RUINS_OF_ALPH_KABUTO_ITEM_ROOM,               4,  5 ; 30
+	; map_const RUINS_OF_ALPH_OMANYTE_ITEM_ROOM,              4,  5 ; 31
+	; map_const RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM,           4,  5 ; 32
+	; map_const RUINS_OF_ALPH_HO_OH_WORD_ROOM,               10, 12 ; 33
+	; map_const RUINS_OF_ALPH_KABUTO_WORD_ROOM,              10,  7 ; 34
+	; map_const RUINS_OF_ALPH_OMANYTE_WORD_ROOM,             10,  8 ; 35
+	; map_const RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          10,  7 ; 36
 	map_const UNION_CAVE_1F,                               10, 18 ; 37
 	map_const UNION_CAVE_B1F,                              10, 18 ; 38
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
@@ -163,6 +163,15 @@ ENDM
 	map_const ROCKET_HIDEOUT_B3F,                          15, 14 ; 51
 	map_const ROCKET_HIDEOUT_B4F,                          15, 12 ; 49
 	map_const ROCKET_HIDEOUT_ELEVATOR,                      2,  3 ; 50
+	map_const SAFARI_ZONE_CENTER,                          15, 15 ; XX
+	map_const SAFARI_ZONE_CENTER_REST_HOUSE,                4,  4 ; XX
+	map_const SAFARI_ZONE_EAST,                            15, 13 ; XX
+	map_const SAFARI_ZONE_EAST_REST_HOUSE,                  4,  4 ; XX
+	map_const SAFARI_ZONE_NORTH,                           20, 18 ; XX
+	map_const SAFARI_ZONE_NORTH_REST_HOUSE,                 4,  4 ; XX
+	map_const SAFARI_ZONE_WEST,                            15, 13 ; XX
+	map_const SAFARI_ZONE_WEST_REST_HOUSE,                  4,  4 ; XX
+	map_const SAFARI_ZONE_SECRET_HOUSE,                     4,  4 ; XX
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

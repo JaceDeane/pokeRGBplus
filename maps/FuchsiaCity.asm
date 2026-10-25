@@ -266,7 +266,7 @@ FuchsiaCity_MapEvents:
 	warp_event 11, 27, BILLS_GRANDPAS_HOUSE, 1
 	warp_event 19, 27, FUCHSIA_POKECENTER_1F, 1
 	warp_event 27, 27, SAFARI_ZONE_WARDENS_HOUSE, 1
-	warp_event 18,  3, SAFARI_ZONE_GATE, 3
+	warp_event 18,  3, SAFARI_ZONE_GATE, 1
 	warp_event  8, 27, FUCHSIA_GYM, 1
 	warp_event 22, 13, SAFARI_ZONE_MAIN_OFFICE, 1
 	warp_event 31, 24, FUCHSIA_GOOD_ROD_HOUSE, 1
@@ -299,5 +299,5 @@ FuchsiaCity_MapEvents:
 	object_event 25,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZonePokemonScript, -1
 	object_event 12,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SafariZonePokemonScript, -1
 	object_event 30, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 4, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZonePokemonScript, -1
-	object_event  8, 17, SPRITE_LAPRAS, SPRITEMOVEDATA_SWIM_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SafariZonePokemonScript, -1
+	object_event  8, 17, SPRITE_LAPRAS_OW, SPRITEMOVEDATA_SWIM_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SafariZonePokemonScript, -1
 	object_event  6,  5, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SafariZonePokemonScript, -1

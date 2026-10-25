@@ -510,6 +510,301 @@ ENDC
 	db 30, HAUNTER
 	end_grass_wildmons
 
+	def_grass_wildmons SAFARI_ZONE_CENTER ; R/B
+	db 30 percent, 30 percent, 30 percent ; encounter rates: morn/day/nite
+	; morn
+IF DEF(_RED)
+	db 22, NIDORAN_M
+	db 25, RHYHORN
+	db 22, VENONAT
+	db 24, EXEGGCUTE
+	db 31, NIDORINO
+	db 25, EXEGGCUTE
+	db 31, NIDORINA
+	db 30, PARASECT
+	db 23, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 22, NIDORAN_F
+	db 25, RHYHORN
+	db 22, VENONAT
+	db 24, EXEGGCUTE
+	db 31, NIDORINA
+	db 25, EXEGGCUTE
+	db 31, NIDORINO
+	db 30, PARASECT
+	db 23, PINSIR
+ENDC
+	db 23, CHANSEY
+	; day
+IF DEF(_RED)
+	db 22, NIDORAN_M
+	db 25, RHYHORN
+	db 22, VENONAT
+	db 24, EXEGGCUTE
+	db 31, NIDORINO
+	db 25, EXEGGCUTE
+	db 31, NIDORINA
+	db 30, PARASECT
+	db 23, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 22, NIDORAN_F
+	db 25, RHYHORN
+	db 22, VENONAT
+	db 24, EXEGGCUTE
+	db 31, NIDORINA
+	db 25, EXEGGCUTE
+	db 31, NIDORINO
+	db 30, PARASECT
+	db 23, PINSIR
+ENDC
+	db 23, CHANSEY
+	; nite
+IF DEF(_RED)
+	db 22, NIDORAN_M
+	db 25, RHYHORN
+	db 22, VENONAT
+	db 24, EXEGGCUTE
+	db 31, NIDORINO
+	db 25, EXEGGCUTE
+	db 31, NIDORINA
+	db 30, PARASECT
+	db 23, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 22, NIDORAN_F
+	db 25, RHYHORN
+	db 22, VENONAT
+	db 24, EXEGGCUTE
+	db 31, NIDORINA
+	db 25, EXEGGCUTE
+	db 31, NIDORINO
+	db 30, PARASECT
+	db 23, PINSIR
+ENDC
+	db 23, CHANSEY
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE_EAST ; R/B
+	db 30 percent, 30 percent, 30 percent ; encounter rates: morn/day/nite
+	; morn
+IF DEF(_RED)
+	db 24, NIDORAN_M
+	db 26, DODUO
+	db 22, PARAS
+	db 25, EXEGGCUTE
+	db 33, NIDORINO
+	db 23, EXEGGCUTE
+	db 24, NIDORAN_F
+	db 25, PARASECT
+	db 25, KANGASKHAN
+	db 28, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 24, NIDORAN_F
+	db 26, DODUO
+	db 22, PARAS
+	db 25, EXEGGCUTE
+	db 33, NIDORINA
+	db 23, EXEGGCUTE
+	db 24, NIDORAN_M
+	db 25, PARASECT
+	db 25, KANGASKHAN
+	db 28, PINSIR
+ENDC
+	; day
+IF DEF(_RED)
+	db 24, NIDORAN_M
+	db 26, DODUO
+	db 22, PARAS
+	db 25, EXEGGCUTE
+	db 33, NIDORINO
+	db 23, EXEGGCUTE
+	db 24, NIDORAN_F
+	db 25, PARASECT
+	db 25, KANGASKHAN
+	db 28, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 24, NIDORAN_F
+	db 26, DODUO
+	db 22, PARAS
+	db 25, EXEGGCUTE
+	db 33, NIDORINA
+	db 23, EXEGGCUTE
+	db 24, NIDORAN_M
+	db 25, PARASECT
+	db 25, KANGASKHAN
+	db 28, PINSIR
+ENDC
+	; nite
+IF DEF(_RED)
+	db 24, NIDORAN_M
+	db 26, DODUO
+	db 22, PARAS
+	db 25, EXEGGCUTE
+	db 33, NIDORINO
+	db 23, EXEGGCUTE
+	db 24, NIDORAN_F
+	db 25, PARASECT
+	db 25, KANGASKHAN
+	db 28, SCYTHER
+ENDC
+IF DEF(_BLUE)
+	db 24, NIDORAN_F
+	db 26, DODUO
+	db 22, PARAS
+	db 25, EXEGGCUTE
+	db 33, NIDORINA
+	db 23, EXEGGCUTE
+	db 24, NIDORAN_M
+	db 25, PARASECT
+	db 25, KANGASKHAN
+	db 28, PINSIR
+ENDC
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE_NORTH ; R/B
+	db 30 percent, 30 percent, 30 percent ; encounter rates: morn/day/nite
+	; morn
+IF DEF(_RED)
+	db 22, NIDORAN_M
+	db 26, RHYHORN
+	db 23, PARAS
+	db 25, EXEGGCUTE
+	db 30, NIDORINO
+	db 27, EXEGGCUTE
+	db 30, NIDORINA
+ENDC
+IF DEF(_BLUE)
+	db 22, NIDORAN_F
+	db 26, RHYHORN
+	db 23, PARAS
+	db 25, EXEGGCUTE
+	db 30, NIDORINA
+	db 27, EXEGGCUTE
+	db 30, NIDORINO
+ENDC
+	db 32, VENOMOTH
+	db 26, CHANSEY
+	db 28, TAUROS
+	; day
+IF DEF(_RED)
+	db 22, NIDORAN_M
+	db 26, RHYHORN
+	db 23, PARAS
+	db 25, EXEGGCUTE
+	db 30, NIDORINO
+	db 27, EXEGGCUTE
+	db 30, NIDORINA
+ENDC
+IF DEF(_BLUE)
+	db 22, NIDORAN_F
+	db 26, RHYHORN
+	db 23, PARAS
+	db 25, EXEGGCUTE
+	db 30, NIDORINA
+	db 27, EXEGGCUTE
+	db 30, NIDORINO
+ENDC
+	db 32, VENOMOTH
+	db 26, CHANSEY
+	db 28, TAUROS
+	; nite
+IF DEF(_RED)
+	db 22, NIDORAN_M
+	db 26, RHYHORN
+	db 23, PARAS
+	db 25, EXEGGCUTE
+	db 30, NIDORINO
+	db 27, EXEGGCUTE
+	db 30, NIDORINA
+ENDC
+IF DEF(_BLUE)
+	db 22, NIDORAN_F
+	db 26, RHYHORN
+	db 23, PARAS
+	db 25, EXEGGCUTE
+	db 30, NIDORINA
+	db 27, EXEGGCUTE
+	db 30, NIDORINO
+ENDC
+	db 32, VENOMOTH
+	db 26, CHANSEY
+	db 28, TAUROS
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE_WEST ; R/B
+	db 30 percent, 30 percent, 30 percent ; encounter rates: morn/day/nite
+	; morn
+IF DEF(_RED)
+	db 25, NIDORAN_M
+	db 26, DODUO
+	db 23, VENONAT
+	db 24, EXEGGCUTE
+	db 33, NIDORINO
+	db 26, EXEGGCUTE
+	db 25, NIDORAN_F
+ENDC
+IF DEF(_BLUE)
+	db 25, NIDORAN_F
+	db 26, DODUO
+	db 23, VENONAT
+	db 24, EXEGGCUTE
+	db 33, NIDORINA
+	db 26, EXEGGCUTE
+	db 25, NIDORAN_M
+ENDC
+	db 31, VENOMOTH
+	db 26, TAUROS
+	db 28, KANGASKHAN
+	; day
+IF DEF(_RED)
+	db 25, NIDORAN_M
+	db 26, DODUO
+	db 23, VENONAT
+	db 24, EXEGGCUTE
+	db 33, NIDORINO
+	db 26, EXEGGCUTE
+	db 25, NIDORAN_F
+ENDC
+IF DEF(_BLUE)
+	db 25, NIDORAN_F
+	db 26, DODUO
+	db 23, VENONAT
+	db 24, EXEGGCUTE
+	db 33, NIDORINA
+	db 26, EXEGGCUTE
+	db 25, NIDORAN_M
+ENDC
+	db 31, VENOMOTH
+	db 26, TAUROS
+	db 28, KANGASKHAN
+	; nite
+IF DEF(_RED)
+	db 25, NIDORAN_M
+	db 26, DODUO
+	db 23, VENONAT
+	db 24, EXEGGCUTE
+	db 33, NIDORINO
+	db 26, EXEGGCUTE
+	db 25, NIDORAN_F
+ENDC
+IF DEF(_BLUE)
+	db 25, NIDORAN_F
+	db 26, DODUO
+	db 23, VENONAT
+	db 24, EXEGGCUTE
+	db 33, NIDORINA
+	db 26, EXEGGCUTE
+	db 25, NIDORAN_M
+ENDC
+	db 31, VENOMOTH
+	db 26, TAUROS
+	db 28, KANGASKHAN
+	end_grass_wildmons
+
 	; def_grass_wildmons TOHJO_FALLS
 	; db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; ; morn

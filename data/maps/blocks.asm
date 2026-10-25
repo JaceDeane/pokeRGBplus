@@ -361,23 +361,23 @@ DragonsDenB1F_Blocks:
 TohjoFalls_Blocks:
 	INCBIN "maps/TohjoFalls.blk"
 
-RuinsOfAlphHoOhItemRoom_Blocks:
-RuinsOfAlphKabutoItemRoom_Blocks:
-RuinsOfAlphOmanyteItemRoom_Blocks:
-RuinsOfAlphAerodactylItemRoom_Blocks:
-	INCBIN "maps/RuinsOfAlphItemRoom.blk"
+; RuinsOfAlphHoOhItemRoom_Blocks:
+; RuinsOfAlphKabutoItemRoom_Blocks:
+; RuinsOfAlphOmanyteItemRoom_Blocks:
+; RuinsOfAlphAerodactylItemRoom_Blocks:
+	; INCBIN "maps/RuinsOfAlphItemRoom.blk"
 
-RuinsOfAlphHoOhWordRoom_Blocks:
-	INCBIN "maps/RuinsOfAlphHoOhWordRoom.blk"
+; RuinsOfAlphHoOhWordRoom_Blocks:
+	; INCBIN "maps/RuinsOfAlphHoOhWordRoom.blk"
 
-RuinsOfAlphKabutoWordRoom_Blocks:
-	INCBIN "maps/RuinsOfAlphKabutoWordRoom.blk"
+; RuinsOfAlphKabutoWordRoom_Blocks:
+	; INCBIN "maps/RuinsOfAlphKabutoWordRoom.blk"
 
-RuinsOfAlphOmanyteWordRoom_Blocks:
-	INCBIN "maps/RuinsOfAlphOmanyteWordRoom.blk"
+; RuinsOfAlphOmanyteWordRoom_Blocks:
+	; INCBIN "maps/RuinsOfAlphOmanyteWordRoom.blk"
 
-RuinsOfAlphAerodactylWordRoom_Blocks:
-	INCBIN "maps/RuinsOfAlphAerodactylWordRoom.blk"
+; RuinsOfAlphAerodactylWordRoom_Blocks:
+	; INCBIN "maps/RuinsOfAlphAerodactylWordRoom.blk"
 
 DragonShrine_Blocks:
 	INCBIN "maps/DragonShrine.blk"
@@ -775,17 +775,17 @@ KurtsHouse_Blocks:
 GoldenrodMagnetTrainStation_Blocks:
 	INCBIN "maps/GoldenrodMagnetTrainStation.blk"
 
-RuinsOfAlphOutside_Blocks:
-	INCBIN "maps/RuinsOfAlphOutside.blk"
+; RuinsOfAlphOutside_Blocks:
+	; INCBIN "maps/RuinsOfAlphOutside.blk"
 
-RuinsOfAlphInnerChamber_Blocks:
-	INCBIN "maps/RuinsOfAlphInnerChamber.blk"
+; RuinsOfAlphInnerChamber_Blocks:
+	; INCBIN "maps/RuinsOfAlphInnerChamber.blk"
 
-RuinsOfAlphHoOhChamber_Blocks:
-RuinsOfAlphKabutoChamber_Blocks:
-RuinsOfAlphOmanyteChamber_Blocks:
-RuinsOfAlphAerodactylChamber_Blocks:
-	INCBIN "maps/RuinsOfAlphPuzzleChamber.blk"
+; RuinsOfAlphHoOhChamber_Blocks:
+; RuinsOfAlphKabutoChamber_Blocks:
+; RuinsOfAlphOmanyteChamber_Blocks:
+; RuinsOfAlphAerodactylChamber_Blocks:
+	; INCBIN "maps/RuinsOfAlphPuzzleChamber.blk"
 
 ; SproutTower1F_Blocks:
 	; INCBIN "maps/SproutTower1F.blk"
@@ -1012,7 +1012,7 @@ VermilionDock_Blocks:
 INCBIN "maps/VermilionDock.blk"
 
 
-; SECTION "Map Blocks 5", ROMX
+SECTION "Map Blocks 5", ROMX
 
 SSAnne1F_Blocks:
 INCBIN "maps/SSAnne1F.blk"
@@ -1083,5 +1083,29 @@ INCBIN "maps/RocketHideoutB4F.blk"
 
 RocketHideoutElevator_Blocks:
 INCBIN "maps/RocketHideoutElevator.blk"
+
+
+SECTION "Map Blocks 6", ROMX
+
+SafariZoneCenter_Blocks:
+INCBIN "maps/SafariZoneCenter.blk"
+
+SafariZoneEast_Blocks:
+INCBIN "maps/SafariZoneEast.blk"
+
+SafariZoneNorth_Blocks:
+INCBIN "maps/SafariZoneNorth.blk"
+
+SafariZoneWest_Blocks:
+INCBIN "maps/SafariZoneWest.blk"
+
+SafariZoneCenterRestHouse_Blocks:
+SafariZoneEastRestHouse_Blocks:
+SafariZoneNorthRestHouse_Blocks:
+SafariZoneWestRestHouse_Blocks:
+INCBIN "maps/SafariZoneRestHouse.blk"
+
+SafariZoneSecretHouse_Blocks:
+INCBIN "maps/SafariZoneSecretHouse.blk"
 
 ENDSECTION

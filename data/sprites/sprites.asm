@@ -130,4 +130,5 @@ OverworldSprites:
 	overworld_sprite WaiterSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite MachopSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SwimmerGuardSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LaprasSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	assert_table_length NUM_OVERWORLD_SPRITES

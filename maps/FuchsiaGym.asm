@@ -128,7 +128,6 @@ FuchsiaGymGuideScript:
 	opentext
 	checkevent EVENT_BEAT_KOGA
 	iftrue .FuchsiaGymGuideWinScript
-		clearflag ENGINE_SOULBADGE ; DEBUG
 	writetext FuchsiaGymGuideText
 	waitbutton
 	closetext

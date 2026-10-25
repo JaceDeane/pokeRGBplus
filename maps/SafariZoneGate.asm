@@ -1,6 +1,6 @@
-	; object_const_def
-	; const SAFARIZONEGATE_SAFARI_ZONE_WORKER_M1
-	; const SAFARIZONEGATE_SAFARI_ZONE_WORKER_M2
+	object_const_def
+	const SAFARIZONEGATE_SAFARI_ZONE_WORKER_M1
+	const SAFARIZONEGATE_SAFARI_ZONE_WORKER_M2
 
 SafariZoneGate_MapScripts:
 	def_scene_scripts
@@ -17,8 +17,8 @@ SafariZoneGate_MapEvents:
 	def_warp_events
 	warp_event  4,  7, FUCHSIA_CITY, 5
 	warp_event  5,  7, FUCHSIA_CITY, 5
-	warp_event  4,  0, FUCHSIA_CITY, 0 ; SAFARI_ZONE_CENTRE
-	warp_event  5,  0, FUCHSIA_CITY, 1 ; SAFARI_ZONE_CENTRE
+	warp_event  4,  0, SAFARI_ZONE_CENTER, 1
+	warp_event  5,  0, SAFARI_ZONE_CENTER, 2
 
 	def_coord_events
 

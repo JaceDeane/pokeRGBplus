@@ -2,8 +2,8 @@ LoadSpecialMapPalette:
 	ld a, [wMapTileset]
 	cp TILESET_POKECENTER
 	jr z, .pokecom_2f
-	cp TILESET_BATTLE_TOWER_INSIDE
-	jr z, .battle_tower_inside
+	; cp TILESET_BATTLE_TOWER_INSIDE
+	; jr z, .battle_tower_inside
 	; cp TILESET_ICE_PATH
 	; jr z, .ice_path
 	cp TILESET_HOUSE
@@ -28,6 +28,8 @@ LoadSpecialMapPalette:
 	jr z, .lobby
 	cp TILESET_FACILITY_RB
 	jr z, .facility_rb
+	cp TILESET_FOREST
+	jp z, .forest
 	;jr .do_nothing
 	jp .do_nothing
 
@@ -36,10 +38,10 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.battle_tower_inside
-	call LoadBattleTowerInsidePalette
-	scf
-	ret
+; .battle_tower_inside
+	; call LoadBattleTowerInsidePalette
+	; scf
+	; ret
 
 ; .ice_path
 	; ld a, [wEnvironment]
@@ -145,6 +147,38 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.forest
+	ld a, [wMapNumber]
+	cp MAP_SAFARI_ZONE_CENTER
+	jr z, .safarizonepal
+	cp MAP_SAFARI_ZONE_EAST
+	jr z, .safarizonepal
+	cp MAP_SAFARI_ZONE_NORTH
+	jr z, .safarizonepal
+	cp MAP_SAFARI_ZONE_WEST
+	jr z, .safarizonepal
+	jr .do_nothing ; not the Safari Zone
+	
+.safarizonepal
+	ld a, [wCurTimeOfDay]
+	cp NITE_F
+	jr z, .safarizonepal_nite
+	cp MORN_F
+	jr z, .safarizonepal_morn
+	call LoadSafariZoneDayPalette
+	scf
+	ret
+
+.safarizonepal_nite
+	call LoadSafariZoneNitePalette
+	scf
+	ret
+
+.safarizonepal_morn
+	call LoadSafariZoneMornPalette
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
@@ -160,16 +194,16 @@ LoadPokeComPalette:
 PokeComPalette:
 INCLUDE "gfx/tilesets/pokecom_center.pal"
 
-LoadBattleTowerInsidePalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, BattleTowerInsidePalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
+; LoadBattleTowerInsidePalette:
+	; ld a, BANK(wBGPals1)
+	; ld de, wBGPals1
+	; ld hl, BattleTowerInsidePalette
+	; ld bc, 8 palettes
+	; call FarCopyWRAM
+	; ret
 
-BattleTowerInsidePalette:
-INCLUDE "gfx/tilesets/battle_tower_inside.pal"
+; BattleTowerInsidePalette:
+; INCLUDE "gfx/tilesets/battle_tower_inside.pal"
 
 ; LoadIcePathPalette:
 	; ld a, BANK(wBGPals1)
@@ -345,3 +379,30 @@ INCLUDE "gfx/tilesets/facility_rb.pal"
 
 FacilityRBCinnabarMansionPalette:
 INCLUDE "gfx/tilesets/facility_rb_cinnabar_mansion.pal"
+
+LoadSafariZoneDayPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, SafariZonePalette_Day
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+LoadSafariZoneNitePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, SafariZonePalette_Nite
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+LoadSafariZoneMornPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, SafariZonePalette_Morn
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+SafariZonePalette:
+INCLUDE "gfx/tilesets/safari_zone.pal"
