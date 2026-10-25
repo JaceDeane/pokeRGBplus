@@ -6,7 +6,14 @@ SafariZoneCenter_MapScripts:
 
 	def_callbacks
 
-;
+SafariZoneCenterNugget:
+	itemball NUGGET
+
+SafariZoneCenterRestHouseSign:
+	jumptext SafariZoneCenterRestHouseSignText
+
+SafariZoneCenterTrainerTips:
+	jumptext SafariZoneCenterTrainerTipsSignText
 
 SafariZoneCenterRestHouseSignText:
 	text "REST HOUSE"
@@ -38,15 +45,8 @@ SafariZoneCenter_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	;
-
-	; bg_event 18, 20, TEXT_SAFARIZONECENTER_REST_HOUSE_SIGN
-	; bg_event 14, 22, TEXT_SAFARIZONECENTER_TRAINER_TIPS_SIGN
+	bg_event 18, 20, BGEVENT_READ, SafariZoneCenterRestHouseSign
+	bg_event 14, 22, BGEVENT_READ, SafariZoneCenterTrainerTips
 
 	def_object_events
-	; object_event  9,  3, SPRITE_SAFARI_ZONE_WORKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ***Script, -1
-	; object_event  0,  4, SPRITE_SAFARI_ZONE_WORKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ***Script, -1
-
-	; object_event 14, 10, SPRITE_POKE_BALL,
-
-	; object_event 14, 10, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONECENTER_NUGGET, NUGGET
+	object_event 14, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneCenterNugget, EVENT_SAFARI_ZONE_CENTER_NUGGET

@@ -180,3 +180,4 @@ OTHER:
 
 - IsabelleChiming for original `Battle! Rival Blue` composition (https://www.youtube.com/watch?v=i_Qp5wcSCmU)
 - Sour for the BATTLETYPE_GHOST scared animation
+- From Luna's `pokegold-retro`: "Safari Battle mode ported from Gen 1 using code by JustRegularLuna, SourApple, Zumi, and leftover code by Gamefreak (Sour Crystal)."

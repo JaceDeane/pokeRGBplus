@@ -1305,6 +1305,10 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
+	
+	ld a, [wMapGroup]
+	cp GROUP_SAFARI_ZONE_CENTER ; Outdoor non-dungeons
+	ret z
 
 	ld a, [wEnvironment]
 	cp TOWN

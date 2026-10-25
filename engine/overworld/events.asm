@@ -937,6 +937,8 @@ CountStep:
 	jr c, .doscript
 
 .skip_poison
+	call DoSafariStep
+	jr c, .doscript
 	farcall DoBikeStep
 
 .done
@@ -955,6 +957,33 @@ CountStep:
 
 .whiteout ; unreferenced
 	ld a, PLAYEREVENT_WHITEOUT
+	scf
+	ret
+
+DoSafariStep:
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_SAFARI_GAME_F, a
+	jr z, .NoSafariActive
+
+	ld a, [wSafariTimeRemaining]
+	ld b, a
+	ld a, [wSafariTimeRemaining + 1]
+	ld c, a
+	or b
+	jr z, SafariZoneGameOver
+	dec bc
+	ld a, b
+	ld [wSafariTimeRemaining], a
+	ld a, c
+	ld [wSafariTimeRemaining + 1], a
+.NoSafariActive:
+	xor a
+	ret
+
+SafariZoneGameOver:
+	ld a, BANK(SafariZoneGameOverScript)
+	ld hl, SafariZoneGameOverScript
+	call CallScript
 	scf
 	ret
 
@@ -1162,6 +1191,8 @@ RandomEncounter::
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
 	jr nz, .bug_contest
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr nz, .safari_zone
 	farcall TryWildEncounter
 	jr nz, .nope
 	jr .ok
@@ -1170,6 +1201,11 @@ RandomEncounter::
 	call _TryWildEncounter_BugContest
 	jr nc, .nope
 	jr .ok_bug_contest
+
+.safari_zone
+	farcall TryWildEncounter
+	jr nz, .nope
+	jr .ok_safari
 
 .nope
 	ld a, 1
@@ -1185,6 +1221,11 @@ RandomEncounter::
 	ld a, BANK(BugCatchingContestBattleScript)
 	ld hl, BugCatchingContestBattleScript
 	jr .done
+
+.ok_safari
+	ld a, BANK(SafariZoneBattleScript)
+	ld hl, SafariZoneBattleScript
+	; fallthrough
 
 .done
 	call CallScript

@@ -1,6 +1,6 @@
 	object_const_def
 	const SAFARIZONEEAST_FULL_RESTORE
-	const SAFARIZONEEAST_MAX_RESTORE
+	const SAFARIZONEEAST_MAX_POTION
 	const SAFARIZONEEAST_CARBOS
 	const SAFARIZONEEAST_TM_EGG_BOMB
 
@@ -9,7 +9,26 @@ SafariZoneEast_MapScripts:
 
 	def_callbacks
 
-;
+SafariZoneEastFullRestore:
+	itemball FULL_RESTORE
+
+SafariZoneEastMaxPotion:
+	itemball MAX_POTION
+
+SafariZoneEastCarbos:
+	itemball CARBOS
+
+SafariZoneEastTM37EggBomb:
+	itemball TM_EGG_BOMB
+
+SafariZoneEastRestHouseSign:
+	jumptext SafariZoneEastRestHouseSignText
+
+SafariZoneEastTrainerTips:
+	jumptext SafariZoneEastTrainerTipsText
+
+SafariZoneEastSign:
+	jumptext SafariZoneEastSignText
 
 SafariZoneEastRestHouseSignText:
 	text "REST HOUSE"
@@ -41,19 +60,12 @@ SafariZoneEast_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	
-
-	; bg_event 26, 10, TEXT_SAFARIZONEEAST_REST_HOUSE_SIGN
-	; bg_event  6,  4, TEXT_SAFARIZONEEAST_TRAINER_TIPS
-	; bg_event  5, 23, TEXT_SAFARIZONEEAST_SIGN
+	bg_event 26, 10, BGEVENT_READ, SafariZoneEastRestHouseSign
+	bg_event  6,  4, BGEVENT_READ, SafariZoneEastTrainerTips
+	bg_event  5, 23, BGEVENT_READ, SafariZoneEastSign
 
 	def_object_events
-	; object_event  9,  3, SPRITE_SAFARI_ZONE_WORKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ***Script, -1
-	; object_event  0,  4, SPRITE_SAFARI_ZONE_WORKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ***Script, -1
-
-	;
-
-	; object_event 21, 10, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONEEAST_FULL_RESTORE, FULL_RESTORE
-	; object_event  3,  7, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONEEAST_MAX_RESTORE, MAX_POTION
-	; object_event 20, 13, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONEEAST_CARBOS, CARBOS
-	; object_event 15, 12, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONEEAST_TM_EGG_BOMB, TM_EGG_BOMB
+	object_event 21, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneEastFullRestore, EVENT_SAFARI_ZONE_EAST_FULL_RESTORE
+	object_event  3,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneEastMaxPotion, EVENT_SAFARI_ZONE_EAST_MAX_POTION
+	object_event 20, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneEastCarbos, EVENT_SAFARI_ZONE_EAST_CARBOS
+	object_event 15, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneEastTM37EggBomb, EVENT_GOT_TM37_EGG_BOMB

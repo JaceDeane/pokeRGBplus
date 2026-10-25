@@ -70,7 +70,7 @@ MapScenes::
 	scene_var POKEMON_TOWER_6F,                            wPokemonTower6FSceneID
 	scene_var POKEMON_TOWER_7F,                            wPokemonTower7FSceneID
 ; Unused in R/B
-	; scene_var RADIO_TOWER_5F,                              wRadioTower5FSceneID
+	scene_var SAFARI_ZONE_GATE,                            wSafariZoneGateSceneID ; wRadioTower5FSceneID
 	; scene_var RUINS_OF_ALPH_OUTSIDE,                       wRuinsOfAlphOutsideSceneID
 	; scene_var RUINS_OF_ALPH_RESEARCH_CENTER,               wRuinsOfAlphResearchCenterSceneID
 	; scene_var RUINS_OF_ALPH_HO_OH_CHAMBER,                 wRuinsOfAlphHoOhChamberSceneID

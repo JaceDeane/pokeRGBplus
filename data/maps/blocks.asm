@@ -561,7 +561,6 @@ Route36RuinsOfAlphGate_Blocks:
 Route34IlexForestGate_Blocks:
 Route40BattleTowerGate_Blocks:
 Route29Route46Gate_Blocks:
-SafariZoneGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
 Route12Gate1F_Blocks:
@@ -570,6 +569,9 @@ Route12Gate1F_Blocks:
 Route5SaffronGate_Blocks:
 Route6SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthSaffronGate.blk"
+
+SafariZoneGate_Blocks:
+	INCBIN "maps/SafariZoneGate.blk"
 
 CinnabarIsland_Blocks:
 	INCBIN "maps/CinnabarIsland.blk"

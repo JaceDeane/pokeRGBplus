@@ -54,9 +54,17 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
+	; jp z, .tutorial_debug
+	jp z, BattleMenu
 	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	; jp z, .tutorial_debug
+	jp z, BattleMenu
+	cp BATTLETYPE_SAFARI
+	jp z, SafariBattleTurn
+	cp BATTLETYPE_SAFARI_FISH
+	jp z, SafariBattleTurn
+	cp BATTLETYPE_SAFARI_TREE
+	jp z, SafariBattleTurn
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -116,8 +124,8 @@ DoBattle:
 	; else
 	jp BattleTurn
 
-.tutorial_debug
-	jp BattleMenu
+; .tutorial_debug
+	; jp BattleMenu
 
 WildFled_EnemyFled_LinkBattleCanceled:
 	call SafeLoadTempTilemapToTilemap
@@ -286,6 +294,44 @@ HandleGhostBehavior:
 	call Call_PlayBattleAnim
 	ld hl, BattleText_TooScared
 	jp StdBattleTextbox
+
+SafariBattleTurn:
+.loop
+	call CheckSafariBattleOver
+	ret c
+
+	call BattleMenu
+	ret c
+
+	ld a, [wBattleEnded]
+	and a
+	ret nz
+
+	call HandleSafariAngerEatingStatus
+	call CheckSafariMonRan
+	ret c
+
+	ld a, [wBattleEnded]
+	and a
+	ret nz	
+
+	jr .loop
+
+CheckSafariBattleOver:
+	ld a, [wSafariBallsRemaining]
+	and a
+	jr nz, .safari_not_over
+
+	ld a, [wBattleResult]
+	and BATTLERESULT_BITMASK
+	add DRAW
+	ld [wBattleResult], a
+	scf
+	ret
+
+.safari_not_over:
+	and a
+	ret
 
 HandleBetweenTurnEffects:
 	ldh a, [hSerialConnectionStatus]
@@ -3746,6 +3792,12 @@ TryToRunAwayFromBattle:
 	jp z, .can_escape
 	cp BATTLETYPE_GHOST
 	jp z, .can_escape
+	cp BATTLETYPE_SAFARI
+	jp z, .can_escape
+	cp BATTLETYPE_SAFARI_FISH
+	jp z, .can_escape
+	cp BATTLETYPE_SAFARI_TREE
+	jp z, .can_escape
 	cp BATTLETYPE_TRAP
 	jp z, .cant_escape
 	cp BATTLETYPE_CELEBI
@@ -4963,6 +5015,12 @@ BattleMenu:
 	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
+	cp BATTLETYPE_SAFARI
+	jr z, .ok
+	cp BATTLETYPE_SAFARI_FISH
+	jr z, .ok
+	cp BATTLETYPE_SAFARI_TREE
+	jr z, .ok
 	call EmptyBattleTextbox
 	call UpdateBattleHuds
 	call EmptyBattleTextbox
@@ -4971,6 +5029,12 @@ BattleMenu:
 
 .loop
 	ld a, [wBattleType]
+	cp BATTLETYPE_SAFARI
+	jr z, .safari
+	cp BATTLETYPE_SAFARI_FISH
+	jr z, .safari
+	cp BATTLETYPE_SAFARI_TREE
+	jr z, .safari
 	cp BATTLETYPE_CONTEST
 	jr nz, .not_contest
 	farcall ContestBattleMenu
@@ -5000,12 +5064,107 @@ BattleMenu:
 	jp z, BattleMenu_Run
 	jr .loop
 
+.safari
+	farcall SafariBattleMenu
+	ld a, $1
+	ld [hBGMapMode], a
+	ld a, [wBattleMenuCursorPosition]
+	cp $1
+	jp z, BattleMenu_Pack ; Safari Ball
+	cp $3
+	jp z, BattleMenu_Rock
+	cp $2
+	jp z, BattleMenu_Bait
+	cp $4
+	jp z, BattleMenu_Run
+	jr .safari
+
 BattleMenu_Fight:
 	xor a
 	ld [wNumFleeAttempts], a
 	call SafeLoadTempTilemapToTilemap
 	and a
 	ret
+
+BattleMenu_Bait:
+	ld hl, BattleText_ThrewBait
+	call StdBattleTextbox
+	ld hl, wEnemyMonCatchRate
+	srl [hl] ; halve the catch rate
+	ld de, ANIM_THROW_BAIT
+	call Call_PlayBattleAnim
+	ld hl, wSafariMonEating
+	ld de, wSafariMonAngerCount
+	jr BaitRockCommon
+
+BattleMenu_Rock:
+	ld hl, BattleText_ThrewRock
+	call StdBattleTextbox
+	ld hl, wEnemyMonCatchRate
+	ld a, [hl]
+	add a ; double the catch rate
+	jr nc, .noCarry
+	ld a, $FF
+.noCarry
+	ld [hl], a
+	ld de, ANIM_THROW_ROCK
+	call Call_PlayBattleAnim
+	ld hl, wSafariMonAngerCount
+	ld de, wSafariMonEating
+	; fallthrough to BaitRockCommon
+
+BaitRockCommon:
+	xor a
+	ld [de], a ; zero the Eating Counter (if rock thrown) or Anger Counter (if bait thrown)
+.random_loop ; Loop until we get a number less than 5
+	call BattleRandom
+	and 7
+	cp 5
+	jr nc, .random_loop
+	inc a ; increment the random number, for a a value between 1 and 5 inclusive
+	ld b, a
+	ld a, [hl]
+	add b ; increase Eating or Anger count by that amount
+	jr nc, .noCarry
+	ld a, $FF
+.noCarry
+	ld [hl], a
+	and a
+	ret
+
+CheckSafariMonRan:
+; Wildmon always runs when player is out of Safari Balls
+	ld a, [wSafariBallsRemaining]
+	and a
+	jp z, WildFled_EnemyFled_LinkBattleCanceled
+; Otherwise, check its speed, bait, and rock factors
+; this is basically taken directly from Gen 1
+	ld a, [wEnemyMonSpeed + 1]
+	add a
+	ld b, a ; init b (which is later compared with random value) to (enemy speed % 256) * 2
+	jp c, WildFled_EnemyFled_LinkBattleCanceled ; if (enemy speed % 256) > 127, the enemy runs
+	ld a, [wSafariMonEating]
+	and a ; is bait factor 0?
+	jr z, .check_escape_factor
+; bait factor is not 0
+; divide b by 4 {making the mon less likely to run}
+	srl b
+	srl b
+.check_escape_factor
+	ld a, [wSafariMonAngerCount]
+	and a ; is escape factor 0?
+	jr z, .compare_with_random_value
+; escape factor is not 0
+; multiply b by 2 (making mon more likely to run)
+	sla b
+	jr nc, .compare_with_random_value
+; cap b at 255
+	ld b, $FF
+.compare_with_random_value
+	call BattleRandom
+	cp b
+	ret nc
+	jp WildFled_EnemyFled_LinkBattleCanceled
 
 LoadBattleMenu2:
 	call IsMobileBattle
@@ -5048,6 +5207,12 @@ BattleMenu_Pack:
 	jr z, .tutorial
 	cp BATTLETYPE_CONTEST
 	jr z, .contest
+	cp BATTLETYPE_SAFARI
+	jr z, .safari
+	cp BATTLETYPE_SAFARI_FISH
+	jr z, .safari
+	cp BATTLETYPE_SAFARI_TREE
+	jr z, .safari
 
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
@@ -5058,6 +5223,12 @@ BattleMenu_Pack:
 .tutorial
 	farcall TutorialPack
 	ld a, POKE_BALL
+	ld [wCurItem], a
+	call DoItemEffect
+	jr .got_item
+
+.safari
+	ld a, SAFARI_BALL
 	ld [wCurItem], a
 	call DoItemEffect
 	jr .got_item
@@ -5106,6 +5277,12 @@ BattleMenu_Pack:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .tutorial2
+	cp BATTLETYPE_SAFARI
+	jr z, .tutorial2
+	cp BATTLETYPE_SAFARI_FISH
+	jr z, .tutorial2
+	cp BATTLETYPE_SAFARI_TREE
+	jr z, .tutorial2
 	call GetBattleMonBackpic
 
 .tutorial2
@@ -5113,7 +5290,15 @@ BattleMenu_Pack:
 	ld a, $1
 	ld [wMenuCursorY], a
 	call ExitMenu
+	ld a, [wBattleType]
+	cp BATTLETYPE_SAFARI
+	jr z, .skipUpdateBattleHUDs
+	cp BATTLETYPE_SAFARI_FISH
+	jr z, .skipUpdateBattleHUDs
+	cp BATTLETYPE_SAFARI_TREE
+	jr z, .skipUpdateBattleHUDs
 	call UpdateBattleHUDs
+.skipUpdateBattleHUDs
 	call WaitBGMap
 	call LoadTilemapToTempTilemap
 	call ClearWindowData
@@ -7868,7 +8053,7 @@ ComeBackText:
 	text_far _ComeBackText
 	text_end
 
-HandleSafariAngerEatingStatus: ; unreferenced
+HandleSafariAngerEatingStatus:
 	ld hl, wSafariMonEating
 	ld a, [hl]
 	and a
@@ -8444,10 +8629,11 @@ ExitBattle:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
-	call ShowLinkBattleParticipantsAfterEnd
-	ld c, 150
-	call DelayFrames
-	call DisplayLinkBattleResult
+	; call ShowLinkBattleParticipantsAfterEnd
+	; ld c, 150
+	; call DelayFrames
+	; call DisplayLinkBattleResult
+		farcall HandleLinkBattleEnd
 	ret
 
 .not_linked
@@ -8530,252 +8716,10 @@ CheckPayDay:
 	call ClearBGPalettes
 	ret
 
-ShowLinkBattleParticipantsAfterEnd:
-	farcall StubbedTrainerRankings_LinkBattles
-	farcall BackupGSBallFlag
-	ld a, [wCurOTMon]
-	ld hl, wOTPartyMon1Status
-	call GetPartyLocation
-	ld a, [wEnemyMonStatus]
-	ld [hl], a
-	call ClearTilemap
-	farcall _ShowLinkBattleParticipants
-	ret
-
-DisplayLinkBattleResult:
-	farcall CheckMobileBattleError
-	jp c, .Mobile_InvalidBattle
-	call IsMobileBattle2
-	jr nz, .proceed
-
-	ld hl, wcd2a
-	bit 4, [hl]
-	jr z, .proceed
-
-	farcall DetermineLinkBattleResult
-
-.proceed
-	ld a, [wBattleResult]
-	and $f
-	cp LOSE
-	jr c, .win ; WIN
-	jr z, .lose ; LOSE
-	; DRAW
-	farcall StubbedTrainerRankings_ColosseumDraws
-	ld de, .Draw
-	jr .store_result
-
-.win
-	farcall StubbedTrainerRankings_ColosseumWins
-	ld de, .YouWin
-	jr .store_result
-
-.lose
-	farcall StubbedTrainerRankings_ColosseumLosses
-	ld de, .YouLose
-	jr .store_result
-
-.store_result
-	hlcoord 6, 8
-	call PlaceString
-	farcall BackupGSBallFlag
-	ld c, 200
-	call DelayFrames
-
-	ld a, BANK(sLinkBattleStats)
-	call OpenSRAM
-
-	call AddLastLinkBattleToLinkRecord
-	call ReadAndPrintLinkBattleRecord
-
-	call CloseSRAM
-
-	call IsMobileBattle2
-	jr z, .mobile
-	call WaitPressAorB_BlinkCursor
-	call ClearTilemap
-	ret
-
-.mobile
-	ld c, 200
-	call DelayFrames
-	call ClearTilemap
-	ret
-
-.YouWin:
-	db "YOU WIN@"
-.YouLose:
-	db "YOU LOSE@"
-.Draw:
-	db "  DRAW@"
-
-.Mobile_InvalidBattle:
-	hlcoord 6, 8
-	ld de, .InvalidBattle
-	call PlaceString
-	ld c, 200
-	call DelayFrames
-	call ClearTilemap
-	ret
-
-.InvalidBattle:
-	db "INVALID BATTLE@"
-
 IsMobileBattle2:
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
 	ret
-
-_DisplayLinkRecord:
-	ld a, BANK(sLinkBattleStats)
-	call OpenSRAM
-
-	call ReadAndPrintLinkBattleRecord
-
-	call CloseSRAM
-	hlcoord 0, 0, wAttrmap
-	xor a
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call ByteFill
-	call WaitBGMap2
-	ld b, SCGB_DIPLOMA
-	call GetSGBLayout
-	call SetDefaultBGPAndOBP
-	ld c, 8
-	call DelayFrames
-	call WaitPressAorB_BlinkCursor
-	ret
-
-ReadAndPrintLinkBattleRecord:
-	call ClearTilemap
-	call ClearSprites
-	call .PrintBattleRecord
-	hlcoord 0, 8
-	ld b, NUM_LINK_BATTLE_RECORDS
-	ld de, sLinkBattleRecord1Name
-.loop
-	push bc
-	push hl
-	push de
-	ld a, [de]
-	and a
-	jr z, .PrintFormatString
-	ld a, [wSavedAtLeastOnce]
-	and a
-	jr z, .PrintFormatString
-	push hl
-	push hl
-	ld h, d
-	ld l, e
-	ld de, wLinkBattleRecordName
-	ld bc, NAME_LENGTH - 1
-	call CopyBytes
-	ld a, "@"
-	ld [de], a
-	inc de ; wLinkBattleRecordWins
-	ld bc, 6
-	call CopyBytes
-	ld de, wLinkBattleRecordName
-	pop hl
-	call PlaceString
-	pop hl
-	ld de, 26
-	add hl, de
-	push hl
-	ld de, wLinkBattleRecordWins
-	lb bc, 2, 4
-	call PrintNum
-	pop hl
-	ld de, 5
-	add hl, de
-	push hl
-	ld de, wLinkBattleRecordLosses
-	lb bc, 2, 4
-	call PrintNum
-	pop hl
-	ld de, 5
-	add hl, de
-	ld de, wLinkBattleRecordDraws
-	lb bc, 2, 4
-	call PrintNum
-	jr .next
-
-.PrintFormatString:
-	ld de, .Format
-	call PlaceString
-.next
-	pop hl
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	ld d, h
-	ld e, l
-	pop hl
-	ld bc, 2 * SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .loop
-	ret
-
-.PrintBattleRecord:
-	hlcoord 1, 0
-	ld de, .Record
-	call PlaceString
-
-	hlcoord 0, 6
-	ld de, .Result
-	call PlaceString
-
-	hlcoord 0, 2
-	ld de, .Total
-	call PlaceString
-
-	hlcoord 6, 4
-	ld de, sLinkBattleWins
-	call .PrintZerosIfNoSaveFileExists
-	jr c, .quit
-
-	lb bc, 2, 4
-	call PrintNum
-
-	hlcoord 11, 4
-	ld de, sLinkBattleLosses
-	call .PrintZerosIfNoSaveFileExists
-
-	lb bc, 2, 4
-	call PrintNum
-
-	hlcoord 16, 4
-	ld de, sLinkBattleDraws
-	call .PrintZerosIfNoSaveFileExists
-
-	lb bc, 2, 4
-	call PrintNum
-
-.quit
-	ret
-
-.PrintZerosIfNoSaveFileExists:
-	ld a, [wSavedAtLeastOnce]
-	and a
-	ret nz
-	ld de, .Scores
-	call PlaceString
-	scf
-	ret
-
-.Scores:
-	db "   0    0    0@"
-
-.Format:
-	db "  ---  <LF>"
-	db "         -    -    -@"
-.Record:
-	db "<PLAYER>'s RECORD@"
-.Result:
-	db "RESULT WIN LOSE DRAW@"
-.Total:
-	db "TOTAL  WIN LOSE DRAW@"
 
 BattleEnd_HandleRoamMons:
 	ld a, [wBattleType]
@@ -8876,211 +8820,6 @@ GetRoamMonSpecies:
 	cp [hl]
 	ret z
 	ld hl, wRoamMon3Species
-	ret
-
-AddLastLinkBattleToLinkRecord:
-	ld hl, wOTPlayerID
-	ld de, wStringBuffer1
-	ld bc, 2
-	call CopyBytes
-	ld hl, wOTPlayerName
-	ld bc, NAME_LENGTH - 1
-	call CopyBytes
-	ld hl, sLinkBattleStats - (LINK_BATTLE_RECORD_LENGTH - 6)
-	call .StoreResult
-	ld hl, sLinkBattleRecord
-	ld d, NUM_LINK_BATTLE_RECORDS
-.loop
-	push hl
-	inc hl
-	inc hl
-	ld a, [hl]
-	dec hl
-	dec hl
-	and a
-	jr z, .copy
-	push de
-	ld bc, LINK_BATTLE_RECORD_LENGTH - 6
-	ld de, wStringBuffer1
-	call CompareBytesLong
-	pop de
-	pop hl
-	jr c, .done
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	dec d
-	jr nz, .loop
-	ld bc, -LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	push hl
-
-.copy
-	ld d, h
-	ld e, l
-	ld hl, wStringBuffer1
-	ld bc, LINK_BATTLE_RECORD_LENGTH - 6
-	call CopyBytes
-	ld b, 6
-	xor a
-.loop2
-	ld [de], a
-	inc de
-	dec b
-	jr nz, .loop2
-	pop hl
-
-.done
-	call .StoreResult
-	call .FindOpponentAndAppendRecord
-	ret
-
-.StoreResult:
-	ld a, [wBattleResult]
-	and $f
-	cp LOSE
-	ld bc, (sLinkBattleRecord1Wins - sLinkBattleRecord1) + 1
-	jr c, .okay ; WIN
-	ld bc, (sLinkBattleRecord1Losses - sLinkBattleRecord1) + 1
-	jr z, .okay ; LOSE
-	; DRAW
-	ld bc, (sLinkBattleRecord1Draws - sLinkBattleRecord1) + 1
-.okay
-	add hl, bc
-	call .CheckOverflow
-	ret nc
-	inc [hl]
-	ret nz
-	dec hl
-	inc [hl]
-	ret
-
-.CheckOverflow:
-	dec hl
-	ld a, [hl]
-	inc hl
-	cp HIGH(MAX_LINK_RECORD)
-	ret c
-	ld a, [hl]
-	cp LOW(MAX_LINK_RECORD)
-	ret
-
-.FindOpponentAndAppendRecord:
-	ld b, NUM_LINK_BATTLE_RECORDS
-	ld hl, sLinkBattleRecord1End - 1
-	ld de, wLinkBattleRecordBuffer
-.loop3
-	push bc
-	push de
-	push hl
-	call .LoadPointer
-	pop hl
-	ld a, e
-	pop de
-	ld [de], a
-	inc de
-	ld a, b
-	ld [de], a
-	inc de
-	ld a, c
-	ld [de], a
-	inc de
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .loop3
-	ld b, $0
-	ld c, $1
-.loop4
-	ld a, b
-	add b
-	add b
-	ld e, a
-	ld d, 0
-	ld hl, wLinkBattleRecordBuffer
-	add hl, de
-	push hl
-	ld a, c
-	add c
-	add c
-	ld e, a
-	ld d, 0
-	ld hl, wLinkBattleRecordBuffer
-	add hl, de
-	ld d, h
-	ld e, l
-	pop hl
-	push bc
-	ld c, 3
-	call CompareBytes
-	pop bc
-	jr z, .equal
-	jr nc, .done2
-
-.equal
-	inc c
-	ld a, c
-	cp $5
-	jr nz, .loop4
-	inc b
-	ld c, b
-	inc c
-	ld a, b
-	cp $4
-	jr nz, .loop4
-	ret
-
-.done2
-	push bc
-	ld a, b
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	ld hl, sLinkBattleRecord
-	call AddNTimes
-	push hl
-	ld de, wLinkBattleRecordBuffer
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	call CopyBytes
-	pop hl
-	pop bc
-	push hl
-	ld a, c
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	ld hl, sLinkBattleRecord
-	call AddNTimes
-	pop de
-	push hl
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	call CopyBytes
-	ld hl, wLinkBattleRecordBuffer
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	pop de
-	call CopyBytes
-	ret
-
-.LoadPointer:
-	ld e, $0
-	ld a, [hld]
-	ld c, a
-	ld a, [hld]
-	ld b, a
-	ld a, [hld]
-	add c
-	ld c, a
-	ld a, [hld]
-	adc b
-	ld b, a
-	jr nc, .okay2
-	inc e
-
-.okay2
-	ld a, [hld]
-	add c
-	ld c, a
-	ld a, [hl]
-	adc b
-	ld b, a
-	ret nc
-	inc e
 	ret
 
 InitBattleDisplay:
@@ -9315,8 +9054,12 @@ BattleStartMessage:
 	jr .PrintBattleStartText
 
 .NotFishing:
+	cp BATTLETYPE_SAFARI_FISH
+	jr z, .PrintBattleStartText
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
+	jr z, .PrintBattleStartText
+	cp BATTLETYPE_SAFARI_TREE
 	jr z, .PrintBattleStartText
 	ld hl, WildCelebiAppearedText
 	cp BATTLETYPE_CELEBI

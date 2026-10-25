@@ -3108,7 +3108,7 @@ wSproutTower3FSceneID::                           db ;***
 wPokemonTower2FSceneID::                          db ; wTinTower1FSceneID
 wPokemonTower6FSceneID::                          db ; wBurnedTower1FSceneID
 wPokemonTower7FSceneID::                          db ; wBurnedTowerB1FSceneID
-wRadioTower5FSceneID::                            db ;***
+wSafariZoneGateSceneID::                          db ; wRadioTower5FSceneID
 wRuinsOfAlphOutsideSceneID::                      db ;***
 wRuinsOfAlphResearchCenterSceneID::               db ;***
 wRuinsOfAlphHoOhChamberSceneID::                  db ;***

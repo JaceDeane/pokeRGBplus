@@ -384,7 +384,7 @@ ENDM
 	map_const FUCHSIA_POKECENTER_1F,                        7,  4 ; 10
 	; map_const FUCHSIA_POKECENTER_2F_BETA,                   8,  4 ; 11
 	map_const SAFARI_ZONE_WARDENS_HOUSE,                     5,  4 ; 12
-	map_const SAFARI_ZONE_GATE,                             5,  4 ; XX
+	map_const SAFARI_ZONE_GATE,                             3,  4 ; XX
 	map_const FUCHSIA_GOOD_ROD_HOUSE,                       4,  4 ; XX
 	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 13
 	map_const ROUTE_18_GATE_1F,                             5,  4 ; 14
